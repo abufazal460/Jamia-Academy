@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar/Navbar";
 // Lazy imports - har page apni alag JS chunk file me build hogi.
 const Home = lazy(() => import("./pages/Home"));
 const About = lazy(() => import("./pages/About"));
-const Courses = lazy(() => import("./pages/Courses"));
+const Course = lazy(() => import("./pages/Course"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Contact = lazy(() => import("./pages/Contact"));
 
@@ -35,7 +35,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/courses" element={<Courses />} />
+          <Route path="/course" element={<Course />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
