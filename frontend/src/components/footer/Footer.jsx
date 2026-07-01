@@ -10,6 +10,7 @@ import skillIndia from "../../assets/logo/skill-india.png";
 import niti from "../../assets/logo/niti-aayog.jpeg";
 import nielit from "../../assets/logo/nielit.jpeg";
 
+
 /* ============================================================
    DATA — Sab links/arrays ek jagah rakhe hain (constants).
    Isse component clean rehta hai aur baad mein replace karna
@@ -22,25 +23,25 @@ const SOCIAL_LINKS = [
   {
     id: "facebook",
     icon: FaFacebookF,
-    url: "https://facebook.com",
+    url: "https://www.facebook.com/JamiaAcademyDelhi?rdid=3MCDv6OSxWYtSox5&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1JSKQKefbV%2F#",
     label: "Facebook",
   },
   {
     id: "instagram",
     icon: FaInstagram,
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/jamiaacademy?igsh=MTlza3JjbWs3eWQwNw%3D%3D",
     label: "Instagram",
   },
   {
     id: "youtube",
     icon: FaYoutube,
-    url: "https://youtube.com",
+    url: "https://www.youtube.com/@JamiaAcademy",
     label: "YouTube",
   },
   {
     id: "twitter",
     icon: FaTwitter,
-    url: "https://twitter.com",
+    url: "https://x.com/AcademyJamia",
     label: "Twitter",
   },
 ];
@@ -88,6 +89,8 @@ const GOVERNMENT_LOGOS = [
   },
 ];
 
+
+
 /* ============================================================
    FRAMER MOTION VARIANTS — Reusable animation configs.
    "Container" variants control staggerChildren (bachche ek ek
@@ -122,7 +125,7 @@ const sectionVariant = {
 const listVariant = {
   hidden: {},
   visible: {
-    transition: { staggerChildren: 0.10, delayChildren: 0.5 },
+    transition: { staggerChildren: 0.1, delayChildren: 0.5 },
   },
 };
 
@@ -455,7 +458,7 @@ const Footer = () => {
             Official Website of Jamia Academy
           </p>
           <p className="text-[11px] sm:text-xs text-slate-600 mt-1">
-            Made by Abu Fazal 
+            Made by <a target="_blank" href="https://abufazal.netlify.app/" className="text-blue-500 hover:underline transition-all">Abu Fazal</a>
           </p>
         </motion.div>
       </motion.div>
