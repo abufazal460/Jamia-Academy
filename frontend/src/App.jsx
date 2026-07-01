@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navigation/Navbar";
+import Footer from "./components/footer/Footer";
 
 // ====================================================================
 // App.jsx
@@ -20,7 +21,11 @@ const Contact = lazy(() => import("./pages/Contact"));
 // jab tak lazy chunk download/parse ho raha ho.
 function PageLoader() {
   return (
-    <div className="flex min-h-[50vh] items-center justify-center" role="status" aria-live="polite">
+    <div
+      className="flex min-h-[50vh] items-center justify-center"
+      role="status"
+      aria-live="polite"
+    >
       <span className="text-sm font-medium text-slate-400">Loading...</span>
     </div>
   );
@@ -28,7 +33,8 @@ function PageLoader() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    // <BrowserRouter>
+    <>
       {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
       <Navbar />
       <Suspense fallback={<PageLoader />}>
@@ -40,6 +46,8 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Suspense>
-    </BrowserRouter>
+      <Footer />
+    </>
+    // </BrowserRouter>
   );
 }
