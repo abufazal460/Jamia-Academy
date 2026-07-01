@@ -33,7 +33,6 @@ function PageLoader() {
 
 export default function App() {
   return (
-    // <BrowserRouter>
     <>
       {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
       <Navbar />
@@ -48,6 +47,5 @@ export default function App() {
       </Suspense>
       <Footer />
     </>
-    // </BrowserRouter>
   );
 }
