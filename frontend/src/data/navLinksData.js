@@ -10,7 +10,7 @@ export const navLinks = [
   { id: "about", label: "About", route: "/about" },
   // "courses" special hai kyunki isme dropdown (mega menu) bhi hai isiliye
   // hasDropdown flag use kiya hai taki NavItem component pata laga sake.
-  { id: "course", label: "Course", route: "/course", hasDropdown: true },
+  { id: "course", label: "Course", route: "/course" },
   { id: "gallery", label: "Gallery", route: "/gallery" },
   { id: "contact", label: "Contact", route: "/contact" },
 ];
