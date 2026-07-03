@@ -121,7 +121,7 @@ function Navbar() {
     // z-50: baaki content ke upar render hoga.
     <header
       ref={navRef}
-      className="sticky top-0 z-50 w-full px-3 pt-3 sm:px-4"
+      className="sticky bg-black z-50 w-full px-3 sm:px-4"
     >
       <motion.div
         initial={{ opacity: 0, y: -20 }}
@@ -129,9 +129,9 @@ function Navbar() {
         transition={{ duration: 0.5, ease: "easeOut" }}
         className={[
           // Glass UI: semi-transparent dark background + backdrop blur se glass effect aata hai.
-          "relative mx-auto flex max-w-7xl items-center justify-between gap-3",
-          "rounded-2xl border border-white/10 bg-[#0b1437]/70 px-4 py-3",
-          "shadow-[0_8px_30px_rgba(0,0,0,0.35)] backdrop-blur-xl sm:px-6",
+          "relative mx-auto flex  items-center justify-between gap-3",
+          "rounded-2xl px-4 py-3",
+          "sm:px-6 bg-none",
         ].join(" ")}
       >
         {/* ============================== LOGO (LEFT) ============================== */}
