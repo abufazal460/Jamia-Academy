@@ -49,10 +49,10 @@ const SOCIAL_LINKS = [
 // Quick Links section — title + path pair
 const QUICK_LINKS = [
   { title: "Home", path: "/" },
-  { title: "Courses", path: "#/courses" },
-  { title: "Gallery", path: "#/gallery" },
-  { title: "Contact", path: "#/contact" },
-  { title: "About Us", path: "#/about" },
+  { title: "Courses", path: "/course" },
+  { title: "Gallery", path: "/gallery" },
+  { title: "Contact", path: "/contact" },
+  { title: "About Us", path: "/about" },
 ];
 
 // Popular Courses section — title + dummy course url

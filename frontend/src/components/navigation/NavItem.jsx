@@ -3,36 +3,38 @@ import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
 
 // ====================================================================
-// NavItem.jsx
-// Ye ek reusable component hai jo Navbar ke har single link (Home, About, etc)
-// ke liye use hota hai. SOLID ke "Single Responsibility" principle follow karta hai:
-// iska sirf ek hi kaam hai - ek nav link ko render karna with hover + active states.
+// NavItem.jsx — MODIFIED
+//
+// REMOVED:
+//   - hasDropdown logic (arrow SVG, aria-haspopup, aria-expanded, isDropdownOpen prop)
+//   - focus-visible:ring-* classes (ring intentionally hata diya gaya hai)
+//   - ring-* in active indicator span
+//   - layoutId active glow shadow (shadow-[0_0_18px...] bhi gone)
+//
+// WHY: Courses ab ek normal link ban gaya hai. Ring effect remove karna
+// explicit requirement tha. Active state sirf background + text + rounded se milegi.
 // ====================================================================
 
-// Ye Framer Motion variant hai stagger animation ke liye.
-// Parent (Navbar) se "custom" prop me index aayega jisse delay calculate hoga.
+// Stagger entry animation - upar se neeche ek ek karke links aate hai.
 const itemVariants = {
-  hidden: { opacity: 0, y: -40 }, // Start: upar se invisible
+  hidden: { opacity: 0, y: -40 },
   visible: (index) => ({
     opacity: 1,
     y: 0,
     transition: {
-      // Spring animation premium aur natural feel deta hai (harsh nahi).
       type: "spring",
       stiffness: 120,
       damping: 14,
-      delay: 0.15 + index * 0.08, // Stagger: har item thoda late aayega
+      delay: 0.1 + index * 0.07, // Stagger: har item thoda late aayega
     },
   }),
 };
 
-// React.memo isliye use kiya hai taki agar parent re-render ho
-// (jaise mobile menu toggle hone par) to ye unnecessarily re-render na ho,
-// jab tak iske apne props (isActive, item, onClick) change na ho.
-const NavItem = memo(function NavItem({ item, index, isActive, onClick, isDropdownOpen }) {
+// React.memo: Agar parent re-render ho (mobile toggle etc) to ye component
+// tabhi re-render hoga jab iske apne props change ho. Performance optimization.
+const NavItem = memo(function NavItem({ item, index, isActive }) {
   return (
     <motion.li
-      // Ye list item hai, semantic HTML (ul > li) accessibility ke liye zaroori hai.
       custom={index}
       variants={itemVariants}
       initial="hidden"
@@ -40,59 +42,45 @@ const NavItem = memo(function NavItem({ item, index, isActive, onClick, isDropdo
       className="relative list-none"
     >
       <motion.div
-        // whileHover/whileTap se Framer Motion ka smooth scale + cursor feedback milta hai.
-        whileHover={{ scale: 1.06 }}
+        // whileHover: small scale + smooth easing, professional feel.
+        // whileTap: click feedback ke liye slight shrink.
+        whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
         <NavLink
           to={item.route}
-          // onClick prop se hum parent ko bata rahe hai ki kaunsa item click hua,
-          // taki agar ye "Courses" hai to dropdown toggle ho sake.
-          onClick={(e) => onClick(item, e)}
-          // aria-current accessibility ke liye - screen reader ko batata hai
-          // ki ye current/selected page hai.
+          // aria-current accessibility ke liye: screen reader ko active page batata hai.
           aria-current={isActive ? "page" : undefined}
-          // aria-expanded sirf dropdown wale item (Courses) ke liye relevant hai.
-          aria-haspopup={item.hasDropdown ? "true" : undefined}
-          aria-expanded={item.hasDropdown ? isDropdownOpen : undefined}
           className={({ isActive: navIsActive }) =>
             [
-              // px-5 py-2: professional padding, rounded-full: pill shape button look
-              "relative px-5 py-2 rounded-full text-sm md:text-[15px] font-semibold",
-              "transition-colors duration-300 outline-none",
-              // focus-visible: keyboard users ke liye clear focus ring (accessibility)
-              "focus-visible:ring-2 focus-visible:ring-cyan-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1437]",
-              "flex items-center gap-1 select-none",
+              // px-5 py-2: professional padding around each link
+              // rounded-full: pill shape for active state
+              // text-sm: clean, readable font size
+              "relative block px-5 py-2 rounded-full text-sm font-semibold",
+              // transition-colors: hover text/bg smoothly change hoga (no jarring flash)
+              "transition-colors duration-300 outline-none select-none",
+              // NO ring, NO focus-visible:ring — intentionally removed as per requirement
               navIsActive || isActive
-                ? "text-cyan-300" // Active state text color change
-                : "text-slate-200 hover:text-cyan-300",
+                ? // Active: background color + text color change. Ring nahi, border nahi.
+                  "bg-white/10 text-cyan-300"
+                : // Inactive: transparent bg, muted text, hover pe bg + text change
+                  "text-slate-300 hover:bg-white/8 hover:text-white",
             ].join(" ")
           }
         >
           {item.label}
-          {/* Courses ke saath ek chota arrow icon, dropdown khulne par rotate hota hai */}
-          {item.hasDropdown && (
-            <motion.svg
-              animate={{ rotate: isDropdownOpen ? 180 : 0 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="none"
-              aria-hidden="true"
-            >
-              <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-            </motion.svg>
-          )}
+          {/* Courses dropdown arrow REMOVED — ab yahan kuch nahi render hoga */}
         </NavLink>
 
-        {/* Ye active background pill hai - jab item active/selected hota hai
-            tab niche glowing rounded background animate ho ke aata hai. */}
+        {/* Active indicator: sirf subtle background pill.
+            NO ring, NO shadow glow, NO border animation.
+            layoutId use kiya hai taaki active pill smoothly ek link se doosre par move kare. */}
         {isActive && (
           <motion.span
-            layoutId="active-nav-pill" // layoutId se Framer Motion automatically smooth transition deta hai
-            className="absolute inset-0 -z-10 rounded-full bg-cyan-400/15 shadow-[0_0_18px_2px_rgba(34,211,238,0.45)] ring-1 ring-cyan-300/40"
+            layoutId="active-nav-pill"
+            className="absolute inset-0 -z-10 rounded-full bg-white/10"
+            // Spring transition: smooth aur natural movement
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
           />
         )}
