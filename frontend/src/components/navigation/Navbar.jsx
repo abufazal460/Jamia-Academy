@@ -114,7 +114,7 @@ function Navbar() {
     // ================================================================
     <header
       ref={navRef}
-      className="sticky top-0 z-50 w-full bg-black border-b border-white/8"
+      className="fixed top-0 z-50 w-full"
     >
       <motion.div
         // Navbar ka pura row — initial me thoda upar se fade-in hoga.
