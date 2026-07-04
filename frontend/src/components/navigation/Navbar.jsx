@@ -114,7 +114,7 @@ function Navbar() {
     // ================================================================
     <header
       ref={navRef}
-      className="sticky top-0 z-50 w-full bg-black border-b border-white/8"
+      className="fixed top-0 z-50 w-full"
     >
       <motion.div
         // Navbar ka pura row — initial me thoda upar se fade-in hoga.
@@ -177,8 +177,14 @@ function Navbar() {
 
         {/* ======================== RIGHT SIDE ======================== */}
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* WhatsApp button Desktop par right side me dikhega. */}
-          <WhatsAppButton />
+          {/* WhatsApp button:
+              hidden: Mobile (< lg) par completely hide kar do — sidabar me dikhega.
+              lg:flex: Sirf desktop (1024px+) par show hoga, right side me.
+              WHY: Mobile screen par navbar me WhatsApp aur hamburger dono saath ek cramped
+              layout banate the. Ab mobile me WhatsApp sirf sidebar ke andar milega. */}
+          <div className="hidden lg:flex">
+            <WhatsAppButton />
+          </div>
 
           {/* ======================== HAMBURGER BUTTON (MOBILE/TABLET) ======================== */}
           {/* lg:hidden: Desktop (1024px+) par hamburger hide ho jata hai. */}

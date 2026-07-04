@@ -35,8 +35,8 @@ export default function App() {
   return (
     <>
       {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
-      <Navbar />
       <Suspense fallback={<PageLoader />}>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -44,8 +44,8 @@ export default function App() {
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </Suspense>
       <Footer />
+      </Suspense>
     </>
   );
 }
