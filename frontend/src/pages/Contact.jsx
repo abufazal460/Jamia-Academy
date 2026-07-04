@@ -1,5 +1,5 @@
 import React from 'react'
-import SpaceBackground from '../components/backgrounds/SpaceBackground'
+import SpaceBackground from '../components/contactBackground/SpaceBackground'
 
 const Contact = () => {
   return (
