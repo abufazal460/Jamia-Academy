@@ -61,13 +61,18 @@ const itemVariants = {
   },
 };
 
-// WhatsApp button wrapper ke liye separate variant — sabse last me fade-in hoga.
+// WhatsApp button wrapper ke liye separate variant.
+// WHY delay: Ye nav items ke BAAD animate hoga. Nav items stagger me aate hai,
+// isliye WhatsApp ko thoda zyada delay diya hai taaki sequence premium lage.
+// y: 16 -> 0: Halka upar ki taraf uthta hua aata hai (smooth fade-up effect).
 const whatsappVariants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.35, ease: "easeOut", delay: 0.15 },
+    // navLinks.length * staggerChildren delay ke baad start hona chahiye.
+    // 5 links * 0.06 stagger + 0.1 delayChildren = ~0.4s. Extra 0.1s buffer.
+    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: 0.5 },
   },
 };
 
@@ -151,20 +156,31 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
                 ))}
               </ul>
 
-              {/* ---- WHATSAPP BUTTON (MOBILE — BOTTOM OF NAV LINKS) ----
-                  Desktop par WhatsApp Navbar ke right me hai.
-                  Mobile sidebar me ye navigation links ke NEECHE show hoga.
-                  WHY: Mobile pe sidebar bottom me call-to-action naturally milta hai
-                  aur user ko easily reach out karne ka option deta hai. */}
+              {/* ---- WHATSAPP BUTTON (MOBILE SIDEBAR — BELOW ALL NAV LINKS) ----
+                  WHY yahan hai: Desktop par ye Navbar ke right side me dikhta hai.
+                  Mobile par Navbar se WhatsApp bilkul remove kar diya gaya hai (hidden lg:flex).
+                  Isliye ye SIRF sidebar ke andar, nav links ke neeche dikhega.
+                  Animation: nav items ke baad smooth fade-up ke saath appear hoga. */}
               <motion.div
                 variants={whatsappVariants}
-                // mt-6: Nav links se thoda gap. pb-2: Bottom ke close nahi ho.
-                // flex justify-center: Button center align hoga.
-                className="mt-6 flex justify-center pb-2"
+                // mt-auto: Ye WhatsApp section ko sidebar ke bottom ki taraf push karta hai
+                //          jab content chhota ho. Natural sticky-bottom feel aata hai.
+                // pt-6: Nav links aur WhatsApp ke beech breathing room.
+                // border-t border-white/8: Subtle separator line — visually alag section banata hai.
+                // pb-4: Bottom se thoda space taaki button sidebar edge se chipka na lage.
+                // px-4: Horizontal padding — full-width feel ke saath proper gutters.
+                className="mt-auto border-t border-white/8 px-4 pb-4 pt-6"
               >
-                {/* WhatsAppButton already React.memo se wrapped hai aur icon animation bhi hai.
-                    Mobile me bhi wahi component reuse kar rahe hai — DRY principle. */}
-                <WhatsAppButton />
+                {/* "Connect with us" label — optional context deta hai user ko */}
+                <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-widest text-white/30">
+                  Connect with us
+                </p>
+
+                {/* w-full flex justify-center: Button horizontally center me aayega.
+                    WhatsAppButton pehle se React.memo wrapped hai — DRY principle follow kiya. */}
+                <div className="flex w-full justify-center">
+                  <WhatsAppButton />
+                </div>
               </motion.div>
             </nav>
           </motion.aside>
