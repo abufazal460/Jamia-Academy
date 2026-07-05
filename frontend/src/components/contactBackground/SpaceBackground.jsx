@@ -551,7 +551,7 @@ export default function SpaceBackground({ className = "" }) {
     >
       <canvas
         ref={canvasRef}
-        className={`absolute inset-0 h-full w-full transition-opacity duration-[1500ms] ease-out ${
+        className={`absolute inset-0 h-full w-full transition-opacity duration-[1.5s] ease-out ${
           mounted ? "opacity-100" : "opacity-0"
         }`}
       />
