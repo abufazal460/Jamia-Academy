@@ -70,15 +70,11 @@ export default function Gallery() {
     <section className="mx-auto w-full max-w-[1920px] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 2xl:px-16">
       {/* Page heading */}
       <header className="mx-auto mb-8 max-w-2xl text-center sm:mb-12">
-        <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-indigo-500">
-          Jamia Academy
-        </p>
+        
         <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
           Gallery
         </h1>
-        <p className="mt-3 text-base text-slate-500 sm:text-lg">
-          A look inside our classrooms, events, and learning tours.
-        </p>
+       
       </header>
 
       {/* Tabs */}
