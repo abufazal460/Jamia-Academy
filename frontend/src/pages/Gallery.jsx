@@ -4,7 +4,7 @@ import { GalleryTabs } from "../components/gallery/GalleryTabs";
 import { GalleryGrid } from "../components/gallery/GalleryGrid";
 import { Lightbox } from "../components/gallery/Lightbox";
 import { useGalleryImages } from "../hooks/useGalleryImages";
-import "../styles/gallery.css";
+import "../components/styles/gallery.css";
 
 /**
  * Gallery.jsx
