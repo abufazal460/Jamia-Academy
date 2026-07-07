@@ -30,7 +30,7 @@ function GalleryCardBase({ src, index, variants, onOpen }) {
       type="button"
       variants={variants}
       onClick={() => onOpen(index)}
-      className="gg-border-frame group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 text-left shadow-md transition-shadow duration-300 hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+      className="gg-border-frame group relative block aspect-[4/3] w-full overflow-hidden rounded-2xl bg-slate-100 text-left shadow-md transition-shadow duration-300 hover:shadow-2xl  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
       style={{ willChange: "transform" }}
       whileHover={{ scale: 1.035 }}
       whileTap={{ scale: 0.98 }}
@@ -45,7 +45,7 @@ function GalleryCardBase({ src, index, variants, onOpen }) {
           decoding="async"
           onLoad={() => setIsLoaded(true)}
           alt={`Jamia Academy gallery photo ${index + 1}`}
-          className={`h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-[1.06] ${
+          className={`h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-[1.06]  ${
             isLoaded ? "opacity-100" : "opacity-0"
           }`}
         />

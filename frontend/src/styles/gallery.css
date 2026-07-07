@@ -28,6 +28,7 @@
   z-index: -1;
   border-radius: inherit;
   opacity: 0;
+  border: 2px solid red;
   will-change: transform, opacity;
   transition: opacity 0.35s ease;
   background: conic-gradient(
@@ -46,6 +47,7 @@
 .gg-border-frame:focus-visible::before {
   opacity: 1;
   animation-play-state: running;
+ 
 }
 
 @keyframes gg-spin {
