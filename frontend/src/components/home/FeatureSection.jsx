@@ -16,7 +16,7 @@
  */
 
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import  { featuresData }  from "../../data/features.data";
+import { featuresData } from "../../data/features.data";
 import {
   VIEWPORT_REPLAY,
   textStaggerContainer,
@@ -27,7 +27,10 @@ import {
   cardHoverLift,
   iconHoverRotate,
 } from "../../animations/variants";
-import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../constants/layout.constants";
+import {
+  SECTION_CONTAINER,
+  SECTION_PADDING_Y,
+} from "../../constants/layout.constants";
 
 const FeatureSection = () => {
   return (
@@ -55,26 +58,14 @@ const FeatureSection = () => {
           className="pointer-events-none absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-teal-400/10 blur-[90px]"
         />
 
-        <div className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}>
+        <div
+          className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}
+        >
           {/* -------------------------------------------------------- */}
           {/* HEADING (is section ka apna intro — content brief mein   */}
           {/* explicit heading text nahi tha, isliye ek chhota eyebrow */}
           {/* label diya hai jo cards ka context set karta hai)        */}
           {/* -------------------------------------------------------- */}
-          <m.div
-            variants={textStaggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={VIEWPORT_REPLAY}
-            className="mb-[clamp(2rem,4vw,3.5rem)] max-w-xl"
-          >
-            {/* <m.h2
-              variants={headingRiseVariant}
-              className="text-[clamp(1.7rem,1.3rem+1.6vw,2.75rem)] font-extrabold leading-[1.15] tracking-tight text-white"
-            >
-              Why you&rsquo;ll love working with us
-            </m.h2> */}
-          </m.div>
 
           {/* -------------------------------------------------------- */}
           {/* FEATURE CARDS GRID — 1 col mobile, 2 col tablet, 3 desktop*/}
@@ -93,7 +84,11 @@ const FeatureSection = () => {
               const Icon = feature.icon; // react-icons component reference
 
               return (
-                <m.li key={feature.id} variants={getCardVariant(direction)} className="list-none">
+                <m.li
+                  key={feature.id}
+                  variants={getCardVariant(direction)}
+                  className="list-none"
+                >
                   <m.article
                     whileHover={cardHoverLift}
                     tabIndex={0}
