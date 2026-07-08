@@ -37,7 +37,7 @@ function GalleryCardBase({ src, index, variants, onOpen }) {
       transition={{ type: "spring", stiffness: 260, damping: 20 }}
       aria-label={`Open image ${index + 1} in full screen`}
     >
-      <span className="gg-border-inner block">
+      <span className="gg-border-inner block ">
         {!isLoaded && <ImageSkeleton />}
         <img
           src={src}
@@ -45,7 +45,7 @@ function GalleryCardBase({ src, index, variants, onOpen }) {
           decoding="async"
           onLoad={() => setIsLoaded(true)}
           alt={`Jamia Academy gallery photo ${index + 1}`}
-          className={`h-full w-full object-cover transition-all duration-500 ease-out group-hover:scale-[1.06]  ${
+          className={`h-full w-full object-cover transition-all  duration-500 ease-out group-hover:scale-[1.06]  ${
             isLoaded ? "opacity-100" : "opacity-0"
           }`}
         />
