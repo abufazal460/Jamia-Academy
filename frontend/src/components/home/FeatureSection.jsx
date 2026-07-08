@@ -16,7 +16,7 @@
  */
 
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import  { featuresData }  from "../../data/features.data";
+import  { featuresData }  from "../../data/tem.data";
 import {
   VIEWPORT_REPLAY,
   textStaggerContainer,
