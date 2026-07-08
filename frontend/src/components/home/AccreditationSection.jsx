@@ -82,13 +82,13 @@ const AccreditationSection = () => {
           >
             <m.h2
               variants={headingRiseVariant}
-              className="text-[clamp(1.9rem,1.4rem+2vw,3.25rem)] font-extrabold leading-[1.1] tracking-tight text-white"
+              className="text-[clamp(1.9rem,1.4rem+2.5vw,4rem)] font-extrabold leading-[1.1] tracking-tight text-white"
             >
               Our Accreditations
             </m.h2>
             <m.p
               variants={paragraphRiseVariant}
-              className="mt-5 max-w-md text-[clamp(1rem,0.9rem+0.3vw,1.125rem)] leading-relaxed text-slate-300"
+              className="mt-5 max-w-md text-[clamp(1rem,0.9rem+1vw,2rem)] leading-relaxed text-slate-300"
             >
               We are proud to be recognized by leading industry organizations
             </m.p>
