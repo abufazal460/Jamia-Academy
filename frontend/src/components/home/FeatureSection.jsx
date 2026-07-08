@@ -68,12 +68,12 @@ const FeatureSection = () => {
             viewport={VIEWPORT_REPLAY}
             className="mb-[clamp(2rem,4vw,3.5rem)] max-w-xl"
           >
-            <m.h2
+            {/* <m.h2
               variants={headingRiseVariant}
               className="text-[clamp(1.7rem,1.3rem+1.6vw,2.75rem)] font-extrabold leading-[1.15] tracking-tight text-white"
             >
               Why you&rsquo;ll love working with us
-            </m.h2>
+            </m.h2> */}
           </m.div>
 
           {/* -------------------------------------------------------- */}
