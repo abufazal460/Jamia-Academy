@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
+import { IntroLoader, useAppReady } from "./components/introLoader";
 
 // ====================================================================
 // App.jsx
@@ -32,20 +33,23 @@ function PageLoader() {
 }
 
 export default function App() {
+  const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
   return (
     <>
       {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
-      <Suspense fallback={<PageLoader />}>
-      <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/course" element={<Course />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      <Footer />
-      </Suspense>
+      <IntroLoader appReady={appReady}>
+        <Suspense fallback={<PageLoader />}>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/course" element={<Course />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+          <Footer />
+        </Suspense>
+      </IntroLoader>
     </>
   );
 }
