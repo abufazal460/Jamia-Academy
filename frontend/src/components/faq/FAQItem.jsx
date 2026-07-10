@@ -94,7 +94,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
         border transition-all duration-300
         ${
           isOpen
-            ? "border-cyan-500/50 bg-white/[0.07] shadow-lg shadow-cyan-500/10"
+            ? "border-white/10 bg-white/[0.07] shadow-lg shadow-cyan-500/10"
             : "border-white/10 bg-white/[0.04] hover:border-white/20 hover:bg-white/[0.06]"
         }
       `}
