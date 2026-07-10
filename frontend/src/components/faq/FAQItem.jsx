@@ -144,7 +144,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             className={`transition-colors duration-300 ${
-              isOpen ? "text-cyan-400" : "text-slate-500 group-hover:text-slate-300"
+              isOpen ? "text-slate-500" : "text-slate-500 group-hover:text-slate-300"
             }`}
             aria-hidden="true" // decorative icon — screen readers skip karein
           >

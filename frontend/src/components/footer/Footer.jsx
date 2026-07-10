@@ -201,7 +201,7 @@ const Footer = () => {
       // viewport.once true -> animation sirf ek baar chale, baar baar repeat na ho
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true , amount: 0.15 }}
       variants={footerContainerVariant}
       className="relative bg-[#0a0f1f] text-slate-300 pt-16 pb-8 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden"
       aria-label="Site footer"
@@ -264,7 +264,7 @@ const Footer = () => {
             variants={listVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ amount: 0.3 }}
             className="flex flex-col gap-3"
           >
             {QUICK_LINKS.map((link) => (
@@ -297,7 +297,7 @@ const Footer = () => {
             variants={listVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ amount: 0.3 }}
             className="flex flex-col gap-3"
           >
             {POPULAR_COURSES.map((course) => (
@@ -330,7 +330,7 @@ const Footer = () => {
             variants={listVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ amount: 0.3 }}
             className="flex flex-col gap-4 text-sm sm:text-[15px] text-slate-400"
           >
             {/* Location — clickable, Google Maps khulta hai naye tab mein */}
@@ -409,7 +409,7 @@ const Footer = () => {
             variants={govLogoRowVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ amount: 0.3 }}
             className="flex flex-wrap items-start justify-center lg:justify-end gap-6 sm:gap-8"
           >
             {GOVERNMENT_LOGOS.map((gov) => (
