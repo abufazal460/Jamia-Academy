@@ -117,20 +117,7 @@ const FAQ = () => {
             text-center mt-10 sm:mt-12
             text-sm sm:text-base text-slate-500
           "
-        >
-          <a
-            href="#/contact"
-            className="
-    text-cyan-400 hover:text-cyan-300
-    underline underline-offset-4
-    transition-colors duration-300
-    focus:outline-none focus:ring-2
-    focus:ring-cyan-400/60 rounded
-  "
-          >
-            Humse contact karein
-          </a>
-        </motion.p>
+        ></motion.p>
       </div>
     </section>
   );
