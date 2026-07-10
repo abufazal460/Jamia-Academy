@@ -6,19 +6,14 @@ import { WORD_ONE, WORD_TWO, buildExplosionVector, LUXURY_EASE } from './animati
 import './introLoader.css';
 
 const STORAGE_KEY = 'jamia:intro-played';
-
-// Timeline constants (ms) — drive the orchestration without setTimeout drift
-// by anchoring everything to onAnimationComplete callbacks where possible,
-// and to explicit waits only where the spec calls for a fixed pause.
-const LOGO_SETTLE_DELAY = 1650; // after last letter's delay+duration roughly resolves
-const POST_SHINE_PAUSE = 500; // 400–600ms per spec
-const EXPLOSION_DURATION = 620; // 500–700ms per spec
+const LOGO_SETTLE_DELAY = 2000; // letters finish arriving (~1.8-2s with new config)
+const EXPLOSION_DURATION = 650;
 
 /**
  * IntroLoader
- * Orchestrates: letters in -> logo settle -> shine -> pause -> explode -> shutter exit.
- * Unmounts permanently once played. Waits for BOTH the timeline to finish
- * AND the `appReady` signal before exiting.
+ * entering -> settled -> shining(loop, waits on appReady) -> exploding -> exiting -> done
+ * Blast NEVER fires until appReady is true — enforced by gating exploding
+ * transition strictly behind the ready-check effect below.
  */
 export default function IntroLoader({ appReady = true, children }) {
   const prefersReducedMotion = useReducedMotion();
@@ -31,25 +26,21 @@ export default function IntroLoader({ appReady = true, children }) {
     }
   });
 
-  const [stage, setStage] = useState(
-    alreadyPlayed ? 'done' : 'entering'
-  ); // entering -> settled -> shining -> pausing -> exploding -> exiting -> done
-  const [timelineComplete, setTimelineComplete] = useState(alreadyPlayed);
+  const [stage, setStage] = useState(alreadyPlayed ? 'done' : 'entering');
   const timers = useRef([]);
+  const mounted = useRef(true);
 
-  const wordOneLetters = useMemo(
-    () => WORD_ONE.map((l, i) => ({ ...l, key: `w1-${i}` })),
-    []
-  );
-  const wordTwoLetters = useMemo(
-    () => WORD_TWO.map((l, i) => ({ ...l, key: `w2-${i}` })),
-    []
-  );
+  const wordOneLetters = useMemo(() => WORD_ONE.map((l, i) => ({ ...l, key: `w1-${i}` })), []);
+  const wordTwoLetters = useMemo(() => WORD_TWO.map((l, i) => ({ ...l, key: `w2-${i}` })), []);
 
   const explosionVectors = useMemo(() => {
     const all = [...wordOneLetters, ...wordTwoLetters];
     return all.map((_, i) => buildExplosionVector(i));
   }, [wordOneLetters, wordTwoLetters]);
+
+  const safeSetStage = (next) => {
+    if (mounted.current) setStage(next);
+  };
 
   const clearAllTimers = () => {
     timers.current.forEach(clearTimeout);
@@ -57,72 +48,74 @@ export default function IntroLoader({ appReady = true, children }) {
   };
 
   useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+      clearAllTimers();
+    };
+  }, []);
+
+  // entering -> settled -> shining
+  useEffect(() => {
     if (alreadyPlayed) return undefined;
 
     if (prefersReducedMotion) {
-      // Simple fade path: skip choreography entirely.
-      const t = setTimeout(() => setStage('shutter-ready'), 400);
+      const t = setTimeout(() => safeSetStage('exiting-check'), 400);
       timers.current.push(t);
-      return clearAllTimers;
+      return () => clearTimeout(t);
     }
 
-    // Letters arrive, then settle as a whole logo.
-    const t1 = setTimeout(() => setStage('settled'), LOGO_SETTLE_DELAY);
+    const t1 = setTimeout(() => safeSetStage('settled'), LOGO_SETTLE_DELAY);
     timers.current.push(t1);
-    return clearAllTimers;
+    return () => clearTimeout(t1);
   }, [alreadyPlayed, prefersReducedMotion]);
 
   useEffect(() => {
     if (stage !== 'settled') return undefined;
-    // Kick off the shine shortly after the logo-level settle fade/blur/scale resolves.
-    const t = setTimeout(() => setStage('shining'), 550);
+    const t = setTimeout(() => safeSetStage('shining'), 400);
     timers.current.push(t);
-    return clearAllTimers;
+    return () => clearTimeout(t);
   }, [stage]);
 
-  const handleShineComplete = () => {
-    setStage('pausing');
-    const t = setTimeout(() => setStage('exploding'), POST_SHINE_PAUSE);
-    timers.current.push(t);
-  };
+  // Gate: blast can ONLY start from 'shining' (or reduced-motion's check stage)
+  // AND only once appReady flips true. No fixed timer substitutes for this check.
+  useEffect(() => {
+    if (!appReady) return undefined;
+    if (stage === 'shining') {
+      safeSetStage('exploding');
+    } else if (stage === 'exiting-check') {
+      safeSetStage('shutter-ready');
+    }
+  }, [appReady, stage]);
 
   useEffect(() => {
     if (stage !== 'exploding') return undefined;
-    const t = setTimeout(() => setStage('shutter-ready'), EXPLOSION_DURATION);
+    const t = setTimeout(() => safeSetStage('shutter-ready'), EXPLOSION_DURATION);
     timers.current.push(t);
-    return clearAllTimers;
+    return () => clearTimeout(t);
   }, [stage]);
 
   useEffect(() => {
     if (stage === 'shutter-ready') {
-      setTimelineComplete(true);
+      safeSetStage('exiting');
     }
   }, [stage]);
-
-  // Only exit once BOTH the timeline has finished AND the app has signaled ready.
-  useEffect(() => {
-    if (timelineComplete && appReady && stage !== 'exiting' && stage !== 'done') {
-      setStage('exiting');
-    }
-  }, [timelineComplete, appReady, stage]);
 
   const handleExitComplete = () => {
     try {
       sessionStorage.setItem(STORAGE_KEY, '1');
     } catch {
-      /* sessionStorage unavailable — non-fatal, loader will just replay */
+      /* non-fatal */
     }
-    setStage('done');
+    safeSetStage('done');
   };
-
-  useEffect(() => clearAllTimers, []);
 
   const isExploding = stage === 'exploding' || stage === 'shutter-ready' || stage === 'exiting';
   const logoSettled = stage !== 'entering';
+  const isShining = stage === 'shining'; // shine loops only while genuinely waiting
 
   return (
     <>
-      {/* Website renders underneath immediately — the overlay only reveals it. */}
       {children}
 
       <AnimatePresence onExitComplete={handleExitComplete}>
@@ -158,7 +151,6 @@ export default function IntroLoader({ appReady = true, children }) {
                     from={l.from}
                     blurFrom={l.blurFrom}
                     delay={l.delay}
-                    duration={l.duration}
                     phase={isExploding ? 'exploding' : 'enter'}
                     explosionVector={explosionVectors[i]}
                     reducedMotion={prefersReducedMotion}
@@ -173,7 +165,6 @@ export default function IntroLoader({ appReady = true, children }) {
                     from={l.from}
                     blurFrom={l.blurFrom}
                     delay={l.delay}
-                    duration={l.duration}
                     phase={isExploding ? 'exploding' : 'enter'}
                     explosionVector={explosionVectors[wordOneLetters.length + i]}
                     reducedMotion={prefersReducedMotion}
@@ -182,11 +173,7 @@ export default function IntroLoader({ appReady = true, children }) {
               </div>
 
               <div className="intro-shine-mask" aria-hidden="true">
-                <Shine
-                  play={stage === 'shining' || stage === 'pausing' || isExploding}
-                  onComplete={handleShineComplete}
-                  reducedMotion={prefersReducedMotion}
-                />
+                <Shine looping={isShining} reducedMotion={prefersReducedMotion} />
               </div>
             </motion.div>
           </motion.div>

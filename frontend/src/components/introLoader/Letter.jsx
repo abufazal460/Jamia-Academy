@@ -1,19 +1,12 @@
 import { motion } from 'motion/react';
 import { ENTRANCE_SPRING, LUXURY_EASE } from './animationConfig';
 
-/**
- * Letter
- * A single independent character. Owns its own entrance animation state,
- * its own explosion animation state, and nothing else. No word-level
- * wrapper animates — every letter is its own Motion component per spec.
- */
 export default function Letter({
   char,
   from,
   blurFrom,
   delay,
-  duration,
-  phase, // 'idle' | 'enter' | 'settled' | 'exploding'
+  phase,
   explosionVector,
   reducedMotion,
   isSpace,
@@ -36,7 +29,6 @@ export default function Letter({
     );
   }
 
-  // Entrance state
   const entranceInitial = {
     opacity: 0,
     x: from.x,
@@ -70,16 +62,8 @@ export default function Letter({
 
   const transition =
     phase === 'exploding'
-      ? {
-          duration: 0.6,
-          delay: explosionVector?.delay ?? 0,
-          ease: LUXURY_EASE,
-        }
-      : {
-          ...ENTRANCE_SPRING,
-          delay: delay / 1000,
-          duration,
-        };
+      ? { duration: 0.6, delay: explosionVector?.delay ?? 0, ease: LUXURY_EASE }
+      : { ...ENTRANCE_SPRING, delay: delay / 1000 };
 
   return (
     <motion.span
