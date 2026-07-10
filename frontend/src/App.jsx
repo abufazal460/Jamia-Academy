@@ -18,19 +18,6 @@ const Course = lazy(() => import("./pages/Course"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Contact = lazy(() => import("./pages/Contact"));
 
-// Simple, lightweight fallback loader - Suspense ke andar dikhta hai
-// jab tak lazy chunk download/parse ho raha ho.
-function PageLoader() {
-  return (
-    <div
-      className="flex min-h-[50vh] items-center justify-center"
-      role="status"
-      aria-live="polite"
-    >
-      <span className="text-sm font-medium text-slate-400">Loading...</span>
-    </div>
-  );
-}
 
 export default function App() {
   const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
@@ -38,7 +25,7 @@ export default function App() {
     <>
       {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
       <IntroLoader appReady={appReady}>
-        <Suspense fallback={<PageLoader />}>
+        <Suspense>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />

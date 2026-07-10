@@ -70,16 +70,18 @@
   top: 0;
   bottom: 0;
   left: 0;
-  width: 40%;
+  width: 55%;
   background: linear-gradient(
     100deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.05) 35%,
-    rgba(255, 255, 255, 0.55) 50%,
-    rgba(255, 255, 255, 0.05) 65%,
+    rgba(255, 255, 255, 0.03) 30%,
+    rgba(255, 255, 255, 0.22) 48%,
+    rgba(255, 255, 255, 0.28) 50%,
+    rgba(255, 255, 255, 0.22) 52%,
+    rgba(255, 255, 255, 0.03) 70%,
     rgba(255, 255, 255, 0) 100%
   );
-  filter: blur(2px);
+  filter: blur(6px);
   will-change: transform;
 }
 
