@@ -48,7 +48,7 @@ const FAQHeader = () => {
       variants={headerContainerVariant}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{  amount: 0.3 }}
       // text-center — sab kuch center mein, consistent across all screen sizes
       className="text-center mb-12 sm:mb-16 lg:mb-20"
     >

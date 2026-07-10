@@ -85,7 +85,7 @@ const FAQ = () => {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{  amount: 0.1 }}
           // flex-col + gap — cards ke beech spacing
           className="flex flex-col gap-3 sm:gap-4"
           // ul/div — ye list hai isliye role="list" add karna better practice hai
@@ -111,26 +111,13 @@ const FAQ = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           className="
             text-center mt-10 sm:mt-12
             text-sm sm:text-base text-slate-500
           "
-        >
-          <a
-            href="#/contact"
-            className="
-    text-cyan-400 hover:text-cyan-300
-    underline underline-offset-4
-    transition-colors duration-300
-    focus:outline-none focus:ring-2
-    focus:ring-cyan-400/60 rounded
-  "
-          >
-            Humse contact karein
-          </a>
-        </motion.p>
+        ></motion.p>
       </div>
     </section>
   );
