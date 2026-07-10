@@ -1,6 +1,7 @@
 import AccreditationSection from "../components/home/AccreditationSection";
 import FeatureSection from "../components/home/FeatureSection";
 import LiquidEther from "../components/home/LiquidEther";
+import FAQ from "../components/faq/FAQ"
 
 const Home = () => {
   return (
@@ -35,6 +36,8 @@ const Home = () => {
 
       {/* Section 01 ke neeche — Section 02 */}
       <FeatureSection />
+
+      <FAQ />
     </main>
   );
 };
