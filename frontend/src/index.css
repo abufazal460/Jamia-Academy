@@ -3,6 +3,11 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+@font-face {
+  font-family: fa;
+  src: url("/frontend/public/fonts/Inter.zip");
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
