@@ -1,100 +1,79 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { GalleryCard } from "./GalleryCard";
-import { shuffleArray } from "../../utils/shuffleArray";
-
-// Panch possible entry directions — "center" ka matlab hai halka zoom-in
-// bina kisi X/Y offset ke (jaise card apni jagah se pop-in ho raha ho).
-const DIRECTIONS = ["top", "bottom", "left", "right", "center"];
-
-function buildOffset(direction) {
-  const THROW_DISTANCE = 90; // px, kitni door se card fly-in karega
-
-  switch (direction) {
-    case "top":
-      return { x: 0, y: -THROW_DISTANCE, rotate: -6 };
-    case "bottom":
-      return { x: 0, y: THROW_DISTANCE, rotate: 6 };
-    case "left":
-      return { x: -THROW_DISTANCE, y: 0, rotate: -8 };
-    case "right":
-      return { x: THROW_DISTANCE, y: 0, rotate: 8 };
-    case "center":
-    default:
-      return { x: 0, y: 0, rotate: 0 };
-  }
-}
+import { useIsMobile } from "../../hooks/useIsMobile";
 
 /**
  * GalleryGrid.jsx
  * -----------------------------------------------------------------------
- * Hinglish:
- *  - Grid responsiveness pure Tailwind breakpoints se: mobile 1 column,
- *    tablet(sm) 2, laptop(lg) 3, desktop(xl) 4 — jaisa brief me maanga
- *    gaya. `gap` fixed rakha hai taaki reflow/CLS na ho.
- *  - Entry animation "card game" jaisa feel dene ke liye har image ko
- *    RANDOM direction (top/bottom/left/right/center) aur RANDOM chhota
- *    delay diya jata hai — normal Framer Motion stagger sequential order
- *    follow karta hai, isliye humne delay khud shuffle karke assign kiya
- *    hai taaki order bhi random lage, sirf direction hi nahi.
- *  - `useMemo` on `images` dependency: jab tab switch hota hai (images
- *    array badalta hai) tabhi naye random variants generate hote hain —
- *    beech-beech me unrelated re-renders par nahi (performance).
+ * Hinglish — YE FILE OPTIMIZE HUI HAI (layout/grid classes SAME rakhi hain,
+ * sirf animation weight kam ki gayi hai):
+ *
+ * 1. SHUFFLE/FLY-IN ANIMATION COMPLETELY HATA DIYA:
+ *    Pehle har card random direction (top/bottom/left/right/center) se
+ *    fly-in hota tha with rotate + x/y throw + scale 0.85->1 — ye sabse
+ *    zyada CPU-heavy part tha (139 cards, har ek apna alag transform
+ *    animation chala raha tha). Brief ke rules se match karte hue:
+ *      - Desktop: sirf "opacity 0->1 + halka translateY(6px->0)"
+ *      - Mobile: koi entry animation nahi, seedha visible (fade bhi nahi,
+ *        taaki 768px se neeche zero animation overhead ho — brief point 9)
+ *
+ * 2. `useIsMobile()` hook se decide hota hai kaunsa variant use karna hai.
+ *    Ye check render ke time hota hai, condition ke andar koi expensive
+ *    calculation nahi — bas ek boolean branch.
+ *
+ * 3. Random delay/shuffleArray wala poora system HATA diya — ab sabka
+ *    delay bahut chhota aur uniform hai (index * 0.015s, max ~2s total
+ *    ke bajaye), koi Math.random() calls nahi bache render path me.
+ *
+ * 4. `staggerChildren` bhi minimal (0.015s) — pehle wale se ~80%+ halka,
+ *    jaisa desktop ke liye "reduce complexity by 80%" point maanga gaya.
+ *
+ * 5. Grid classes (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+ *    xl:grid-cols-4`) BILKUL WAISI HI RAKHI GAYI HAIN — layout/design
+ *    change nahi kiya, sirf jo animate ho raha tha wo halka kiya.
  */
 export function GalleryGrid({ images, onOpenImage }) {
-  const { containerVariants, itemVariants } = useMemo(() => {
-    // Har image index ke liye ek random direction choose karo
-    const perItemDirection = images.map(
-      () => DIRECTIONS[Math.floor(Math.random() * DIRECTIONS.length)]
-    );
+  const isMobile = useIsMobile();
 
-    // Delay values ko evenly-spaced generate karke shuffle karo — isse
-    // total animation duration predictable rehta hai (koi bhi delay bahut
-    // zyada lamba nahi hoga) lekin kis card ka number kab aayega ye random hai.
-    const STEP = 0.035; // seconds
-    const orderedDelays = images.map((_, i) => i * STEP);
-    const shuffledDelays = shuffleArray(orderedDelays);
-
-    const item = images.map((_, index) => {
-      const offset = buildOffset(perItemDirection[index]);
+  const { containerVariants, itemVariant } = useMemo(() => {
+    if (isMobile) {
+      // Mobile: koi transition/animation nahi — turant visible.
+      // (Brief point 3 & 9: "Remove shuffle completely" + "disable every
+      // heavy animation" niche 768px.)
       return {
-        hidden: {
-          opacity: 0,
-          x: offset.x,
-          y: offset.y,
-          rotate: offset.rotate,
-          scale: 0.85,
-        },
+        containerVariants: { hidden: {}, show: {} },
+        itemVariant: { hidden: { opacity: 1 }, show: { opacity: 1 } },
+      };
+    }
+
+    // Desktop: sirf fade + halka translateY, jaisa brief me example diya:
+    // "opacity 0 -> 1, translateY 6px -> 0, duration ~0.35-0.45s, ease-out"
+    return {
+      containerVariants: {
+        hidden: {},
+        show: { transition: { staggerChildren: 0.015 } },
+      },
+      itemVariant: {
+        hidden: { opacity: 0, y: 6 },
         show: {
           opacity: 1,
-          x: 0,
           y: 0,
-          rotate: 0,
-          scale: 1,
-          transition: {
-            delay: shuffledDelays[index],
-            duration: 0.55,
-            ease: [0.22, 1, 0.36, 1],
-          },
+          transition: { duration: 0.4, ease: "easeOut" },
         },
-      };
-    });
-
-    const container = {
-      hidden: {},
-      show: { transition: { staggerChildren: 0 } }, // stagger manually via per-item delay
+      },
     };
-
-    return { containerVariants: container, itemVariants: item };
-  }, [images]);
+  }, [isMobile]);
 
   return (
     <motion.div
-      key={images.length} // tab switch par animation fresh se replay ho
+      key={images.length}
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true, amount: 0.05 }}
+      /* Responsive Grid */
+      /* Mobile 1 column, tablet 2, laptop 3, desktop 4 — jaisa design pehle se tha */
       className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3 xl:grid-cols-4 xl:gap-6"
     >
       {images.map((src, index) => (
@@ -102,7 +81,7 @@ export function GalleryGrid({ images, onOpenImage }) {
           key={src}
           src={src}
           index={index}
-          variants={itemVariants[index]}
+          variants={itemVariant}
           onOpen={onOpenImage}
         />
       ))}
