@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import { GalleryCard } from "./GalleryCard";
-import { useIsMobile } from "../../hooks/useIsMobile";
+import { useIsMobile } from "../../hooks/useismobile";
 
 /**
  * GalleryGrid.jsx
