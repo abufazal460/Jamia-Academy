@@ -217,7 +217,7 @@ const Footer = () => {
         <motion.div variants={sectionVariant} className="flex flex-col gap-5">
           {/* Logo image — white rounded card jaisa look reference mein hai */}
           <div className="bg-white rounded-xl px-4 py-2 w-fit">
-            <img
+            <img 
               src={logo}
               alt="Jamia Academy Logo"
               className="h-12 sm:h-14 w-auto object-contain"
