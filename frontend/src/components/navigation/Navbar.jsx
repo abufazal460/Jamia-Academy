@@ -138,7 +138,7 @@ function Navbar() {
           animate="visible"
           aria-label="Jamia Academy — Home"
           // outline-none: No browser default outline. NO ring added (as per requirement).
-          className="flex shrink-0 items-center gap-2 outline-none"
+          className="flex shrink-0 items-center gap-2 outline-none border-none"
         >
           <img
             src={logo}
