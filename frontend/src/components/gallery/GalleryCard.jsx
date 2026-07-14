@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useRef } from "react";
 import { motion } from "framer-motion";
 
 /**
@@ -43,43 +43,47 @@ import { motion } from "framer-motion";
  *    wahi sabse CPU-heavy part tha, GalleryGrid.jsx me hata diya gaya hai.
  */
 function GalleryCardBase({ src, index, variants, onOpen }) {
+  const cardRef = useRef(null);
   return (
     <motion.button
+      ref={cardRef}
       type="button"
       variants={variants}
       onClick={() => onOpen(index)}
       /* Premium card container: */
       /* rounded corners + soft shadow + glass border + clean overflow */
       /* Hover: sirf border width/glow/scale — kuch aur nahi */
-      className="group relative block aspect-[4/3] w-full overflow-hidden rounded-4xl bg-slate-100 text-left shadow-md shadow-black/10 outline-none transition-[border-color,box-shadow,transform] duration-200 ease-out  hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-[1.01] focus:outline-none focus-visible:outline-none active:scale-[0.99]"
+      className="group relative block aspect-[4/3] w-full  overflow-hidden rounded-4xl bg-slate-100 text-left shadow-md shadow-black/10 outline-none transition-[border-color,box-shadow,transform,scale] duration-200 ease-out  hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-[1.05] focus:outline-none focus-visible:outline-none active:scale-[0.99]"
       aria-label={`Open image ${index + 1} in full screen`}
     >
-      
       {/* border animation  */}
-      <div className="animate-gradient p-[5px] absolute inset-0 z-0 opacity-0 group-hover:opacity-100 rounded-4xl "> </div>
-        {/* inner card  */}
-      <div className="relative z-10 rounded-[inherit] h-full w-full p-[3px] bg-[linear-gradient(45deg,purple,pink,orange,blue)] hover:bg-none overflow-hidden">
-      {/* Image: load hote hi simple opacity fade, kuch aur nahi */}
-          <img
-        src={src}
-        loading="lazy"
-        decoding="async"
-        fetchPriority={index < 4 ? "high" : "auto"}
-        /* Pehli visible row ki images ko high priority di gayi hai —
+      <div className="animate-gradient pointer-events-none p-[5px]  absolute inset-0 z-0 rounded-4xl overflow-hidden"></div>
+      {/* inner card  */}
+      <div className="gallery-inner relative z-10 rounded-[inherit] h-full w-full p-[3px] overflow-hidden">
+        {/* Image: load hote hi simple opacity fade, kuch aur nahi */}
+        <img
+          src={src}
+          loading="lazy"
+          decoding="async"
+          fetchPriority={index < 4 ? "high" : "auto"}
+          /* Pehli visible row ki images ko high priority di gayi hai —
            isse LCP (Largest Contentful Paint) fast hota hai, baaki
            sab default/auto par lazy hi rehti hain. */
-        alt={`Jamia Academy gallery photo ${index + 1}`}
-        onLoad={(e) => {
-          // Yaha sirf ek inline style se opacity fade kiya gaya hai —
-          // koi React state update nahi hota (extra re-render avoid),
-          // seedha DOM par style set hota hai taaki re-render zero rahe.
-          e.currentTarget.style.opacity = "1";
-        }}
-        style={{ opacity: 0, transition: "opacity 0.35s ease-out" }}
-        className="h-full w-full object-cover rounded-4xl"
-      />
+          alt={`Jamia Academy gallery photo ${index + 1}`}
+          onLoad={(e) => {
+            // Image ko smoothly visible karo
+            e.currentTarget.style.opacity = "1";
+
+            // Card ko inform karo image ready hai
+            // Iske baad hi border aur wrapper activate honge
+
+            cardRef.current?.setAttribute("data-loaded", "true");
+          }}
+          style={{ opacity: 0, transition: "opacity 0.35s ease-out" }}
+          className="gallery-image h-full w-full object-cover rounded-4xl"
+        />
+        
       </div>
-     
     </motion.button>
   );
 }
