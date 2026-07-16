@@ -1,4 +1,4 @@
-import { memo, useRef } from "react";
+import { memo, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 /**
@@ -44,6 +44,14 @@ import { motion } from "framer-motion";
  */
 function GalleryCardBase({ src, index, variants, onOpen }) {
   const cardRef = useRef(null);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    if (imageRef.current?.complete) {
+      imageRef.current.style.opacity = "1";
+      cardRef.current?.setAttribute("data-loaded", "true");
+    }
+  }, []);
   return (
     <motion.button
       ref={cardRef}
@@ -63,6 +71,7 @@ function GalleryCardBase({ src, index, variants, onOpen }) {
         {/* Image: load hote hi simple opacity fade, kuch aur nahi */}
         <img
           src={src}
+          ref={imageRef}
           loading="lazy"
           decoding="async"
           fetchPriority={index < 4 ? "high" : "auto"}
@@ -79,10 +88,9 @@ function GalleryCardBase({ src, index, variants, onOpen }) {
 
             cardRef.current?.setAttribute("data-loaded", "true");
           }}
-          style={{ opacity: 0, transition: "opacity 0.35s ease-out" }}
+          // style={{ opacity: 0, transition: "opacity 0.35s ease-out" }}
           className="gallery-image h-full w-full object-cover rounded-4xl"
         />
-        
       </div>
     </motion.button>
   );
