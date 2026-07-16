@@ -40,18 +40,18 @@ import { GraduationCap, MonitorSmartphone, ShieldCheck, ImageOff } from "lucide-
 // (Shared components jaise SectionContainer abhi nahi bane — Phase 3+ me plug honge)
 
 // 4. Hooks
-import useGSAPAnimation from "@/hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
-import useMediaQuery from "@/hooks/useMediaQuery";
+import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
+import useMediaQuery from "../../../hooks/useMediaQuery";
 
 // 5. Utilities
-import { splitIntoWords } from "@/utils/textHelpers";
-import { cn } from "@/utils/helpers";
-import { getImageProps, getFallbackImage } from "@/utils/imageHelpers";
+import { splitIntoWords } from "../../../utils/textHelpers";
+import { cn } from "../../../utils/helpers";
+import { getImageProps, getFallbackImage } from "../../../utils/imageHelpers";
 
 // 6. Constants / Data
-import { aboutDescription, features } from "@/data/aboutData";
-import { gsapEase } from "@/constants/animations";
+import { aboutDescription, features } from "../../../data/aboutData";
+import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles
 // (Sirf Tailwind utility classes)
