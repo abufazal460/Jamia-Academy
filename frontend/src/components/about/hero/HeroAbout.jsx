@@ -40,15 +40,15 @@ import { Play, ChevronDown } from "lucide-react";
 // SectionContainer/AnimatedButton jaisi shared components yaha plug hongi)
 
 // 4. Hooks
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { splitIntoCharacters, splitIntoWords } from "@/utils/textHelpers";
-import { cn } from "@/utils/helpers";
+import { splitIntoCharacters, splitIntoWords } from "../../../utils/textHelpers";
+import { cn } from "../../../utils/helpers";
 
 // 6. Constants / Data
-import { hero } from "@/data/aboutData";
-import { gsapEase } from "@/constants/animations";
+import { hero } from "../../../data/aboutData";
+import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles
 // (Sirf Tailwind utility classes — koi separate CSS file nahi)
