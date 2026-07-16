@@ -900,7 +900,7 @@
     #2563eb 355deg,
     transparent 360deg
   );
-  animation:rotateBorder 2.5s linear infinite;
+  animation:none;
   transition:opacity .25s ease;
 }
 
@@ -925,6 +925,7 @@
 
 [data-loaded="true"]:hover .animate-gradient{
   opacity:1;
+   animation:rotateBorder 2.5s linear infinite;
 }
 
 
