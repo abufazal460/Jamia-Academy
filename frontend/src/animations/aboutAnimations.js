@@ -7,7 +7,7 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { duration, delay, stagger, easing, gsapEase } from "@/constants/animations";
+import { duration, delay, stagger, easing, gsapEase } from "../constants/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
