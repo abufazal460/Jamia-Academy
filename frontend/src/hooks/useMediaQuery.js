@@ -5,7 +5,7 @@
 // Dependencies: react, constants/breakpoints.js
 
 import { useEffect, useState } from "react";
-import { breakpoints } from "@/constants/breakpoints";
+import { breakpoints } from "../constants/breakpoints";
 
 /**
  * useMediaQuery
