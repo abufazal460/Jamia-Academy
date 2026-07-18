@@ -25,7 +25,7 @@ import {
   StatsSection,
   FacultyGrid,
   WhyChooseUs,
-} from "@/components/about";
+} from "../components/about";
 // import {
 //   TimelineSection,
 // } from "@/components/about";
@@ -37,7 +37,7 @@ import {
 // (Abhi zaroorat nahi)
 
 // 6. Constants
-import { pageTransition } from "@/animations/aboutAnimations";
+import { pageTransition } from "../animations/aboutAnimations";
 
 // 7. Styles
 // (Tailwind utility classes hi use hongi, koi separate CSS file nahi)
