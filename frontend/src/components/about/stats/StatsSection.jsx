@@ -38,16 +38,16 @@ import { Sparkles, Users, BookOpen, Briefcase } from "lucide-react";
 // 3. Internal Components
 
 // 4. Hooks
-import useGSAPAnimation from "@/hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
-import useCountUp from "@/hooks/useCountUp";
+import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
+import useCountUp from "../../../hooks/useCountUp";
 
 // 5. Utilities
-import { cn, safeArray } from "@/utils/helpers";
+import { cn, safeArray } from "../../../utils/helpers";
 
 // 6. Constants / Data
-import { stats } from "@/data/aboutData";
-import { gsapEase } from "@/constants/animations";
+import { stats } from "../../../data/aboutData";
+import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles
 
