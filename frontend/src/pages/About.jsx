@@ -14,16 +14,19 @@ import { Helmet } from "react-helmet-async";
 // 3. Internal Components
 // NOTE: Ye saare imports abhi commented hain kyunki respective components
 // Phase 2/3 me banenge. Component banते hi yaha uncomment karna hai.
-import { HeroAbout, AboutDescription } from "../components/about";
+import {
+  HeroAbout,
+  AboutDescription,
+  FounderSection,
+  FounderMessage,
+  CoFounderSection,
+  VisionMission,
+  ValuesSection,
+  StatsSection,
+  // FacultyGrid,
+  // WhyChooseUs,
+} from "../components/about";
 // import {
-//   FounderSection,
-//   FounderMessage,
-//   CoFounderSection,
-//   VisionMission,
-//   ValuesSection,
-//   StatsSection,
-//   FacultyGrid,
-//   WhyChooseUs,
 //   TimelineSection,
 // } from "@/components/about";
 
@@ -83,12 +86,12 @@ const About = () => {
 
         <HeroAbout />
         <AboutDescription />
-        {/* <FounderSection /> */}
-        {/* <FounderMessage /> */}
-        {/* <CoFounderSection /> */}
-        {/* <VisionMission /> */}
-        {/* <ValuesSection /> */}
-        {/* <StatsSection /> */}
+        <FounderSection />
+        <FounderMessage />
+        <CoFounderSection />
+        <VisionMission />
+        <ValuesSection />
+        <StatsSection />
         {/* <FacultyGrid /> */}
         {/* <WhyChooseUs /> */}
         {/* <TimelineSection /> */}

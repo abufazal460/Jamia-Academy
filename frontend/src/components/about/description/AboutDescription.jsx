@@ -365,7 +365,7 @@ const AboutDescription = () => {
                         false
                       )}
                       onError={() => setImageError(true)}
-                      className="aspect-[4/5] w-full object-cover"
+                      className="aspect-[4/5] w-full object-fit"
                     />
                   ) : (
                     // Error fallback — image kabhi crash nahi karega, hamesha graceful fallback
