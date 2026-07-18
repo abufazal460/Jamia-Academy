@@ -25,8 +25,8 @@ export { default as CoFounderSection } from "./cofounder/CoFounderSection";
 export { default as VisionMission } from "./vision/VisionMission";
 export { default as ValuesSection } from "./values/ValuesSection";
 export { default as StatsSection } from "./stats/StatsSection";
-export { default as FacultyGrid } from "./faculty/FacultyGrid";
-export { default as WhyChooseUs } from "./whychooseus/WhyChooseUs";
+// export { default as FacultyGrid } from "./faculty/FacultyGrid";
+// export { default as WhyChooseUs } from "./whychooseus/WhyChooseUs";
 // export { default as TimelineSection } from "./timeline/TimelineSection";
 
 // TimelineSection Phase 4+ me banega.
