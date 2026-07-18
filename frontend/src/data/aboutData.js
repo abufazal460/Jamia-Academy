@@ -6,6 +6,8 @@
 // IMPORTANT: Future developers ko content change karne ke liye kabhi bhi .jsx files edit
 // karne ki zaroorat nahi — sirf isi file me values update karni hain.
 
+// import all images 
+import img1 from "../assets/images/about/hero/img-1.jpeg"
 // ---------------------------------------------------------------------------
 // HERO SECTION
 // ---------------------------------------------------------------------------
@@ -45,7 +47,7 @@ export const aboutDescription = {
   ],
   // TODO:
   // Replace placeholder image with optimized WebP image.
-  image: "/images/about/about-placeholder.webp",
+  image: img1,
 };
 
 // ---------------------------------------------------------------------------
