@@ -39,16 +39,16 @@ import { GraduationCap, ImageOff, Sparkles } from "lucide-react";
 // 3. Internal Components
 
 // 4. Hooks
-import useGSAPAnimation from "@/hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { cn } from "@/utils/helpers";
-import { getImageProps } from "@/utils/imageHelpers";
+import { cn } from "../../../utils/helpers";
+import { getImageProps } from "../../../utils/imageHelpers";
 
 // 6. Constants / Data
-import { coFounder } from "@/data/aboutData";
-import { gsapEase } from "@/constants/animations";
+import { coFounder } from "../../../data/aboutData";
+import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles
 
