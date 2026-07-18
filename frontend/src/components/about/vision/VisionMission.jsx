@@ -39,16 +39,16 @@ import { Eye, Target, HeartHandshake, CheckCircle2 } from "lucide-react";
 // 3. Internal Components
 
 // 4. Hooks
-import useGSAPAnimation from "@/hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { cn } from "@/utils/helpers";
-import { safeArray } from "@/utils/helpers";
+import { cn } from "../../../utils/helpers";
+import { safeArray } from "../../../utils/helpers";
 
 // 6. Constants / Data
-import { vision, mission, commitment } from "@/data/aboutData";
-import { gsapEase } from "@/constants/animations";
+import { vision, mission, commitment } from "../../../data/aboutData";
+import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles
 
