@@ -6,8 +6,6 @@
 // IMPORTANT: Future developers ko content change karne ke liye kabhi bhi .jsx files edit
 // karne ki zaroorat nahi — sirf isi file me values update karni hain.
 
-import cardImg from  "../assets/images/about/hero/img-1.jpeg"
-
 // ---------------------------------------------------------------------------
 // HERO SECTION
 // ---------------------------------------------------------------------------
@@ -47,7 +45,7 @@ export const aboutDescription = {
   ],
   // TODO:
   // Replace placeholder image with optimized WebP image.
-  image: cardImg,
+  image: "/images/about/about-placeholder.webp",
 };
 
 // ---------------------------------------------------------------------------
@@ -84,23 +82,33 @@ export const founder = {
   // Replace Dummy Data with Official Jamia Academy Content.
   name: "Dr. Ahmed Khan",
   designation: "Founder & Director",
+  title: "Founder & Director",
   quote: "Education is not just about degrees, it's about building character and vision for the future.",
   bio: "Dr. Ahmed Khan founded Jamia Academy in 2001 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/founder-placeholder.webp",
-};
-
-// ---------------------------------------------------------------------------
-// FOUNDER MESSAGE (separate from bio — a direct address/message block)
-// ---------------------------------------------------------------------------
-export const founderMessage = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
-  heading: "A Message From Our Founder",
-  message:
-    "When I started Jamia Academy, my vision was simple: create a place where every child feels seen, supported, and inspired to become their best self. Today, that vision continues to guide everything we do.",
-  signatureName: "Dr. Ahmed Khan",
+  experience: "23+ Years in Education",
+  position: "Former Advisor, State Education Board",
+  qualifications: [
+    { id: "qual-1", degree: "Ph.D.", field: "Educational Leadership", university: "Jamia Millia Islamia" },
+    { id: "qual-2", degree: "M.Ed.", field: "Curriculum & Instruction", university: "Aligarh Muslim University" },
+    { id: "qual-3", degree: "B.Ed.", field: "Secondary Education", university: "University of Delhi" },
+  ],
+  social: {
+    linkedin: "https://linkedin.com/in/example",
+    twitter: "https://twitter.com/example",
+    facebook: "",
+  },
+  // Founder Message section content — used by FounderMessage.jsx
+  message: {
+    label: "Founder's Message",
+    heading: "A Message From Our Founder",
+    body: "When I started Jamia Academy, my vision was simple: create a place where every child feels seen, supported, and inspired to become their best self. Today, that vision continues to guide everything we do — every classroom, every teacher, every student we welcome through our doors.",
+    // TODO:
+    // Replace placeholder signature with an official scanned signature image if available.
+    signatureImage: "",
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -109,12 +117,23 @@ export const founderMessage = {
 export const coFounder = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  name: "Mrs. Fatima Khan",
+  name: "Dr. Saba Rizwi",
   designation: "Co-Founder & Academic Director",
-  bio: "Mrs. Fatima Khan has been instrumental in shaping the academic curriculum and pastoral care systems that define the Jamia Academy experience.",
+  title: "Co-Founder & MD",
+  bio: "Dr. Saba Rizwi has been instrumental in shaping the academic curriculum and pastoral care systems that define the Jamia Academy experience.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/cofounder-placeholder.webp",
+  experience: "18+ Years in Academic Leadership",
+  qualifications: [
+    { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Psychology", university: "Jamia Millia Islamia" },
+    { id: "cf-qual-2", degree: "M.A.", field: "Curriculum Design", university: "Jawaharlal Nehru University" },
+    { id: "cf-qual-3", degree: "B.Ed.", field: "Elementary Education", university: "University of Delhi" },
+  ],
+  message: {
+    label: "A Note From Our Co-Founder",
+    body: "I believe every child carries a spark of potential waiting to be nurtured. My work here is about building the systems, the culture, and the everyday moments that let that spark grow into something lasting.",
+  },
 };
 
 // ---------------------------------------------------------------------------
@@ -124,6 +143,7 @@ export const vision = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Vision",
+  subtitle: "Looking Ahead",
   description: "To be a leading educational institution recognized for academic excellence and character development.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
@@ -135,6 +155,12 @@ export const mission = {
   // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Mission",
   description: "To provide holistic, values-driven education that empowers every student to reach their full potential.",
+  points: [
+    { id: "mission-point-1", text: "Deliver a curriculum that balances academics with real-world skills." },
+    { id: "mission-point-2", text: "Nurture character, empathy, and integrity in every student." },
+    { id: "mission-point-3", text: "Integrate technology meaningfully into everyday learning." },
+    { id: "mission-point-4", text: "Keep quality education accessible and affordable for all families." },
+  ],
 };
 
 // ---------------------------------------------------------------------------
@@ -154,11 +180,11 @@ export const commitment = {
 export const values = [
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "value-integrity", title: "Integrity", description: "We uphold honesty and strong moral principles in everything we do." },
-  { id: "value-excellence", title: "Excellence", description: "We strive for the highest standards in academics and character." },
-  { id: "value-innovation", title: "Innovation", description: "We embrace modern teaching methods and technology." },
-  { id: "value-community", title: "Community", description: "We build strong bonds among students, staff, and families." },
-  { id: "value-compassion", title: "Compassion", description: "We nurture empathy and kindness in every student." },
+  { id: "value-integrity", title: "Integrity", description: "We uphold honesty and strong moral principles in everything we do.", icon: "ShieldCheck" },
+  { id: "value-excellence", title: "Excellence", description: "We strive for the highest standards in academics and character.", icon: "Award" },
+  { id: "value-innovation", title: "Innovation", description: "We embrace modern teaching methods and technology.", icon: "Lightbulb" },
+  { id: "value-community", title: "Community", description: "We build strong bonds among students, staff, and families.", icon: "Users" },
+  { id: "value-compassion", title: "Compassion", description: "We nurture empathy and kindness in every student.", icon: "HeartHandshake" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -167,10 +193,10 @@ export const values = [
 export const stats = [
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "stat-years", label: "Years of Excellence", value: 23, suffix: "+" },
-  { id: "stat-students", label: "Students Enrolled", value: 5200, suffix: "+" },
-  { id: "stat-faculty", label: "Expert Faculty", value: 180, suffix: "+" },
-  { id: "stat-courses", label: "Courses Offered", value: 45, suffix: "+" },
+  { id: "stat-years", label: "Years of Excellence", value: 23, suffix: "+", icon: "Sparkles" },
+  { id: "stat-students", label: "Students Enrolled", value: 5200, suffix: "+", icon: "Users" },
+  { id: "stat-faculty", label: "Programs Offered", value: 45, suffix: "+", icon: "BookOpen" },
+  { id: "stat-placements", label: "Placements", value: 180, suffix: "+", icon: "Briefcase" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -183,22 +209,45 @@ export const faculty = [
     id: "faculty-1",
     name: "Dr. Sana Malik",
     designation: "Head of Sciences",
+    title: "Head of Sciences",
     bio: "Over 15 years of experience in science education and curriculum design.",
     image: "/assets/about/team-placeholder.webp",
+    qualification: "Ph.D. in Physics",
+    experience: "15+ Years",
+    expertise: ["Physics", "Curriculum Design", "Lab Pedagogy"],
   },
   {
     id: "faculty-2",
     name: "Mr. Imran Sheikh",
     designation: "Head of Mathematics",
+    title: "Head of Mathematics",
     bio: "Passionate about making mathematics accessible and engaging for all students.",
     image: "/assets/about/team-placeholder.webp",
+    qualification: "M.Sc. in Mathematics",
+    experience: "12+ Years",
+    expertise: ["Algebra", "Applied Math", "Olympiad Training"],
   },
   {
     id: "faculty-3",
     name: "Ms. Ayesha Siddiqui",
     designation: "Head of Languages",
+    title: "Head of Languages",
     bio: "Dedicated to building strong communication skills in every student.",
     image: "/assets/about/team-placeholder.webp",
+    qualification: "M.A. in English Literature",
+    experience: "10+ Years",
+    expertise: ["English", "Public Speaking", "Creative Writing"],
+  },
+  {
+    id: "faculty-4",
+    name: "Mr. Rehan Qureshi",
+    designation: "Head of Computer Science",
+    title: "Head of Computer Science",
+    bio: "Focused on preparing students for a technology-driven future.",
+    image: "/assets/about/team-placeholder.webp",
+    qualification: "M.Tech in Computer Science",
+    experience: "9+ Years",
+    expertise: ["Programming", "Robotics", "AI Fundamentals"],
   },
 ];
 
@@ -220,10 +269,24 @@ export const timeline = [
 export const whyChooseUs = [
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "why-1", title: "Experienced Faculty", description: "Learn from educators with decades of combined teaching experience." },
-  { id: "why-2", title: "Modern Curriculum", description: "A curriculum that blends academic rigor with real-world skills." },
-  { id: "why-3", title: "Safe Environment", description: "A nurturing, secure campus where students feel they belong." },
-  { id: "why-4", title: "Holistic Development", description: "Focus on academics, sports, arts, and character together." },
+  {
+    id: "why-1",
+    title: "Proven Credibility",
+    description: "ISO-certified, multi-branch institution trusted by thousands of families since 2022.",
+    icon: "BadgeCheck",
+  },
+  {
+    id: "why-2",
+    title: "Quality Teaching",
+    description: "Experienced faculty delivering a curriculum that blends academic rigor with real-world skills.",
+    icon: "GraduationCap",
+  },
+  {
+    id: "why-3",
+    title: "Career Support",
+    description: "Dedicated guidance and placement assistance to help every student plan their future with confidence.",
+    icon: "Briefcase",
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -235,7 +298,6 @@ const aboutData = {
   aboutDescription,
   features,
   founder,
-  founderMessage,
   coFounder,
   vision,
   mission,
