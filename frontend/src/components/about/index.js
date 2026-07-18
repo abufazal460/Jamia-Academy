@@ -19,16 +19,14 @@
 
 export { default as HeroAbout } from "./hero/HeroAbout";
 export { default as AboutDescription } from "./description/AboutDescription";
-// export { default as FounderSection } from "./founder/FounderSection";
-// export { default as FounderMessage } from "./founder/FounderMessage";
-// export { default as CoFounderSection } from "./cofounder/CoFounderSection";
-// export { default as VisionMission } from "./vision/VisionMission";
-// export { default as ValuesSection } from "./values/ValuesSection";
-// export { default as StatsSection } from "./stats/StatsSection";
-// export { default as FacultyGrid } from "./faculty/FacultyGrid";
-// export { default as WhyChooseUs } from "./whychooseus/WhyChooseUs";
+export { default as FounderSection } from "./founder/FounderSection";
+export { default as FounderMessage } from "./founder/FounderMessage";
+export { default as CoFounderSection } from "./cofounder/CoFounderSection";
+export { default as VisionMission } from "./vision/VisionMission";
+export { default as ValuesSection } from "./values/ValuesSection";
+export { default as StatsSection } from "./stats/StatsSection";
+export { default as FacultyGrid } from "./faculty/FacultyGrid";
+export { default as WhyChooseUs } from "./whychooseus/WhyChooseUs";
 // export { default as TimelineSection } from "./timeline/TimelineSection";
 
-// Is file me abhi koi active export nahi hai — Phase 2 me components banते hi
-// upar wali lines uncomment ki jayengi, ek-ek karke.
-export {};
+// TimelineSection Phase 4+ me banega.
