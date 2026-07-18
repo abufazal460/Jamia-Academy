@@ -23,8 +23,8 @@ import {
   VisionMission,
   ValuesSection,
   StatsSection,
-  FacultyGrid,
-  WhyChooseUs,
+  // FacultyGrid,
+  // WhyChooseUs,
 } from "../components/about";
 // import {
 //   TimelineSection,
@@ -92,8 +92,8 @@ const About = () => {
         <VisionMission />
         <ValuesSection />
         <StatsSection />
-        <FacultyGrid />
-        <WhyChooseUs />
+        {/* <FacultyGrid /> */}
+        {/* <WhyChooseUs /> */}
         {/* <TimelineSection /> */}
       </motion.main>
     </>

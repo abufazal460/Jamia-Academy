@@ -35,7 +35,10 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Linkedin, Twitter, Facebook, GraduationCap, ImageOff } from "lucide-react";
+// import { Linkedin, Twitter, Facebook, GraduationCap, ImageOff } from "lucide-react";
+import { LuImageOff } from "react-icons/lu";
+import { FaGraduationCap , FaFacebook , FaLinkedin , FaInstagram } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
 // 3. Internal Components
 // (Shared components abhi nahi bane — Phase 4+ me plug honge)
@@ -63,11 +66,12 @@ gsap.registerPlugin(ScrollTrigger);
 // actual Lucide icon component se jodta hai — data file me koi JSX nahi jaani chahiye.
 // -----------------------------------------------------------------------------
 const socialIconMap = {
-  linkedin: Linkedin,
-  twitter: Twitter,
-  facebook: Facebook,
+  linkedin: FaLinkedin,
+  twitter: FaSquareXTwitter,
+  facebook: FaFacebook,
+  instagram: FaInstagram,
 };
-
+console.log(socialIconMap.name)
 /**
  * FounderSection
  * Ye component kya karta hai: Founder ka pura credibility/profile block render karta hai
@@ -254,7 +258,7 @@ const FounderSection = () => {
                       aria-label="Founder image unavailable"
                       className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-2 bg-white/5 text-white/40"
                     >
-                      <ImageOff size={32} aria-hidden="true" />
+                      <LuImageOff size={32} aria-hidden="true" />
                       <span className="text-xs">Founder Image Unavailable</span>
                     </div>
                   )}
@@ -328,7 +332,7 @@ const FounderSection = () => {
                     transition={{ duration: 0.25, ease: "easeOut" }}
                   >
                     <span className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#F4A261]/15 text-[#F4A261]" aria-hidden="true">
-                      <GraduationCap size={16} />
+                      <FaGraduationCap  size={16} />
                     </span>
                     <p className="text-sm font-semibold text-white">{qual?.degree}</p>
                     <p className="mt-0.5 text-xs text-white/60">{qual?.field}</p>
