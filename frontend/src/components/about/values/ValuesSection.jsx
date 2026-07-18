@@ -38,15 +38,15 @@ import { ShieldCheck, Award, Lightbulb, Users, HeartHandshake, Sparkles } from "
 // 3. Internal Components
 
 // 4. Hooks
-import useGSAPAnimation from "@/hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { cn, safeArray } from "@/utils/helpers";
+import { cn, safeArray } from "../../../utils/helpers";
 
 // 6. Constants / Data
-import { values } from "@/data/aboutData";
-import { gsapEase } from "@/constants/animations";
+import { values } from "../../../data/aboutData";
+import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles
 
