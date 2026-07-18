@@ -41,16 +41,16 @@ import { Linkedin, Twitter, Facebook, GraduationCap, ImageOff } from "lucide-rea
 // (Shared components abhi nahi bane — Phase 4+ me plug honge)
 
 // 4. Hooks
-import useGSAPAnimation from "@/hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "@/hooks/usePrefersReducedMotion";
+import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { cn } from "@/utils/helpers";
-import { getImageProps } from "@/utils/imageHelpers";
+import { cn } from "../../../utils/helpers";
+import { getImageProps } from "../../../utils/imageHelpers";
 
 // 6. Constants / Data
-import { founder } from "@/data/aboutData";
-import { gsapEase } from "@/constants/animations";
+import { founder } from "../../../data/aboutData";
+import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles
 // (Sirf Tailwind utility classes)
