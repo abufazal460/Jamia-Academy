@@ -62,7 +62,7 @@ export function generateEnrollmentMessage(course) {
  *                                  user ko contact choose karne dega
  * @returns {string} full WhatsApp URL
  */
-export function buildWhatsAppUrl(course, phoneNumber = "") {
+export function buildWhatsAppUrl(course, phoneNumber = "919621555551") {
   const message = generateEnrollmentMessage(course);
   const encodedMessage = encodeURIComponent(message);
 
@@ -85,10 +85,10 @@ export function buildWhatsAppUrl(course, phoneNumber = "") {
  * @param {Object} course
  * @param {string} [phoneNumber]
  */
-export function openWhatsApp(course, phoneNumber = "") {
+export function openWhatsApp(course) {
   if (!course) return;
 
-  const url = buildWhatsAppUrl(course, phoneNumber);
+  const url = buildWhatsAppUrl(course);
 
   // noopener/noreferrer — security best practice jab window.open() se
   // naya tab external site (WhatsApp) ke liye khola jaa raha ho.
