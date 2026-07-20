@@ -6,6 +6,10 @@
 //
 // Naya course add karna ho to sirf ek naya object is array me push karo —
 // koi component code change karne ki zaroorat nahi padegi.
+import img1 from "../assets/images/courses/971.jpg"
+import img2 from "../assets/images/courses/developer_male.jpg"
+import img3 from "../assets/images/courses/person-playing-3d-video-games-device.jpg"
+
 
 export const coursesData = [
   {
@@ -23,7 +27,7 @@ export const coursesData = [
     // thumbnail -> card me use hoga (chhota, fast-loading)
     // hero -> modal ke andar bada banner image ke liye
     image: {
-      thumbnail: "/images/courses/web-development/thumbnail.webp",
+      thumbnail: img1,
       hero: "/images/courses/web-development/hero.webp",
     },
 
@@ -142,7 +146,7 @@ export const coursesData = [
     description:
       "Master full stack development using MongoDB, Express, React, and Node.js to build production-grade applications.",
     image: {
-      thumbnail: "/images/courses/mern-stack/thumbnail.webp",
+      thumbnail: img2,
       hero: "/images/courses/mern-stack/hero.webp",
     },
     batch: {
@@ -217,7 +221,7 @@ export const coursesData = [
     description:
       "Build a strong programming foundation with Python — from syntax basics to real-world automation and projects.",
     image: {
-      thumbnail: "/images/courses/python-programming/thumbnail.webp",
+      thumbnail: img3,
       hero: "/images/courses/python-programming/hero.webp",
     },
     batch: {
