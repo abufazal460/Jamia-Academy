@@ -13,7 +13,7 @@
 // 600, yeh component logic waise ka waisa rahega.
 
 import { useEffect, useLayoutEffect, useRef } from "react";
-import { useInfiniteGallery } from "../../hooks/useInfiniteGallery";
+import { useInfiniteGallery } from "../../../hooks/useInfiniteGallery";
 import GalleryItem from "./GalleryItem";
 import {
   initSmoothScroll,
