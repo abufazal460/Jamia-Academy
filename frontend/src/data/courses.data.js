@@ -28,7 +28,7 @@ export const coursesData = [
     // hero -> modal ke andar bada banner image ke liye
     image: {
       thumbnail: img1,
-      hero: "/images/courses/web-development/hero.webp",
+      hero: img1,
     },
 
     // Batch System
@@ -147,7 +147,7 @@ export const coursesData = [
       "Master full stack development using MongoDB, Express, React, and Node.js to build production-grade applications.",
     image: {
       thumbnail: img2,
-      hero: "/images/courses/mern-stack/hero.webp",
+      hero: img2,
     },
     batch: {
       name: "Batch 2026",
@@ -222,7 +222,7 @@ export const coursesData = [
       "Build a strong programming foundation with Python — from syntax basics to real-world automation and projects.",
     image: {
       thumbnail: img3,
-      hero: "/images/courses/python-programming/hero.webp",
+      hero: img3,
     },
     batch: {
       name: "Batch 2026",

@@ -57,11 +57,11 @@ const QUICK_LINKS = [
 
 // Popular Courses section — title + dummy course url
 const POPULAR_COURSES = [
-  { title: "Diploma in Data Analytics", url: "/course/data-analytics" },
-  { title: "Full Stack Web Development", url: "/course/full-stack" },
-  { title: "Artificial Intelligence & ML", url: "/course/ai" },
-  { title: "Graphic Design with AI", url: "/course/graphic-design" },
-  { title: "Tally Prime with GST", url: "/course/tally" },
+  { title: "Diploma in Data Analytics", url: "/course" },
+  { title: "Full Stack Web Development", url: "/course" },
+  { title: "Artificial Intelligence & ML", url: "/course" },
+  { title: "Graphic Design with AI", url: "/course" },
+  { title: "Tally Prime with GST", url: "/course" },
 ];
 
 // Phone numbers — multiple numbers supported via array
