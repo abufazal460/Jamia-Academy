@@ -43,7 +43,8 @@ const Home = () => {
 
       {/* Section 01 ke neeche — Section 02 */}
       <FeatureSection />
-
+      
+        {/* section 3 section 2 ke neeche  */}
       <FAQ />
     </main>
   );
