@@ -12,7 +12,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getActiveLenis } from "../InfiniteGallery/galleryAnimation";
+import { getActiveLenis } from "./galleryAnimation";
 
 gsap.registerPlugin(ScrollTrigger); // idempotent — already registered elsewhere bhi
 
@@ -29,8 +29,8 @@ export default function BrowseCoursesCTA({
   heading = "Browse More Courses",
   description = "Continue exploring our complete collection of professional courses designed to help you learn new skills and grow your career.",
   buttonLabel = "Browse All Courses",
-  targetId = "courses",
-  href = "/courses",
+  targetId = "course",
+  href = "/course",
   onBrowseCourses,
 }) {
   const sectionRef = useRef(null);
