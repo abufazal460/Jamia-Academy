@@ -2,7 +2,7 @@
 
 import { Suspense, useMemo } from "react";
 import { Canvas } from "@react-three/fiber";
-import BulgeScene from "./BulgeScene";
+import BulgeScene from "./Scene";
 import useIsMobile from "../../../hooks/useIsMobile";
 
 /**
