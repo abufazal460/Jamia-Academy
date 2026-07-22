@@ -1,13 +1,16 @@
 uniform sampler2D uTexture;
-uniform vec2 uMouse;
+
+// ===============================
+// CUSTOMIZE TEXT HERE (opacity)
+// ===============================
+// Driven by the `textOpacity` prop, and also used internally for a smooth
+// GPU-side fade-in once the DOM->texture capture is ready (see Scene.jsx),
+// instead of an abrupt pop-in.
+uniform float uOpacity;
+
 varying vec2 vUv;
 
-float circle(vec2 uv, vec2 circlePosition, float radius) {
-	float dist = distance(circlePosition, uv);
-	return 1. - smoothstep(0.0, radius, dist);
-}
-
 void main() {
-	vec4 finalTexture = texture2D(uTexture, vUv);
-	csm_DiffuseColor = finalTexture;
+  vec4 finalTexture = texture2D(uTexture, vUv);
+  csm_DiffuseColor = vec4(finalTexture.rgb, finalTexture.a * uOpacity);
 }
