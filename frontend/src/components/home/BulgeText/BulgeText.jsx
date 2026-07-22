@@ -2,21 +2,44 @@ import { Canvas } from "@react-three/fiber";
 import Scene from "./Scene";
 import { useIsMobile } from "../../../hooks/useismobile";
 
-// Static GL settings — hoisted outside the component since they never
-// depend on props/state, so no useMemo needed (React docs: a plain
-// module-level constant is cheaper and clearer than a memoized one for
-// values that never change).
-// NOTE: preserveDrawingBuffer intentionally omitted — it was never needed
-// (it only matters for screenshotting the WebGL canvas itself; our
-// texture comes from html2canvas capturing a DOM node, not the canvas),
-// and enabling it unnecessarily triggers a browser performance warning.
+// Static GL settings
+// Ye settings kabhi change nahi hoti,
+// isliye component ke bahar rakhi gayi hain.
+// Isse unnecessary re-render aur useMemo ki need nahi padti.
+//
+// preserveDrawingBuffer intentionally use nahi kiya gaya,
+// kyunki hum WebGL canvas ka screenshot nahi le rahe.
+// Hum sirf DOM ko texture me convert kar rahe hain.
 const GL_SETTINGS = { antialias: true, alpha: true };
 
 /**
- * BulgeText
- * -----------------------------------------------------------------------
- * Interactive 3D "bulge" text section. Fully prop-driven — see the
- * CUSTOMIZE ... HERE comment blocks below for what each group controls.
+ * useDomToCanvas
+ * -------------------------------------------------------
+ * Ye hook DOM element ko html2canvas ki help se
+ * THREE.CanvasTexture me convert karta hai.
+ *
+ * Is version me improvements:
+ *
+ * 1.
+ * foreignObjectRendering enable hai.
+ * Isse Tailwind CSS v4 ke color issues
+ * (oklch error) avoid hote hain.
+ *
+ * 2.
+ * Retina display ke liye text sharp rahe
+ * isliye DPR max 2 rakha gaya hai.
+ *
+ * 3.
+ * Window resize listener ki jagah
+ * ResizeObserver use hua hai.
+ *
+ * 4.
+ * Purani texture ko dispose karte hain
+ * taaki GPU memory leak na ho.
+ *
+ * 5.
+ * Agar text ya style change ho
+ * to texture dobara generate ho jaye.
  */
 function BulgeText({
   // ===============================

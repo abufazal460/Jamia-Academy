@@ -1,11 +1,13 @@
 uniform sampler2D uTexture;
 
 // ===============================
-// CUSTOMIZE TEXT HERE (opacity)
+// CUSTOMIZE TEXT HERE (Opacity)
 // ===============================
-// Driven by the `textOpacity` prop, and also used internally for a smooth
-// GPU-side fade-in once the DOM->texture capture is ready (see Scene.jsx),
-// instead of an abrupt pop-in.
+// Text ki transparency yahan se control hoti hai.
+// Ye BulgeText component ke `textOpacity` prop se aati hai.
+// Jab DOM se texture ready hota hai tab text achanak show hone ke
+// bajaye smoothly fade-in hota hai.
+
 uniform float uOpacity;
 
 varying vec2 vUv;

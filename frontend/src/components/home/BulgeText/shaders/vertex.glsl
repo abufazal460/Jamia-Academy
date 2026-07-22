@@ -1,10 +1,14 @@
 // ===============================
 // CUSTOMIZE SHADER SETTINGS HERE
 // ===============================
-// uBulgeRadius   -> how large the bulge circle is around the cursor (0–1, UV space)
-// uBulgeIntensity -> how far the mesh pushes toward the camera (Z displacement)
-// Both are now React-controllable via the `bulgeRadius` / `bulgeStrength` props
-// on <BulgeText />, instead of being hardcoded here.
+// uBulgeRadius:
+// Cursor ke around kitna area bulge hoga.
+//
+// uBulgeIntensity:
+// Bulge kitna bahar niklega.
+//
+// Dono values BulgeText component ke props
+// (bulgeRadius aur bulgeStrength) se control hoti hain.
 
 uniform vec2 uMouse;
 uniform float uBulgeRadius;

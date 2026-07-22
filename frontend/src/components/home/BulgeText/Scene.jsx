@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import CustomShaderMaterial from "three-custom-shader-material";
-import html2canvas from "html2canvas";
+import html2canvas from "html2canvas-pro";
 
 import { debounce } from "../../../utils/debounce";
 import vertexShader from "./shaders/vertex.glsl";
@@ -238,7 +238,7 @@ function Scene({
           uniforms={uniforms}
           flatShading
           transparent
-          silent
+
         />
 
         {/* ===============================

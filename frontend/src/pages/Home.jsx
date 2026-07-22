@@ -42,6 +42,11 @@ const Home = () => {
         />
       </div>
 
+      {/* section 5  */}
+      <Suspense fallback={<div className="h-[70vh]" />}>
+        <BulgeText text="Jamia Academy" bulgeStrength={5} bulgeRadius={0.6} />
+      </Suspense>
+
       {/* Hero ke turant neeche — Section 01 */}
       <AccreditationSection />
 
@@ -53,11 +58,6 @@ const Home = () => {
 
       {/* section 4  */}
       <CourseGallerySection />
-
-      {/* section 5  */}
-      <Suspense fallback={<div className="h-[70vh]" />}>
-        <BulgeText text="Jamia Academy" />
-      </Suspense>
     </main>
   );
 };
