@@ -95,7 +95,7 @@ function Scene() {
           fragmentShader={fragmentShader}
           uniforms={uniforms}
           flatShading
-          silent
+          // silent
         />
         <Lights />
       </mesh>
