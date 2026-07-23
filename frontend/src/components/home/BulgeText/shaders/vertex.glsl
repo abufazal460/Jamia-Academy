@@ -1,15 +1,3 @@
-// ===============================
-// CUSTOMIZE SHADER SETTINGS HERE
-// ===============================
-// uBulgeRadius:
-// Cursor ke around kitna area bulge hoga.
-//
-// uBulgeIntensity:
-// Bulge kitna bahar niklega.
-//
-// Dono values BulgeText component ke props
-// (bulgeRadius aur bulgeStrength) se control hoti hain.
-
 uniform vec2 uMouse;
 uniform float uBulgeRadius;
 uniform float uBulgeIntensity;
@@ -29,7 +17,8 @@ float elevation(vec2 uv, float radius, float intensity) {
 void main() {
   vec3 newPosition = position;
   newPosition.z += elevation(uv, uBulgeRadius, uBulgeIntensity);
+  newPosition.z += 2.0; // abhi ke liye TEMP-DEBUG line rehne do, test ke baad hatayenge
 
-  csm_Position = newPosition;
+  csm_PositionRaw = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
   vUv = uv;
 }

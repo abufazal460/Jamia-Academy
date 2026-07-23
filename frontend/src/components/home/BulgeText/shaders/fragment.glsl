@@ -15,4 +15,5 @@ varying vec2 vUv;
 void main() {
   vec4 finalTexture = texture2D(uTexture, vUv);
   csm_DiffuseColor = vec4(finalTexture.rgb, finalTexture.a * uOpacity);
+
 }
