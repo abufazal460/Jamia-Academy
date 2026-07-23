@@ -13,7 +13,8 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getActiveLenis } from "./galleryAnimation";
-
+import { usePageTransition } from "../../pageTransition";
+// const { navigateWithTransition } = usePageTransition();
 gsap.registerPlugin(ScrollTrigger); // idempotent — already registered elsewhere bhi
 
 /**

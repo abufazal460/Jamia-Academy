@@ -32,8 +32,11 @@ export function buildCurtainPath(progress, options = {}) {
   return d;
 }
 
+// Slower + smoother, with a brief hold at full coverage so the cover
+// doesn't feel like it "snaps" straight into navigation.
 export const TRANSITION_TIMING = {
-  coverDuration: 0.7,
-  revealDuration: 0.7,
-  ease: "power3.inOut",
+  coverDuration: 1.0,
+  holdDuration: 0.18,
+  revealDuration: 1.0,
+  ease: "power4.inOut",
 };
