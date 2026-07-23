@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
+import { usePageTransition } from "../pageTransition";
 
 import logo from "../../assets/logo/jamia-academy-Logo.png";
 import msme from "../../assets/logo/msme.png";
@@ -9,7 +10,6 @@ import mole from "../../assets/logo/mole.jpeg";
 import skillIndia from "../../assets/logo/skill-india.png";
 import niti from "../../assets/logo/niti-aayog.jpeg";
 import nielit from "../../assets/logo/nielit.jpeg";
-
 
 /* ============================================================
    DATA — Sab links/arrays ek jagah rakhe hain (constants).
@@ -88,8 +88,6 @@ const GOVERNMENT_LOGOS = [
     url: "https://www.nielit.gov.in",
   },
 ];
-
-
 
 /* ============================================================
    FRAMER MOTION VARIANTS — Reusable animation configs.
@@ -192,6 +190,13 @@ const Footer = () => {
   // scroll-linked effects chahiye ho to yahan se hook kar sakte ho
   const footerRef = useRef(null);
 
+  const { navigateWithTransition, isTransitioning } = usePageTransition();
+
+  const handleInternalNav = (e, path) => {
+    e.preventDefault();
+    if (isTransitioning) return;
+    navigateWithTransition(path);
+  };
   return (
     // <footer> semantic tag — accessibility ke liye zaroori hai,
     // screen readers ise "footer landmark" ki tarah identify karte hain
@@ -201,7 +206,7 @@ const Footer = () => {
       // viewport.once true -> animation sirf ek baar chale, baar baar repeat na ho
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true , amount: 0.15 }}
+      viewport={{ once: true, amount: 0.15 }}
       variants={footerContainerVariant}
       className="relative bg-[#0a0f1f] text-slate-300 pt-16 pb-8 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden"
       aria-label="Site footer"
@@ -217,7 +222,7 @@ const Footer = () => {
         <motion.div variants={sectionVariant} className="flex flex-col gap-5">
           {/* Logo image — white rounded card jaisa look reference mein hai */}
           <div className="bg-white rounded-xl px-4 py-2 w-fit">
-            <img 
+            <img
               src={logo}
               alt="Jamia Academy Logo"
               className="h-12 sm:h-14 w-auto object-contain"
@@ -271,6 +276,7 @@ const Footer = () => {
               <motion.li key={link.title} variants={listItemVariant}>
                 <a
                   href={link.path}
+                  onClick={(e) => handleInternalNav(e, link.path)}
                   className="relative text-sm sm:text-[15px] text-slate-400
                              hover:text-cyan-400 transition-colors duration-300
                              group inline-block w-fit
@@ -304,6 +310,7 @@ const Footer = () => {
               <motion.li key={course.title} variants={listItemVariant}>
                 <a
                   href={course.url}
+                  onClick={(e) => handleInternalNav(e, course.url)}
                   className="relative text-sm sm:text-[15px] text-slate-400
                              hover:text-cyan-400 transition-colors duration-300
                              group inline-block w-fit
@@ -458,7 +465,14 @@ const Footer = () => {
             Official Website of Jamia Academy
           </p>
           <p className="text-[11px] sm:text-xs text-slate-600 mt-1">
-            Made by <a target="_blank" href="https://abufazal.netlify.app/" className="text-blue-500 hover:underline transition-all">Abu Fazal</a>
+            Made by{" "}
+            <a
+              target="_blank"
+              href="https://abufazal.netlify.app/"
+              className="text-blue-500 hover:underline transition-all"
+            >
+              Abu Fazal
+            </a>
           </p>
         </motion.div>
       </motion.div>

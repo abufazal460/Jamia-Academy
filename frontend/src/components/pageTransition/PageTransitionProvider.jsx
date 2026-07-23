@@ -36,8 +36,11 @@ export default function PageTransitionProvider({ children }) {
     document.body.style.overflow = previousOverflowRef.current || "";
   }, []);
 
-  const finishTransition = useCallback(async () => {
+ const finishTransition = useCallback(async () => {
     if (!transitionRef.current) {
+      // Even without the SVG ref, still reset scroll so the new page
+      // never opens mid-way down (e.g. where the Footer used to be).
+      window.scrollTo(0, 0);
       lockRef.current = false;
       pendingTargetRef.current = null;
       unlockScroll();
@@ -46,6 +49,9 @@ export default function PageTransitionProvider({ children }) {
     }
 
     try {
+      // Screen is fully covered right now — safe to snap scroll to top
+      // without the user ever seeing the jump.
+      window.scrollTo(0, 0);
       // Let the new page paint for a beat before uncovering — avoids
       // revealing a half-rendered frame and feels far smoother.
       await wait(TRANSITION_TIMING.holdDuration);
@@ -102,10 +108,13 @@ export default function PageTransitionProvider({ children }) {
       // animation plays", THIS branch is firing — meaning something
       // is navigating without going through navigateWithTransition.
       // Audit your Links/useNavigate() calls (see Step 1 above).
-      if (transitionRef.current) {
+     if (transitionRef.current) {
         transitionRef.current
           .playCover()
-          .then(() => wait(TRANSITION_TIMING.holdDuration))
+          .then(() => {
+            window.scrollTo(0, 0);
+            return wait(TRANSITION_TIMING.holdDuration);
+          })
           .then(() => {
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
