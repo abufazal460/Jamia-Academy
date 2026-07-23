@@ -3,6 +3,9 @@ import FeatureSection from "../components/home/FeatureSection";
 import LiquidEther from "../components/home/LiquidEther";
 import FAQ from "../components/faq/FAQ";
 import CourseGallerySection from "../components/home/CourseGallery/CourseGallerySection";
+// import BulgeText from "../components/home/BulgeText/BulgeText";
+import { lazy, Suspense } from "react";
+const BulgeText = lazy(() => import("../components/home/BulgeText/BulgeText"));
 
 const Home = () => {
   return (
@@ -39,15 +42,21 @@ const Home = () => {
         />
       </div>
 
+      {/* section 5  */}
+      <Suspense fallback={<div className="h-[70vh]" />}>
+        <BulgeText text="Jamia Academy" bulgeStrength={5} bulgeRadius={0.6} />
+      </Suspense>
+
       {/* Hero ke turant neeche — Section 01 */}
       <AccreditationSection />
 
       {/* Section 01 ke neeche — Section 02 */}
       <FeatureSection />
-      
-        {/* section 3 section 2 ke neeche  */}
+
+      {/* section 3 section 2 ke neeche  */}
       <FAQ />
 
+      {/* section 4  */}
       <CourseGallerySection />
     </main>
   );
