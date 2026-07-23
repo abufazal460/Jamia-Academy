@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { TransitionNavLink } from "../pageTransition";
 
 // ====================================================================
 // NavItem.jsx — MODIFIED
@@ -48,7 +48,7 @@ const NavItem = memo(function NavItem({ item, index, isActive }) {
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
-        <NavLink
+        <TransitionNavLink
           to={item.route}
           // aria-current accessibility ke liye: screen reader ko active page batata hai.
           aria-current={isActive ? "page" : undefined}
@@ -71,7 +71,7 @@ const NavItem = memo(function NavItem({ item, index, isActive }) {
         >
           {item.label}
           {/* Courses dropdown arrow REMOVED — ab yahan kuch nahi render hoga */}
-        </NavLink>
+        </TransitionNavLink>
 
         {/* Active indicator: sirf subtle background pill.
             NO ring, NO shadow glow, NO border animation.

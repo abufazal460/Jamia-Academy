@@ -13,7 +13,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getActiveLenis } from "./galleryAnimation";
-
+import { usePageTransition } from "../../pageTransition";
 gsap.registerPlugin(ScrollTrigger); // idempotent — already registered elsewhere bhi
 
 /**
@@ -34,6 +34,7 @@ export default function BrowseCoursesCTA({
   onBrowseCourses,
 }) {
   const sectionRef = useRef(null);
+  const { navigateWithTransition } = usePageTransition();
 
   // ---------- Subtle fade-up entrance, isolated ScrollTrigger ----------
   useEffect(() => {
@@ -86,9 +87,9 @@ export default function BrowseCoursesCTA({
       return;
     }
 
-    // Courses section is page pe nahi mili — koi router mount nahi hai,
-    // isliye seedha route pe navigate karo.
-    if (href) window.location.href = href;
+      // Courses section is page pe nahi mili — SPA route change karo,
+    // transition ke through (full page reload nahi hoga).
+    if (href) navigateWithTransition(href);
   };
 
   return (

@@ -2,6 +2,10 @@ import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import TransitionContext from "./TransitionContext";
 import PageTransition from "./PageTransition";
+import { TRANSITION_TIMING } from "./transitionPaths";
+
+const wait = (seconds) =>
+  new Promise((resolve) => setTimeout(resolve, seconds * 1000));
 
 export default function PageTransitionProvider({ children }) {
   const navigate = useNavigate();
@@ -32,7 +36,7 @@ export default function PageTransitionProvider({ children }) {
     document.body.style.overflow = previousOverflowRef.current || "";
   }, []);
 
-  const finishTransition = useCallback(() => {
+  const finishTransition = useCallback(async () => {
     if (!transitionRef.current) {
       lockRef.current = false;
       pendingTargetRef.current = null;
@@ -41,15 +45,19 @@ export default function PageTransitionProvider({ children }) {
       return;
     }
 
-    transitionRef.current
-      .playReveal()
-      .catch(() => {})
-      .finally(() => {
-        lockRef.current = false;
-        pendingTargetRef.current = null;
-        unlockScroll();
-        if (isMountedRef.current) setIsTransitioning(false);
-      });
+    try {
+      // Let the new page paint for a beat before uncovering — avoids
+      // revealing a half-rendered frame and feels far smoother.
+      await wait(TRANSITION_TIMING.holdDuration);
+      await transitionRef.current.playReveal();
+    } catch {
+      // no-op — still clean up below
+    } finally {
+      lockRef.current = false;
+      pendingTargetRef.current = null;
+      unlockScroll();
+      if (isMountedRef.current) setIsTransitioning(false);
+    }
   }, [unlockScroll]);
 
   const navigateWithTransition = useCallback(
@@ -66,6 +74,9 @@ export default function PageTransitionProvider({ children }) {
       try {
         if (transitionRef.current) {
           await transitionRef.current.playCover();
+          // Hold at full coverage briefly before navigating — this is
+          // what makes the cut feel intentional instead of instant.
+          await wait(TRANSITION_TIMING.holdDuration);
         }
       } catch {
         // Proceed with navigation even if the animation fails.
@@ -85,10 +96,16 @@ export default function PageTransitionProvider({ children }) {
     }
 
     if (!lockRef.current) {
-      // Route changed outside of TransitionLink (back/forward, programmatic nav).
+      // Route changed outside of TransitionLink (native Link, direct
+      // useNavigate(), or browser back/forward). We still animate so
+      // it never looks broken, but if you're seeing "page loads then
+      // animation plays", THIS branch is firing — meaning something
+      // is navigating without going through navigateWithTransition.
+      // Audit your Links/useNavigate() calls (see Step 1 above).
       if (transitionRef.current) {
         transitionRef.current
           .playCover()
+          .then(() => wait(TRANSITION_TIMING.holdDuration))
           .then(() => {
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {

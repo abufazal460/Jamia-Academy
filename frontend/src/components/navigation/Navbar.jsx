@@ -1,3 +1,4 @@
+import { usePageTransition } from "../pageTransition";
 import React, { useState, useCallback, useMemo, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
@@ -48,6 +49,16 @@ function Navbar() {
   // STATE
   // ------------------------------------------------------------------
   const location = useLocation();
+const { navigateWithTransition, isTransitioning } = usePageTransition();
+
+const handleLogoClick = useCallback(
+  (e) => {
+    e.preventDefault();
+    if (isTransitioning) return;
+    navigateWithTransition("/");
+  },
+  [navigateWithTransition, isTransitioning]
+);
 
   // isMobileMenuOpen: Hamburger sidebar open/close control.
   // isCourseOpen STATE REMOVED — dropdown ab exist hi nahi karta.
@@ -133,6 +144,7 @@ function Navbar() {
         {/* ======================== LOGO (LEFT) ======================== */}
         <motion.a
           href="/"
+          onChange={handleLogoClick}
           variants={logoVariants}
           initial="hidden"
           animate="visible"

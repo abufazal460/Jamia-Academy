@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { TransitionNavLink } from "../pageTransition";
 import WhatsAppButton from "./WhatsAppButton";
 import { navLinks } from "../../data/navLinksData";
 
@@ -135,7 +135,7 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
                   <motion.li key={item.id} variants={itemVariants} className="list-none">
                     {/* Ab saare links (including Courses) same NavLink hai — koi accordion nahi.
                         Dropdown logic REMOVED. Ye sirf route par navigate karega aur menu band karega. */}
-                    <NavLink
+                    <TransitionNavLink
                       to={item.route}
                       onClick={onClose} // Click hone par sidebar band karo
                       className={({ isActive }) =>
@@ -151,7 +151,7 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
                       }
                     >
                       {item.label}
-                    </NavLink>
+                    </TransitionNavLink>
                   </motion.li>
                 ))}
               </ul>
