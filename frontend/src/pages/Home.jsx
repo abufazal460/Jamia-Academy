@@ -47,9 +47,9 @@ const Home = () => {
         <BulgeText text="Jamia Academy" bulgeStrength={5} bulgeRadius={0.6} />
       </Suspense>
 
-         <section className="w-full py-16 sm:py-20 md:py-24">
-        <div className="mx-auto w-full max-w-[1728px] px-4 sm:px-6">
-          <div className="h-[26vh] min-h-[180px] sm:h-[32vh] md:h-[38vh] lg:h-[42vh]">
+         <section className="w-full h-screen overflow-hidden">
+        <div className="mx-auto w-full h-full max-w-[1728px]">
+          <div className="h-full">
             <TextPressure text="JAMIA ACADEMY" minFontSize={28} />
           </div>
         </div>

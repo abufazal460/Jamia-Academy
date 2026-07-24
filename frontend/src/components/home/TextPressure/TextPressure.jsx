@@ -292,7 +292,7 @@ const TextPressure = ({
       onBlur={handleDeactivate}
       onTouchStart={handleActivate}
       onTouchEnd={handleDeactivate}
-      className={`group relative w-full h-full overflow-hidden rounded-3xl outline-none
+      className={`group relative w-full h-full flex items-center justify-center overflow-hidden  outline-none
         focus-visible:ring-2 focus-visible:ring-jamia-coral/70
         bg-[linear-gradient(135deg,#0b1120_0%,#131a2e_45%,#0b1120_100%)]
         ${className}`}
