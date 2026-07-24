@@ -795,6 +795,15 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Jamia Academy premium palette (added for TextPressure integration) */
+  --color-jamia-navy: #0b1120;
+  --color-jamia-navy-light: #131a2e;
+  --color-jamia-coral: #ff6b5e;
+  --color-jamia-orange: #ff9f45;
+  --color-jamia-purple: #7c3aed;
+  --color-jamia-teal: #14b8a6;
+  --color-jamia-cream: #fdf6e9;
 }
 
 :root {
