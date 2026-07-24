@@ -5,6 +5,7 @@ import FAQ from "../components/faq/FAQ";
 import CourseGallerySection from "../components/home/CourseGallery/CourseGallerySection";
 import { lazy, Suspense } from "react";
 const BulgeText = lazy(() => import("../components/home/BulgeText/BulgeText"));
+import TextPressure from "../components/home/TextPressure";
 
 const Home = () => {
   return (
@@ -45,6 +46,14 @@ const Home = () => {
       <Suspense fallback={<div className="h-[70vh]" />}>
         <BulgeText text="Jamia Academy" bulgeStrength={5} bulgeRadius={0.6} />
       </Suspense>
+
+         <section className="w-full py-16 sm:py-20 md:py-24">
+        <div className="mx-auto w-full max-w-[1728px] px-4 sm:px-6">
+          <div className="h-[26vh] min-h-[180px] sm:h-[32vh] md:h-[38vh] lg:h-[42vh]">
+            <TextPressure text="JAMIA ACADEMY" minFontSize={28} />
+          </div>
+        </div>
+      </section>
 
       {/* Hero ke turant neeche — Section 01 */}
       <AccreditationSection />
