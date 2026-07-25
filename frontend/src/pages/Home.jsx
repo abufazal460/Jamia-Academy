@@ -3,8 +3,8 @@ import FeatureSection from "../components/home/FeatureSection";
 import LiquidEther from "../components/home/LiquidEther";
 import FAQ from "../components/faq/FAQ";
 import CourseGallerySection from "../components/home/CourseGallery/CourseGallerySection";
-import { lazy, Suspense } from "react";
-const BulgeText = lazy(() => import("../components/home/BulgeText/BulgeText"));
+// import { lazy, Suspense } from "react";
+// const BulgeText = lazy(() => import("../components/home/BulgeText/BulgeText"));
 import TextPressure from "../components/home/TextPressure";
 
 const Home = () => {
@@ -43,9 +43,9 @@ const Home = () => {
       </div>
 
       {/* section 5  */}
-      <Suspense fallback={<div className="h-[70vh]" />}>
+      {/* <Suspense fallback={<div className="h-[70vh]" />}>
         <BulgeText text="Jamia Academy" bulgeStrength={5} bulgeRadius={0.6} />
-      </Suspense>
+      </Suspense> */}
 
          <section className="w-full h-screen overflow-hidden">
         <div className="mx-auto w-full h-full max-w-[1728px]">
