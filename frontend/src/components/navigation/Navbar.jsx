@@ -1,7 +1,20 @@
 import { usePageTransition } from "../pageTransition";
-import React, { useState, useCallback, useMemo, useEffect, useRef } from "react";
+import React, {
+  useState,
+  useCallback,
+  useMemo,
+  useEffect,
+  useRef,
+} from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+
+// GSAP: Scroll-based hide/show animation ke liye use hoga.
+// WHY GSAP aur Framer Motion dono: Framer Motion state-driven animations ke liye,
+// GSAP imperative scroll-triggered animations ke liye — dono ka alag role hai.
+import { gsap } from "gsap";
+// LoginButton: navLinks array se alag, WhatsAppButton ki tarah independently rendered.
+import LoginButton from "../navigation/LoginButton";
 
 // Ye exact imports hai jo user ne diye hai — inhe bilkul change nahi kiya gaya.
 import humburger from "../../assets/button/hambargur.webp";
@@ -49,16 +62,16 @@ function Navbar() {
   // STATE
   // ------------------------------------------------------------------
   const location = useLocation();
-const { navigateWithTransition, isTransitioning } = usePageTransition();
+  const { navigateWithTransition, isTransitioning } = usePageTransition();
 
-const handleLogoClick = useCallback(
-  (e) => {
-    e.preventDefault();
-    if (isTransitioning) return;
-    navigateWithTransition("/");
-  },
-  [navigateWithTransition, isTransitioning]
-);
+  const handleLogoClick = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (isTransitioning) return;
+      navigateWithTransition("/");
+    },
+    [navigateWithTransition, isTransitioning],
+  );
 
   // isMobileMenuOpen: Hamburger sidebar open/close control.
   // isCourseOpen STATE REMOVED — dropdown ab exist hi nahi karta.
@@ -66,6 +79,14 @@ const handleLogoClick = useCallback(
 
   // navRef: Iska use ab sirf Escape key close ke liye hai (mega menu outside click logic removed).
   const navRef = useRef(null);
+
+  // ---- GSAP Scroll Animation Refs ----
+  // WHY alag wrapper divs: Framer Motion ke motion elements par directly GSAP chalana
+  // conflicts create kar sakta hai. Wrapper divs pe GSAP chalao — clean separation.
+  const logoWrapRef = useRef(null); // Logo: left slide + fade on hide
+  const navLinksRef = useRef(null); // Nav pill: upward + fade on hide
+  const loginWrapRef = useRef(null); // Login button: right slide + fade on hide
+  const whatsappWrapRef = useRef(null); // WhatsApp button: right slide + fade on hide
 
   // ------------------------------------------------------------------
   // DERIVED
@@ -75,7 +96,7 @@ const handleLogoClick = useCallback(
   const activeId = useMemo(() => {
     if (location.pathname === "/") return "home";
     const match = navLinks.find(
-      (link) => link.route !== "/" && location.pathname.startsWith(link.route)
+      (link) => link.route !== "/" && location.pathname.startsWith(link.route),
     );
     return match?.id ?? "";
   }, [location.pathname]);
@@ -112,6 +133,134 @@ const handleLogoClick = useCallback(
     // Cleanup — memory leak rokne ke liye listener hata dete hai component unmount par.
   }, []);
 
+  const lastScrollY = useRef(0);
+  const navbarVisible = useRef(true);
+
+  useEffect(() => {
+    const isDesktop = window.matchMedia("(min-width:1024px)");
+
+    // Mobile / Tablet par GSAP disable
+    if (!isDesktop.matches) {
+      gsap.set(navRef.current, {
+        clearProps: "all",
+      });
+
+      return;
+    }
+
+    const handleResize = () => {
+      if (!isDesktop.matches) {
+        gsap.killTweensOf([
+          navRef.current,
+          logoWrapRef.current,
+          navLinksRef.current,
+          loginWrapRef.current,
+          whatsappWrapRef.current,
+        ]);
+
+        gsap.set(
+          [
+            navRef.current,
+            logoWrapRef.current,
+            navLinksRef.current,
+            loginWrapRef.current,
+            whatsappWrapRef.current,
+          ],
+          {
+            clearProps: "all",
+          },
+        );
+      }
+    };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      const scrollingDown = currentScrollY > lastScrollY.current;
+
+      const scrollingUp = currentScrollY < lastScrollY.current;
+
+      if (scrollingDown && currentScrollY > 100 && navbarVisible.current) {
+        navbarVisible.current = false;
+
+        gsap.to(navRef.current, {
+          yPercent: -100,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+
+        gsap.to(logoWrapRef.current, {
+          x: -120,
+          opacity: 0,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+
+        gsap.to(navLinksRef.current, {
+          y: -50,
+          opacity: 0,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+
+        gsap.to([loginWrapRef.current, whatsappWrapRef.current], {
+          x: 120,
+          opacity: 0,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+      }
+
+      if (scrollingUp && !navbarVisible.current) {
+        navbarVisible.current = true;
+
+        gsap.to(navRef.current, {
+          yPercent: 0,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+
+        gsap.to(
+          [
+            logoWrapRef.current,
+            navLinksRef.current,
+            loginWrapRef.current,
+            whatsappWrapRef.current,
+          ],
+          {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            duration: 0.45,
+            ease: "power3.out",
+          },
+        );
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+
+      window.removeEventListener("resize", handleResize);
+
+      gsap.killTweensOf([
+        navRef.current,
+        logoWrapRef.current,
+        navLinksRef.current,
+        loginWrapRef.current,
+        whatsappWrapRef.current,
+      ]);
+    };
+  }, []);
+
   return (
     // ================================================================
     // MAIN NAVBAR CONTAINER
@@ -123,10 +272,7 @@ const handleLogoClick = useCallback(
     // border-b border-white/8: Subtle separator line neeche, baaki content se alag karta hai.
     // w-full: Poori screen width cover kare — no floating center card anymore.
     // ================================================================
-    <header
-      ref={navRef}
-      className="fixed top-0 z-50 w-full"
-    >
+    <header ref={navRef} className="fixed top-0 z-50 w-full">
       <motion.div
         // Navbar ka pura row — initial me thoda upar se fade-in hoga.
         initial={{ opacity: 0, y: -16 }}
@@ -142,29 +288,30 @@ const handleLogoClick = useCallback(
         ].join(" ")}
       >
         {/* ======================== LOGO (LEFT) ======================== */}
-        <motion.a
-          href="/"
-          onChange={handleLogoClick}
-          variants={logoVariants}
-          initial="hidden"
-          animate="visible"
-          aria-label="Jamia Academy — Home"
-          // outline-none: No browser default outline. NO ring added (as per requirement).
-          className="flex shrink-0 items-center gap-2 outline-none"
-        >
-          <img
-            src={logo}
-            alt="Jamia Academy Logo"
-            // Width/height fix kiya — image load hone se pehle CLS na ho.
-            width="40"
-            height="40"
-            className="h-9 w-auto sm:h-10"
-          />
-        </motion.a>
-
+        <div ref={logoWrapRef}>
+          <motion.a
+            href="/"
+            onChange={handleLogoClick}
+            variants={logoVariants}
+            initial="hidden"
+            animate="visible"
+            aria-label="Jamia Academy — Home"
+            // outline-none: No browser default outline. NO ring added (as per requirement).
+            className="flex shrink-0 items-center gap-2 outline-none"
+          >
+            <img
+              src={logo}
+              alt="Jamia Academy Logo"
+              // Width/height fix kiya — image load hone se pehle CLS na ho.
+              width="40"
+              height="40"
+              className="h-9 w-auto sm:h-10"
+            />
+          </motion.a>
+        </div>
         {/* ======================== NAV LINKS (CENTER) — DESKTOP ONLY ======================== */}
         {/* hidden lg:flex: Mobile/Tablet par chhupa do, Desktop (lg = 1024px+) par dikhao. */}
-        <nav aria-label="Primary navigation" className="hidden lg:flex">
+        <nav ref={navLinksRef} aria-label="Primary navigation" className="hidden lg:flex">
           {/* ----------------------------------------------------------------
               Ye pill container Sheryians-inspired design hai.
               bg-white/5: Very subtle dark glass — links ke liye ek group container feel deta hai.
@@ -189,12 +336,18 @@ const handleLogoClick = useCallback(
 
         {/* ======================== RIGHT SIDE ======================== */}
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* WhatsApp button:
-              hidden: Mobile (< lg) par completely hide kar do — sidabar me dikhega.
-              lg:flex: Sirf desktop (1024px+) par show hoga, right side me.
-              WHY: Mobile screen par navbar me WhatsApp aur hamburger dono saath ek cramped
-              layout banate the. Ab mobile me WhatsApp sirf sidebar ke andar milega. */}
-          <div className="hidden lg:flex">
+          {/* LOGIN BUTTON — Desktop only.
+              loginWrapRef: GSAP scroll par right slide + fade.
+              WHY hidden lg:flex: Mobile me Login button sirf sidebar me ho sakta hai future me.
+              Abhi mobile par nahi dikhega, desktop par dikhega. */}
+          <div ref={loginWrapRef} className="flex items-center">
+            <LoginButton />
+          </div>
+
+          {/* WHATSAPP BUTTON — Desktop only.
+              whatsappWrapRef: GSAP scroll par right slide + fade (Login ke saath synchronized).
+              hidden lg:flex: Mobile me WhatsApp sirf MobileMenu sidebar ke bottom me dikhega. */}
+          <div ref={whatsappWrapRef} className="hidden lg:flex">
             <WhatsAppButton />
           </div>
 
@@ -205,7 +358,12 @@ const handleLogoClick = useCallback(
             onClick={toggleMobileMenu}
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", stiffness: 110, damping: 16, delay: 0.4 }}
+            transition={{
+              type: "spring",
+              stiffness: 110,
+              damping: 16,
+              delay: 0.4,
+            }}
             whileTap={{ scale: 0.9 }}
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}

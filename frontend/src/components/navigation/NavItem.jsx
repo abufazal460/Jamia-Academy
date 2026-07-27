@@ -40,6 +40,7 @@ const NavItem = memo(function NavItem({ item, index, isActive }) {
       initial="hidden"
       animate="visible"
       className="relative list-none"
+      
     >
       <motion.div
         // whileHover: small scale + smooth easing, professional feel.

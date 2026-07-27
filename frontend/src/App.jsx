@@ -3,7 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
 import { IntroLoader, useAppReady } from "./components/introLoader";
-import { PageTransitionProvider, RouteTransitionWatcher } from "./components/pageTransition";
+import {
+  PageTransitionProvider,
+  RouteTransitionWatcher,
+} from "./components/pageTransition";
 
 // ====================================================================
 // App.jsx
@@ -18,6 +21,8 @@ const About = lazy(() => import("./pages/About"));
 const Course = lazy(() => import("./pages/Course"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Contact = lazy(() => import("./pages/Contact"));
+const Login = lazy(() => import("./pages/Login"));
+const Certificate = lazy(() => import("./pages/Certificate"));
 
 export default function App() {
   const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
@@ -35,6 +40,8 @@ export default function App() {
               <Route path="/course" element={<Course />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/certificate" element={<Certificate />} />
             </Routes>
             <Footer />
           </Suspense>

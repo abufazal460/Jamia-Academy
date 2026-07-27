@@ -1,6 +1,6 @@
 import AccreditationSection from "../components/home/AccreditationSection";
 import FeatureSection from "../components/home/FeatureSection";
-import LiquidEther from "../components/home/LiquidEther";
+// import LiquidEther from "../components/home/LiquidEther";
 import FAQ from "../components/faq/FAQ";
 import CourseGallerySection from "../components/home/CourseGallery/CourseGallerySection";
 // import { lazy, Suspense } from "react";
@@ -20,7 +20,7 @@ const Home = () => {
           background: `url(https://cdn.prod.website-files.com/696f172efacb311f86007ec0/69784fed37d6652a77f2bd2a_Background.svg)`,
         }}
       >
-        <LiquidEther
+        {/* <LiquidEther
           colors={["#ffffff", "#ffffff", "#ffffff"]}
           mouseForce={20}
           cursorSize={100}
@@ -39,7 +39,7 @@ const Home = () => {
           color0="#5227FF"
           color1="#FF9FFC"
           color2="#B497CF"
-        />
+        /> */}
       </div>
 
       {/* section 5  */}
