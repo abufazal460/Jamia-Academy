@@ -3,6 +3,14 @@ import React, { useState, useCallback, useMemo, useEffect, useRef } from "react"
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
+// GSAP: Scroll-based hide/show animation ke liye use hoga.
+// WHY GSAP aur Framer Motion dono: Framer Motion state-driven animations ke liye,
+// GSAP imperative scroll-triggered animations ke liye — dono ka alag role hai.
+import { gsap } from "gsap";
+// LoginButton: navLinks array se alag, WhatsAppButton ki tarah independently rendered.
+import LoginButton from "../navigation/LoginButton";
+
+
 // Ye exact imports hai jo user ne diye hai — inhe bilkul change nahi kiya gaya.
 import humburger from "../../assets/button/hambargur.webp";
 import cross from "../../assets/button/cross.svg";
@@ -66,6 +74,24 @@ const handleLogoClick = useCallback(
 
   // navRef: Iska use ab sirf Escape key close ke liye hai (mega menu outside click logic removed).
   const navRef = useRef(null);
+  
+  // ---- GSAP Scroll Animation Refs ----
+  // WHY alag wrapper divs: Framer Motion ke motion elements par directly GSAP chalana
+  // conflicts create kar sakta hai. Wrapper divs pe GSAP chalao — clean separation.
+  const logoWrapRef = useRef(null);    // Logo: left slide + fade on hide
+  const navLinksRef = useRef(null);    // Nav pill: upward + fade on hide
+  const loginWrapRef = useRef(null);   // Login button: right slide + fade on hide
+  const whatsappWrapRef = useRef(null); // WhatsApp button: right slide + fade on hide
+
+  // scrollState: useRef me isliye rakha hai (useState nahi) kyunki is state ke
+  // change hone par component ko re-render NAHI karna hai — sirf GSAP animate karna hai.
+  // useState se unnecessary re-renders hote jo performance hit karte.
+  const scrollState = useRef({
+    isHidden: false,   // Ab navbar hide hai ya nahi
+    lastScrollY: 0,    // Last known scroll position (direction detect karne ke liye)
+    ticking: false,    // rAF throttle flag — ek hi rAF pending ho at a time
+    hideScrollY: 0,    // Jis scroll position par hide hua tha (wapas show kab karna hai)
+  });
 
   // ------------------------------------------------------------------
   // DERIVED
@@ -111,6 +137,165 @@ const handleLogoClick = useCallback(
     return () => document.removeEventListener("keydown", handleEscape);
     // Cleanup — memory leak rokne ke liye listener hata dete hai component unmount par.
   }, []);
+
+  
+  // ------------------------------------------------------------------
+  // GSAP SCROLL: NAVBAR HIDE / SHOW
+  // WHY GSAP (Framer Motion nahi): Scroll-triggered imperative animations ke liye
+  // GSAP ka Power2/Expo easing premium feel deta hai. Framer Motion state-driven
+  // animations ke liye better hai. Dono ka alag role — koi conflict nahi.
+  // ------------------------------------------------------------------
+  useEffect(() => {
+    // 100vh se zyada scroll karne ke baad hi navbar hide hoga.
+    // WHY 100vh: Page ke hero section ke baad user content mein hai — tab hide karna sahi hai.
+    const HIDE_AFTER_PX = window.innerHeight;
+
+    // ~25vh wapas scroll karne ke baad navbar wapas dikhega.
+    // WHY 25vh: Itna threshold rakhne se slight wobble ya micro-scroll par
+    // navbar baar baar show/hide nahi hoga — professional, no-flicker behavior.
+    const SHOW_AFTER_UP_PX = window.innerHeight * 0.25;
+
+    const state = scrollState.current;
+
+    // ---- HIDE FUNCTION ----
+    // Navbar ko smoothly upar slide out karta hai + individual elements alag direction me.
+    function hideNavbar() {
+      if (state.isHidden) return; // Already hidden hai to dobara animate mat karo.
+      state.isHidden = true;
+
+      // Poora header upar chala jata hai — sticky position se bahar.
+      // expo.out: Fast start, smooth end — premium "swoosh" feel.
+      gsap.to(navRef.current, {
+        y: "-100%",
+        duration: 0.52,
+        ease: "expo.out",
+      });
+
+      // Logo left ki taraf shift hoke fade out — "fly away" feel.
+      gsap.to(logoWrapRef.current, {
+        x: -28,
+        opacity: 0,
+        duration: 0.42,
+        ease: "power2.out",
+      });
+
+      // Nav links upar ki taraf fade out — header ke saath connected lagta hai.
+      gsap.to(navLinksRef.current, {
+        y: -14,
+        opacity: 0,
+        duration: 0.36,
+        ease: "power2.out",
+      });
+
+      // Login aur WhatsApp right ki taraf slide out — symmetrical to logo.
+      // filter(Boolean): Refs null na ho agar element desktop par render na ho.
+      const rightTargets = [loginWrapRef.current, whatsappWrapRef.current].filter(Boolean);
+      if (rightTargets.length) {
+        gsap.to(rightTargets, {
+          x: 28,
+          opacity: 0,
+          duration: 0.42,
+          ease: "power2.out",
+        });
+      }
+    }
+
+    // ---- SHOW FUNCTION ----
+    // Navbar ko wapas smoothly show karta hai — exactly reverse of hide.
+    function showNavbar() {
+      if (!state.isHidden) return; // Already visible hai to dobara animate mat karo.
+      state.isHidden = false;
+
+      // Header wapas neeche aata hai — expo.out se natural "snap back" feel.
+      gsap.to(navRef.current, {
+        y: "0%",
+        duration: 0.58,
+        ease: "expo.out",
+      });
+
+      // Logo wapas left se normal position mein aata hai.
+      // delay: 0.08 — header ke settle hone ke baad individual elements animate ho.
+      gsap.to(logoWrapRef.current, {
+        x: 0,
+        opacity: 1,
+        duration: 0.44,
+        ease: "power2.out",
+        delay: 0.08,
+      });
+
+      // Nav links upar se wapas normal position.
+      gsap.to(navLinksRef.current, {
+        y: 0,
+        opacity: 1,
+        duration: 0.38,
+        ease: "power2.out",
+        delay: 0.08,
+      });
+
+      // Login aur WhatsApp right se wapas normal position.
+      const rightTargets = [loginWrapRef.current, whatsappWrapRef.current].filter(Boolean);
+      if (rightTargets.length) {
+        gsap.to(rightTargets, {
+          x: 0,
+          opacity: 1,
+          duration: 0.44,
+          ease: "power2.out",
+          delay: 0.08,
+        });
+      }
+    }
+
+    // ---- SCROLL HANDLER ----
+    // WHY requestAnimationFrame: Scroll event bahut tezi se fire hota hai.
+    // rAF ise screen refresh rate (60fps) ke saath sync karta hai —
+    // unnecessary calculations avoid hoti hai, performance smooth rehti hai.
+    function handleScroll() {
+      if (state.ticking) return; // Pehle se ek rAF pending hai — naya schedule mat karo.
+      state.ticking = true;
+
+      requestAnimationFrame(() => {
+        const currentY = window.scrollY;
+
+        // Scroll direction detect karo.
+        const isScrollingDown = currentY > state.lastScrollY;
+
+        if (isScrollingDown && currentY > HIDE_AFTER_PX && !state.isHidden) {
+          // User neeche scroll kar raha hai + 100vh se zyada gaya hai + already hidden nahi.
+          state.hideScrollY = currentY; // Record karo kahan hide kiya.
+          hideNavbar();
+        } else if (!isScrollingDown && state.isHidden) {
+          // User upar scroll kar raha hai + navbar abhi hide hai.
+          // Kitna upar aaya hide hone ki jagah se?
+          const scrolledBackUp = state.hideScrollY - currentY;
+          if (scrolledBackUp >= SHOW_AFTER_UP_PX) {
+            // 25vh wapas scroll ho gaya — ab show karo.
+            showNavbar();
+          }
+        }
+
+        // Last scroll position update karo. Math.max(0): Negative scroll position avoid.
+        state.lastScrollY = Math.max(0, currentY);
+        state.ticking = false; // Agla rAF accept karne ke liye ready.
+      });
+    }
+
+    // passive: true — scroll handler me preventDefault() nahi call hoga,
+    // isliye browser scroll performance optimize kar sakta hai.
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // Component unmount par GSAP tweens clean karo — memory leak avoid.
+      gsap.killTweensOf([
+        navRef.current,
+        logoWrapRef.current,
+        navLinksRef.current,
+        loginWrapRef.current,
+        whatsappWrapRef.current,
+      ].filter(Boolean));
+    };
+  }, []); // Empty deps: Ye effect sirf ek baar mount par run hoga.
+
 
   return (
     // ================================================================
@@ -187,14 +372,20 @@ const handleLogoClick = useCallback(
           {/* MegaMenu REMOVED — import bhi hata diya, render bhi nahi hai ab. */}
         </nav>
 
-        {/* ======================== RIGHT SIDE ======================== */}
+         {/* ======================== RIGHT SIDE ======================== */}
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* WhatsApp button:
-              hidden: Mobile (< lg) par completely hide kar do — sidabar me dikhega.
-              lg:flex: Sirf desktop (1024px+) par show hoga, right side me.
-              WHY: Mobile screen par navbar me WhatsApp aur hamburger dono saath ek cramped
-              layout banate the. Ab mobile me WhatsApp sirf sidebar ke andar milega. */}
-          <div className="hidden lg:flex">
+          {/* LOGIN BUTTON — Desktop only.
+              loginWrapRef: GSAP scroll par right slide + fade.
+              WHY hidden lg:flex: Mobile me Login button sirf sidebar me ho sakta hai future me.
+              Abhi mobile par nahi dikhega, desktop par dikhega. */}
+          <div ref={loginWrapRef} className="hidden lg:flex">
+            <LoginButton />
+          </div>
+
+          {/* WHATSAPP BUTTON — Desktop only.
+              whatsappWrapRef: GSAP scroll par right slide + fade (Login ke saath synchronized).
+              hidden lg:flex: Mobile me WhatsApp sirf MobileMenu sidebar ke bottom me dikhega. */}
+          <div ref={whatsappWrapRef} className="hidden lg:flex">
             <WhatsAppButton />
           </div>
 
