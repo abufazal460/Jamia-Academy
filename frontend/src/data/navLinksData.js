@@ -11,4 +11,5 @@ export const navLinks = [
   { id: "course", label: "Course", route: "/course" },
   { id: "gallery", label: "Gallery", route: "/gallery" },
   { id: "contact", label: "Contact", route: "/contact" },
+  { id: "certificate", label: "Certificate", route: "/certificate" },
 ];

@@ -167,3 +167,10 @@ Our academy offers comprehensive career counseling and placement assistance, inc
 
 
 
+new section on home pages :
+login pages 
+small gallery section 
+testimonials section
+Certificate download 
+incomplete section contact 
+add section in navbar Certificate aur login button 
