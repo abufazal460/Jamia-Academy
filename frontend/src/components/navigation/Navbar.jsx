@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 // GSAP: Scroll-based hide/show animation ke liye use hoga.
 // WHY GSAP aur Framer Motion dono: Framer Motion state-driven animations ke liye,
@@ -63,6 +64,7 @@ function Navbar() {
   // ------------------------------------------------------------------
   const location = useLocation();
   const { navigateWithTransition, isTransitioning } = usePageTransition();
+  const isDesktop = useMediaQuery("lg");
 
   const handleLogoClick = useCallback(
     (e) => {
@@ -137,41 +139,30 @@ function Navbar() {
   const navbarVisible = useRef(true);
 
   useEffect(() => {
-    const isDesktop = window.matchMedia("(min-width:1024px)");
+    if (!isDesktop) {
+      gsap.killTweensOf([
+        navRef.current,
+        logoWrapRef.current,
+        navLinksRef.current,
+        loginWrapRef.current,
+        whatsappWrapRef.current,
+      ]);
 
-    // Mobile / Tablet par GSAP disable
-    if (!isDesktop.matches) {
-      gsap.set(navRef.current, {
-        clearProps: "all",
-      });
-
-      return;
-    }
-
-    const handleResize = () => {
-      if (!isDesktop.matches) {
-        gsap.killTweensOf([
+      gsap.set(
+        [
           navRef.current,
           logoWrapRef.current,
           navLinksRef.current,
           loginWrapRef.current,
           whatsappWrapRef.current,
-        ]);
+        ],
+        {
+          clearProps: "all",
+        },
+      );
 
-        gsap.set(
-          [
-            navRef.current,
-            logoWrapRef.current,
-            navLinksRef.current,
-            loginWrapRef.current,
-            whatsappWrapRef.current,
-          ],
-          {
-            clearProps: "all",
-          },
-        );
-      }
-    };
+      return;
+    }
 
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -189,25 +180,16 @@ function Navbar() {
           ease: "power3.out",
         });
 
-        gsap.to(logoWrapRef.current, {
-          x: -120,
+        gsap.to([logoWrapRef.current, navLinksRef.current], {
           opacity: 0,
+          x: -100,
           duration: 0.45,
-          ease: "power3.out",
-        });
-
-        gsap.to(navLinksRef.current, {
-          y: -50,
-          opacity: 0,
-          duration: 0.45,
-          ease: "power3.out",
         });
 
         gsap.to([loginWrapRef.current, whatsappWrapRef.current], {
-          x: 120,
           opacity: 0,
+          x: 100,
           duration: 0.45,
-          ease: "power3.out",
         });
       }
 
@@ -228,11 +210,10 @@ function Navbar() {
             whatsappWrapRef.current,
           ],
           {
+            opacity: 1,
             x: 0,
             y: 0,
-            opacity: 1,
             duration: 0.45,
-            ease: "power3.out",
           },
         );
       }
@@ -244,12 +225,8 @@ function Navbar() {
       passive: true,
     });
 
-    window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
-
-      window.removeEventListener("resize", handleResize);
 
       gsap.killTweensOf([
         navRef.current,
@@ -259,8 +236,7 @@ function Navbar() {
         whatsappWrapRef.current,
       ]);
     };
-  }, []);
-
+  }, [isDesktop]);
   return (
     // ================================================================
     // MAIN NAVBAR CONTAINER
@@ -311,7 +287,11 @@ function Navbar() {
         </div>
         {/* ======================== NAV LINKS (CENTER) — DESKTOP ONLY ======================== */}
         {/* hidden lg:flex: Mobile/Tablet par chhupa do, Desktop (lg = 1024px+) par dikhao. */}
-        <nav ref={navLinksRef} aria-label="Primary navigation" className="hidden lg:flex">
+        <nav
+          ref={navLinksRef}
+          aria-label="Primary navigation"
+          className="hidden lg:flex"
+        >
           {/* ----------------------------------------------------------------
               Ye pill container Sheryians-inspired design hai.
               bg-white/5: Very subtle dark glass — links ke liye ek group container feel deta hai.
