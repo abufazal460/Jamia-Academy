@@ -88,16 +88,6 @@ function Navbar() {
   const loginWrapRef = useRef(null); // Login button: right slide + fade on hide
   const whatsappWrapRef = useRef(null); // WhatsApp button: right slide + fade on hide
 
-  // scrollState: useRef me isliye rakha hai (useState nahi) kyunki is state ke
-  // change hone par component ko re-render NAHI karna hai — sirf GSAP animate karna hai.
-  // useState se unnecessary re-renders hote jo performance hit karte.
-  const scrollState = useRef({
-    isHidden: false, // Ab navbar hide hai ya nahi
-    lastScrollY: 0, // Last known scroll position (direction detect karne ke liye)
-    ticking: false, // rAF throttle flag — ek hi rAF pending ho at a time
-    hideScrollY: 0, // Jis scroll position par hide hua tha (wapas show kab karna hai)
-  });
-
   // ------------------------------------------------------------------
   // DERIVED
   // ------------------------------------------------------------------
@@ -143,118 +133,134 @@ function Navbar() {
     // Cleanup — memory leak rokne ke liye listener hata dete hai component unmount par.
   }, []);
 
-  // ------------------------------------------------------------------
-  // GSAP SCROLL — PROGRESS BASED HIDE / SHOW
-  //
-  // WHY naya approach:
-  // Purana: gsap.to() ek baar trigger hota tha (hide ya show).
-  //   → Show animation properly reverse nahi hoti thi — animation
-  //     scroll position se linked nahi thi, ek independent tween thi.
-  //
-  // Naya: Scroll position directly 0-1 progress me convert hota hai.
-  //   → Animation scroll ke saath literally move karti hai — dono directions me.
-  //   → gsap.utils.mapRange(): scroll Y ko progress (0→1) me map karta hai.
-  //   → gsap.quickSetter(): gsap.set() se ~60% faster — high-frequency scroll
-  //     events me property setter cache hota hai, per-call overhead khatam.
-  // ------------------------------------------------------------------
-   const lastScrollY = useRef(0);
-const navbarVisible = useRef(true);
+  const lastScrollY = useRef(0);
+  const navbarVisible = useRef(true);
 
-useEffect(() => {
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
+  useEffect(() => {
+    const isDesktop = window.matchMedia("(min-width:1024px)");
 
-    const scrollingDown = currentScrollY > lastScrollY.current;
-    const scrollingUp = currentScrollY < lastScrollY.current;
-
-
-    // Scroll Down - Hide Navbar
-    if (scrollingDown && currentScrollY > 100 && navbarVisible.current) {
-      navbarVisible.current = false;
-
-      gsap.to(navRef.current, {
-        yPercent: -100,
-        duration: 0.45,
-        ease: "power3.out",
+    // Mobile / Tablet par GSAP disable
+    if (!isDesktop.matches) {
+      gsap.set(navRef.current, {
+        clearProps: "all",
       });
 
-      gsap.to(logoWrapRef.current, {
-        x: -220,
-        opacity: 0,
-        duration: 0.45,
-        ease: "power3.out",
-      });
+      return;
+    }
 
-      gsap.to(navLinksRef.current, {
-        y: -80,
-        opacity: 0,
-        duration: 0.45,
-        ease: "power3.out",
-      });
+    const handleResize = () => {
+      if (!isDesktop.matches) {
+        gsap.killTweensOf([
+          navRef.current,
+          logoWrapRef.current,
+          navLinksRef.current,
+          loginWrapRef.current,
+          whatsappWrapRef.current,
+        ]);
 
-      gsap.to(
-        [loginWrapRef.current, whatsappWrapRef.current],
-        {
-          x: 220,
+        gsap.set(
+          [
+            navRef.current,
+            logoWrapRef.current,
+            navLinksRef.current,
+            loginWrapRef.current,
+            whatsappWrapRef.current,
+          ],
+          {
+            clearProps: "all",
+          },
+        );
+      }
+    };
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      const scrollingDown = currentScrollY > lastScrollY.current;
+
+      const scrollingUp = currentScrollY < lastScrollY.current;
+
+      if (scrollingDown && currentScrollY > 100 && navbarVisible.current) {
+        navbarVisible.current = false;
+
+        gsap.to(navRef.current, {
+          yPercent: -100,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+
+        gsap.to(logoWrapRef.current, {
+          x: -120,
           opacity: 0,
           duration: 0.45,
           ease: "power3.out",
-        }
-      );
-    }
+        });
 
-
-    // Scroll Up - Show Navbar
-    if (scrollingUp && !navbarVisible.current) {
-      navbarVisible.current = true;
-
-      gsap.to(navRef.current, {
-        yPercent: 0,
-        duration: 0.45,
-        ease: "power3.out",
-      });
-
-      gsap.to(logoWrapRef.current, {
-        x: 0,
-        opacity: 1,
-        duration: 0.45,
-        ease: "power3.out",
-      });
-
-      gsap.to(navLinksRef.current, {
-        y: 0,
-        opacity: 1,
-        duration: 0.45,
-        ease: "power3.out",
-      });
-
-      gsap.to(
-        [loginWrapRef.current, whatsappWrapRef.current],
-        {
-          x: 0,
-          opacity: 1,
+        gsap.to(navLinksRef.current, {
+          y: -50,
+          opacity: 0,
           duration: 0.45,
           ease: "power3.out",
-        }
-      );
-    }
+        });
 
+        gsap.to([loginWrapRef.current, whatsappWrapRef.current], {
+          x: 120,
+          opacity: 0,
+          duration: 0.45,
+          ease: "power3.out",
+        });
+      }
 
-    // Update last scroll position
-    lastScrollY.current = currentScrollY;
-  };
+      if (scrollingUp && !navbarVisible.current) {
+        navbarVisible.current = true;
 
+        gsap.to(navRef.current, {
+          yPercent: 0,
+          duration: 0.45,
+          ease: "power3.out",
+        });
 
-  window.addEventListener("scroll", handleScroll, {
-    passive: true,
-  });
+        gsap.to(
+          [
+            logoWrapRef.current,
+            navLinksRef.current,
+            loginWrapRef.current,
+            whatsappWrapRef.current,
+          ],
+          {
+            x: 0,
+            y: 0,
+            opacity: 1,
+            duration: 0.45,
+            ease: "power3.out",
+          },
+        );
+      }
 
+      lastScrollY.current = currentScrollY;
+    };
 
-  return () => {
-    window.removeEventListener("scroll", handleScroll);
-  };
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
-}, []);
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+
+      window.removeEventListener("resize", handleResize);
+
+      gsap.killTweensOf([
+        navRef.current,
+        logoWrapRef.current,
+        navLinksRef.current,
+        loginWrapRef.current,
+        whatsappWrapRef.current,
+      ]);
+    };
+  }, []);
+
   return (
     // ================================================================
     // MAIN NAVBAR CONTAINER
@@ -282,29 +288,30 @@ useEffect(() => {
         ].join(" ")}
       >
         {/* ======================== LOGO (LEFT) ======================== */}
-        <motion.a
-          href="/"
-          onChange={handleLogoClick}
-          variants={logoVariants}
-          initial="hidden"
-          animate="visible"
-          aria-label="Jamia Academy — Home"
-          // outline-none: No browser default outline. NO ring added (as per requirement).
-          className="flex shrink-0 items-center gap-2 outline-none"
-        >
-          <img
-            src={logo}
-            alt="Jamia Academy Logo"
-            // Width/height fix kiya — image load hone se pehle CLS na ho.
-            width="40"
-            height="40"
-            className="h-9 w-auto sm:h-10"
-          />
-        </motion.a>
-
+        <div ref={logoWrapRef}>
+          <motion.a
+            href="/"
+            onChange={handleLogoClick}
+            variants={logoVariants}
+            initial="hidden"
+            animate="visible"
+            aria-label="Jamia Academy — Home"
+            // outline-none: No browser default outline. NO ring added (as per requirement).
+            className="flex shrink-0 items-center gap-2 outline-none"
+          >
+            <img
+              src={logo}
+              alt="Jamia Academy Logo"
+              // Width/height fix kiya — image load hone se pehle CLS na ho.
+              width="40"
+              height="40"
+              className="h-9 w-auto sm:h-10"
+            />
+          </motion.a>
+        </div>
         {/* ======================== NAV LINKS (CENTER) — DESKTOP ONLY ======================== */}
         {/* hidden lg:flex: Mobile/Tablet par chhupa do, Desktop (lg = 1024px+) par dikhao. */}
-        <nav aria-label="Primary navigation" className="hidden lg:flex">
+        <nav ref={navLinksRef} aria-label="Primary navigation" className="hidden lg:flex">
           {/* ----------------------------------------------------------------
               Ye pill container Sheryians-inspired design hai.
               bg-white/5: Very subtle dark glass — links ke liye ek group container feel deta hai.
@@ -333,7 +340,7 @@ useEffect(() => {
               loginWrapRef: GSAP scroll par right slide + fade.
               WHY hidden lg:flex: Mobile me Login button sirf sidebar me ho sakta hai future me.
               Abhi mobile par nahi dikhega, desktop par dikhega. */}
-          <div ref={loginWrapRef} className="hidden lg:flex">
+          <div ref={loginWrapRef} className="flex items-center">
             <LoginButton />
           </div>
 
