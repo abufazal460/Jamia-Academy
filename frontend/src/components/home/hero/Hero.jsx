@@ -2,7 +2,7 @@ import { memo } from "react";
 import { useMemo } from "react";
 import { motion , useReducedMotion } from "motion/react";
 import HeroBadge from "./HeroBadge";
-import HeroHeading from "./HeroHeading";
+// import HeroHeading from "./HeroHeading";
 import HeroDescription from "./HeroDescription";
 import HeroButtons from "./HeroButtons";
 import HeroStats from "./HeroStats";
@@ -181,7 +181,7 @@ function Hero() {
 
         {/* 2. Main heading — JAMIA ACADEMY */}
         <motion.div variants={fadeInUp}>
-          <HeroHeading />
+          {/* <HeroHeading /> */}
         </motion.div>
 
         {/* 3. Typewriter subtitle — PERFORMANCE ISOLATED component. Iske
