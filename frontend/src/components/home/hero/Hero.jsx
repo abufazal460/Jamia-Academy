@@ -14,7 +14,7 @@ import {
   heroDescriptions,
 } from "../../../data/heroData";
 import { staggerContainer, fadeInUp } from "../../../utils/motionVariants";
-import LiquidEther from "../LiquidEther";
+import LiquidEther from "./LiquidEther";
 
 /**
  * Hero.jsx
@@ -128,10 +128,11 @@ function Hero() {
         aria-hidden="true"
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
-          background: "linear-gradient(160deg, #05081A 0%, #102060 60%, #151A30 100%)",
+          background:
+            "linear-gradient(160deg, #05081A 0%, #102060 60%, #151A30 100%)",
         }}
       >
-        <LiquidEther 
+        <LiquidEther
           colors={["#ffffff", "#ffffff", "#ffffff"]}
           mouseForce={20}
           cursorSize={100}
@@ -219,7 +220,10 @@ function Hero() {
           // text crop/overflow nahi hota, aur 4K pe bhi bahut chhota nahi
           // dikhta. mb bhi do steps mein scale hoti hai (mobile vs md+).
           className="mb-4 px-3 text-[clamp(0.8125rem,2.4vw,1.125rem)] font-bold transition-[filter] duration-300 hover:brightness-125 sm:px-0 md:mb-6"
-          style={{ color: "#34d399", textShadow: "0 0 12px rgba(52,211,153,0.35)" }}
+          style={{
+            color: "#34d399",
+            textShadow: "0 0 12px rgba(52,211,153,0.35)",
+          }}
         >
           {heroIsoText.text}
         </motion.p>

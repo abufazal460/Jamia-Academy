@@ -23,7 +23,7 @@
  */
 
 import { LazyMotion, domAnimation, m } from "framer-motion";
-import { accreditationsData } from "../../data/accreditations.data";
+import { accreditationsData } from "../../../data/accreditations.data";
 import {
   VIEWPORT_REPLAY,
   textStaggerContainer,
@@ -34,8 +34,8 @@ import {
   getCardVariant,
   logoImageVariant,
   cardHoverLift,
-} from "../../animations/variants";
-import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../constants/layout.constants";
+} from "../../../animations/variants";
+import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../../constants/layout.constants";
 
 const AccreditationSection = () => {
   return (
