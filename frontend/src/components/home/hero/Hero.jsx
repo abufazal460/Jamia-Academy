@@ -14,6 +14,7 @@ import {
   heroDescriptions,
 } from "../../../data/heroData";
 import { staggerContainer, fadeInUp } from "../../../utils/motionVariants";
+import LiquidEther from "../LiquidEther";
 
 /**
  * Hero.jsx
@@ -130,6 +131,7 @@ function Hero() {
           background: "linear-gradient(160deg, #05081A 0%, #102060 60%, #151A30 100%)",
         }}
       >
+        <LiquidEther />
         {/* <LiquidEther /> -- yahan mount karein jab component ready ho.
             Tab tak yahi static gradient fallback background ki tarah kaam karega. */}
       </div>
