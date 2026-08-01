@@ -246,7 +246,7 @@ const HeroAbout = () => {
       className={cn(
         "relative w-full min-h-[100svh] overflow-hidden",
         "flex items-center",
-        "bg-gradient-to-br from-[#2B2D42] to-[#1A1A2E]"
+        "bg-gradient-to-br from-[#0A0F30] via-[#301050] to-[#601580]"
       )}
     >
       {/* ================================================================
