@@ -101,7 +101,7 @@ export const heroStats = [
   },
   {
     id: "stat-success",
-    target: 98,
+    target: 100,
     suffix: "%",
     displayFormat: "percent",
     label: "Job & Freelance Success",
