@@ -1,18 +1,18 @@
 import { memo } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { useMemo } from "react";
+import { motion , useReducedMotion } from "motion/react";
 import HeroBadge from "./HeroBadge";
 import HeroHeading from "./HeroHeading";
 import HeroDescription from "./HeroDescription";
 import HeroButtons from "./HeroButtons";
 import HeroStats from "./HeroStats";
 import HeroPillars from "./HeroPillars";
-import { useTypewriter } from "../../../hooks/useTypewriter";
 import {
-  heroTypewriter,
   heroIsoText,
   heroOrphanText,
   heroDescriptions,
 } from "../../../data/heroData";
+import HeroTypewriterSubtitle  from "./HeroTypewriterSubtitle"
 import { staggerContainer, fadeInUp } from "../../../utils/motionVariants";
 import LiquidEther from "./LiquidEther";
 
@@ -25,24 +25,31 @@ import LiquidEther from "./LiquidEther";
  * hai — bas ab har piece apna alag, reusable, testable component hai, aur
  * saara text heroData.js se aa raha hai (koi hardcoded string nahi).
  *
- * PATCH NOTES (production audit):
- *  1. Import ab "motion/react" se hai, "framer-motion" se nahi — project
- *     ka documented stack Motion React hai, isliye consistency zaroori thi.
- *  2. Root content wrapper `motion.main` se `motion.div` kar diya hai —
- *     ye <section> ke andar nested tha, jo invalid/duplicate <main>
- *     landmark bana raha tha (SEO aur screen-reader navigation dono ke
- *     liye galat). Page-level layout mein already ek <main> hona chahiye.
- *  3. `prefers-reduced-motion` support add kiya hai — typewriter loop ab
- *     us case mein poora static text turant dikha deta hai (koi flashing
- *     nahi).
- *  4. Typewriter subtitle ab ek sr-only full-text span + aria-hidden
- *     animated span mein split hai, taaki screen readers/SEO crawlers ko
- *     hamesha COMPLETE sentence mile, partial typed fragment nahi.
- *  5. "100% FREE" orphan line ka animation bug fix kiya — pehle usme
- *     `variants` aur ek literal `animate={{...}}` object dono the, jo
- *     Motion mein ek dusre ko override kar dete hain (parent stagger se
- *     entrance disconnect ho sakta tha). Ab dono ek hi variant mein merge
- *     hain.
+ * PATCH NOTES (production audit — semantics/SEO/reduced-motion):
+ *  1. Import "motion/react" se hai (project ka documented stack Motion
+ *     React hai, "framer-motion" nahi).
+ *  2. Root content wrapper `motion.div` hai (pehle galti se `motion.main`
+ *     tha) — <section> ke andar nested <main> invalid/duplicate landmark
+ *     banata, jo SEO aur screen-reader navigation ke liye galat hai.
+ *  3. `prefers-reduced-motion` ka respect kiya gaya hai poore Hero mein.
+ *
+ * PATCH NOTES (performance audit):
+ *  4. TYPEWRITER ISOLATION — `useTypewriter` hook (jo har 25-45ms mein
+ *     state update karta hai) PEHLE yahin Hero.jsx ke andar directly call
+ *     ho raha tha. Iski wajah se poora Hero component ~30 baar/second
+ *     re-render ho raha tha, forever — jisse "100% FREE" line ka infinite
+ *     glow animation baar baar restart/glitch hota tha (kyunki uska
+ *     variant object har render pe naya reference ban raha tha). FIX:
+ *     typing state ab `<HeroTypewriterSubtitle />` naam ke ek chhote,
+ *     isolated leaf component mein hai — ab sirf WAHI component har
+ *     25-45ms pe re-render hota hai, Hero khud sirf ek baar mount pe
+ *     render hota hai.
+ *  5. `orphanLineVariant` ab `useMemo` mein hai — is component ke andar
+ *     baaki koi state nahi bacha jo baar baar change ho (typewriter hata
+ *     diya gaya), lekin `prefersReducedMotion` legitimately kabhi
+ *     (rarely) change ho sakta hai — useMemo isliye rakha hai taaki us
+ *     ek case mein bhi ye object stable rahe aur infinite textShadow loop
+ *     ko spurious "restart" signal na mile.
  *
  * LIQUID BACKGROUND:
  * LiquidEther background component is deliverable ka part nahi hai, isliye
@@ -57,58 +64,54 @@ import LiquidEther from "./LiquidEther";
  * Poora content ek staggerContainer variant ke andar hai — isliye jab
  * page load hota hai, har section (badge, heading, subtitle...) ek ke
  * baad ek smoothly reveal hota hai, ek saath sab kuch pop nahi karta
- * (premium, polished entrance feel).
+ * (premium, polished entrance feel). Typewriter ab alag file mein hone ke
+ * baad bhi Motion ka variants context React Context ke through hi
+ * propagate hota hai (tree ke through, file boundary se nahi), isliye
+ * stagger sequence mein uski position bilkul same rehti hai.
  */
 function Hero() {
   // Reduced-motion preference — OS/browser level setting. Isko poore
   // component mein use karte hain taaki auto-playing infinite loops
-  // (typewriter, glow pulse) motion-sensitive users ke liye disable ho
-  // jayein, bina hover/tap se trigger hone waale micro-interactions ko
-  // touch kiye (wo user-initiated hain, WCAG concern nahi).
+  // (glow pulse) motion-sensitive users ke liye disable ho jayein, bina
+  // hover/tap se trigger hone waale micro-interactions ko touch kiye.
   const prefersReducedMotion = useReducedMotion();
-
-  // Typewriter hook — subtitle line ke liye letter-by-letter type/delete loop.
-  // `disabled` pass kiya hai taaki reduced-motion users ke liye hook khud
-  // hi turant poora text return kare, koi setTimeout loop chale hi nahi
-  // (motion-safe + CPU/battery friendly dono).
-  const typedSubtitle = useTypewriter(heroTypewriter.text, {
-    typingSpeed: heroTypewriter.typingSpeed,
-    deletingSpeed: heroTypewriter.deletingSpeed,
-    pauseAfterTyping: heroTypewriter.pauseAfterTyping,
-    pauseAfterDeleting: heroTypewriter.pauseAfterDeleting,
-    disabled: prefersReducedMotion,
-  });
 
   // ORPHAN LINE FIX: "100% FREE" line ke liye local variant — fadeInUp
   // jaisa hi entrance spring hai, lekin "visible" state ke ANDAR hi
-  // textShadow ka infinite pulse bhi included hai. Pehle ye do alag props
-  // (`variants` + literal `animate` object) ke through the, jo Motion
-  // mein conflict karte hain — ek explicit `animate` target object parent
-  // se propagate hone waale variant ko override kar deta hai, isliye line
-  // ka apna entrance fade kabhi reliably fire nahi hota tha. Ab sab kuch
-  // ek hi "visible" variant ke andar hai, isliye parent staggerContainer
-  // se properly connected rehta hai.
-  const orphanLineVariant = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      textShadow: prefersReducedMotion
-        ? "0 0 14px rgba(250,204,21,0.35)"
-        : [
-            "0 0 10px rgba(250,204,21,0.25)",
-            "0 0 22px rgba(250,204,21,0.5)",
-            "0 0 10px rgba(250,204,21,0.25)",
-          ],
-      transition: {
-        opacity: { type: "spring", stiffness: 120, damping: 16 },
-        y: { type: "spring", stiffness: 120, damping: 16 },
+  // textShadow ka infinite pulse bhi included hai (isse "variants" +
+  // separate literal "animate" object ka purana conflict bug fix hota
+  // hai). useMemo mein wrap kiya hai taaki reference sirf tab badle jab
+  // `prefersReducedMotion` genuinely change ho — Motion ke `repeat:
+  // Infinity` wale animation ko baar baar "naya target" na mile.
+  const orphanLineVariant = useMemo(
+    () => ({
+      hidden: { opacity: 0, y: 24 },
+      visible: {
+        opacity: 1,
+        y: 0,
         textShadow: prefersReducedMotion
-          ? { duration: 0 }
-          : { duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: 0.6 },
+          ? "0 0 14px rgba(250,204,21,0.35)"
+          : [
+              "0 0 10px rgba(250,204,21,0.25)",
+              "0 0 22px rgba(250,204,21,0.5)",
+              "0 0 10px rgba(250,204,21,0.25)",
+            ],
+        transition: {
+          opacity: { type: "spring", stiffness: 120, damping: 16 },
+          y: { type: "spring", stiffness: 120, damping: 16 },
+          textShadow: prefersReducedMotion
+            ? { duration: 0 }
+            : {
+                duration: 2.4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 0.6,
+              },
+        },
       },
-    },
-  };
+    }),
+    [prefersReducedMotion],
+  );
 
   return (
     <section
@@ -152,14 +155,11 @@ function Hero() {
           color1="#FF9FFC"
           color2="#B497CF"
         />
-        {/* <LiquidEther /> -- yahan mount karein jab component ready ho.
-            Tab tak yahi static gradient fallback background ki tarah kaam karega. */}
       </div>
 
       {/* ============ CONTENT LAYER (z-10) ============ */}
-      {/* motion.div — pehle motion.main tha, jo <section> ke andar nested
-          hone ki wajah se duplicate/invalid <main> landmark bana raha tha.
-          Page-level <main> ka role yahan nahi hona chahiye. */}
+      {/* motion.div — <section> ke andar nested duplicate/invalid <main>
+          landmark ban gaya tha, isliye motion.main use nahi kar rahe. */}
       <motion.div
         variants={staggerContainer(0.15)}
         initial="hidden"
@@ -184,34 +184,14 @@ function Hero() {
           <HeroHeading />
         </motion.div>
 
-        {/* 3. Typewriter subtitle — normal white color, gradient hataya hai jaisa maanga tha */}
-        <motion.h2
-          variants={fadeInUp}
-          // FLUID TYPOGRAPHY: clamp(min, preferred, max) use kiya hai taaki
-          // font-size 320px se 3840px tak ek continuous curve pe smoothly
-          // scale ho — Tailwind ke fixed text-lg/text-2xl steps mein 768px
-          // pe achanak "jump" mehsoos hota tha, clamp() se wo khatam ho gaya.
-          // min-h bhi clamp() hai — chhoti screens pe 2-line text ke liye
-          // kam height reserve, badi screens pe zyada — isse typing/deleting
-          // ke time layout shift (CLS) kabhi nahi hota, kisi bhi screen pe.
-          className="mx-auto mb-3 max-w-[90%] px-2 text-[clamp(1rem,3.2vw,1.5rem)] font-semibold leading-relaxed text-white sm:max-w-2xl sm:px-0 md:mb-4 md:max-w-4xl min-h-[clamp(3rem,9vw,4.5rem)]"
-        >
-          {/* min-h fix rakha hai taaki typing/deleting ke time text ki
-              line-height/height change hone se layout shift (CLS) na ho */}
-          {/* SR-ONLY FULL TEXT: screen readers aur SEO crawlers ko hamesha
-              COMPLETE subtitle sentence milna chahiye, chahe visual mein
-              abhi typewriter effect ki wajah se sirf partial text dikh
-              raha ho. Neeche waala visible span aria-hidden hai isliye
-              screen reader use ignore karega (warna user ko har letter
-              change pe garbled partial announcements sunayi dete). */}
-          <span className="sr-only">{heroTypewriter.text}</span>
-          <span aria-hidden="true">
-            {typedSubtitle}
-            {!prefersReducedMotion && (
-              <span className="ml-1 inline-block h-[1.1em] w-[2px] animate-pulse align-middle bg-sky-300" />
-            )}
-          </span>
-        </motion.h2>
+        {/* 3. Typewriter subtitle — PERFORMANCE ISOLATED component. Iske
+            andar typing state hai, isliye ye har 25-45ms pe khud
+            re-render hota hai, lekin Hero.jsx (ye poora component) ab
+            uss chakkar mein bilkul nahi padta — ye khud sirf mount pe ek
+            baar render hota hai. Neeche waale saare siblings (buttons,
+            stats, pillars) bhi isliye bilkul untouched rehte hain jab
+            subtitle type/delete ho raha hota hai. */}
+        <HeroTypewriterSubtitle />
 
         {/* 4. ISO certification line — realistic (non-neon) green + halka glow */}
         <motion.p

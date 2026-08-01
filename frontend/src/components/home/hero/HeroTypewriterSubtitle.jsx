@@ -1,9 +1,9 @@
 // src/components/home/Hero/HeroTypewriterSubtitle.jsx
 import { memo } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { useTypewriter } from "./hooks/useTypewriter";
-import { heroTypewriter } from "./data/heroData";
-import { fadeInUp } from "./utils/motionVariants";
+import { useTypewriter } from "../../../hooks/useTypewriter";
+import { heroTypewriter } from "../../../data/heroData";
+import { fadeInUp } from "../../../utils/motionVariants";
 
 /**
  * HeroTypewriterSubtitle.jsx
