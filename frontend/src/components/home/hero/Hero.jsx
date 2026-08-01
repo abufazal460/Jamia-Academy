@@ -6,14 +6,14 @@ import HeroDescription from "./HeroDescription";
 import HeroButtons from "./HeroButtons";
 import HeroStats from "./HeroStats";
 import HeroPillars from "./HeroPillars";
-import { useTypewriter } from "./hooks/useTypewriter";
+import { useTypewriter } from "../../../hooks/useTypewriter";
 import {
   heroTypewriter,
   heroIsoText,
   heroOrphanText,
   heroDescriptions,
-} from "./data/heroData";
-import { staggerContainer, fadeInUp } from "./utils/motionVariants";
+} from "../../../data/heroData";
+import { staggerContainer, fadeInUp } from "../../../utils/motionVariants";
 
 /**
  * Hero.jsx

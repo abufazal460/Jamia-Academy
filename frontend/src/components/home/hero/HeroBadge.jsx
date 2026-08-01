@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { heroBadge } from "./data/heroData";
+import { heroBadge } from "../../../data/heroData";
 
 /**
  * HeroBadge.jsx

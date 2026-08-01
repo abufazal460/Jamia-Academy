@@ -1,6 +1,6 @@
 import { memo, useMemo } from "react";
 import { motion } from "framer-motion";
-import { useLetterHover } from "./hooks/useLetterHover";
+import { useLetterHover } from "../../../hooks/useLetterHover";
 
 /**
  * HeroDescription.jsx

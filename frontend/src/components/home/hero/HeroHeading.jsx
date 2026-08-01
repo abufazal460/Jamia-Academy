@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { heroHeading } from "./data/heroData";
+import { heroHeading } from "../../../data/heroData";
 
 /**
  * HeroHeading.jsx

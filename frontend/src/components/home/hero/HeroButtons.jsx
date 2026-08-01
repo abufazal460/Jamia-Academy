@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { heroButtons } from "./data/heroData";
-import { buttonTap } from "./utils/motionVariants";
+import { heroButtons } from "../../../data/heroData";
+import { buttonTap } from "../../../utils/motionVariants";
 
 /**
  * HeroButtons.jsx

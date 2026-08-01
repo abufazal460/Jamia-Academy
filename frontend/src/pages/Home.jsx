@@ -4,12 +4,13 @@ import LiquidEther from "../components/home/LiquidEther";
 import FAQ from "../components/faq/FAQ";
 import CourseGallerySection from "../components/home/CourseGallery/CourseGallerySection";
 import TextPressure from "../components/home/TextPressure";
+import Hero from "../components/home/hero/Hero";
 
 const Home = () => {
   return (
     <main className="h-full w-full">
       {/* <img className="w-full h-screen object-cover" src="hero-1.jpg" alt="" /> */}
-
+      <Hero />
       <div
         style={{
           width: "100%",

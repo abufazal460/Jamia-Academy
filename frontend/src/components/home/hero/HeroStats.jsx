@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { heroStats } from "./data/heroData";
-import { useCounter } from "./hooks/useCounter";
-import { staggerContainer, fadeInUp } from "./utils/motionVariants";
+import { heroStats } from "../../../data/heroData";
+import { useCounter } from "../../../hooks/useCounter";
+import { staggerContainer, fadeInUp } from "../../../utils/motionVariants";
 
 /**
  * HeroStats.jsx

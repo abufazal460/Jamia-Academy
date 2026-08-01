@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { heroPillars } from "./data/heroData";
-import { staggerContainer, fadeInUp, cardHover } from "./utils/motionVariants";
+import { heroPillars } from "../../../data/heroData";
+import { staggerContainer, fadeInUp, cardHover } from "../../../utils/motionVariants";
 
 /**
  * HeroPillars.jsx
