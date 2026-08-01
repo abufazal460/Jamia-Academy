@@ -60,13 +60,13 @@ export const heroButtons = {
   primary: {
     id: "explore-courses",
     label: "Explore Courses",
-    href: "#courses",
+    href: "courses",
     ariaLabel: "Explore all courses offered by Jamia Academy",
   },
   secondary: {
     id: "contact-us",
     label: "Contact Us",
-    href: "#contact",
+    href: "contact",
     ariaLabel: "Contact Jamia Academy",
   },
 };

@@ -39,7 +39,7 @@ function HeroBadge() {
       {/* Rotating conic-gradient border layer — normally kabhi nahi rukti,
           reduced-motion mein static rehti hai */}
       <motion.div
-        animate={{ rotate: prefersReducedMotion ? 0 : 360 }}
+        // animate={{ rotate: prefersReducedMotion ? 0 : 360 }}
         transition={
           prefersReducedMotion
             ? { duration: 0 }
