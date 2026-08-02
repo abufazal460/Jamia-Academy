@@ -5,6 +5,7 @@ import CourseGallerySection from "../components/home/CourseGallery/CourseGallery
 import Hero from "../components/home/hero/Hero";
 import TextPressure from "../components/home/TextPressure";
 import WhyChooseUs from "../components/home/whyChooseUs/WhyChooseUs";
+import Marquee from '../components/home/marquee';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
     <main className="w-full min-h-screen">
       <Hero />
 
+			<Marquee />
 
        <WhyChooseUs />
 
