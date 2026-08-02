@@ -1,0 +1,30 @@
+/**
+ * marquee.css
+ * -----------------------------------------------------------------------
+ * Sirf wahi cheez yaha hai jo Tailwind utility classes se possible nahi
+ * hai: ek continuous, seamless-loop @keyframes rule. Baaki sab styling
+ * Tailwind arbitrary-value utilities (className) se hi handle hoti hai.
+ *
+ * Loop kaise seamless hai: MarqueeItem apna text 2 identical sets mein
+ * repeat karta hai, aur ye animation container ko -50% translate karta
+ * hai — isliye jab dusra set dikhta hai wo pehle set jaisa hi hota hai,
+ * koi visible "jump" nahi hota.
+ * -----------------------------------------------------------------------
+ */
+
+@keyframes marquee-scroll {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+	to {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+
+/* Defense-in-depth: agar OS-level "reduce motion" set hai to animation
+   turant band, chahe JS state kuch bhi ho. */
+@media (prefers-reduced-motion: reduce) {
+	[class*='animate-[marquee-scroll'] {
+		animation: none !important;
+	}
+}
