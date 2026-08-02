@@ -170,8 +170,9 @@ Our academy offers comprehensive career counseling and placement assistance, inc
 new section on home pages :
 home pages (done)
 why choose us (done)
-testimonials section  
+testimonials section (done) 
+marque section (done)
+contact pages
 small gallery section 
 login pages 
 Certificate check section 
-marque section (done)
