@@ -1,5 +1,5 @@
 import { useId } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { marqueeCourses } from '../../../data/marqueeData';
 import MarqueeItem from './MarqueeItem';
 import ExploreCoursesCTA from './ExploreCoursesCTA';
