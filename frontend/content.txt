@@ -172,7 +172,7 @@ home pages (done)
 why choose us (done)
 testimonials section (done) 
 marque section (done)
-contact pages
 small gallery section 
+contact pages
 login pages 
 Certificate check section 
