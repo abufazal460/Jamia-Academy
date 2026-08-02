@@ -6,11 +6,15 @@ import Hero from "../components/home/hero/Hero";
 import TextPressure from "../components/home/TextPressure";
 import WhyChooseUs from "../components/home/whyChooseUs/WhyChooseUs";
 import Marquee  from "../components/home/marquee";
+import Testimonials from "../components/home/testimonials";
 
 const Home = () => {
   return (
     <main className="w-full min-h-screen">
       <Hero />
+
+      <Testimonials />
+
 
       <Marquee />
 
