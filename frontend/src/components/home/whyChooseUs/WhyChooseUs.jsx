@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import WhyChooseCard from './WhyChooseCard';
 import WhyChooseCTA from './WhyChooseCTA';
-import { whyChooseData, ctaData, sectionData } from './whyChooseUsData';
+import { whyChooseData, ctaData, sectionData } from '../../../data/whyChooseUsData';
 import { containerVariants, headingVariants, paragraphVariants } from './animations';
 
 const WhyChooseUs = memo(() => {
