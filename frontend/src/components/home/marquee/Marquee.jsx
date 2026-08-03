@@ -1,9 +1,10 @@
 import { useId } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'motion/react';
 import { marqueeCourses } from '../../../data/marqueeData';
 import MarqueeItem from './MarqueeItem';
 import ExploreCoursesCTA from './ExploreCoursesCTA';
 import { menuContainerVariants } from './marqueeVariants';
+import noiseTexture from '../../../assets/marquee/noise.png';
 import './marquee.css';
 
 /**
@@ -28,7 +29,8 @@ const Marquee = () => {
 	return (
 		<section
 			aria-labelledby={headingId}
-			className="relative overflow-hidden bg-[var(--color-bg,#f8ecde)] px-[5vw] py-[8vh] text-[var(--color-text,#111)] sm:py-[10vh]"
+			className="marquee-noise-bg relative overflow-hidden bg-[var(--color-bg,#f8ecde)] px-[5vw] py-[8vh] text-[var(--color-text,#111)] sm:py-[10vh]"
+			style={{ '--marquee-noise-bg': `url(${noiseTexture})` }}
 		>
 			<h2
 				id={headingId}
@@ -44,7 +46,7 @@ const Marquee = () => {
 				whileInView="visible"
 				viewport={{ once: true, amount: 0.2 }}
 				variants={menuContainerVariants}
-				className="menu m-0 flex list-none flex-col items-center gap-1 p-0 py-[6vh] sm:gap-2"
+				className="menu m-0 flex list-none flex-col items-start gap-1 p-0 py-[6vh] sm:gap-2"
 			>
 				{marqueeCourses.map((course) => (
 					<MarqueeItem key={course.id} course={course} prefersReducedMotion={prefersReducedMotion} />

@@ -1,8 +1,8 @@
-import basicComputerImg from '../assets/marquee/basicComputer.png';
-import advanceComputerImg from '../assets/marquee/advanceComputer.png';
-import fullStackImg from '../assets/marquee/fullStack.png';
-import dataAnalyticsImg from '../assets/marquee/dataAnalytics.jpg';
-import graphicDesignImg from '../assets/marquee/graphicDesign.png';
+import basicComputerImg from '../assets/marquee/img-1.jpeg';
+import advanceComputerImg from '../assets/marquee/img-2.jpeg';
+import fullStackImg from '../assets/marquee/img-4.jpeg';
+import dataAnalyticsImg from '../assets/marquee/img-5.png';
+import graphicDesignImg from '../assets/marquee/img-8.png';
 
 /**
  * @typedef {Object} MarqueeCourse

@@ -34,12 +34,22 @@ export const menuItemVariants = {
 };
 
 // Hover/focus par side mein jo preview image reveal hoti hai uske liye.
-// opacity 0->1 aur scale .85->1 — spec ke mutabik.
+// Original Codrops demo ka exact transform-math:
+//   rest:   translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0, 20px, 0)
+//   active: translate3d(calc(-100% - 6vw), -30%, 0) rotate3d(0, 0, 1, 4deg)
+// (do consecutive translate3d() sirf ek combined translate ke barabar hain
+// kyunki translations commute — isliye x/y yaha single values mein likhe
+// hain.) x hamesha same rehta hai — ye hi wo cheez hai jo image ko kabhi
+// bhi link-width ya viewport ke hisaab se overflow nahi hone deti, kyunki
+// ye apni khud ki width ke against anchor hoti hai, link ki nahi.
 export const imageRevealVariants = {
-	rest: { opacity: 0, scale: 0.85 },
+	rest: { opacity: 0, scale: 0.95, rotate: 0, x: 'calc(-100% - 6vw)', y: 'calc(-30% + 20px)' },
 	active: {
 		opacity: 1,
 		scale: 1,
+		rotate: 4,
+		x: 'calc(-100% - 6vw)',
+		y: '-30%',
 		transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
 	},
 };
