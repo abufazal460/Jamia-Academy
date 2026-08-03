@@ -2,29 +2,113 @@
  * marquee.css
  * -----------------------------------------------------------------------
  * Sirf wahi cheez yaha hai jo Tailwind utility classes se possible nahi
- * hai: ek continuous, seamless-loop @keyframes rule. Baaki sab styling
- * Tailwind arbitrary-value utilities (className) se hi handle hoti hai.
+ * hai. Is file mein ab do cheezein hain:
  *
- * Loop kaise seamless hai: MarqueeItem apna text 2 identical sets mein
- * repeat karta hai, aur ye animation container ko -50% translate karta
- * hai — isliye jab dusra set dikhta hai wo pehle set jaisa hi hota hai,
- * koi visible "jump" nahi hota.
+ *  1. Original Codrops `.marquee` motion math — EXACT restore, including
+ *     `--move-initial` / `--move-final` custom properties aur `5s linear
+ *     infinite` timing. Pehle ye Tailwind ke `animate-[...]` arbitrary
+ *     class se duplicate/conflict ho raha tha; ab animation SIRF yaha se
+ *     control hoti hai (single source of truth, no duplicate animation
+ *     definitions).
+ *  2. Section noise-texture background utility (asset ka URL React se
+ *     ek CSS custom property ke through pass hota hai, taaki koi inline
+ *     `background:` shorthand na likhna pade).
  * -----------------------------------------------------------------------
  */
 
-@keyframes marquee-scroll {
-	from {
-		transform: translate3d(0, 0, 0);
-	}
-	to {
-		transform: translate3d(-50%, 0, 0);
-	}
+/* `.menu` par hi original custom properties define — exactly jaise
+   reference CSS mein the — taaki `.marquee__inner` unhe inherit kar sake. */
+.menu {
+  --marquee-width: 100vw;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
 }
 
-/* Defense-in-depth: agar OS-level "reduce motion" set hai to animation
-   turant band, chahe JS state kuch bhi ho. */
+@keyframes marquee {
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
+}
+
+.marquee__inner {
+  display: flex;
+  width: max-content;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 5s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+/* Original title-fade cascade, recreated exactly:
+   - hovering/focusing a course item fades its title OUT fast (0.1s)
+     and fades the marquee text IN slow (0.4s), starting the scroll.
+   - leaving reverses both, symmetrically (title back in slow 0.4s,
+     marquee out fast 0.1s).
+   Bound at the `.menu__item` (li) level via :hover/:focus-within so
+   keyboard tab-focus on the inner button behaves identically to mouse
+   hover. */
+.menu__item-link {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+
+
+.menu__item:hover .menu__item-link,
+.menu__item:focus-within .menu__item-link {
+  opacity:0;
+
+transition:opacity .1s linear;
+}
+
+.menu__item:hover .marquee__inner,
+.menu__item:focus-within .marquee__inner {
+  animation-play-state: running;
+  opacity: 1;
+  transition-duration: .4s;
+}
+
+.marquee{
+
+mix-blend-mode:normal;
+
+}
+
+.marquee span{
+
+color:#2563eb;
+
+font-style:italic;
+
+font-weight:900;
+
+-webkit-text-fill-color:currentColor;
+
+-webkit-text-stroke:0;
+
+}
+
+/* Reduced-motion: turn the scroll off entirely (pure CSS, no JS/Tailwind
+   class needed for this). */
 @media (prefers-reduced-motion: reduce) {
-	[class*='animate-[marquee-scroll'] {
-		animation: none !important;
-	}
+  .marquee__inner {
+    animation: none;
+  }
+}
+
+/* Section noise-texture background. `--marquee-noise-bg` is set inline
+   by Marquee.jsx to the Vite-resolved asset URL (a CSS variable holding
+   a URL is not a "background shorthand" — the actual background-*
+   properties live here, production-ready and framework-agnostic). */
+.marquee-noise-bg {
+  background-image: var(--marquee-noise-bg);
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  background-attachment: scroll;
 }

@@ -2,22 +2,36 @@ import { memo, useCallback, useState } from 'react';
 import { motion } from 'motion/react';
 import { imageRevealVariants, menuItemVariants } from './marqueeVariants';
 
-// Scrolling text row ke liye kitni baar title repeat karna hai. 2 sets
-// (yaha DUPLICATE_COUNT/2 each) chahiye taaki -50% translate loop
-// seamless dikhe — MarqueeItem CSS (marquee.css) ka comment dekho.
-const DUPLICATE_COUNT = 8;
+// Scrolling text row ke liye kitni baar "title • description" repeat
+// karna hai. Even number chahiye taaki -50% translate loop seamless
+// dikhe — marquee.css ka comment dekho.
+const DUPLICATE_COUNT = 4;
+
+// Original Codrops demo mein `.menu__item-link` aur `.marquee span` dono
+// EXACT same `--item-font-size` use karte the. Hum bhi ek hi clamp()
+// value dono jagah reuse karte hain (DRY, no magic-number duplication).
+const ITEM_FONT_SIZE = 'clamp(2rem,6vw,5rem)';
 
 /**
  * MarqueeItem
  * -----------------------------------------------------------------------
  * Ek single course link — hover/focus par:
- *  1. Side mein course ki preview image reveal hoti hai (opacity+scale).
- *  2. Background mein course-title ka horizontal scrolling marquee text
- *     dikhta/chalta hai (jaise original demo mein tha).
+ *  1. Course title fade OUT hota hai (fast, 100ms — original timing).
+ *  2. Uske peeche wala scrolling marquee text fade IN hota hai (slow,
+ *     400ms) aur infinite horizontal scroll shuru ho jaata hai (animation
+ *     PURELY marquee.css se aati hai — koi Tailwind `animate-[...]` class
+ *     ya duplicate JS-driven animation nahi).
+ *  3. Side mein course ki preview image reveal hoti hai (Framer Motion:
+ *     opacity + rotate + slight scale, original translate3d math ke
+ *     saath).
+ * Hover khatam hone par sab kuch symmetrically reverse hota hai.
  *
- * Poori tarah mouse (hover) aur keyboard (focus) dono se accessible hai.
- * Touch devices ke liye tap bhi toggle karta hai (kyunki hover available
- * nahi hota).
+ * Text-fade aur marquee-fade dono PURE CSS se driven hain (marquee.css:
+ * `.menu__item:hover`/`:focus-within` descendant selectors) — isliye in
+ * dono ke liye koi React state/re-render nahi chahiye. Sirf image ke
+ * Framer Motion animate ke liye ek chhota sa `isActive` state rakha hai,
+ * kyunki image par pointer-events none hai (wo khud hover detect nahi
+ * kar sakti).
  * -----------------------------------------------------------------------
  */
 const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) {
@@ -25,58 +39,65 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 
 	const activate = useCallback(() => setIsActive(true), []);
 	const deactivate = useCallback(() => setIsActive(false), []);
-	const toggleForTouch = useCallback(() => setIsActive((prev) => !prev), []);
 
-	const previewImage = course.images[0];
-	const showMotionScroll = !prefersReducedMotion;
+	const marqueeText = `${course.title} • ${course.description}`;
 
 	return (
-		<motion.li variants={menuItemVariants} className="menu__item relative px-[3vw] py-1 sm:px-[4vw] sm:py-2">
+		<motion.li variants={menuItemVariants} className="menu__item relative">
 			<button
 				type="button"
-				className="menu__item-link relative inline-block cursor-pointer bg-transparent p-0 font-[900] leading-[1.1] text-transparent [-webkit-text-stroke:1.5px_#111] transition-opacity duration-300 hover:opacity-70 focus-visible:opacity-70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b19e7f] focus-visible:ring-offset-4"
-				style={{ fontSize: 'clamp(2.25rem, 9vw, 6rem)' }}
+				className="relative inline-block cursor-pointer bg-transparent p-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b19e7f] focus-visible:ring-offset-4"
 				onMouseEnter={activate}
 				onMouseLeave={deactivate}
 				onFocus={activate}
 				onBlur={deactivate}
-				onClick={toggleForTouch}
 				aria-label={`${course.title} course`}
 			>
-				{course.title}
+				<span
+					className="menu__item-link relative z-10  inline-block whitespace-nowrap px-[1vw] font-[900] leading-[1.15] text-transparent transition-opacity duration-150 [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
+					style={{ fontSize: ITEM_FONT_SIZE }}
+				>
+					{course.title}
+				</span>
 			</button>
 
-			{previewImage && (
+			{course.image && (
 				<motion.img
-					src={previewImage}
-					alt={`${course.title} course preview`}
-					width={320}
-					height={220}
+					src={course.image}
+					alt={course.alt || `${course.title} course preview`}
+					width={500}
+					height={360}
 					loading="lazy"
 					decoding="async"
 					aria-hidden="true"
-					className="pointer-events-none absolute left-full top-1/2 hidden h-[38vh] max-h-[280px] w-auto -translate-y-1/2 rounded-2xl object-cover shadow-2xl md:block"
-					style={{ marginLeft: '2vw' }}
+					className="pointer-events-none absolute left-full top-1/2 z-10 hidden bg-transparent object-contain will-change-transform md:block"
+					style={{
+						height: 'clamp(240px, 50vh, 400px)',
+						width: 'auto',
+						
+					}}
 					initial="rest"
-					animate={showMotionScroll && isActive ? 'active' : 'rest'}
+					animate={isActive ? 'active' : 'rest'}
 					variants={imageRevealVariants}
+					transition={prefersReducedMotion ? { duration: 0 } : undefined}
 				/>
 			)}
 
 			<div
 				aria-hidden="true"
-				className={`pointer-events-none absolute inset-0 -z-10 flex items-center overflow-hidden opacity-0 [mix-blend-mode:color-burn] transition-opacity duration-300 ${
-					isActive ? 'opacity-100' : ''
-				}`}
+				className="pointer-events-none absolute left-0 top-0 z-0 w-full inset-0 overflow-hidden [mix-blend-mode:color-burn]"
 			>
 				<div
-					className={`flex w-max shrink-0 gap-[2vw] whitespace-nowrap font-[900] italic ${
-						showMotionScroll ? 'animate-[marquee-scroll_16s_linear_infinite]' : ''
-					} ${showMotionScroll && isActive ? '[animation-play-state:running]' : '[animation-play-state:paused]'}`}
-					style={{ fontSize: 'clamp(2.25rem, 9vw, 6rem)' }}
+					className="marquee__inner relative flex w-max shrink-0 whitespace-nowrap font-[900] italic leading-[1.15]"
+					style={{ fontSize: ITEM_FONT_SIZE , lineHeight:1.1}}
 				>
 					{Array.from({ length: DUPLICATE_COUNT }).map((_, index) => (
-						<span key={`${course.id}-marquee-${index}`}>{course.title}</span>
+						<span
+							key={`${course.id}-marquee-${index}`}
+							className="bg-gradient-to-r from-[#000] via-[#000] to-[#000] bg-clip-text px-[1vw] text-transparent [-webkit-text-fill-color:transparent]"
+						>
+							{marqueeText}
+						</span>
 					))}
 				</div>
 			</div>
