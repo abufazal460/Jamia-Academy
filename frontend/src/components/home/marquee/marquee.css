@@ -19,30 +19,29 @@
 /* `.menu` par hi original custom properties define — exactly jaise
    reference CSS mein the — taaki `.marquee__inner` unhe inherit kar sake. */
 .menu {
-	--marquee-width: 100vw;
-	--offset: 20vw;
-	--move-initial: calc(-25% + var(--offset));
-	--move-final: calc(-50% + var(--offset));
+  --marquee-width: 100vw;
+  --offset: 20vw;
+  --move-initial: calc(-25% + var(--offset));
+  --move-final: calc(-50% + var(--offset));
 }
 
 @keyframes marquee {
-	0% {
-		transform: translate3d(var(--move-initial), 0, 0);
-	}
-	100% {
-		transform: translate3d(var(--move-final), 0, 0);
-	}
+  0% {
+    transform: translate3d(var(--move-initial), 0, 0);
+  }
+  100% {
+    transform: translate3d(var(--move-final), 0, 0);
+  }
 }
 
 .marquee__inner {
-	width: fit-content;
-	display: flex;
-	position: relative;
-	transform: translate3d(var(--move-initial), 0, 0);
-	animation: marquee 5s linear infinite;
-	animation-play-state: paused;
-	opacity: 0;
-	transition: opacity 0.1s;
+  display: flex;
+  width: max-content;
+  transform: translate3d(var(--move-initial), 0, 0);
+  animation: marquee 5s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.15s ease;
 }
 
 /* Original title-fade cascade, recreated exactly:
@@ -54,29 +53,52 @@
    keyboard tab-focus on the inner button behaves identically to mouse
    hover. */
 .menu__item-link {
-	opacity: 1;
-	transition: opacity 0.4s;
+  opacity: 1;
+  transition: opacity 0.4s;
 }
+
+
 
 .menu__item:hover .menu__item-link,
 .menu__item:focus-within .menu__item-link {
-	transition-duration: 0.1s;
-	opacity: 0;
+  opacity:0;
+
+transition:opacity .1s linear;
 }
 
 .menu__item:hover .marquee__inner,
 .menu__item:focus-within .marquee__inner {
-	animation-play-state: running;
-	opacity: 1;
-	transition-duration: 0.4s;
+  animation-play-state: running;
+  opacity: 1;
+  transition-duration: .4s;
+}
+
+.marquee{
+
+mix-blend-mode:normal;
+
+}
+
+.marquee span{
+
+color:#2563eb;
+
+font-style:italic;
+
+font-weight:900;
+
+-webkit-text-fill-color:currentColor;
+
+-webkit-text-stroke:0;
+
 }
 
 /* Reduced-motion: turn the scroll off entirely (pure CSS, no JS/Tailwind
    class needed for this). */
 @media (prefers-reduced-motion: reduce) {
-	.marquee__inner {
-		animation: none;
-	}
+  .marquee__inner {
+    animation: none;
+  }
 }
 
 /* Section noise-texture background. `--marquee-noise-bg` is set inline
@@ -84,9 +106,9 @@
    a URL is not a "background shorthand" — the actual background-*
    properties live here, production-ready and framework-agnostic). */
 .marquee-noise-bg {
-	background-image: var(--marquee-noise-bg);
-	background-repeat: repeat;
-	background-size: auto;
-	background-position: center;
-	background-attachment: scroll;
+  background-image: var(--marquee-noise-bg);
+  background-repeat: repeat;
+  background-size: auto;
+  background-position: center;
+  background-attachment: scroll;
 }

@@ -10,7 +10,7 @@ const DUPLICATE_COUNT = 4;
 // Original Codrops demo mein `.menu__item-link` aur `.marquee span` dono
 // EXACT same `--item-font-size` use karte the. Hum bhi ek hi clamp()
 // value dono jagah reuse karte hain (DRY, no magic-number duplication).
-const ITEM_FONT_SIZE = 'clamp(1.5rem, 7vw, 4.5rem)';
+const ITEM_FONT_SIZE = 'clamp(2rem,6vw,5rem)';
 
 /**
  * MarqueeItem
@@ -43,7 +43,7 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 	const marqueeText = `${course.title} • ${course.description}`;
 
 	return (
-		<motion.li variants={menuItemVariants} className="menu__item relative px-[5vw]">
+		<motion.li variants={menuItemVariants} className="menu__item relative">
 			<button
 				type="button"
 				className="relative inline-block cursor-pointer bg-transparent p-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b19e7f] focus-visible:ring-offset-4"
@@ -54,7 +54,7 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 				aria-label={`${course.title} course`}
 			>
 				<span
-					className="menu__item-link inline-block whitespace-nowrap px-[1vw] font-[900] leading-[1.15] text-transparent [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
+					className="menu__item-link relative z-10  inline-block whitespace-nowrap px-[1vw] font-[900] leading-[1.15] text-transparent transition-opacity duration-150 [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
 					style={{ fontSize: ITEM_FONT_SIZE }}
 				>
 					{course.title}
@@ -72,9 +72,9 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 					aria-hidden="true"
 					className="pointer-events-none absolute left-full top-1/2 z-10 hidden bg-transparent object-contain will-change-transform md:block"
 					style={{
-						height: 'clamp(220px, 50vh, 400px)',
+						height: 'clamp(240px, 50vh, 400px)',
 						width: 'auto',
-						maxWidth: 'min(90vw, 700px)',
+						
 					}}
 					initial="rest"
 					animate={isActive ? 'active' : 'rest'}
@@ -85,16 +85,16 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 
 			<div
 				aria-hidden="true"
-				className="pointer-events-none absolute left-0 top-0 -z-10 w-screen overflow-hidden [mix-blend-mode:color-burn]"
+				className="pointer-events-none absolute left-0 top-0 z-0 w-full inset-0 overflow-hidden [mix-blend-mode:color-burn]"
 			>
 				<div
 					className="marquee__inner relative flex w-max shrink-0 whitespace-nowrap font-[900] italic leading-[1.15]"
-					style={{ fontSize: ITEM_FONT_SIZE }}
+					style={{ fontSize: ITEM_FONT_SIZE , lineHeight:1.1}}
 				>
 					{Array.from({ length: DUPLICATE_COUNT }).map((_, index) => (
 						<span
 							key={`${course.id}-marquee-${index}`}
-							className="bg-gradient-to-r from-[#2563EB] via-[#3B82F6] to-[#60A5FA] bg-clip-text px-[1vw] text-transparent [-webkit-text-fill-color:transparent]"
+							className="bg-gradient-to-r from-[#000] via-[#000] to-[#000] bg-clip-text px-[1vw] text-transparent [-webkit-text-fill-color:transparent]"
 						>
 							{marqueeText}
 						</span>
