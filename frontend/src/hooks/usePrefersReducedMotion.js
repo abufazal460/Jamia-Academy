@@ -31,4 +31,8 @@ const usePrefersReducedMotion = () => {
   return prefersReduced;
 };
 
+// ✅ Named Export
+export { usePrefersReducedMotion };
+
+// ✅ Default Export
 export default usePrefersReducedMotion;
