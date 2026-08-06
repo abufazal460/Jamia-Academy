@@ -1,16 +1,28 @@
-import React from "react";
-import SpaceBackground from "../components/contactBackground/SpaceBackground";
+import { LazyMotion, domAnimation } from "motion/react";
+import SpaceBackground from "../../components/contactBackground/SpaceBackground";
+import { LoginCard } from "../../components/login";
 
-// Login.jsx — Placeholder page.
-// WHY alag route /login: Pehle Contact aur Login same route share karte the,
-// jis se Contact link galat active ho jaata tha. Ab dono clearly alag hain.
+/**
+ * Login
+ * Page-level component. Existing SpaceBackground ko as-is behind the
+ * card render karta hai — background ko dobara banaya ya modify nahi
+ * kiya gaya hai, jaisa spec me mention tha.
+ *
+ * Authentication/API/Redux/Context/JWT/Firebase — kuch bhi implement
+ * nahi hai, current scope sirf UI tak hai.
+ */
 function Login() {
   return (
-    <main className="h-screen w-full flex justify-center items-center flex-col text-slate-100">
-      <h1 className="text-3xl font-bold text-red-300">Login</h1>
-      <p className="mt-2 text-slate-800">Login page — placeholder content.</p>
-      <SpaceBackground />
-    </main>
+    <LazyMotion features={domAnimation}>
+      <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden bg-[#05070d] px-4 py-10 sm:px-6">
+        {/* Existing project background — do not modify */}
+        <SpaceBackground />
+
+        <div className="relative z-10 flex w-full justify-center">
+          <LoginCard />
+        </div>
+      </main>
+    </LazyMotion>
   );
 }
 
