@@ -60,14 +60,14 @@ const LoginButton = memo(function LoginButton() {
         // overflow-hidden: Text clip ke liye zaroori hai (sliding text effect).
         // px-5 py-2: Professional padding — pill shape ke saath balanced spacing.
         // rounded-full: Modern pill/capsule shape.
-        className="relative overflow-hidden rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-2 text-sm font-bold text-white outline-none"
+        className="relative overflow-hidden cursor-pointer rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-2 text-sm font-bold text-white outline-none"
       >
         {/* ---- TEXT CONTAINER ----
             h-[1.2em] + overflow-hidden: Ye ek fixed height window hai.
             Dono texts (rest + hover) is window ke andar slide karte hai.
             Bahar ka text clip ho jaata hai — smooth reveal effect aata hai.
             min-w-[52px]: Button width consistent rakho taaki size jump na kare. */}
-        <span className="relative flex h-[1.2em] min-w-[52px] items-center justify-center overflow-hidden">
+        <span className="relative flex h-[1.6em] min-w-[60px] items-center justify-center overflow-hidden">
 
           {/* ---- DEFAULT TEXT (resting state) ----
               Hover par: y 0 → "-100%" (upar jaata hai) + opacity 1 → 0 (fade out).
@@ -82,7 +82,7 @@ const LoginButton = memo(function LoginButton() {
             // whitespace-nowrap: Text wrap na ho agar button thoda chhota ho.
             className="absolute select-none whitespace-nowrap"
           >
-            LOGIN
+            Login
           </motion.span>
 
           {/* ---- HOVER TEXT (comes from below) ----
@@ -100,7 +100,7 @@ const LoginButton = memo(function LoginButton() {
             aria-hidden="true"
             className="absolute select-none whitespace-nowrap"
           >
-            LOGIN
+            Login
           </motion.span>
         </span>
       </motion.button>
