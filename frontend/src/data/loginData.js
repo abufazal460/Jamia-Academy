@@ -13,14 +13,14 @@ export const loginData = {
   form: {
     email: {
       label: "Email",
-      placeholder: "you@example.com",
+      placeholder: "",
       id: "login-email",
       name: "email",
       autoComplete: "email",
     },
     password: {
       label: "Password",
-      placeholder: "Enter your password",
+      placeholder: "",
       id: "login-password",
       name: "password",
       autoComplete: "current-password",
@@ -28,7 +28,7 @@ export const loginData = {
   },
   button: {
     idleText: "Sign In",
-    hoverText: "Let's Go",
+    hoverText: "Sign In",
     loadingText: "Signing In...",
   },
   errors: {

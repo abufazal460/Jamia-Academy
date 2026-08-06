@@ -1,6 +1,6 @@
 import { LazyMotion, domAnimation } from "motion/react";
-import SpaceBackground from "../../components/contactBackground/SpaceBackground";
-import { LoginCard } from "../../components/login";
+import SpaceBackground from "../components/contactBackground/SpaceBackground";
+import { LoginCard } from "../components/login";
 
 /**
  * Login
@@ -14,7 +14,7 @@ import { LoginCard } from "../../components/login";
 function Login() {
   return (
     <LazyMotion features={domAnimation}>
-      <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden bg-[#05070d] px-4 py-10 sm:px-6">
+      <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden  px-4 py-10 sm:px-6">
         {/* Existing project background — do not modify */}
         <SpaceBackground />
 
