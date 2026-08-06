@@ -60,7 +60,7 @@ const LoginButton = memo(function LoginButton() {
         // overflow-hidden: Text clip ke liye zaroori hai (sliding text effect).
         // px-5 py-2: Professional padding — pill shape ke saath balanced spacing.
         // rounded-full: Modern pill/capsule shape.
-        className="relative overflow-hidden rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-2 text-sm font-bold text-white outline-none"
+        className="relative overflow-hidden cursor-pointer rounded-full bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-2 text-sm font-bold text-white outline-none"
       >
         {/* ---- TEXT CONTAINER ----
             h-[1.2em] + overflow-hidden: Ye ek fixed height window hai.
@@ -82,7 +82,7 @@ const LoginButton = memo(function LoginButton() {
             // whitespace-nowrap: Text wrap na ho agar button thoda chhota ho.
             className="absolute select-none whitespace-nowrap"
           >
-            LOGIN
+            Login
           </motion.span>
 
           {/* ---- HOVER TEXT (comes from below) ----
@@ -100,7 +100,7 @@ const LoginButton = memo(function LoginButton() {
             aria-hidden="true"
             className="absolute select-none whitespace-nowrap"
           >
-            LOGIN
+            Login
           </motion.span>
         </span>
       </motion.button>
