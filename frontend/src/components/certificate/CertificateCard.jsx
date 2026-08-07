@@ -8,8 +8,8 @@ import {
   STATUS_MESSAGES,
 } from "../../data/certificateData";
 import { validateCertificateField, validateCertificateForm, isCertificateFormValid, sanitizeCertificateFormData } from "../../utils/certificateValidation";
-import { handleCertificateVerification } from "../../../utils/futureApi";
-import { certCardVariants } from "../../../utils/certificateAnimationVariants";
+import { handleCertificateVerification } from "../../utils/futureApi";
+import { certCardVariants } from "../../utils/certificateAnimationVariants";
 
 /**
  * CertificateCard

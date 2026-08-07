@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { PAGE_CONTENT } from "../../../data/certificateData";
-import { certHeadingVariants } from "../../../utils/certificateAnimationVariants";
+import { PAGE_CONTENT } from "../../data/certificateData";
+import { certHeadingVariants } from "../../utils/certificateAnimationVariants";
 
 function PageHeadingBase() {
   return (

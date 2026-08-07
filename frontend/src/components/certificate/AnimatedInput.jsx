@@ -1,8 +1,8 @@
 import { memo, useEffect, useRef } from "react";
 import { motion, useAnimationControls } from "motion/react";
 import { FloatingLabel } from "./FloatingLabel";
-import { useCertificateFloatingLabel } from "../../../hooks/useCertificateFloatingLabel";
-import { certFieldItemVariants, certShakeVariants } from "../../../utils/certificateAnimationVariants";
+import { useCertificateFloatingLabel } from "../../hooks/useCertificateFloatingLabel";
+import { certFieldItemVariants, certShakeVariants } from "../../utils/certificateAnimationVariants";
 
 /**
  * AnimatedInput

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { BUTTON_TEXT } from "../../../data/certificateData";
-import { certButtonWidthVariants } from "../../../utils/certificateAnimationVariants";
+import { BUTTON_TEXT } from "../../data/certificateData";
+import { certButtonWidthVariants } from "../../utils/certificateAnimationVariants";
 import { LoadingSpinner } from "./LoadingSpinner";
 
 /**

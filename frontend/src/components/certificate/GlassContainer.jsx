@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { useCertificateReducedMotion } from "../../../hooks/useCertificateReducedMotion";
+import { useCertificateReducedMotion } from "../../hooks/useCertificateReducedMotion";
 
 /**
  * GlassContainer
