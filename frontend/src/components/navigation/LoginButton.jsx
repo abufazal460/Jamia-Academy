@@ -1,6 +1,7 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { usePageTransition } from "../pageTransition";
+
 
 // ====================================================================
 // LoginButton.jsx
@@ -15,7 +16,8 @@ import { useNavigate } from "react-router-dom";
 const LoginButton = memo(function LoginButton() {
   // useNavigate: /login route par programmatic navigation ke liye.
   // WHY ye approach: <Link> component button ke andar semantically sahi nahi hota.
-  const navigate = useNavigate();
+
+  const { navigateWithTransition } = usePageTransition();
 
   return (
     // ---- OUTER WRAPPER: Entry animation (page load par right se slide-in) ----
@@ -35,7 +37,7 @@ const LoginButton = memo(function LoginButton() {
           bina koi extra prop pass kiye. */}
       <motion.button
         type="button"
-        onClick={() => navigate("/login")}
+        onClick={() => navigateWithTransition("/login")}
         initial="rest"
         whileHover="hover"
         // whileTap: gesture priority me whileHover se upar hota hai, isliye

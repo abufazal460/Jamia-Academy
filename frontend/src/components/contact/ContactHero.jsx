@@ -5,6 +5,7 @@ import { buttonHoverVariant } from "../../animations/hoverVariants";
 import { floatingCard, noMotion } from "../../animations/floatingVariants";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { resolveIcon } from "../../utils/iconResolver";
+import TransitionLink from "../pageTransition/TransitionLink"
 
 const ACCENT_MAP = {
   primary: "#E63946",
@@ -57,8 +58,8 @@ const ContactHero = () => {
         </p>
 
         <div className="mt-2 flex flex-wrap gap-4">
-          <motion.a
-            href={contactHero.buttons.primary.href}
+          <TransitionLink
+            to={contactHero.buttons.primary.href}
             variants={buttonHoverVariant}
             initial="rest"
             whileHover="hover"
@@ -66,7 +67,7 @@ const ContactHero = () => {
             className="rounded-full bg-[#E63946] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#E63946]/25 transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E63946]"
           >
             {contactHero.buttons.primary.label}
-          </motion.a>
+          </TransitionLink>
           <motion.a
             href={contactHero.buttons.secondary.href}
             variants={buttonHoverVariant}
