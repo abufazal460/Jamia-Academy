@@ -10,10 +10,8 @@
  * @param {Object} formData - sanitized certificate verification form data
  * @param {string} formData.fullName
  * @param {string} formData.fatherName
- * @param {string} formData.motherName
  * @param {string} formData.email
  * @param {string} formData.courseName
- * @param {string} formData.certificateId
  * @returns {Promise<{ success: boolean, data: Object }>}
  */
 export async function handleCertificateVerification(formData) {

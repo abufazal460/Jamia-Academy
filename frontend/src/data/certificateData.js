@@ -20,7 +20,7 @@ export const PAGE_CONTENT = {
 
 export const BUTTON_TEXT = {
   idle: "Check Certificate",
-  hover: "Verify Now",
+  hover: "Check Certificate",
   loading: "Verifying…",
 };
 
@@ -41,10 +41,7 @@ export const VALIDATION_MESSAGES = {
     required: "Father's name is required",
     invalid: "Enter a valid name",
   },
-  motherName: {
-    required: "Mother's name is required",
-    invalid: "Enter a valid name",
-  },
+ 
   email: {
     required: "Email ID is required",
     invalid: "Enter a valid email address",
@@ -53,10 +50,7 @@ export const VALIDATION_MESSAGES = {
     required: "Course name is required",
     invalid: "Enter a valid course name",
   },
-  certificateId: {
-    required: "Certificate ID is required",
-    invalid: "Only letters, numbers and hyphens are allowed",
-  },
+
 };
 
 // direction: label entry animation direction — FormFields isi key se
@@ -83,16 +77,6 @@ export const CERTIFICATE_FIELDS = [
     required: true,
   },
   {
-    id: "motherName",
-    name: "motherName",
-    label: "Mother Name",
-    type: "text",
-    autoComplete: "off",
-    icon: FiHeart,
-    direction: "right",
-    required: true,
-  },
-  {
     id: "email",
     name: "email",
     label: "Email ID",
@@ -110,16 +94,6 @@ export const CERTIFICATE_FIELDS = [
     autoComplete: "off",
     icon: FaGraduationCap,
     direction: "bottom",
-    required: true,
-  },
-  {
-    id: "certificateId",
-    name: "certificateId",
-    label: "Certificate ID",
-    type: "text",
-    autoComplete: "off",
-    icon: FaCertificate,
-    direction: "fade",
     required: true,
   },
 ];
