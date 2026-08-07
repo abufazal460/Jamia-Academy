@@ -2,7 +2,7 @@ import { memo } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { heroButtons } from "../../../data/heroData";
 import { buttonTap } from "../../../utils/motionVariants";
-
+import TransitionLink from "../../pageTransition/TransitionLink";
 /**
  * HeroButtons.jsx
  * ---------------
@@ -69,8 +69,8 @@ function HeroButtons() {
     // unki natural content-width le leta hai.
     <div className="mx-auto mb-12 flex w-full max-w-sm flex-col items-stretch justify-center gap-3 sm:mb-16 sm:max-w-none sm:flex-row sm:items-center sm:gap-5">
       {/* ============ PRIMARY BUTTON — Explore Courses ============ */}
-      <motion.a
-        href={primary.href}
+      <TransitionLink 
+        to={primary.href}
         aria-label={primary.ariaLabel}
         initial="rest"
         animate="rest"
@@ -95,11 +95,11 @@ function HeroButtons() {
             {primary.label}
           </motion.span>
         </span>
-      </motion.a>
+      </TransitionLink>
 
       {/* ============ SECONDARY BUTTON — Contact Us (Liquid Glass) ============ */}
-      <motion.a
-        href={secondary.href}
+      <TransitionLink
+        to={secondary.href}
         aria-label={secondary.ariaLabel}
         initial="rest"
         animate="rest"
@@ -132,7 +132,7 @@ function HeroButtons() {
             }}
           />
         )}
-      </motion.a>
+      </TransitionLink>
     </div>
   );
 }
