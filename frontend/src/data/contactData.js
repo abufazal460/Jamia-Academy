@@ -10,7 +10,7 @@ export const contactHero = {
   description:
     "Help students with course queries, admissions, certificates and career guidance.",
   buttons: {
-    primary: { label: "Explore Courses", href: "/courses" },
+    primary: { label: "Explore Courses", href: "/course" },
     secondary: { label: "Contact Support", href: "#contact-form" },
   },
   // Right-side visual — education themed floating cards
