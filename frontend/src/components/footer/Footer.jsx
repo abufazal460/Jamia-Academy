@@ -56,13 +56,13 @@ const QUICK_LINKS = [
 ];
 
 // Popular Courses section — title + dummy course url
-const POPULAR_COURSES = [
-  { title: "Diploma in Data Analytics", url: "/course" },
-  { title: "Full Stack Web Development", url: "/course" },
-  { title: "Artificial Intelligence & ML", url: "/course" },
-  { title: "Graphic Design with AI", url: "/course" },
-  { title: "Tally Prime with GST", url: "/course" },
-];
+// const POPULAR_COURSES = [
+//   { title: "Diploma in Data Analytics", url: "/course" },
+//   { title: "Full Stack Web Development", url: "/course" },
+//   { title: "Artificial Intelligence & ML", url: "/course" },
+//   { title: "Graphic Design with AI", url: "/course" },
+//   { title: "Tally Prime with GST", url: "/course" },
+// ];
 
 // Phone numbers — multiple numbers supported via array
 const PHONE_NUMBERS = ["+91 9621555551", "+91 1147586007"];
@@ -217,7 +217,7 @@ const Footer = () => {
           lg:grid-cols-4 (desktop) — isse content kabhi overflow
           nahi hota aur har screen size pe naturally stack hota hai.
       ============================================================ */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
         {/* ---------- SECTION 1: Logo + Description + Socials ---------- */}
         <motion.div variants={sectionVariant} className="flex flex-col gap-5">
           {/* Logo image — white rounded card jaisa look reference mein hai */}
@@ -295,7 +295,7 @@ const Footer = () => {
         </motion.div>
 
         {/* ---------- SECTION 3: Popular Courses ---------- */}
-        <motion.div variants={sectionVariant}>
+        {/* <motion.div variants={sectionVariant}>
           <h3 className="text-white font-semibold text-lg mb-5">
             Popular Courses
           </h3>
@@ -325,7 +325,7 @@ const Footer = () => {
               </motion.li>
             ))}
           </motion.ul>
-        </motion.div>
+        </motion.div> */}
 
         {/* ---------- SECTION 4: Contact Info ---------- */}
         <motion.div variants={sectionVariant}>
