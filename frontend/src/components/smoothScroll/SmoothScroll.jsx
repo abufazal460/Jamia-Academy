@@ -43,12 +43,12 @@ export default function SmoothScroll({ children }) {
 
     const lenis = new Lenis({
       // Balanced lerp — na zyada sluggish, na zyada snappy
-      lerp: 0.08,
+      lerp: 0.3,
       // Duration sirf scrollTo() jaisi programmatic calls ke liye use hoti hai
       duration: 1.8,
       easing: premiumEasing,
       // Desktop mouse wheel ke liye smooth multiplier
-      wheelMultiplier: 1,
+      wheelMultiplier: 0.8,
       // Mobile touch ke liye thoda kam multiplier — native feel ke paas
       touchMultiplier: 1.2,
       // Mobile par bhi smooth interpolation enable karta hai
