@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { getLabelEntryVariants } from "../../utils/animationVariants";
+import { getCertLabelEntryVariants } from "../../../utils/certificateAnimationVariants";
 
 /**
  * FloatingLabel
@@ -12,7 +12,7 @@ import { getLabelEntryVariants } from "../../utils/animationVariants";
  *     spring har baar chalane se zyada re-render/GC pressure padta hai.
  */
 function FloatingLabelBase({ htmlFor, text, isFloating, direction = "fade" }) {
-  const entryVariants = getLabelEntryVariants(direction);
+  const entryVariants = getCertLabelEntryVariants(direction);
 
   return (
     <motion.label

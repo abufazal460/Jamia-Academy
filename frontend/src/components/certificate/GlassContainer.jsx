@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { useReducedMotion } from "../../hooks/useReducedMotion";
+import { useCertificateReducedMotion } from "../../../hooks/useCertificateReducedMotion";
 
 /**
  * GlassContainer
@@ -9,7 +9,7 @@ import { useReducedMotion } from "../../hooks/useReducedMotion";
  * jaata hai, baaki sab static rehta hai.
  */
 function GlassContainerBase({ children, className = "" }) {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = useCertificateReducedMotion();
 
   return (
     <div

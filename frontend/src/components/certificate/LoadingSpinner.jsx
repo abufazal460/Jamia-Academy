@@ -1,17 +1,17 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { spinnerTransition } from "../../utils/animationVariants";
-import { useReducedMotion } from "../../hooks/useReducedMotion";
+import { certSpinnerTransition } from "../../../utils/certificateAnimationVariants";
+import { useCertificateReducedMotion } from "../../../hooks/useCertificateReducedMotion";
 
 function LoadingSpinnerBase({ className = "h-5 w-5" }) {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = useCertificateReducedMotion();
 
   return (
     <motion.span
       aria-hidden="true"
       className={`inline-block rounded-full border-2 border-current border-t-transparent ${className}`}
       animate={prefersReducedMotion ? {} : { rotate: 360 }}
-      transition={prefersReducedMotion ? {} : spinnerTransition}
+      transition={prefersReducedMotion ? {} : certSpinnerTransition}
     />
   );
 }

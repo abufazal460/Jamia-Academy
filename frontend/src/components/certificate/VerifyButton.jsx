@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { BUTTON_TEXT } from "../../data/certificateData";
-import { buttonWidthVariants } from "../../utils/animationVariants";
+import { BUTTON_TEXT } from "../../../data/certificateData";
+import { certButtonWidthVariants } from "../../../utils/certificateAnimationVariants";
 import { LoadingSpinner } from "./LoadingSpinner";
 
 /**
@@ -15,7 +15,7 @@ function VerifyButtonBase({ isSubmitting, disabled }) {
     <motion.button
       type="submit"
       disabled={disabled || isSubmitting}
-      variants={buttonWidthVariants}
+      variants={certButtonWidthVariants}
       initial="hidden"
       animate="visible"
       whileHover={

@@ -1,13 +1,13 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { PAGE_CONTENT } from "../../data/certificateData";
-import { headingVariants } from "../../utils/animationVariants";
+import { PAGE_CONTENT } from "../../../data/certificateData";
+import { certHeadingVariants } from "../../../utils/certificateAnimationVariants";
 
 function PageHeadingBase() {
   return (
     <motion.header
       className="mb-8 flex flex-col items-center text-center"
-      variants={headingVariants}
+      variants={certHeadingVariants}
       initial="hidden"
       animate="visible"
     >

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { CERTIFICATE_FIELDS } from "../../data/certificateData";
-import { fieldsContainerVariants } from "../../utils/animationVariants";
+import { CERTIFICATE_FIELDS } from "../../../data/certificateData";
+import { certFieldsContainerVariants } from "../../../utils/certificateAnimationVariants";
 import { AnimatedInput } from "./AnimatedInput";
 
 /**
@@ -13,7 +13,7 @@ import { AnimatedInput } from "./AnimatedInput";
 function FormFieldsBase({ formData, errors, onChange, onBlur, disabled }) {
   return (
     <motion.div
-      variants={fieldsContainerVariants}
+      variants={certFieldsContainerVariants}
       initial="hidden"
       animate="visible"
       className="flex flex-col gap-4"

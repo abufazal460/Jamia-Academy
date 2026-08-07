@@ -1,8 +1,8 @@
 import { memo, useEffect, useRef } from "react";
 import { motion, useAnimationControls } from "motion/react";
 import { FloatingLabel } from "./FloatingLabel";
-import { useFloatingLabel } from "../../hooks/useFloatingLabel";
-import { fieldItemVariants, shakeVariants } from "../../utils/animationVariants";
+import { useCertificateFloatingLabel } from "../../../hooks/useCertificateFloatingLabel";
+import { certFieldItemVariants, certShakeVariants } from "../../../utils/certificateAnimationVariants";
 
 /**
  * AnimatedInput
@@ -11,7 +11,7 @@ import { fieldItemVariants, shakeVariants } from "../../utils/animationVariants"
  * hai. Parent sirf value/onChange/error pass karta hai.
  */
 function AnimatedInputBase({ field, value, error, onChange, onBlur, disabled }) {
-  const { isFloating, handleFocus, handleBlur } = useFloatingLabel(value);
+  const { isFloating, handleFocus, handleBlur } = useCertificateFloatingLabel(value);
   const controls = useAnimationControls();
   const isMounted = useRef(false);
   const Icon = field.icon;
@@ -33,9 +33,9 @@ function AnimatedInputBase({ field, value, error, onChange, onBlur, disabled }) 
   };
 
   return (
-    <motion.div variants={fieldItemVariants} className="w-full">
+    <motion.div variants={certFieldItemVariants} className="w-full">
       <motion.div
-        variants={shakeVariants}
+        variants={certShakeVariants}
         animate={controls}
         initial="idle"
         className="group relative"

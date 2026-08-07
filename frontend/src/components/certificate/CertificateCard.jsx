@@ -7,9 +7,9 @@ import {
   INITIAL_FORM_STATE,
   STATUS_MESSAGES,
 } from "../../data/certificateData";
-import { validateField, validateForm, isFormValid, sanitizeFormData } from "../../utils/validation";
-import { handleCertificateVerification } from "../../utils/futureApi";
-import { cardVariants } from "../../utils/animationVariants";
+import { validateCertificateField, validateCertificateForm, isCertificateFormValid, sanitizeCertificateFormData } from "../../utils/certificateValidation";
+import { handleCertificateVerification } from "../../../utils/futureApi";
+import { certCardVariants } from "../../../utils/certificateAnimationVariants";
 
 /**
  * CertificateCard
@@ -32,7 +32,7 @@ export function CertificateCard() {
   const handleBlur = useCallback((event) => {
     const { name, value } = event.target;
     setErrors((prev) => {
-      const message = validateField(name, value);
+      const message = validateCertificateField(name, value);
       if (!message) {
         const { [name]: _omit, ...rest } = prev;
         return rest;
@@ -45,10 +45,10 @@ export function CertificateCard() {
     async (event) => {
       event.preventDefault();
 
-      const validationErrors = validateForm(formData);
+      const validationErrors = validateCertificateForm(formData);
       setErrors(validationErrors);
 
-      if (!isFormValid(validationErrors)) {
+      if (!isCertificateFormValid(validationErrors)) {
         setStatus("error");
         return;
       }
@@ -57,7 +57,7 @@ export function CertificateCard() {
       setStatus(null);
 
       try {
-        const cleanData = sanitizeFormData(formData);
+        const cleanData = sanitizeCertificateFormData(formData);
         const response = await handleCertificateVerification(cleanData);
         setStatus(response?.success ? "success" : "error");
       } catch {
@@ -71,7 +71,7 @@ export function CertificateCard() {
 
   return (
     <motion.div
-      variants={cardVariants}
+      variants={certCardVariants}
       initial="hidden"
       animate="visible"
       className="w-full max-w-[440px]"
