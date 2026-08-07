@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { useMemo } from "react";
 import { motion , useReducedMotion } from "motion/react";
-import HeroBadge from "./HeroBadge";
+// import HeroBadge from "./HeroBadge";
 // import HeroHeading from "./HeroHeading";
 import HeroDescription from "./HeroDescription";
 import HeroButtons from "./HeroButtons";
@@ -176,7 +176,7 @@ function Hero() {
       >
         {/* 1. Badge */}
         <motion.div variants={fadeInUp}>
-          <HeroBadge />
+          {/* <HeroBadge /> */}
         </motion.div>
 
         {/* 2. Main heading — JAMIA ACADEMY */}
