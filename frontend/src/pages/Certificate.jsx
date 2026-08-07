@@ -1,17 +1,27 @@
-import React from "react";
+import { useEffect } from "react";
 import SpaceBackground from "../components/contactBackground/SpaceBackground";
+import { PageHeading, CertificateCard } from "../components/certificate";
+import { PAGE_CONTENT } from "../data/certificateData";
 
-// Certificate.jsx — Placeholder page.
-// User ne navLinksData.js me manually Certificate add kiya tha.
-// Is page ka route /certificate hai.
-function Certificate() {
+/**
+ * Certificate page
+ * Background pehle se maujood SpaceBackground component se aata hai — yaha
+ * koi naya background generate nahi kiya gaya. Yeh page sirf verification
+ * card ko background ke upar center karta hai.
+ */
+export default function Certificate() {
+  useEffect(() => {
+    document.title = `${PAGE_CONTENT.title} · Jamia Academy`;
+  }, []);
+
   return (
-    <main className="h-screen w-full flex flex-col justify-center items-center text-slate-100">
-      <h1 className="text-3xl font-bold text-red-300">Certificate</h1>
-      <p className="mt-2 text-slate-800">Certificate page — placeholder content.</p>
+    <div className="relative min-h-screen w-full overflow-hidden">
       <SpaceBackground />
-    </main>
+
+      <main className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-4 py-16 sm:px-6">
+        <PageHeading />
+        <CertificateCard />
+      </main>
+    </div>
   );
 }
-
-export default Certificate;
