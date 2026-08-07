@@ -7,6 +7,7 @@ import {
   PageTransitionProvider,
   RouteTransitionWatcher,
 } from "./components/pageTransition";
+import SmoothScroll from "./components/smoothScroll/SmoothScroll";
 
 // ====================================================================
 // App.jsx
@@ -31,20 +32,22 @@ export default function App() {
       {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
       <IntroLoader appReady={appReady}>
         <PageTransitionProvider>
-          <Suspense fallback={null}>
-            <Navbar />
-            <RouteTransitionWatcher />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/course" element={<Course />} />
-              <Route path="/gallery" element={<Gallery />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/certificate" element={<Certificate />} />
-            </Routes>
-            <Footer />
-          </Suspense>
+          <SmoothScroll>
+            <Suspense fallback={null}>
+              <Navbar />
+              <RouteTransitionWatcher />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/course" element={<Course />} />
+                <Route path="/gallery" element={<Gallery />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/certificate" element={<Certificate />} />
+              </Routes>
+              <Footer />
+            </Suspense>
+          </SmoothScroll>
         </PageTransitionProvider>
       </IntroLoader>
     </>

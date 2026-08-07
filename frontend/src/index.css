@@ -3,6 +3,43 @@
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/geist";
 
+/* ===== Lenis Smooth Scroll Setup ===== */
+
+html {
+  /* scroll-behavior: smooth YAHAN NAHI — yeh Lenis ke RAF-driven 
+     interpolation se conflict karta hai aur scroll "double-smooth" 
+     ya janky ho jaata hai. Lenis khud hi easing handle karta hai. */
+  scroll-behavior: auto;
+}
+
+body {
+  /* Smooth scroll ke saath transform-based animations kabhi-kabhi 
+     content ko viewport se bahar push kar dete hain — isse rokte hain */
+  overflow-x: hidden;
+}
+
+/* Lenis apne aap html tag par yeh classes add karta hai */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 /* ===========================
    Poppins Font Family
    =========================== */
