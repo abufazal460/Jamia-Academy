@@ -94,7 +94,7 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 					{Array.from({ length: DUPLICATE_COUNT }).map((_, index) => (
 						<span
 							key={`${course.id}-marquee-${index}`}
-							className="bg-gradient-to-r from-[#000] via-[#000] to-[#000] bg-clip-text px-[1vw] text-transparent [-webkit-text-fill-color:transparent]"
+							className="bg-gradient-to-br from-[#3f2610] via-[#2f1c0c] to-[#472b13] bg-clip-text px-[1vw] text-transparent [-webkit-text-fill-color:transparent]"
 						>
 							{marqueeText}
 						</span>
