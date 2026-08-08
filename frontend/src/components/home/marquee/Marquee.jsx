@@ -1,11 +1,11 @@
-import { useId } from 'react';
-import { motion, useReducedMotion } from 'motion/react';
-import { marqueeCourses } from '../../../data/marqueeData';
-import MarqueeItem from './MarqueeItem';
-import ExploreCoursesCTA from './ExploreCoursesCTA';
-import { menuContainerVariants } from './marqueeVariants';
-import noiseTexture from '../../../assets/marquee/noise.png';
-import './marquee.css';
+import { useId } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { marqueeCourses } from "../../../data/marqueeData";
+import MarqueeItem from "./MarqueeItem";
+import ExploreCoursesCTA from "./ExploreCoursesCTA";
+import { menuContainerVariants } from "./marqueeVariants";
+import noiseTexture from "../../../assets/marquee/noise.png";
+import "./marquee.css";
 
 /**
  * Marquee (Popular Courses section)
@@ -21,43 +21,49 @@ import './marquee.css';
  * -----------------------------------------------------------------------
  */
 const Marquee = () => {
-	const headingId = useId();
-	const prefersReducedMotion = useReducedMotion();
+  const headingId = useId();
+  const prefersReducedMotion = useReducedMotion();
 
-	if (marqueeCourses.length === 0) return null;
+  if (marqueeCourses.length === 0) return null;
 
-	return (
-		<section
-			aria-labelledby={headingId}
-			className="marquee-noise-bg relative overflow-hidden bg-[var(--color-bg,#f8ecde)] py-[8vh] text-[var(--color-text,#111)] sm:py-[10vh]"
-			style={{ '--marquee-noise-bg': `url(${noiseTexture})` }}
-		>
-			<h2
-				id={headingId}
-				className="text-center font-orbitron font-bold tracking-tight text-[#111]"
-				style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
-			>
-				Popular Courses
-			</h2>
+  return (
+    <section
+      aria-labelledby={headingId}
+      className="marquee-noise-bg relative overflow-hidden bg-[var(--color-bg,#f8ecde)] py-[8vh] text-[var(--color-text,#111)] sm:py-[10vh]"
+      style={{ "--marquee-noise-bg": `url(${noiseTexture})` }}
+    >
+      <div className="flex items- center  justify-center">
+        <h2
+          id={headingId}
+          className="font-orbitron  px-6 rounded-full font-bold tracking-tight text-[#111]/30 border border-white/80 bg-white/20"
+          style={{ fontSize: "clamp(1.75rem, 4vw, 3rem)" }}
+        >
+          Popular Courses
+        </h2>
+      </div>
 
-			<motion.ul
-				role="list"
-				initial={prefersReducedMotion ? 'visible' : 'hidden'}
-				whileInView="visible"
-				viewport={{ once: true, amount: 0.2 }}
-				variants={menuContainerVariants}
-				className="menu m-0 flex list-none flex-col items-start gap-1 p-0 py-[8vh] sm:gap-2"
-			>
-				{marqueeCourses.map((course) => (
-					<MarqueeItem key={course.id} course={course} prefersReducedMotion={prefersReducedMotion} />
-				))}
-			</motion.ul>
+      <motion.ul
+        role="list"
+        initial={prefersReducedMotion ? "visible" : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={menuContainerVariants}
+        className="menu m-0 flex list-none flex-col items-start gap-1 p-0 py-[8vh] sm:gap-2"
+      >
+        {marqueeCourses.map((course) => (
+          <MarqueeItem
+            key={course.id}
+            course={course}
+            prefersReducedMotion={prefersReducedMotion}
+          />
+        ))}
+      </motion.ul>
 
-			<div className="relative z-20 flex justify-center pt-4">
-				<ExploreCoursesCTA />
-			</div>
-		</section>
-	);
+      <div className="relative z-20 flex justify-center pt-4">
+        <ExploreCoursesCTA />
+      </div>
+    </section>
+  );
 };
 
 export default Marquee;
