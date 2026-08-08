@@ -69,7 +69,7 @@ const LoginButton = memo(function LoginButton() {
             Dono texts (rest + hover) is window ke andar slide karte hai.
             Bahar ka text clip ho jaata hai — smooth reveal effect aata hai.
             min-w-[52px]: Button width consistent rakho taaki size jump na kare. */}
-        <span className="relative flex h-[1.6em] min-w-[60px] items-center justify-center overflow-hidden">
+        <span className="relative flex h-[1.8em] min-w-[64px]  items-center justify-center overflow-hidden">
 
           {/* ---- DEFAULT TEXT (resting state) ----
               Hover par: y 0 → "-100%" (upar jaata hai) + opacity 1 → 0 (fade out).
