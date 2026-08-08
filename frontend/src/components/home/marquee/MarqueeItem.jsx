@@ -43,10 +43,10 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 	const marqueeText = `${course.title} • ${course.description}`;
 
 	return (
-		<motion.li variants={menuItemVariants} className="menu__item relative">
+		<motion.li variants={menuItemVariants} className="menu__item relative w-full">
 			<button
 				type="button"
-				className="relative inline-block cursor-pointer bg-transparent p-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b19e7f] focus-visible:ring-offset-4"
+				className="relative w-full inline-block cursor-pointer bg-transparent p-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b19e7f] focus-visible:ring-offset-4"
 				onMouseEnter={activate}
 				onMouseLeave={deactivate}
 				onFocus={activate}
@@ -54,7 +54,7 @@ const MarqueeItem = memo(function MarqueeItem({ course, prefersReducedMotion }) 
 				aria-label={`${course.title} course`}
 			>
 				<span
-					className="menu__item-link relative z-10  inline-block whitespace-nowrap px-[1vw] font-[900] leading-[1.15] text-transparent transition-opacity duration-150 [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
+					className="menu__item-link relative z-10 w-full inline-block whitespace-nowrap px-[1vw] font-[900] leading-[1.6] text-transparent transition-opacity duration-150 [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
 					style={{ fontSize: ITEM_FONT_SIZE }}
 				>
 					{course.title}

@@ -22,6 +22,7 @@ const MotionLink = motion.create(Link);
  * -----------------------------------------------------------------------
  */
 const ExploreCoursesCTA = () => {
+  
   const prefersReducedMotion = useReducedMotion();
   const activeState = prefersReducedMotion ? undefined : "active";
 
