@@ -1,7 +1,7 @@
 // src/components/home/Hero/HeroTypewriterSubtitle.jsx
 import { memo } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { useTypewriter } from "../../../hooks/useTypewriter";
+// import { useTypewriter } from "../../../hooks/useTypewriter";
 import { heroTypewriter } from "../../../data/heroData";
 import { fadeInUp } from "../../../utils/motionVariants";
 
@@ -43,29 +43,13 @@ import { fadeInUp } from "../../../utils/motionVariants";
  * pehle jaisa hi (koi visual/timing change nahi).
  */
 function HeroTypewriterSubtitle() {
-  const prefersReducedMotion = useReducedMotion();
-
-  const typedSubtitle = useTypewriter(heroTypewriter.text, {
-    typingSpeed: heroTypewriter.typingSpeed,
-    deletingSpeed: heroTypewriter.deletingSpeed,
-    pauseAfterTyping: heroTypewriter.pauseAfterTyping,
-    pauseAfterDeleting: heroTypewriter.pauseAfterDeleting,
-    disabled: prefersReducedMotion,
-  });
-
   return (
     <motion.h2
       variants={fadeInUp}
       // Exact same classes as before — no layout/typography/spacing change.
-      className="mx-auto mb-3 max-w-[90%] px-2 text-[clamp(1rem,3.2vw,1.5rem)] font-semibold leading-relaxed text-white sm:max-w-2xl sm:px-0 md:mb-4 md:max-w-4xl min-h-[clamp(3rem,9vw,4.5rem)]"
+      className="mx-auto mb-1 max-w-[95%] px-1 text-[clamp(1rem,3.2vw,1.5rem)] font-semibold leading-relaxed text-white sm:max-w-2xl sm:px-0 md:mb-2 md:max-w-6xl min-h-[clamp(3rem,9vw,4.5rem)]"
     >
-      <span className="sr-only">{heroTypewriter.text}</span>
-      <span aria-hidden="true">
-        {typedSubtitle}
-        {!prefersReducedMotion && (
-          <span className="ml-1 inline-block h-[1.1em] w-[2px] animate-pulse align-middle bg-sky-300" />
-        )}
-      </span>
+      {heroTypewriter.text}
     </motion.h2>
   );
 }
