@@ -32,25 +32,69 @@ export const menuItemVariants = {
 		transition: { duration: 0.5, ease: 'easeOut' },
 	},
 };
-
-// Hover/focus par side mein jo preview image reveal hoti hai uske liye.
-// Original Codrops demo ka exact transform-math:
-//   rest:   translate3d(calc(-100% - 6vw), -30%, 0) translate3d(0, 20px, 0)
-//   active: translate3d(calc(-100% - 6vw), -30%, 0) rotate3d(0, 0, 1, 4deg)
-// (do consecutive translate3d() sirf ek combined translate ke barabar hain
-// kyunki translations commute — isliye x/y yaha single values mein likhe
-// hain.) x hamesha same rehta hai — ye hi wo cheez hai jo image ko kabhi
-// bhi link-width ya viewport ke hisaab se overflow nahi hone deti, kyunki
-// ye apni khud ki width ke against anchor hoti hai, link ki nahi.
+// ============================================================
+// DESKTOP image (md aur upar) — link ke SIDE mein float hoti hai.
+// ============================================================
 export const imageRevealVariants = {
-	rest: { opacity: 0, scale: 0.95, rotate: 0, x: 'calc(-100% - 6vw)', y: 'calc(-30% + 20px)' },
+	rest: {
+		opacity: 0,       // shuru mein invisible
+		scale: 0.95,      // ⬆ badhao (e.g. 0.99) = entrance subtle hoga
+		                   // ⬇ ghatao (e.g. 0.7)  = entrance dramatic "zoom-in" hoga
+		rotate: 0,
+		x: 'calc(-100% - 6vw)',
+		// ye value image ki apni KHUD ki width ke against anchor karti hai
+		// (link ki width ke against nahi) — isiliye title chahe chhota ho
+		// ya bada, image kabhi bhi viewport se bahar nahi jaati.
+		// `6vw` ⬆ badhao = image aur DUR (left) chali jaayegi link se
+		// `6vw` ⬇ ghatao = image link ke aur PAAS/overlap hogi
+		y: 'calc(-30% + 20px)',
+		// rest state mein image thodi "neeche" se settle hoti hai (20px)
+		// ⬆ 20px badhao (e.g. 60px) = image zyada dur se slide-in karegi (dramatic)
+		// ⬇ 0 kar do = koi settle-motion nahi, sirf fade+scale hoga
+	},
 	active: {
 		opacity: 1,
 		scale: 1,
 		rotate: 4,
-		x: 'calc(-100% - 6vw)',
+		// tilt angle (degrees). ⬆ badhao (e.g. 10) = zyada tedhi/dramatic
+		// ⬇ ghatao (e.g. 1) = subtle, professional look
+		// negative karo (e.g. -4) = OPPOSITE direction tilt
+		x: 'calc(-100% - 6vw)', // rest jaisa hi — position fix rehti hai
 		y: '-30%',
+		// vertical anchor. -30% ka matlab: image apni KHUD ki height ka
+		// 30% upar shift. -50% karoge = perfectly vertical-center.
+		// 0% karoge = image ka top edge link ke center se align hoga.
 		transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] },
+		// duration ⬆ badhao (e.g. 0.8) = reveal slow/buttery smooth hoga
+		// duration ⬇ ghatao (e.g. 0.15) = reveal snappy/turant hoga
+	},
+};
+
+// ============================================================
+// MOBILE image (md se neeche) — title ke UPAR, center mein dikhti hai.
+// Koi x/side-anchor math nahi chahiye kyunki horizontal centering
+// MarqueeItem.jsx ka static wrapper div karega (Framer isse touch
+// nahi karta, isliye conflict nahi hota).
+// ============================================================
+export const imageRevealVariantsMobile = {
+	rest: {
+		opacity: 0,
+		scale: 0.92,       // desktop wale jaisa hi effect, chhota range rakha
+		                    // hai kyunki mobile par image already choti hai
+		rotate: 0,
+		y: 16,
+		// "settle" offset — ⬆ badhao (e.g. 40) = neeche se zyada dur se
+		// slide-in aayegi. ⬇ 0 kar do = sirf fade+scale, koi slide nahi.
+	},
+	active: {
+		opacity: 1,
+		scale: 1,
+		rotate: -2,
+		// mobile tilt — desktop se ULTA sign (-2) rakha hai taaki dono
+		// visually thoda alag feel den. Sign badal doge (2) = same
+		// direction ho jaayegi jaise desktop.
+		y: 0,
+		transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] },
 	},
 };
 
