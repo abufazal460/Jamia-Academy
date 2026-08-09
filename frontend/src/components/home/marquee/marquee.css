@@ -59,18 +59,40 @@
 
 
 
-.menu__item:hover .menu__item-link,
-.menu__item:focus-within .menu__item-link {
-  opacity:0;
+/* Sirf real mouse/trackpad devices — touch ka "sticky/phantom hover"
+   yahan exclude ho jaata hai. :focus-within ki jagah :has(:focus-visible)
+   — ye SIRF keyboard-Tab focus par match karta hai, mouse-click se
+   button ko milne wale focus par nahi. Isi wajah se pehle click ke baad
+   marquee/image "stuck" reh jaate the — click → native button focus →
+   :focus-within hamesha true rehta tha jab tak kahin aur click na ho. */
+@media (hover: hover) and (pointer: fine) {
+  .menu__item:hover .menu__item-link,
+  .menu__item:has(:focus-visible) .menu__item-link {
+    opacity: 0;
+    transition: opacity 0.1s linear;
+  }
 
-transition:opacity .1s linear;
+  .menu__item:hover .marquee__inner,
+  .menu__item:has(:focus-visible) .marquee__inner {
+    animation-play-state: running;
+    opacity: 1;
+    transition-duration: 0.4s;
+  }
 }
 
-.menu__item:hover .marquee__inner,
-.menu__item:focus-within .marquee__inner {
+/* Touch devices — hover exist hi nahi karta, isliye tap yahan
+   explicitly React state se ek class ke through control hota hai
+   (MarqueeItem.jsx ka `is-touch-active`, sirf (hover:none) devices par
+   click se toggle hota hai). */
+.menu__item.is-touch-active .menu__item-link {
+  opacity: 0;
+  transition: opacity 0.1s linear;
+}
+
+.menu__item.is-touch-active .marquee__inner {
   animation-play-state: running;
   opacity: 1;
-  transition-duration: .4s;
+  transition-duration: 0.4s;
 }
 
 .marquee{
