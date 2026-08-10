@@ -48,7 +48,7 @@ const Marquee = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={menuContainerVariants}
-        className="menu m-0 flex list-none flex-col items-start gap-1 p-0 py-[8vh] sm:gap-2"
+        className="menu m-0 flex list-none flex-col items-start gap-1 p-0 py-[10vh] sm:gap-2"
       >
         {marqueeCourses.map((course) => (
           <MarqueeItem
