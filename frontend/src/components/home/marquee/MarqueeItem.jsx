@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useState, useRef } from "react";
 import { motion } from "motion/react";
 import {
   imageRevealVariants,
@@ -44,14 +44,42 @@ const MarqueeItem = memo(function MarqueeItem({
 }) {
   const [isActive, setIsActive] = useState(false);
 
-  // activate/deactivate ab SIRF hover-capable (mouse) devices par kaam
-  // karenge. Mobile par ghost `mouseenter` event ab kuch nahi karega,
-  // isliye click-toggle se koi race/cancel nahi hoga.
-  const activate = useCallback(() => {
-    if (window.matchMedia("(hover: hover)").matches) setIsActive(true);
-  }, []);
-  const deactivate = useCallback(() => {
-    if (window.matchMedia("(hover: hover)").matches) setIsActive(false);
+  const lastPointerTypeRef = useRef("mouse");
+
+  // Keyboard-focus aur blur ke liye — inhe touch se koi lena-dena nahi,
+  // isliye ungated rakha (handleFocus already ':focus-visible' se
+  // mouse-click-focus ko exclude karta hai; blur hamesha safe hai).
+  const activate = useCallback(() => setIsActive(true), []);
+  const deactivate = useCallback(() => setIsActive(false), []);
+
+  const handleFocus = useCallback(
+    (event) => {
+      if (event.target.matches(":focus-visible")) activate();
+    },
+    [activate],
+  );
+
+  // Real mouse-hover SIRF tab chalega jab event.pointerType === 'mouse' ho.
+  const handlePointerEnter = useCallback(
+    (event) => {
+      lastPointerTypeRef.current = event.pointerType;
+      if (event.pointerType === "mouse") activate();
+    },
+    [activate],
+  );
+
+  const handlePointerLeave = useCallback(
+    (event) => {
+      if (event.pointerType === "mouse") deactivate();
+    },
+    [deactivate],
+  );
+
+  // Touch tap SIRF tab toggle karega jab last interaction mouse na ho.
+  const handleClick = useCallback(() => {
+    if (lastPointerTypeRef.current !== "mouse") {
+      setIsActive((prev) => !prev);
+    }
   }, []);
   const marqueeText = `${course.title} • ${course.description}`;
 
@@ -63,14 +91,15 @@ const MarqueeItem = memo(function MarqueeItem({
       <button
         type="button"
         className="relative w-full inline-block cursor-pointer bg-transparent p-0 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#b19e7f] focus-visible:ring-offset-4"
-        onMouseEnter={activate}
-        onMouseLeave={deactivate}
-        onFocus={activate}
+        onPointerEnter={handlePointerEnter}
+        onPointerLeave={handlePointerLeave}
+        onFocus={handleFocus}
         onBlur={deactivate}
+        onClick={handleClick}
         aria-label={`${course.title} course`}
       >
         <span
-          className="menu__item-link relative z-10 w-full inline-block whitespace-nowrap px-[1vw] font-[900] leading-[1.6] text-transparent transition-opacity duration-150 [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
+          className="menu__item-link relative z-10 w-full inline-block whitespace-nowrap px-[1vw] font-[900] leading-[2.5] text-transparent transition-opacity duration-150 [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
           style={{ fontSize: ITEM_FONT_SIZE }}
         >
           {course.title}
