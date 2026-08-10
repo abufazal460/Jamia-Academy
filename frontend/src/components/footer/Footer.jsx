@@ -465,14 +465,15 @@ const Footer = () => {
             Official Website of Jamia Academy
           </p>
           <p className="text-[11px] sm:text-xs text-slate-600 mt-1">
-            Made by{" "}
+            Designed & Developed by{" "}
             <a
               target="_blank"
               href="https://abufazal.netlify.app/"
               className="text-blue-500 hover:underline transition-all"
             >
               Abu Fazal
-            </a>
+            </a>{" "}
+            | Jamia Academy Student{" "}
           </p>
         </motion.div>
       </motion.div>
