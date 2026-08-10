@@ -1,8 +1,6 @@
 import { memo } from "react";
 import { useMemo } from "react";
 import { motion , useReducedMotion } from "motion/react";
-// import HeroBadge from "./HeroBadge";
-// import HeroHeading from "./HeroHeading";
 import HeroDescription from "./HeroDescription";
 import HeroButtons from "./HeroButtons";
 import HeroStats from "./HeroStats";
@@ -115,7 +113,6 @@ function Hero() {
 
   return (
     <section
-      aria-labelledby="hero-heading"
       // RESPONSIVE CONTAINER + SAFE AREA:
       // - px yahan clamp() se fluid hai (320px mini-phone se 4K tak same
       //   utility kaam karti hai, koi sudden breakpoint jump nahi hota).
@@ -174,15 +171,6 @@ function Hero() {
         // desktop pe zyada breathing room.
         className="relative z-10 mx-auto w-full max-w-xl text-center sm:max-w-2xl sm:px-2 md:max-w-4xl md:px-4 lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl"
       >
-        {/* 1. Badge */}
-        <motion.div variants={fadeInUp}>
-          {/* <HeroBadge /> */}
-        </motion.div>
-
-        {/* 2. Main heading — JAMIA ACADEMY */}
-        <motion.div variants={fadeInUp}>
-          {/* <HeroHeading /> */}
-        </motion.div>
 
         {/* 3. Typewriter subtitle — PERFORMANCE ISOLATED component. Iske
             andar typing state hai, isliye ye har 25-45ms pe khud
