@@ -260,7 +260,7 @@ function Navbar() {
           // px-4 sm:px-6 lg:px-10: responsive horizontal padding.
           // h-16 md:h-[68px]: fixed height — CLS (layout shift) prevent karta hai.
           "mx-auto flex max-w-screen-2xl items-center justify-between",
-          "h-16 px-4 sm:px-6 lg:px-10 md:h-[68px]",
+          "h-16 px-4 sm:px-6 lg:px-8 md:h-[68px]",
         ].join(" ")}
       >
         {/* ======================== LOGO (LEFT) ======================== */}
