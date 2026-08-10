@@ -364,7 +364,7 @@ const TextPressure = ({
 
       {strokeStyleTag}
 
-      <h1
+      <p
         ref={titleRef}
         className={`text-pressure-title relative z-10 m-0 w-full select-none uppercase text-center
           px-4 sm:px-6 md:px-10
@@ -379,6 +379,7 @@ const TextPressure = ({
           fontWeight: 100,
           color: stroke ? undefined : textColor,
         }}
+        aria-hidden="true"
       >
         {chars.map((char, i) => (
           <span
@@ -396,7 +397,7 @@ const TextPressure = ({
             {char === " " ? "\u00A0" : char}
           </span>
         ))}
-      </h1>
+      </p>
     </motion.div>
   );
 };

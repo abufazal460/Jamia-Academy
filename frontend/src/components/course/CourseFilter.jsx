@@ -27,14 +27,14 @@ function FilterDropdown({ label, options, selectedValue, onSelect }) {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full sm:w-auto">
+    <div ref={containerRef} className="relative w-full sm:w-auto ">
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-haspopup="listbox"
         aria-expanded={isOpen}
         className={twMerge(
-          "flex w-full items-center justify-between gap-2 rounded-xl border px-4 py-2.5 text-sm backdrop-blur-md transition-colors sm:w-auto",
+          "flex w-full items-center justify-between gap-2 rounded-xl border cursor-pointer px-4 py-2.5 text-sm backdrop-blur-md transition-colors sm:w-auto",
           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400",
           selectedValue
             ? "border-purple-400/50 bg-purple-500/10 text-white"
@@ -174,7 +174,7 @@ export default function CourseFilter({
         <button
           type="button"
           onClick={onReset}
-          className="text-xs font-medium text-neutral-400 underline-offset-4 transition-colors hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+          className="text-xs font-medium cursor-pointer border border-white/10 bg-white/5 text-neutral-300 hover:border-white/20  px-4 py-3 rounded-lg  transition-colors hover:text-white  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
         >
           Clear filters
         </button>

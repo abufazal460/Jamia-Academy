@@ -57,7 +57,7 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
         animate={{ width: isExpanded ? "min(320px, 70vw)" : 44 }}
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className={twMerge(
-          "relative flex items-center overflow-hidden rounded-full border border-white/10 bg-white/5 backdrop-blur-md transition-shadow duration-300",
+          "relative flex items-center overflow-hidden rounded-full  border border-white/10 bg-white/5 backdrop-blur-md transition-shadow duration-300",
           isExpanded ? "shadow-[0_0_25px_rgba(168,85,247,0.35)]" : "shadow-none"
         )}
       >
@@ -65,7 +65,7 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
             hoti hai (transform/opacity-only rule follow karne ke liye). */}
         <motion.span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20"
+          className="pointer-events-none absolute inset-0 rounded-full  bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20"
           animate={{ opacity: isExpanded ? 1 : 0.5 }}
           transition={{ duration: 0.4 }}
         />
@@ -76,7 +76,7 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
           aria-label={isExpanded ? "Close search" : "Open course search"}
           aria-expanded={isExpanded}
           aria-controls={inputId}
-          className="relative z-10 flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-neutral-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+          className="relative z-10 flex cursor-pointer h-11 w-11 shrink-0 items-center justify-center rounded-full text-neutral-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
         >
           {isExpanded ? <X size={18} aria-hidden="true" /> : <Search size={18} aria-hidden="true" />}
         </button>

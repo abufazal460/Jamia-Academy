@@ -37,7 +37,7 @@ function CardButton({ label, onClick, variant = "ghost" }) {
       type="button"
       onClick={onClick}
       className={twMerge(
-        "group/btn relative flex-1 overflow-hidden rounded-lg border px-4 py-2.5 text-xs font-semibold tracking-wide transition-shadow duration-300 ease-out",
+        "group/btn relative flex-1  cursor-pointer overflow-hidden rounded-lg border px-4 py-2.5 text-xs font-semibold tracking-wide transition-shadow duration-300 ease-out",
         // Default: no shadow. Hover: neon glow shadow appear hota hai — sirf
         // box-shadow opacity/spread nahi, poora shadow hi conditionally lagaya
         // hai taaki idle state me GPU ko kuch render hi na karna pade.

@@ -8,16 +8,6 @@
 // bante hain (single source of truth principle).
 // ==========================================================================
 
-// 1. Top badge — "Admission Open 2026"
-export const heroBadge = {
-  text: "Admission Open 2026",
-  ariaLabel: "Admission open for the year 2026",
-};
-
-// 2. Main heading
-export const heroHeading = {
-  title: "JAMIA ACADEMY",
-};
 
 // 3. Typewriter subtitle (typing + deleting loop)
 export const heroTypewriter = {

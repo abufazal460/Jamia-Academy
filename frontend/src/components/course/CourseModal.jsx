@@ -151,7 +151,7 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
             type="button"
             onClick={() => onClose?.()}
             aria-label="Close course details"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-neutral-300 transition-all duration-300 hover:rotate-90 hover:scale-110 hover:border-purple-400/50 hover:text-white hover:shadow-[0_0_18px_rgba(168,85,247,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+            className="flex h-9 w-9 shrink-0 items-center cursor-pointer justify-center rounded-full border border-white/10 bg-white/5 text-neutral-300 transition-all duration-300 hover:rotate-90 hover:scale-110 hover:border-purple-400/50 hover:text-white hover:shadow-[0_0_18px_rgba(168,85,247,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
           >
             <X size={16} aria-hidden="true" />
           </button>
@@ -224,7 +224,7 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
             <button
               type="button"
               onClick={() => onEnroll?.(course)}
-              className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold text-neutral-950 transition-shadow duration-300 hover:shadow-[0_0_22px_rgba(255,255,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+              className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold cursor-pointer text-neutral-950 transition-shadow duration-300 hover:shadow-[0_0_22px_rgba(255,255,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
             >
               Enroll Now
             </button>
