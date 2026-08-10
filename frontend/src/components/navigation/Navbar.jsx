@@ -176,20 +176,20 @@ function Navbar() {
 
         gsap.to(navRef.current, {
           yPercent: -100,
-          duration: 0.45,
+          duration: 1,
           ease: "power3.out",
         });
 
         gsap.to([logoWrapRef.current, navLinksRef.current], {
           opacity: 0,
           x: -100,
-          duration: 0.45,
+          duration: 1,
         });
 
         gsap.to([loginWrapRef.current, whatsappWrapRef.current], {
           opacity: 0,
           x: 100,
-          duration: 0.45,
+          duration: 1,
         });
       }
 
@@ -260,7 +260,7 @@ function Navbar() {
           // px-4 sm:px-6 lg:px-10: responsive horizontal padding.
           // h-16 md:h-[68px]: fixed height — CLS (layout shift) prevent karta hai.
           "mx-auto flex max-w-screen-2xl items-center justify-between",
-          "h-16 px-4 sm:px-6 lg:px-8 md:h-[68px]",
+          "h-16 px-4 sm:px-4 lg:px-8 md:h-[68px]",
         ].join(" ")}
       >
         {/* ======================== LOGO (LEFT) ======================== */}
