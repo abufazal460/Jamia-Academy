@@ -116,7 +116,7 @@ const MarqueeItem = memo(function MarqueeItem({
 		    apna transform control karta hai, wrapper ka nahi. */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute left-1/2 bottom-full z-10 mb-3 flex w-full -translate-x-1/2 justify-center md:hidden"
+	className="pointer-events-none absolute left-1/2 top-1/2 z-10 flex w-full -translate-x-1/2 -translate-y-1/2 justify-center md:hidden"
           >
             <motion.img
               src={course.image}
