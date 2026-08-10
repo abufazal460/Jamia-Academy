@@ -151,7 +151,7 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
             type="button"
             onClick={() => onClose?.()}
             aria-label="Close course details"
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-neutral-300 transition-all duration-300 hover:rotate-90 hover:scale-110 hover:border-purple-400/50 hover:text-white hover:shadow-[0_0_18px_rgba(168,85,247,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
+            className="flex h-9 w-9 shrink-0 items-center cursor-pointer justify-center rounded-full border border-white/10 bg-white/5 text-neutral-300 transition-all duration-300 hover:rotate-90 hover:scale-110 hover:border-purple-400/50 hover:text-white hover:shadow-[0_0_18px_rgba(168,85,247,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400"
           >
             <X size={16} aria-hidden="true" />
           </button>
