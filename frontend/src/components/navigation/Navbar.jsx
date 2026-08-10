@@ -171,7 +171,7 @@ function Navbar() {
 
       const scrollingUp = currentScrollY < lastScrollY.current;
 
-      if (scrollingDown && currentScrollY > 100 && navbarVisible.current) {
+      if (scrollingDown && currentScrollY > 80 && navbarVisible.current) {
         navbarVisible.current = false;
 
         gsap.to(navRef.current, {
@@ -182,14 +182,14 @@ function Navbar() {
 
         gsap.to([logoWrapRef.current, navLinksRef.current], {
           opacity: 0,
-          x: -100,
-          duration: 1,
+          x: -35,
+          duration: 0.5
         });
 
         gsap.to([loginWrapRef.current, whatsappWrapRef.current], {
           opacity: 0,
-          x: 100,
-          duration: 1,
+          x: 35,
+          duration: 0.5,
         });
       }
 
@@ -198,7 +198,7 @@ function Navbar() {
 
         gsap.to(navRef.current, {
           yPercent: 0,
-          duration: 0.45,
+          duration: 0.5,
           ease: "power3.out",
         });
 
