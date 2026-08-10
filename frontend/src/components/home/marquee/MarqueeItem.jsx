@@ -100,7 +100,7 @@ const MarqueeItem = memo(function MarqueeItem({
       >
         <span
           className="menu__item-link relative z-10 w-full inline-block whitespace-nowrap px-[1vw] font-[900] leading-[2.5] text-transparent transition-opacity duration-150 [-webkit-text-fill-color:transparent] [-webkit-text-stroke:1.5px_#111]"
-          style={{ fontSize: ITEM_FONT_SIZE }}
+          style={{ fontSize: ITEM_FONT_SIZE , opacity: isActive ? 0 : undefined }}
         >
           {course.title}
         </span>
@@ -186,8 +186,12 @@ const MarqueeItem = memo(function MarqueeItem({
         className="pointer-events-none absolute left-0 top-0 z-0 w-full inset-0 overflow-hidden [mix-blend-mode:color-burn]"
       >
         <div
-          className="marquee__inner relative flex w-max shrink-0 whitespace-nowrap font-[900] italic leading-[1.15]"
-          style={{ fontSize: ITEM_FONT_SIZE, lineHeight: 1.1 }}
+          className="marquee__inner relative flex w-max shrink-0 whitespace-nowrap font-[900] italic leading-[2.5]"
+          style={{
+            fontSize: ITEM_FONT_SIZE,
+            opacity: isActive ? 1 : undefined,
+            animationPlayState: isActive ? "running" : undefined,
+          }}
         >
           {Array.from({ length: DUPLICATE_COUNT }).map((_, index) => (
             <span
