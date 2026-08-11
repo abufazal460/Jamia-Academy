@@ -12,7 +12,7 @@
 // - index: number — stagger animation ke liye delay calculate karne mein
 // ============================================================
 
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 
 // -- Chevron rotation animation --
 // Spring type — natural bouncy feel, not robotic
@@ -28,35 +28,16 @@ const chevronVariant = {
 // AnimatePresence ke andar ye variants kaam karte hain
 // initial false rakhte hain taki mount pe animate na ho sirf exit/enter pe
 const answerVariant = {
-  hidden: {
-    height: 0,
-    opacity: 0,
-    filter: "blur(8px)",
-    y: 10,
-  },
+  hidden: { height: 0, opacity: 0, y: 10 },
   visible: {
-    height: "auto",
-    opacity: 1,
-    filter: "blur(0px)",
-    y: 0,
+    height: "auto", opacity: 1, y: 0,
     transition: {
-      height: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }, // cubic bezier — premium
+      height: { duration: 0.4, ease: [0.4, 0, 0.2, 1] },
       opacity: { duration: 0.35, ease: "easeOut" },
-      filter: { duration: 0.35, ease: "easeOut" },
       y: { duration: 0.35, ease: "easeOut" },
     },
   },
-  exit: {
-    height: 0,
-    opacity: 0,
-    filter: "blur(8px)",
-    y: -6,
-    transition: {
-      height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] },
-      opacity: { duration: 0.25, ease: "easeIn" },
-      filter: { duration: 0.25, ease: "easeIn" },
-    },
-  },
+  exit: { height: 0, opacity: 0, y: -6, transition: { height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }, opacity: { duration: 0.25, ease: "easeIn" } } },
 };
 
 // -- Card scroll reveal variant (stagger ke liye parent se inherit) --

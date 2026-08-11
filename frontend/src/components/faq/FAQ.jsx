@@ -13,7 +13,7 @@
 // ============================================================
 
 import { useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import FAQHeader from "./FAQHeader";
 import FAQItem from "./FAQItem";
 import faqData from "../../data/faqData";
