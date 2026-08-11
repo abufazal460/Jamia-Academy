@@ -208,7 +208,15 @@ const TextPressure = ({
       return undefined;
     }
 
+    let isVisible = false;
+    const io = new IntersectionObserver(
+      ([entry]) => { isVisible = entry.isIntersecting; },
+      { threshold: 0 }
+    );
+    if (containerRef.current) io.observe(containerRef.current);
+
     const animate = () => {
+        if (isVisible && !document.hidden) {
       mouseRef.current.x += (cursorRef.current.x - mouseRef.current.x) / 15;
       mouseRef.current.y += (cursorRef.current.y - mouseRef.current.y) / 15;
 
@@ -243,12 +251,15 @@ const TextPressure = ({
         });
       }
 
+    }
+      
       rafRef.current = requestAnimationFrame(animate);
     };
 
     rafRef.current = requestAnimationFrame(animate);
     return () => {
       if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      io.disconnect();
     };
   }, [width, weight, italic, alpha, prefersReducedMotion]);
 
@@ -277,10 +288,10 @@ const TextPressure = ({
   const hoverMotionProps = prefersReducedMotion
     ? {}
     : {
-        whileHover: { scale: 1.012, y: -4 },
-        whileFocus: { scale: 1.012, y: -4 },
-        transition: { type: "spring", stiffness: 220, damping: 22 },
-      };
+      whileHover: { scale: 1.012, y: -4 },
+      whileFocus: { scale: 1.012, y: -4 },
+      transition: { type: "spring", stiffness: 220, damping: 22 },
+    };
 
   return (
     <motion.div

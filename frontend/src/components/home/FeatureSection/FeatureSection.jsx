@@ -61,15 +61,7 @@ const FeatureSection = () => {
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}
         >
-          {/* -------------------------------------------------------- */}
-          {/* HEADING (is section ka apna intro — content brief mein   */}
-          {/* explicit heading text nahi tha, isliye ek chhota eyebrow */}
-          {/* label diya hai jo cards ka context set karta hai)        */}
-          {/* -------------------------------------------------------- */}
-
-          {/* -------------------------------------------------------- */}
-          {/* FEATURE CARDS GRID — 1 col mobile, 2 col tablet, 3 desktop*/}
-          {/* -------------------------------------------------------- */}
+        <h2 className="sr-only">Why Join Us</h2>
           <m.ul
             role="list"
             aria-label="Reasons to join"
