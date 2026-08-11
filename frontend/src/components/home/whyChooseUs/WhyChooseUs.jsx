@@ -17,6 +17,7 @@ const WhyChooseUs = memo(() => {
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.6, 0.3]
         }}
+         viewport={{ once: false, amount: 0.1 }}
         transition={{
           duration: 8,
           repeat: Infinity,

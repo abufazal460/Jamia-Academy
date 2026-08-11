@@ -46,8 +46,6 @@ const WhyChooseCard = memo(({ card, index }) => {
             w-14 h-14 rounded-2xl 
             ${card.iconBg} border ${card.borderColor}
             flex items-center justify-center mb-6
-            transition-all duration-300
-            group-hover:scale-110 group-hover:rotate-3
           `}
           whileHover={{
             scale: 1.1,
