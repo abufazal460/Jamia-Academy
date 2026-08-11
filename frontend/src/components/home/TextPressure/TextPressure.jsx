@@ -7,7 +7,7 @@ import {
   useCallback,
   memo,
 } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 
 /* -------------------------------------------------------------------------- */
 /* Pure math helpers (kept identical to the original CodePen physics)          */

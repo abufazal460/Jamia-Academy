@@ -1,7 +1,7 @@
 // src/components/home/whyChooseUs/WhyChooseUs.jsx
 
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import WhyChooseCard from './WhyChooseCard';
 import WhyChooseCTA from './WhyChooseCTA';
 import { whyChooseData, ctaData, sectionData } from '../../../data/whyChooseUsData';

@@ -1,7 +1,7 @@
 // src/components/home/whyChooseUs/WhyChooseCard.jsx
 
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { cardVariants } from './animations';
 
 const WhyChooseCard = memo(({ card, index }) => {
