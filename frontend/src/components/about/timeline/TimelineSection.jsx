@@ -90,7 +90,7 @@ const TimelineSection = () => {
         [headingRef.current, descriptionRef.current, ...itemRefs.current],
         { opacity: 1, y: 0, scale: 1, clearProps: "all" }
       );
-      if (lineFillRef.current) gsap.set(lineFillRef.current, { height: "100%" });
+      if (lineFillRef.current) gsap.set(lineFillRef.current, { scaleY: 1 });
       return;
     }
 
@@ -133,15 +133,15 @@ const TimelineSection = () => {
     if (trackRef.current && lineFillRef.current) {
       gsap.fromTo(
         lineFillRef.current,
-        { height: "0%" },
+        { scaleY: 0 },
         {
-          height: "100%",
+          scaleY: 1,
           ease: "none",
           scrollTrigger: {
             trigger: trackRef.current,
             start: "top 60%",
             end: "bottom 70%",
-            scrub: 0.6, // halka smoothing lag — sudden jump nahi hoga
+            scrub: 0.6,
             invalidateOnRefresh: true,
             markers: false,
           },
@@ -244,7 +244,8 @@ const TimelineSection = () => {
               <div
                 ref={lineFillRef}
                 className="w-full rounded-full bg-gradient-to-b from-[#E63946] via-[#F4A261] to-[#2A9D8F]"
-                style={{ height: "0%" }}
+                style={{ transform: "scaleY(0)", transformOrigin: "top" }}
+
               />
             </div>
 
@@ -288,10 +289,10 @@ const TimelineSection = () => {
                         prefersReducedMotion
                           ? {}
                           : {
-                              y: -6,
-                              boxShadow: "0 16px 40px rgba(43,45,66,0.14)",
-                              borderColor: "rgba(230,57,70,0.35)",
-                            }
+                            y: -6,
+                            boxShadow: "0 16px 40px rgba(43,45,66,0.14)",
+                            borderColor: "rgba(230,57,70,0.35)",
+                          }
                       }
                       transition={{ duration: 0.25, ease: "easeOut" }}
                     >
