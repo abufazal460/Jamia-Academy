@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { GalleryTabs } from "../components/gallery/GalleryTabs";
 import { GalleryGrid } from "../components/gallery/GalleryGrid";
 import { Lightbox } from "../components/gallery/Lightbox";

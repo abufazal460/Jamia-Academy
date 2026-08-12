@@ -1,7 +1,7 @@
 // src/components/home/whyChooseUs/WhyChooseCTA.jsx
 
 import React, { useState, memo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { ctaVariants, textButtonVariants } from "./animations";
 import TransitionLink from "../../pageTransition/TransitionLink";
 

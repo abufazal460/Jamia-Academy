@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import { Send, Check, Loader2 } from "lucide-react";
 import { formConfig } from "../../data/contactData";
 import { buttonHoverVariant } from "../../animations/hoverVariants";

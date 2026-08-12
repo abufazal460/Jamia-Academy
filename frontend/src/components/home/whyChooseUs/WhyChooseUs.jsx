@@ -1,7 +1,7 @@
 // src/components/home/whyChooseUs/WhyChooseUs.jsx
 
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import WhyChooseCard from './WhyChooseCard';
 import WhyChooseCTA from './WhyChooseCTA';
 import { whyChooseData, ctaData, sectionData } from '../../../data/whyChooseUsData';
@@ -17,6 +17,7 @@ const WhyChooseUs = memo(() => {
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.6, 0.3]
         }}
+         viewport={{ once: false, amount: 0.1 }}
         transition={{
           duration: 8,
           repeat: Infinity,

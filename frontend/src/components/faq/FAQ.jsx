@@ -13,7 +13,7 @@
 // ============================================================
 
 import { useState, useCallback } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import FAQHeader from "./FAQHeader";
 import FAQItem from "./FAQItem";
 import faqData from "../../data/faqData";
@@ -85,7 +85,7 @@ const FAQ = () => {
           variants={containerVariant}
           initial="hidden"
           whileInView="visible"
-          viewport={{  amount: 0.1 }}
+           viewport={{ once: true, amount: 0.1 }}
           // flex-col + gap — cards ke beech spacing
           className="flex flex-col gap-3 sm:gap-4"
           // ul/div — ye list hai isliye role="list" add karna better practice hai
@@ -111,7 +111,7 @@ const FAQ = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ amount: 0.5 }}
+           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
           className="
             text-center mt-10 sm:mt-12

@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { useMemo } from "react";
-import { motion , useReducedMotion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import HeroDescription from "./HeroDescription";
 import HeroButtons from "./HeroButtons";
 import HeroStats from "./HeroStats";
@@ -10,7 +10,7 @@ import {
   heroOrphanText,
   heroDescriptions,
 } from "../../../data/heroData";
-import HeroTypewriterSubtitle  from "./HeroTypewriterSubtitle"
+import HeroTypewriterSubtitle from "./HeroTypewriterSubtitle"
 import { staggerContainer, fadeInUp } from "../../../utils/motionVariants";
 import LiquidEther from "./LiquidEther";
 
@@ -25,7 +25,7 @@ import LiquidEther from "./LiquidEther";
  *
  * PATCH NOTES (production audit — semantics/SEO/reduced-motion):
  *  1. Import "motion/react" se hai (project ka documented stack Motion
- *     React hai, "framer-motion" nahi).
+ *     React hai, "motion/react" nahi).
  *  2. Root content wrapper `motion.div` hai (pehle galti se `motion.main`
  *     tha) — <section> ke andar nested <main> invalid/duplicate landmark
  *     banata, jo SEO aur screen-reader navigation ke liye galat hai.
@@ -73,7 +73,7 @@ function Hero() {
   // (glow pulse) motion-sensitive users ke liye disable ho jayein, bina
   // hover/tap se trigger hone waale micro-interactions ko touch kiye.
   const prefersReducedMotion = useReducedMotion();
-
+  const LIQUID_ETHER_COLORS = ["#ffffff", "#ffffff", "#ffffff"];
   // ORPHAN LINE FIX: "100% FREE" line ke liye local variant — fadeInUp
   // jaisa hi entrance spring hai, lekin "visible" state ke ANDAR hi
   // textShadow ka infinite pulse bhi included hai (isse "variants" +
@@ -90,21 +90,21 @@ function Hero() {
         textShadow: prefersReducedMotion
           ? "0 0 14px rgba(250,204,21,0.35)"
           : [
-              "0 0 10px rgba(250,204,21,0.25)",
-              "0 0 22px rgba(250,204,21,0.5)",
-              "0 0 10px rgba(250,204,21,0.25)",
-            ],
+            "0 0 10px rgba(250,204,21,0.25)",
+            "0 0 22px rgba(250,204,21,0.5)",
+            "0 0 10px rgba(250,204,21,0.25)",
+          ],
         transition: {
           opacity: { type: "spring", stiffness: 120, damping: 16 },
           y: { type: "spring", stiffness: 120, damping: 16 },
           textShadow: prefersReducedMotion
             ? { duration: 0 }
             : {
-                duration: 2.4,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 0.6,
-              },
+              duration: 2.4,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 0.6,
+            },
         },
       },
     }),
@@ -133,7 +133,7 @@ function Hero() {
         }}
       >
         <LiquidEther
-          colors={["#ffffff", "#ffffff", "#ffffff"]}
+          colors={LIQUID_ETHER_COLORS}
           mouseForce={20}
           cursorSize={100}
           isViscous
@@ -142,7 +142,7 @@ function Hero() {
           iterationsPoisson={32}
           resolution={0.5}
           isBounce={false}
-          autoDemo
+          autoDemo={!prefersReducedMotion}
           autoSpeed={0.5}
           autoIntensity={2.9}
           takeoverDuration={0.25}

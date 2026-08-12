@@ -14,6 +14,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
+import { getLenisInstance } from "../../smoothScroll/SmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,30 +40,17 @@ export function getActiveLenis() {
  *
  * @returns {Lenis} lenis instance — cleanup ke liye return karo
  */
+
+
 export function initSmoothScroll() {
-  const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,
-  });
-
-  // Lenis ka scroll event ScrollTrigger ko update karne ke liye batao
+  const lenis = getLenisInstance();
+  if (!lenis) return null; // app-level Lenis not mounted yet
   lenis.on("scroll", ScrollTrigger.update);
-
-  // GSAP ke apne ticker se Lenis ko drive karo (rAF ka single source of truth)
-  const rafCallback = (time) => {
-    lenis.raf(time * 1000);
-  };
-  gsap.ticker.add(rafCallback);
-  gsap.ticker.lagSmoothing(0);
-
-  // cleanup ke liye rafCallback ko instance pe attach kar dete hain
-  lenis._rafCallback = rafCallback;
-
   activeLenisInstance = lenis;
-
   return lenis;
 }
+// destroySmoothScroll should then only lenis.off("scroll", ScrollTrigger.update)
+// instead of lenis.destroy() — this is a shared instance, not owned here.
 
 /**
  * Lenis ko poori tarah destroy karta hai — memory leak rokne ke liye.

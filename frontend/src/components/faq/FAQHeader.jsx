@@ -7,7 +7,7 @@
 // Motion variants yahan define hain taaki FAQ.jsx clean rahe.
 // ============================================================
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // -- Heading animation variant --
 // Viewport mein aate hi opacity 0->1, Y 40->0 smooth slide up

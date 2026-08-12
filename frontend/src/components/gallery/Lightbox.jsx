@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
 
 const SWIPE_THRESHOLD_PX = 50;

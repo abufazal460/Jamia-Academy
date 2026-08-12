@@ -22,7 +22,7 @@
  * ---------------------------------------------------------------------------
  */
 
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { accreditationsData } from "../../../data/accreditations.data";
 import {
   VIEWPORT_REPLAY,

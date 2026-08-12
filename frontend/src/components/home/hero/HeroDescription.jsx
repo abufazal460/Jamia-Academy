@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useLetterHover } from "../../../hooks/useLetterHover";
 
 /**
@@ -20,7 +20,7 @@ import { useLetterHover } from "../../../hooks/useLetterHover";
 function HeroDescription({ text, tone }) {
   const { variants } = useLetterHover();
 
-  const letters = useMemo(() => text.split(""), [text]);
+  const words = useMemo(() => text.split(" "), [text]);
   const toneClass = tone === "primary" ? "text-slate-300" : "text-slate-400";
 
   return (
@@ -28,21 +28,17 @@ function HeroDescription({ text, tone }) {
     // nahi hota), aur large desktops pe body-text jaisa hi proportionate
     // rehta hai (heading jitna dominant kabhi nahi hota — visual hierarchy
     // maintain rehti hai)
-    <p className={`text-[clamp(0.8125rem,2.1vw,1rem)] leading-relaxed ${toneClass}`}>
-      {letters.map((char, index) => (
+    <p className={`text-[clamp(0.8125rem,2.1vw,1.2rem)] [word-spacing:0.1em] leading-relaxed ${toneClass}`}>
+      {words.map((word, index) => (
         <motion.span
-          key={`${char}-${index}`}
+          key={`${word}-${index}`}
           initial="rest"
           whileHover="hover"
           variants={variants}
-          // inline-block zaroori hai taaki scale/translateY transforms apply
-          // ho sakein (plain inline text pe transform kaam nahi karta).
-          // whiteSpace: "pre" spaces ko preserve karta hai taaki words ke
-          // beech ka gap collapse na ho jaaye.
-          className="inline-block will-change-transform"
-          style={{ whiteSpace: char === " " ? "pre" : "normal" }}
+          className="inline-block"
         >
-          {char}
+          {word}
+          {index < words.length - 1 ? "\u00A0" : ""}
         </motion.span>
       ))}
     </p>

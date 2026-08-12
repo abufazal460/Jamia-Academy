@@ -19,7 +19,7 @@ export function useLetterHover() {
   const variants = {
     rest: { scale: 1, y: 0 },
     hover: {
-      scale: 1.18,
+      scale: 1.05,
       y: -2,
       transition: { type: "spring", stiffness: 350, damping: 12 },
     },

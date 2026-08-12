@@ -1,7 +1,7 @@
 // src/components/home/whyChooseUs/WhyChooseCard.jsx
 
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { cardVariants } from './animations';
 
 const WhyChooseCard = memo(({ card, index }) => {
@@ -46,8 +46,6 @@ const WhyChooseCard = memo(({ card, index }) => {
             w-14 h-14 rounded-2xl 
             ${card.iconBg} border ${card.borderColor}
             flex items-center justify-center mb-6
-            transition-all duration-300
-            group-hover:scale-110 group-hover:rotate-3
           `}
           whileHover={{
             scale: 1.1,

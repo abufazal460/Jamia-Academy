@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { MapPin, Clock, Navigation } from "lucide-react";
 import { mapConfig } from "../../data/contactData";
 import { scaleInVariant, viewportOnce } from "../../animations/contactVariants";

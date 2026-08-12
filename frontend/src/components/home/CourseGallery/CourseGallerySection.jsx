@@ -5,6 +5,8 @@ import BrowseCoursesCTA from "./BrowseCoursesCTA";
 import { galleryData } from "../../../data/galleryData";
 
 export default function CourseGallerySection() {
+  const GALLERY_COLUMNS = { desktop: 3, tablet: 2, mobile: 1 };
+
   return (
     <section
       id="courses-gallery"
@@ -18,11 +20,7 @@ export default function CourseGallerySection() {
         {/* Infinite Gallery */}
         <InfiniteGallery
           images={galleryData}
-          columns={{
-            desktop: 3,
-            tablet: 2,
-            mobile: 1,
-          }}
+          columns={GALLERY_COLUMNS}
           gap="2rem"
           desktopHeight="80vh"
           tabletHeight="65vh"

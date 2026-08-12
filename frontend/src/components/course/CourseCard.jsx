@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion } from "motion/react";
 import { Clock, Sprout, Layers, Crown } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import AnimatedGradientBorder from "./AnimatedGradientBorder";
