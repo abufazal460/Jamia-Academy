@@ -27,9 +27,6 @@ import {
   VisionMission,
   ValuesSection,
   StatsSection,
-  // FacultyGrid,
-  // WhyChooseUs,
-  // TimelineSection,
 } from "../components/about";
 
 import { pageTransition } from "../animations/aboutAnimations";
