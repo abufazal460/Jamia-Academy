@@ -7,13 +7,17 @@
 // 1. React
 import React from "react";
 
+
 // 2. Third-party Libraries
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
+import { Suspense, lazy } from "react";
+
 
 // 3. Internal Components
 // NOTE: Ye saare imports abhi commented hain kyunki respective components
 // Phase 2/3 me banenge. Component banते hi yaha uncomment karna hai.
+
 import {
   HeroAbout,
   AboutDescription,
@@ -23,43 +27,36 @@ import {
   VisionMission,
   ValuesSection,
   StatsSection,
-  FacultyGrid,
-  WhyChooseUs,
-  TimelineSection,
+  // FacultyGrid,
+  // WhyChooseUs,
+  // TimelineSection,
 } from "../components/about";
-// import {
-//   TimelineSection,
-// } from "@/components/about";
 
-// 4. Hooks
-// (Is page-level file me abhi koi hook zaroori nahi — sections apne hooks khud use karenge)
-
-// 5. Utilities
-// (Abhi zaroorat nahi)
-
-// 6. Constants
 import { pageTransition } from "../animations/aboutAnimations";
 
-// 7. Styles
-// (Tailwind utility classes hi use hongi, koi separate CSS file nahi)
+const FacultyGrid = lazy(() => import("../components/about/faculty/FacultyGrid"));
+const WhyChooseUs = lazy(() => import("../components/about/whychooseus/WhyChooseUs"));
+const TimelineSection = lazy(() => import("../components/about/timeline/TimelineSection"));
 
-/**
- * About
- * Ye component kya karta hai: About page ka top-level skeleton render karta hai
- * Kyu banaya gaya: taaki Phase 2 me har section ko sirf yaha "plug-in" karna ho
- * Kab call hoga: jab bhi "/about" route visit hoga
- * Kya return karega: semantic <main> wrapper jisme sections order me honge
- */
 const About = () => {
   return (
     <>
-      {/* SEO architecture Phase 1 Part 3 me sirf planned hai — actual meta tags Phase 2/3 me aayenge */}
       <Helmet>
         <title>About Us | Jamia Academy</title>
         <meta
           name="description"
           content="Learn about Jamia Academy's history, mission, founders, and commitment to academic excellence."
         />
+        <link rel="canonical" href="https://www.jamiaacademy.in/about" />
+        <meta property="og:title" content="About Us | Jamia Academy" />
+        <meta
+          property="og:description"
+          content="Learn about Jamia Academy's history, mission, founders, and commitment to academic excellence."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.jamiaacademy.in/about" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | Jamia Academy" />
       </Helmet>
 
       {/* Page-level transition wrapper — sirf entrance/exit fade, koi section animation nahi */}
@@ -93,9 +90,11 @@ const About = () => {
         <VisionMission />
         <ValuesSection />
         <StatsSection />
-        <FacultyGrid />
-        <WhyChooseUs />
-        <TimelineSection />
+        <Suspense fallback={null}>
+          <FacultyGrid />
+          <WhyChooseUs />
+          <TimelineSection />
+        </Suspense>
       </motion.main>
     </>
   );
