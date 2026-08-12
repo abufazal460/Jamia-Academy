@@ -1,55 +1,23 @@
-/*
-========================================
 
-File:
-AboutDescription.jsx
-
-Purpose:
-Ye component Jamia Academy ka introduction section show karta hai — About page
-ka doosra major section, jo Hero ke turant baad aata hai aur batata hai ki
-Jamia Academy hai kya, kaha hai, aur kis cheez pe focus karta hai.
-
-Responsibilities:
-- Academy introduction heading + paragraph (data-driven, scroll-triggered)
-- Highlight quote block
-- Premium image block with gradient border + glass frame + floating badges
-- 3 feature cards (Quality Education, Digital Focus, ISO Certified)
-- Mouse-based subtle tilt/parallax on desktop (disabled on mobile + reduced motion)
-
-Animation Engine:
-GSAP + ScrollTrigger — replay-enabled (once:false), sequence:
-Paragraph → Image → Feature Cards → Badges
-Framer Motion — card hover (scale + lift), badge floating idle loop
-
-Data Source:
-@/data/aboutData → aboutDescription, features (koi text yaha hardcode nahi hai)
-
-========================================
-*/
-
-// 1. React
 import React, { useRef, useState, useMemo } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GraduationCap, MonitorSmartphone, ShieldCheck, ImageOff } from "lucide-react";
 
-// 3. Internal Components
-// (Shared components jaise SectionContainer abhi nahi bane — Phase 3+ me plug honge)
 
-// 4. Hooks
+// Hooks
 import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
-// 5. Utilities
+ // Utilities
 import { splitIntoWords } from "../../../utils/textHelpers";
 import { cn } from "../../../utils/helpers";
-import { getImageProps, getFallbackImage } from "../../../utils/imageHelpers";
+import { getImageProps } from "../../../utils/imageHelpers";
 
-// 6. Constants / Data
+// Constants / Data
 import { aboutDescription, features } from "../../../data/aboutData";
 import { gsapEase } from "../../../constants/animations";
 
@@ -58,26 +26,15 @@ import { gsapEase } from "../../../constants/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// -----------------------------------------------------------------------------
-// ICON MAP
-// aboutData.js me icon sirf string name ("GraduationCap") ke roop me store hai,
-// taaki data file me koi JSX/component import na ho (data file pure rehni chahiye).
-// Ye map us string ko actual Lucide icon component se jodta hai.
-// -----------------------------------------------------------------------------
+
 const iconMap = {
   GraduationCap,
   MonitorSmartphone,
   ShieldCheck,
 };
 
-/**
- * AboutDescription
- * Ye component kya karta hai: Jamia Academy ka introduction section render karta hai
- * Kyu banaya gaya: Hero ke baad user ko institute ka context aur credibility dena
- * Kab call hoga: pages/About.jsx me HeroAbout ke turant baad
- * Kya return karega: <section> jisme left content (heading/paragraph/quote/cards)
- * aur right content (image + floating badges) hai
- */
+
+
 const AboutDescription = () => {
   const sectionRef = useRef(null);
   const paragraphRef = useRef(null);
@@ -107,12 +64,7 @@ const AboutDescription = () => {
   const safeFeatures = Array.isArray(features) ? features : [];
   const safeBadges = Array.isArray(aboutDescription?.badges) ? aboutDescription.badges : [];
 
-  // ---------------------------------------------------------------------------
-  // GSAP SCROLLTRIGGER TIMELINE
-  // useGSAPAnimation hook context create/cleanup khud handle karta hai.
-  // Sequence: Paragraph → Image → Feature Cards → Badges
-  // toggleActions "play reverse play reverse" — replay enabled, once:true NAHI use kiya.
-  // ---------------------------------------------------------------------------
+
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
 
@@ -218,12 +170,7 @@ const AboutDescription = () => {
     }
   }, [prefersReducedMotion]);
 
-  // ---------------------------------------------------------------------------
-  // MOUSE TILT — sirf desktop, sirf reduced-motion off
-  // Ye function kya karta hai: mouse position ke basis par halka tilt/parallax deta hai
-  // Kyu banaya gaya: image block ko interactive/premium feel dene ke liye
-  // Kab call hoga: image wrapper par mousemove hone par
-  // ---------------------------------------------------------------------------
+
   const handleMouseMove = (e) => {
     if (!isDesktop || prefersReducedMotion || !tiltTargetRef.current) return;
     const rect = e.currentTarget.getBoundingClientRect();
