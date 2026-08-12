@@ -28,7 +28,7 @@ Data Source:
 */
 
 // 1. React
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useMemo } from "react";
 
 // 2. Third-party Libraries
 import { motion } from "motion/react";
@@ -93,11 +93,14 @@ const AboutDescription = () => {
   const [imageError, setImageError] = useState(false);
 
   // Mouse-tilt ke liye chhota transform state (sirf desktop, sirf reduced-motion off)
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const tiltTargetRef = useRef(null);
 
-  // Paragraph ko words me todna — word-by-word reveal ke liye
-  const paragraphWords = splitIntoWords(
-    Array.isArray(aboutDescription?.paragraphs) ? aboutDescription.paragraphs.join(" ") : ""
+  const paragraphWords = useMemo(
+    () =>
+      splitIntoWords(
+        Array.isArray(aboutDescription?.paragraphs) ? aboutDescription.paragraphs.join(" ") : ""
+      ),
+    []
   );
 
   // Defensive fallback — agar data missing ho to bhi component crash na ho
@@ -222,21 +225,22 @@ const AboutDescription = () => {
   // Kab call hoga: image wrapper par mousemove hone par
   // ---------------------------------------------------------------------------
   const handleMouseMove = (e) => {
-    if (!isDesktop || prefersReducedMotion) return;
+    if (!isDesktop || prefersReducedMotion || !tiltTargetRef.current) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10; // max ~5deg
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
-    setTilt({ x, y });
+    // Seedha DOM pe likha — React re-render trigger nahi hota
+    tiltTargetRef.current.style.transform = `perspective(800px) rotateX(${-y}deg) rotateY(${x}deg)`;
   };
 
-  const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
+  const handleMouseLeave = () => {
+    if (tiltTargetRef.current) {
+      tiltTargetRef.current.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg)";
+    }
+  };
 
   return (
     <section
-      ref={(node) => {
-        sectionRef.current = node;
-        scopeRef.current = node;
-      }}
       id="about-description"
       aria-labelledby="about-description-heading"
       className="relative w-full overflow-hidden bg-[#F7F3E9] py-20 sm:py-24 lg:py-28"
@@ -308,11 +312,11 @@ const AboutDescription = () => {
                       prefersReducedMotion
                         ? {}
                         : {
-                            scale: 1.05,
-                            y: -10,
-                            boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
-                            borderColor: "rgba(230,57,70,0.4)",
-                          }
+                          scale: 1.05,
+                          y: -10,
+                          boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
+                          borderColor: "rgba(230,57,70,0.4)",
+                        }
                     }
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   >
@@ -344,14 +348,14 @@ const AboutDescription = () => {
           ============================================================== */}
           <div className="relative flex justify-center lg:justify-end">
             <div
-              ref={imageWrapRef}
+              ref={(node) => {
+                imageWrapRef.current = node;
+                tiltTargetRef.current = node;
+              }}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               className="relative w-full max-w-md will-change-transform"
-              style={{
-                transform: `perspective(800px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
-                transition: "transform 0.2s ease-out",
-              }}
+              style={{ transition: "transform 0.2s ease-out" }}
             >
               {/* Gradient border frame */}
               <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">
