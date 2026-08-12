@@ -1,55 +1,23 @@
-/*
-========================================
 
-File:
-AboutDescription.jsx
+import React, { useRef, useState, useMemo } from "react";
 
-Purpose:
-Ye component Jamia Academy ka introduction section show karta hai — About page
-ka doosra major section, jo Hero ke turant baad aata hai aur batata hai ki
-Jamia Academy hai kya, kaha hai, aur kis cheez pe focus karta hai.
-
-Responsibilities:
-- Academy introduction heading + paragraph (data-driven, scroll-triggered)
-- Highlight quote block
-- Premium image block with gradient border + glass frame + floating badges
-- 3 feature cards (Quality Education, Digital Focus, ISO Certified)
-- Mouse-based subtle tilt/parallax on desktop (disabled on mobile + reduced motion)
-
-Animation Engine:
-GSAP + ScrollTrigger — replay-enabled (once:false), sequence:
-Paragraph → Image → Feature Cards → Badges
-Framer Motion — card hover (scale + lift), badge floating idle loop
-
-Data Source:
-@/data/aboutData → aboutDescription, features (koi text yaha hardcode nahi hai)
-
-========================================
-*/
-
-// 1. React
-import React, { useRef, useState } from "react";
-
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GraduationCap, MonitorSmartphone, ShieldCheck, ImageOff } from "lucide-react";
 
-// 3. Internal Components
-// (Shared components jaise SectionContainer abhi nahi bane — Phase 3+ me plug honge)
 
-// 4. Hooks
+// Hooks
 import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 import useMediaQuery from "../../../hooks/useMediaQuery";
 
-// 5. Utilities
+ // Utilities
 import { splitIntoWords } from "../../../utils/textHelpers";
 import { cn } from "../../../utils/helpers";
-import { getImageProps, getFallbackImage } from "../../../utils/imageHelpers";
+import { getImageProps } from "../../../utils/imageHelpers";
 
-// 6. Constants / Data
+// Constants / Data
 import { aboutDescription, features } from "../../../data/aboutData";
 import { gsapEase } from "../../../constants/animations";
 
@@ -58,26 +26,15 @@ import { gsapEase } from "../../../constants/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// -----------------------------------------------------------------------------
-// ICON MAP
-// aboutData.js me icon sirf string name ("GraduationCap") ke roop me store hai,
-// taaki data file me koi JSX/component import na ho (data file pure rehni chahiye).
-// Ye map us string ko actual Lucide icon component se jodta hai.
-// -----------------------------------------------------------------------------
+
 const iconMap = {
   GraduationCap,
   MonitorSmartphone,
   ShieldCheck,
 };
 
-/**
- * AboutDescription
- * Ye component kya karta hai: Jamia Academy ka introduction section render karta hai
- * Kyu banaya gaya: Hero ke baad user ko institute ka context aur credibility dena
- * Kab call hoga: pages/About.jsx me HeroAbout ke turant baad
- * Kya return karega: <section> jisme left content (heading/paragraph/quote/cards)
- * aur right content (image + floating badges) hai
- */
+
+
 const AboutDescription = () => {
   const sectionRef = useRef(null);
   const paragraphRef = useRef(null);
@@ -93,23 +50,21 @@ const AboutDescription = () => {
   const [imageError, setImageError] = useState(false);
 
   // Mouse-tilt ke liye chhota transform state (sirf desktop, sirf reduced-motion off)
-  const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const tiltTargetRef = useRef(null);
 
-  // Paragraph ko words me todna — word-by-word reveal ke liye
-  const paragraphWords = splitIntoWords(
-    Array.isArray(aboutDescription?.paragraphs) ? aboutDescription.paragraphs.join(" ") : ""
+  const paragraphWords = useMemo(
+    () =>
+      splitIntoWords(
+        Array.isArray(aboutDescription?.paragraphs) ? aboutDescription.paragraphs.join(" ") : ""
+      ),
+    []
   );
 
   // Defensive fallback — agar data missing ho to bhi component crash na ho
   const safeFeatures = Array.isArray(features) ? features : [];
   const safeBadges = Array.isArray(aboutDescription?.badges) ? aboutDescription.badges : [];
 
-  // ---------------------------------------------------------------------------
-  // GSAP SCROLLTRIGGER TIMELINE
-  // useGSAPAnimation hook context create/cleanup khud handle karta hai.
-  // Sequence: Paragraph → Image → Feature Cards → Badges
-  // toggleActions "play reverse play reverse" — replay enabled, once:true NAHI use kiya.
-  // ---------------------------------------------------------------------------
+
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
 
@@ -215,28 +170,24 @@ const AboutDescription = () => {
     }
   }, [prefersReducedMotion]);
 
-  // ---------------------------------------------------------------------------
-  // MOUSE TILT — sirf desktop, sirf reduced-motion off
-  // Ye function kya karta hai: mouse position ke basis par halka tilt/parallax deta hai
-  // Kyu banaya gaya: image block ko interactive/premium feel dene ke liye
-  // Kab call hoga: image wrapper par mousemove hone par
-  // ---------------------------------------------------------------------------
+
   const handleMouseMove = (e) => {
-    if (!isDesktop || prefersReducedMotion) return;
+    if (!isDesktop || prefersReducedMotion || !tiltTargetRef.current) return;
     const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10; // max ~5deg
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
-    setTilt({ x, y });
+    // Seedha DOM pe likha — React re-render trigger nahi hota
+    tiltTargetRef.current.style.transform = `perspective(800px) rotateX(${-y}deg) rotateY(${x}deg)`;
   };
 
-  const handleMouseLeave = () => setTilt({ x: 0, y: 0 });
+  const handleMouseLeave = () => {
+    if (tiltTargetRef.current) {
+      tiltTargetRef.current.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg)";
+    }
+  };
 
   return (
     <section
-      ref={(node) => {
-        sectionRef.current = node;
-        scopeRef.current = node;
-      }}
       id="about-description"
       aria-labelledby="about-description-heading"
       className="relative w-full overflow-hidden bg-[#F7F3E9] py-20 sm:py-24 lg:py-28"
@@ -308,11 +259,11 @@ const AboutDescription = () => {
                       prefersReducedMotion
                         ? {}
                         : {
-                            scale: 1.05,
-                            y: -10,
-                            boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
-                            borderColor: "rgba(230,57,70,0.4)",
-                          }
+                          scale: 1.05,
+                          y: -10,
+                          boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
+                          borderColor: "rgba(230,57,70,0.4)",
+                        }
                     }
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   >
@@ -344,14 +295,14 @@ const AboutDescription = () => {
           ============================================================== */}
           <div className="relative flex justify-center lg:justify-end">
             <div
-              ref={imageWrapRef}
+              ref={(node) => {
+                imageWrapRef.current = node;
+                tiltTargetRef.current = node;
+              }}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
               className="relative w-full max-w-md will-change-transform"
-              style={{
-                transform: `perspective(800px) rotateX(${tilt.y}deg) rotateY(${tilt.x}deg)`,
-                transition: "transform 0.2s ease-out",
-              }}
+              style={{ transition: "transform 0.2s ease-out" }}
             >
               {/* Gradient border frame */}
               <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">

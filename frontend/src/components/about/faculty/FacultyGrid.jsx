@@ -1,32 +1,3 @@
-/*
-========================================
-
-File:
-FacultyGrid.jsx
-
-Purpose:
-Ye component Jamia Academy ke experienced educators ko premium card grid me
-showcase karta hai — qualifications, experience, aur expertise dikhakar
-academic credibility aur trust build karne ke liye.
-
-Responsibilities:
-- Section heading + description
-- Dynamic faculty cards (image, name, designation, qualification, experience,
-  expertise) from aboutData.faculty
-- Hover/focus par expertise details ka smooth expand reveal
-- Image fallback jab profile photo load na ho
-
-Animation Engine:
-GSAP + ScrollTrigger — replay-enabled (once:false):
-Heading → Description → Faculty cards (stagger 0.12, expo.out, duration 0.8)
-Framer Motion — hover (lift, scale, shadow, image zoom) + expertise expand only
-
-Data Source:
-@/data/aboutData → faculty array (id, name, title/designation, image,
-qualification, experience, expertise)
-
-========================================
-*/
 
 // 1. React
 import React, { useRef, useState } from "react";
@@ -55,13 +26,6 @@ import { gsapEase } from "../../../constants/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * FacultyCard
- * Ye component kya karta hai: ek single faculty member ka card render karta hai,
- * apna khud ka image-error state aur hover/focus-based expertise expand handle karta hai
- * Kyu banaya gaya: FacultyGrid ko clean rakhne ke liye — har card ka local state alag
- * Kab call hoga: FacultyGrid ke andar .map() se, har faculty member ke liye
- */
 const FacultyCard = ({ member, prefersReducedMotion }) => {
   const [imageError, setImageError] = useState(false);
   const [isActive, setIsActive] = useState(false); // hover ya keyboard focus dono se true hota hai
@@ -77,10 +41,6 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
       )}
       onHoverStart={() => setIsActive(true)}
       onHoverEnd={() => setIsActive(false)}
-      onFocus={() => setIsActive(true)}
-      onBlur={() => setIsActive(false)}
-      // Keyboard users ke liye bhi card focusable, taaki expertise expand keyboard se bhi trigger ho
-      tabIndex={0}
       whileHover={
         prefersReducedMotion
           ? {}
@@ -137,10 +97,6 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
           </div>
         )}
 
-        {/* ==============================================================
-            EXPAND DETAILS — expertise list, hover/focus par smooth reveal
-            height + opacity transition, koi layout glitch nahi (grid-rows trick)
-        ============================================================== */}
         {expertiseList.length > 0 && (
           <motion.div
             className="mt-2 grid"
@@ -171,13 +127,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
   );
 };
 
-/**
- * FacultyGrid
- * Ye component kya karta hai: institute ke faculty members ko responsive grid me render karta hai
- * Kyu banaya gaya: experienced educators dikha kar academic trust build karna
- * Kab call hoga: pages/About.jsx me StatsSection ke baad
- * Kya return karega: <section> jisme heading + responsive faculty-card grid hai
- */
+
 const FacultyGrid = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);

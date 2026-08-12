@@ -1,33 +1,4 @@
-/*
-========================================
 
-File:
-FounderMessage.jsx
-
-Purpose:
-Ye component Founder ka ek personal message/vision statement premium glass
-card ke andar display karta hai — FounderSection (credentials/profile) se
-alag, ye emotional/trust-building block hai.
-
-Responsibilities:
-- Founder image/illustration (left, desktop) + decorative gradient frame
-- Section label, heading, animated quote icons, message body, signature
-- Glassmorphism card wrapping the message
-
-Animation Engine:
-GSAP + ScrollTrigger — single timeline, replay-enabled (once:false):
-Section fade → Image → Heading → Quote icons → Message (line-by-line) →
-Signature → Founder details
-Framer Motion — quote icon floating/hover only
-
-Data Source:
-@/data/aboutData → founder.message (label, heading, body, signatureImage)
-+ founder.name / founder.title for the signature block
-
-========================================
-*/
-
-// 1. React
 import React, { useRef, useState } from "react";
 
 // 2. Third-party Libraries
@@ -54,13 +25,6 @@ import { gsapEase } from "../../../constants/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * FounderMessage
- * Ye component kya karta hai: Founder ka personal message ek glass card me render karta hai
- * Kyu banaya gaya: profile credentials (FounderSection) ke alawa emotional connect/vision dikhana
- * Kab call hoga: pages/About.jsx me FounderSection ke baad
- * Kya return karega: <section> jisme image (left) + heading/quote/message/signature (right) hai
- */
 const FounderMessage = () => {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
@@ -75,8 +39,7 @@ const FounderMessage = () => {
   const [imageError, setImageError] = useState(false);
 
   const messageData = founder?.message || {};
-  // Message body ko lines me todna — line-by-line stagger reveal ke liye.
-  // Sentence-boundary split use kiya hai taaki natural reading chunks bane.
+
   const messageLines = (messageData.body || "")
     .split(/(?<=[.!?])\s+/)
     .filter(Boolean);

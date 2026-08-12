@@ -42,7 +42,7 @@ function FloatingInput({
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full ">
       <div
         className={[
           "relative flex items-center rounded-2xl border bg-white/[0.03]",

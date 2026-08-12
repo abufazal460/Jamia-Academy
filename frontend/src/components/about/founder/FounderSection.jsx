@@ -1,41 +1,10 @@
-/*
-========================================
 
-File:
-FounderSection.jsx
-
-Purpose:
-Ye component Jamia Academy ke Founder ka premium profile section render karta
-hai — leadership, credibility, academic excellence aur trust highlight karne
-ke liye.
-
-Responsibilities:
-- Founder image (gradient border, glass frame, fallback on error)
-- Name, title, experience badge, government position
-- Qualification cards (data-driven, glassmorphism, hover elevation)
-- Social links (LinkedIn, Twitter, Facebook — sirf available links render honge)
-
-Animation Engine:
-GSAP + ScrollTrigger — single master timeline, replay-enabled (once:false):
-Section → Image → Name → Title → Experience Badge → Position →
-Qualification Cards (stagger) → Social Icons
-Framer Motion — sirf hover/micro-interactions (cards, social icons, floating shapes)
-
-Data Source:
-@/data/aboutData → founder object (name, title, image, qualifications,
-experience, position, social) — koi text yaha hardcode nahi hai.
-
-========================================
-*/
-
-// 1. React
 import React, { useRef, useState } from "react";
 
 // 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { Linkedin, Twitter, Facebook, GraduationCap, ImageOff } from "lucide-react";
 import { LuImageOff } from "react-icons/lu";
 import { FaGraduationCap , FaFacebook , FaLinkedin , FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
@@ -60,25 +29,15 @@ import { gsapEase } from "../../../constants/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// -----------------------------------------------------------------------------
-// SOCIAL ICON MAP
-// founder.social object me sirf platform-keys aur URLs hain. Ye map un keys ko
-// actual Lucide icon component se jodta hai — data file me koi JSX nahi jaani chahiye.
-// -----------------------------------------------------------------------------
+
 const socialIconMap = {
   linkedin: FaLinkedin,
   twitter: FaSquareXTwitter,
   facebook: FaFacebook,
   instagram: FaInstagram,
 };
-console.log(socialIconMap.name)
-/**
- * FounderSection
- * Ye component kya karta hai: Founder ka pura credibility/profile block render karta hai
- * Kyu banaya gaya: institute ki leadership me trust build karne ke liye
- * Kab call hoga: pages/About.jsx me AboutDescription ke baad
- * Kya return karega: <section> jisme image (left, desktop) aur info block (right) hai
- */
+
+
 const FounderSection = () => {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
