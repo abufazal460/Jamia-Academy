@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { floatingBlob, floatingBlobSlow, noMotion } from "../../animations/floatingVariants";
 import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 

@@ -1,5 +1,5 @@
 import { memo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Copy, Check, Phone, MessageCircle, Navigation } from "lucide-react";
 import { interactiveCardVariant, iconHoverVariant } from "../../animations/hoverVariants";
 import { resolveIcon } from "../../utils/iconResolver";

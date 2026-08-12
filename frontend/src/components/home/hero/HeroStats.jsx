@@ -20,7 +20,7 @@ import { staggerContainer, fadeInUp } from "../../../utils/motionVariants";
  * separate component ke) to Rules of Hooks todte (hooks ko loop ke andar
  * conditionally/dynamically call nahi kar sakte).
  *
- * PATCH: import "motion/react" se (framer-motion se nahi) — stack consistency.
+ * PATCH: import "motion/react" se (motion/react se nahi) — stack consistency.
  */
 
 // Number ko display format ke hisaab se format karta hai

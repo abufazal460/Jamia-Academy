@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { motion, useMotionValue, animate, useInView } from "framer-motion";
+import { motion, useMotionValue, animate, useInView } from "motion/react";
 import { twMerge } from "tailwind-merge";
 
 // Default neon palette — pink se shuru hoke purple, indigo, cyan, teal, yellow, orange

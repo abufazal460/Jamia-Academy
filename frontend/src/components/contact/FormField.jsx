@@ -1,5 +1,5 @@
 import { memo, useState, useId } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 // Reusable floating-label field — text/email/tel/textarea sab handle karta hai
 const FormField = ({ field, value, error, onChange }) => {

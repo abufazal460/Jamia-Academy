@@ -16,7 +16,7 @@ import { staggerContainer, fadeInUp, cardHover } from "../../../utils/motionVari
  * Cards heroPillars array pe map() karke render hote hain — naya pillar
  * add karna ho to sirf heroData.js mein object add karna hoga.
  *
- * PATCH: import "motion/react" se (framer-motion se nahi) — stack consistency.
+ * PATCH: import "motion/react" se (motion/react se nahi) — stack consistency.
  */
 function HeroPillars() {
   return (

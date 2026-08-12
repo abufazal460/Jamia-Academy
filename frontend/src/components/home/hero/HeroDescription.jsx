@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useLetterHover } from "../../../hooks/useLetterHover";
 
 /**

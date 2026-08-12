@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { gsap } from "gsap";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 import CourseSearch from "./CourseSearch";
 import CourseFilter from "./CourseFilter";

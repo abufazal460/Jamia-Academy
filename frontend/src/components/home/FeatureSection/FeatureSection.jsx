@@ -15,7 +15,7 @@
  * ---------------------------------------------------------------------------
  */
 
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "motion/react";
 import { featuresData } from "../../../data/features.data";
 import {
   VIEWPORT_REPLAY,

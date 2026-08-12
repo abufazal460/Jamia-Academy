@@ -2,13 +2,13 @@
 // Purpose: Jamia Academy About page ka composition root — sirf layout arrange karta hai
 // Responsibility: Future sections ko sahi order me import + render karna, koi UI/business logic nahi
 // Future Usage: Phase 2 me har section (Hero, Founder, Timeline, etc.) yaha ek-ek karke plug hogi
-// Dependencies: react, framer-motion, react-helmet-async, @/animations/aboutAnimations, @/components/about
+// Dependencies: react, motion/react, react-helmet-async, @/animations/aboutAnimations, @/components/about
 
 // 1. React
 import React from "react";
 
 // 2. Third-party Libraries
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 
 // 3. Internal Components

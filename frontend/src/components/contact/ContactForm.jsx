@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { formConfig } from "../../data/contactData";
 import { scaleInVariant, viewportOnce } from "../../animations/contactVariants";
 import { useContactForm } from "../../hooks/useContactForm";

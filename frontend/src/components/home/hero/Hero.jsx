@@ -25,7 +25,7 @@ import LiquidEther from "./LiquidEther";
  *
  * PATCH NOTES (production audit — semantics/SEO/reduced-motion):
  *  1. Import "motion/react" se hai (project ka documented stack Motion
- *     React hai, "framer-motion" nahi).
+ *     React hai, "motion/react" nahi).
  *  2. Root content wrapper `motion.div` hai (pehle galti se `motion.main`
  *     tha) — <section> ke andar nested <main> invalid/duplicate landmark
  *     banata, jo SEO aur screen-reader navigation ke liye galat hai.

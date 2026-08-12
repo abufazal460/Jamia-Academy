@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { GalleryCard } from "./GalleryCard";
 import { useIsMobile } from "../../hooks/useismobile";
 

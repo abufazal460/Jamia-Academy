@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { contactHero } from "../../data/contactData";
 import { slideInLeft, slideInRight } from "../../animations/contactVariants";
 import { buttonHoverVariant } from "../../animations/hoverVariants";

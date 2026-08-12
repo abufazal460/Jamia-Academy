@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
+import { motion, useReducedMotion, AnimatePresence } from "motion/react";
 import { SearchX, Gamepad2 } from "lucide-react";
 import CourseCard from "./CourseCard";
 import CourseCardSkeleton from "./CourseCardSkeleton";
@@ -13,9 +13,9 @@ import CourseCardSkeleton from "./CourseCardSkeleton";
  * Details" aur "Enroll Now" dono buttons kuch nahi kar rahe the. Ab dono
  * callbacks seedhe CourseCard ko pass ho rahe hain.
  *
- * Import bhi `motion/react` se `framer-motion` kar diya hai — project ke
+ * Import bhi `motion/react` se `motion/react` kar diya hai — project ke
  * baaki components (Card, Modal, Search, Filter, GradientBorder) sab
- * `framer-motion` use kar rahe hain, do alag animation packages saath
+ * `motion/react` use kar rahe hain, do alag animation packages saath
  * me install/import karna bundle size aur runtime dono ke liye risky hai.
  *
  * Baaki sab as-is: rendering + animation yahin isolated hai, data/business
