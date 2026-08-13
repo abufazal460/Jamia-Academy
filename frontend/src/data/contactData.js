@@ -180,19 +180,14 @@ export const whyContactSection = {
 // ---------------- LOCATION / MAP SECTION ----------------
 export const mapConfig = {
   heading: "Visit Jamia Academy",
-  address: "Jamia Academy Campus, Sector 21, Gurugram, Haryana, India",
+ address: "A-29, above J&K Bank, Batla House, Jamia Nagar, Okhla, New Delhi 110025",
   embedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.131341055989!2d77.28248707495429!3d28.565818487108086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce38a6449cb73%3A0x51eeffb8f9b1108a!2sA-29%2C%20above%20J%26K%20Bank%2C%20Batla%20House%2C%20Jamia%20Nagar%2C%20Okhla%2C%20New%20Delhi%2C%20Delhi%20110025!5e0!3m2!1sen!2sin!4v1785414693012!5m2!1sen!2sin",
   ctaLabel: "Get Directions",
-  ctaHref: "https://maps.google.com/?q=Jamia+Academy+Gurugram",
+ ctaHref: "https://maps.google.com/?q=A-29+Batla+House+Jamia+Nagar+Okhla+New+Delhi",
   workingHours: [
-    { day: "Monday – Friday", time: "9:00 AM – 7:00 PM" },
-    { day: "Saturday", time: "10:00 AM – 5:00 PM" },
+    { day: "Monday – Friday", time: "9:00 AM – 9:00 PM" },
+    { day: "Saturday", time: "Closed" },
     { day: "Sunday", time: "Closed" },
   ],
 };
-
-// ---------------- ICON MAPPING NOTE ----------------
-// Icon string keys above (e.g. "GraduationCap", "Phone") map directly to
-// lucide-react named exports. Resolved centrally inside utils/iconResolver
-// so components never import icons ad-hoc.
