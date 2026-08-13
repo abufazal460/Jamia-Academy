@@ -82,11 +82,6 @@ export const certShakeVariants = {
   },
 };
 
-export const certGlowPulseVariants = {
-  rest: { opacity: 0.5 },
-  hover: { opacity: 1, transition: { duration: 0.3, ease: CERT_EASE_PREMIUM } },
-};
-
 export const certSpinnerTransition = {
   repeat: Infinity,
   ease: "linear",
