@@ -7,7 +7,6 @@ import { VALIDATION_MESSAGES } from "../data/certificateData";
 
 const NAME_PATTERN = /^[A-Za-z][A-Za-z\s.'-]{1,59}$/;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-const CERTIFICATE_ID_PATTERN = /^[A-Za-z0-9-]{3,40}$/;
 const COURSE_PATTERN = /^[A-Za-z0-9][A-Za-z0-9\s.,&()'-]{1,79}$/;
 
 const validators = {
@@ -23,12 +22,6 @@ const validators = {
     if (!NAME_PATTERN.test(trimmed)) return VALIDATION_MESSAGES.fatherName.invalid;
     return "";
   },
-  motherName: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return VALIDATION_MESSAGES.motherName.required;
-    if (!NAME_PATTERN.test(trimmed)) return VALIDATION_MESSAGES.motherName.invalid;
-    return "";
-  },
   email: (value) => {
     const trimmed = value.trim();
     if (!trimmed) return VALIDATION_MESSAGES.email.required;
@@ -39,13 +32,6 @@ const validators = {
     const trimmed = value.trim();
     if (!trimmed) return VALIDATION_MESSAGES.courseName.required;
     if (!COURSE_PATTERN.test(trimmed)) return VALIDATION_MESSAGES.courseName.invalid;
-    return "";
-  },
-  certificateId: (value) => {
-    const trimmed = value.trim();
-    if (!trimmed) return VALIDATION_MESSAGES.certificateId.required;
-    if (!CERTIFICATE_ID_PATTERN.test(trimmed))
-      return VALIDATION_MESSAGES.certificateId.invalid;
     return "";
   },
 };

@@ -2,19 +2,6 @@ import { forwardRef, memo } from "react";
 import { motion } from "motion/react";
 import { cardFloatVariants } from "../../utils/animationVariants";
 
-/**
- * GlassPanel
- * Reusable liquid-glass container — frosted blur, thin white border,
- * soft glow, aur hover pe blur/glow thoda badh jaata hai.
- * GPU-accelerated transforms only (transform + opacity), koi layout
- * thrashing property animate nahi hoti.
- *
- * Props:
- * - children: node
- * - className: extra classes (merge hote hain, override nahi)
- * - enableFloat: boolean — idle floating motion on/off
- * - variants / initial / animate: parent se motion sequence control ke liye
- */
 const GlassPanel = forwardRef(function GlassPanel(
   { children, className = "", enableFloat = true, variants, initial, animate, ...rest },
   ref
@@ -52,7 +39,8 @@ const GlassPanel = forwardRef(function GlassPanel(
       {enableFloat ? (
         <motion.div
           variants={cardFloatVariants}
-          animate="float"
+          animate={{ y: [0, -8, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
           className="relative z-10 will-change-transform"
         >
           {children}

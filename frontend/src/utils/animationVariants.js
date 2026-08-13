@@ -75,21 +75,6 @@ export const passwordLabelEntranceVariants = {
   },
 };
 
-export const inputFadeVariants = {
-  hidden: {
-    opacity: 0,
-    y: 12,
-  },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 160,
-      damping: 18,
-    },
-  },
-};
 
 export const buttonExpandVariants = {
   hidden: {

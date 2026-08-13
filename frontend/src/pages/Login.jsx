@@ -1,19 +1,25 @@
 import { LazyMotion, domAnimation } from "motion/react";
 import SpaceBackground from "../components/contactBackground/SpaceBackground";
 import { LoginCard } from "../components/login";
+import { Helmet } from "react-helmet-async";
+import loginData from "../data/loginData";
 
-/**
- * Login
- * Page-level component. Existing SpaceBackground ko as-is behind the
- * card render karta hai — background ko dobara banaya ya modify nahi
- * kiya gaya hai, jaisa spec me mention tha.
- *
- * Authentication/API/Redux/Context/JWT/Firebase — kuch bhi implement
- * nahi hai, current scope sirf UI tak hai.
- */
+const canonicalUrl = typeof window !== "undefined" ? `${window.location.origin}/login` : "/login";
 function Login() {
   return (
     <LazyMotion features={domAnimation}>
+      <Helmet>
+        <title>{loginData.meta.pageTitle}</title>
+        <meta name="description" content={loginData.meta.description} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={loginData.meta.pageTitle} />
+        <meta property="og:description" content={loginData.meta.description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={loginData.meta.pageTitle} />
+      </Helmet>
       <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden  px-4 py-10 sm:px-6">
         {/* Existing project background — do not modify */}
         <SpaceBackground />

@@ -3,8 +3,9 @@
 // Koi bhi text JSX me hardcode nahi hoga — sab yahan se aayega.
 
 export const loginData = {
-  meta: {
+ meta: {
     pageTitle: "Login | Jamia Academy",
+    description: "Login to your Jamia Academy account to continue your learning journey.",
   },
   heading: {
     title: "Login",
