@@ -4,28 +4,17 @@ import { GalleryTabs } from "../components/gallery/GalleryTabs";
 import { GalleryGrid } from "../components/gallery/GalleryGrid";
 import { Lightbox } from "../components/gallery/Lightbox";
 import { useGalleryImages } from "../hooks/useGalleryImages";
-// Hinglish: `gallery.css` import HATA diya gaya hai — pehle usme
-// gg-border-frame (rotating conic-gradient) aur gg-skeleton (shimmer)
-// classes thi, dono ab optimize karke plain Tailwind classes me convert
-// ho chuki hain GalleryCard.jsx ke andar. Ab koi custom CSS file ki
-// zaroorat nahi.
+import { Helmet } from "react-helmet-async";
 
-/**
- * Gallery.jsx
- * -----------------------------------------------------------------------
- * Hinglish: Ye component UNCHANGED hai (naam, structure, state, props
- * sab same) — sirf ek import line hati hai (upar dekhein). Baaki poora
- * orchestration logic bilkul waisa hi hai jaisa pehle tha.
- */
+
+
 export default function Gallery() {
   const { all, classroom, event, tour } = useGalleryImages();
 
   const [activeTab, setActiveTab] = useState("all");
   const [lightboxIndex, setLightboxIndex] = useState(null); // null = closed
 
-  // Active tab ke hisaab se sahi image array select karo. useMemo isliye
-  // taaki har render par naya array reference na bane (GalleryGrid/GalleryCard
-  // ke memo comparisons is wajah se bekaar na ho jayein).
+
   const activeImages = useMemo(() => {
     switch (activeTab) {
       case "classroom":
@@ -40,8 +29,7 @@ export default function Gallery() {
     }
   }, [activeTab, all, classroom, event, tour]);
 
-  // Tab change hote hi lightbox band kar do (agar khula ho) — kyunki
-  // lightboxIndex purani array ke context me tha, naye tab me invalid hoga.
+
   const handleTabChange = useCallback((nextTab) => {
     setActiveTab(nextTab);
     setLightboxIndex(null);
@@ -63,13 +51,31 @@ export default function Gallery() {
 
   return (
     <section className="mx-auto w-full max-w-[1920px] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 2xl:px-16">
+      <Helmet>
+        <title>Gallery | Jamia Academy</title>
+        <meta
+          name="description"
+          content="Explore photos from Jamia Academy's classrooms, events, and learning tours."
+        />
+        <link rel="canonical" href="https://www.jamiaacademy.in/gallery" />
+        <meta property="og:title" content="Gallery | Jamia Academy" />
+        <meta
+          property="og:description"
+          content="Explore photos from Jamia Academy's classrooms, events, and learning tours."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.jamiaacademy.in/gallery" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gallery | Jamia Academy" />
+      </Helmet>
+
       {/* Page heading */}
       <header className="mx-auto mb-8 max-w-2xl text-center sm:mb-12">
-      
+
         <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
           Gallery
         </h1>
-      
+
       </header>
 
       {/* Tabs */}
