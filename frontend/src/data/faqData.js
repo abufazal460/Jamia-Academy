@@ -9,51 +9,63 @@
 const faqData = [
   {
     id: "faq-1",
-    question: "Jamia Academy mein kaunse courses available hain?",
+    question: "How many courses are available at Jamia Academy?",
     answer:
-      "Jamia Academy mein 35+ professional courses available hain jisme Computer Science, Information Technology, Graphic Design, Animation, Data Analytics, Data Science, Full Stack Web Development with GenAI, AutoCAD, Revit, Interior Design, Tally Prime with GST, Ethical Hacking aur Generative AI shamil hain. Sab courses industry-aligned aur certification ke saath aate hain.",
+      "Jamia Academy offers 45+ courses across different skill and career-oriented categories. Students can choose from a wide range of courses based on their interests, educational background, and career goals",
   },
   {
     id: "faq-2",
-    question: "Kya Jamia Academy government approved hai?",
+    question: "Is Jamia Academy government approved or recognized?",
     answer:
-      "Haan, Jamia Academy ek ISO & IAF Certified institution hai. Ye MSME, Ministry of Labour & Employment (MoLE), Skill India, NITI Aayog aur NIELIT jaisi government bodies ke saath registered aur affiliated hai. Hamara campus Jamia Millia Islamia University ke qareeb strategically located hai.",
+      "Yes. Jamia Academy offers courses and programs associated with recognized organizations and initiatives, including Skill India, NITI Aayog, NIELIT, MSME, and other relevant government and institutional programs, depending on the specific course or certification.",
   },
   {
     id: "faq-3",
-    question: "Course fees kitni hain aur EMI available hai?",
+    question: "How much do courses at Jamia Academy cost?",
     answer:
-      "Jamia Academy affordable education mein believe karta hai — especially economically weaker aur marginalized communities ke liye. Fees course-wise alag hoti hain. Flexible payment options aur EMI facility available hai. Exact fees ke liye aap directly academy se contact kar sakte hain ya campus visit kar sakte hain.",
+      "Course fees vary depending on the course, duration, curriculum, and certification. Students can contact Jamia Academy for the exact fee structure of their chosen course.",
   },
   {
     id: "faq-4",
-    question: "Courses ki duration kitni hoti hai?",
+    question: "Does Jamia Academy offer EMI or installment payment options?",
     answer:
-      "Duration alag alag courses ke hisaab se hoti hai. Short certificate courses 3 mahine ke hote hain, jabke diploma courses 4 se 8 mahine tak ki duration ke hote hain. Full Stack Web Development with GenAI aur Data Science jaise advanced programs 8 mahine ke hain. Har course mein practical training, live projects aur certification shamil hai.",
+      "Yes. Jamia Academy provides flexible payment options for eligible courses. Students can pay the complete fee in one payment or in three installments, allowing them to complete the course fee in three parts.",
   },
   {
     id: "faq-5",
-    question: "Kya placement assistance milti hai?",
+    question: "What is the duration of courses at Jamia Academy?",
     answer:
-      "Haan! Jamia Academy comprehensive career support provide karta hai jisme resume building, mock interviews, LinkedIn profile optimization, aur job placement assistance shamil hai. Hamari faculty industry professionals hain jo students ko real-world exposure dete hain aur apne network se job opportunities tak access dilate hain.",
+      "Course duration generally ranges from 3 to 8 months, depending on the course, curriculum, and learning requirements. The exact duration is provided for each individual course.",
   },
   {
     id: "faq-6",
-    question: "Online classes available hain ya sirf offline?",
+    question: "What is the faculty like at Jamia Academy?",
     answer:
-      "Jamia Academy primarily offline, classroom-based education par focus karta hai taaki students ko hands-on, practical environment mile. However, kuch study materials aur recorded sessions online bhi access kiye ja sakte hain. Physical classroom environment humari teaching methodology ka core part hai.",
+      "Jamia Academy has a team of 4+ faculty members and trainers with diverse academic and professional backgrounds. The faculty includes professionals with qualifications and experience in fields such as PhD, MBA, and other specialized areas.",
   },
   {
     id: "faq-7",
-    question: "Admission ke liye kya qualification chahiye?",
+    question: "Are the courses at Jamia Academy suitable for beginners?",
     answer:
-      "Most courses ke liye minimum 10th ya 12th pass hona zaroori hai. Kuch advanced courses jaise Data Science ya Ethical Hacking ke liye graduation preferred hai, lekin mandatory nahi. Beginners ke liye bhi specially designed courses hain jaise Advanced Computer Concepts jo bilkul basics se shuru hota hai.",
+      "Yes. Many courses are designed to accommodate students at different skill levels, including beginners. The course structure and requirements may vary, so students can select a program according to their current knowledge and career goals.",
   },
   {
     id: "faq-8",
-    question: "Faculty kaisi hai aur unka experience kya hai?",
+    question: "Do Jamia Academy courses provide certificates?",
     answer:
-      "Jamia Academy ki faculty mein Ph.D. holders, industry professionals aur experienced educators hain. Founder Dr. Qasim Chaudhary ke paas 15+ years ka experience hai. Co-founder Dr. Saba Rizwi Ph.D. in Educational Technology & AI hain. Faculty members ka average industry experience 5-15 years hai aur wo real-world projects pe kaam kar chuke hain.",
+      "Yes. Eligible students receive certificates upon successfully completing their respective courses and meeting the course requirements. The type of certificate or recognition may vary depending on the specific course.",
+  },
+  {
+    id: "faq-9",
+    question: "Can students choose a course according to their career goals?",
+    answer:
+      "Yes. With 45+ courses available, students can explore different learning options based on their interests, existing skills, and career objectives. The academy can also help students understand the available course options before enrollment.",
+  },
+  {
+    id: "faq-10",
+    question: "Why should I choose Jamia Academy for skill development?",
+    answer:
+      "Jamia Academy focuses on practical learning, skill development, experienced faculty, flexible fee options, and a wide range of career-oriented courses. With 45+ courses and 4+ faculty members, the academy aims to provide accessible and structured learning opportunities for students.",
   },
 ];
 
