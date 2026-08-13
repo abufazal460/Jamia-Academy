@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-
 /**
  * Shine
  * A single brushed-metal light pass, masked to the text via
