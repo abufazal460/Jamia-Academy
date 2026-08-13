@@ -14,7 +14,7 @@ import img1 from "../assets/images/about/hero/img-1.jpeg"
 export const hero = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  eyebrow: "Since 2001",
+  eyebrow: "Since 2022",
   title: "Shaping Futures Through Knowledge & Character",
   subtitle: "Welcome to Jamia Academy",
   description:
@@ -86,7 +86,7 @@ export const founder = {
   designation: "Founder & Director",
   title: "Founder & Director",
   quote: "Education is not just about degrees, it's about building character and vision for the future.",
-  bio: "Dr. Ahmed Khan founded Jamia Academy in 2001 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
+  bio: "Dr. Ahmed Khan founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/founder-placeholder.webp",
@@ -259,10 +259,10 @@ export const faculty = [
 export const timeline = [
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "timeline-2001", year: "2001", title: "Foundation", description: "Jamia Academy was established with a single classroom and a big vision." },
-  { id: "timeline-2008", year: "2008", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
-  { id: "timeline-2015", year: "2015", title: "Digital Learning Introduced", description: "Integrated technology-driven learning across all grades." },
-  { id: "timeline-2023", year: "2023", title: "5000+ Alumni Milestone", description: "Celebrated over five thousand successful graduates." },
+  { id: "timeline-2022", year: "2022", title: "Foundation", description: "Jamia Academy was established with a single classroom and a big vision." },
+  { id: "timeline-2024", year: "2024", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
+  { id: "timeline-2024", year: "2024", title: "Digital Learning Introduced", description: "Integrated technology-driven learning across all grades." },
+  { id: "timeline-2026", year: "2026", title: "5000+ Alumni Milestone", description: "Celebrated over five thousand successful graduates." },
 ];
 
 // ---------------------------------------------------------------------------
