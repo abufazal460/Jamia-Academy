@@ -116,7 +116,7 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate }) {
         <motion.img
           key={images[currentIndex]}
           src={images[currentIndex]}
-          alt={`Full screen gallery photo ${currentIndex + 1}`}
+          alt={`Jamia Academy ${categoryLabel} photo ${index + 1}`}
           onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}

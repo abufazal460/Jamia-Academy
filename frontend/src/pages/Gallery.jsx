@@ -88,6 +88,7 @@ export default function Gallery() {
         key={activeTab}
         images={activeImages}
         onOpenImage={handleOpenImage}
+        categoryLabel={activeTab === "all" ? "Gallery" : activeTab}
       />
 
       {/* Empty state, defensive coding in case a category has 0 images */}
