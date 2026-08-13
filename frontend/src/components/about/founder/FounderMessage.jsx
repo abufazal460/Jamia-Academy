@@ -196,7 +196,7 @@ const FounderMessage = () => {
             {/* Glass card wrapping the message */}
             <div className="relative mt-6 rounded-3xl border border-white/50 bg-white/50 p-6 sm:p-8 shadow-[0_12px_40px_rgba(43,45,66,0.1)] backdrop-blur-xl">
               {/* Gradient highlight sliver */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-1 rounded-t-3xl bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#2A9D8F]" />
+              <div className="pointer-events-none absolute inset-x-1 top-0 h-1 rounded-t-3xl bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#2A9D8F]" />
 
               <span ref={quoteOpenRef} className="inline-block text-[#E63946]/50" aria-hidden="true">
                 <Quote size={28} />
