@@ -2,7 +2,6 @@ import AccreditationSection from "../components/home/AccreditationSection/Accred
 import FeatureSection from "../components/home/FeatureSection/FeatureSection";
 import FAQ from "../components/faq/FAQ";
 import CourseGallerySection from "../components/home/CourseGallery/CourseGallerySection";
-import TextPressure from "../components/home/TextPressure";
 import WhyChooseUs from "../components/home/whyChooseUs/WhyChooseUs";
 import Testimonials from "../components/home/testimonials";
 
@@ -10,26 +9,15 @@ const Home = () => {
   return (
     <main className="w-full min-h-screen">
     
+       <WhyChooseUs />
 
       <Testimonials />
 
-
-       <WhyChooseUs />
-
-
-      <section className="w-full h-screen overflow-hidden">
-        <div className="mx-auto w-full h-full">
-          <div className="h-full">
-            <TextPressure text="JAMIA ACADEMY" minFontSize={28} />
-          </div>
-        </div>
-      </section>
+      <FAQ />
 
       <AccreditationSection />
 
       <FeatureSection />
-
-      <FAQ />
 
       <CourseGallerySection />
     </main>
