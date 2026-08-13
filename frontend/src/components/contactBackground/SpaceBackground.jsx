@@ -517,24 +517,36 @@ export default function SpaceBackground({ className = "" }) {
 
     animationId = requestAnimationFrame(animate);
 
-    // ─── RESPONSIVE RESIZE HANDLING ──────────────────────────────
-    // ResizeObserver use kiya hai (window resize event ke bajaye) kyunki
-    // ye component ab ek PARENT SECTION ke andar embed hota hai — agar
-    // parent section ka size kisi aur reason se change ho (jaise layout
-    // shift, sidebar open/close, orientation change), tab bhi ye turant
-    // sahi size le lega. Ye large desktop se lekar chhoti mobile screen
-    // tak, har jagah sahi tarah kaam karta hai.
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!prefersReducedMotion) {
+      animationId = requestAnimationFrame(animate);
+    } else {
+      drawBackground();
+      drawNebulas(0);
+      stars.forEach((s) => { s.update(0); s.draw(0); });
+    }
+
+    const handleVisibility = () => {
+      if (document.hidden) {
+        cancelAnimationFrame(animationId);
+      } else if (!prefersReducedMotion) {
+        lastTime = 0;
+        animationId = requestAnimationFrame(animate);
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibility);
+
     const resizeObserver = new ResizeObserver(() => {
       resize();
       buildStars();
     });
     resizeObserver.observe(container);
 
-    // ─── CLEANUP (memory leak se bachne ke liye) ──────────────────
     return () => {
       cancelAnimationFrame(animationId);
       cancelAnimationFrame(fadeInId);
       resizeObserver.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibility);
     };
   }, []);
 
@@ -551,9 +563,8 @@ export default function SpaceBackground({ className = "" }) {
     >
       <canvas
         ref={canvasRef}
-        className={`absolute inset-0 h-full w-full transition-opacity duration-[1.5s] ease-out ${
-          mounted ? "opacity-100" : "opacity-0"
-        }`}
+        className={`absolute inset-0 h-full w-full transition-opacity duration-[1.5s] ease-out ${mounted ? "opacity-100" : "opacity-0"
+          }`}
       />
     </div>
   );
