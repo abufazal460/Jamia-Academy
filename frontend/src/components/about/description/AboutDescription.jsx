@@ -237,7 +237,7 @@ const AboutDescription = () => {
 
             {/* Highlight Quote */}
             {aboutDescription?.quote && (
-              <blockquote className="border-l-4 border-[#E63946] pl-4 sm:pl-5 py-1 text-base sm:text-lg italic text-[#2B2D42]/90">
+              <blockquote className="border-l-4 border-[#E63946] rounded-2xl pl-4 sm:pl-5 py-1 text-base sm:text-lg italic text-[#2B2D42]/90">
                 “{aboutDescription.quote}”
               </blockquote>
             )}

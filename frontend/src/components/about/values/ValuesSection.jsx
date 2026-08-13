@@ -1,30 +1,3 @@
-/*
-========================================
-
-File:
-ValuesSection.jsx
-
-Purpose:
-Ye component Jamia Academy ke core values ko premium glass cards ke grid me
-render karta hai — trust, excellence, innovation, community aur compassion
-communicate karne ke liye.
-
-Responsibilities:
-- Section heading + description
-- Dynamic value cards (icon, title, description) from aboutData.values
-- Stagger scroll reveal + icon entrance animation
-- Hover: scale, lift, icon rotation, shadow
-
-Animation Engine:
-GSAP + ScrollTrigger — replay-enabled (once:false):
-Heading → Description → Value cards (stagger 0.12, expo.out)
-Framer Motion — hover only (scale, y, icon rotation, shadow)
-
-Data Source:
-@/data/aboutData → values array (id, title, description, icon)
-
-========================================
-*/
 
 // 1. React
 import React, { useRef } from "react";
