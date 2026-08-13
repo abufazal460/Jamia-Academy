@@ -14,7 +14,7 @@ import img1 from "../assets/images/about/hero/img-1.jpeg"
 export const hero = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  eyebrow: "Since 2001",
+  eyebrow: "Since 2022",
   title: "Shaping Futures Through Knowledge & Character",
   subtitle: "Welcome to Jamia Academy",
   description:
@@ -86,7 +86,7 @@ export const founder = {
   designation: "Founder & Director",
   title: "Founder & Director",
   quote: "Education is not just about degrees, it's about building character and vision for the future.",
-  bio: "Dr. Ahmed Khan founded Jamia Academy in 2001 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
+  bio: "Dr. Ahmed Khan founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/founder-placeholder.webp",
@@ -141,39 +141,59 @@ export const coFounder = {
 // ---------------------------------------------------------------------------
 // VISION & MISSION SECTION
 // ---------------------------------------------------------------------------
+
 export const vision = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Vision",
-  subtitle: "Looking Ahead",
-  description: "To be a leading educational institution recognized for academic excellence and character development.",
-  // TODO:
-  // Replace placeholder image with optimized WebP image.
+
+  subtitle:
+    "Empowering Minds. Advancing Technology. Building the Nation.",
+
+  description:
+    "To emerge as a nationally and globally recognized education group that empowers individuals through technology-driven, affordable, and future-oriented education, enabling inclusive growth and contributing meaningfully to India’s digital and economic transformation. We envision an India where talent is not limited by socio-economic background, and where education acts as a catalyst for innovation, employment, and national progress.",
+
   image: "/assets/about/vision-placeholder.webp",
 };
 
+
 export const mission = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Mission",
-  description: "To provide holistic, values-driven education that empowers every student to reach their full potential.",
+
+  description:
+    "To provide affordable, industry-focused education that equips students with practical skills, ethical values, and technological competence for a successful future.",
+
   points: [
-    { id: "mission-point-1", text: "Deliver a curriculum that balances academics with real-world skills." },
-    { id: "mission-point-2", text: "Nurture character, empathy, and integrity in every student." },
-    { id: "mission-point-3", text: "Integrate technology meaningfully into everyday learning." },
-    { id: "mission-point-4", text: "Keep quality education accessible and affordable for all families." },
+    {
+      id: "mission-point-1",
+      text: "Deliver high-quality education in Computer Science, IT, and creative digital fields.",
+    },
+    {
+      id: "mission-point-2",
+      text: "Make quality education accessible to students from diverse backgrounds.",
+    },
+    {
+      id: "mission-point-3",
+      text: "Develop practical skills, innovation, and technological competence.",
+    },
+    {
+      id: "mission-point-4",
+      text: "Prepare skilled professionals who contribute to India’s digital and economic growth.",
+    },
+    {
+      id: "mission-point-5",
+      text: "Promote lifelong learning, ethical values, and social responsibility.",
+    },
   ],
 };
 
 // ---------------------------------------------------------------------------
 // COMMITMENT SECTION
 // ---------------------------------------------------------------------------
+
 export const commitment = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Commitment",
+
   description:
-    "We are committed to fostering an inclusive, safe, and inspiring environment where every student can thrive academically, socially, and emotionally.",
+    "At Jamia Academy, we are committed to building institutions that educate with purpose, innovate with responsibility, and grow with integrity. Our focus remains on shaping individuals who not only succeed professionally but also contribute to a more equitable, skilled, and resilient society.",
 };
 
 // ---------------------------------------------------------------------------
@@ -209,20 +229,20 @@ export const faculty = [
   // Replace Dummy Data with Official Jamia Academy Content.
   {
     id: "faculty-1",
-    name: "Dr. Sana Malik",
-    designation: "Head of Sciences",
-    title: "Head of Sciences",
+    name: "Dr. Qasim Chaudhary",
+    designation: "Founder & CEO",
+    title: "Founder & CEO",
     bio: "Over 15 years of experience in science education and curriculum design.",
     image: "/assets/about/team-placeholder.webp",
-    qualification: "Ph.D. in Physics",
+    qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
     experience: "15+ Years",
     expertise: ["Physics", "Curriculum Design", "Lab Pedagogy"],
   },
   {
     id: "faculty-2",
-    name: "Mr. Imran Sheikh",
-    designation: "Head of Mathematics",
-    title: "Head of Mathematics",
+    name: "Dr. Saba Rizwi",
+    designation: "Co-founder/Director",
+    title: "Co-founder/Director",
     bio: "Passionate about making mathematics accessible and engaging for all students.",
     image: "/assets/about/team-placeholder.webp",
     qualification: "M.Sc. in Mathematics",
@@ -231,24 +251,24 @@ export const faculty = [
   },
   {
     id: "faculty-3",
-    name: "Ms. Ayesha Siddiqui",
-    designation: "Head of Languages",
-    title: "Head of Languages",
+    name: "Mr. Mohd Saad",
+    designation: "Head of  Computer Science & IT Industry",
+    title: "Head of  Computer Science & IT Industry",
     bio: "Dedicated to building strong communication skills in every student.",
     image: "/assets/about/team-placeholder.webp",
     qualification: "M.A. in English Literature",
-    experience: "10+ Years",
+    experience: "Masters in Computer Application (JMI) M.Sc (Mathematics) O Level (NIELIT)",
     expertise: ["English", "Public Speaking", "Creative Writing"],
   },
   {
     id: "faculty-4",
-    name: "Mr. Rehan Qureshi",
-    designation: "Head of Computer Science",
-    title: "Head of Computer Science",
+    name: "Mr. Shahid Khan",
+    designation: "Head of Graphics Designer",
+    title: "Head of Graphics Designer",
     bio: "Focused on preparing students for a technology-driven future.",
     image: "/assets/about/team-placeholder.webp",
-    qualification: "M.Tech in Computer Science",
-    experience: "9+ Years",
+    qualification: "Diploma in Animation (MAAC Animation Academy) Professional 3D Designer & Graphics Expert",
+    experience: "8+ Years Experience in the Graphic and Animation Industry",
     expertise: ["Programming", "Robotics", "AI Fundamentals"],
   },
 ];
@@ -259,10 +279,10 @@ export const faculty = [
 export const timeline = [
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "timeline-2001", year: "2001", title: "Foundation", description: "Jamia Academy was established with a single classroom and a big vision." },
-  { id: "timeline-2008", year: "2008", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
-  { id: "timeline-2015", year: "2015", title: "Digital Learning Introduced", description: "Integrated technology-driven learning across all grades." },
-  { id: "timeline-2023", year: "2023", title: "5000+ Alumni Milestone", description: "Celebrated over five thousand successful graduates." },
+  { id: "timeline-2022", year: "2022", title: "Foundation", description: "Jamia Academy was established with a single classroom and a big vision." },
+  { id: "timeline-2024", year: "2024", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
+  { id: "timeline-2024", year: "2024", title: "Digital Learning Introduced", description: "Integrated technology-driven learning across all grades." },
+  { id: "timeline-2026", year: "2026", title: "5000+ Alumni Milestone", description: "Celebrated over five thousand successful graduates." },
 ];
 
 // ---------------------------------------------------------------------------
