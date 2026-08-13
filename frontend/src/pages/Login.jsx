@@ -2,6 +2,7 @@ import { LazyMotion, domAnimation } from "motion/react";
 import SpaceBackground from "../components/contactBackground/SpaceBackground";
 import { LoginCard } from "../components/login";
 import { Helmet } from "react-helmet-async";
+import loginData from "../data/loginData";
 
 const canonicalUrl = typeof window !== "undefined" ? `${window.location.origin}/login` : "/login";
 function Login() {
