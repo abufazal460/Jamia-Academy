@@ -33,7 +33,7 @@ import { useIsMobile } from "../../hooks/useismobile";
  *    xl:grid-cols-4`) BILKUL WAISI HI RAKHI GAYI HAIN — layout/design
  *    change nahi kiya, sirf jo animate ho raha tha wo halka kiya.
  */
-export function GalleryGrid({ images, onOpenImage }) {
+export function GalleryGrid({ images, onOpenImage, categoryLabel }) {
   const isMobile = useIsMobile();
 
   const { containerVariants, itemVariant } = useMemo(() => {
@@ -67,7 +67,6 @@ export function GalleryGrid({ images, onOpenImage }) {
 
   return (
     <motion.div
-      key={images.length}
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
@@ -83,6 +82,7 @@ export function GalleryGrid({ images, onOpenImage }) {
           index={index}
           variants={itemVariant}
           onOpen={onOpenImage}
+          categoryLabel={categoryLabel}
         />
       ))}
     </motion.div>

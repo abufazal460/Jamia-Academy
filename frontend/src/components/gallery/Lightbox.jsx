@@ -1,26 +1,11 @@
 import { useCallback, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
+import { getLenisInstance } from "../smoothScroll/SmoothScroll";
 
 const SWIPE_THRESHOLD_PX = 50;
 
-/**
- * Lightbox.jsx
- * -----------------------------------------------------------------------
- * Hinglish: Fullscreen image viewer.
- *  - Keyboard: ESC se close, Left/Right arrow se prev/next.
- *  - Touch: swipe left/right (threshold ke andar se decide hota hai ki
- *    ye tap tha ya genuine swipe).
- *  - Boundary rule: pehli image par "Previous" button hidden, last image
- *    par "Next" hidden. NO LOOPING — jaisa brief me explicitly manga gaya.
- *  - Animation: opacity 0->1 aur scale 0.9->1, AnimatePresence ke
- *    `mode="wait"` se ek image exit hone ke baad hi doosri enter hoti hai
- *    (koi visual overlap/jump nahi).
- *
- * `images` = currently active tab ki poori array, `currentIndex` = us
- * array me se kaunsi image khuli hai. Ye state Gallery.jsx (parent) me
- * rehta hai — ye component pure "controlled" hai.
- */
+
 export function Lightbox({ images, currentIndex, onClose, onNavigate }) {
   const touchStartXRef = useRef(null);
   const isFirst = currentIndex === 0;
@@ -41,15 +26,19 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate }) {
       if (event.key === "ArrowLeft") goPrev();
       if (event.key === "ArrowRight") goNext();
     }
-
+    // ...inside useEffect...
     window.addEventListener("keydown", handleKeyDown);
-    // Body scroll lock jab tak lightbox khula hai
+    // Lenis body.overflow ko ignore karta hai — isliye Lenis ko explicitly
+    // stop() karna zaroori hai (native overflow lock ke saath combine karke)
+    const lenis = getLenisInstance();
+    lenis?.stop();
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = previousOverflow;
+      lenis?.start();
     };
   }, [onClose, goPrev, goNext]);
 
@@ -127,7 +116,7 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate }) {
         <motion.img
           key={images[currentIndex]}
           src={images[currentIndex]}
-          alt={`Full screen gallery photo ${currentIndex + 1}`}
+          alt={`Jamia Academy ${categoryLabel} photo ${index + 1}`}
           onClick={(e) => e.stopPropagation()}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
