@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { formConfig } from "../data/contactData";
 import { validateField } from "../utils/validators";
 
@@ -15,6 +15,13 @@ export const useContactForm = (onSuccess) => {
   const [values, setValues] = useState(buildInitialState);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
+  const resetTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    return () => {
+      if (resetTimeoutRef.current) clearTimeout(resetTimeoutRef.current);
+    };
+  }, []);
 
   const handleChange = useCallback((name, value) => {
     setValues((prev) => ({ ...prev, [name]: value }));
@@ -53,7 +60,7 @@ export const useContactForm = (onSuccess) => {
         await new Promise((resolve) => setTimeout(resolve, 1200));
         setStatus("success");
         onSuccess?.();
-        setTimeout(() => {
+        resetTimeoutRef.current = setTimeout(() => {
           setStatus("idle");
           setValues(buildInitialState());
         }, 2200);
