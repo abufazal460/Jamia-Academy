@@ -1,5 +1,5 @@
 import { memo, useState, useCallback, useMemo } from "react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import FloatingInput from "./FloatingInput";
 import PasswordInput from "./PasswordInput";
 import AnimatedButton from "./AnimatedButton";
@@ -73,7 +73,7 @@ function LoginForm({ onSubmit }) {
       aria-label={loginData.a11y.formLabel}
       className="flex w-full flex-col gap-5"
     >
-      <motion.div variants={emailLabelEntranceVariants}>
+      <m.div variants={emailLabelEntranceVariants}>
         <FloatingInput
           id={loginData.form.email.id}
           name={loginData.form.email.name}
@@ -88,9 +88,9 @@ function LoginForm({ onSubmit }) {
           touched={touched.email}
           iconLabel={loginData.a11y.emailIconLabel}
         />
-      </motion.div>
+      </m.div>
 
-      <motion.div variants={passwordLabelEntranceVariants}>
+      <m.div variants={passwordLabelEntranceVariants}>
         <PasswordInput
           id={loginData.form.password.id}
           name={loginData.form.password.name}
@@ -103,16 +103,16 @@ function LoginForm({ onSubmit }) {
           error={errors.password}
           touched={touched.password}
         />
-      </motion.div>
+      </m.div>
 
-      <motion.div variants={buttonExpandVariants} className="pt-1">
+      <m.div variants={buttonExpandVariants} className="pt-1">
         <AnimatedButton
           idleText={loginData.button.idleText}
           hoverText={loginData.button.hoverText}
           loadingText={loginData.button.loadingText}
           isSubmitting={isSubmitting}
         />
-      </motion.div>
+      </m.div>
     </form>
   );
 }

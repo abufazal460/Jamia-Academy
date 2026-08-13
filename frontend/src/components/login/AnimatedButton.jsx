@@ -2,21 +2,6 @@ import { memo, useState } from "react";
 import { motion } from "motion/react";
 import { buttonExpandVariants } from "../../utils/animationVariants";
 
-/**
- * AnimatedButton
- * Full-width submit button.
- * - Initial: scaleX 0 -> 1, opacity 0 -> 1 (spring)
- * - Hover: idle text slides up & out, duplicate text slides in from bottom
- *   (continuous loop feel), glass shine sweep + border glow
- * - Active: small press effect (scale down)
- *
- * Props:
- * - idleText, hoverText: string
- * - loadingText: string — shown while isSubmitting
- * - isSubmitting: boolean
- * - disabled: boolean
- * - type: button type (default "submit")
- */
 function AnimatedButton({
   idleText,
   hoverText,
