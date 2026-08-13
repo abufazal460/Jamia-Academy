@@ -141,39 +141,59 @@ export const coFounder = {
 // ---------------------------------------------------------------------------
 // VISION & MISSION SECTION
 // ---------------------------------------------------------------------------
+
 export const vision = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Vision",
-  subtitle: "Looking Ahead",
-  description: "To be a leading educational institution recognized for academic excellence and character development.",
-  // TODO:
-  // Replace placeholder image with optimized WebP image.
+
+  subtitle:
+    "Empowering Minds. Advancing Technology. Building the Nation.",
+
+  description:
+    "To emerge as a nationally and globally recognized education group that empowers individuals through technology-driven, affordable, and future-oriented education, enabling inclusive growth and contributing meaningfully to India’s digital and economic transformation. We envision an India where talent is not limited by socio-economic background, and where education acts as a catalyst for innovation, employment, and national progress.",
+
   image: "/assets/about/vision-placeholder.webp",
 };
 
+
 export const mission = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Mission",
-  description: "To provide holistic, values-driven education that empowers every student to reach their full potential.",
+
+  description:
+    "To provide affordable, industry-focused education that equips students with practical skills, ethical values, and technological competence for a successful future.",
+
   points: [
-    { id: "mission-point-1", text: "Deliver a curriculum that balances academics with real-world skills." },
-    { id: "mission-point-2", text: "Nurture character, empathy, and integrity in every student." },
-    { id: "mission-point-3", text: "Integrate technology meaningfully into everyday learning." },
-    { id: "mission-point-4", text: "Keep quality education accessible and affordable for all families." },
+    {
+      id: "mission-point-1",
+      text: "Deliver high-quality education in Computer Science, IT, and creative digital fields.",
+    },
+    {
+      id: "mission-point-2",
+      text: "Make quality education accessible to students from diverse backgrounds.",
+    },
+    {
+      id: "mission-point-3",
+      text: "Develop practical skills, innovation, and technological competence.",
+    },
+    {
+      id: "mission-point-4",
+      text: "Prepare skilled professionals who contribute to India’s digital and economic growth.",
+    },
+    {
+      id: "mission-point-5",
+      text: "Promote lifelong learning, ethical values, and social responsibility.",
+    },
   ],
 };
 
 // ---------------------------------------------------------------------------
 // COMMITMENT SECTION
 // ---------------------------------------------------------------------------
+
 export const commitment = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   heading: "Our Commitment",
+
   description:
-    "We are committed to fostering an inclusive, safe, and inspiring environment where every student can thrive academically, socially, and emotionally.",
+    "At Jamia Academy, we are committed to building institutions that educate with purpose, innovate with responsibility, and grow with integrity. Our focus remains on shaping individuals who not only succeed professionally but also contribute to a more equitable, skilled, and resilient society.",
 };
 
 // ---------------------------------------------------------------------------
