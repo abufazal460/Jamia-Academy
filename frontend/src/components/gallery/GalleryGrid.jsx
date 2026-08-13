@@ -67,7 +67,6 @@ export function GalleryGrid({ images, onOpenImage }) {
 
   return (
     <motion.div
-      key={images.length}
       variants={containerVariants}
       initial="hidden"
       whileInView="show"
