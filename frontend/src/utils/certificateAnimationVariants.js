@@ -66,9 +66,9 @@ export function getCertLabelEntryVariants(direction = "fade") {
 }
 
 export const certButtonWidthVariants = {
-  hidden: { width: "0%", opacity: 0 },
+  hidden: { clipPath: "inset(0 100% 0 0)", opacity: 0 },
   visible: {
-    width: "100%",
+    clipPath: "inset(0 0% 0 0)",
     opacity: 1,
     transition: { duration: 0.9, ease: CERT_EASE_PREMIUM, delay: 0.9 },
   },
