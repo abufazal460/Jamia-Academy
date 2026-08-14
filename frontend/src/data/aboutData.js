@@ -231,7 +231,7 @@ export const faculty = [
     bio: "Over 15 years of experience in science education and curriculum design.",
     image: "/assets/about/team-placeholder.webp",
     qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
-    experience: "15+ Years",
+    experience: "23+ Years",
     
   },
   {
@@ -241,8 +241,8 @@ export const faculty = [
     title: "Co-founder/Director",
     bio: "Passionate about making mathematics accessible and engaging for all students.",
     image: "/assets/about/team-placeholder.webp",
-    qualification: "M.Sc. in Mathematics",
-    experience: "12+ Years",
+    qualification: "Ph.D. in Educational Technology & Artificial Intelligence (JMI)",
+    experience: "10+ Years",
    
   },
   {
