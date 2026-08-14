@@ -102,7 +102,7 @@ export const founder = {
   message: {
     label: "Founder's Message",
     heading: "A Message From Our Founder",
-    body: "When I started Jamia Academy, my vision was simple: create a place where every child feels seen, supported, and inspired to become their best self. Today, that vision continues to guide everything we do — every classroom, every teacher, every student we welcome through our doors.",
+    body: "When I started Jamia Academy, my vision was to make quality digital and AI education accessible to every learner,regardless of their financial background or circumstances. We’re here to give young minds the skills, guidance, and confidence to thrive in a digital-first world — from essential computer skills to emerging AI technologies. Our goal is to empower India’s youth to become creators, innovators, and future technology leaders who don’t just follow the world, but help shape it.",
     // TODO:
     // Replace placeholder signature with an official scanned signature image if available.
     signatureImage: "",
