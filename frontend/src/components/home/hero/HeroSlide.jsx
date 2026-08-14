@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { imageVariants, imageReducedVariants } from "../../../animation/heroAnimations";
+import { imageVariants, imageReducedVariants } from "../../../animations/heroAnimations";
 
 /**
  * Ek slide ka image + overlay handle karta hai.
