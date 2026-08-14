@@ -15,7 +15,7 @@ export const hero = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
   eyebrow: "Since 2022",
-  title: "Shaping Futures Through Knowledge & Character",
+  title: "Preparing Gen Alpha With AI-Powered Skills for the Future of the Digital Era",
   subtitle: "Welcome to Jamia Academy",
   description:
     "For over two decades, Jamia Academy has been committed to academic excellence, character building, and holistic student development.",
@@ -82,31 +82,27 @@ export const features = [
 export const founder = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  name: "Dr. Ahmed Khan",
+  name: "Dr. Qasim Chaudhary",
   designation: "Founder & Director",
-  title: "Founder & Director",
+  title: "Founder & CEO",
   quote: "Education is not just about degrees, it's about building character and vision for the future.",
-  bio: "Dr. Ahmed Khan founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
+  bio: "Dr. Qasim Chaudhary founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/founder-placeholder.webp",
   experience: "23+ Years in Education",
   position: "Former Advisor, State Education Board",
   qualifications: [
-    { id: "qual-1", degree: "Ph.D.", field: "Educational Leadership", university: "Jamia Millia Islamia" },
-    { id: "qual-2", degree: "M.Ed.", field: "Curriculum & Instruction", university: "Aligarh Muslim University" },
-    { id: "qual-3", degree: "B.Ed.", field: "Secondary Education", university: "University of Delhi" },
+    { id: "qual-1", degree: "Ph.D", field: "HR Analytics & Technology", university: "Jamia Millia Islamia" },
+    { id: "qual-2", degree: "MBA", field: "Human Resource Management", university: "AKTU Lucknow" },
+    { id: "qual-3", degree: "BBA", field: "International Business", university: "University of Lucknow" },
   ],
-  social: {
-    linkedin: "https://linkedin.com/in/example",
-    twitter: "https://twitter.com/example",
-    facebook: "",
-  },
+ 
   // Founder Message section content — used by FounderMessage.jsx
   message: {
     label: "Founder's Message",
     heading: "A Message From Our Founder",
-    body: "When I started Jamia Academy, my vision was simple: create a place where every child feels seen, supported, and inspired to become their best self. Today, that vision continues to guide everything we do — every classroom, every teacher, every student we welcome through our doors.",
+    body: "When I started Jamia Academy, my vision was to make quality digital and AI education accessible to every learner,regardless of their financial background or circumstances. We’re here to give young minds the skills, guidance, and confidence to thrive in a digital-first world — from essential computer skills to emerging AI technologies. Our goal is to empower India’s youth to become creators, innovators, and future technology leaders who don’t just follow the world, but help shape it.",
     // TODO:
     // Replace placeholder signature with an official scanned signature image if available.
     signatureImage: "",
@@ -126,11 +122,11 @@ export const coFounder = {
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/cofounder-placeholder.webp",
-  experience: "18+ Years in Academic Leadership",
+  experience: "10+ Years in Academic Leadership",
   qualifications: [
-    { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Psychology", university: "Jamia Millia Islamia" },
-    { id: "cf-qual-2", degree: "M.A.", field: "Curriculum Design", university: "Jawaharlal Nehru University" },
-    { id: "cf-qual-3", degree: "B.Ed.", field: "Elementary Education", university: "University of Delhi" },
+    { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Technology & Artificial Intelligence", university: "Jamia Millia Islamia" },
+    { id: "cf-qual-2", degree: "M.A.", field: "Education", university: "Jawaharlal Nehru University" },
+    { id: "cf-qual-3", degree: "B.A.", field: "Elementary Education", university: "University of Delhi" },
   ],
   message: {
     label: "A Note From Our Co-Founder",
@@ -215,10 +211,10 @@ export const values = [
 export const stats = [
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "stat-years", label: "Years of Excellence", value: 23, suffix: "+", icon: "Sparkles" },
-  { id: "stat-students", label: "Students Enrolled", value: 5200, suffix: "+", icon: "Users" },
-  { id: "stat-faculty", label: "Programs Offered", value: 45, suffix: "+", icon: "BookOpen" },
-  { id: "stat-placements", label: "Placements", value: 180, suffix: "+", icon: "Briefcase" },
+  { id: "stat-years", label: "Years of Excellence", value: 4, suffix: "+", icon: "Sparkles" },
+  { id: "stat-students", label: "Students Enrolled", value: 2000, suffix: "+", icon: "Users" },
+  { id: "stat-faculty", label: "Programs Offered", value: 35, suffix: "+", icon: "BookOpen" },
+  { id: "stat-placements", label: "Placements assistance", value: 1000, suffix: "+", icon: "Briefcase" },
 ];
 
 // ---------------------------------------------------------------------------
@@ -235,8 +231,8 @@ export const faculty = [
     bio: "Over 15 years of experience in science education and curriculum design.",
     image: "/assets/about/team-placeholder.webp",
     qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
-    experience: "15+ Years",
-    expertise: ["Physics", "Curriculum Design", "Lab Pedagogy"],
+    experience: "23+ Years",
+    
   },
   {
     id: "faculty-2",
@@ -245,9 +241,9 @@ export const faculty = [
     title: "Co-founder/Director",
     bio: "Passionate about making mathematics accessible and engaging for all students.",
     image: "/assets/about/team-placeholder.webp",
-    qualification: "M.Sc. in Mathematics",
-    experience: "12+ Years",
-    expertise: ["Algebra", "Applied Math", "Olympiad Training"],
+    qualification: "Ph.D. in Educational Technology & Artificial Intelligence (JMI)",
+    experience: "10+ Years",
+   
   },
   {
     id: "faculty-3",
@@ -258,32 +254,33 @@ export const faculty = [
     image: "/assets/about/team-placeholder.webp",
     qualification: "M.A. in English Literature",
     experience: "Masters in Computer Application (JMI) M.Sc (Mathematics) O Level (NIELIT)",
-    expertise: ["English", "Public Speaking", "Creative Writing"],
+    
   },
   {
     id: "faculty-4",
     name: "Mr. Shahid Khan",
     designation: "Head of Graphics Designer",
-    title: "Head of Graphics Designer",
+    title: "Head of Graphic Design and Animation",
     bio: "Focused on preparing students for a technology-driven future.",
     image: "/assets/about/team-placeholder.webp",
     qualification: "Diploma in Animation (MAAC Animation Academy) Professional 3D Designer & Graphics Expert",
     experience: "8+ Years Experience in the Graphic and Animation Industry",
-    expertise: ["Programming", "Robotics", "AI Fundamentals"],
+   
   },
 ];
 
 // ---------------------------------------------------------------------------
 // TIMELINE SECTION
 // ---------------------------------------------------------------------------
-export const timeline = [
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "timeline-2022", year: "2022", title: "Foundation", description: "Jamia Academy was established with a single classroom and a big vision." },
-  { id: "timeline-2024", year: "2024", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
-  { id: "timeline-2024", year: "2024", title: "Digital Learning Introduced", description: "Integrated technology-driven learning across all grades." },
-  { id: "timeline-2026", year: "2026", title: "5000+ Alumni Milestone", description: "Celebrated over five thousand successful graduates." },
-];
+  export const timeline = [
+    // TODO:
+    // Replace Dummy Data with Official Jamia Academy Content.
+    { id: "timeline-2022", year: "2022", title: "Foundation", description: "Jamia Academy was established with a single classroom and big vision." },
+    { id: "timeline-2023", year: "2023", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
+    { id: "timeline-2024", year: "2024", title: "Courses & Branch Expansion", description: "Added new courses and expanded our learning reach with a new branch." },
+    { id: "timeline-2025", year: "2025", title: "AI & Machine Learning", description: "Introduced AI and Machine Learning while expanding our faculty and programs." },
+    { id: "timeline-2026", year: "2026", title: "2000+ Alumni Milestone", description: "Celebrated over five thousand successful Certifications." },
+  ];
 
 // ---------------------------------------------------------------------------
 // WHY CHOOSE US SECTION

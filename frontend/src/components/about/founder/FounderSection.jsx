@@ -300,36 +300,6 @@ const FounderSection = () => {
                 ))}
               </div>
             )}
-
-            {/* ============================================================
-                SOCIAL LINKS — sirf available links render honge
-            ============================================================= */}
-            {socialEntries.length > 0 && (
-              <div ref={socialRef} className="mt-3 flex items-center gap-3">
-                {socialEntries.map(([platform, url]) => {
-                  const Icon = socialIconMap[platform];
-                  if (!Icon) return null;
-                  return (
-                    <motion.a
-                      key={platform}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`${founder?.name || "Founder"}'s ${platform} profile`}
-                      className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 text-white/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#F4A261]"
-                      whileHover={
-                        prefersReducedMotion
-                          ? {}
-                          : { scale: 1.12, rotate: 6, color: "#F4A261", borderColor: "rgba(244,162,97,0.5)" }
-                      }
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                    >
-                      <Icon size={16} />
-                    </motion.a>
-                  );
-                })}
-              </div>
-            )}
           </div>
         </div>
       </div>

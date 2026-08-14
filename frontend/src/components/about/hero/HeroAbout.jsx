@@ -1,31 +1,3 @@
-/*
-========================================
-
-File:
-HeroAbout.jsx
-
-Purpose:
-Ye component About page ka premium hero section render karta hai — pehla
-visual jo user dekhega jab wo /about page pe aayega.
-
-Responsibilities:
-- Animated gradient mesh background + floating glow shapes
-- Character-reveal heading animation (GSAP)
-- Typewriter-style subtitle animation
-- Word-by-word paragraph reveal (opacity + y + color + blur)
-- CTA button (Framer Motion hover/interaction)
-- Three floating stat cards (GSAP stagger entrance)
-- Animated scroll indicator
-
-Animation Engine:
-GSAP (intro timeline, once:true — hero sirf ek baar load pe animate hota hai)
-+ Framer Motion (hover/tap micro-interactions, scroll indicator idle loop)
-
-Data Source:
-@/data/aboutData → hero object (koi bhi text yaha hardcode nahi hai)
-
-========================================
-*/
 
 // 1. React
 import React, { useRef, useLayoutEffect, useState } from "react";
@@ -60,9 +32,9 @@ import { gsapEase } from "../../../constants/animations";
 // preview dikhata hai). Isliye ye yahi file me local const ke roop me rakha gaya.
 // -----------------------------------------------------------------------------
 const heroStats = [
-  { id: "hero-stat-students", value: "500+", label: "Students Enrolled" },
-  { id: "hero-stat-programs", value: "10+", label: "Programs Offered" },
-  { id: "hero-stat-years", value: "5+", label: "Years Excellence" },
+  { id: "hero-stat-students", value: "2000+", label: "Students Enrolled" },
+  { id: "hero-stat-programs", value: "35+", label: "Programs Offered" },
+  { id: "hero-stat-years", value: "4+", label: "Years Excellence" },
 ];
 
 /**
@@ -98,23 +70,7 @@ const HeroAbout = () => {
   useLayoutEffect(() => {
     if (!rootRef.current) return undefined;
 
-    // Reduced motion: agar user ne accessibility setting on kar rakhi hai,
-    // to hum sirf final state directly set kar dete hain, koi animation nahi chalate.
-    if (prefersReducedMotion) {
-      gsap.set(
-        [
-          headingRef.current?.children,
-          subtitleRef.current?.children,
-          paragraphRef.current?.children,
-          statsRef.current?.children,
-          ctaRef.current,
-        ],
-        { opacity: 1, y: 0, filter: "blur(0px)", clearProps: "all" }
-      );
-      setSubtitleDone(true);
-      return undefined;
-    }
-
+   
     // gsap.context() — sab selectors isi component ke andar scope honge,
     // aur unmount hote hi automatically cleanup ho jayega (memory leak safe)
     const ctx = gsap.context(() => {
@@ -306,20 +262,10 @@ const HeroAbout = () => {
           <h1
             id="hero-heading"
             ref={headingRef}
-            className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] text-white"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05] text-white"
           >
-            {/* Har character ek span me — GSAP stagger yahi children animate karega */}
-            {headingChars.map((char, index) => (
-              <span
-                key={`hero-char-${index}-${char}`}
-                className="inline-block will-change-transform"
-                aria-hidden="true"
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-            {/* Screen readers ke liye actual accessible text alag se */}
-            <span className="sr-only">{hero.title}</span>
+          
+              {hero.title}
           </h1>
 
           {/* Subtitle — typewriter effect */}
@@ -356,44 +302,7 @@ const HeroAbout = () => {
             ))}
           </p>
 
-          {/* CTA Button — Framer Motion hover/tap interactions */}
-          <motion.button
-            ref={ctaRef}
-            type="button"
-            aria-label="Watch our story video"
-            className={cn(
-              "group relative mt-2 inline-flex items-center gap-3 overflow-hidden",
-              "rounded-full px-7 py-3.5 sm:px-8 sm:py-4",
-              "bg-gradient-to-r from-[#EF233C] to-[#D90429]",
-              "text-white font-semibold text-sm sm:text-base",
-              "shadow-[0_8px_30px_rgba(239,35,60,0.35)]"
-            )}
-            whileHover={
-              prefersReducedMotion
-                ? {}
-                : {
-                    scale: 1.045,
-                    boxShadow: "0 12px 40px rgba(239,35,60,0.5)",
-                  }
-            }
-            whileTap={prefersReducedMotion ? {} : { scale: 0.97 }}
-            transition={{ duration: 0.25, ease: "easeOut" }}
-          >
-            {/* Gradient sweep on hover — purely decorative */}
-            <motion.span
-              className="absolute inset-0 bg-gradient-to-r from-[#D90429] to-[#EF233C] opacity-0 group-hover:opacity-100"
-              transition={{ duration: 0.3 }}
-              aria-hidden="true"
-            />
-            <motion.span
-              className="relative z-10 flex h-6 w-6 items-center justify-center rounded-full bg-white/20"
-              whileHover={prefersReducedMotion ? {} : { rotate: 8, scale: 1.1 }}
-              aria-hidden="true"
-            >
-              <Play size={12} fill="white" className="ml-[1px]" />
-            </motion.span>
-            <span className="relative z-10">Watch Our Story</span>
-          </motion.button>
+        
 
           {/* --------------------------------------------------------------
               STATS — 3 floating cards, GSAP stagger entrance,
@@ -428,19 +337,6 @@ const HeroAbout = () => {
           </div>
         </div>
       </div>
-
-      {/* ================================================================
-          SCROLL INDICATOR — infinite floating, Framer Motion
-      ================================================================= */}
-      <motion.div
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 text-[#8D99AE]"
-        animate={prefersReducedMotion ? {} : { y: [0, 10, 0] }}
-        transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-        aria-hidden="true"
-      >
-        <span className="text-[10px] sm:text-xs tracking-widest uppercase">Scroll</span>
-        <ChevronDown size={18} />
-      </motion.div>
     </section>
   );
 };
