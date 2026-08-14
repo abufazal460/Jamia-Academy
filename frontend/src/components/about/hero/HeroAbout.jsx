@@ -32,9 +32,9 @@ import { gsapEase } from "../../../constants/animations";
 // preview dikhata hai). Isliye ye yahi file me local const ke roop me rakha gaya.
 // -----------------------------------------------------------------------------
 const heroStats = [
-  { id: "hero-stat-students", value: "500+", label: "Students Enrolled" },
-  { id: "hero-stat-programs", value: "10+", label: "Programs Offered" },
-  { id: "hero-stat-years", value: "5+", label: "Years Excellence" },
+  { id: "hero-stat-students", value: "2000+", label: "Students Enrolled" },
+  { id: "hero-stat-programs", value: "35+", label: "Programs Offered" },
+  { id: "hero-stat-years", value: "4+", label: "Years Excellence" },
 ];
 
 /**
