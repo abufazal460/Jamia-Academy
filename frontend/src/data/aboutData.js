@@ -122,11 +122,11 @@ export const coFounder = {
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/cofounder-placeholder.webp",
-  experience: "18+ Years in Academic Leadership",
+  experience: "10+ Years in Academic Leadership",
   qualifications: [
-    { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Psychology", university: "Jamia Millia Islamia" },
-    { id: "cf-qual-2", degree: "M.A.", field: "Curriculum Design", university: "Jawaharlal Nehru University" },
-    { id: "cf-qual-3", degree: "B.Ed.", field: "Elementary Education", university: "University of Delhi" },
+    { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Technology & Artificial Intelligence", university: "Jamia Millia Islamia" },
+    { id: "cf-qual-2", degree: "M.A.", field: "Education", university: "Jawaharlal Nehru University" },
+    { id: "cf-qual-3", degree: "B.A.", field: "Elementary Education", university: "University of Delhi" },
   ],
   message: {
     label: "A Note From Our Co-Founder",
@@ -211,10 +211,10 @@ export const values = [
 export const stats = [
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "stat-years", label: "Years of Excellence", value: 23, suffix: "+", icon: "Sparkles" },
-  { id: "stat-students", label: "Students Enrolled", value: 5200, suffix: "+", icon: "Users" },
-  { id: "stat-faculty", label: "Programs Offered", value: 45, suffix: "+", icon: "BookOpen" },
-  { id: "stat-placements", label: "Placements", value: 180, suffix: "+", icon: "Briefcase" },
+  { id: "stat-years", label: "Years of Excellence", value: 4, suffix: "+", icon: "Sparkles" },
+  { id: "stat-students", label: "Students Enrolled", value: 2000, suffix: "+", icon: "Users" },
+  { id: "stat-faculty", label: "Programs Offered", value: 35, suffix: "+", icon: "BookOpen" },
+  { id: "stat-placements", label: "Placements assistance", value: 1000, suffix: "+", icon: "Briefcase" },
 ];
 
 // ---------------------------------------------------------------------------
