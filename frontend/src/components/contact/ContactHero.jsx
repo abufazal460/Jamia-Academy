@@ -7,6 +7,8 @@ import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { resolveIcon } from "../../utils/iconResolver";
 import TransitionLink from "../pageTransition/TransitionLink"
 
+import contactImg from "../../assets/gallery/classroom/1.jpg"
+
 const ACCENT_MAP = {
   primary: "#E63946",
   orange: "#F4A261",
@@ -94,8 +96,10 @@ const ContactHero = () => {
           <div
             className="absolute inset-0 rounded-[2rem] opacity-40"
             style={{
-              background:
+              
+              background: 
                 "linear-gradient(135deg, #E63946 0%, #F4A261 35%, #2A9D8F 70%, #264653 100%)",
+
               backgroundSize: "200% 200%",
               animation: reducedMotion ? "none" : "jamiaHeroGradientShift 6s ease infinite",
             }}
