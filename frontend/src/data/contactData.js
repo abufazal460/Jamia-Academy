@@ -16,9 +16,9 @@ export const contactHero = {
   // Right-side visual — education themed floating cards
   visualCards: [
     { id: "card-cert", icon: "Award", label: "Certified Courses", accent: "teal" },
-    { id: "card-grad", icon: "GraduationCap", label: "5000+ Graduates", accent: "orange" },
+    { id: "card-grad", icon: "GraduationCap", label: "2000+ Certified", accent: "orange" },
     { id: "card-book", icon: "BookOpen", label: "Expert Curriculum", accent: "primary" },
-    { id: "card-laptop", icon: "Laptop", label: "Online & Offline", accent: "darkTeal" },
+    { id: "card-laptop", icon: "Laptop", label: "Offline Only", accent: "darkTeal" },
   ],
 };
 
@@ -72,7 +72,7 @@ export const socialConnect = {
     { id: "youtube", platform: "YouTube", icon: "Youtube", href: "https://youtube.com/@jamiaacademy", ariaLabel: "Subscribe to Jamia Academy on YouTube" },
     { id: "linkedin", platform: "LinkedIn", icon: "Linkedin", href: "https://linkedin.com/company/jamiaacademy", ariaLabel: "Follow Jamia Academy on LinkedIn" },
     { id: "twitter", platform: "Twitter / X", icon: "Twitter", href: "https://x.com/jamiaacademy", ariaLabel: "Follow Jamia Academy on X" },
-    { id: "whatsapp", platform: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/919876543210", ariaLabel: "Message Jamia Academy on WhatsApp" },
+    { id: "whatsapp", platform: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/919621555551", ariaLabel: "Message Jamia Academy on WhatsApp" },
   ],
 };
 

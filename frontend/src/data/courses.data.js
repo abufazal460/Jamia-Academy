@@ -45,7 +45,7 @@ export const coursesData = [
     // Duration System — plain text nahi, object hai taaki future me
     // "3-6 months" jaisa range filter bhi easily ban sake
     duration: {
-      value: "4",
+      value: "6",
       unit: "Months",
     },
 
@@ -104,13 +104,7 @@ export const coursesData = [
       careerOptions: ["Junior Web Developer", "Frontend Trainee", "Freelance Web Designer"],
     },
 
-    // Fees & Eligibility
-    fees: {
-      amount: "12000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["10th Pass", "Basic Computer Knowledge"],
+   
 
     // Theme System — har course ka apna visual identity,
     // card background, border animation aur glow sab isi se drive hoga
@@ -187,12 +181,7 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — MERN Stack Development",
       careerOptions: ["Full Stack Developer", "Backend Developer", "Frontend Developer"],
     },
-    fees: {
-      amount: "35000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["12th Pass", "Basic Programming Knowledge"],
+    
     theme: {
       primary: "#eab308",
       secondary: "#facc15",
@@ -257,12 +246,6 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — Python Programming",
       careerOptions: ["Junior Python Developer", "Automation Trainee"],
     },
-    fees: {
-      amount: "9000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["10th Pass"],
     theme: {
       primary: "#16a34a",
       secondary: "#4ade80",
@@ -327,13 +310,7 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — AI & Machine Learning",
       careerOptions: ["ML Engineer Trainee", "Data Analyst", "AI Research Assistant"],
     },
-    fees: {
-      amount: "45000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["12th Pass", "Basic Python Knowledge"],
-    theme: {
+       theme: {
       primary: "#dc2626",
       secondary: "#f87171",
       gradient: "linear-gradient(135deg, #450a0a 0%, #7f1d1d 50%, #dc2626 100%)",
@@ -397,12 +374,6 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — Data Science",
       careerOptions: ["Data Analyst", "Junior Data Scientist", "BI Analyst"],
     },
-    fees: {
-      amount: "32000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["12th Pass", "Basic Math Knowledge"],
     theme: {
       primary: "#eab308",
       secondary: "#facc15",
@@ -467,12 +438,6 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — Cyber Security",
       careerOptions: ["Security Analyst Trainee", "SOC Analyst", "Junior Penetration Tester"],
     },
-    fees: {
-      amount: "38000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["12th Pass", "Basic Networking Knowledge"],
     theme: {
       primary: "#dc2626",
       secondary: "#f87171",
@@ -537,12 +502,6 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — UI/UX Design",
       careerOptions: ["Junior UI Designer", "UX Design Trainee", "Product Design Intern"],
     },
-    fees: {
-      amount: "18000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["12th Pass"],
     theme: {
       primary: "#16a34a",
       secondary: "#4ade80",
@@ -607,12 +566,6 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — Digital Marketing",
       careerOptions: ["Digital Marketing Executive", "SEO Trainee", "Social Media Executive"],
     },
-    fees: {
-      amount: "15000",
-      currency: "INR",
-      type: "course",
-    },
-    eligibility: ["12th Pass"],
     theme: {
       primary: "#16a34a",
       secondary: "#4ade80",

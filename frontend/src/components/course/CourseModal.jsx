@@ -215,12 +215,7 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
             variants={itemVariants}
             className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between"
           >
-            <p className="text-sm text-neutral-400">
-              Fees:{" "}
-              <span className="font-semibold text-white">
-                {course.fees?.amount} {course.fees?.currency}
-              </span>
-            </p>
+           
             <button
               type="button"
               onClick={() => onEnroll?.(course)}
