@@ -50,10 +50,6 @@ const Contact = () => {
 
         <ContactHero />
 
-        <section className="mx-auto max-w-[900px] px-6 py-16 sm:px-10 lg:py-24">
-          <ContactForm />
-        </section>
-
         <SocialLinks />
 
         <section
