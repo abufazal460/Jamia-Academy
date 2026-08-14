@@ -7,7 +7,7 @@ import {
   FiUser,
   FiUsers,
   FiHeart,
-  FiMail,
+  FiPhone,
 } from "react-icons/fi";
 import { FaGraduationCap, FaCertificate } from "react-icons/fa";
 
@@ -42,9 +42,9 @@ export const VALIDATION_MESSAGES = {
     invalid: "Enter a valid name",
   },
  
-  email: {
-    required: "Email ID is required",
-    invalid: "Enter a valid email address",
+  Phone: {
+    required: "Phone no is required",
+    invalid: "Enter a valid phone number",
   },
   courseName: {
     required: "Course name is required",
@@ -77,12 +77,12 @@ export const CERTIFICATE_FIELDS = [
     required: true,
   },
   {
-    id: "email",
-    name: "email",
-    label: "Email ID",
+    id: "phone",
+    name: "phone",
+    label: "Phone",
     type: "email",
     autoComplete: "email",
-    icon: FiMail,
+    icon: FiPhone,
     direction: "top",
     required: true,
   },

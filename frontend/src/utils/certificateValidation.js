@@ -6,7 +6,7 @@
 import { VALIDATION_MESSAGES } from "../data/certificateData";
 
 const NAME_PATTERN = /^[A-Za-z][A-Za-z\s.'-]{1,59}$/;
-const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const PHONE_PATTERN = /^[6-9]\d{9}$/;
 const COURSE_PATTERN = /^[A-Za-z0-9][A-Za-z0-9\s.,&()'-]{1,79}$/;
 
 const validators = {
@@ -22,10 +22,13 @@ const validators = {
     if (!NAME_PATTERN.test(trimmed)) return VALIDATION_MESSAGES.fatherName.invalid;
     return "";
   },
-  email: (value) => {
+  phoneNumber: (value) => {
     const trimmed = value.trim();
-    if (!trimmed) return VALIDATION_MESSAGES.email.required;
-    if (!EMAIL_PATTERN.test(trimmed)) return VALIDATION_MESSAGES.email.invalid;
+
+    if (!trimmed) return VALIDATION_MESSAGES.phoneNumber.required;
+    if (!PHONE_PATTERN.test(trimmed)) {
+      return VALIDATION_MESSAGES.phoneNumber.invalid;
+    }
     return "";
   },
   courseName: (value) => {
