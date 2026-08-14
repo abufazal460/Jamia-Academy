@@ -260,7 +260,7 @@ export const faculty = [
     id: "faculty-4",
     name: "Mr. Shahid Khan",
     designation: "Head of Graphics Designer",
-    title: "Head of Graphics Designer",
+    title: "Head of Graphic Design and Animation",
     bio: "Focused on preparing students for a technology-driven future.",
     image: "/assets/about/team-placeholder.webp",
     qualification: "Diploma in Animation (MAAC Animation Academy) Professional 3D Designer & Graphics Expert",
