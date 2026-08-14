@@ -82,26 +82,22 @@ export const features = [
 export const founder = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
-  name: "Dr. Ahmed Khan",
+  name: "Dr. Qasim Chaudhary",
   designation: "Founder & Director",
-  title: "Founder & Director",
+  title: "Founder & CEO",
   quote: "Education is not just about degrees, it's about building character and vision for the future.",
-  bio: "Dr. Ahmed Khan founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
+  bio: "Dr. Qasim Chaudhary founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/founder-placeholder.webp",
   experience: "23+ Years in Education",
   position: "Former Advisor, State Education Board",
   qualifications: [
-    { id: "qual-1", degree: "Ph.D.", field: "Educational Leadership", university: "Jamia Millia Islamia" },
-    { id: "qual-2", degree: "M.Ed.", field: "Curriculum & Instruction", university: "Aligarh Muslim University" },
-    { id: "qual-3", degree: "B.Ed.", field: "Secondary Education", university: "University of Delhi" },
+    { id: "qual-1", degree: "Ph.D", field: "HR Analytics & Technology", university: "Jamia Millia Islamia" },
+    { id: "qual-2", degree: "MBA", field: "Human Resource Management", university: "AKTU Lucknow" },
+    { id: "qual-3", degree: "BBA", field: "International Business", university: "University of Lucknow" },
   ],
-  social: {
-    linkedin: "https://linkedin.com/in/example",
-    twitter: "https://twitter.com/example",
-    facebook: "",
-  },
+ 
   // Founder Message section content — used by FounderMessage.jsx
   message: {
     label: "Founder's Message",
