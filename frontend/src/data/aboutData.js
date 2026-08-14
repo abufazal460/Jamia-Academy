@@ -232,7 +232,7 @@ export const faculty = [
     image: "/assets/about/team-placeholder.webp",
     qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
     experience: "15+ Years",
-    expertise: ["Physics", "Curriculum Design", "Lab Pedagogy"],
+    
   },
   {
     id: "faculty-2",
@@ -243,7 +243,7 @@ export const faculty = [
     image: "/assets/about/team-placeholder.webp",
     qualification: "M.Sc. in Mathematics",
     experience: "12+ Years",
-    expertise: ["Algebra", "Applied Math", "Olympiad Training"],
+   
   },
   {
     id: "faculty-3",
@@ -254,7 +254,7 @@ export const faculty = [
     image: "/assets/about/team-placeholder.webp",
     qualification: "M.A. in English Literature",
     experience: "Masters in Computer Application (JMI) M.Sc (Mathematics) O Level (NIELIT)",
-    expertise: ["English", "Public Speaking", "Creative Writing"],
+    
   },
   {
     id: "faculty-4",
@@ -265,7 +265,7 @@ export const faculty = [
     image: "/assets/about/team-placeholder.webp",
     qualification: "Diploma in Animation (MAAC Animation Academy) Professional 3D Designer & Graphics Expert",
     experience: "8+ Years Experience in the Graphic and Animation Industry",
-    expertise: ["Programming", "Robotics", "AI Fundamentals"],
+   
   },
 ];
 
