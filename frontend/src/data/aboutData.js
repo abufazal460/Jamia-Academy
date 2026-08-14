@@ -15,7 +15,7 @@ export const hero = {
   // TODO:
   // Replace Dummy Data with Official Jamia Academy Content.
   eyebrow: "Since 2022",
-  title: "Shaping Futures Through Knowledge & Character",
+  title: "Preparing Gen Alpha With AI-Powered Skills for the Future of the Digital Era",
   subtitle: "Welcome to Jamia Academy",
   description:
     "For over two decades, Jamia Academy has been committed to academic excellence, character building, and holistic student development.",

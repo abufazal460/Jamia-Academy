@@ -262,20 +262,10 @@ const HeroAbout = () => {
           <h1
             id="hero-heading"
             ref={headingRef}
-            className="font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] text-white"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05] text-white"
           >
-            {/* Har character ek span me — GSAP stagger yahi children animate karega */}
-            {headingChars.map((char, index) => (
-              <span
-                key={`hero-char-${index}-${char}`}
-                className="inline-block will-change-transform"
-                aria-hidden="true"
-              >
-                {char === " " ? "\u00A0" : char}
-              </span>
-            ))}
-            {/* Screen readers ke liye actual accessible text alag se */}
-            <span className="sr-only">{hero.title}</span>
+          
+              {hero.title}
           </h1>
 
           {/* Subtitle — typewriter effect */}
