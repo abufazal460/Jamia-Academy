@@ -1,9 +1,13 @@
 // Hero slider ka poora content yahan se control hota hai
 // Content team bina UI/JSX touch kiye yahan se sab kuch badal sakti hai
+import img1 from "../assets/gallery/classroom/1.jpg"
+import img2 from "../assets/gallery/classroom/2.jpg"
+import img3 from "../assets/gallery/classroom/3.jpg"
+import img4 from "../assets/gallery/classroom/4.jpg"
 export const heroSlides = [
   {
     id: "hero-slide-1",
-    image: "/assets/hero/hero-coding-lab.jpg",
+    image: img1,
     alt: "Students learning to code together in Jamia Academy's computer lab",
     eyebrow: "Learn. Create. Grow.",
     title: "Build Your Future With Practical Tech Skills",
@@ -11,7 +15,7 @@ export const heroSlides = [
       "Explore career-focused computer courses designed by industry experts, taught with real hands-on projects.",
     primaryAction: {
       label: "Explore Courses",
-      href: "/courses",
+      href: "/course",
     },
     secondaryAction: {
       label: "Verify Certificate",
@@ -20,7 +24,7 @@ export const heroSlides = [
   },
   {
     id: "hero-slide-2",
-    image: "/assets/hero/hero-graduation.jpg",
+    image: img2,
     alt: "Jamia Academy graduates celebrating on convocation day",
     eyebrow: "Trusted Since Day One",
     title: "Certified Learning That Actually Gets You Hired",
@@ -33,7 +37,7 @@ export const heroSlides = [
   },
   {
     id: "hero-slide-3",
-    image: "/assets/hero/hero-mentorship.jpg",
+    image: img3,
     alt: "Instructor mentoring a small group of students at Jamia Academy",
     eyebrow: "Small Batches, Real Attention",
     title: "Mentorship That Feels Personal, Not Crowded",
@@ -50,7 +54,7 @@ export const heroSlides = [
   },
   {
     id: "hero-slide-4",
-    image: "/assets/hero/hero-campus.jpg",
+    image: img4,
     alt: "Jamia Academy campus building exterior view",
     eyebrow: "A Campus Built For Learning",
     title: "Modern Classrooms, Real-World Curriculum",

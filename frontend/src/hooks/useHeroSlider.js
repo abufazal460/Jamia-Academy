@@ -1,14 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-const AUTOPLAY_INTERVAL_MS = 5000;
+const NORMAL_INTERVAL_MS = 5000; // normal autoplay speed
+const FAST_INTERVAL_MS = 5000;   // hover ke time ki speed
 
-/**
- * Hero slider ka pura brain yahan hai — active slide, autoplay timer, aur cleanup.
- * Koi bhi component number of slides pe assume nahi karta, slideCount dynamic hai.
- */
 const useHeroSlider = (slideCount, { autoplay = true } = {}) => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [intervalDuration, setIntervalDuration] = useState(NORMAL_INTERVAL_MS);
   const intervalRef = useRef(null);
 
   const goToNext = useCallback(() => {
@@ -23,28 +20,29 @@ const useHeroSlider = (slideCount, { autoplay = true } = {}) => {
 
   const goToSlide = useCallback(
     (index) => {
-      if (index < 0 || index >= slideCount) return; // invalid index ko silently ignore
+      if (index < 0 || index >= slideCount) return;
       setActiveIndex(index);
     },
     [slideCount]
   );
 
-  const pause = useCallback(() => setIsPaused(true), []);
-  const resume = useCallback(() => setIsPaused(false), []);
+  // Hover shuru hote hi speed fast ho jaye
+  const speedUp = useCallback(() => setIntervalDuration(FAST_INTERVAL_MS), []);
+  // Hover hatte hi wapas normal speed
+  const speedDown = useCallback(() => setIntervalDuration(NORMAL_INTERVAL_MS), []);
 
-  // Autoplay — sirf ek interval chalta hai, dependency change pe purana clear hoke naya banta hai
   useEffect(() => {
-    if (!autoplay || isPaused || slideCount <= 1) return undefined;
+    if (!autoplay || slideCount <= 1) return undefined;
 
     intervalRef.current = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slideCount);
-    }, AUTOPLAY_INTERVAL_MS);
+    }, intervalDuration);
 
-    // Unmount ya dependency change pe timer hamesha clear — memory leak se bachne ke liye
+    // Duration change hote hi purana timer clear hoke naya turant sahi speed se start hota hai
     return () => clearInterval(intervalRef.current);
-  }, [autoplay, isPaused, slideCount]);
+  }, [autoplay, slideCount, intervalDuration]);
 
-  return { activeIndex, goToNext, goToPrev, goToSlide, pause, resume };
+  return { activeIndex, goToNext, goToPrev, goToSlide, speedUp, speedDown };
 };
 
 export default useHeroSlider;
