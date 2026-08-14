@@ -1,26 +1,3 @@
-/**
- * AccreditationSection.jsx
- * ---------------------------------------------------------------------------
- * RESPONSIBILITY
- * "Our Accreditations" section render karta hai — left side heading +
- * paragraph, right side logo cards ka responsive grid. Screenshot ka UI
- * copy nahi kiya gaya — yeh ek fresh premium redesign hai (glass cards,
- * soft glow gradient background, gradient-border hover) jabki CONTENT
- * exactly wahi rakha gaya hai jo diya gaya tha.
- *
- * DATA FLOW
- * accreditationsData (src/data/accreditations.data.js) -> is component mein
- * import hota hai -> `.map()` se cards render hote hai. Naya logo add karna
- * ho to sirf data file edit karo, yeh component untouched rahega.
- *
- * ANIMATION SYSTEM
- * Saari variants src/animations/variants.js se aati hai (DRY — koi bhi
- * animation object yaha dobara define nahi kiya gaya). LazyMotion +
- * domAnimation use kiya hai taaki Framer Motion ka bundle-size chota rahe
- * (sirf zaroori animation features load hote hai, poora "motion" package
- * nahi).
- * ---------------------------------------------------------------------------
- */
 
 import { LazyMotion, domAnimation, m } from "motion/react";
 import { accreditationsData } from "../../../data/accreditations.data";
@@ -40,24 +17,12 @@ import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../../constants/layout.
 const AccreditationSection = () => {
   return (
     <LazyMotion features={domAnimation} strict>
-      {/*
-        SECTION BACKGROUND
-        "Not white" + "elegant premium gradient" requirement. Deep indigo/
-        slate gradient (#0B1224 -> #131B34 -> #1B2745) use kiya hai jo
-        premium/enterprise feel deta hai. `relative overflow-hidden` isliye
-        taaki neeche diye glow-blobs (absolute positioned blurred circles)
-        section ke bahar overflow karke horizontal-scrollbar na banaye.
-      */}
+     
       <section
         aria-label="Our Accreditations"
         className="relative w-full overflow-hidden bg-[linear-gradient(135deg,#0B1224_0%,#131B34_45%,#1B2745_100%)]"
       >
-        {/*
-          DECORATIVE GLOW BLOBS
-          Yeh sirf ambient light ka feel dete hai — "soft gradients, subtle
-          glow" requirement. aria-hidden isliye taaki screen-readers inhe
-          skip kare (yeh purely decorative hai, content nahi).
-        */}
+        
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -top-24 -left-24 h-[22rem] w-[22rem] rounded-full bg-cyan-500/20 blur-[110px]"
@@ -103,7 +68,8 @@ const AccreditationSection = () => {
             variants={cardStaggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={VIEWPORT_REPLAY}
+            // viewport={VIEWPORT_REPLAY}
+            viewport={{once: true}}
             className="grid grid-cols-2 gap-[clamp(0.9rem,2vw,1.5rem)]"
           >
             {accreditationsData.map((item, index) => {
@@ -113,14 +79,7 @@ const AccreditationSection = () => {
 
               return (
                 <m.li key={item.id} variants={getCardVariant(direction)} className="list-none">
-                  {/*
-                    GRADIENT-BORDER CARD TRICK
-                    Outer wrapper ek gradient background rakhta hai, andar
-                    1px ka padding chhod ke white card baithta hai — isse
-                    "gradient border effect" milta hai bina kisi extra
-                    pseudo-element library ke. Hover par gradient opacity
-                    barhti hai (group-hover) — subtle glow-border reveal.
-                  */}
+                 
                   <m.div
                     whileHover={cardHoverLift}
                     tabIndex={0}

@@ -1,23 +1,4 @@
-/**
- * variants.js
- * ---------------------------------------------------------------------------
- * YEH FILE KYU HAI (Why this file exists)
- * Requirement thi: "No duplicated animation code. Follow DRY. Use reusable
- * variants." Agar har component ke andar apna alag animation object likhenge
- * to code duplicate hoga aur maintain karna mushkil hoga. Isliye saari
- * Framer Motion variants ek central jagah define ki hai — dono sections
- * (Accreditation + Feature) yahi import karke use karenge.
- *
- * IMPORTANT CONCEPT: "Replay every time section enters viewport"
- * Framer Motion ke whileInView prop ke sath jab hum viewport={{ once:false }}
- * set karte hai, to jab bhi element viewport se bahar jaake wapas andar aata
- * hai, animation dobara chalta hai (replay). "once:true" hota to sirf ek
- * baar chalta. Hume replay chahiye, isliye har jagah once:false use hoga.
- * ---------------------------------------------------------------------------
- */
-
-// Easing curve — ek premium "ease-out expo" jaisa smooth feel deta hai.
-// Yeh ek hi curve poore project mein consistent motion-language banaye rakhta hai.
+// ye file ka code AccreditationSection aur featuredsection file mai use ho raha hai 
 export const EASE_SMOOTH = [0.22, 1, 0.36, 1];
 
 /**
@@ -136,6 +117,7 @@ export const getCardVariant = (direction) => {
 // appear hone ka effect milta hai.
 export const cardStaggerContainer = {
   hidden: {},
+  
   visible: {
     transition: {
       staggerChildren: 0.15,
@@ -151,6 +133,7 @@ export const cardStaggerContainer = {
  * ------------------------------------------------------------------------- */
 export const logoImageVariant = {
   hidden: { opacity: 0, scale: 0 },
+  VIEWPORT_REPLAY: {once: true},
   visible: {
     opacity: 1,
     scale: 1,
