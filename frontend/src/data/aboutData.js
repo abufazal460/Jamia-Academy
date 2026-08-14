@@ -272,14 +272,15 @@ export const faculty = [
 // ---------------------------------------------------------------------------
 // TIMELINE SECTION
 // ---------------------------------------------------------------------------
-export const timeline = [
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
-  { id: "timeline-2022", year: "2022", title: "Foundation", description: "Jamia Academy was established with a single classroom and a big vision." },
-  { id: "timeline-2024", year: "2024", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
-  { id: "timeline-2024", year: "2024", title: "Digital Learning Introduced", description: "Integrated technology-driven learning across all grades." },
-  { id: "timeline-2026", year: "2026", title: "5000+ Alumni Milestone", description: "Celebrated over five thousand successful graduates." },
-];
+  export const timeline = [
+    // TODO:
+    // Replace Dummy Data with Official Jamia Academy Content.
+    { id: "timeline-2022", year: "2022", title: "Foundation", description: "Jamia Academy was established with a single classroom and big vision." },
+    { id: "timeline-2023", year: "2023", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
+    { id: "timeline-2024", year: "2024", title: "Courses & Branch Expansion", description: "Added new courses and expanded our learning reach with a new branch." },
+    { id: "timeline-2025", year: "2025", title: "AI & Machine Learning", description: "Introduced AI and Machine Learning while expanding our faculty and programs." },
+    { id: "timeline-2026", year: "2026", title: "2000+ Alumni Milestone", description: "Celebrated over five thousand successful Certifications." },
+  ];
 
 // ---------------------------------------------------------------------------
 // WHY CHOOSE US SECTION
