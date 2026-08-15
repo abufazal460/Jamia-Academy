@@ -72,14 +72,14 @@ export default function Gallery() {
       {/* Page heading */}
       <header className="mx-auto mb-8 max-w-2xl text-center sm:mb-12">
 
-        <h1 className="text-3xl font-bold text-slate-900 sm:text-4xl lg:text-5xl">
+        <h1 className="pt-5 mt-5 text-3xl font-extrabold text-slate-900 sm:text-4xl lg:text-5xl">
           Gallery
         </h1>
 
       </header>
 
       {/* Tabs */}
-      <div className="mb-8 flex justify-center sm:mb-10">
+      <div className="mb-4 flex justify-center sm:mb-6">
         <GalleryTabs activeTab={activeTab} onChange={handleTabChange} />
       </div>
 
