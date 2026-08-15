@@ -78,7 +78,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
           INFORMATION
       ================================================================= */}
       <div className="flex flex-1 flex-col gap-1.5 p-5 pt-4">
-        <h3 className="text-base sm:text-lg font-semibold text-white">{member?.name || "Faculty Member"}</h3>
+        <h3 className="text-base sm:text-lg font-bold text-white">{member?.name || "Faculty Member"}</h3>
         <p className="text-xs sm:text-sm font-medium text-[#F4A261]">
           {member?.title || member?.designation || "Faculty"}
         </p>
@@ -110,14 +110,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
                 animate={{ opacity: isActive || prefersReducedMotion ? 1 : 0 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
-                {expertiseList.map((skill, index) => (
-                  <span
-                    key={`${member?.id}-expertise-${index}`}
-                    className="rounded-full bg-[#2A9D8F]/15 px-2.5 py-1 text-[10px] font-medium text-[#2A9D8F]"
-                  >
-                    {skill}
-                  </span>
-                ))}
+               
               </motion.div>
             </div>
           </motion.div>
@@ -211,13 +204,11 @@ const FacultyGrid = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#F4A261]">
-            Our Educators
-          </span>
+          
           <h2
             id="faculty-heading"
             ref={headingRef}
-            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white"
+            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white"
           >
             Meet Our Faculty
           </h2>

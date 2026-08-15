@@ -180,7 +180,7 @@ const FounderMessage = () => {
           ============================================================== */}
           <div className="order-2">
             {messageData.label && (
-              <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-[#E63946]">
+              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#E63946]">
                 {messageData.label}
               </span>
             )}
@@ -188,7 +188,7 @@ const FounderMessage = () => {
             <h2
               id="founder-message-heading"
               ref={headingRef}
-              className="mt-3 font-heading text-3xl sm:text-4xl font-bold leading-tight text-[#2B2D42]"
+              className="mt-3 font-heading text-3xl sm:text-4xl font-extrabold leading-tight text-[#2B2D42]"
             >
               {messageData.heading || "A Message From Our Founder"}
             </h2>
@@ -247,7 +247,7 @@ const FounderMessage = () => {
                 )}
 
                 <div ref={detailsRef} className="mt-1">
-                  <p className="text-sm font-semibold text-[#2B2D42]">{founder?.name || "Founder Name"}</p>
+                  <p className="text-sm font-bold text-[#2B2D42]">{founder?.name || "Founder Name"}</p>
                   <p className="text-xs text-[#2B2D42]/60">{founder?.title || founder?.designation || ""}</p>
                 </div>
               </div>

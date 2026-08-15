@@ -182,11 +182,11 @@ const CoFounderSection = () => {
               CO-FOUNDER INFORMATION — desktop: left
           ============================================================== */}
           <div className="order-2 lg:order-1 flex flex-col gap-5">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-[#2A9D8F]">
+            <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#2A9D8F]">
               Meet Our Co-Founder
             </span>
 
-            <h2 id="cofounder-heading" ref={nameRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]">
+            <h2 id="cofounder-heading" ref={nameRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#2B2D42]">
               {coFounder?.name || "Co-Founder Name"}
             </h2>
 
