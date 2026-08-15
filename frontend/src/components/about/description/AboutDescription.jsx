@@ -215,7 +215,7 @@ const AboutDescription = () => {
             {/* H2 — proper heading hierarchy (H1 is in HeroAbout) */}
             <h2
               id="about-description-heading"
-              className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-tight text-[#2B2D42]"
+              className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-tight text-[#2B2D42]"
             >
               {aboutDescription?.heading || "About Jamia Academy"}
             </h2>
