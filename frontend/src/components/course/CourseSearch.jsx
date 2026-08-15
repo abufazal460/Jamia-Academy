@@ -4,23 +4,6 @@ import { Search, X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import { useCourseSearch } from "../../hooks/useCourseSearch";
 
-/**
- * CourseSearch
- *
- * Left: "OUR COURSES" heading.
- * Right: gaming-style animated search button jo click pe smoothly
- * input field me expand hota hai.
- *
- * Search ki poori logic useCourseSearch hook ke andar hai — ye component
- * sirf UI/interaction handle karta hai, isliye logic doosri jagah bhi
- * (jaise tests ya kisi aur layout me) reuse ho sakta hai.
- *
- * Props:
- * - courses:          poora courses array jispe search chalega
- * - onResultsChange:  (filteredCourses) => void — parent ko latest
- *                      search results bubble karta hai
- * - className
- */
 export default function CourseSearch({ courses = [], onResultsChange, className = "" }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const inputRef = useRef(null);
@@ -48,7 +31,7 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
 
   return (
     <div className={twMerge("flex w-full items-center justify-between gap-4", className)}>
-      <h2 className="font-orbitron text-xl font-semibold tracking-wide text-white sm:text-2xl">
+      <h2 className="text-xl font-bold px-1 tracking-wide text-white sm:text-2xl">
         OUR COURSES
       </h2>
 
