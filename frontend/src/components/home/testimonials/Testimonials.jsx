@@ -21,7 +21,7 @@ const Testimonials = () => {
       <header className="mx-auto mb-10 max-w-2xl px-4 text-center sm:mb-14">
         <motion.h2
           id="testimonials-heading"
-          className="font-['orbitron'] text-[clamp(1.5rem,4vw,2.5rem)]  font-extrabold text-white"
+          className="font-['Poppins'] text-[clamp(1.5rem,4vw,2.5rem)]  font-bold text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
