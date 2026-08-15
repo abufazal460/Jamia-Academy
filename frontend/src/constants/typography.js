@@ -6,8 +6,8 @@
 // Rule: Kahin bhi component ke andar raw font-size hardcode nahi hogi
 
 export const fontFamily = {
-  heading: "'Plus Jakarta Sans', sans-serif", // Approved local font — matches font-heading token in index.css
-  body: "'DM Sans', sans-serif",
+  heading: "'Poppins', sans-serif", // Approved local font — matches font-heading token in index.css
+  body: "'Geist', sans-serif",
 };
 
 export const typography = {
