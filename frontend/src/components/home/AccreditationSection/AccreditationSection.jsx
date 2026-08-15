@@ -53,7 +53,7 @@ const AccreditationSection = () => {
             </m.h2>
             <m.p
               variants={paragraphRiseVariant}
-              className="font-['Geist'] font-light mt-5 max-w-md text-[clamp(1rem,0.9rem+1vw,2rem)] leading-relaxed text-slate-300"
+              className="font-light mt-5 max-w-md text-[clamp(1rem,0.9rem+1vw,2rem)] leading-relaxed text-slate-300"
             >
               We are proud to be recognized by leading industry organizations
             </m.p>

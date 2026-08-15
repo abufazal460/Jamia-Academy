@@ -106,7 +106,7 @@ const FeatureSection = () => {
                         {feature.title}
                       </h3>
                     </header>
-                    <p className="font-['Geist'] font-medium relative z-10 mt-2 text-[clamp(0.9rem,0.85rem+0.2vw,1rem)] leading-relaxed text-slate-600">
+                    <p className="font-medium relative z-10 mt-2 text-[clamp(0.9rem,0.85rem+0.2vw,1rem)] leading-relaxed text-slate-600">
                       {feature.description}
                     </p>
                   </m.article>

@@ -58,7 +58,7 @@ const WhyChooseUs = memo(() => {
 
           <motion.p
             variants={paragraphVariants}
-            className="font-['Geist'] font-normal text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
+            className="font-normal text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
           >
             {sectionData.description}
           </motion.p>
