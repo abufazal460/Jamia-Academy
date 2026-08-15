@@ -216,17 +216,17 @@ const TimelineSection = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#E63946]">
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#E63946]">
             Our Journey
           </span>
           <h2
             id="timeline-heading"
             ref={headingRef}
-            className="mt-3 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]"
+            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#2B2D42]"
           >
             Milestones That Shaped Us
           </h2>
-          <p ref={descriptionRef} className="mt-4 text-sm sm:text-base leading-relaxed text-[#2B2D42]/60">
+          <p ref={descriptionRef} className="mt-4 text-sm sm:text-base font-medium leading-relaxed text-[#2B2D42]/60">
             From a single classroom to a growing institution — the story of Jamia Academy.
           </p>
         </div>
@@ -301,7 +301,7 @@ const TimelineSection = () => {
                       </span>
                       <h3
                         data-timeline-title
-                        className="mt-2.5 text-base sm:text-lg font-semibold text-[#2B2D42]"
+                        className="mt-2.5 text-base sm:text-lg font-bold text-[#2B2D42]"
                       >
                         {item?.title || "Milestone"}
                       </h3>

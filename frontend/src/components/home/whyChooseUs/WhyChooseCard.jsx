@@ -58,7 +58,7 @@ const WhyChooseCard = memo(({ card, index }) => {
 
         {/* Title */}
         <motion.h3 
-          className="text-xl font-bold text-[#2B2D42] mb-2"
+          className="font-['Poppins']  font-bold text-xltext-[#2B2D42] mb-2"
           whileHover={{ 
             x: 4,
             transition: { duration: 0.2 }

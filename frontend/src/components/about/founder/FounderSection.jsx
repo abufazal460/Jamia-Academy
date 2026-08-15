@@ -233,11 +233,11 @@ const FounderSection = () => {
               FOUNDER INFORMATION
           ============================================================== */}
           <div className="flex flex-col gap-5">
-            <span className="text-xs sm:text-sm font-semibold tracking-widest uppercase text-[#F4A261]">
+            <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-[#F4A261]">
               Meet Our Founder
             </span>
 
-            <h2 id="founder-heading" ref={nameRef} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white">
+            <h2 id="founder-heading" ref={nameRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white">
               {founder?.name || "Founder Name"}
             </h2>
 

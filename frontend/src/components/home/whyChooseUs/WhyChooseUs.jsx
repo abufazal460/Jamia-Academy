@@ -12,7 +12,7 @@ const WhyChooseUs = memo(() => {
     <section className="relative w-full py-20 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F3E9] via-white to-[#F7F3E9]/50 overflow-hidden">
       {/* Background decorative elements */}
       <motion.div
-        className="absolute -top-40 -left-40 w-96 h-96 bg-[#E63946]/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute -top-40  -left-40 w-96 h-96 bg-[#E63946]/5 rounded-full blur-3xl pointer-events-none"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.6, 0.3]
@@ -26,7 +26,7 @@ const WhyChooseUs = memo(() => {
       />
       
       <motion.div
-        className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#2A9D8F]/5 rounded-full blur-3xl pointer-events-none"
+        className="absolute -bottom-40  -right-40 w-96 h-96 bg-[#2A9D8F]/5 rounded-full blur-3xl pointer-events-none"
         animate={{
           scale: [1, 1.1, 1],
           opacity: [0.3, 0.7, 0.3]
@@ -49,7 +49,7 @@ const WhyChooseUs = memo(() => {
         >
           <motion.h2
             variants={headingVariants}
-            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6"
+            className="font-['Orbitron'] text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6"
           >
             <span className="text-[#2B2D42]">Why Students </span>
             <span className="bg-gradient-to-r from-[#E63946] to-[#F4A261] bg-clip-text text-transparent">Choose </span>
@@ -58,7 +58,7 @@ const WhyChooseUs = memo(() => {
 
           <motion.p
             variants={paragraphVariants}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal"
+            className="font-normal text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
           >
             {sectionData.description}
           </motion.p>

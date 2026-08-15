@@ -174,13 +174,13 @@ const WhyChooseUs = () => {
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#F4A261]">
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#F4A261]">
             Why Jamia Academy
           </span>
           <h2
             id="why-choose-us-heading"
             ref={headingRef}
-            className="mt-3 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white"
+            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white"
           >
             Why Choose Us
           </h2>
@@ -240,7 +240,7 @@ const WhyChooseUs = () => {
                   </motion.span>
 
                   {/* 2. Title */}
-                  <h3 className="relative z-10 text-lg sm:text-xl font-semibold text-white">
+                  <h3 className="relative z-10 text-lg sm:text-xl font-bold text-white">
                     {reason?.title || "Why Choose Us"}
                   </h3>
 

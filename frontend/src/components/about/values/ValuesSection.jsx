@@ -137,14 +137,14 @@ const ValuesSection = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold uppercase tracking-widest text-[#E63946]">
+          <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#E63946]">
             <Sparkles size={14} aria-hidden="true" />
             What We Stand For
           </span>
           <h2
             id="values-heading"
             ref={headingRef}
-            className="mt-3 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]"
+            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-[#2B2D42]"
           >
             Our Core Values
           </h2>
@@ -194,7 +194,7 @@ const ValuesSection = () => {
                   >
                     <Icon size={22} />
                   </motion.span>
-                  <h3 className="relative z-10 text-base sm:text-lg font-semibold text-[#2B2D42]">
+                  <h3 className="relative z-10 text-base sm:text-lg font-bold text-[#2B2D42]">
                     {value?.title || "Value"}
                   </h3>
                   <p className="relative z-10 mt-2 text-sm leading-relaxed text-[#2B2D42]/60">

@@ -262,7 +262,7 @@ const HeroAbout = () => {
           <h1
             id="hero-heading"
             ref={headingRef}
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05] text-white"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05] text-white"
           >
           
               {hero.title}

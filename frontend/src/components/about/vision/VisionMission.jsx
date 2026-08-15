@@ -187,7 +187,7 @@ const VisionMission = () => {
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 id="vision-mission-heading" ref={headingRef} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white">
+          <h2 id="vision-mission-heading" ref={headingRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-white">
             Vision, Mission &amp; Commitment
           </h2>
           <p ref={descriptionRef} className="mt-4 text-sm sm:text-base leading-relaxed text-white/60">
@@ -218,9 +218,9 @@ const VisionMission = () => {
               <Eye size={22} />
             </span>
             {vision?.subtitle && (
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#F4A261]">{vision.subtitle}</span>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#F4A261]">{vision.subtitle}</span>
             )}
-            <h3 className="mt-2 text-xl sm:text-2xl font-bold text-white">{vision?.heading || "Our Vision"}</h3>
+            <h3 className="mt-2 text-xl sm:text-2xl font-extrabold text-white">{vision?.heading || "Our Vision"}</h3>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65 flex-1">
               {vision?.description}
             </p>
@@ -245,7 +245,7 @@ const VisionMission = () => {
             <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/15 text-[#2A9D8F]" aria-hidden="true">
               <Target size={22} />
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold text-white">{mission?.heading || "Our Mission"}</h3>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-white">{mission?.heading || "Our Mission"}</h3>
             {mission?.description && (
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{mission.description}</p>
             )}
@@ -291,7 +291,7 @@ const VisionMission = () => {
             <span className="relative z-10 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E63946]/15 text-[#E63946]" aria-hidden="true">
               <HeartHandshake size={22} />
             </span>
-            <h3 className="relative z-10 text-xl sm:text-2xl font-bold text-white">
+            <h3 className="relative z-10 text-xl sm:text-2xl font-extrabold text-white">
               {commitment?.heading || "Our Commitment"}
             </h3>
             <p className="relative z-10 mt-3 text-sm sm:text-base leading-relaxed text-white/65 flex-1">

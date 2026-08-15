@@ -56,7 +56,7 @@ const FAQHeader = () => {
       <motion.div variants={badgeVariant} className="inline-block mb-4">
         <span
           className="
-            text-xs sm:text-sm font-semibold uppercase tracking-[0.2em]
+            text-xs sm:text-sm font-bold uppercase tracking-[0.2em]
             text-cyan-400
             bg-cyan-400/10
             border border-cyan-400/30
@@ -72,9 +72,9 @@ const FAQHeader = () => {
         variants={headingVariant}
         // text fluid scaling: sm se 4xl tak — kabhi bhi overflow nahi hogi
         className="
-          text-2xl sm:text-3xl md:text-4xl lg:text-5xl
-          font-bold text-white
-          leading-tight tracking-tight
+          font-['Inter'] text-2xl sm:text-3xl md:text-4xl lg:text-5xl
+          font-black text-white
+          leading-tight tracking-wide
           max-w-3xl mx-auto
           px-4
         "

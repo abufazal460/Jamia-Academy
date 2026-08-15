@@ -42,10 +42,10 @@ const TestimonialCard = ({ name, course, rating, review, image }) => {
           />
         </figure>
 
-        <h3 className="font-orbitron text-base sm:text-lg font-medium text-white">
+        <h3 className="text-base sm:text-lg font-bold text-white">
           {name}
         </h3>
-        <p className="mt-1 text-xs sm:text-sm text-white/50">{course}</p>
+        <p className="mt-1 text-xs sm:text-sm text-white/50 font-medium">{course}</p>
       </header>
 
       {/* Rating stars */}

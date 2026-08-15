@@ -215,7 +215,7 @@ const AboutDescription = () => {
             {/* H2 — proper heading hierarchy (H1 is in HeroAbout) */}
             <h2
               id="about-description-heading"
-              className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold leading-tight text-[#2B2D42]"
+              className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight leading-tight text-[#2B2D42]"
             >
               {aboutDescription?.heading || "About Jamia Academy"}
             </h2>
@@ -278,7 +278,7 @@ const AboutDescription = () => {
                     >
                       <Icon size={20} />
                     </span>
-                    <h3 className="relative z-10 text-sm sm:text-base font-semibold text-[#2B2D42]">
+                    <h3 className="font-heading relative z-10 text-sm sm:text-base font-bold text-[#2B2D42]">
                       {feature?.title || "Feature"}
                     </h3>
                     <p className="relative z-10 mt-1.5 text-xs sm:text-sm leading-relaxed text-[#2B2D42]/65">

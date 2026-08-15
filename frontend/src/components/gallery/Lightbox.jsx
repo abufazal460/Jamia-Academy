@@ -6,7 +6,7 @@ import { getLenisInstance } from "../smoothScroll/SmoothScroll";
 const SWIPE_THRESHOLD_PX = 50;
 
 
-export function Lightbox({ images, currentIndex, onClose, onNavigate }) {
+export function Lightbox({ images, currentIndex, onClose, onNavigate , categoryLabel, index }) {
   const touchStartXRef = useRef(null);
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === images.length - 1;

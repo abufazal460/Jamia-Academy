@@ -19,7 +19,7 @@ const WhyContactSection = () => {
       >
         <h2
           id="why-contact-heading"
-          className="text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-[#2B2D42]"
+          className="text-[clamp(1.6rem,3vw,2.4rem)] font-extrabold text-[#2B2D42]"
         >
           {whyContactSection.heading}
         </h2>
@@ -51,7 +51,7 @@ const WhyContactSection = () => {
                 {Icon && <Icon className="h-6 w-6" strokeWidth={2} />}
               </motion.div>
               <div>
-                <h3 className="text-base font-bold text-[#2B2D42]">{card.title}</h3>
+                <h3 className="text-base font-extrabold text-[#2B2D42]">{card.title}</h3>
                 <p className="mt-1.5 text-sm leading-relaxed text-[#2B2D42]/65">
                   {card.description}
                 </p>
