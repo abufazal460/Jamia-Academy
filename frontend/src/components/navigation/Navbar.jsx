@@ -10,9 +10,6 @@ import { motion } from "motion/react";
 import { useLocation } from "react-router-dom";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-// GSAP: Scroll-based hide/show animation ke liye use hoga.
-// WHY GSAP aur Framer Motion dono: Framer Motion state-driven animations ke liye,
-// GSAP imperative scroll-triggered animations ke liye — dono ka alag role hai.
 import { gsap } from "gsap";
 // LoginButton: navLinks array se alag, WhatsAppButton ki tarah independently rendered.
 import LoginButton from "../navigation/LoginButton";
@@ -27,28 +24,6 @@ import MobileMenu from "./MobileMenu";
 import WhatsAppButton from "./WhatsAppButton";
 import { navLinks } from "../../data/navLinksData";
 
-// ====================================================================
-// Navbar.jsx — MODIFIED
-//
-// REMOVED:
-//   - isCourseOpen state aur usse related saare handlers
-//     (handleCourseClick, toggleMobileCourse)
-//   - MegaMenu import aur uska render
-//   - Outside click handler jo sirf dropdown ke liye tha
-//   - Glass morphism floating pill layout (rounded-2xl, backdrop-blur, border-white/10)
-//   - bg-[#0b1437]/70 dark blue semi-transparent background
-//   - Shadow / ring related classes
-//
-// ADDED:
-//   - Full-width sticky black navbar (bg-black / bg-[#050505])
-//   - Nav links ab center me ek subtle dark pill container me hai (Sheryians-inspired)
-//   - Clean professional spacing, no floating center card
-//
-// WHY: New design requirement: full-width black bar, Sheryians-style layout.
-//      Dropdown poora remove ho gaya, isliye related state/handlers bhi hata diye.
-// ====================================================================
-
-// Logo ka entry animation: left se slide karke aayega.
 const logoVariants = {
   hidden: { opacity: 0, x: -50 },
   visible: {
@@ -182,8 +157,8 @@ function Navbar() {
 
         gsap.to([logoWrapRef.current, navLinksRef.current], {
           opacity: 0,
-          x: -35,
-          duration: 0.5
+          x: 100,
+          duration: 1,
         });
 
         gsap.to([loginWrapRef.current, whatsappWrapRef.current], {
