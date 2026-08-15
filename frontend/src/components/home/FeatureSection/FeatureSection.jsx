@@ -19,8 +19,6 @@ import { LazyMotion, domAnimation, m } from "motion/react";
 import { featuresData } from "../../../data/features.data";
 import {
   VIEWPORT_REPLAY,
-  textStaggerContainer,
-  headingRiseVariant,
   cardStaggerContainer,
   getCardDirection,
   getCardVariant,
@@ -61,7 +59,6 @@ const FeatureSection = () => {
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}
         >
-        <h2 className="sr-only">Why Join Us</h2>
           <m.ul
             role="list"
             aria-label="Reasons to join"
@@ -105,11 +102,11 @@ const FeatureSection = () => {
                     </m.div>
 
                     <header className="relative z-10">
-                      <h3 className="text-[clamp(1.1rem,1rem+0.4vw,1.35rem)] font-bold leading-snug text-slate-900">
+                      <h3 className="font-['Poppins'] text-[clamp(1.1rem,1rem+0.4vw,1.35rem)] font-extrabold leading-snug text-slate-900">
                         {feature.title}
                       </h3>
                     </header>
-                    <p className="relative z-10 mt-2 text-[clamp(0.9rem,0.85rem+0.2vw,1rem)] leading-relaxed text-slate-600">
+                    <p className="font-['Geist'] font-medium relative z-10 mt-2 text-[clamp(0.9rem,0.85rem+0.2vw,1rem)] leading-relaxed text-slate-600">
                       {feature.description}
                     </p>
                   </m.article>
