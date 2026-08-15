@@ -25,7 +25,7 @@ const SocialLinks = () => {
       >
         <h2
           id="social-connect-heading"
-          className="text-[clamp(1.6rem,3vw,2.4rem)] font-bold text-[#2B2D42]"
+          className="text-[clamp(1.6rem,3vw,2.4rem)] font-heading tracking-tight font-extrabold text-[#2B2D42]"
         >
           {socialConnect.heading}
         </h2>

@@ -26,7 +26,7 @@ const ContactForm = () => {
       />
 
       <div className="relative mb-8">
-        <h2 id="contact-form-heading" className="text-[clamp(1.4rem,2.6vw,2rem)] font-bold text-[#2B2D42]">
+        <h2 id="contact-form-heading" className="text-[clamp(1.4rem,2.6vw,2rem)] font-extrabold text-[#2B2D42]">
           {formConfig.heading}
         </h2>
         <p className="mt-1.5 text-sm text-[#2B2D42]/60 sm:text-base">

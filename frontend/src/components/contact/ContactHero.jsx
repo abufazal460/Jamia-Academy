@@ -40,14 +40,14 @@ const ContactHero = () => {
         variants={slideInLeft}
         className="flex flex-col items-start gap-6"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/20 bg-[#E63946]/10 px-4 py-1.5 text-sm font-medium text-[#E63946]">
+        <span className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/20 bg-[#E63946]/10 px-4 py-1.5 text-sm font-semibold text-[#E63946]">
           {BadgeIcon && <BadgeIcon className="h-4 w-4" aria-hidden="true" />}
           {contactHero.badge}
         </span>
 
         <h1
           id="contact-hero-heading"
-          className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] text-[#2B2D42]"
+          className="text-[clamp(2rem,4.5vw,3.5rem)] font-heading font-extrabold leading-[1.1] text-[#2B2D42]"
         >
           {contactHero.headingPrefix}{" "}
           <span className="bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#2A9D8F] bg-clip-text text-transparent">
