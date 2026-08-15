@@ -70,8 +70,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Poppins";
-  src: url("./assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Poppins/Poppins-ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -139,8 +138,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Poppins";
-  src: url("./assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Poppins/Poppins-SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -174,8 +172,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Poppins";
-  src: url("./assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Poppins/Poppins-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -212,8 +209,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Inter";
-  src: url("./assets/fonts/Inter/static/Inter_18pt-ThinItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Inter/static/Inter_18pt-ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -222,8 +218,7 @@ html.lenis body {
 /* 200 ExtraLight */
 @font-face {
   font-family: "Inter";
-  src: url("./assets/fonts/Inter/static/Inter_18pt-ExtraLight.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Inter/static/Inter_18pt-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -231,8 +226,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Inter";
-  src: url("./assets/fonts/Inter/static/Inter_18pt-ExtraLightItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Inter/static/Inter_18pt-ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -243,8 +237,7 @@ html.lenis body {
 /* 900 Black */
 @font-face {
   font-family: "Inter";
-  src: url("./assets/fonts/Inter/static/Inter_18pt-Black.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Inter/static/Inter_18pt-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -252,8 +245,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Inter";
-  src: url("./assets/fonts/Inter/static/Inter_18pt-BlackItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Inter/static/Inter_18pt-BlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -274,8 +266,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-ThinItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -284,8 +275,7 @@ html.lenis body {
 /* 200 ExtraLight */
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraLight.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -293,8 +283,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraLightItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -311,8 +300,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-LightItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-LightItalic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -321,8 +309,7 @@ html.lenis body {
 /* 400 Regular */
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-Regular.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -347,8 +334,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-MediumItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-MediumItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -357,8 +343,7 @@ html.lenis body {
 /* 600 SemiBold */
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -366,8 +351,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-SemiBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-SemiBoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -384,8 +368,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-BoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -394,8 +377,7 @@ html.lenis body {
 /* 800 ExtraBold */
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -403,8 +385,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -421,8 +402,7 @@ html.lenis body {
 
 @font-face {
   font-family: "DM Sans";
-  src: url("./assets/fonts/DM_Sans/static/DMSans-BlackItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/DM_Sans/static/DMSans-BlackItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -444,8 +424,7 @@ html.lenis body {
 /* 200 ExtraLight */
 @font-face {
   font-family: "Geist";
-  src: url("./assets/fonts/Geist/static/Geist-ExtraLight.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Geist/static/Geist-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -521,8 +500,7 @@ html.lenis body {
 /* 100 Thin */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Thin.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -531,8 +509,7 @@ html.lenis body {
 /* 200 ExtraLight */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-ExtraLight.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -541,8 +518,7 @@ html.lenis body {
 /* 300 Light */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Light.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -551,8 +527,7 @@ html.lenis body {
 /* 400 Regular */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Regular.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -561,8 +536,7 @@ html.lenis body {
 /* 500 Medium */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Medium.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -571,8 +545,7 @@ html.lenis body {
 /* 600 SemiBold */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-SemiBold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -581,8 +554,7 @@ html.lenis body {
 /* 700 Bold */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Bold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -591,8 +563,7 @@ html.lenis body {
 /* 800 ExtraBold */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -601,8 +572,7 @@ html.lenis body {
 /* 900 Black */
 @font-face {
   font-family: "Orbitron";
-  src: url("./assets/fonts/Orbitron/static/Orbitron-Black.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Orbitron/static/Orbitron-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -615,8 +585,7 @@ html.lenis body {
 /* 100 ExtraLight */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraLight.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraLight.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -624,8 +593,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraLightItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraLightItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
   font-display: swap;
@@ -634,8 +602,7 @@ html.lenis body {
 /* 200 Light */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Light.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Light.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
   font-display: swap;
@@ -643,8 +610,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-LightItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-LightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
   font-display: swap;
@@ -653,8 +619,7 @@ html.lenis body {
 /* 300 Regular */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Regular.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -662,8 +627,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Italic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Italic.ttf") format("truetype");
   font-weight: 300;
   font-style: italic;
   font-display: swap;
@@ -672,8 +636,7 @@ html.lenis body {
 /* 400 Medium */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Medium.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -681,8 +644,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-MediumItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-MediumItalic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -691,8 +653,7 @@ html.lenis body {
 /* 500 SemiBold */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBold.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -700,8 +661,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-SemiBoldItalic.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -710,8 +670,7 @@ html.lenis body {
 /* 600 Bold */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-Bold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -719,8 +678,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-BoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-BoldItalic.ttf") format("truetype");
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -729,8 +687,7 @@ html.lenis body {
 /* 700 ExtraBold */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -738,8 +695,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -748,8 +704,7 @@ html.lenis body {
 /* 800 ExtraBold */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -757,8 +712,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
@@ -767,8 +721,7 @@ html.lenis body {
 /* 900 ExtraBold */
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBold.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -776,8 +729,7 @@ html.lenis body {
 
 @font-face {
   font-family: "Plus Jakarta Sans";
-  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf")
-    format("truetype");
+  src: url("./assets/fonts/Plus_Jakarta_Sans/static/PlusJakartaSans-ExtraBoldItalic.ttf") format("truetype");
   font-weight: 900;
   font-style: italic;
   font-display: swap;
@@ -790,8 +742,9 @@ html.lenis body {
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: "Geist Variable", sans-serif;
+  --font-sans: "Geist", sans-serif;
+  --font-heading: "Plus Jakarta Sans", sans-serif;
+  --font-display: "Poppins", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -914,9 +867,11 @@ html.lenis body {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
@@ -927,25 +882,23 @@ html.lenis body {
    Hidden until image is loaded
 ============================================ */
 
-.animate-gradient{
-  position:absolute;
-  inset:0;
-  opacity:0;
-  pointer-events:none;
-  border-radius:inherit;
-  overflow:hidden;
-  background:conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    transparent 290deg,
-    #9333ea 305deg,
-    #ec4899 325deg,
-    #f97316 342deg,
-    #2563eb 355deg,
-    transparent 360deg
-  );
-  animation:none;
-  transition:opacity .25s ease;
+.animate-gradient {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  overflow: hidden;
+  background: conic-gradient(from 0deg,
+      transparent 0deg,
+      transparent 290deg,
+      #9333ea 305deg,
+      #ec4899 325deg,
+      #f97316 342deg,
+      #2563eb 355deg,
+      transparent 360deg);
+  animation: none;
+  transition: opacity .25s ease;
 }
 
 
@@ -953,30 +906,30 @@ html.lenis body {
    Moving Glow Effect
 ============================================ */
 
-.animate-gradient::before{
-  content:"";
-  position:absolute;
-  inset:-10px;
-  border-radius:inherit;
-  background:inherit;
-  filter:blur(18px);
-  opacity:0;
-  transition:opacity .3s ease;
+.animate-gradient::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: inherit;
+  background: inherit;
+  filter: blur(18px);
+  opacity: 0;
+  transition: opacity .3s ease;
 }
 
 
 /* Enable border after image loaded */
 
-[data-loaded="true"]:hover .animate-gradient{
-  opacity:1;
-   animation:rotateBorder 2.5s linear infinite;
+[data-loaded="true"]:hover .animate-gradient {
+  opacity: 1;
+  animation: rotateBorder 2.5s linear infinite;
 }
 
 
 /* Enable moving glow */
 
-[data-loaded="true"]:hover .animate-gradient::before{
-  opacity:.9;
+[data-loaded="true"]:hover .animate-gradient::before {
+  opacity: .9;
 }
 
 
@@ -984,13 +937,13 @@ html.lenis body {
    Inner Image Wrapper
 ============================================ */
 
-.gallery-inner{
-  position:relative;
-  z-index:10;
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  border-radius:inherit;
+.gallery-inner {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 
@@ -998,14 +951,14 @@ html.lenis body {
    Image Fade Animation
 ============================================ */
 
-.gallery-image{
-  opacity:0;
-  transition:opacity .35s ease;
+.gallery-image {
+  opacity: 0;
+  transition: opacity .35s ease;
 }
 
 
-[data-loaded="true"] .gallery-image{
-  opacity:1;
+[data-loaded="true"] .gallery-image {
+  opacity: 1;
 }
 
 
@@ -1013,14 +966,14 @@ html.lenis body {
    Border Rotation Animation
 ============================================ */
 
-@keyframes rotateBorder{
+@keyframes rotateBorder {
 
-  from{
-    transform:rotate(0deg);
+  from {
+    transform: rotate(0deg);
   }
 
-  to{
-    transform:rotate(360deg);
+  to {
+    transform: rotate(360deg);
   }
 
 }
