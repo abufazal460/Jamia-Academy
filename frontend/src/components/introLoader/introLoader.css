@@ -29,7 +29,7 @@
   display: flex;
   justify-content: center;
   white-space: nowrap;
-  font-family: 'Helvetica Neue', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-display), "Geist", sans-serif;
   font-weight: 800;
   letter-spacing: clamp(0.02em, 0.6vw, 0.08em);
   color: #f5f5f5;
