@@ -49,7 +49,7 @@ const WhyChooseUs = memo(() => {
         >
           <motion.h2
             variants={headingVariants}
-            className=" text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight mb-6"
           >
             <span className="text-[#2B2D42]">Why Students </span>
             <span className="bg-gradient-to-r from-[#E63946] to-[#F4A261] bg-clip-text text-transparent">Choose </span>
@@ -58,7 +58,7 @@ const WhyChooseUs = memo(() => {
 
           <motion.p
             variants={paragraphVariants}
-            className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal"
+            className="font-['Plus_Jakarta_Sans'] font-thin text-slate-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
           >
             {sectionData.description}
           </motion.p>
