@@ -278,7 +278,7 @@ const AboutDescription = () => {
                     >
                       <Icon size={20} />
                     </span>
-                    <h3 className="font-['Poppins'] relative z-10 text-sm sm:text-base font-bold text-[#2B2D42]">
+                    <h3 className="font-heading relative z-10 text-sm sm:text-base font-bold text-[#2B2D42]">
                       {feature?.title || "Feature"}
                     </h3>
                     <p className="relative z-10 mt-1.5 text-xs sm:text-sm leading-relaxed text-[#2B2D42]/65">
