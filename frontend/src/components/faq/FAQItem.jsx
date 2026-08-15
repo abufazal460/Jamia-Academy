@@ -103,7 +103,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
         {/* Question text */}
         <span
           className={`
-            text-sm sm:text-base md:text-lg font-medium leading-snug
+            font-['Geist'] text-sm sm:text-base md:text-lg font-semibold leading-snug
             transition-colors duration-300
             ${isOpen ? "text-cyan-300" : "text-slate-200 group-hover:text-white"}
           `}
@@ -163,7 +163,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
             <div className="px-5 sm:px-6 pb-5 sm:pb-6">
               {/* Thin divider line */}
               <div className="h-px bg-white/10 mb-4 sm:mb-5" />
-              <p className="text-sm sm:text-base text-slate-400 leading-relaxed">
+              <p className="font-['Geist'] font-medium text-sm sm:text-base text-slate-400 leading-relaxed">
                 {faq.answer}
               </p>
             </div>
