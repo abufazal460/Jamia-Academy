@@ -200,7 +200,7 @@ const StatsSection = () => {
           <h2
             id="stats-heading"
             ref={headingRef}
-            className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]"
+            className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]"
           >
             Our Achievements
           </h2>

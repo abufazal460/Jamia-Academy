@@ -188,7 +188,7 @@ const FounderMessage = () => {
             <h2
               id="founder-message-heading"
               ref={headingRef}
-              className="mt-3 font-serif text-3xl sm:text-4xl font-bold leading-tight text-[#2B2D42]"
+              className="mt-3 font-heading text-3xl sm:text-4xl font-bold leading-tight text-[#2B2D42]"
             >
               {messageData.heading || "A Message From Our Founder"}
             </h2>
@@ -239,7 +239,7 @@ const FounderMessage = () => {
                   // TODO:
                   // Replace placeholder signature with an official scanned signature image if available.
                   <p
-                    className="font-serif text-2xl italic text-[#2B2D42]/70"
+                    className="text-2xl italic text-[#2B2D42]/70"
                     style={{ fontFamily: "'Brush Script MT', cursive" }}
                   >
                     {founder?.name || "Founder Name"}

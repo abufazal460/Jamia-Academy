@@ -180,7 +180,7 @@ const WhyChooseUs = () => {
           <h2
             id="why-choose-us-heading"
             ref={headingRef}
-            className="mt-3 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white"
+            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white"
           >
             Why Choose Us
           </h2>

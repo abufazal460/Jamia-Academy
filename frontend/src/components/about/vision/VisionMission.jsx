@@ -187,7 +187,7 @@ const VisionMission = () => {
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 id="vision-mission-heading" ref={headingRef} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white">
+          <h2 id="vision-mission-heading" ref={headingRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white">
             Vision, Mission &amp; Commitment
           </h2>
           <p ref={descriptionRef} className="mt-4 text-sm sm:text-base leading-relaxed text-white/60">

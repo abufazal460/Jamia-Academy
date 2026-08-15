@@ -217,7 +217,7 @@ const FacultyGrid = () => {
           <h2
             id="faculty-heading"
             ref={headingRef}
-            className="mt-3 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white"
+            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white"
           >
             Meet Our Faculty
           </h2>

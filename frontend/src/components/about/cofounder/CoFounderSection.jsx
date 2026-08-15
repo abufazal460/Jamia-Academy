@@ -186,7 +186,7 @@ const CoFounderSection = () => {
               Meet Our Co-Founder
             </span>
 
-            <h2 id="cofounder-heading" ref={nameRef} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]">
+            <h2 id="cofounder-heading" ref={nameRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]">
               {coFounder?.name || "Co-Founder Name"}
             </h2>
 

@@ -144,7 +144,7 @@ const ValuesSection = () => {
           <h2
             id="values-heading"
             ref={headingRef}
-            className="mt-3 font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]"
+            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-[#2B2D42]"
           >
             Our Core Values
           </h2>

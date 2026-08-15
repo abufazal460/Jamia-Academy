@@ -237,7 +237,7 @@ const FounderSection = () => {
               Meet Our Founder
             </span>
 
-            <h2 id="founder-heading" ref={nameRef} className="font-serif text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white">
+            <h2 id="founder-heading" ref={nameRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white">
               {founder?.name || "Founder Name"}
             </h2>
 
