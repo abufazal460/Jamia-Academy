@@ -7,8 +7,7 @@ const PAGE_DESCRIPTION =
   "Explore Jamia Academy's courses — check duration, level, fees and eligibility, then enroll directly on WhatsApp.";
 
 const Course = () => {
-  const canonicalUrl =
-    typeof window !== "undefined" ? `${window.location.origin}/course` : "/course";
+ const canonicalUrl = "https://www.jamiaacademy.in/course";
 
   const structuredData = {
     "@context": "https://schema.org",

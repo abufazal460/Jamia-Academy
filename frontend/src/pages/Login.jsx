@@ -4,8 +4,7 @@ import { LoginCard } from "../components/login";
 import { Helmet } from "react-helmet-async";
 import loginData from "../data/loginData";
 
-const canonicalUrl = typeof window !== "undefined" ? `${window.location.origin}/login` : "/login";
-function Login() {
+const canonicalUrl = "https://www.jamiaacademy.in/course";function Login() {
   return (
     <LazyMotion features={domAnimation}>
       <Helmet>
