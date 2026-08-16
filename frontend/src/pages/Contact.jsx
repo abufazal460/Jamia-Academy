@@ -15,7 +15,7 @@ const PAGE_DESCRIPTION = contactHero.description;
 
 const Contact = () => {
 
- const canonicalUrl = "https://www.jamiaacademy.in/course";
+  const canonicalUrl = "https://www.jamiaacademy.in/course";
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -43,6 +43,10 @@ const Contact = () => {
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
       </Helmet>
       <main className="relative min-h-screen overflow-x-hidden bg-[#F7F3E9]">
         <ContactBackground />

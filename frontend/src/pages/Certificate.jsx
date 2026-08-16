@@ -9,7 +9,7 @@ const PAGE_DESCRIPTION = PAGE_CONTENT.subtitle;
 
 export default function Certificate() {
   const canonicalUrl = "https://www.jamiaacademy.in/course";
-  
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -33,6 +33,10 @@ export default function Certificate() {
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
       </Helmet>
 
       <SpaceBackground />

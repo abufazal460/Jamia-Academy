@@ -36,6 +36,10 @@ const Course = () => {
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
       </Helmet>
       <main>
         <h1 className="sr-only">Computer Courses at Jamia Academy — Web Development, Data Analytics, AI & More</h1>
