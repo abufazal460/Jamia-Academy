@@ -48,7 +48,7 @@ const About = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | Jamia Academy" />
         <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
-
+        <meta name="robots" content="index, follow" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
