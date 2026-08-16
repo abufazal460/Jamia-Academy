@@ -339,14 +339,88 @@ html.lenis body {
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Jamia Academy premium palette (added for TextPressure integration) */
-  --color-jamia-navy: #0b1120;
-  --color-jamia-navy-light: #131a2e;
-  --color-jamia-coral: #ff6b5e;
-  --color-jamia-orange: #ff9f45;
-  --color-jamia-purple: #7c3aed;
-  --color-jamia-teal: #14b8a6;
-  --color-jamia-cream: #fdf6e9;
+  /* jamia academy color plette  */
+  /* =========================
+     BRAND
+  ========================= */
+  --color-primary: #C45A3C;
+  --color-primary-hover: #AE4B31;
+  --color-primary-active: #923E29;
+  --color-primary-soft: #F1D4C9;
+
+  --color-secondary: #292A27;
+  --color-secondary-hover: #1F201E;
+  --color-secondary-active: #121311;
+  --color-secondary-soft: #E2E2DC;
+
+  /* =========================
+     BACKGROUNDS
+  ========================= */
+  --background-primary: #F7F3E9;
+  --background-secondary: #ECE7DB;
+
+  --background-white: #FFFFFF;
+  --background-black: #000000;
+
+
+  /* =========================
+     TEXT
+  ========================= */
+  --text-primary: #292A27;
+  --text-secondary: #575851;
+  --text-muted: #77786F;
+  --text-disabled: #A3A39B;
+
+  --text-white: #FFFFFF;
+  --text-black: #000000;
+
+
+  /* =========================
+     BORDER
+  ========================= */
+  --border-default: #D8D2C5;
+  --border-primary: #C45A3C;
+  --border-secondary: #292A27;
+
+  --border-glass: rgba(255,255,255,0.45);
+  --border-dark-glass: rgba(255,255,255,0.12);
+
+
+  /* =========================
+     GRADIENT
+  ========================= */
+  --gradient-primary-secondary:
+    linear-gradient(
+      135deg,
+      #C45A3C 0%,
+      #292A27 100%
+    );
+
+
+  /* =========================
+     GLASS
+  ========================= */
+  --glass-white: rgba(255,255,255,0.58);
+  --glass-primary: rgba(196,90,60,0.08);
+  --glass-dark: rgba(41,42,39,0.82);
+
+
+  /* =========================
+     SHADOW
+  ========================= */
+  --shadow-xs:
+    0 2px 10px rgba(41,42,39,0.05);
+  --shadow-sm:
+    0 8px 24px rgba(41,42,39,0.07);
+  --shadow-md:
+    0 14px 35px rgba(41,42,39,0.10);
+  --shadow-primary:
+    0 14px 35px rgba(196,90,60,0.18);
+  --shadow-primary-strong:
+    0 18px 45px rgba(196,90,60,0.22);
+  --shadow-secondary:
+    0 18px 45px rgba(41,42,39,0.18);
+
 }
 
 :root {
