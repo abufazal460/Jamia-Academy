@@ -35,15 +35,15 @@ const Home = () => {
       <main className="w-full min-h-screen">
         <Hero />
 
-        <WhyChooseUs />
-
-        <Testimonials />
-
-        <FAQ />
-
         <AccreditationSection />
 
         <FeatureSection />
+        
+        <Testimonials />
+
+        <WhyChooseUs />
+
+        <FAQ />
 
         <CourseGallerySection />
       </main>
