@@ -12,13 +12,17 @@ const Course = () => {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    itemListElement: coursesData.map((course, index) => ({
+    "itemListElement": coursesData.map((course, index) => ({
       "@type": "Course",
-      position: index + 1,
-      name: course.title,
-      description: course.description,
-      provider: { "@type": "Organization", name: "Jamia Academy" },
-    })),
+      "position": index + 1,
+      "name": course.title,
+      "description": course.description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Jamia Academy",
+        "sameAs": "https://www.jamiaacademy.in/"
+      }
+    }))
   };
 
   return (
