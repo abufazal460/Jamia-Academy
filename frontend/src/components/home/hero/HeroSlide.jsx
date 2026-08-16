@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { imageVariants, imageReducedVariants } from "../../../animations/heroAnimations";
 
 const HeroSlide = ({ slide, isFirst, prefersReducedMotion }) => {

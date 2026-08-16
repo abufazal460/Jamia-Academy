@@ -6,7 +6,7 @@ import { WORD_ONE, WORD_TWO, buildExplosionVector, LUXURY_EASE } from './animati
 import './introLoader.css';
 
 const STORAGE_KEY = 'jamia:intro-played';
-const LOGO_SETTLE_DELAY = 2000; // letters finish arriving (~1.8-2s with new config)
+const LOGO_SETTLE_DELAY = 1000; // letters finish arriving (~1.8-2s with new config)
 const EXPLOSION_DURATION = 650;
 
 /**

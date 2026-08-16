@@ -8,7 +8,7 @@ const PAGE_TITLE = `${PAGE_CONTENT.title} · Jamia Academy`;
 const PAGE_DESCRIPTION = PAGE_CONTENT.subtitle;
 
 export default function Certificate() {
-  const canonicalUrl = typeof window !== "undefined" ? `${window.location.origin}/certificate` : "/certificate";
+  const canonicalUrl = "https://www.jamiaacademy.in/course";
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -33,6 +33,12 @@ export default function Certificate() {
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
 
       <SpaceBackground />

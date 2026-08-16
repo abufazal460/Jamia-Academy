@@ -4,8 +4,7 @@ import { LoginCard } from "../components/login";
 import { Helmet } from "react-helmet-async";
 import loginData from "../data/loginData";
 
-const canonicalUrl = typeof window !== "undefined" ? `${window.location.origin}/login` : "/login";
-function Login() {
+const canonicalUrl = "https://www.jamiaacademy.in/course"; function Login() {
   return (
     <LazyMotion features={domAnimation}>
       <Helmet>
@@ -19,6 +18,12 @@ function Login() {
         <meta property="og:url" content={canonicalUrl} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={loginData.meta.pageTitle} />
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
       <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden  px-4 py-10 sm:px-6">
         {/* Existing project background — do not modify */}

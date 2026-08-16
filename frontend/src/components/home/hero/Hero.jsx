@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 import { heroSlides } from "../../../data/heroData";
 import useHeroSlider from "../../../hooks/useHeroSlider";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";

@@ -1,8 +1,4 @@
-// File: About.jsx
-// Purpose: Jamia Academy About page ka composition root — sirf layout arrange karta hai
-// Responsibility: Future sections ko sahi order me import + render karna, koi UI/business logic nahi
-// Future Usage: Phase 2 me har section (Hero, Founder, Timeline, etc.) yaha ek-ek karke plug hogi
-// Dependencies: react, motion/react, react-helmet-async, @/animations/aboutAnimations, @/components/about
+
 
 // 1. React
 import React from "react";
@@ -13,10 +9,6 @@ import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import { Suspense, lazy } from "react";
 
-
-// 3. Internal Components
-// NOTE: Ye saare imports abhi commented hain kyunki respective components
-// Phase 2/3 me banenge. Component banते hi yaha uncomment karna hai.
 
 import {
   HeroAbout,
@@ -34,6 +26,7 @@ import { pageTransition } from "../animations/aboutAnimations";
 const FacultyGrid = lazy(() => import("../components/about/faculty/FacultyGrid"));
 const WhyChooseUs = lazy(() => import("../components/about/whychooseus/WhyChooseUs"));
 const TimelineSection = lazy(() => import("../components/about/timeline/TimelineSection"));
+
 
 const About = () => {
   return (
@@ -54,6 +47,13 @@ const About = () => {
         <meta property="og:url" content="https://www.jamiaacademy.in/about" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | Jamia Academy" />
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
 
       {/* Page-level transition wrapper — sirf entrance/exit fade, koi section animation nahi */}

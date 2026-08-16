@@ -7,19 +7,22 @@ const PAGE_DESCRIPTION =
   "Explore Jamia Academy's courses — check duration, level, fees and eligibility, then enroll directly on WhatsApp.";
 
 const Course = () => {
-  const canonicalUrl =
-    typeof window !== "undefined" ? `${window.location.origin}/course` : "/course";
+  const canonicalUrl = "https://www.jamiaacademy.in/course";
 
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    itemListElement: coursesData.map((course, index) => ({
+    "itemListElement": coursesData.map((course, index) => ({
       "@type": "Course",
-      position: index + 1,
-      name: course.title,
-      description: course.description,
-      provider: { "@type": "Organization", name: "Jamia Academy" },
-    })),
+      "position": index + 1,
+      "name": course.title,
+      "description": course.description,
+      "provider": {
+        "@type": "Organization",
+        "name": "Jamia Academy",
+        "sameAs": "https://www.jamiaacademy.in/"
+      }
+    }))
   };
 
   return (
@@ -37,8 +40,15 @@ const Course = () => {
         <meta name="twitter:title" content={PAGE_TITLE} />
         <meta name="twitter:description" content={PAGE_DESCRIPTION} />
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
       <main>
+        <h1 className="sr-only">Computer Courses at Jamia Academy — Web Development, Data Analytics, AI & More</h1>
         <CourseSection />
       </main>
     </>

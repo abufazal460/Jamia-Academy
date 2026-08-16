@@ -50,7 +50,7 @@ export default function Gallery() {
   const isLightboxOpen = lightboxIndex !== null;
 
   return (
-    <section className="mx-auto w-full max-w-[1920px] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 2xl:px-16">
+    <main className="mx-auto w-full max-w-[1920px] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 2xl:px-16">
       <Helmet>
         <title>Gallery | Jamia Academy</title>
         <meta
@@ -67,6 +67,13 @@ export default function Gallery() {
         <meta property="og:url" content="https://www.jamiaacademy.in/gallery" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Gallery | Jamia Academy" />
+        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
 
       {/* Page heading */}
@@ -109,6 +116,6 @@ export default function Gallery() {
           />
         )}
       </AnimatePresence>
-    </section>
+    </main>
   );
 }

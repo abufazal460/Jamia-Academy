@@ -11,34 +11,7 @@ import { coursesData as courses } from "../../data/courses.data";
 import { useCourseFilter } from "../../hooks/useCourseFilter";
 import { openWhatsApp } from "../../utils/whatsapp";
 
-/**
- * CourseSection.jsx  —  Corrected Integration (Production Audit fix)
- * =========================================================================
- * AUDIT ME MILA BUG: Pehle wali file `courses.data.js` se `{ courses }`
- * import kar rahi thi, jabki actual export `coursesData` hai — isse
- * page render hote hi crash hoti thi. Yahan named import ko alias kiya:
- * `coursesData as courses` — baaki poore file me variable naam same
- * rakha taaki neeche ka code minimal badle.
- *
- * SEARCH OWNERSHIP FIX: `CourseSearch.jsx` khud apna `useCourseSearch`
- * call karta hai aur apna "OUR COURSES" heading bhi render karta hai —
- * isliye CourseSection ab duplicate heading/search state NAHI rakhta.
- * Search ka final result `onResultsChange` callback se yahan aata hai.
- * Data flow ab: CourseSearch (apna state+heading) -> onResultsChange
- * -> yahan `searchedCourses` me store -> useCourseFilter().applyFilters()
- * -> CourseGrid.
- *
- * FILTER FIX: `useCourseFilter()` zero-argument hook hai jo
- * { filters, setFilters, resetFilters, applyFilters } deta hai —
- * `applyFilters(list)` khud call karna padta hai, hook khud filter
- * kiya hua array nahi deta. Pehle wala code isko array maan raha tha.
- *
- * MODAL + ENROLL FIX: CourseGrid ab `onViewDetails`/`onEnroll` dono
- * pass karta hai (CourseCard ka real prop contract). Enroll click par
- * seedha `openWhatsApp` call hota hai — EnrollButton.jsx ki tarah hi
- * whatsapp.js ka istemal, bina us component ko touch kiye.
- * =========================================================================
- */
+
 
 const CourseSection = () => {
   // CourseSearch apna query state khud rakhta hai — yahan sirf uska
