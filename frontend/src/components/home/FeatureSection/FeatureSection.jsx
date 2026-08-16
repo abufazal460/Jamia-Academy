@@ -59,6 +59,7 @@ const FeatureSection = () => {
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}
         >
+          <h2 className="sr-only">Why Join Jamia Academy</h2>
           <m.ul
             role="list"
             aria-label="Reasons to join"
