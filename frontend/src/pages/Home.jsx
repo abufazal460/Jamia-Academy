@@ -31,6 +31,8 @@ const Home = () => {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
       <main className="w-full min-h-screen">
         <Hero />
@@ -38,7 +40,7 @@ const Home = () => {
         <AccreditationSection />
 
         <FeatureSection />
-        
+
         <Testimonials />
 
         <WhyChooseUs />

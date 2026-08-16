@@ -22,6 +22,8 @@ const canonicalUrl = "https://www.jamiaacademy.in/course"; function Login() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
       <main className="relative flex min-h-svh w-full items-center justify-center overflow-hidden  px-4 py-10 sm:px-6">
         {/* Existing project background — do not modify */}

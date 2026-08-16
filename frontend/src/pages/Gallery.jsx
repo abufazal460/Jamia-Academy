@@ -72,6 +72,8 @@ export default function Gallery() {
         <meta property="og:image:height" content="630" />
         <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:site_name" content="Jamia Academy" />
+        <meta property="og:locale" content="en_IN" />
       </Helmet>
 
       {/* Page heading */}
