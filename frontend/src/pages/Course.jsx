@@ -7,7 +7,7 @@ const PAGE_DESCRIPTION =
   "Explore Jamia Academy's courses — check duration, level, fees and eligibility, then enroll directly on WhatsApp.";
 
 const Course = () => {
- const canonicalUrl = "https://www.jamiaacademy.in/course";
+  const canonicalUrl = "https://www.jamiaacademy.in/course";
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -38,6 +38,7 @@ const Course = () => {
         <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
       </Helmet>
       <main>
+        <h1 className="sr-only">Computer Courses at Jamia Academy — Web Development, Data Analytics, AI & More</h1>
         <CourseSection />
       </main>
     </>

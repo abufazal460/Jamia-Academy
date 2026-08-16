@@ -31,9 +31,9 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
 
   return (
     <div className={twMerge("flex w-full items-center justify-between gap-4", className)}>
-      <h2 className="text-xl font-bold px-1 tracking-wide text-white sm:text-2xl">
+      <h1 className="text-xl font-bold px-1 tracking-wide text-white sm:text-2xl">
         OUR COURSES
-      </h2>
+      </h1>
 
       <motion.div
         layout
