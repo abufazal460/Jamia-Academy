@@ -2,7 +2,7 @@ import SectionHeader from "./SectionHeader";
 import InfiniteGallery from "./InfiniteGallery";
 import BrowseCoursesCTA from "./BrowseCoursesCTA";
 
-import { galleryData } from "../../../data/galleryData";
+import { galleryData } from "../../data/gallery.data";
 
 export default function CourseGallerySection() {
   const GALLERY_COLUMNS = { desktop: 3, tablet: 2, mobile: 1 };
