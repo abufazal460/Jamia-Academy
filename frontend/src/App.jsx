@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/navigation/Navbar";
 import Footer from "./components/footer/Footer";
-import { IntroLoader, useAppReady } from "./components/introLoader";
+import { IntroLoader, useAppReady } from "./App/ui/intro-loader";
 import {
   PageTransitionProvider,
   RouteTransitionWatcher,
