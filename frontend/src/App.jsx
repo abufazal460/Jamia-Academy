@@ -16,7 +16,7 @@ const CoursesPage = lazy(() => import("./pages/CoursesPage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
 const Login = lazy(() => import("./pages/Login"));
-const Certificate = lazy(() => import("./pages/Certificate"));
+const CertificatePage = lazy(() => import("./pages/CertificatePage"));
 
 export default function App() {
   const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
@@ -37,7 +37,7 @@ export default function App() {
                 <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/certificate" element={<Certificate />} />
+                <Route path="/certificate" element={<CertificatePage />} />
               </Routes>
               <Footer />
             </Suspense>
