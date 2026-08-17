@@ -2,7 +2,7 @@
 
 import React, { memo } from 'react';
 import { motion } from 'motion/react';
-import { cardVariants } from './animations';
+import { cardVariants } from '../../hooks/animations';
 
 const WhyChooseCard = memo(({ card, index }) => {
   const Icon = card.icon;
@@ -57,9 +57,9 @@ const WhyChooseCard = memo(({ card, index }) => {
         </motion.div>
 
         {/* Title */}
-        <motion.h3 
+        <motion.h3
           className="font-['Poppins']  font-bold text-xltext-[#2B2D42] mb-2"
-          whileHover={{ 
+          whileHover={{
             x: 4,
             transition: { duration: 0.2 }
           }}
@@ -77,7 +77,7 @@ const WhyChooseCard = memo(({ card, index }) => {
       <motion.div
         className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${card.lineGradient} rounded-full`}
         initial={{ width: "0%" }}
-        whileHover={{ 
+        whileHover={{
           width: "100%",
           transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
         }}

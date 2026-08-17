@@ -5,7 +5,7 @@ import {
   heroItemVariants,
   heroReducedContainerVariants,
   heroReducedItemVariants,
-} from "../../../../animations/heroAnimations";
+} from "../../motion/heroAnimations";
 
 /**
  * Eyebrow, heading, description, aur CTA buttons — sab data-driven.

@@ -2,7 +2,7 @@
 
 import React, { useState, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ctaVariants, textButtonVariants } from "./animations";
+import { ctaVariants, textButtonVariants } from "../../hooks/animations";
 import TransitionLink from "../../../../components/pageTransition/TransitionLink";
 
 const WhyChooseCTA = memo(({ data }) => {

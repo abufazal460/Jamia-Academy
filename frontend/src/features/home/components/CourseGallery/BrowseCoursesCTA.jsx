@@ -12,7 +12,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getActiveLenis } from "./galleryAnimation";
+import { getActiveLenis } from "../../motion/galleryAnimation";
 import { usePageTransition } from "../../pageTransition";
 gsap.registerPlugin(ScrollTrigger); // idempotent — already registered elsewhere bhi
 
@@ -87,7 +87,7 @@ export default function BrowseCoursesCTA({
       return;
     }
 
-      // Courses section is page pe nahi mili — SPA route change karo,
+    // Courses section is page pe nahi mili — SPA route change karo,
     // transition ke through (full page reload nahi hoga).
     if (href) navigateWithTransition(href);
   };
