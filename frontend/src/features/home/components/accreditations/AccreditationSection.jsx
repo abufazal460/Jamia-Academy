@@ -1,6 +1,6 @@
 
 import { LazyMotion, domAnimation, m } from "motion/react";
-import { accreditationsData } from "../../../../data/accreditations.data";
+import { accreditationsData } from "../../data/accreditations.data";
 import {
   VIEWPORT_REPLAY,
   textStaggerContainer,
