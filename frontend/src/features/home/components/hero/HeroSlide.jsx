@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { imageVariants, imageReducedVariants } from "../../motion/heroAnimations";
+import { imageVariants, imageReducedVariants } from "../../motion/hero.motion";
 
 const HeroSlide = ({ slide, isFirst, prefersReducedMotion }) => {
   const variants = prefersReducedMotion ? imageReducedVariants : imageVariants;

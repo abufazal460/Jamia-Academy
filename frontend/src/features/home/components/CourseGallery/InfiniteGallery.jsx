@@ -22,7 +22,7 @@ import {
   killScrollTriggers,
   refreshScrollTrigger,
   waitForImagesToLoad,
-} from "../../motion/galleryAnimation";
+} from "../../motion/gallery.motion";
 
 // SSR-safe layout effect (Vite/CSR app mein useLayoutEffect hi chalega,
 // lekin future-proofing ke liye yeh pattern common hai)

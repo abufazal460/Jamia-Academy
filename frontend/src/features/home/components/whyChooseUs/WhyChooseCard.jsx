@@ -2,7 +2,7 @@
 
 import React, { memo } from 'react';
 import { motion } from 'motion/react';
-import { cardVariants } from '../../hooks/why-choose-us.motion';
+import { cardVariants } from '../../motion/why-choose-us.motion';
 
 const WhyChooseCard = memo(({ card, index }) => {
   const Icon = card.icon;

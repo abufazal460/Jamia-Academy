@@ -5,7 +5,7 @@ import { motion } from 'motion/react';
 import WhyChooseCard from './WhyChooseCard';
 import WhyChooseCTA from './WhyChooseCTA';
 import { whyChooseData, ctaData, sectionData } from '../../data/why-choose-us.data';
-import { containerVariants, headingVariants, paragraphVariants } from '../../hooks/why-choose-us.motion';
+import { containerVariants, headingVariants, paragraphVariants } from '../../motion/why-choose-us.motion';
 
 const WhyChooseUs = memo(() => {
   return (
