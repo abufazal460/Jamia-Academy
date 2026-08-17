@@ -11,7 +11,7 @@ import SmoothScroll from "./components/smoothScroll/SmoothScroll";
 import OrganizationSchema from "./components/seo/OrganizationSchema";
 
 const HomePage = lazy(() => import("./pages/HomePage"));
-const About = lazy(() => import("./pages/About"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
 const Course = lazy(() => import("./pages/Course"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -32,7 +32,7 @@ export default function App() {
               <RouteTransitionWatcher />
               <Routes>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<About />} />
+                <Route path="/about" element={<AboutPage />} />
                 <Route path="/course" element={<Course />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="/contact" element={<Contact />} />
