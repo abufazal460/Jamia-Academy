@@ -3,7 +3,7 @@
 import React, { useState, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ctaVariants, textButtonVariants } from "./animations";
-import TransitionLink from "../../pageTransition/TransitionLink";
+import TransitionLink from "../../../../components/pageTransition/TransitionLink";
 
 const WhyChooseCTA = memo(({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -118,26 +118,26 @@ const WhyChooseCTA = memo(({ data }) => {
         >
           <TransitionLink to="/course" className="block">
 
-          <motion.button
-            onClick={handleClick}
-            onHoverStart={() => setIsHovered(true)}
-            onHoverEnd={() => setIsHovered(false)}
-            whileHover={{
-              y: -3,
-              scale: 1.02,
-              boxShadow: "0 20px 40px -10px rgba(0,0,0,0.3)",
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            className="relative px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden group"
-            style={{
-              background: "linear-gradient(135deg, #E63946 0%, #C1121F 100%)",
-              boxShadow: "0 10px 20px -5px rgba(230, 57, 70, 0.4)",
-            }}
-          >
-            <ButtonContent />
-          </motion.button>
+            <motion.button
+              onClick={handleClick}
+              onHoverStart={() => setIsHovered(true)}
+              onHoverEnd={() => setIsHovered(false)}
+              whileHover={{
+                y: -3,
+                scale: 1.02,
+                boxShadow: "0 20px 40px -10px rgba(0,0,0,0.3)",
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              className="relative px-8 py-4 rounded-2xl font-semibold text-white overflow-hidden group"
+              style={{
+                background: "linear-gradient(135deg, #E63946 0%, #C1121F 100%)",
+                boxShadow: "0 10px 20px -5px rgba(230, 57, 70, 0.4)",
+              }}
+            >
+              <ButtonContent />
+            </motion.button>
           </TransitionLink>
           <TransitionLink to="/contact" className="block">
             <motion.button

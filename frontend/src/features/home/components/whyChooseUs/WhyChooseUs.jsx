@@ -4,7 +4,7 @@ import React, { memo } from 'react';
 import { motion } from 'motion/react';
 import WhyChooseCard from './WhyChooseCard';
 import WhyChooseCTA from './WhyChooseCTA';
-import { whyChooseData, ctaData, sectionData } from '../../../data/whyChooseUsData';
+import { whyChooseData, ctaData, sectionData } from '../../../../data/whyChooseUsData';
 import { containerVariants, headingVariants, paragraphVariants } from './animations';
 
 const WhyChooseUs = memo(() => {
@@ -17,14 +17,14 @@ const WhyChooseUs = memo(() => {
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.6, 0.3]
         }}
-         viewport={{ once: false, amount: 0.1 }}
+        viewport={{ once: false, amount: 0.1 }}
         transition={{
           duration: 8,
           repeat: Infinity,
           ease: "easeInOut"
         }}
       />
-      
+
       <motion.div
         className="absolute -bottom-40  -right-40 w-96 h-96 bg-[#2A9D8F]/5 rounded-full blur-3xl pointer-events-none"
         animate={{

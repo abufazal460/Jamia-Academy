@@ -1,11 +1,11 @@
 import { Helmet } from "react-helmet-async";
-import Hero from "../components/home/hero/Hero";
-import AccreditationSection from "../components/home/AccreditationSection/AccreditationSection";
-import FeatureSection from "../components/home/FeatureSection/FeatureSection";
+import Hero from "../features/home/components/hero/Hero";
+import AccreditationSection from "../features/home/components/accreditations/AccreditationSection";
+import FeatureSection from "../features/home/components/features/FeatureSection";
 import FAQ from "../components/faq/FAQ";
-import CourseGallerySection from "../components/home/CourseGallery/CourseGallerySection";
-import WhyChooseUs from "../components/home/whyChooseUs/WhyChooseUs";
-import Testimonials from "../components/home/testimonials";
+import CourseGallerySection from "../features/home/components/CourseGallery/CourseGallerySection";
+import WhyChooseUs from "../features/home/components/WhyChooseUs/WhyChooseUs";
+import Testimonials from "../features/home/components/testimonials/Testimonials";
 
 const PAGE_TITLE = "Jamia Academy | Computer, Web Development, AI & Skill Courses in Delhi";
 const PAGE_DESCRIPTION =

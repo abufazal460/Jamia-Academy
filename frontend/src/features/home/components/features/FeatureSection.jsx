@@ -16,7 +16,7 @@
  */
 
 import { LazyMotion, domAnimation, m } from "motion/react";
-import { featuresData } from "../../../data/features.data";
+import { featuresData } from "../../../../data/features.data";
 import {
   VIEWPORT_REPLAY,
   cardStaggerContainer,
@@ -24,11 +24,11 @@ import {
   getCardVariant,
   cardHoverLift,
   iconHoverRotate,
-} from "../../../animations/variants";
+} from "../../../../animations/variants";
 import {
   SECTION_CONTAINER,
   SECTION_PADDING_Y,
-} from "../../../constants/layout.constants";
+} from "../../../../constants/layout.constants";
 
 const FeatureSection = () => {
   return (

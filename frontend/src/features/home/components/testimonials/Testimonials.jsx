@@ -7,7 +7,7 @@ import TestimonialRow from "./TestimonialRow";
 import {
   testimonialsRowOne,
   testimonialsRowTwo,
-} from "../../../data/testimonialsData";
+} from "../../../../data/testimonialsData";
 import "./testimonials.css";
 
 const Testimonials = () => {
