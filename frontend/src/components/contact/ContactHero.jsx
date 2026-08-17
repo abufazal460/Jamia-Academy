@@ -7,7 +7,7 @@ import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
 import { resolveIcon } from "../../utils/iconResolver";
 import TransitionLink from "../pageTransition/TransitionLink"
 
-import contactImg from "../../assets/images/galleryclassroom/1.jpg"
+// import contactImg from "../../assets/images/galleryclassroom/1.jpg"
 
 const ACCENT_MAP = {
   primary: "#E63946",
