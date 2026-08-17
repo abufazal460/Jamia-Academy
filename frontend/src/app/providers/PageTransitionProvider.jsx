@@ -1,8 +1,8 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TransitionContext from "./TransitionContext";
-import PageTransition from "./PageTransition";
-import { TRANSITION_TIMING } from "./transitionPaths";
+import TransitionContext from "../../components/pageTransition/TransitionContext";
+import PageTransition from "../../components/pageTransition/PageTransition";
+import { TRANSITION_TIMING } from "../../components/pageTransition/transitionPaths";
 
 const wait = (seconds) =>
   new Promise((resolve) => setTimeout(resolve, seconds * 1000));
@@ -36,7 +36,7 @@ export default function PageTransitionProvider({ children }) {
     document.body.style.overflow = previousOverflowRef.current || "";
   }, []);
 
- const finishTransition = useCallback(async () => {
+  const finishTransition = useCallback(async () => {
     if (!transitionRef.current) {
       // Even without the SVG ref, still reset scroll so the new page
       // never opens mid-way down (e.g. where the Footer used to be).
@@ -108,7 +108,7 @@ export default function PageTransitionProvider({ children }) {
       // animation plays", THIS branch is firing — meaning something
       // is navigating without going through navigateWithTransition.
       // Audit your Links/useNavigate() calls (see Step 1 above).
-     if (transitionRef.current) {
+      if (transitionRef.current) {
         transitionRef.current
           .playCover()
           .then(() => {
@@ -122,7 +122,7 @@ export default function PageTransitionProvider({ children }) {
               });
             });
           })
-          .catch(() => {});
+          .catch(() => { });
       }
       return;
     }

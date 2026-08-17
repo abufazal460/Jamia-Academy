@@ -14,7 +14,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
-import { getLenisInstance } from "../../smoothScroll/SmoothScroll";
+import { getLenisInstance } from "../../../app/providers/SmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 

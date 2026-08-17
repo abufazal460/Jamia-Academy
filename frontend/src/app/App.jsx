@@ -7,7 +7,7 @@ import {
   PageTransitionProvider,
   RouteTransitionWatcher,
 } from "../components/pageTransition";
-import SmoothScroll from "../components/smoothScroll/SmoothScroll";
+import SmoothScroll from "./providers/SmoothScroll";
 import OrganizationSchema from "../components/seo/OrganizationSchema";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
@@ -22,7 +22,7 @@ export default function App() {
   const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
   return (
     <>
-    <OrganizationSchema />
+      <OrganizationSchema />
       {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
       <IntroLoader appReady={appReady}>
         <PageTransitionProvider>
