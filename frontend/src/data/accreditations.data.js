@@ -1,9 +1,9 @@
 
 
-import msme from "../assets/logo/msme.png";
-import neilit from "../assets/logo/nielit.jpeg";
-import nitiAyog from "../assets/logo/niti-aayog.jpeg";
-import skillIndia from "../assets/logo/skill-india.png";
+import msme from "../assets/icons/msme.png";
+import neilit from "../assets/icons/nielit.jpeg";
+import nitiAyog from "../assets/icons/niti-aayog.jpeg";
+import skillIndia from "../assets/icons/skill-india.png";
 
 /**
  * @typedef {Object} AccreditationItem
