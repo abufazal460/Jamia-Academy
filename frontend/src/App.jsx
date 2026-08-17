@@ -10,13 +10,13 @@ import {
 import SmoothScroll from "./components/smoothScroll/SmoothScroll";
 import OrganizationSchema from "./components/seo/OrganizationSchema";
 
-const Home = lazy(() => import("./pages/Home"));
-const About = lazy(() => import("./pages/About"));
-const Course = lazy(() => import("./pages/Course"));
-const Gallery = lazy(() => import("./pages/Gallery"));
-const Contact = lazy(() => import("./pages/Contact"));
-const Login = lazy(() => import("./pages/Login"));
-const Certificate = lazy(() => import("./pages/Certificate"));
+const HomePage = lazy(() => import("./pages/HomePage"));
+const AboutPage = lazy(() => import("./pages/AboutPage"));
+const CoursesPage = lazy(() => import("./pages/CoursesPage"));
+const GalleryPage = lazy(() => import("./pages/GalleryPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const CertificatePage = lazy(() => import("./pages/CertificatePage"));
 
 export default function App() {
   const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
@@ -31,13 +31,13 @@ export default function App() {
               <Navbar />
               <RouteTransitionWatcher />
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/course" element={<Course />} />
-                <Route path="/gallery" element={<Gallery />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/certificate" element={<Certificate />} />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
+                <Route path="/course" element={<CoursesPage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/certificate" element={<CertificatePage />} />
               </Routes>
               <Footer />
             </Suspense>

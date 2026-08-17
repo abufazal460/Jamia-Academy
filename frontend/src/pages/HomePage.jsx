@@ -12,7 +12,7 @@ const PAGE_DESCRIPTION =
   "Jamia Academy, Jamia Nagar Delhi — offline, instructor-led computer, web development, data analytics, design, and AI courses with individual student attention.";
 const CANONICAL_URL = "https://www.jamiaacademy.in/";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Helmet>
@@ -53,4 +53,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
