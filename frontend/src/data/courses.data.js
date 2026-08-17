@@ -6,9 +6,9 @@
 //
 // Naya course add karna ho to sirf ek naya object is array me push karo —
 // koi component code change karne ki zaroorat nahi padegi.
-import img1 from "../assets/images/courses/971.jpg"
-import img2 from "../assets/images/courses/developer_male.jpg"
-import img3 from "../assets/images/courses/person-playing-3d-video-games-device.jpg"
+import img1 from "../assets/images/courses/course-section/971.jpg"
+import img2 from "../assets/images/courses/course-section/developer_male.jpg"
+import img3 from "../assets/images/courses/course-section/person-playing-3d-video-games-device.jpg"
 
 
 export const coursesData = [
