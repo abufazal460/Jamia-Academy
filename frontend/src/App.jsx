@@ -15,7 +15,7 @@ const AboutPage = lazy(() => import("./pages/AboutPage"));
 const CoursesPage = lazy(() => import("./pages/CoursesPage"));
 const GalleryPage = lazy(() => import("./pages/GalleryPage"));
 const ContactPage = lazy(() => import("./pages/ContactPage"));
-const Login = lazy(() => import("./pages/Login"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
 const CertificatePage = lazy(() => import("./pages/CertificatePage"));
 
 export default function App() {
@@ -36,7 +36,7 @@ export default function App() {
                 <Route path="/course" element={<CoursesPage />} />
                 <Route path="/gallery" element={<GalleryPage />} />
                 <Route path="/contact" element={<ContactPage />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/login" element={<LoginPage />} />
                 <Route path="/certificate" element={<CertificatePage />} />
               </Routes>
               <Footer />
