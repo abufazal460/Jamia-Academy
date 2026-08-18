@@ -1,14 +1,14 @@
 import { memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Eye, EyeOff } from "lucide-react";
-import { useFloatingLabel } from "../../hooks/useFloatingLabel";
-import { usePasswordToggle } from "../../hooks/usePasswordToggle";
+import { useFloatingLabel } from "../../../../hooks/useFloatingLabel";
+import { usePasswordToggle } from "../hooks/usePasswordToggle";
 import {
   floatingLabelVariants,
   errorMessageVariants,
   iconToggleVariants,
-} from "../../utils/animationVariants";
-import { loginData } from "../../data/loginData";
+} from "../../../../utils/animationVariants";
+import { loginData } from "../data/login.data";
 
 /**
  * PasswordInput

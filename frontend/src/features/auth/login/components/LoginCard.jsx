@@ -2,13 +2,13 @@ import { memo } from "react";
 import { motion } from "motion/react";
 import GlassPanel from "./GlassPanel";
 import LoginForm from "./LoginForm";
-import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
-import { loginData } from "../../data/loginData";
+import { usePrefersReducedMotion } from "../../../../hooks/usePrefersReducedMotion";
+import { loginData } from "../data/login.data";
 import {
   cardVariants,
   headingVariants,
   reducedMotionVariants,
-} from "../../utils/animationVariants";
+} from "../../../../utils/animationVariants";
 
 /**
  * LoginCard
