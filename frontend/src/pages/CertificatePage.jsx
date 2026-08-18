@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import SpaceBackground from "../components/contactBackground/SpaceBackground";
-import { PageHeading, CertificateCard } from "../components/certificate";
-import { PAGE_CONTENT } from "../data/certificateData";
+import { PageHeading, CertificateCard } from "../features/certificate/components";
+import { PAGE_CONTENT } from "../features/certificate/data/certificate.data";
 
 
 const PAGE_TITLE = `${PAGE_CONTENT.title} · Jamia Academy`;
