@@ -1,20 +1,5 @@
 import { memo } from "react";
 
-/**
- * CourseCardSkeleton.jsx
- * -----------------------------------------------------------------------
- * Kyu chahiye: Jab courses.data.js se data load ho raha ho (ya future me
- * API se aaye), tab layout shift (CLS) rokne ke liye skeleton dikhate hain.
- * Low-end devices par bhi "kuch ho raha hai" feel milta hai — real content
- * jaisa hi size/shape rakha hai taaki swap smooth lage.
- *
- * Performance note: Yeh pure CSS animation (Tailwind's animate-pulse) use
- * karta hai, JS-driven animation nahi — GSAP/Motion ka overhead yahan
- * avoid kiya gaya hai kyunki skeleton loop me repeated animation cheap
- * rehni chahiye 60fps ke liye, especially low-end mobiles par.
- * -----------------------------------------------------------------------
- */
-
 const CourseCardSkeleton = () => {
   return (
     <div
@@ -59,6 +44,4 @@ const CourseCardSkeleton = () => {
   );
 };
 
-/* memo lagaya kyunki grid me 6-12 skeletons ek saath render honge,
-   re-render se bachne ke liye is component ko pure rakha */
 export default memo(CourseCardSkeleton);

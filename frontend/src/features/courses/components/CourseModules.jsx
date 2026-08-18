@@ -1,14 +1,4 @@
-/**
- * CourseModules
- *
- * course.details.modules array ko dynamically render karta hai — chahe
- * ek module ho ya das, ye component bina badle sabko handle kar leta hai.
- * Module number (Module 1, Module 2...) bhi array index se generate hota
- * hai, data me hardcode nahi karna padta.
- *
- * Props:
- * - modules: [{ title: string, topics: string[] }]
- */
+
 export default function CourseModules({ modules }) {
   if (!modules || modules.length === 0) return null;
 

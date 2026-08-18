@@ -1,14 +1,7 @@
 import { twMerge } from "tailwind-merge";
 
-/**
- * InfoChip (internal, not exported)
- *
- * Chhota reusable "label + value" card — duration/level/batch/fees sab
- * isi se bante hain, taaki styling ek hi jagah maintain ho.
- */
 function InfoChip({ label, value }) {
-  // Data missing ho to chip hi render mat karo — khaali/undefined values
-  // wali cards dikhana premium UI ke against hai.
+
   if (!value) return null;
 
   return (
@@ -19,19 +12,6 @@ function InfoChip({ label, value }) {
   );
 }
 
-/**
- * CourseDetails
- *
- * Course ki core information dikhata hai: description, duration, level,
- * batch, fees, eligibility, certificate, career options. Title CourseModal
- * ke header me already render hota hai, isliye yahan duplicate nahi kiya.
- *
- * Sab kuch `course` prop se aata hai — koi bhi text yahan hardcoded nahi,
- * isliye backend se data aane par bhi ye component bina badle chalega.
- *
- * Props:
- * - course: poora course object
- */
 export default function CourseDetails({ course }) {
   if (!course) return null;
 
@@ -41,8 +21,6 @@ export default function CourseDetails({ course }) {
     <div className={twMerge("flex flex-col gap-6")}>
       <p className="text-sm leading-relaxed text-neutral-300 sm:text-base">{description}</p>
 
-      {/* Quick-facts grid — sabse zyada scanned info ek hi jagah, table nahi
-          balki chips me taaki mobile pe bhi easily wrap ho jaaye. */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <InfoChip label="Duration" value={duration ? `${duration.value} ${duration.unit}` : null} />
         <InfoChip label="Level" value={level?.name} />

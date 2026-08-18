@@ -7,9 +7,9 @@ import CourseFilter from "./CourseFilter";
 import CourseGrid from "./CourseGrid";
 import CourseModal from "./CourseModal";
 
-import { coursesData as courses } from "../../data/courses.data";
-import { useCourseFilter } from "../../hooks/useCourseFilter";
-import { openWhatsApp } from "../../utils/whatsapp";
+import { coursesData as courses } from "../data/courses.data";
+import { useCourseFilter } from "../hooks/useCourseFilter";
+import { openWhatsApp } from "../../../utils/whatsapp";
 
 
 

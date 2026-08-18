@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Search, X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
-import { useCourseSearch } from "../../hooks/useCourseSearch";
+import { useCourseSearch } from "../hooks/useCourseSearch";
 
 export default function CourseSearch({ courses = [], onResultsChange, className = "" }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -11,16 +11,12 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
 
   const { searchQuery, setSearchQuery, filteredCourses } = useCourseSearch(courses);
 
-  // Parent state update karna ek side-effect hai, render phase ke andar nahi
-  // karna chahiye — isliye useEffect me, filteredCourses badalte hi fire hota hai.
   useEffect(() => {
     onResultsChange?.(filteredCourses);
   }, [filteredCourses, onResultsChange]);
 
   const handleExpand = () => {
     setIsExpanded(true);
-    // Expand animation shuru hote hi focus mat karo, warna input jump karta
-    // dikhta hai — agla frame aane tak wait karo.
     requestAnimationFrame(() => inputRef.current?.focus());
   };
 
@@ -44,8 +40,7 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
           isExpanded ? "shadow-[0_0_25px_rgba(168,85,247,0.35)]" : "shadow-none"
         )}
       >
-        {/* Subtle gradient glow — hamesha mounted rehta hai, sirf opacity animate
-            hoti hai (transform/opacity-only rule follow karne ke liye). */}
+ 
         <motion.span
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 rounded-full  bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20"
@@ -87,13 +82,6 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
   );
 }
 
-/**
- * CourseEmptyState
- *
- * Reusable "no results" card. Search se zero results milein ya filters se —
- * dono cases me future CourseGrid isi component ko import karke render
- * karega, taaki empty-state UI/copy sirf ek jagah maintain ho.
- */
 export function CourseEmptyState({ className = "" }) {
   return (
     <motion.div

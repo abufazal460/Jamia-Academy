@@ -1,64 +1,37 @@
-// src/data/courses.data.js
-//
-// Ye file Jamia Academy ke poore Course Section ka SINGLE SOURCE OF TRUTH hai.
-// UI (card, modal, search, filters, WhatsApp button) sirf is data ko READ karega —
-// kabhi bhi course ki koi bhi info JSX ke andar hardcode nahi hogi.
-//
-// Naya course add karna ho to sirf ek naya object is array me push karo —
-// koi component code change karne ki zaroorat nahi padegi.
-import img1 from "../assets/images/courses/course-section/971.jpg"
-import img2 from "../assets/images/courses/course-section/developer_male.jpg"
-import img3 from "../assets/images/courses/course-section/person-playing-3d-video-games-device.jpg"
+
+import img1 from "../../../assets/images/courses/course-section/971.jpg"
+import img2 from "../../../assets/images/courses/course-section/developer_male.jpg"
+import img3 from "../../../assets/images/courses/course-section/person-playing-3d-video-games-device.jpg"
 
 
 export const coursesData = [
   {
-    // Basic Information
-    // id -> internal unique key (React keys, modal lookup, WhatsApp message)
-    // slug -> URL-friendly identifier (future course detail page / routing)
     id: "course-001",
     slug: "web-development",
     title: "Web Development",
     shortTitle: "Web Dev",
     description:
       "Learn to design and build modern, responsive websites from scratch using HTML, CSS, and JavaScript.",
-
-    // Image System
-    // thumbnail -> card me use hoga (chhota, fast-loading)
-    // hero -> modal ke andar bada banner image ke liye
     image: {
       thumbnail: img1,
       hero: img1,
     },
-
-    // Batch System
-    // Ye card pe image ke neeche, right side, title ke upar dikhega
     batch: {
       name: "Batch 2026",
       status: "Admissions Open",
       color: "green",
     },
-
-    // Category System — filter ke liye array (ek course multiple category me fit ho sakta hai)
     category: ["Web Development", "Programming"],
-
-    // Duration System — plain text nahi, object hai taaki future me
-    // "3-6 months" jaisa range filter bhi easily ban sake
     duration: {
       value: "6",
       unit: "Months",
     },
-
-    // Level System — poora styling info yahin data me hai,
-    // taaki UI ko kahin aur lookup na karna pade
     level: {
       name: "Beginner",
       icon: "seedling",
       color: "green",
       background: "linear-gradient(135deg, #14532d 0%, #16a34a 100%)",
     },
-
-    // Search System Support
     keywords: [
       "web development",
       "html",
@@ -73,9 +46,6 @@ export const coursesData = [
       "coding sikhna",
       "website design sikhna",
     ],
-
-    // Course Details System — modal khulne par consume hota hai,
-    // isliye card render path halka rehta hai
     details: {
       overview:
         "A foundation-level program covering the core building blocks of the modern web, taking you from a blank page to fully responsive, deployed websites.",
@@ -103,11 +73,6 @@ export const coursesData = [
       certificate: "Jamia Academy Certificate of Completion — Web Development",
       careerOptions: ["Junior Web Developer", "Frontend Trainee", "Freelance Web Designer"],
     },
-
-   
-
-    // Theme System — har course ka apna visual identity,
-    // card background, border animation aur glow sab isi se drive hoga
     theme: {
       primary: "#16a34a",
       secondary: "#4ade80",
@@ -115,15 +80,11 @@ export const coursesData = [
       glow: "0 0 40px rgba(22, 163, 74, 0.45)",
       borderColors: ["#16a34a", "#4ade80", "#bbf7d0"],
     },
-
-    // WhatsApp System — sirf data, message-building logic UI/utils layer me hoga
     whatsapp: {
       enabled: true,
       messageTemplate:
         "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
-
-    // SEO Support
     seo: {
       title: "Web Development Course 2026 | Jamia Academy",
       description:

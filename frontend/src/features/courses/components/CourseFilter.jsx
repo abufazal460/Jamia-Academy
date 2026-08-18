@@ -3,19 +3,10 @@ import { AnimatePresence, motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 
-/**
- * FilterDropdown (internal, not exported)
- *
- * Ek generic glass dropdown — Category/Level/Duration teeno isi se banate
- * hain, taaki dropdown UI/behavior sirf ek jagah maintain ho.
- */
 function FilterDropdown({ label, options, selectedValue, onSelect }) {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef(null);
 
-  // Dropdown ke bahar click hote hi close — koi extra library nahi chahiye,
-  // sirf ek document-level listener jo sirf tab attach hota hai jab
-  // component mounted hai.
   useEffect(() => {
     function handleClickOutside(event) {
       if (containerRef.current && !containerRef.current.contains(event.target)) {
@@ -89,28 +80,6 @@ function FilterDropdown({ label, options, selectedValue, onSelect }) {
   );
 }
 
-/**
- * CourseFilter
- *
- * Category / Level / Duration — desktop pe ek row me (horizontal),
- * mobile pe stacked. Filter options data se derive hote hain
- * (courses.category / course.level.name / course.duration), koi
- * bhi list yahan hardcoded nahi hai — naya category data me add hote hi
- * filter me automatically dikhega.
- *
- * Ye component khud state nahi rakhta — `filters`/`onFilterChange`/`onReset`
- * useCourseFilter hook se aane chahiye (CourseSection isko wire karega):
- *
- *   const { filters, setFilters, resetFilters } = useCourseFilter();
- *   <CourseFilter courses={courses} filters={filters}
- *                 onFilterChange={setFilters} onReset={resetFilters} />
- *
- * Props:
- * - courses:        poora courses array (sirf dropdown options derive karne ke liye)
- * - filters:         { category, level, duration }
- * - onFilterChange: (key, value) => void
- * - onReset:        () => void
- */
 export default function CourseFilter({
   courses = [],
   filters = {},

@@ -94,8 +94,8 @@ export const founder = {
   position: "Former Advisor, State Education Board",
   qualifications: [
     { id: "qual-1", degree: "Ph.D", field: "HR Analytics & Technology", university: "Jamia Millia Islamia" },
-    { id: "qual-2", degree: "MBA", field: "Human Resource Management", university: "AKTU Lucknow" },
-    { id: "qual-3", degree: "BBA", field: "International Business", university: "University of Lucknow" },
+    // { id: "qual-2", degree: "MBA", field: "Human Resource Management", university: "AKTU Lucknow" },
+    // { id: "qual-3", degree: "BBA", field: "International Business", university: "University of Lucknow" },
   ],
  
   // Founder Message section content — used by FounderMessage.jsx
@@ -122,11 +122,11 @@ export const coFounder = {
   // TODO:
   // Replace placeholder image with optimized WebP image.
   image: "/assets/about/cofounder-placeholder.webp",
-  experience: "10+ Years in Academic Leadership",
+  experience: "12+ Years in Academic Leadership",
   qualifications: [
     { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Technology & Artificial Intelligence", university: "Jamia Millia Islamia" },
-    { id: "cf-qual-2", degree: "M.A.", field: "Education", university: "Jawaharlal Nehru University" },
-    { id: "cf-qual-3", degree: "B.A.", field: "Elementary Education", university: "University of Delhi" },
+    // { id: "cf-qual-2", degree: "M.A.", field: "Education", university: "Jawaharlal Nehru University" },
+    // { id: "cf-qual-3", degree: "B.A.", field: "Elementary Education", university: "University of Delhi" },
   ],
   message: {
     label: "A Note From Our Co-Founder",
