@@ -1,5 +1,5 @@
 // Hover/tap interaction variants — used via whileHover / whileTap props
-import { staggerItem } from "./contactVariants";
+import { staggerItem } from "../features/contact/motion/contact.motion";
 
 export const cardHoverVariant = {
   rest: { y: 0, scale: 1 },

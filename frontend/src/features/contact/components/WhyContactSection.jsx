@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
-import { whyContactSection } from "../../data/contactData";
-import { fadeUpVariant, staggerContainer, viewportOnce } from "../../animations/contactVariants";
-import { interactiveCardVariant, iconHoverVariant } from "../../animations/hoverVariants";
-import { resolveIcon } from "../../utils/iconResolver";
+import { whyContactSection } from "../data/contact.data";
+import { fadeUpVariant, staggerContainer, viewportOnce } from "../motion/contact.motion";
+import { interactiveCardVariant, iconHoverVariant } from "../../../animations/hoverVariants";
+import { resolveIcon } from "../../../utils/iconResolver";
 
 const WhyContactSection = () => {
   return (
