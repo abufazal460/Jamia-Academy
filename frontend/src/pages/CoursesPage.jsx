@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
-import CourseSection from "../components/course/CourseSection";
-import { coursesData } from "../data/courses.data";
+import CourseSection from "../features/courses/components/CourseSection";
+import { coursesData } from "../features/courses/data/courses.data";
 
 const PAGE_TITLE = "Courses | Jamia Academy";
 const PAGE_DESCRIPTION =
