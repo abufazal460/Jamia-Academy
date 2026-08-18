@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import { motion } from "motion/react";
-import { buttonExpandVariants } from "../../../../utils/animationVariants";
+import { buttonExpandVariants } from "../../../../shared/utils/animationVariants";
 
 function AnimatedButton({
   idleText,
