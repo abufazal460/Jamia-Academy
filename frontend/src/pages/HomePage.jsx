@@ -4,7 +4,7 @@ import AccreditationSection from "../features/home/components/accreditations/Acc
 import FeatureSection from "../features/home/components/features/FeatureSection";
 import FAQ from "../components/faq/FAQ";
 import CourseGallerySection from "../features/home/components/CourseGallery/CourseGallerySection";
-import WhyChooseUs from "../features/home/components/WhyChooseUs/WhyChooseUs";
+import WhyChooseUs from "../features/home/components/whyChooseUs/WhyChooseUs";
 import Testimonials from "../features/home/components/testimonials/Testimonials";
 
 const PAGE_TITLE = "Jamia Academy | Computer, Web Development, AI & Skill Courses in Delhi";
