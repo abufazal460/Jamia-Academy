@@ -1,8 +1,8 @@
 import { LazyMotion, domAnimation } from "motion/react";
 import SpaceBackground from "../components/contactBackground/SpaceBackground";
-import { LoginCard } from "../components/login";
+import { LoginCard } from "../features/auth/login/components";
 import { Helmet } from "react-helmet-async";
-import loginData from "../data/loginData";
+import loginData from "../features/auth/login/data/login.data";
 
 const canonicalUrl = "https://www.jamiaacademy.in/course"; function Login() {
   return (

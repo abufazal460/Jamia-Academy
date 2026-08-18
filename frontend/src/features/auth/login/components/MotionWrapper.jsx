@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
-import { reducedMotionVariants } from "../../utils/animationVariants";
+import { usePrefersReducedMotion } from "../../../../hooks/usePrefersReducedMotion";
+import { reducedMotionVariants } from "../../../../utils/animationVariants";
 
 /**
  * MotionWrapper

@@ -64,7 +64,7 @@
 // galleryData array mein convert kar dega — koi manual object nahi likhna.
 
 export function buildGalleryData() {
-  const modules = import.meta.glob("../assets/images/courses/empower-course/*.{jpg,jpeg,png,webp}", {
+  const modules = import.meta.glob("../../../assets/images/courses/empower-course/*.{jpg,jpeg,png,webp}", {
     eager: true,
     import: "default",
   });
