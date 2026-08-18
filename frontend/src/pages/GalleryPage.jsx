@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from "react";
 import { AnimatePresence } from "motion/react";
-import { GalleryTabs } from "../components/gallery/GalleryTabs";
-import { GalleryGrid } from "../components/gallery/GalleryGrid";
-import { Lightbox } from "../components/gallery/Lightbox";
-import { useGalleryImages } from "../hooks/useGalleryImages";
+import { GalleryTabs } from "../features/gallery/components/GalleryTabs";
+import { GalleryGrid } from "../features/gallery/components/GalleryGrid";
+import { Lightbox } from "../features/gallery/components/Lightbox";
+import { useGalleryImages } from "../features/gallery/hooks/useGalleryImages";
 import { Helmet } from "react-helmet-async";
 
 

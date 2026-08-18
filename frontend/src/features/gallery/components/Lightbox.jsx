@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
-import { getLenisInstance } from "../../app/providers/SmoothScroll";
+import { getLenisInstance } from "../../../app/providers/SmoothScroll";
 
 const SWIPE_THRESHOLD_PX = 50;
 

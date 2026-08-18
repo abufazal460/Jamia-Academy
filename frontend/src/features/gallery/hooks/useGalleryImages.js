@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { shuffleArray } from "../utils/shuffleArray";
+import { shuffleArray } from "../../../utils/shuffleArray";
 
 
 export function useGalleryImages() {
