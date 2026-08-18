@@ -3,8 +3,8 @@ import { contactHero } from "../data/contact.data";
 import { slideInLeft, slideInRight } from "../motion/contact.motion";
 import { buttonHoverVariant } from "../../../animations/hoverVariants";
 import { floatingCard, noMotion } from "../../../animations/floatingVariants";
-import { usePrefersReducedMotion } from "../../../hooks/usePrefersReducedMotion";
-import { resolveIcon } from "../../../utils/iconResolver";
+import { usePrefersReducedMotion } from "../../../shared/hooks/usePrefersReducedMotion";
+import { resolveIcon } from "../../../shared/utils/iconResolver";
 import TransitionLink from "../../../components/pageTransition/TransitionLink"
 
 // import contactImg from "../../assets/images/galleryclassroom/1.jpg"

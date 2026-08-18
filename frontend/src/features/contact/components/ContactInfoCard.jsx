@@ -3,8 +3,8 @@ import { motion } from "motion/react";
 import { Copy, Check, Phone, MessageCircle, Navigation } from "lucide-react";
 import { interactiveCardVariant } from "../../../animations/hoverVariants";
 import { iconHoverVariant } from "../../../animations/hoverVariants"
-import { resolveIcon } from "../../../utils/iconResolver";
-import { useCopyToClipboard } from "../../../hooks/useCopyToClipboard";
+import { resolveIcon } from "../../../shared/utils/iconResolver";
+import { useCopyToClipboard } from "../../../shared/hooks/useCopyToClipboard";
 
 const ACTION_ICON = {
   call: Phone,
