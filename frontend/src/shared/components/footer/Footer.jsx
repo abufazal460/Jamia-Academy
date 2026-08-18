@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
-import { usePageTransition } from "../pageTransition";
+import { usePageTransition } from "../../../components/pageTransition";
 
 import logo from "../../assets/icons/jamia-academy-Logo.png";
 import msme from "../../assets/icons/msme.png";

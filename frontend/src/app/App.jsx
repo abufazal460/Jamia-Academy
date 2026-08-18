@@ -1,14 +1,14 @@
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import Navbar from "../components/navigation/Navbar";
-import Footer from "../components/footer/Footer";
+import Navbar from "../shared/components/navigation/Navbar";
+import Footer from "../shared/components/footer/Footer";
 import { IntroLoader, useAppReady } from "./ui/intro-loader";
 import {
   PageTransitionProvider,
   RouteTransitionWatcher,
 } from "../components/pageTransition";
 import SmoothScroll from "./providers/SmoothScroll";
-import OrganizationSchema from "../components/seo/OrganizationSchema";
+import OrganizationSchema from "../shared/seo/OrganizationSchema";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
