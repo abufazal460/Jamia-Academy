@@ -2,7 +2,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Search, X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
-import { useCourseSearch } from "../../hooks/useCourseSearch";
+import { useCourseSearch } from "../hooks/useCourseSearch";
 
 export default function CourseSearch({ courses = [], onResultsChange, className = "" }) {
   const [isExpanded, setIsExpanded] = useState(false);
