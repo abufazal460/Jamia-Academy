@@ -3,7 +3,7 @@ import { useState, useCallback } from "react";
 import { motion } from "motion/react";
 import FAQHeader from "./FAQHeader";
 import FAQItem from "./FAQItem";
-import faqData from "../../data/faqData";
+import faqData from "../../data/faq.data";
 
 const containerVariant = {
   hidden: {},
