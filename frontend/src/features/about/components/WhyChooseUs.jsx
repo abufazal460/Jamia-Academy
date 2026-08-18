@@ -1,60 +1,21 @@
-/*
-========================================
 
-File:
-WhyChooseUs.jsx
-
-Purpose:
-Ye component "Why Choose Jamia Academy" section render karta hai — credibility,
-teaching quality, aur career support ko highlight karke trust build karne ke liye.
-
-Responsibilities:
-- Section heading + description
-- Dynamic feature cards (icon, title, description) from aboutData.whyChooseUs
-- GSAP scroll-triggered stagger reveal (replay-enabled)
-- Framer Motion hover interactions (lift, scale, icon animation, glow)
-
-Animation Engine:
-GSAP + ScrollTrigger — replay-enabled (once:false):
-Heading → Description → Feature cards (stagger 0.15, duration 0.8, expo.out)
-Framer Motion — hover only (y, scale, icon rotate, shadow, gradient transition)
-
-Data Source:
-@/data/aboutData → whyChooseUs array (id, title, description, icon)
-
-========================================
-*/
-
-// 1. React
 import React, { useRef } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BadgeCheck, GraduationCap, Briefcase, ShieldCheck } from "lucide-react";
 
-// 3. Internal Components
-
-// 4. Hooks
 import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
-// 5. Utilities
 import { cn, safeArray } from "../../../utils/helpers";
 
-// 6. Constants / Data
-import { whyChooseUs } from "../../../data/aboutData";
+import { whyChooseUs } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
-
-// 7. Styles
 
 gsap.registerPlugin(ScrollTrigger);
 
-// -----------------------------------------------------------------------------
-// ICON MAP — whyChooseUs array me icon sirf string name ke roop me store hai,
-// taaki data file pure rahe (koi JSX/component import data file me na ho)
-// -----------------------------------------------------------------------------
 const iconMap = {
   BadgeCheck,
   GraduationCap,
@@ -62,13 +23,6 @@ const iconMap = {
   ShieldCheck,
 };
 
-/**
- * WhyChooseUs
- * Ye component kya karta hai: "Why Choose Us" feature cards ko grid me render karta hai
- * Kyu banaya gaya: credibility, teaching quality, aur career support ko highlight karne ke liye
- * Kab call hoga: pages/About.jsx me FacultyGrid ke baad
- * Kya return karega: <section> jisme heading + responsive 3-card grid hai
- */
 const WhyChooseUs = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -78,11 +32,6 @@ const WhyChooseUs = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
   const safeReasons = safeArray(whyChooseUs);
 
-  // ---------------------------------------------------------------------------
-  // GSAP SCROLLTRIGGER TIMELINE
-  // Sequence: Heading → Description → Feature cards (stagger)
-  // toggleActions "play reverse play reverse" — replay har baar, once:true kabhi nahi
-  // ---------------------------------------------------------------------------
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
 

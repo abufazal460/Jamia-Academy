@@ -18,7 +18,7 @@ import { cn } from "../../../utils/helpers";
 import { getImageProps } from "../../../utils/imageHelpers";
 
 // Constants / Data
-import { aboutDescription, features } from "../../../data/aboutData";
+import { aboutDescription, features } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles

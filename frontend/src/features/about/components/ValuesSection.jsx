@@ -18,7 +18,7 @@ import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 import { cn, safeArray } from "../../../utils/helpers";
 
 // 6. Constants / Data
-import { values } from "../../../data/aboutData";
+import { values } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles

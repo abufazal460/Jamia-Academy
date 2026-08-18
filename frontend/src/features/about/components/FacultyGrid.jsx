@@ -19,7 +19,7 @@ import { cn, safeArray } from "../../../utils/helpers";
 import { getImageProps } from "../../../utils/imageHelpers";
 
 // 6. Constants / Data
-import { faculty } from "../../../data/aboutData";
+import { faculty } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles

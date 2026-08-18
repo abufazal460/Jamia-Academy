@@ -1,55 +1,19 @@
-/*
-========================================
-
-File:
-StatsSection.jsx
-
-Purpose:
-Ye component Jamia Academy ki achievements ko animated stat cards ke roop me
-display karta hai — students, programs, years of excellence, placements.
-
-Responsibilities:
-- Section heading
-- Dynamic stat cards (icon, animated number, label) from aboutData.stats
-- Counter animation jo sirf viewport me visible hone par trigger ho
-- GSAP scroll-triggered card entrance
-
-Animation Engine:
-GSAP + ScrollTrigger — replay-enabled (once:false):
-Heading → Stat cards (stagger) → Counter trigger (react-countup, via useCountUp)
-Framer Motion — card hover only
-
-Data Source:
-@/data/aboutData → stats array (id, label, value, suffix, icon)
-
-========================================
-*/
-
-// 1. React
 import React, { useRef } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CountUp from "react-countup";
 import { Sparkles, Users, BookOpen, Briefcase } from "lucide-react";
 
-// 3. Internal Components
-
-// 4. Hooks
 import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
-import useCountUp from "../../../hooks/useCountUp";
+import useCountUp from "../hooks/useCountUp";
 
-// 5. Utilities
 import { cn, safeArray } from "../../../utils/helpers";
 
-// 6. Constants / Data
-import { stats } from "../../../data/aboutData";
+import { stats } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
-
-// 7. Styles
 
 gsap.registerPlugin(ScrollTrigger);
 

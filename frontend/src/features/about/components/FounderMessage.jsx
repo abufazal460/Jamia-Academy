@@ -18,7 +18,7 @@ import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 import { getImageProps } from "../../../utils/imageHelpers";
 
 // 6. Constants / Data
-import { founder } from "../../../data/aboutData";
+import { founder } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles

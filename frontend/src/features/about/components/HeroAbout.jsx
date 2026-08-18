@@ -19,7 +19,7 @@ import { splitIntoCharacters, splitIntoWords } from "../../../utils/textHelpers"
 import { cn } from "../../../utils/helpers";
 
 // 6. Constants / Data
-import { hero } from "../../../data/aboutData";
+import { hero } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
 
 // 7. Styles

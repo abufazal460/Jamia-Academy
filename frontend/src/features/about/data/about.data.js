@@ -7,7 +7,7 @@
 // karne ki zaroorat nahi — sirf isi file me values update karni hain.
 
 // import all images 
-import img1 from "../assets/images/about/hero/img-1.jpeg"
+import img1 from "../../../assets/images/about/hero/img-1.jpeg"
 // ---------------------------------------------------------------------------
 // HERO SECTION
 // ---------------------------------------------------------------------------

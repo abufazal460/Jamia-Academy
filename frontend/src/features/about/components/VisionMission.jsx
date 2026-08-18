@@ -1,66 +1,21 @@
-/*
-========================================
-
-File:
-VisionMission.jsx
-
-Purpose:
-Ye component Jamia Academy ke Vision, Mission, aur Commitment ko teen
-equal-height glass cards me present karta hai — institutional philosophy
-aur long-term goals communicate karne ke liye.
-
-Responsibilities:
-- Section heading + description
-- Vision card (icon, title, text, subtitle)
-- Mission card (dynamic points list with check icons)
-- Commitment card (icon, title, paragraph)
-- Subtle floating decorative background shapes
-
-Animation Engine:
-GSAP + ScrollTrigger — single timeline, replay-enabled (once:false):
-Heading → Description → Vision card → Mission card → Commitment card
-Framer Motion — card hover + decorative floating shapes only
-
-Data Source:
-@/data/aboutData → vision, mission (with points array), commitment
-
-========================================
-*/
-
-// 1. React
 import React, { useRef } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Eye, Target, HeartHandshake, CheckCircle2 } from "lucide-react";
 
-// 3. Internal Components
-
-// 4. Hooks
 import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
-// 5. Utilities
 import { cn } from "../../../utils/helpers";
 import { safeArray } from "../../../utils/helpers";
 
-// 6. Constants / Data
-import { vision, mission, commitment } from "../../../data/aboutData";
+import { vision, mission, commitment } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
-
-// 7. Styles
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * VisionMission
- * Ye component kya karta hai: Vision, Mission, Commitment teen cards me render karta hai
- * Kyu banaya gaya: institute ki philosophy aur long-term direction communicate karne ke liye
- * Kab call hoga: pages/About.jsx me CoFounderSection ke baad
- * Kya return karega: <section> jisme heading + 3-column equal-height card grid hai
- */
 const VisionMission = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);

@@ -1,68 +1,23 @@
-/*
-========================================
 
-File:
-TimelineSection.jsx
-
-Purpose:
-Ye component Jamia Academy ki growth journey ko ek cinematic, scroll-driven
-vertical timeline ke roop me present karta hai — foundation se lekar recent
-milestones tak.
-
-Responsibilities:
-- Central animated timeline line jo scroll ke saath progressively fill hoti hai
-- Year badges + milestone cards (title, description) — desktop pe left/right
-  alternating, mobile pe single column
-- Har milestone ka independent entrance reveal (badge → card → text)
-
-Animation Engine:
-GSAP + ScrollTrigger:
-- Ek scrub-linked timeline jo line ki height 0%→100% animate karti hai
-  (scroll progress ke saath sync, "no sudden change" — smooth scrub:true)
-- Har milestone ke liye alag ScrollTrigger: badge reveal → card reveal →
-  title/description fade-up, replay-enabled (once:false)
-Framer Motion — card hover (lift, shadow, border highlight) only
-
-Data Source:
-@/data/aboutData → timeline array (id, year, title, description)
-
-========================================
-*/
-
-// 1. React
 import React, { useRef } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flag } from "lucide-react";
 
-// 3. Internal Components
-
-// 4. Hooks
 import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
-// 5. Utilities
 import { cn, safeArray } from "../../../utils/helpers";
 
-// 6. Constants / Data
-import { timeline } from "../../../data/aboutData";
+import { timeline } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
 
-// 7. Styles
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * TimelineSection
- * Ye component kya karta hai: institute ki growth journey ko scroll-based vertical
- * timeline me render karta hai
- * Kyu banaya gaya: institute ki history/credibility ko cinematic tareeke se batana
- * Kab call hoga: pages/About.jsx me sabse aakhri section ke roop me
- * Kya return karega: <section> jisme central line + alternating milestone cards hain
- */
+
 const TimelineSection = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -125,11 +80,6 @@ const TimelineSection = () => {
       );
     }
 
-    // ------------------------------------------------------------------
-    // TIMELINE LINE — scroll-progress fill (scrub:true, smooth, no jumps)
-    // Line 0% se 100% height tak grow karti hai jaise-jaise user track ke
-    // through scroll karta hai. Ye scrub isliye taaki motion scroll-linked ho.
-    // ------------------------------------------------------------------
     if (trackRef.current && lineFillRef.current) {
       gsap.fromTo(
         lineFillRef.current,
@@ -149,10 +99,6 @@ const TimelineSection = () => {
       );
     }
 
-    // ------------------------------------------------------------------
-    // MILESTONE ITEMS — har item ka apna ScrollTrigger:
-    // badge reveal → card reveal → title/description fade-up
-    // ------------------------------------------------------------------
     itemRefs.current.forEach((item) => {
       const badge = item.querySelector("[data-timeline-badge]");
       const card = item.querySelector("[data-timeline-card]");

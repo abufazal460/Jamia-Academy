@@ -1,56 +1,19 @@
-/*
-========================================
-
-File:
-CoFounderSection.jsx
-
-Purpose:
-Ye component Jamia Academy ke Co-Founder ka premium profile section render
-karta hai. Same design language jo FounderSection me use hui (glass cards,
-gradient border image), lekin layout mirror kiya gaya hai (image right)
-taaki dono sections visually distinct feel hon, copy-paste na lagen.
-
-Responsibilities:
-- Co-Founder image (right, desktop) + gradient frame + floating accent shapes
-- Name, title, experience badge, qualification cards
-- Inspirational personal message with progressive reveal
-
-Animation Engine:
-GSAP + ScrollTrigger — single timeline, replay-enabled (once:false):
-Section → Image → Name → Title → Experience Badge → Qualification Cards
-(stagger) → Message
-Framer Motion — hover interactions + floating decorative shapes only
-
-Data Source:
-@/data/aboutData → coFounder (name, title, image, qualifications, experience, message)
-
-========================================
-*/
-
-// 1. React
 import React, { useRef, useState } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GraduationCap, ImageOff, Sparkles } from "lucide-react";
 
-// 3. Internal Components
-
-// 4. Hooks
 import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
 
-// 5. Utilities
 import { cn } from "../../../utils/helpers";
 import { getImageProps } from "../../../utils/imageHelpers";
 
-// 6. Constants / Data
-import { coFounder } from "../../../data/aboutData";
+import { coFounder } from "../data/about.data";
 import { gsapEase } from "../../../constants/animations";
 
-// 7. Styles
 
 gsap.registerPlugin(ScrollTrigger);
 
