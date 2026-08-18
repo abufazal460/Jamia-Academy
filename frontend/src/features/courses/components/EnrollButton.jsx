@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { openWhatsApp } from "../../utils/whatsapp";
+import { openWhatsApp } from "../../../../utils/whatsapp";
 
 /**
  * EnrollButton
