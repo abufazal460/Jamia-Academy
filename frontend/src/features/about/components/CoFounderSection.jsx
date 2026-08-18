@@ -5,14 +5,14 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GraduationCap, ImageOff, Sparkles } from "lucide-react";
 
-import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
+import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
-import { cn } from "../../../utils/helpers";
-import { getImageProps } from "../../../utils/imageHelpers";
+import { cn } from "../../../shared/utils/helpers";
+import { getImageProps } from "../../../shared/utils/imageHelpers";
 
 import { coFounder } from "../data/about.data";
-import { gsapEase } from "../../../constants/animations";
+import { gsapEase } from "../../../shared/constants/animations";
 
 
 gsap.registerPlugin(ScrollTrigger);
