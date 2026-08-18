@@ -4,26 +4,6 @@ import { SearchX, Gamepad2 } from "lucide-react";
 import CourseCard from "./CourseCard";
 import CourseCardSkeleton from "./CourseCardSkeleton";
 
-/**
- * CourseGrid.jsx
- * -----------------------------------------------------------------------
- * AUDIT FIX: Pehle `<CourseCard onClick={...} />` pass ho raha tha, lekin
- * CourseCard.jsx ka real prop contract `onViewDetails` aur `onEnroll` hai
- * (onClick naam ka koi prop wo accept hi nahi karta) — isliye "View
- * Details" aur "Enroll Now" dono buttons kuch nahi kar rahe the. Ab dono
- * callbacks seedhe CourseCard ko pass ho rahe hain.
- *
- * Import bhi `motion/react` se `motion/react` kar diya hai — project ke
- * baaki components (Card, Modal, Search, Filter, GradientBorder) sab
- * `motion/react` use kar rahe hain, do alag animation packages saath
- * me install/import karna bundle size aur runtime dono ke liye risky hai.
- *
- * Baaki sab as-is: rendering + animation yahin isolated hai, data/business
- * logic CourseSection se as props aata hai.
- * -----------------------------------------------------------------------
- */
-
-// Stagger container - bacchon (cards) ko ek ek karke reveal karega
 const containerVariants = {
   hidden: {},
   visible: {
@@ -34,7 +14,6 @@ const containerVariants = {
   },
 };
 
-// Individual card entrance - gaming UI ke liye thoda "pop + rise" motion
 const cardVariants = {
   hidden: { opacity: 0, y: 24, scale: 0.96 },
   visible: {
@@ -53,9 +32,7 @@ const CourseGrid = ({
   onViewDetails, // (course) => void - CourseSection modal open karega
   onEnroll, // (course) => void - CourseSection WhatsApp kholega
 }) => {
-  // Reduced motion respect karna accessibility + low-end device rule dono
-  // ke liye zaroori hai - agar user ne OS level pe motion off kiya hai
-  // to hum bhi heavy animation skip karke sirf opacity fade denge.
+  
   const prefersReducedMotion = useReducedMotion();
 
   const effectiveCardVariants = useMemo(() => {
@@ -90,8 +67,6 @@ const CourseGrid = ({
     );
   }
 
-  // Empty state - jab search/filter se result zero aaye. Sirf "no data"
-  // text nahi, gaming theme ke hisaab se "no missions found" jaisa feel.
   if (!courses.length) {
     return (
       <motion.div
@@ -166,6 +141,4 @@ const CourseGrid = ({
   );
 };
 
-// memo lagaya - jab CourseSection ke andar search input type ho raha ho
-// tab tak grid re-render na ho jab tak filtered courses actually change na ho
 export default memo(CourseGrid);
