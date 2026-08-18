@@ -3,7 +3,7 @@
 // aur error string ya empty string return karta hai. Business logic yahi
 // centralize hai taaki components sirf UI handle karein.
 
-import { VALIDATION_MESSAGES } from "../data/certificateData";
+import { VALIDATION_MESSAGES } from "../../../data/certificateData";
 
 const NAME_PATTERN = /^[A-Za-z][A-Za-z\s.'-]{1,59}$/;
 const PHONE_PATTERN = /^[6-9]\d{9}$/;
