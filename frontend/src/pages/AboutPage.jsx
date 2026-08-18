@@ -21,7 +21,7 @@ import {
   StatsSection,
 } from "../components/about";
 
-import { pageTransition } from "../animations/aboutAnimations";
+import { pageTransition } from "../features/about/motion/about.motion";
 
 const FacultyGrid = lazy(() => import("../components/about/faculty/FacultyGrid"));
 const WhyChooseUs = lazy(() => import("../components/about/whychooseus/WhyChooseUs"));
