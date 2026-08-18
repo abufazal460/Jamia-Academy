@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
-import { getLenisInstance } from "../smoothScroll/SmoothScroll";
+import { getLenisInstance } from "../../app/providers/SmoothScroll";
 
 const SWIPE_THRESHOLD_PX = 50;
 
 
-export function Lightbox({ images, currentIndex, onClose, onNavigate , categoryLabel, index }) {
+export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLabel, index }) {
   const touchStartXRef = useRef(null);
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === images.length - 1;

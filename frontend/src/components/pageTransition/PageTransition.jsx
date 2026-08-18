@@ -9,7 +9,7 @@ const PageTransition = forwardRef(function PageTransition(_, ref) {
   const ctxRef = useRef(null);
 
   useLayoutEffect(() => {
-    ctxRef.current = gsap.context(() => {});
+    ctxRef.current = gsap.context(() => { });
 
     if (pathRef.current) {
       pathRef.current.setAttribute("d", buildCurtainPath(0));

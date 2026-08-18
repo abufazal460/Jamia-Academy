@@ -1,14 +1,7 @@
-
-
-// 1. React
 import React from "react";
-
-
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import { Helmet } from "react-helmet-async";
 import { Suspense, lazy } from "react";
-
 
 import {
   HeroAbout,
@@ -19,13 +12,13 @@ import {
   VisionMission,
   ValuesSection,
   StatsSection,
-} from "../components/about";
+} from "../features/about/components";
 
-import { pageTransition } from "../animations/aboutAnimations";
+import { pageTransition } from "../features/about/motion/about.motion";
 
-const FacultyGrid = lazy(() => import("../components/about/faculty/FacultyGrid"));
-const WhyChooseUs = lazy(() => import("../components/about/whychooseus/WhyChooseUs"));
-const TimelineSection = lazy(() => import("../components/about/timeline/TimelineSection"));
+const FacultyGrid = lazy(() => import("../features/about/components/FacultyGrid"));
+const WhyChooseUs = lazy(() => import("../features/about/components/WhyChooseUs"));
+const TimelineSection = lazy(() => import("../features/about/components/TimelineSection"));
 
 
 const About = () => {
