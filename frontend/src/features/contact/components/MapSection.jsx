@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { motion } from "motion/react";
 import { MapPin, Clock, Navigation } from "lucide-react";
-import { mapConfig } from "../../data/contactData";
-import { scaleInVariant, viewportOnce } from "../../animations/contactVariants";
-import { buttonHoverVariant } from "../../animations/hoverVariants";
+import { mapConfig } from "../data/contact.data";
+import { scaleInVariant, viewportOnce } from "../motion/contact.motion";
+import { buttonHoverVariant } from "../../../animations/hoverVariants";
 
 const MapSection = () => {
   return (

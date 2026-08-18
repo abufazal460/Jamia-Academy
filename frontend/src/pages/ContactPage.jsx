@@ -1,12 +1,12 @@
-import ContactBackground from "../components/contact/ContactBackground";
-import ContactHero from "../components/contact/ContactHero";
-import ContactInfoGrid from "../components/contact/ContactInfoGrid";
-import SocialLinks from "../components/contact/SocialLinks";
-import ContactForm from "../components/contact/ContactForm";
-import WhyContactSection from "../components/contact/WhyContactSection";
-import MapSection from "../components/contact/MapSection";
+import ContactBackground from "../features/contact/components/ContactBackground";
+import ContactHero from "../features/contact/components/ContactHero";
+import ContactInfoGrid from "../features/contact/components/ContactInfoGrid";
+import SocialLinks from "../features/contact/components/SocialLinks";
+import ContactForm from "../features/contact/components/ContactForm";
+import WhyContactSection from "../features/contact/components/WhyContactSection";
+import MapSection from "../features/contact/components/MapSection";
 import { Helmet } from "react-helmet-async";
-import { contactHero, mapConfig } from "../data/contactData";
+import { contactHero, mapConfig } from "../features/contact/data/contact.data";
 
 
 

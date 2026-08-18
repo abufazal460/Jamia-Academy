@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
-import { formConfig } from "../../data/contactData";
-import { scaleInVariant, viewportOnce } from "../../animations/contactVariants";
-import { useContactForm } from "../../hooks/useContactForm";
+import { formConfig } from "../data/contact.data";
+import { scaleInVariant, viewportOnce } from "../motion/contact.motion";
+import { useContactForm } from "../hooks/useContactForm";
 import FormField from "./FormField";
 import FormSelect from "./FormSelect";
 import SubmitButton from "./SubmitButton";

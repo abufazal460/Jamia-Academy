@@ -1,14 +1,14 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { socialConnect } from "../../data/contactData";
+import { socialConnect } from "../data/contact.data";
 import {
   fadeUpVariant,
   staggerContainer,
   staggerItem,
   viewportOnce,
-} from "../../animations/contactVariants";
-import { socialIconHoverVariant } from "../../animations/hoverVariants";
-import { resolveIcon } from "../../utils/iconResolver";
+} from "../motion/contact.motion";
+import { socialIconHoverVariant } from "../../../animations/hoverVariants";
+import { resolveIcon } from "../../../utils/iconResolver";
 
 const SocialLinks = () => {
   return (

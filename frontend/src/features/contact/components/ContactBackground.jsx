@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { floatingBlob, floatingBlobSlow, noMotion } from "../../animations/floatingVariants";
-import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
+import { floatingBlob, floatingBlobSlow, noMotion } from "../../../animations/floatingVariants";
+import { usePrefersReducedMotion } from "../../../hooks/usePrefersReducedMotion";
 
 // Fixed ambient background — mount ek baar, form state change se re-render nahi hota
 const ContactBackground = () => {

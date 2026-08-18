@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
-import { contactHero } from "../../data/contactData";
-import { slideInLeft, slideInRight } from "../../animations/contactVariants";
-import { buttonHoverVariant } from "../../animations/hoverVariants";
-import { floatingCard, noMotion } from "../../animations/floatingVariants";
-import { usePrefersReducedMotion } from "../../hooks/usePrefersReducedMotion";
-import { resolveIcon } from "../../utils/iconResolver";
-import TransitionLink from "../pageTransition/TransitionLink"
+import { contactHero } from "../data/contact.data";
+import { slideInLeft, slideInRight } from "../motion/contact.motion";
+import { buttonHoverVariant } from "../../../animations/hoverVariants";
+import { floatingCard, noMotion } from "../../../animations/floatingVariants";
+import { usePrefersReducedMotion } from "../../../hooks/usePrefersReducedMotion";
+import { resolveIcon } from "../../../utils/iconResolver";
+import TransitionLink from "../../../components/pageTransition/TransitionLink"
 
 // import contactImg from "../../assets/images/galleryclassroom/1.jpg"
 

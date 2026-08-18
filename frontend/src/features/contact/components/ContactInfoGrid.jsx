@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
-import { contactInfoCards } from "../../data/contactData";
-import { staggerContainer, viewportOnce } from "../../animations/contactVariants";
+import { contactInfoCards } from "../data/contact.data";
+import { staggerContainer, viewportOnce } from "../motion/contact.motion";
 import ContactInfoCard from "./ContactInfoCard";
 
 const ContactInfoGrid = () => {
