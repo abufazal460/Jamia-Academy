@@ -1,7 +1,7 @@
 import { AnimatePresence } from "motion/react";
 import { heroSlides } from "../../data/hero.data";
 import useHeroSlider from "../../hooks/useHeroSlider";
-import usePrefersReducedMotion from "../../../../hooks/usePrefersReducedMotion";
+import usePrefersReducedMotion from "../../../../shared/hooks/usePrefersReducedMotion";
 import HeroSlide from "./HeroSlide";
 import HeroContent from "./HeroContent";
 import HeroControls from "./HeroControls";

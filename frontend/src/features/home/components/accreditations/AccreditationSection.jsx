@@ -12,7 +12,7 @@ import {
   logoImageVariant,
   cardHoverLift,
 } from "../../../../animations/variants";
-import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../../../constants/layout.constants";
+import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../../../shared/constants/layout.constants";
 
 const AccreditationSection = () => {
   return (

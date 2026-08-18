@@ -1,5 +1,5 @@
 import { twMerge } from "tailwind-merge";
-import { openWhatsApp } from "../../../../utils/whatsapp";
+import { openWhatsApp } from "../../../shared/utils/whatsapp";
 
 export default function EnrollButton({ course, onClick, className = "" }) {
   const handleClick = () => {

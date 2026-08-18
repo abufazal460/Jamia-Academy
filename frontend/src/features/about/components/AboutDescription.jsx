@@ -8,18 +8,18 @@ import { GraduationCap, MonitorSmartphone, ShieldCheck, ImageOff } from "lucide-
 
 
 // Hooks
-import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
-import useMediaQuery from "../../../hooks/useMediaQuery";
+import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
+import useMediaQuery from "../../../shared/hooks/useMediaQuery";
 
  // Utilities
-import { splitIntoWords } from "../../../utils/textHelpers";
-import { cn } from "../../../utils/helpers";
-import { getImageProps } from "../../../utils/imageHelpers";
+import { splitIntoWords } from "../../../shared/utils/textHelpers";
+import { cn } from "../../../shared/utils/helpers";
+import { getImageProps } from "../../../shared/utils/imageHelpers";
 
 // Constants / Data
 import { aboutDescription, features } from "../data/about.data";
-import { gsapEase } from "../../../constants/animations";
+import { gsapEase } from "../../../shared/constants/animations";
 
 // 7. Styles
 // (Sirf Tailwind utility classes)

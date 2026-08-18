@@ -8,7 +8,7 @@ import {
   viewportOnce,
 } from "../motion/contact.motion";
 import { socialIconHoverVariant } from "../../../animations/hoverVariants";
-import { resolveIcon } from "../../../utils/iconResolver";
+import { resolveIcon } from "../../../shared/utils/iconResolver";
 
 const SocialLinks = () => {
   return (

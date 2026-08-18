@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { motion } from "motion/react";
 import { X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
-import { useLockBodyScroll } from "../../../hooks/useLockBodyScroll";
+import { useLockBodyScroll } from "../../../shared/hooks/useLockBodyScroll";
 import CourseDetails from "./CourseDetails";
 import CourseModules from "./CourseModules";
 

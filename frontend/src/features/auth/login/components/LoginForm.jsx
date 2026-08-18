@@ -4,12 +4,12 @@ import FloatingInput from "./FloatingInput";
 import PasswordInput from "./PasswordInput";
 import AnimatedButton from "./AnimatedButton";
 import { loginData } from "../data/login.data";
-import { validateEmail, validatePassword } from "../../../../utils/validation";
+import { validateEmail, validatePassword } from "../../../../shared/utils/validation";
 import {
   emailLabelEntranceVariants,
   passwordLabelEntranceVariants,
   buttonExpandVariants,
-} from "../../../../utils/animationVariants";
+} from "../../../../shared/utils/animationVariants";
 
 const INITIAL_VALUES = { email: "", password: "" };
 const INITIAL_TOUCHED = { email: false, password: false };

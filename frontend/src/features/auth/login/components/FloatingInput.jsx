@@ -1,11 +1,11 @@
 import { memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail } from "lucide-react";
-import { useFloatingLabel } from "../../../../hooks/useFloatingLabel";
+import { useFloatingLabel } from "../../../../shared/hooks/useFloatingLabel";
 import {
   floatingLabelVariants,
   errorMessageVariants,
-} from "../../../../utils/animationVariants";
+} from "../../../../shared/utils/animationVariants";
 
 /**
  * FloatingInput

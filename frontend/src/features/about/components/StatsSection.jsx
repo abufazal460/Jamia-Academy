@@ -6,14 +6,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import CountUp from "react-countup";
 import { Sparkles, Users, BookOpen, Briefcase } from "lucide-react";
 
-import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
+import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 import useCountUp from "../hooks/useCountUp";
 
-import { cn, safeArray } from "../../../utils/helpers";
+import { cn, safeArray } from "../../../shared/utils/helpers";
 
 import { stats } from "../data/about.data";
-import { gsapEase } from "../../../constants/animations";
+import { gsapEase } from "../../../shared/constants/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 

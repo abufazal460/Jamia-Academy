@@ -1,19 +1,3 @@
-/**
- * FeatureSection.jsx
- * ---------------------------------------------------------------------------
- * RESPONSIBILITY
- * Teen feature-cards (Competitive salary / Go beyond design skills / Master
- * new technologies) render karta hai. Screenshot mein RED background tha aur
- * ek black decorative block cards ke peeche tha — dono cheezein YAHA copy
- * NAHI ki gayi. Iski jagah ek premium Navy -> Blue -> Purple gradient
- * background hai, aur decorative shapes CSS `before:` / `after:` pseudo-
- * elements + blurred glow-orbs se banaye gaye hai (koi image asset nahi).
- *
- * DATA FLOW
- * featuresData (src/data/features.data.js) -> `.map()` se cards + icons
- * render hote hai. Naya card add karna ho to sirf data file edit karo.
- * ---------------------------------------------------------------------------
- */
 
 import { LazyMotion, domAnimation, m } from "motion/react";
 import { featuresData } from "../../data/features.data";
@@ -28,7 +12,7 @@ import {
 import {
   SECTION_CONTAINER,
   SECTION_PADDING_Y,
-} from "../../../../constants/layout.constants";
+} from "../../../../shared/constants/layout.constants";
 
 const FeatureSection = () => {
   return (

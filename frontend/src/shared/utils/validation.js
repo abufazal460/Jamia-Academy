@@ -2,7 +2,7 @@
 // Pure validation functions — koi side effect nahi, sirf input le kar
 // result return karte hain. UI logic yahan bilkul nahi.
 
-import { loginData } from "../features/auth/login/data/login.data";
+import { loginData } from "../../features/auth/login/data/login.data";
 
 // Standard email pattern — RFC-perfect nahi hai, lekin practical use ke liye kaafi hai
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

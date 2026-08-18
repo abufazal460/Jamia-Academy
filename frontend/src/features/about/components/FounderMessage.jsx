@@ -11,15 +11,15 @@ import { Quote, ImageOff } from "lucide-react";
 // (Shared components abhi nahi bane)
 
 // 4. Hooks
-import useGSAPAnimation from "../../../hooks/useGSAPAnimation";
-import usePrefersReducedMotion from "../../../hooks/usePrefersReducedMotion";
+import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
+import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { getImageProps } from "../../../utils/imageHelpers";
+import { getImageProps } from "../../../shared/utils/imageHelpers";
 
 // 6. Constants / Data
 import { founder } from "../data/about.data";
-import { gsapEase } from "../../../constants/animations";
+import { gsapEase } from "../../../shared/constants/animations";
 
 // 7. Styles
 
