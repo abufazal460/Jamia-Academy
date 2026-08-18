@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { getCertLabelEntryVariants } from "../../utils/certificateAnimationVariants";
+import { getCertLabelEntryVariants } from "../motion/certificate.motion";
 
 /**
  * FloatingLabel

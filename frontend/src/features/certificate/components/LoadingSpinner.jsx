@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { certSpinnerTransition } from "../../../../utils/certificateAnimationVariants";
-import { useCertificateReducedMotion } from "../../hooks/useCertificateReducedMotion";
+import { certSpinnerTransition } from "../motion/certificate.motion";
+import { useCertificateReducedMotion } from "../hooks/useCertificateReducedMotion";
 
 function LoadingSpinnerBase({ className = "h-5 w-5" }) {
   const prefersReducedMotion = useCertificateReducedMotion();
