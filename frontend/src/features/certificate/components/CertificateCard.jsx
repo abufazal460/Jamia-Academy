@@ -6,10 +6,10 @@ import { VerifyButton } from "./VerifyButton";
 import {
   INITIAL_FORM_STATE,
   STATUS_MESSAGES,
-} from "../../data/certificateData";
-import { validateCertificateField, validateCertificateForm, isCertificateFormValid, sanitizeCertificateFormData } from "../../utils/certificateValidation";
-import { handleCertificateVerification } from "../../utils/futureApi";
-import { certCardVariants } from "../../utils/certificateAnimationVariants";
+} from "../data/certificate.data";
+import { validateCertificateField, validateCertificateForm, isCertificateFormValid, sanitizeCertificateFormData } from "../utils/validation";
+import { handleCertificateVerification } from "../../../utils/futureApi";
+import { certCardVariants } from "../motion/certificate.motion";
 
 /**
  * CertificateCard

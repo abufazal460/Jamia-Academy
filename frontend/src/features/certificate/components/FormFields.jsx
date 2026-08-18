@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { CERTIFICATE_FIELDS } from "../../data/certificateData";
-import { certFieldsContainerVariants } from "../../utils/certificateAnimationVariants";
+import { CERTIFICATE_FIELDS } from "../data/certificate.data";
+import { certFieldsContainerVariants } from "../motion/certificate.motion";
 import { AnimatedInput } from "./AnimatedInput";
 
 /**

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { BUTTON_TEXT } from "../../data/certificateData";
-import { certButtonWidthVariants } from "../../utils/certificateAnimationVariants";
+import { BUTTON_TEXT } from "../data/certificate.data";
+import { certButtonWidthVariants } from "../motion/certificate.motion";
 import { LoadingSpinner } from "./LoadingSpinner";
 
 /**
@@ -22,10 +22,10 @@ function VerifyButtonBase({ isSubmitting, disabled }) {
         disabled || isSubmitting
           ? undefined
           : {
-              scale: 1.015,
-              boxShadow:
-                "0 0 0 1px rgba(255,255,255,0.5), 0 12px 40px rgba(255,255,255,0.35)",
-            }
+            scale: 1.015,
+            boxShadow:
+              "0 0 0 1px rgba(255,255,255,0.5), 0 12px 40px rgba(255,255,255,0.35)",
+          }
       }
       whileTap={disabled || isSubmitting ? undefined : { scale: 0.97 }}
       className="group relative mt-2 flex h-[52px] w-full items-center justify-center overflow-hidden rounded-full bg-white text-[15px] font-semibold text-[#0d1420] shadow-[0_4px_24px_rgba(255,255,255,0.25)] transition-shadow duration-300 disabled:cursor-not-allowed disabled:opacity-60"
