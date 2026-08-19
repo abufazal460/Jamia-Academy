@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion } from "motion/react";
-import { usePageTransition } from "../../../components/pageTransition";
+import { usePageTransition } from "../../../app/providers/page-transition";
 
 
 // ====================================================================

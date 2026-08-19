@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { TransitionNavLink } from "../../../components/pageTransition";
+import { TransitionNavLink } from "../../../app/providers/page-transition";
 import WhatsAppButton from "./WhatsAppButton";
 import { navLinks } from "../../data/navLinksData";
 
