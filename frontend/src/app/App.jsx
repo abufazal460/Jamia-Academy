@@ -6,7 +6,7 @@ import { IntroLoader, useAppReady } from "./ui/intro-loader";
 import {
   PageTransitionProvider,
   RouteTransitionWatcher,
-} from "../components/pageTransition";
+} from "../app/providers/page-transition";
 import SmoothScroll from "./providers/SmoothScroll";
 import OrganizationSchema from "../shared/seo/OrganizationSchema";
 
