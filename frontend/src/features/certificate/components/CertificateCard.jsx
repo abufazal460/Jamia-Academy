@@ -8,7 +8,6 @@ import {
   STATUS_MESSAGES,
 } from "../data/certificate.data";
 import { validateCertificateField, validateCertificateForm, isCertificateFormValid, sanitizeCertificateFormData } from "../utils/validation";
-import { handleCertificateVerification } from "../../../shared/utils/futureApi";
 import { certCardVariants } from "../motion/certificate.motion";
 
 /**
