@@ -11,7 +11,7 @@ import {
   getCardVariant,
   logoImageVariant,
   cardHoverLift,
-} from "../../../../animations/variants";
+} from "../../../../shared/motion/variants";
 import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../../../shared/constants/layout.constants";
 
 const AccreditationSection = () => {

@@ -3,7 +3,7 @@
 import React, { useState, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ctaVariants, textButtonVariants } from "../../motion/why-choose-us.motion";
-import TransitionLink from "../../../../components/pageTransition/TransitionLink";
+import TransitionLink from "../../../../app/providers/page-transition/TransitionLink";
 
 const WhyChooseCTA = memo(({ data }) => {
   const [isHovered, setIsHovered] = useState(false);

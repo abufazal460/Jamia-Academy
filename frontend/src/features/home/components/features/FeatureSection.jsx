@@ -8,7 +8,7 @@ import {
   getCardVariant,
   cardHoverLift,
   iconHoverRotate,
-} from "../../../../animations/variants";
+} from "../../../../shared/motion/variants";
 import {
   SECTION_CONTAINER,
   SECTION_PADDING_Y,
