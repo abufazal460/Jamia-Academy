@@ -2,7 +2,7 @@ import { memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Send, Check, Loader2 } from "lucide-react";
 import { formConfig } from "../data/contact.data";
-import { buttonHoverVariant } from "../../../animations/hoverVariants";
+import { buttonHoverVariant } from "../../../shared/motion/hoverVariants";
 
 const STATUS_TEXT = {
   idle: formConfig.submitButton.idleText,

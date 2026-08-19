@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { motion } from "motion/react";
-import { floatingBlob, floatingBlobSlow, noMotion } from "../../../animations/floatingVariants";
+import { floatingBlob, floatingBlobSlow, noMotion } from "../../../shared/motion/floatingVariants";
 import { usePrefersReducedMotion } from "../../../shared/hooks/usePrefersReducedMotion";
 
 // Fixed ambient background — mount ek baar, form state change se re-render nahi hota

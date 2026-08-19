@@ -1,8 +1,8 @@
 import { memo } from "react";
 import { motion } from "motion/react";
 import { Copy, Check, Phone, MessageCircle, Navigation } from "lucide-react";
-import { interactiveCardVariant } from "../../../animations/hoverVariants";
-import { iconHoverVariant } from "../../../animations/hoverVariants"
+import { interactiveCardVariant } from "../../../shared/motion/hoverVariants";
+import { iconHoverVariant } from "../../../shared/motion/hoverVariants"
 import { resolveIcon } from "../../../shared/utils/iconResolver";
 import { useCopyToClipboard } from "../../../shared/hooks/useCopyToClipboard";
 
