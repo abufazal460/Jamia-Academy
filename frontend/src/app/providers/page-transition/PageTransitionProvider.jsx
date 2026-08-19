@@ -1,8 +1,8 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import TransitionContext from "../../components/pageTransition/TransitionContext";
-import PageTransition from "../../components/pageTransition/PageTransition";
-import { TRANSITION_TIMING } from "../../components/pageTransition/transitionPaths";
+import TransitionContext from "./TransitionContext";
+import PageTransition from "./PageTransition";
+import { TRANSITION_TIMING } from "./transitionPaths";
 
 const wait = (seconds) =>
   new Promise((resolve) => setTimeout(resolve, seconds * 1000));

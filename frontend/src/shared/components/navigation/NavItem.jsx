@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion } from "motion/react";
-import { TransitionNavLink } from "../../../components/pageTransition";
+import { TransitionNavLink } from "../../../app/providers/page-transition";
 
 // ====================================================================
 // NavItem.jsx — MODIFIED

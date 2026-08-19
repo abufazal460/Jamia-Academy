@@ -1,4 +1,4 @@
-import { usePageTransition } from "../../../components/pageTransition";
+import { usePageTransition } from "../../../app/providers/page-transition";
 import React, {
   useState,
   useCallback,

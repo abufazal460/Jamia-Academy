@@ -1,5 +1,5 @@
 import { LazyMotion, domAnimation } from "motion/react";
-import SpaceBackground from "../components/contactBackground/SpaceBackground";
+import SpaceBackground from "../shared/components/background/SpaceBackground";
 import { LoginCard } from "../features/auth/login/components";
 import { Helmet } from "react-helmet-async";
 import loginData from "../features/auth/login/data/login.data";
