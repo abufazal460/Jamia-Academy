@@ -1,5 +1,4 @@
-import { Helmet } from "react-helmet-async";
-import SpaceBackground from "../shared/components/background/SpaceBackground";
+import SEO from "../shared/seo/SEO";import SpaceBackground from "../shared/components/background/SpaceBackground";
 import { PageHeading, CertificateCard } from "../features/certificate/components";
 import { PAGE_CONTENT } from "../features/certificate/data/certificate.data";
 
