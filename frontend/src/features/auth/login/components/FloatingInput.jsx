@@ -5,7 +5,7 @@ import { useFloatingLabel } from "../../../../shared/hooks/useFloatingLabel";
 import {
   floatingLabelVariants,
   errorMessageVariants,
-} from "../../../../shared/utils/animationVariants";
+} from "../../../../shared/motion/config";
 
 /**
  * FloatingInput

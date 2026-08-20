@@ -8,25 +8,9 @@ import {
   cardVariants,
   headingVariants,
   reducedMotionVariants,
-} from "../../../../shared/utils/animationVariants";
+} from "../../../../shared/motion/config";
 
-/**
- * LoginCard
- * Poore login card ka orchestrator. Entrance sequence (parent
- * staggerChildren se drive hoti hai, cardVariants me defined):
- *   1. Card fades + scales in
- *   2. Heading drops in (spring)
- *   3. Email label/field enters from top
- *   4. Password label/field enters from bottom
- *   5. Inputs fade
- *   6. Button expands horizontally (scaleX)
- * Hover interactions (glass blur, button shine) inherently active rehte
- * hain kyunki wo separate CSS/hover-driven hain, animate sequence pe
- * depend nahi karte.
- *
- * Props:
- * - onSubmit: passed through to LoginForm
- */
+
 function LoginCard({ onSubmit }) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const rootVariants = prefersReducedMotion ? reducedMotionVariants : cardVariants;

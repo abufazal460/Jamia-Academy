@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { motion } from "motion/react";
 import { usePrefersReducedMotion } from "../../../../shared/hooks/usePrefersReducedMotion";
-import { reducedMotionVariants } from "../../../../shared/utils/animationVariants";
+import { reducedMotionVariants } from "../../../../shared/motion/config";
 
 function MotionWrapper({
   as = "div",

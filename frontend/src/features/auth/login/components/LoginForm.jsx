@@ -9,7 +9,7 @@ import {
   emailLabelEntranceVariants,
   passwordLabelEntranceVariants,
   buttonExpandVariants,
-} from "../../../../shared/utils/animationVariants";
+} from "../../../../shared/motion/config";
 
 const INITIAL_VALUES = { email: "", password: "" };
 const INITIAL_TOUCHED = { email: false, password: false };
