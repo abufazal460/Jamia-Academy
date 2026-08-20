@@ -42,38 +42,12 @@ html.lenis body {
    Poppins Font Family
    =========================== */
 
-
-/* 300 Light */
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-LightItalic.woff2") format("woff2");
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* 400 Regular */
 @font-face {
   font-family: "Poppins";
   src: url("../assets/fonts/Poppins/Poppins-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-Italic.woff2") format("woff2");
-  font-weight: 400;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -86,14 +60,6 @@ html.lenis body {
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-MediumItalic.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* 600 SemiBold */
 @font-face {
   font-family: "Poppins";
@@ -103,13 +69,6 @@ html.lenis body {
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-SemiBoldItalic.woff2") format("woff2");
-  font-weight: 600;
-  font-style: italic;
-  font-display: swap;
-}
 
 /* 700 Bold */
 @font-face {
@@ -117,14 +76,6 @@ html.lenis body {
   src: url("../assets/fonts/Poppins/Poppins-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-BoldItalic.woff2") format("woff2");
-  font-weight: 700;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -137,13 +88,6 @@ html.lenis body {
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-ExtraBoldItalic.woff2") format("woff2");
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
 
 /* 900 Black */
 @font-face {
@@ -154,13 +98,6 @@ html.lenis body {
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Poppins";
-  src: url("../assets/fonts/Poppins/Poppins-BlackItalic.woff2") format("woff2");
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
 
 /* ===========================
    Inter Font Family
@@ -172,14 +109,6 @@ html.lenis body {
   src: url("../assets/fonts/Inter/static/Inter_18pt-Black.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("../assets/fonts/Inter/static/Inter_18pt-BlackItalic.woff2") format("woff2");
-  font-weight: 900;
-  font-style: italic;
   font-display: swap;
 }
 
@@ -244,33 +173,6 @@ html.lenis body {
 /* ===========================
    Orbitron Font Family
    =========================== */
-
-/* 500 Medium */
-@font-face {
-  font-family: "Orbitron";
-  src: url("../assets/fonts/Orbitron/static/Orbitron-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* 600 SemiBold */
-@font-face {
-  font-family: "Orbitron";
-  src: url("../assets/fonts/Orbitron/static/Orbitron-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* 700 Bold */
-@font-face {
-  font-family: "Orbitron";
-  src: url("../assets/fonts/Orbitron/static/Orbitron-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 /* 800 ExtraBold */
 @font-face {
