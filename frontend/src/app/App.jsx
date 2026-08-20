@@ -9,6 +9,7 @@ import {
 } from "../app/providers/page-transition";
 import SmoothScroll from "./providers/SmoothScroll";
 import OrganizationSchema from "../shared/seo/OrganizationSchema";
+import Layout from "../shared/components/layout/Layout";
 
 const HomePage = lazy(() => import("../pages/HomePage"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
@@ -30,15 +31,17 @@ export default function App() {
             <Suspense fallback={null}>
               <Navbar />
               <RouteTransitionWatcher />
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/about" element={<AboutPage />} />
-                <Route path="/course" element={<CoursesPage />} />
-                <Route path="/gallery" element={<GalleryPage />} />
-                <Route path="/contact" element={<ContactPage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/certificate" element={<CertificatePage />} />
-              </Routes>
+              <Layout>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/about" element={<AboutPage />} />
+                  <Route path="/course" element={<CoursesPage />} />
+                  <Route path="/gallery" element={<GalleryPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/certificate" element={<CertificatePage />} />
+                </Routes>
+              </Layout>
               <Footer />
             </Suspense>
           </SmoothScroll>
