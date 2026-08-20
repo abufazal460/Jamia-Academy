@@ -8,7 +8,7 @@ const PAGE_TITLE = `${PAGE_CONTENT.title} · Jamia Academy`;
 const PAGE_DESCRIPTION = PAGE_CONTENT.subtitle;
 
 export default function Certificate() {
-  const canonicalUrl = "https://www.jamiaacademy.in/course";
+  const canonicalUrl = "https://www.jamiaacademy.in/certificate";
 
   const structuredData = {
     "@context": "https://schema.org",
