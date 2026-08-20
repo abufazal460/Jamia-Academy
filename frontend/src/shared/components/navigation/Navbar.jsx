@@ -15,7 +15,7 @@ import { gsap } from "gsap";
 import LoginButton from "../navigation/LoginButton";
 
 // Ye exact imports hai jo user ne diye hai — inhe bilkul change nahi kiya gaya.
-import humburger from "../../../assets/icons/hambargur.webp";
+import humburger from "../../../assets/icons/hamburger.webp";
 import cross from "../../../assets/icons/cross.svg";
 import logo from "../../../assets/icons/jamia-academy-Logo.png";
 
