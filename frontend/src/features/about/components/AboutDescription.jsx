@@ -13,13 +13,13 @@ import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMoti
 import useMediaQuery from "../../../shared/hooks/useMediaQuery";
 
  // Utilities
-import { splitIntoWords } from "../../../shared/utils/textHelpers";
+import { splitIntoWords } from "../../../shared/utils/text";
 import { cn } from "../../../shared/utils/helpers";
-import { getImageProps } from "../../../shared/utils/imageHelpers";
+import { getImageProps } from "../../../shared/utils/image";
 
 // Constants / Data
 import { aboutDescription, features } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 // 7. Styles
 // (Sirf Tailwind utility classes)

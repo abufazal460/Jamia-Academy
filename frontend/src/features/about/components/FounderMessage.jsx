@@ -15,11 +15,11 @@ import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { getImageProps } from "../../../shared/utils/imageHelpers";
+import { getImageProps } from "../../../shared/utils/image";
 
 // 6. Constants / Data
 import { founder } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 // 7. Styles
 

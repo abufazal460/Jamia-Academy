@@ -12,7 +12,7 @@ import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMoti
 import { cn, safeArray } from "../../../shared/utils/helpers";
 
 import { timeline } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 
 gsap.registerPlugin(ScrollTrigger);

@@ -19,7 +19,7 @@ import { cn, safeArray } from "../../../shared/utils/helpers";
 
 // 6. Constants / Data
 import { values } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 // 7. Styles
 

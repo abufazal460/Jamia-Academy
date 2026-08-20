@@ -18,11 +18,11 @@ import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMoti
 
 // 5. Utilities
 import { cn } from "../../../shared/utils/helpers";
-import { getImageProps } from "../../../shared/utils/imageHelpers";
+import { getImageProps } from "../../../shared/utils/image";
 
 // 6. Constants / Data
 import { founder } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 // 7. Styles
 // (Sirf Tailwind utility classes)
