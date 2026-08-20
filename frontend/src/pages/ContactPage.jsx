@@ -15,7 +15,7 @@ const PAGE_DESCRIPTION = contactHero.description;
 
 const Contact = () => {
 
-  const canonicalUrl = "https://www.jamiaacademy.in/course";
+  const canonicalUrl = "https://www.jamiaacademy.in/contact";
 
   const structuredData = {
     "@context": "https://schema.org",
