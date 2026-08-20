@@ -1,6 +1,6 @@
 import React from "react";
+import SEO from "../shared/seo/SEO";
 import { motion } from "motion/react";
-import { Helmet } from "react-helmet-async";
 import { Suspense, lazy } from "react";
 
 import {
@@ -24,30 +24,12 @@ const TimelineSection = lazy(() => import("../features/about/components/Timeline
 const About = () => {
   return (
     <>
-      <Helmet>
-        <title>About Us | Jamia Academy</title>
-        <meta
-          name="description"
-          content="Learn about Jamia Academy's history, mission, founders, and commitment to academic excellence."
-        />
-        <link rel="canonical" href="https://www.jamiaacademy.in/about" />
-        <meta property="og:title" content="About Us | Jamia Academy" />
-        <meta
-          property="og:description"
-          content="Learn about Jamia Academy's history, mission, founders, and commitment to academic excellence."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.jamiaacademy.in/about" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Jamia Academy" />
-        <meta property="og:image" content="https://www.jamiaacademy.in/og/home.jpg" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta name="twitter:image" content="https://www.jamiaacademy.in/og/home.jpg" />
-        <meta property="og:site_name" content="Jamia Academy" />
-        <meta property="og:locale" content="en_IN" />
-      </Helmet>
+      <SEO
+        title="About Us | Jamia Academy"
+        description="Learn about Jamia Academy's history, mission, founders, and commitment to academic excellence."
+        path="/about"
+        imageAlt="About Jamia Academy"
+      />
 
       {/* Page-level transition wrapper — sirf entrance/exit fade, koi section animation nahi */}
       <motion.main
