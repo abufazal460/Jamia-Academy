@@ -1,7 +1,6 @@
 import SEO from "../shared/seo/SEO";
 import ContactBackground from "../features/contact/components/ContactBackground";
 import ContactHero from "../features/contact/components/ContactHero";
-import ContactInfoGrid from "../features/contact/components/ContactInfoGrid";
 import SocialLinks from "../features/contact/components/SocialLinks";
 import ContactForm from "../features/contact/components/ContactForm";
 import WhyContactSection from "../features/contact/components/WhyContactSection";
