@@ -13,7 +13,7 @@ import useCountUp from "../hooks/useCountUp";
 import { cn, safeArray } from "../../../shared/utils/helpers";
 
 import { stats } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 gsap.registerPlugin(ScrollTrigger);
 

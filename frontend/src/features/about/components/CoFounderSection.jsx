@@ -9,10 +9,10 @@ import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
 import { cn } from "../../../shared/utils/helpers";
-import { getImageProps } from "../../../shared/utils/imageHelpers";
+import { getImageProps } from "../../../shared/utils/image";
 
 import { coFounder } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 
 gsap.registerPlugin(ScrollTrigger);

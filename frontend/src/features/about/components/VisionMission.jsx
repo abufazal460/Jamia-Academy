@@ -12,7 +12,7 @@ import { cn } from "../../../shared/utils/helpers";
 import { safeArray } from "../../../shared/utils/helpers";
 
 import { vision, mission, commitment } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 gsap.registerPlugin(ScrollTrigger);
 

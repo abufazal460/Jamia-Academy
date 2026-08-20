@@ -7,7 +7,7 @@ import {
   floatingLabelVariants,
   errorMessageVariants,
   iconToggleVariants,
-} from "../../../../shared/utils/animationVariants";
+} from "../../../../shared/motion/config";
 import { loginData } from "../data/login.data";
 
 /**

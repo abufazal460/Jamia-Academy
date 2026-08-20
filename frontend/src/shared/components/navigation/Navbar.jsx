@@ -22,7 +22,7 @@ import logo from "../../../assets/icons/jamia-academy-Logo.png";
 import NavItem from "./NavItem";
 import MobileMenu from "./MobileMenu";
 import WhatsAppButton from "./WhatsAppButton";
-import { navLinks } from "../../data/navLinksData";
+import { navLinks } from "../../data/navigation.data";
 
 const logoVariants = {
   hidden: { opacity: 0, x: -50 },

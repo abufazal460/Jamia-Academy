@@ -1,6 +1,6 @@
 import { forwardRef, memo } from "react";
 import { motion } from "motion/react";
-import { cardFloatVariants } from "../../../../shared/utils/animationVariants";
+import { cardFloatVariants } from "../../../../shared/motion/config"
 
 const GlassPanel = forwardRef(function GlassPanel(
   { children, className = "", enableFloat = true, variants, initial, animate, ...rest },

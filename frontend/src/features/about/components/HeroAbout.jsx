@@ -15,12 +15,12 @@ import { Play, ChevronDown } from "lucide-react";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { splitIntoCharacters, splitIntoWords } from "../../../shared/utils/textHelpers";
+import { splitIntoCharacters, splitIntoWords } from "../../../shared/utils/text";
 import { cn } from "../../../shared/utils/helpers";
 
 // 6. Constants / Data
 import { hero } from "../data/about.data";
-import { gsapEase } from "../../../shared/constants/animations";
+import { gsapEase } from "../../../shared/motion/config";
 
 // 7. Styles
 // (Sirf Tailwind utility classes — koi separate CSS file nahi)

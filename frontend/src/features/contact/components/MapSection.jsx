@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { MapPin, Clock, Navigation } from "lucide-react";
 import { mapConfig } from "../data/contact.data";
 import { scaleInVariant, viewportOnce } from "../motion/contact.motion";
-import { buttonHoverVariant } from "../../../shared/motion/hoverVariants";
+import { buttonHoverVariant } from "../../../shared/motion/hover.motion";
 
 const MapSection = () => {
   return (
