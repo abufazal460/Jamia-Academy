@@ -1,9 +1,9 @@
 import { memo } from "react";
 import { motion } from "motion/react";
 import { Copy, Check, Phone, MessageCircle, Navigation } from "lucide-react";
-import { interactiveCardVariant } from "../../../shared/motion/hoverVariants";
-import { iconHoverVariant } from "../../../shared/motion/hoverVariants"
-import { resolveIcon } from "../../../shared/utils/iconResolver";
+import { interactiveCardVariant } from "../../../shared/motion/hover.motion";
+import { iconHoverVariant } from "../../../shared/motion/hover.motion"
+import { resolveIcon } from "../../../shared/utils/icons";
 import { useCopyToClipboard } from "../../../shared/hooks/useCopyToClipboard";
 
 const ACTION_ICON = {

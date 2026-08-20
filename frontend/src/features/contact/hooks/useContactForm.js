@@ -1,6 +1,6 @@
 import { useState, useCallback, useRef, useEffect } from "react";
 import { formConfig } from "../data/contact.data";
-import { validateField } from "../../../shared/utils/validators";
+import { validateField } from "../../../shared/utils/validation";
 
 const buildInitialState = () => {
   const state = {};

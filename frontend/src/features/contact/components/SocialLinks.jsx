@@ -7,8 +7,8 @@ import {
   staggerItem,
   viewportOnce,
 } from "../motion/contact.motion";
-import { socialIconHoverVariant } from "../../../shared/motion/hoverVariants";
-import { resolveIcon } from "../../../shared/utils/iconResolver";
+import { socialIconHoverVariant } from "../../../shared/motion/hover.motion";
+import { resolveIcon } from "../../../shared/utils/icons";
 
 const SocialLinks = () => {
   return (
