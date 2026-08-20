@@ -193,7 +193,7 @@ export default function NotFoundContent() {
             variants={itemVariants}
             className="font-heading mt-2 text-2xl font-semibold tracking-tight text-[#F7F3E9] sm:text-3xl md:text-4xl"
           >
-            Page not found
+            Page Not Found
           </motion.p>
 
           <motion.p
