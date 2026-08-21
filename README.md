@@ -34,13 +34,13 @@
 <td width="50%">
 
 **🏠 Home**
-![Jamia Academy Homepage](./screenshots/home.png)
+![Jamia Academy Homepage](./frontend/src/assets/images/readme/home.png)
 
 </td>
 <td width="50%">
 
 **📚 Courses**
-![Jamia Academy Courses Page](./screenshots/courses.png)
+![Jamia Academy Courses Page](./frontend/src/assets/images/readme/course.png)
 
 </td>
 </tr>
@@ -48,13 +48,13 @@
 <td width="50%">
 
 **ℹ️ About**
-![Jamia Academy About Page](./screenshots/about.png)
+![Jamia Academy About Page](./frontend/src/assets/images/readme/about.png)
 
 </td>
 <td width="50%">
 
 **🖼️ Gallery**
-![Jamia Academy Gallery Page](./screenshots/gallery.png)
+![Jamia Academy Gallery Page](./frontend/src/assets/images/readme/gallery.png)
 
 </td>
 </tr>
