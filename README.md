@@ -64,7 +64,7 @@
 
 ## 🚢 Deployment
 
-The app is deployed on **Vercel** at [jamia-academy.vercel.app](https://jamia-academy.vercel.app). A `vercel.json` rewrite rule routes all paths to `index.html`, keeping client-side routing (React Router) working correctly on refresh and direct links.
+The app is deployed on **Vercel** at [jamia-academy.vercel.app](https://jamia-academy-product.vercel.app). A `vercel.json` rewrite rule routes all paths to `index.html`, keeping client-side routing (React Router) working correctly on refresh and direct links.
 
 The production domain, **[jamiaacademy.in](https://jamiaacademy.in)**, is registered and managed through Hostinger and points to the Vercel deployment.
 
