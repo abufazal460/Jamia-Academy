@@ -168,306 +168,45 @@ Built **mobile-first** and tested across the full range — small phones around 
 - Hostinger (domain — jamiaacademy.in)
 
 ---
+📂 Project Structure
 
-## 📂 Project Structure
+This project follows a feature-based folder structure — instead of grouping files by type (all components in one giant folder, all hooks in another), everything related to one feature lives together: its components, its data, its hooks, and its motion/animation variants all sit inside that feature's own folder. Opening features/courses/ gives you the entire courses feature in one place — nothing scattered across the codebase to go hunting for.
 
-> ⭐ = key file worth knowing first
-
+This pays off in a few real ways: a new page or feature can be added without touching unrelated code, content updates only ever happen inside a feature's data/ folder (never inside a component), and anyone jumping into the codebase for the first time can understand what a feature does just by opening its folder — no need to trace imports across the whole src/.
 ```
-abufazal460-jamia-academy/
-└── frontend/
-    ├── eslint.config.js              ⭐ ESLint flat config
-    ├── index.html                    ⭐ App HTML entry
-    ├── package.json                  ⭐ Dependencies & scripts
-    ├── vercel.json                   ⭐ Vercel rewrite/deploy config
-    ├── vite.config.js                ⭐ Vite build config
-    ├── public/
-    │   ├── manifest.webmanifest
-    │   ├── robots.txt
-    │   └── sitemap.xml
-    └── src/
-        ├── main.jsx                  ⭐ React entry point
-        ├── app/
-        │   ├── App.jsx                ⭐ Root app component
-        │   ├── providers/
-        │   │   ├── ErrorBoundary.jsx
-        │   │   ├── SmoothScroll.jsx
-        │   │   └── page-transition/
-        │   │       ├── index.js
-        │   │       ├── PageTransition.jsx
-        │   │       ├── PageTransitionProvider.jsx
-        │   │       ├── RouteTransitionWatcher.jsx
-        │   │       ├── TransitionContext.jsx
-        │   │       ├── TransitionLink.jsx
-        │   │       ├── TransitionNavLink.jsx
-        │   │       ├── TransitionOutlet.jsx
-        │   │       ├── transitionPaths.js
-        │   │       └── usePageTransition.js
-        │   ├── router/
-        │   │   └── AppRoutes.jsx     ⭐ Route definitions
-        │   └── ui/
-        │       └── intro-loader/
-        │           ├── animationConfig.js
-        │           ├── index.js
-        │           ├── introLoader.css
-        │           ├── IntroLoader.jsx
-        │           ├── Letter.jsx
-        │           ├── Shine.jsx
-        │           └── useAppReady.js
-        ├── assets/
-        │   ├── fonts/
-        │   │   ├── Geist/
-        │   │   │   ├── README.txt
-        │   │   │   ├── OFL.txt
-        │   │   │   └── static/
-        │   │   │       ├── Geist-Black.woff2
-        │   │   │       ├── Geist-BlackItalic.woff2
-        │   │   │       ├── Geist-Bold.woff2
-        │   │   │       ├── Geist-Medium.woff2
-        │   │   │       ├── Geist-Regular.woff2
-        │   │   │       ├── Geist-SemiBold.woff2
-        │   │   │       └── Geist-SemiBoldItalic.woff2
-        │   │   ├── Inter/
-        │   │   │   ├── README.txt
-        │   │   │   └── OFL.txt
-        │   │   ├── Orbitron/
-        │   │   │   ├── README.txt
-        │   │   │   ├── OFL.txt
-        │   │   │   └── static/
-        │   │   │       ├── Orbitron-Black.woff2
-        │   │   │       ├── Orbitron-Bold.woff2
-        │   │   │       └── Orbitron-ExtraBold.woff2
-        │   │   └── Poppins/            ⭐ Primary site font
-        │   │       ├── OFL.txt
-        │   │       ├── Poppins-Black.woff2
-        │   │       ├── Poppins-Bold.woff2
-        │   │       ├── Poppins-ExtraBold.woff2
-        │   │       ├── Poppins-Medium.woff2
-        │   │       ├── Poppins-Regular.woff2
-        │   │       └── Poppins-SemiBold.woff2
-        │   └── icons/
-        │       └── hamburger.webp
-        ├── features/                  ⭐ Feature-first modules
-        │   ├── about/
-        │   │   ├── components/
-        │   │   │   ├── AboutDescription.jsx
-        │   │   │   ├── CoFounderSection.jsx
-        │   │   │   ├── FacultyGrid.jsx
-        │   │   │   ├── FounderMessage.jsx
-        │   │   │   ├── FounderSection.jsx
-        │   │   │   ├── HeroAbout.jsx
-        │   │   │   ├── index.js
-        │   │   │   ├── StatsSection.jsx
-        │   │   │   ├── TimelineSection.jsx
-        │   │   │   ├── ValuesSection.jsx
-        │   │   │   ├── VisionMission.jsx
-        │   │   │   └── WhyChooseUs.jsx
-        │   │   ├── data/
-        │   │   │   └── about.data.js  ⭐ About page content source
-        │   │   ├── hooks/
-        │   │   │   └── useCountUp.js
-        │   │   └── motion/
-        │   │       └── about.motion.js
-        │   ├── auth/
-        │   │   └── login/
-        │   │       ├── components/
-        │   │       │   ├── AnimatedButton.jsx
-        │   │       │   ├── FloatingInput.jsx
-        │   │       │   ├── GlassPanel.jsx
-        │   │       │   ├── index.js
-        │   │       │   ├── LoginCard.jsx
-        │   │       │   ├── LoginForm.jsx
-        │   │       │   ├── MotionWrapper.jsx
-        │   │       │   └── PasswordInput.jsx
-        │   │       ├── data/
-        │   │       │   └── login.data.js
-        │   │       └── hooks/
-        │   │           └── usePasswordToggle.js
-        │   ├── certificate/            ⭐ Certificate verification module
-        │   │   ├── components/
-        │   │   │   ├── AnimatedInput.jsx
-        │   │   │   ├── CertificateCard.jsx
-        │   │   │   ├── FloatingLabel.jsx
-        │   │   │   ├── FormFields.jsx
-        │   │   │   ├── GlassContainer.jsx
-        │   │   │   ├── index.js
-        │   │   │   ├── LoadingSpinner.jsx
-        │   │   │   ├── PageHeading.jsx
-        │   │   │   └── VerifyButton.jsx
-        │   │   ├── data/
-        │   │   │   └── certificate.data.js
-        │   │   ├── hooks/
-        │   │   │   ├── useCertificateFloatingLabel.js
-        │   │   │   └── useCertificateReducedMotion.js
-        │   │   ├── motion/
-        │   │   │   └── certificate.motion.js
-        │   │   └── utils/
-        │   │       └── validation.js
-        │   ├── contact/
-        │   │   ├── components/
-        │   │   │   ├── ContactBackground.jsx
-        │   │   │   ├── ContactForm.jsx
-        │   │   │   ├── ContactHero.jsx
-        │   │   │   ├── ContactInfoCard.jsx
-        │   │   │   ├── ContactInfoGrid.jsx
-        │   │   │   ├── FormField.jsx
-        │   │   │   ├── FormSelect.jsx
-        │   │   │   ├── MapSection.jsx
-        │   │   │   ├── SocialLinks.jsx
-        │   │   │   ├── SubmitButton.jsx
-        │   │   │   └── WhyContactSection.jsx
-        │   │   ├── data/
-        │   │   │   └── contact.data.js
-        │   │   ├── hooks/
-        │   │   │   └── useContactForm.js
-        │   │   └── motion/
-        │   │       └── contact.motion.js
-        │   ├── courses/                ⭐ Core course catalog module
-        │   │   ├── components/
-        │   │   │   ├── AnimatedGradientBorder.jsx
-        │   │   │   ├── CourseCard.jsx
-        │   │   │   ├── CourseCardSkeleton.jsx
-        │   │   │   ├── CourseDetails.jsx
-        │   │   │   ├── CourseFilter.jsx
-        │   │   │   ├── CourseGrid.jsx
-        │   │   │   ├── CourseModal.jsx
-        │   │   │   ├── CourseModules.jsx
-        │   │   │   ├── CourseSearch.jsx
-        │   │   │   ├── CourseSection.jsx
-        │   │   │   └── EnrollButton.jsx
-        │   │   ├── data/
-        │   │   │   └── courses.data.js ⭐ All course content lives here
-        │   │   └── hooks/
-        │   │       ├── useCourseFilter.js
-        │   │       └── useCourseSearch.js
-        │   ├── gallery/
-        │   │   ├── components/
-        │   │   │   ├── GalleryCard.jsx
-        │   │   │   ├── GalleryGrid.jsx
-        │   │   │   ├── GalleryTabs.jsx
-        │   │   │   └── Lightbox.jsx
-        │   │   └── hooks/
-        │   │       └── useGalleryImages.js
-        │   ├── home/                   ⭐ Landing page module
-        │   │   ├── components/
-        │   │   │   ├── accreditations/
-        │   │   │   │   └── AccreditationSection.jsx
-        │   │   │   ├── CourseGallery/
-        │   │   │   │   ├── BrowseCoursesCTA.jsx
-        │   │   │   │   ├── CourseGallerySection.jsx
-        │   │   │   │   ├── GalleryItem.jsx
-        │   │   │   │   ├── InfiniteGallery.jsx
-        │   │   │   │   └── SectionHeader.jsx
-        │   │   │   ├── faq/
-        │   │   │   │   ├── FAQ.jsx
-        │   │   │   │   ├── FAQHeader.jsx
-        │   │   │   │   └── FAQItem.jsx
-        │   │   │   ├── features/
-        │   │   │   │   └── FeatureSection.jsx
-        │   │   │   ├── hero/
-        │   │   │   │   ├── Hero.jsx
-        │   │   │   │   ├── HeroContent.jsx
-        │   │   │   │   ├── HeroControls.jsx
-        │   │   │   │   └── HeroSlide.jsx
-        │   │   │   ├── testimonials/
-        │   │   │   │   ├── index.js
-        │   │   │   │   ├── RatingStars.jsx
-        │   │   │   │   ├── TestimonialCard.jsx
-        │   │   │   │   ├── TestimonialRow.jsx
-        │   │   │   │   ├── testimonials.css
-        │   │   │   │   └── Testimonials.jsx
-        │   │   │   └── whyChooseUs/
-        │   │   │       ├── WhyChooseCard.jsx
-        │   │   │       ├── WhyChooseCTA.jsx
-        │   │   │       └── WhyChooseUs.jsx
-        │   │   ├── data/
-        │   │   │   ├── accreditations.data.js
-        │   │   │   ├── faq.data.js
-        │   │   │   ├── features.data.js
-        │   │   │   ├── gallery.data.js
-        │   │   │   ├── hero.data.js       ⭐ Hero slider content
-        │   │   │   ├── testimonials.data.js
-        │   │   │   └── why-choose-us.data.js
-        │   │   ├── hooks/
-        │   │   │   ├── useHeroSlider.js
-        │   │   │   └── useInfiniteGallery.js
-        │   │   └── motion/
-        │   │       ├── gallery.motion.js
-        │   │       ├── hero.motion.js
-        │   │       └── why-choose-us.motion.js
-        │   └── not-found/
-        │       └── components/
-        │           └── NotFoundContent.jsx
-        ├── pages/                      ⭐ Route-level page components
-        │   ├── AboutPage.jsx
-        │   ├── CertificatePage.jsx
-        │   ├── ContactPage.jsx
-        │   ├── CoursesPage.jsx
-        │   ├── GalleryPage.jsx
-        │   ├── HomePage.jsx            ⭐ Homepage entry
-        │   ├── LoginPage.jsx
-        │   └── NotFoundPage.jsx
-        ├── shared/                     ⭐ Cross-cutting building blocks
-        │   ├── components/
-        │   │   ├── background/
-        │   │   │   └── SpaceBackground.jsx
-        │   │   ├── footer/
-        │   │   │   └── Footer.jsx
-        │   │   ├── layout/
-        │   │   │   └── Layout.jsx      ⭐ App shell layout
-        │   │   └── navigation/
-        │   │       ├── LoginButton.jsx
-        │   │       ├── MobileMenu.jsx
-        │   │       ├── Navbar.jsx      ⭐ Site navigation
-        │   │       ├── NavItem.jsx
-        │   │       └── WhatsAppButton.jsx
-        │   ├── constants/
-        │   │   ├── breakpoints.js
-        │   │   ├── colors.js
-        │   │   ├── contactConstants.js
-        │   │   ├── gradients.js
-        │   │   ├── layout.constants.js
-        │   │   ├── routes.js           ⭐ Central route constants
-        │   │   ├── spacing.js
-        │   │   ├── typography.js
-        │   │   └── zIndex.js
-        │   ├── data/
-        │   │   └── navigation.data.js
-        │   ├── hooks/
-        │   │   ├── useCopyToClipboard.js
-        │   │   ├── useFloatingLabel.js
-        │   │   ├── useGSAPAnimation.js
-        │   │   ├── useismobile.js
-        │   │   ├── useLenisScroll.js
-        │   │   ├── useLockBodyScroll.js
-        │   │   ├── useMediaQuery.js
-        │   │   ├── useParallax.js
-        │   │   ├── usePrefersReducedMotion.js
-        │   │   ├── useScrollTrigger.js
-        │   │   └── useWindowSize.js
-        │   ├── motion/
-        │   │   ├── config.js
-        │   │   ├── floating.motion.js
-        │   │   ├── hover.motion.js
-        │   │   └── variants.js
-        │   ├── seo/
-        │   │   ├── OrganizationSchema.jsx
-        │   │   └── SEO.jsx             ⭐ Per-page SEO/meta component
-        │   └── utils/
-        │       ├── array.js
-        │       ├── format.js
-        │       ├── helpers.js
-        │       ├── icons.js
-        │       ├── image.js
-        │       ├── scroll.js
-        │       ├── text.js
-        │       ├── validation.js
-        │       └── whatsapp.js
-        └── style/
-            └── global.css             ⭐ Global styles entry
+frontend/
+├── public/                    # favicon, robots.txt, sitemap.xml, manifest
+└── src/
+    ├── app/                    # app shell — routing, providers, page transitions, intro loader
+    ├── assets/                 # fonts (Poppins, Geist, Inter, Orbitron), icons
+    ├── features/               # 👉 one folder per feature — each with its own components/, data/, hooks/, motion/
+    │   ├── about/
+    │   ├── auth/               # admin panel login
+    │   ├── certificate/
+    │   ├── contact/
+    │   ├── courses/
+    │   ├── gallery/
+    │   ├── home/
+    │   └── not-found/
+    ├── pages/                  # thin route-level components — wire a feature to a URL
+    │   ├── HomePage.jsx
+    │   ├── AboutPage.jsx
+    │   ├── CoursesPage.jsx
+    │   ├── GalleryPage.jsx
+    │   ├── ContactPage.jsx
+    │   ├── CertificatePage.jsx
+    │   └── LoginPage.jsx
+    ├── shared/                 # reused across features
+    │   ├── components/         # Navbar, Footer, Layout
+    │   ├── constants/          # breakpoints, colors, routes, typography
+    │   ├── hooks/               # useMediaQuery, useLenisScroll, useParallax...
+    │   ├── motion/               # shared animation variants
+    │   ├── seo/                  # SEO.jsx, OrganizationSchema.jsx
+    │   └── utils/                 # whatsapp.js, validation.js, image.js...
+    └── style/
+        └── global.css           # design tokens, fonts, Tailwind theme
 ```
-
----
+<br/>
 
 ## 🚀 Performance & SEO
 
