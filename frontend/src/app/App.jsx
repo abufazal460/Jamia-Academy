@@ -33,9 +33,9 @@ export default function App() {
           <SmoothScroll>
             <Suspense fallback={null}>
               <Navbar />
-              <ErrorBoundary>
               <RouteTransitionWatcher />
               <Layout>
+              <ErrorBoundary>
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/about" element={<AboutPage />} />
@@ -46,8 +46,8 @@ export default function App() {
                   <Route path="/certificate" element={<CertificatePage />} />
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
-              </Layout>
               </ErrorBoundary>
+              </Layout>
               <Footer />
             </Suspense>
           </SmoothScroll>
