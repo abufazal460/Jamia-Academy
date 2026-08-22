@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "../shared/components/navigation/Navbar";
 import Footer from "../shared/components/footer/Footer";
 import { IntroLoader, useAppReady } from "./ui/intro-loader";
@@ -10,6 +10,8 @@ import {
 import SmoothScroll from "./providers/SmoothScroll";
 import OrganizationSchema from "../shared/seo/OrganizationSchema";
 import Layout from "../shared/components/layout/Layout";
+import ErrorBoundary from "./providers/ErrorBoundary";
+
 
 const HomePage = lazy(() => import("../pages/HomePage"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
@@ -22,6 +24,8 @@ const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 export default function App() {
   const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
+  const location = useLocation(); // current route track karne ke liye
+
   return (
     <>
       <OrganizationSchema />
@@ -33,16 +37,18 @@ export default function App() {
               <Navbar />
               <RouteTransitionWatcher />
               <Layout>
-                <Routes>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/about" element={<AboutPage />} />
-                  <Route path="/course" element={<CoursesPage />} />
-                  <Route path="/gallery" element={<GalleryPage />} />
-                  <Route path="/contact" element={<ContactPage />} />
-                  <Route path="/login" element={<LoginPage />} />
-                  <Route path="/certificate" element={<CertificatePage />} />
-                  <Route path="*" element={<NotFoundPage />} />
-                </Routes>
+                <ErrorBoundary resetKeys={[location.pathname , location.search]}>   {/*location.search ye optional hai ye query parameter par work karti hai */} 
+                  <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/about" element={<AboutPage />} />
+                    <Route path="/course" element={<CoursesPage />} />
+                    <Route path="/gallery" element={<GalleryPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/login" element={<LoginPage />} />
+                    <Route path="/certificate" element={<CertificatePage />} />
+                    <Route path="*" element={<NotFoundPage />} />
+                  </Routes>
+                </ErrorBoundary>
               </Layout>
               <Footer />
             </Suspense>
