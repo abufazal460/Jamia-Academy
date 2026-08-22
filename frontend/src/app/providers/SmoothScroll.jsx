@@ -38,28 +38,23 @@ export default function SmoothScroll({ children }) {
     if (hasInitializedRef.current || lenisInstance) {
       return undefined;
     }
-
     hasInitializedRef.current = true;
 
+    if (typeof window !== "undefined" && "scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
     const lenis = new Lenis({
-      // Balanced lerp — na zyada sluggish, na zyada snappy
       lerp: 0.3,
-      // Duration sirf scrollTo() jaisi programmatic calls ke liye use hoti hai
       duration: 1.8,
       easing: premiumEasing,
-      // Desktop mouse wheel ke liye smooth multiplier
       wheelMultiplier: 0.8,
-      // Mobile touch ke liye thoda kam multiplier — native feel ke paas
       touchMultiplier: 1.2,
-      // Mobile par bhi smooth interpolation enable karta hai
-      // (warna touch devices par Lenis native scroll pe fallback karta hai)
       syncTouch: true,
       syncTouchLerp: 0.075,
-      // Vertical scroll hi chahiye poori site ke liye
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      // Native scrollbar ko touch mat karo — sirf scroll behavior smooth karo
       autoResize: true,
     });
 
