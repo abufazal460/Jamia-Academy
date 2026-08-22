@@ -110,91 +110,91 @@ function Navbar() {
     // Cleanup — memory leak rokne ke liye listener hata dete hai component unmount par.
   }, []);
 
-  const lastScrollY = useRef(0);
+  const lastScrollY = useRef(window.scrollY);
   const navbarVisible = useRef(true);
 
   useEffect(() => {
     if (!isDesktop) {
-      gsap.killTweensOf([
-        navRef.current,
-        logoWrapRef.current,
-        navLinksRef.current,
-        loginWrapRef.current,
-        whatsappWrapRef.current,
-      ]);
+      gsap.killTweensOf(navRef.current);
 
-      gsap.set(
-        [
-          navRef.current,
-          logoWrapRef.current,
-          navLinksRef.current,
-          loginWrapRef.current,
-          whatsappWrapRef.current,
-        ],
-        {
-          clearProps: "all",
-        },
-      );
+      gsap.set(navRef.current, {
+        clearProps: "all",
+      });
 
       return;
     }
 
+    const SCROLL_THRESHOLD = 10;
+    const HIDE_AFTER = 80;
+
+    const showNavbar = () => {
+      if (navbarVisible.current) return;
+
+      navbarVisible.current = true;
+
+      // Previous animation stop
+      gsap.killTweensOf(navRef.current);
+
+      // Sirf straight down
+      gsap.to(navRef.current, {
+        yPercent: 0,
+        duration: 0.45,
+        ease: "power3.out",
+        overwrite: true,
+      });
+    };
+
+    const hideNavbar = () => {
+      if (!navbarVisible.current) return;
+
+      navbarVisible.current = false;
+
+      // Previous animation stop
+      gsap.killTweensOf(navRef.current);
+
+      // Sirf straight up
+      gsap.to(navRef.current, {
+        yPercent: -100,
+        duration: 0.55,
+        ease: "power3.out",
+        overwrite: true,
+      });
+    };
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const previousScrollY = lastScrollY.current;
 
-      const scrollingDown = currentScrollY > lastScrollY.current;
-
-      const scrollingUp = currentScrollY < lastScrollY.current;
-
-      if (scrollingDown && currentScrollY > 80 && navbarVisible.current) {
-        navbarVisible.current = false;
-
-        gsap.to(navRef.current, {
-          yPercent: -100,
-          duration: 1,
-          ease: "power3.out",
-        });
-
-        gsap.to([logoWrapRef.current, navLinksRef.current], {
-          opacity: 0,
-          x: 100,
-          duration: 1,
-        });
-
-        gsap.to([loginWrapRef.current, whatsappWrapRef.current], {
-          opacity: 0,
-          x: 35,
-          duration: 0.5,
-        });
+      // Top par navbar hamesha visible
+      if (currentScrollY <= 20) {
+        showNavbar();
+        lastScrollY.current = currentScrollY;
+        return;
       }
 
-      if (scrollingUp && !navbarVisible.current) {
-        navbarVisible.current = true;
+      const scrollDifference = currentScrollY - previousScrollY;
 
-        gsap.to(navRef.current, {
-          yPercent: 0,
-          duration: 0.5,
-          ease: "power3.out",
-        });
+      // Chhoti movement ignore
+      if (Math.abs(scrollDifference) < SCROLL_THRESHOLD) {
+        return;
+      }
 
-        gsap.to(
-          [
-            logoWrapRef.current,
-            navLinksRef.current,
-            loginWrapRef.current,
-            whatsappWrapRef.current,
-          ],
-          {
-            opacity: 1,
-            x: 0,
-            y: 0,
-            duration: 0.45,
-          },
-        );
+      // Scroll DOWN
+      if (scrollDifference > 0) {
+        if (currentScrollY > HIDE_AFTER) {
+          hideNavbar();
+        }
+      }
+
+      // Scroll UP
+      else {
+        showNavbar();
       }
 
       lastScrollY.current = currentScrollY;
     };
+
+    lastScrollY.current = window.scrollY;
 
     window.addEventListener("scroll", handleScroll, {
       passive: true,
@@ -203,15 +203,10 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
 
-      gsap.killTweensOf([
-        navRef.current,
-        logoWrapRef.current,
-        navLinksRef.current,
-        loginWrapRef.current,
-        whatsappWrapRef.current,
-      ]);
+      gsap.killTweensOf(navRef.current);
     };
   }, [isDesktop]);
+
   return (
     // ================================================================
     // MAIN NAVBAR CONTAINER
@@ -349,7 +344,7 @@ function Navbar() {
         <MobileMenu
           isOpen={isMobileMenuOpen}
           onClose={closeMobileMenu}
-          // onCourseToggle aur isCourseOpen props REMOVED — dropdown gone.
+        // onCourseToggle aur isCourseOpen props REMOVED — dropdown gone.
         />
       </div>
     </header>
