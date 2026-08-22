@@ -10,6 +10,8 @@ import {
 import SmoothScroll from "./providers/SmoothScroll";
 import OrganizationSchema from "../shared/seo/OrganizationSchema";
 import Layout from "../shared/components/layout/Layout";
+import ErrorBoundary from "./providers/ErrorBoundary";
+
 
 const HomePage = lazy(() => import("../pages/HomePage"));
 const AboutPage = lazy(() => import("../pages/AboutPage"));
@@ -31,6 +33,7 @@ export default function App() {
           <SmoothScroll>
             <Suspense fallback={null}>
               <Navbar />
+              <ErrorBoundary>
               <RouteTransitionWatcher />
               <Layout>
                 <Routes>
@@ -44,6 +47,7 @@ export default function App() {
                   <Route path="*" element={<NotFoundPage />} />
                 </Routes>
               </Layout>
+              </ErrorBoundary>
               <Footer />
             </Suspense>
           </SmoothScroll>
