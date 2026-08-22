@@ -18,7 +18,7 @@ import { cn } from "../../../shared/utils/helpers";
 import { getImageProps } from "../../../shared/utils/image";
 
 // Constants / Data
-// import { aboutDescription, features } from "../data/about.data";
+import { aboutDescription, features } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
 
 // 7. Styles

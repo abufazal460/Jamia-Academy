@@ -69,16 +69,16 @@ export default class ErrorBoundary extends Component {
       <main
         role="alert"
         aria-live="assertive"
-        className="grid min-h-screen place-items-center p-8 text-center bg-gradient-to-br from-gray-50 to-gray-200 font-sans"
+        className="grid min-h-screen place-items-center pb-10 pt-20  bg-gradient-to-br from-gray-50 to-gray-200"
       >
-        <section className="bg-white p-12 rounded-2xl shadow-2xl max-w-lg w-full">
+        <section className="bg-white p-12 rounded-2xl shadow-2xl max-w-lg w-full flex justify-center items-center flex-col">
 
           {/* Error Icon */}
           <div className="text-6xl mb-4 flex justify-center items-center">
             <span role="img" aria-label="Error icon">⚠️</span>
-          </div>git 
+          </div>
 
-          <h1 className="text-3xl font-bold text-gray-900 mb-3 tracking-tight">
+          <h1 className="text-3xl font-bold text-gray-900 mb-3 tracking-tight text-center">
             Oops! Something Went Wrong
           </h1>
 
