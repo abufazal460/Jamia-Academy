@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { X } from "lucide-react";
 import { twMerge } from "tailwind-merge";
 import { useLockBodyScroll } from "../../../shared/hooks/useLockBodyScroll";
+import { getLenisInstance } from "../../../app/providers/SmoothScroll";
 import CourseDetails from "./CourseDetails";
 import CourseModules from "./CourseModules";
 
@@ -19,15 +20,15 @@ const itemVariants = {
 };
 
 export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
-
+  
   const [shouldRender, setShouldRender] = useState(isOpen);
-
+  
   const overlayRef = useRef(null);
   const panelRef = useRef(null);
   const timelineRef = useRef(null);
   const titleId = useId();
-
-  useLockBodyScroll(shouldRender);
+  
+  useLockBodyScroll(shouldRender, { getLenis: getLenisInstance });
 
   useEffect(() => {
     if (isOpen) {
@@ -99,7 +100,7 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
           "sm:h-auto sm:max-h-[85vh] sm:w-full sm:max-w-2xl sm:rounded-3xl sm:border sm:border-white/10 sm:shadow-[0_0_60px_rgba(168,85,247,0.25)] sm:backdrop-blur-xl"
         )}
       >
-   
+
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 hidden rounded-[inherit] p-px opacity-40 [background:linear-gradient(135deg,#ec4899,#a855f7,#22d3ee)] [mask-composite:exclude] [mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] sm:block"
@@ -173,7 +174,7 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
             variants={itemVariants}
             className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between"
           >
-           
+
             <button
               type="button"
               onClick={() => onEnroll?.(course)}
