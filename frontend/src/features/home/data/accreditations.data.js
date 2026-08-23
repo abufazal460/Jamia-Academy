@@ -4,6 +4,10 @@ import msme from "../../../assets/icons/msme.png";
 import neilit from "../../../assets/icons/nielit.jpeg";
 import nitiAyog from "../../../assets/icons/niti-aayog.jpeg";
 import skillIndia from "../../../assets/icons/skill-india.png";
+import ip from "../../../assets/icons/ip.png";
+import iso from "../../../assets/icons/iso.jpeg";
+import iaf from "../../../assets/icons/iaf.png";
+import mole from "../../../assets/icons/mole.jpeg"
 
 /**
  * @typedef {Object} AccreditationItem
@@ -39,4 +43,28 @@ export const accreditationsData = [
     image: skillIndia,
     alt: "Skill India official logo",
   },
+  // {
+  //   id: 5,
+  //   title: "Skill India",
+  //   image: skillIndia,
+  //   alt: "Skill India official logo",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Skill India",
+  //   image: skillIndia,
+  //   alt: "Skill India official logo",
+  // },
+  // {
+  //   id: 7,
+  //   title: "Skill India",
+  //   image: skillIndia,
+  //   alt: "Skill India official logo",
+  // },
+  // {
+  //   id: 8,
+  //   title: "Skill India",
+  //   image: skillIndia,
+  //   alt: "Skill India official logo",
+  // },
 ];
