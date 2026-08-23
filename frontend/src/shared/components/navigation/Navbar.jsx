@@ -18,6 +18,7 @@ import LoginButton from "../navigation/LoginButton";
 import humburger from "../../../assets/icons/hamburger.webp";
 import cross from "../../../assets/icons/cross.svg";
 import logo from "../../../assets/icons/jamia-academy-Logo.png";
+import logo2 from "../../../assets/icons/navbar-logo.png";
 
 import NavItem from "./NavItem";
 import MobileMenu from "./MobileMenu";
@@ -246,12 +247,12 @@ function Navbar() {
             className="flex shrink-0 items-center gap-2 outline-none"
           >
             <img
-              src={logo}
+              src={logo2}
               alt="Jamia Academy Logo"
               // Width/height fix kiya — image load hone se pehle CLS na ho.
-              width="40"
-              height="40"
-              className="h-9 w-auto sm:h-10"
+              width="50"
+              height="50"
+              className="h-12 w-auto sm:h-14"
             />
           </motion.a>
         </div>
