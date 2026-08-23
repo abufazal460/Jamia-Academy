@@ -1,52 +1,68 @@
-import { forwardRef, memo, useImperativeHandle, useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { buildCurtainPath, TRANSITION_TIMING } from "./transitionPaths";
+import {
+  forwardRef,
+  memo,
+  useImperativeHandle,
+  useLayoutEffect,
+  useRef,
+} from "react";
 
-const PageTransition = forwardRef(function PageTransition(_, ref) {
+import gsap from "gsap";
+
+import {
+  buildCurtainPath,
+  TRANSITION_TIMING,
+} from "./transitionPaths";
+
+const PageTransition = forwardRef(function PageTransition(
+  { initialCovered = false },
+  ref
+) {
   const pathRef = useRef(null);
-  const progressRef = useRef({ value: 0 });
+
+  const progressRef = useRef({
+    value: initialCovered ? 1 : 0,
+  });
+
   const tweenRef = useRef(null);
-  const ctxRef = useRef(null);
+
+  const updatePath = () => {
+    if (!pathRef.current) return;
+
+    pathRef.current.setAttribute(
+      "d",
+      buildCurtainPath(progressRef.current.value)
+    );
+  };
 
   useLayoutEffect(() => {
-    ctxRef.current = gsap.context(() => { });
-
-    if (pathRef.current) {
-      pathRef.current.setAttribute("d", buildCurtainPath(0));
-    }
+    updatePath();
 
     return () => {
       if (tweenRef.current) {
         tweenRef.current.kill();
         tweenRef.current = null;
       }
-      if (ctxRef.current) {
-        ctxRef.current.revert();
-        ctxRef.current = null;
-      }
     };
   }, []);
-
-  const updatePath = () => {
-    if (pathRef.current) {
-      pathRef.current.setAttribute("d", buildCurtainPath(progressRef.current.value));
-    }
-  };
 
   const runTween = (from, to, duration) =>
     new Promise((resolve) => {
       if (tweenRef.current) {
         tweenRef.current.kill();
+        tweenRef.current = null;
       }
 
       progressRef.current.value = from;
+
       updatePath();
 
       tweenRef.current = gsap.to(progressRef.current, {
         value: to,
         duration,
         ease: TRANSITION_TIMING.ease,
+
         onUpdate: updatePath,
+
         onComplete: () => {
           tweenRef.current = null;
           resolve();
@@ -57,14 +73,39 @@ const PageTransition = forwardRef(function PageTransition(_, ref) {
   useImperativeHandle(
     ref,
     () => ({
-      playCover: () => runTween(0, 1, TRANSITION_TIMING.coverDuration),
-      playReveal: () => runTween(1, 2, TRANSITION_TIMING.revealDuration),
+      playCover: () =>
+        runTween(
+          0,
+          1,
+          TRANSITION_TIMING.coverDuration
+        ),
+
+      playReveal: () =>
+        runTween(
+          1,
+          2,
+          TRANSITION_TIMING.revealDuration
+        ),
+
       reset: () => {
         if (tweenRef.current) {
           tweenRef.current.kill();
           tweenRef.current = null;
         }
+
         progressRef.current.value = 0;
+
+        updatePath();
+      },
+
+      setCovered: () => {
+        if (tweenRef.current) {
+          tweenRef.current.kill();
+          tweenRef.current = null;
+        }
+
+        progressRef.current.value = 1;
+
         updatePath();
       },
     }),
@@ -83,7 +124,13 @@ const PageTransition = forwardRef(function PageTransition(_, ref) {
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path ref={pathRef} d={buildCurtainPath(0)} className="fill-[#0f172a]" />
+        <path
+          ref={pathRef}
+          d={buildCurtainPath(
+            initialCovered ? 1 : 0
+          )}
+          className="fill-[#0f172a]"
+        />
       </svg>
     </div>
   );
