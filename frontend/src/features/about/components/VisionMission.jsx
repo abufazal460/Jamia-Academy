@@ -9,7 +9,6 @@ import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
 import { cn } from "../../../shared/utils/helpers";
-import { safeArray } from "../../../shared/utils/helpers";
 
 import { vision, mission, commitment } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
@@ -25,7 +24,6 @@ const VisionMission = () => {
   const commitmentCardRef = useRef(null);
 
   const prefersReducedMotion = usePrefersReducedMotion();
-  const missionPoints = safeArray(mission?.points);
 
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
@@ -104,15 +102,6 @@ const VisionMission = () => {
       );
     }
 
-    // Mission points sequential animation — cards ke andar chhota stagger
-    const pointItems = missionCardRef.current?.querySelectorAll("[data-mission-point]");
-    if (pointItems?.length) {
-      tl.from(
-        pointItems,
-        { opacity: 0, x: -12, duration: 0.35, ease: "power2.out", stagger: 0.08 },
-        "-=0.3"
-      );
-    }
   }, [prefersReducedMotion]);
 
   return (
@@ -182,7 +171,7 @@ const VisionMission = () => {
           </motion.div>
 
           {/* ============================================================
-              MISSION CARD — dynamic points list
+              MISSION CARD 
           ============================================================= */}
           <motion.div
             ref={missionCardRef}
@@ -205,21 +194,7 @@ const VisionMission = () => {
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{mission.description}</p>
             )}
 
-            {missionPoints.length > 0 && (
-              <ul className="mt-4 flex flex-1 flex-col gap-3">
-                {missionPoints.map((point) => (
-                  <li
-                    key={point?.id || point?.text}
-                    data-mission-point
-                    className="flex items-start gap-2.5 text-sm text-white/75"
-                  >
-                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[#2A9D8F]" aria-hidden="true" />
-                    {/* Short animated divider — decorative vertical accent before text */}
-                    <span className="leading-relaxed">{point?.text}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
+           
           </motion.div>
 
           {/* ============================================================

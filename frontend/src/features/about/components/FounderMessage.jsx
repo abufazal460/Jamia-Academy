@@ -41,7 +41,7 @@ const FounderMessage = () => {
   const messageData = founder?.message || {};
 
   const messageLines = (messageData.body || "")
-    .split(/(?<=[.!?])\s+/)
+    .split(/(?<=[!?])\s+/)
     .filter(Boolean);
 
   const scopeRef = useGSAPAnimation((scope) => {
@@ -202,12 +202,12 @@ const FounderMessage = () => {
                 <Quote size={28} />
               </span>
 
-              <div ref={messageRef} className="mt-2 flex flex-col gap-3">
+              <div ref={messageRef} className="mt-2 flex flex-col">
                 {messageLines.length > 0 ? (
                   messageLines.map((line, index) => (
                     <p
                       key={`founder-message-line-${index}`}
-                      className="text-base sm:text-lg leading-relaxed text-[#2B2D42]/85"
+                      className="text-base sm:text-sm text-[#2B2D42]/85 text-justify"
                     >
                       {line}
                     </p>

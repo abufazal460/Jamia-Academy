@@ -102,7 +102,7 @@ export const founder = {
   message: {
     label: "Founder's Message",
     heading: "A Message From Our Founder",
-    body: "When I started Jamia Academy, my vision was to make quality digital and AI education accessible to every learner,regardless of their financial background or circumstances. We’re here to give young minds the skills, guidance, and confidence to thrive in a digital-first world — from essential computer skills to emerging AI technologies. Our goal is to empower India’s youth to become creators, innovators, and future technology leaders who don’t just follow the world, but help shape it.",
+    body: "Every big change starts with a small, stubborn belief. Mine was this: education should build futures, not just distribute degrees. Years ago, when I looked around, I saw a system that was rewarding privilege more than potential. Students with resources kept moving forward, while equally sometimes more talented students were left waiting for a chance that never came. That imbalance didn't sit right with me. It became the reason Jamia Academy exists today. We didn't want to build just another academy. We wanted to build a bridge between ambition and opportunity, between where a student starts and where their talent can actually take them. That's why everything at Jamia Academy, from the courses we design to the mentors we choose, is built around one non-negotiable principle: quality education should never be a privilege reserved for the few. I've always believed that India's real strength lies in its youth in the coder sitting in a small town dreaming of building the next big app, in the young girl who wants to design digital experiences but has never been told she can. Our job is to find these dreams and give them the tools, training, and confidence to become reality. As we expand across regions and reach more students every day, my vision remains rooted in the same idea we started with: build an India where skill speaks louder than background, and opportunity is earned through passion, not privilege. To every learner who chooses Jamia Academy know that you are not just a student to us. You are the reason this institution exists, and you are the future we are building for. Our Dream is to create a super powerful India that doesn't just consume technology but leads it. Warm regards, Dr.Qasim Chaudhary.",
     // TODO:
     // Replace placeholder signature with an official scanned signature image if available.
     signatureImage: "",
@@ -142,10 +142,10 @@ export const vision = {
   heading: "Our Vision",
 
   subtitle:
-    "Empowering Minds. Advancing Technology. Building the Nation.",
+    "Your Dreams Deserve World-Class Skills- Right Here, Right Now.",
 
   description:
-    "To emerge as a nationally and globally recognized education group that empowers individuals through technology-driven, affordable, and future-oriented education, enabling inclusive growth and contributing meaningfully to India’s digital and economic transformation. We envision an India where talent is not limited by socio-economic background, and where education acts as a catalyst for innovation, employment, and national progress.",
+    "We're not just an institute we're a movement that connects raw talent with the power of technology, opening doors to unlimited possibilities for every student who walks through them. Our vision is to build a “Societal environment recognized across India and the world” one where affordable, future-ready, and skill-driven education reaches every student, regardless of their background. Contributing to India's race in technology is our ultimate mission. We dream of a New India where: Talent knows no boundaries-socio-economic background is never a barrier Education is more than a degree- it's a gateway to innovation and employment Every student becomes a driving force in India's digital and economic transformation “Enrol today”, “Lead tomorrow” Your Skill, Your Future, It All Starts Here",
 
   image: "/assets/about/vision-placeholder.webp",
 };
@@ -155,30 +155,8 @@ export const mission = {
   heading: "Our Mission",
 
   description:
-    "To provide affordable, industry-focused education that equips students with practical skills, ethical values, and technological competence for a successful future.",
+    "We provide top-quality education in Computer Science, Information Technology, and Creative Digital Fields, matching global standards and real industry demands, so you're job-ready from day one. We break down financial barriers and deliver affordable, accessible education to students from economically weaker, marginalized, and underrepresented communities we believe talent should never be held back by circumstance. Every program we offer combines practical skills, strong ethical values, and cutting-edge technological competence because true professionals aren't just taught, they're built. We nurture a culture of curiosity, lifelong learning, and social responsibility.",
 
-  points: [
-    {
-      id: "mission-point-1",
-      text: "Deliver high-quality education in Computer Science, IT, and creative digital fields.",
-    },
-    {
-      id: "mission-point-2",
-      text: "Make quality education accessible to students from diverse backgrounds.",
-    },
-    {
-      id: "mission-point-3",
-      text: "Develop practical skills, innovation, and technological competence.",
-    },
-    {
-      id: "mission-point-4",
-      text: "Prepare skilled professionals who contribute to India’s digital and economic growth.",
-    },
-    {
-      id: "mission-point-5",
-      text: "Promote lifelong learning, ethical values, and social responsibility.",
-    },
-  ],
 };
 
 // ---------------------------------------------------------------------------
@@ -189,7 +167,7 @@ export const commitment = {
   heading: "Our Commitment",
 
   description:
-    "At Jamia Academy, we are committed to building institutions that educate with purpose, innovate with responsibility, and grow with integrity. Our focus remains on shaping individuals who not only succeed professionally but also contribute to a more equitable, skilled, and resilient society.",
+    "We are committed to standing by every student's journey from their first day in the classroom to their first day on the job because your success is not a checkbox for us, it's our purpose. We continuously upgrade our curriculum, tools, and teaching methods to match evolving global industry standards, because settling for good enough is not in our DNA. We keep education affordable and accessible, ensuring that no student is left behind due to financial or social barriers, because merit and passion not background should define who gets a seat at the table. Alongside technical expertise, we instil integrity, discipline, and ethical responsibility in every student, because we're not just creating employees, we're shaping responsible citizens and future leaders. We remain an active contributor to India's digital transformation, training a workforce that is skilled, adaptable, and ready to compete on the global stage. And our relationship with students doesn't end at graduation we continue to offer mentorship, placement support, and lifelong learning opportunities long after the certificate is handed over.",
 };
 
 // ---------------------------------------------------------------------------
