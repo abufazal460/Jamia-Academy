@@ -23,18 +23,17 @@ const wait = (seconds) =>
     setTimeout(resolve, seconds * 1000);
   });
 
+// Safety cap for "wait for the new route to actually mount" — protects
+// against a lazy chunk that fails to load / hangs, so the curtain never
+// gets stuck covering the screen forever.
+const ROUTE_READY_TIMEOUT = 4000;
+
 export default function PageTransitionProvider({
   children,
 }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    return () => {
-      document.body.style.overflow = "";
-      document.documentElement.style.overflow = "";
-    };
-  }, []);
   /*
    * IMPORTANT:
    *
@@ -48,6 +47,14 @@ export default function PageTransitionProvider({
    * navigate()
    * Back
    * Forward
+   *
+   * This blocker is the ONLY thing that drives the transition. Do not
+   * add a second, independent "cover -> navigate -> reveal" path
+   * elsewhere (e.g. by calling navigate() again from inside a helper) —
+   * that second navigate() call would itself get intercepted by this
+   * same blocker, and since the helper already marked itself as
+   * "running", nobody would ever call blocker.proceed() for it. The
+   * navigation would get stuck permanently in the "blocked" state.
    */
   const blocker = useBlocker(true);
 
@@ -56,26 +63,60 @@ export default function PageTransitionProvider({
   const mountedRef = useRef(false);
   const runningRef = useRef(false);
 
-  const previousOverflowRef = useRef("");
+  const previousBodyOverflowRef = useRef("");
+  const previousHtmlOverflowRef = useRef("");
+
+  // Resolves the promise a running transition is awaiting once the new
+  // route has actually mounted (RouteTransitionWatcher calls
+  // onRouteMounted). This replaces a blind fixed-duration wait, so slow
+  // networks / lazy chunks don't get revealed before the new page is
+  // actually ready.
+  const routeReadyResolverRef = useRef(null);
 
   const [isTransitioning, setIsTransitioning] =
     useState(false);
 
   /*
-   * Prevent browser from showing the page while
-   * transition is running.
+   * Prevent the page from scrolling while a transition is running.
+   * Locks both <html> and <body> so behavior is consistent regardless
+   * of which element the page's own CSS uses for scrolling.
    */
   const lockScroll = useCallback(() => {
-    previousOverflowRef.current =
-      document.body.style.overflow;
+    previousBodyOverflowRef.current = document.body.style.overflow;
+    previousHtmlOverflowRef.current =
+      document.documentElement.style.overflow;
 
+    document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
   }, []);
 
   const unlockScroll = useCallback(() => {
     document.body.style.overflow =
-      previousOverflowRef.current || "";
-    document.documentElement.style.overflow = "";
+      previousBodyOverflowRef.current || "";
+    document.documentElement.style.overflow =
+      previousHtmlOverflowRef.current || "";
+  }, []);
+
+  const waitForRouteReady = useCallback(
+    (timeoutMs = ROUTE_READY_TIMEOUT) =>
+      new Promise((resolve) => {
+        routeReadyResolverRef.current = resolve;
+
+        setTimeout(() => {
+          if (routeReadyResolverRef.current === resolve) {
+            routeReadyResolverRef.current = null;
+            resolve();
+          }
+        }, timeoutMs);
+      }),
+    []
+  );
+
+  const onRouteMounted = useCallback(() => {
+    if (routeReadyResolverRef.current) {
+      routeReadyResolverRef.current();
+      routeReadyResolverRef.current = null;
+    }
   }, []);
 
   /*
@@ -84,36 +125,59 @@ export default function PageTransitionProvider({
    * Page starts underneath the curtain.
    *
    * This fixes direct URL / refresh flash.
+   *
+   * Written to be safe under React 18 StrictMode's dev-mode double
+   * effect invocation: every step checks `cancelled` / `mountedRef`
+   * before continuing, and cleanup kills/resets the transition instead
+   * of letting a stale async chain keep running into the next mount.
    */
   useLayoutEffect(() => {
     mountedRef.current = true;
 
     if (!transitionRef.current) {
-      return;
+      return undefined;
     }
 
-    transitionRef.current.setCovered();
+    let cancelled = false;
 
+    transitionRef.current.setCovered();
     lockScroll();
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(async () => {
-        try {
-          window.scrollTo(0, 0);
+    const run = async () => {
+      await new Promise((resolve) =>
+        requestAnimationFrame(() =>
+          requestAnimationFrame(resolve)
+        )
+      );
 
-          await wait(
-            TRANSITION_TIMING.holdDuration
-          );
+      if (cancelled || !mountedRef.current) return;
 
-          await transitionRef.current.playReveal();
-        } finally {
-          unlockScroll();
-        }
-      });
+      window.scrollTo(0, 0);
+
+      await wait(TRANSITION_TIMING.holdDuration);
+
+      if (cancelled || !mountedRef.current) return;
+
+      if (transitionRef.current) {
+        await transitionRef.current.playReveal();
+      }
+    };
+
+    run().finally(() => {
+      if (!cancelled) {
+        unlockScroll();
+      }
     });
 
     return () => {
       mountedRef.current = false;
+      cancelled = true;
+
+      if (transitionRef.current) {
+        transitionRef.current.reset();
+      }
+
+      unlockScroll();
     };
   }, [lockScroll, unlockScroll]);
 
@@ -132,7 +196,7 @@ export default function PageTransitionProvider({
    *      ↓
    * NAVIGATION
    *      ↓
-   * NEW PAGE
+   * NEW PAGE (awaits a real "mounted" signal, not a fixed timer)
    *      ↓
    * REVEAL
    */
@@ -142,6 +206,23 @@ export default function PageTransitionProvider({
     }
 
     if (runningRef.current) {
+      return;
+    }
+
+    const nextLocation = blocker.location;
+
+    const isSameRoute =
+      nextLocation &&
+      nextLocation.pathname === location.pathname &&
+      nextLocation.search === location.search;
+
+    // Navigating to the exact same route (e.g. clicking the active
+    // nav link again) shouldn't play the curtain at all — just let it
+    // through immediately. This is handled once, here, for every entry
+    // point (Link, NavLink, navigate(), back/forward) instead of being
+    // duplicated per call site.
+    if (isSameRoute) {
+      blocker.proceed();
       return;
     }
 
@@ -171,24 +252,27 @@ export default function PageTransitionProvider({
          *
          * Browser Back/Forward also reaches here.
          */
+        const readyPromise = waitForRouteReady();
+
         blocker.proceed();
 
         /*
-         * Give React time to commit the new route.
+         * 3. Wait for the NEW route to actually mount (signalled by
+         * RouteTransitionWatcher -> onRouteMounted) instead of a blind
+         * fixed wait. This is what makes slow-network / lazy-loaded
+         * pages reveal onto real content instead of a blank Suspense
+         * fallback. Falls back to a timeout so a broken/never-loading
+         * chunk can't leave the curtain stuck forever.
          */
-        await new Promise((resolve) =>
-          requestAnimationFrame(() =>
-            requestAnimationFrame(resolve)
-          )
-        );
+        await readyPromise;
 
         /*
-         * 3. Reset scroll while screen is covered.
+         * 4. Reset scroll while screen is covered.
          */
         window.scrollTo(0, 0);
 
         /*
-         * 4. Reveal NEW page.
+         * 5. Reveal NEW page.
          */
         if (transitionRef.current) {
           await transitionRef.current.playReveal();
@@ -218,68 +302,33 @@ export default function PageTransitionProvider({
     runNavigation();
   }, [
     blocker,
+    location,
     lockScroll,
     unlockScroll,
+    waitForRouteReady,
   ]);
 
+  /*
+   * Thin wrapper around navigate(). Deliberately does NOT run its own
+   * cover/reveal sequence — the navigate() call below gets intercepted
+   * by the blocker above (useBlocker(true) blocks everything), and
+   * that single blocker effect is what drives cover -> navigate ->
+   * reveal for every kind of navigation. Having two independent
+   * drivers was the root cause of the "double navigation" bug: this
+   * function's own navigate() call would re-enter the blocker while
+   * runningRef was already true, so the blocker would bail out and
+   * nobody would ever call blocker.proceed() — leaving the navigation
+   * permanently stuck.
+   */
   const navigateWithTransition = useCallback(
-    async (to, options = {}) => {
-      if (!to || runningRef.current) return;
-
+    (to, options = {}) => {
+      if (!to) return;
       if (to === location.pathname) return;
 
-      runningRef.current = true;
-      setIsTransitioning(true);
-      lockScroll();
-
-      try {
-        if (transitionRef.current) {
-          await transitionRef.current.playCover();
-
-          await wait(
-            TRANSITION_TIMING.holdDuration
-          );
-        }
-
-        navigate(to, options);
-
-        await new Promise((resolve) =>
-          requestAnimationFrame(() =>
-            requestAnimationFrame(resolve)
-          )
-        );
-
-        window.scrollTo(0, 0);
-
-        if (transitionRef.current) {
-          await transitionRef.current.playReveal();
-        }
-      } finally {
-        runningRef.current = false;
-        unlockScroll();
-        setIsTransitioning(false);
-      }
+      navigate(to, options);
     },
-    [
-      navigate,
-      location.pathname,
-      lockScroll,
-      unlockScroll,
-    ]
+    [navigate, location.pathname]
   );
-
-  const onRouteMounted = useCallback(() => {
-    /*
-     * No transition logic here.
-     *
-     * IMPORTANT:
-     *
-     * Do NOT call playCover() here.
-     *
-     * The navigation blocker already handled
-     * the transition BEFORE route change.
-     */
-  }, []);
 
   const value = useMemo(
     () => ({
