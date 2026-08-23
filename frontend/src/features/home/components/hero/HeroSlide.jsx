@@ -19,7 +19,7 @@ const HeroSlide = ({ slide, isFirst, prefersReducedMotion }) => {
         loading={isFirst ? "eager" : "lazy"}
         fetchPriority={isFirst ? "high" : "auto"}
         decoding="async"
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full"
       />
 
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#2B2D42]/80 via-[#2B2D42]/25 to-[#2B2D42]/45" />
