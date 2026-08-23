@@ -222,51 +222,51 @@ export default function PageTransitionProvider({
     unlockScroll,
   ]);
 
- const navigateWithTransition = useCallback(
-  async (to, options = {}) => {
-    if (!to || runningRef.current) return;
+  const navigateWithTransition = useCallback(
+    async (to, options = {}) => {
+      if (!to || runningRef.current) return;
 
-    if (to === location.pathname) return;
+      if (to === location.pathname) return;
 
-    runningRef.current = true;
-    setIsTransitioning(true);
-    lockScroll();
+      runningRef.current = true;
+      setIsTransitioning(true);
+      lockScroll();
 
-    try {
-      if (transitionRef.current) {
-        await transitionRef.current.playCover();
+      try {
+        if (transitionRef.current) {
+          await transitionRef.current.playCover();
 
-        await wait(
-          TRANSITION_TIMING.holdDuration
+          await wait(
+            TRANSITION_TIMING.holdDuration
+          );
+        }
+
+        navigate(to, options);
+
+        await new Promise((resolve) =>
+          requestAnimationFrame(() =>
+            requestAnimationFrame(resolve)
+          )
         );
+
+        window.scrollTo(0, 0);
+
+        if (transitionRef.current) {
+          await transitionRef.current.playReveal();
+        }
+      } finally {
+        runningRef.current = false;
+        unlockScroll();
+        setIsTransitioning(false);
       }
-
-      navigate(to, options);
-
-      await new Promise((resolve) =>
-        requestAnimationFrame(() =>
-          requestAnimationFrame(resolve)
-        )
-      );
-
-      window.scrollTo(0, 0);
-
-      if (transitionRef.current) {
-        await transitionRef.current.playReveal();
-      }
-    } finally {
-      runningRef.current = false;
-      unlockScroll();
-      setIsTransitioning(false);
-    }
-  },
-  [
-    navigate,
-    location.pathname,
-    lockScroll,
-    unlockScroll,
-  ]
-);
+    },
+    [
+      navigate,
+      location.pathname,
+      lockScroll,
+      unlockScroll,
+    ]
+  );
 
   const onRouteMounted = useCallback(() => {
     /*
