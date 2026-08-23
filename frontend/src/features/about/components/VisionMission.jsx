@@ -205,21 +205,7 @@ const VisionMission = () => {
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{mission.description}</p>
             )}
 
-            {missionPoints.length > 0 && (
-              <ul className="mt-4 flex flex-1 flex-col gap-3">
-                {missionPoints.map((point) => (
-                  <li
-                    key={point?.id || point?.text}
-                    data-mission-point
-                    className="flex items-start gap-2.5 text-sm text-white/75"
-                  >
-                    <CheckCircle2 size={16} className="mt-0.5 shrink-0 text-[#2A9D8F]" aria-hidden="true" />
-                    {/* Short animated divider — decorative vertical accent before text */}
-                    <span className="leading-relaxed">{point?.text}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
+           
           </motion.div>
 
           {/* ============================================================

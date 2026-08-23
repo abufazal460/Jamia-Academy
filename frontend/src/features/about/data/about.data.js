@@ -142,10 +142,10 @@ export const vision = {
   heading: "Our Vision",
 
   subtitle:
-    "Empowering Minds. Advancing Technology. Building the Nation.",
+    "Your Dreams Deserve World-Class Skills- Right Here, Right Now.",
 
   description:
-    "To emerge as a nationally and globally recognized education group that empowers individuals through technology-driven, affordable, and future-oriented education, enabling inclusive growth and contributing meaningfully to India’s digital and economic transformation. We envision an India where talent is not limited by socio-economic background, and where education acts as a catalyst for innovation, employment, and national progress.",
+    "We're not just an institute we're a movement that connects raw talent with the power of technology, opening doors to unlimited possibilities for every student who walks through them. Our vision is to build a “Societal environment recognized across India and the world” one where affordable, future-ready, and skill-driven education reaches every student, regardless of their background. Contributing to India's race in technology is our ultimate mission. We dream of a New India where: Talent knows no boundaries-socio-economic background is never a barrier Education is more than a degree- it's a gateway to innovation and employment Every student becomes a driving force in India's digital and economic transformation “Enrol today”, “Lead tomorrow” Your Skill, Your Future, It All Starts Here",
 
   image: "/assets/about/vision-placeholder.webp",
 };
@@ -155,30 +155,30 @@ export const mission = {
   heading: "Our Mission",
 
   description:
-    "To provide affordable, industry-focused education that equips students with practical skills, ethical values, and technological competence for a successful future.",
+    "We provide top-quality education in Computer Science, Information Technology, and Creative Digital Fields, matching global standards and real industry demands, so you're job-ready from day one. We break down financial barriers and deliver affordable, accessible education to students from economically weaker, marginalized, and underrepresented communities we believe talent should never be held back by circumstance. Every program we offer combines practical skills, strong ethical values, and cutting-edge technological competence because true professionals aren't just taught, they're built. We nurture a culture of curiosity, lifelong learning, and social responsibility.",
 
-  points: [
-    {
-      id: "mission-point-1",
-      text: "Deliver high-quality education in Computer Science, IT, and creative digital fields.",
-    },
-    {
-      id: "mission-point-2",
-      text: "Make quality education accessible to students from diverse backgrounds.",
-    },
-    {
-      id: "mission-point-3",
-      text: "Develop practical skills, innovation, and technological competence.",
-    },
-    {
-      id: "mission-point-4",
-      text: "Prepare skilled professionals who contribute to India’s digital and economic growth.",
-    },
-    {
-      id: "mission-point-5",
-      text: "Promote lifelong learning, ethical values, and social responsibility.",
-    },
-  ],
+  // points: [
+  //   {
+  //     id: "mission-point-1",
+  //     text: "Deliver high-quality education in Computer Science, IT, and creative digital fields.",
+  //   },
+  //   {
+  //     id: "mission-point-2",
+  //     text: "Make quality education accessible to students from diverse backgrounds.",
+  //   },
+  //   {
+  //     id: "mission-point-3",
+  //     text: "Develop practical skills, innovation, and technological competence.",
+  //   },
+  //   {
+  //     id: "mission-point-4",
+  //     text: "Prepare skilled professionals who contribute to India’s digital and economic growth.",
+  //   },
+  //   {
+  //     id: "mission-point-5",
+  //     text: "Promote lifelong learning, ethical values, and social responsibility.",
+  //   },
+  // ],
 };
 
 // ---------------------------------------------------------------------------
@@ -189,7 +189,7 @@ export const commitment = {
   heading: "Our Commitment",
 
   description:
-    "At Jamia Academy, we are committed to building institutions that educate with purpose, innovate with responsibility, and grow with integrity. Our focus remains on shaping individuals who not only succeed professionally but also contribute to a more equitable, skilled, and resilient society.",
+    "We are committed to standing by every student's journey from their first day in the classroom to their first day on the job because your success is not a checkbox for us, it's our purpose. We continuously upgrade our curriculum, tools, and teaching methods to match evolving global industry standards, because settling for good enough is not in our DNA. We keep education affordable and accessible, ensuring that no student is left behind due to financial or social barriers, because merit and passion not background should define who gets a seat at the table. Alongside technical expertise, we instil integrity, discipline, and ethical responsibility in every student, because we're not just creating employees, we're shaping responsible citizens and future leaders. We remain an active contributor to India's digital transformation, training a workforce that is skilled, adaptable, and ready to compete on the global stage. And our relationship with students doesn't end at graduation we continue to offer mentorship, placement support, and lifelong learning opportunities long after the certificate is handed over.",
 };
 
 // ---------------------------------------------------------------------------
