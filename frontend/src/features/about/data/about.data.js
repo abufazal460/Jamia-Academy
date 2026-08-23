@@ -157,28 +157,6 @@ export const mission = {
   description:
     "We provide top-quality education in Computer Science, Information Technology, and Creative Digital Fields, matching global standards and real industry demands, so you're job-ready from day one. We break down financial barriers and deliver affordable, accessible education to students from economically weaker, marginalized, and underrepresented communities we believe talent should never be held back by circumstance. Every program we offer combines practical skills, strong ethical values, and cutting-edge technological competence because true professionals aren't just taught, they're built. We nurture a culture of curiosity, lifelong learning, and social responsibility.",
 
-  // points: [
-  //   {
-  //     id: "mission-point-1",
-  //     text: "Deliver high-quality education in Computer Science, IT, and creative digital fields.",
-  //   },
-  //   {
-  //     id: "mission-point-2",
-  //     text: "Make quality education accessible to students from diverse backgrounds.",
-  //   },
-  //   {
-  //     id: "mission-point-3",
-  //     text: "Develop practical skills, innovation, and technological competence.",
-  //   },
-  //   {
-  //     id: "mission-point-4",
-  //     text: "Prepare skilled professionals who contribute to India’s digital and economic growth.",
-  //   },
-  //   {
-  //     id: "mission-point-5",
-  //     text: "Promote lifelong learning, ethical values, and social responsibility.",
-  //   },
-  // ],
 };
 
 // ---------------------------------------------------------------------------

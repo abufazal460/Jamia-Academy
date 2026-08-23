@@ -9,7 +9,6 @@ import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
 import { cn } from "../../../shared/utils/helpers";
-import { safeArray } from "../../../shared/utils/helpers";
 
 import { vision, mission, commitment } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
@@ -25,7 +24,6 @@ const VisionMission = () => {
   const commitmentCardRef = useRef(null);
 
   const prefersReducedMotion = usePrefersReducedMotion();
-  const missionPoints = safeArray(mission?.points);
 
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
@@ -104,15 +102,6 @@ const VisionMission = () => {
       );
     }
 
-    // Mission points sequential animation — cards ke andar chhota stagger
-    const pointItems = missionCardRef.current?.querySelectorAll("[data-mission-point]");
-    if (pointItems?.length) {
-      tl.from(
-        pointItems,
-        { opacity: 0, x: -12, duration: 0.35, ease: "power2.out", stagger: 0.08 },
-        "-=0.3"
-      );
-    }
   }, [prefersReducedMotion]);
 
   return (
@@ -182,7 +171,7 @@ const VisionMission = () => {
           </motion.div>
 
           {/* ============================================================
-              MISSION CARD — dynamic points list
+              MISSION CARD 
           ============================================================= */}
           <motion.div
             ref={missionCardRef}
