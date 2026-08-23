@@ -10,7 +10,7 @@ const HeroControls = ({ slideCount, activeIndex, onNext, onPrev, onSelect }) => 
         type="button"
         onClick={onPrev}
         aria-label="Previous slide"
-        className="hidden h-10 w-10 items-center justify-center rounded-full bg-[#F7F3E9]/15 text-[#F7F3E9] backdrop-blur-sm transition-colors duration-200 hover:bg-[#F7F3E9]/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F4A261] sm:flex"
+        className="hidden h-10 w-10 items-center  justify-center rounded-full bg-[#F7F3E9]/15 text-[#F7F3E9] backdrop-blur-sm transition-colors duration-200 hover:bg-[#F7F3E9]/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#F4A261] sm:flex"
       >
         <ChevronLeft size={20} aria-hidden="true" />
       </button>

@@ -28,7 +28,7 @@ const Hero = () => {
 
     return (
         <section
-            className="relative h-screen min-h-[480px] w-full overflow-hidden bg-[#2B2D42]"
+            className="relative  h-screen min-h-[480px] w-full overflow-hidden bg-[#2B2D42]"
             onMouseEnter={speedUp}
             onMouseLeave={speedDown}
             onFocus={speedUp}
