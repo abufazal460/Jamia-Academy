@@ -10,6 +10,7 @@ import {
 import {
   useBlocker,
   useLocation,
+  useNavigate,
 } from "react-router-dom";
 
 import TransitionContext from "./TransitionContext";
@@ -26,8 +27,9 @@ export default function PageTransitionProvider({
   children,
 }) {
   const location = useLocation();
+  const navigate = useNavigate();
 
-   useEffect(() => {
+  useEffect(() => {
     return () => {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
@@ -73,7 +75,7 @@ export default function PageTransitionProvider({
   const unlockScroll = useCallback(() => {
     document.body.style.overflow =
       previousOverflowRef.current || "";
-      document.documentElement.style.overflow = "";
+    document.documentElement.style.overflow = "";
   }, []);
 
   /*
@@ -220,18 +222,51 @@ export default function PageTransitionProvider({
     unlockScroll,
   ]);
 
-  const navigateWithTransition = useCallback(
-    () => {
-      /*
-       * Navigation is now handled globally by
-       * useBlocker().
-       *
-       * Keep this function for compatibility with
-       * existing components.
-       */
-    },
-    []
-  );
+ const navigateWithTransition = useCallback(
+  async (to, options = {}) => {
+    if (!to || runningRef.current) return;
+
+    if (to === location.pathname) return;
+
+    runningRef.current = true;
+    setIsTransitioning(true);
+    lockScroll();
+
+    try {
+      if (transitionRef.current) {
+        await transitionRef.current.playCover();
+
+        await wait(
+          TRANSITION_TIMING.holdDuration
+        );
+      }
+
+      navigate(to, options);
+
+      await new Promise((resolve) =>
+        requestAnimationFrame(() =>
+          requestAnimationFrame(resolve)
+        )
+      );
+
+      window.scrollTo(0, 0);
+
+      if (transitionRef.current) {
+        await transitionRef.current.playReveal();
+      }
+    } finally {
+      runningRef.current = false;
+      unlockScroll();
+      setIsTransitioning(false);
+    }
+  },
+  [
+    navigate,
+    location.pathname,
+    lockScroll,
+    unlockScroll,
+  ]
+);
 
   const onRouteMounted = useCallback(() => {
     /*
