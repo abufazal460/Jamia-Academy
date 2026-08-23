@@ -23,13 +23,12 @@ const CertificatePage = lazy(() => import("../pages/CertificatePage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 export default function App() {
-  const appReady = useAppReady(); // ye batata hai site load ho gayi ya nahi
-  const location = useLocation(); // current route track karne ke liye
+  const appReady = useAppReady(); 
+  const location = useLocation(); 
 
   return (
     <>
       <OrganizationSchema />
-      {/* Navbar sabhi pages par common rahega isliye Routes ke bahar rakha gaya hai */}
       <IntroLoader appReady={appReady}>
         <PageTransitionProvider>
           <SmoothScroll>
@@ -37,7 +36,7 @@ export default function App() {
               <Navbar />
               <RouteTransitionWatcher />
               <Layout>
-                <ErrorBoundary resetKeys={[location.pathname , location.search]}>   {/*location.search ye optional hai ye query parameter par work karti hai */} 
+                <ErrorBoundary resetKeys={[location.pathname , location.search]}>   
                   <Routes>
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
