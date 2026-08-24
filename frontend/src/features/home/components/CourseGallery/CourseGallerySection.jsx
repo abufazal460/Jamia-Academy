@@ -9,10 +9,6 @@ import { galleryData } from "../../data/gallery.data";
 export default function CourseGallerySection() {
   const GALLERY_COLUMNS = { desktop: 3, tablet: 2, mobile: 1 };
 
-  // Selected image state for the full-screen preview modal — { src, alt, title } | null.
-  // Kept here (top of the section) rather than inside InfiniteGallery so the
-  // modal's fixed/portal lifecycle is fully independent of the scroll-animated
-  // gallery's own mount/unmount and GSAP timelines.
   const [selectedImage, setSelectedImage] = useState(null);
 
   const handleImageClick = useCallback((image) => {
