@@ -66,7 +66,7 @@ const NavItem = memo(function NavItem({ item, index, isActive }) {
                 ? // Active: background color + text color change. Ring nahi, border nahi.
                   "bg-white/10 text-cyan-300"
                 : // Inactive: transparent bg, muted text, hover pe bg + text change
-                  "text-slate-300 hover:bg-white/8 hover:text-white",
+                  "text-slate-300 hover:bg-white/20 hover:text-white",
             ].join(" ")
           }
         >

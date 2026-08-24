@@ -270,7 +270,7 @@ function Navbar() {
               p-1: Thoda andar padding taaki active pill ke corners tight na lage.
               border border-white/8: Barely visible border for depth.
           ---------------------------------------------------------------- */}
-          <ul className="flex items-center gap-0.5 rounded-full border border-white/8 bg-white/5 p-1">
+          <ul className="flex items-center gap-0.5 rounded-full border border-white/8 bg-white/10 p-1">
             {navLinks.map((item, index) => (
               <NavItem
                 key={item.id}
