@@ -210,7 +210,7 @@ const AboutDescription = () => {
                   {aboutDescription.location}
                 </span>
               )}
-            </div>
+            </div> 
 
             {/* H2 — proper heading hierarchy (H1 is in HeroAbout) */}
             <h2
@@ -308,28 +308,8 @@ const AboutDescription = () => {
               <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">
                 {/* Glass frame inner */}
                 <div className="relative overflow-hidden rounded-[26px] bg-white/40 backdrop-blur-sm">
-                  {!imageError ? (
-                    <img
-                      {...getImageProps(
-                        aboutDescription?.image,
-                        "Jamia Academy campus and students",
-                        false
-                      )}
-                      onError={() => setImageError(true)}
-                      className="aspect-[4/5] w-full object-fit"
-                    />
-                  ) : (
-                    // Error fallback — image kabhi crash nahi karega, hamesha graceful fallback
-                    <div
-                      role="img"
-                      aria-label="Jamia Academy image unavailable"
-                      className="flex aspect-[4/5] w-full flex-col items-center justify-center gap-2 bg-[#2B2D42]/5 text-[#2B2D42]/40"
-                    >
-                      <ImageOff size={32} aria-hidden="true" />
-                      <span className="text-xs">Image unavailable</span>
-                    </div>
-                  )}
-                  {/* Soft gradient overlay for depth */}
+                <video  autoPlay loop  muted src={aboutDescription?.image} className="w-full h-full object-fit"></video>
+               
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/25 via-transparent to-transparent" />
                 </div>
               </div>

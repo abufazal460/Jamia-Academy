@@ -37,7 +37,7 @@ const CoFounderSection = () => {
   const [imageError, setImageError] = useState(false);
 
   const safeQualifications = Array.isArray(coFounder?.qualifications) ? coFounder.qualifications : [];
-  const messageData = coFounder?.message || {};
+  const messageData = coFounder?.note || {};
 
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
@@ -205,13 +205,13 @@ const CoFounderSection = () => {
             )}
 
             {/* MESSAGE */}
-            {messageData.body && (
+            {messageData.notes && (
               <div ref={messageRef} className="mt-3 rounded-2xl border-l-4 border-[#2A9D8F] bg-[#F7F3E9]/50 px-5 py-4">
                 {messageData.label && (
                   <p className="text-xs font-semibold uppercase tracking-wide text-[#2A9D8F]">{messageData.label}</p>
                 )}
                 <p className="mt-1.5 text-sm sm:text-base italic leading-relaxed text-[#2B2D42]/80">
-                  “{messageData.body}”
+                  “{messageData.notes}”
                 </p>
               </div>
             )}
