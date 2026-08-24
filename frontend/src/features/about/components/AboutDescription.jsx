@@ -308,7 +308,7 @@ const AboutDescription = () => {
               <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">
                 {/* Glass frame inner */}
                 <div className="relative overflow-hidden rounded-[26px] bg-white/40 backdrop-blur-sm">
-                <video  autoPlay loop  muted src={aboutDescription?.image} className="w-full h-full object-fit"></video>
+                <video  autoPlay loop  muted src={aboutDescription?.image} className="aspect-[3/4] w-full h-full object-cover"></video>
                
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/25 via-transparent to-transparent" />
                 </div>
