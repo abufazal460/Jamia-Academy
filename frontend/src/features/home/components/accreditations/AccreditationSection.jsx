@@ -25,11 +25,11 @@ const AccreditationSection = () => {
         
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-24 -left-24 h-[22rem] w-[22rem] rounded-full bg-cyan-500/20 blur-[110px]"
+          className="pointer-events-none absolute -top-24 -left-24 h-[20rem] w-[20rem] rounded-full bg-cyan-500/20 blur-[110px]"
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-32 -right-16 h-[26rem] w-[26rem] rounded-full bg-violet-500/20 blur-[120px]"
+          className="pointer-events-none absolute  -bottom-32 -right-16 h-[22rem] w-[22rem] rounded-full bg-violet-500/20 blur-[120px]"
         />
 
         {/* CONTAINER — same outer width jo FeatureSection bhi use karega */}
@@ -86,7 +86,7 @@ const AccreditationSection = () => {
                     className="group relative rounded-[1.75rem] bg-gradient-to-br from-cyan-400/0 via-violet-400/0 to-fuchsia-400/0 p-[1.5px] transition-colors duration-300 hover:from-cyan-400/70 hover:via-violet-400/60 hover:to-fuchsia-400/70 focus-visible:outline-none focus-visible:from-cyan-400/70 focus-visible:via-violet-400/60 focus-visible:to-fuchsia-400/70"
                   >
                     <article
-                      className="relative flex aspect-[4/3] w-full flex-col items-center justify-center rounded-[calc(1.75rem-1.5px)] bg-white p-[clamp(1rem,3vw,1.75rem)] shadow-[0_8px_30px_rgba(15,23,42,0.35)] transition-shadow duration-300 group-hover:shadow-[0_20px_45px_rgba(56,189,248,0.25)] group-focus-visible:ring-2 group-focus-visible:ring-cyan-400"
+                      className="relative flex aspect-[3/2] w-full flex-col items-center justify-center rounded-[calc(1.75rem-1.5px)] bg-white p-[clamp(1rem,3vw,1.75rem)] shadow-[0_8px_30px_rgba(15,23,42,0.35)] transition-shadow duration-300 group-hover:shadow-[0_20px_45px_rgba(56,189,248,0.25)] group-focus-visible:ring-2 group-focus-visible:ring-cyan-400"
                     >
                       {/* Image — apni animation se opacity/scale mein aati hai */}
                       <m.img
@@ -94,7 +94,7 @@ const AccreditationSection = () => {
                         src={item.image}
                         alt={item.alt}
                         loading="lazy"
-                        className="max-h-full max-w-[85%] origin-center object-contain transition-transform duration-300 group-hover:scale-[1.06]"
+                        className="max-h-full max-w-[95%] origin-center object-contain transition-transform duration-300 group-hover:scale-[1.06]"
                       />
                     </article>
                   </m.div>

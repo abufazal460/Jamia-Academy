@@ -7,7 +7,7 @@ import { usePageTransition } from "../../../app/providers/page-transition";
 import logo from "../../../assets/icons/jamia-academy-Logo.png";
 import logo2 from "../../../assets/icons/navbar-logo.png";
 import msme from "../../../assets/icons/msme.png";
-import mole from "../../../assets/icons/mole.jpeg";
+import mole from "../../../assets/icons/mole.png";
 import skillIndia from "../../../assets/icons/skill-india.png";
 import niti from "../../../assets/icons/niti-aayog.jpeg";
 import nielit from "../../../assets/icons/nielit.jpeg";
