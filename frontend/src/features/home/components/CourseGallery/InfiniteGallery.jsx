@@ -42,6 +42,7 @@ export default function InfiniteGallery({
   perspective = 1000,
   scrub = 1,
   speed = 1,
+  onImageClick,
 }) {
   const { activeColumns, loopedItems } = useInfiniteGallery(images, columns);
 
@@ -177,6 +178,7 @@ useIsomorphicLayoutEffect(() => {
               title={item.title}
               isClone={item._isClone}
               index={index}
+              onImageClick={onImageClick}
               height={[
                 "h-[var(--gallery-h-mobile)]",
                 "sm:h-[var(--gallery-h-tablet)]",

@@ -1,11 +1,23 @@
+import { useCallback, useState } from "react";
 import SectionHeader from "./SectionHeader";
 import InfiniteGallery from "./InfiniteGallery";
 import BrowseCoursesCTA from "./BrowseCoursesCTA";
+import ImagePreviewModal from "./ImagePreviewModal";
 
 import { galleryData } from "../../data/gallery.data";
 
 export default function CourseGallerySection() {
   const GALLERY_COLUMNS = { desktop: 3, tablet: 2, mobile: 1 };
+
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const handleImageClick = useCallback((image) => {
+    setSelectedImage(image);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setSelectedImage(null);
+  }, []);
 
   return (
     <section
@@ -29,11 +41,15 @@ export default function CourseGallerySection() {
           scrub={1}
           speed={1}
           animationEnabled
+          onImageClick={handleImageClick}
         />
 
         {/* Bottom CTA */}
         <BrowseCoursesCTA />
       </div>
+
+      {/* Full-screen image preview modal — portaled to document.body */}
+      <ImagePreviewModal image={selectedImage} onClose={handleCloseModal} />
     </section>
   );
 }

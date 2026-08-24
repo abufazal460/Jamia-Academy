@@ -40,7 +40,10 @@ export function initSmoothScroll() {
 export function destroySmoothScroll(lenis) {
   if (!lenis) return;
   lenis.off("scroll", ScrollTrigger.update);
-  if (activeLenisInstance === lenis) activeLenisInstance = null;
+
+  if (activeLenisInstance === lenis) {
+    activeLenisInstance = null;
+  }
 }
 
 function Desktop3DPreset(el, { scrub }) {
