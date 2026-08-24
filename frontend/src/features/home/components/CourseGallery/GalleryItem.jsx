@@ -12,9 +12,24 @@
 import { forwardRef, memo } from "react";
 
 const GalleryItem = forwardRef(function GalleryItem(
-  { image, alt, title, height, isClone, index },
+  { image, alt, title, height, isClone, index, onImageClick },
   ref
 ) {
+  // Modal open sirf real click/keyboard activation par — clone items bhi
+  // (visually) clickable rehte hain taaki infinite-loop illusion ke doraan
+  // koi image "dead" na lage, lekin unka data hamesha original item ka hota hai.
+  const handleActivate = () => {
+    onImageClick?.({ src: image, alt, title });
+  };
+
+  const handleKeyDown = (event) => {
+    if (isClone) return;
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleActivate();
+    }
+  };
+
   return (
     <figure
       ref={ref}
@@ -50,6 +65,10 @@ const GalleryItem = forwardRef(function GalleryItem(
         decoding="async"
         draggable={false}
         tabIndex={isClone ? -1 : 0}
+        role="button"
+        aria-label={`Open image preview: ${title || alt || "gallery image"}`}
+        onClick={handleActivate}
+        onKeyDown={handleKeyDown}
         // object-cover pehle image ko crop karta tha taaki container
         // poora bhar jaaye — ab object-contain use hota hai taaki POORI
         // image hamesha visible rahe, aspect ratio preserve ho, koi
@@ -57,7 +76,7 @@ const GalleryItem = forwardRef(function GalleryItem(
         // height/width waisi hi rakhta hai — bacha hua space (letterbox)
         // upar wale `bg-neutral-950` se fill hota hai aur image
         // automatically center mein rehti hai (object-position: center).
-        className="h-full w-full object-contain object-center select-none"
+        className="h-full w-full cursor-pointer object-contain object-center select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
       />
 
       {title ? (
