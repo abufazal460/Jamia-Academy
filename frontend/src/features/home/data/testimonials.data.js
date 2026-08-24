@@ -137,7 +137,7 @@ export const testimonialsRowTwo = [
   },
   {
     id: 14,
-    name: "sana pendig",
+    name: "dummy 1",
     course: "BCC (Basic Computer Course)",
     rating: 4.8,
     review:
@@ -146,7 +146,7 @@ export const testimonialsRowTwo = [
   },
   {
     id: 15,
-    name: "dummy1",
+    name: "dummy 2",
     course: "BCC (Basic Computer Course)",
     rating: 4.5,
     review:
@@ -155,7 +155,7 @@ export const testimonialsRowTwo = [
   },
   {
     id: 16,
-    name: "dummy2",
+    name: "dummy 3",
     course: "Tally Prime",
     rating: 5,
     review:
