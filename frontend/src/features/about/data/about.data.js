@@ -7,7 +7,7 @@
 // karne ki zaroorat nahi — sirf isi file me values update karni hain.
 
 // import all images 
-import img1 from "../../../assets/images/about/hero/img-1.jpeg"
+import video from "../../../assets/images/common/aboutDescription.mp4"
 // ---------------------------------------------------------------------------
 // HERO SECTION
 // ---------------------------------------------------------------------------
@@ -47,7 +47,7 @@ export const aboutDescription = {
   ],
   // TODO:
   // Replace placeholder image with optimized WebP image.
-  image: img1,
+  image: video,
 };
 
 // ---------------------------------------------------------------------------
