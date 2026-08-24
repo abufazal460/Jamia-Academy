@@ -94,7 +94,7 @@ export const founder = {
   position: "Former Advisor, State Education Board",
   qualifications: [
     { id: "qual-1", degree: "Ph.D", field: "HR Analytics & Technology", university: "Jamia Millia Islamia" },
-    // { id: "qual-2", degree: "MBA", field: "Human Resource Management", university: "AKTU Lucknow" },
+    { id: "qual-2", degree: "MBA", field: "Human Resource Management", university: "AKTU Lucknow" },
     // { id: "qual-3", degree: "BBA", field: "International Business", university: "University of Lucknow" },
   ],
  
