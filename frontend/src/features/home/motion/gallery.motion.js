@@ -18,26 +18,13 @@ import { getLenisInstance } from "../../../app/providers/SmoothScroll";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Currently active Lenis instance — gallery ke bahar (e.g. CTA button)
-// ko bhi isi Lenis se smooth-scroll karna ho to yeh access deta hai,
-// taaki kahin bhi native `window.scrollTo` use na karna pade jab
-// Lenis already scroll control kar raha ho.
 let activeLenisInstance = null;
 
-/**
- * Currently mounted gallery ka active Lenis instance return karta hai
- * (ya null agar gallery mount nahi hai / animation disabled hai).
- * Sirf READ karne ke liye — is instance ko yahan se destroy/mutate mat karo.
- */
 export function getActiveLenis() {
   return activeLenisInstance;
 }
 
 /**
- * Lenis ko GSAP ScrollTrigger ke saath sync karta hai.
- * Yeh smooth-scroll ka core hai — Lenis scroll deta hai,
- * ScrollTrigger uspe react karta hai.
- *
  * @returns {Lenis} lenis instance — cleanup ke liye return karo
  */
 
@@ -49,38 +36,13 @@ export function initSmoothScroll() {
   activeLenisInstance = lenis;
   return lenis;
 }
-// destroySmoothScroll should then only lenis.off("scroll", ScrollTrigger.update)
-// instead of lenis.destroy() — this is a shared instance, not owned here.
 
-/**
- * Lenis ko poori tarah destroy karta hai — memory leak rokne ke liye.
- */
 export function destroySmoothScroll(lenis) {
   if (!lenis) return;
-  if (lenis._rafCallback) gsap.ticker.remove(lenis._rafCallback);
-  lenis.destroy();
+  lenis.off("scroll", ScrollTrigger.update);
   if (activeLenisInstance === lenis) activeLenisInstance = null;
 }
 
-/**
- * DESKTOP / TABLET PRESET — original Codrops 3D feeling.
- * EK hi timeline, EK hi ScrollTrigger per item (pehle do alag-alag
- * scrubbed triggers the jo same properties pe fight karte the —
- * ab ek timeline ke andar do keyframes hain: 0 = enter, 0.5 = exit,
- * dono ek hi scrub se drive hote hain, isliye conflict nahi hota).
- * Tablet ISI preset ko reuse karta hai — koi duplicate animation code nahi,
- * sirf column count alag hota hai (jo layout se aata hai, animation se nahi).
- *
- * NOTE: koi `scroller` yahan set nahi hota — ScrollTrigger by default
- * window/document ko scroller maanta hai, jo Lenis (default config mein)
- * bhi drive karta hai. Dono ek hi scroll-context share karte hain,
- * isliye animation reliably update hoti hai.
- *
- * NOTE 2: `transformPerspective` per-item yahan set NAHI karte — perspective
- * sirf parent container par (CSS `perspective`) apply hota hai, jo original
- * Codrops ka tarika hai. Item khud sirf `transform-style: preserve-3d` +
- * `transform-origin: center` use karta hai (GalleryItem.jsx mein already hai).
- */
 function Desktop3DPreset(el, { scrub }) {
   return gsap
     .timeline({
@@ -105,12 +67,6 @@ function Desktop3DPreset(el, { scrub }) {
     );
 }
 
-/**
- * MOBILE PRESET — dedicated, no rotationY, no perspective illusion.
- * Ek hi column visible hota hai isliye 3D tilt awkward lagta hai —
- * iski jagah vertical translate + opacity + halki rotationX use hoti hai.
- * Yeh bhi window scroller use karta hai — koi custom scroller nahi.
- */
 function MobilePreset(el, { scrub }) {
   return gsap
     .timeline({
@@ -135,20 +91,6 @@ function MobilePreset(el, { scrub }) {
 }
 
 /**
- * Sabhi gallery items ke liye scroll animation banata hai — ANY number
- * of items ke saath kaam karta hai (6 ho ya 600), kyunki loop mein
- * hardcoded index checks kahin nahi hain.
- *
- * `columns` (current active column count, layout hook se aata hai) decide
- * karta hai kaunsa preset chalega — 1 column = MobilePreset, 2/3+ = same
- * Desktop3DPreset (tablet automatically desktop engine reuse karta hai).
- * Koi :nth-child, koi "if index < 3" jaisa hardcode nahi.
- *
- * Scrolling ARCHITECTURE: sirf ek scroller hai — window/document. Lenis
- * (default config) window ko drive karta hai, aur ScrollTrigger bhi
- * default window scroller use karta hai — dono sync mein rehte hain.
- * Isliye yahan koi `scroller` pass nahi hota aur koi
- * ScrollTrigger.scrollerProxy() ki zaroorat nahi.
  *
  * @param {HTMLElement[]} itemEls
  * @param {HTMLElement} perspectiveEl - element jispe CSS perspective set hoga (parent wrapper)
@@ -165,13 +107,8 @@ export function createInfiniteScrollAnimation(itemEls, perspectiveEl, options = 
   if (!itemEls || itemEls.length === 0 || !perspectiveEl) return [];
 
   const isMobile = columns <= 1;
-
-  // Perspective sirf parent par — mobile pe 3D depth illusion nahi chahiye.
   gsap.set(perspectiveEl, { perspective: isMobile ? 0 : perspective });
 
-  // gsap.globalTimeline.timeScale() POORI app ki saari animations slow/fast
-  // kar deta (buttons, toasts, kuch bhi ho) — isliye speed sirf is gallery
-  // ki apni timelines par per-instance apply karte hain.
   const timelines = itemEls
     .filter(Boolean)
     .map((el) => {
@@ -184,11 +121,6 @@ export function createInfiniteScrollAnimation(itemEls, perspectiveEl, options = 
 }
 
 /**
- * Container ke andar sabhi <img> tags ke load hone ka wait karta hai.
- * Gallery images load hone se pehle heights/positions stable nahi hoti,
- * isliye ScrollTrigger ko unke baad ek refresh chahiye hota hai —
- * warna start/end points galat calculate ho jaate hain.
- *
  * @param {HTMLElement} containerEl
  * @returns {Promise<void>}
  */
@@ -210,11 +142,6 @@ export function waitForImagesToLoad(containerEl) {
 }
 
 /**
- * Saari animation timelines (aur unke andar ke ScrollTriggers) ko safely
- * kill karta hai. Component unmount ya images prop change hone pe yeh
- * zaroor call karo — warna stale triggers memory leak aur "ghost"
- * animations create karte hain.
- *
  * @param {gsap.core.Timeline[]} timelines
  */
 export function killScrollTriggers(timelines) {
@@ -226,11 +153,6 @@ export function killScrollTriggers(timelines) {
   });
 }
 
-/**
- * Layout badalne par (resize, column count change, images load hone
- * ke baad) ScrollTrigger ko positions recalculate karne ke liye batao.
- * Debounced/rAF-wrapped taaki resize storm mein bar-bar na chale.
- */
 export function refreshScrollTrigger() {
   requestAnimationFrame(() => ScrollTrigger.refresh());
 }
