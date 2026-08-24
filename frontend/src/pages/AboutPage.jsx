@@ -1,4 +1,3 @@
-import React from "react";
 import SEO from "../shared/seo/SEO";
 import { motion } from "motion/react";
 import { Suspense, lazy } from "react";
@@ -40,21 +39,6 @@ const About = () => {
         exit="exit"
         className="w-full overflow-x-hidden"
       >
-        {/*
-          Section order (Phase 2/3 me actual components yaha render honge):
-          1. HeroAbout
-          2. AboutDescription
-          3. FounderSection
-          4. FounderMessage
-          5. CoFounderSection
-          6. VisionMission
-          7. ValuesSection
-          8. StatsSection
-          9. FacultyGrid
-          10. WhyChooseUs
-          11. TimelineSection
-        */}
-
         <HeroAbout />
         <AboutDescription />
         <FounderSection />

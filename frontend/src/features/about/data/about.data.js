@@ -120,7 +120,7 @@ export const coFounder = {
   // Replace Dummy Data with Official Jamia Academy Content.
   name: "Dr. Saba Rizwi",
   designation: "Co-Founder & Academic Director",
-  title: "Co-Founder & MD",
+  title: "Co-Founder & CMD",
   bio: "Dr. Saba Rizwi has been instrumental in shaping the academic curriculum and pastoral care systems that define the Jamia Academy experience.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
@@ -131,40 +131,20 @@ export const coFounder = {
     // { id: "cf-qual-2", degree: "M.A.", field: "Education", university: "Jawaharlal Nehru University" },
     // { id: "cf-qual-3", degree: "B.A.", field: "Elementary Education", university: "University of Delhi" },
   ],
-  notes: {
+  note: {
     label: "A Note From Our Co-Founder",
-    body: "I believe every child carries a spark of potential waiting to be nurtured. My work here is about building the systems, the culture, and the everyday moments that let that spark grow into something lasting.",
+    notes: "I believe every child carries a spark of potential waiting to be nurtured. My work here is about building the systems, the culture, and the everyday moments that let that spark grow into something lasting.",
   },
 
    message: {
     id: "co-founder",
 
-    label: "Co-Founder & MD",
+    label: "Co-Founder & CMD",
 
-    heading: "Co-Founder & MD",
+    heading: "Co-Founder & CMD",
 
     body: [
-      "Bridging the widening gap between what colleges teach and what industries actually need has been the very reason behind starting Jamia Academy a gap that academia rarely talks about.",
-
-      "For years, I watched brilliant graduates step out with certificates in hand, yet struggle to find their footing in the job market because the job market had already moved several steps ahead. The world was shifting toward AI, automation, and digital-first everything, but our education system was still teaching yesterday's syllabus for today's jobs. This disconnect became the spark behind Jamia Academy.",
-
-      "My vision has never been to COMPETE with traditional education, but to COMPLETE it to build an institution that moves at the same speed as technology itself, one that constantly evolves and constantly asks whether what we teach today will still hold value tomorrow. Alongside producing skilled individuals, we want to build professionals who walk into interview rooms and boardrooms already speaking the language of the industry.",
-
-      "What excites me most isn't where Jamia Academy stands today, but where we're headed next- new domains, emerging technologies like Artificial Intelligence (AI), smarter learning formats, and a growing community of learners who refuse to settle for outdated knowledge. This is just the beginning of a much bigger blueprint.",
-
-      "Here's the one lesson I want every student to carry with them: the world doesn't need more people who simply adapt to change it needs people who create it. Don't just keep up. Learn to Lead It.",
-
-      "Together, let's build an environment that doesn't chase industry trends it sets them.",
-
-      "Join the Movement. Become the Trendsetter.",
-
-      "Warm regards,",
-
-      "Dr. Saba Rizwi",
-
-      "Founder & CMD",
-
-      "Jamia Academy",
+      "Bridging the widening gap between what colleges teach and what industries actually need has been the very reason behind starting Jamia Academy a gap that academia rarely talks about. For years, I watched brilliant graduates step out with certificates in hand, yet struggle to find their footing in the job market because the job market had already moved several steps ahead. The world was shifting toward AI, automation, and digital-first everything, but our education system was still teaching yesterday's syllabus for today's jobs. This disconnect became the spark behind Jamia Academy. My vision has never been to complete with traditional education, but to complete it to build an institution that moves at the same speed as technology itself, one that constantly evolves and constantly asks whether what we teach today will still hold value tomorrow. Alongside producing skilled individuals, we want to build professionals who walk into interview rooms and boardrooms already speaking the language of the industry. What excites me most isn't where Jamia Academy stands today, but where we're headed next- new domains, emerging technologies like Artificial Intelligence (AI), smarter learning formats, and a growing community of learners who refuse to settle for outdated knowledge. This is just the beginning of a much bigger blueprint. Here's the one lesson I want every student to carry with them: the world doesn't need more people who simply adapt to change it needs people who create it. Don't just keep up. Learn to Lead It. Together, let's build an environment that doesn't chase industry trends it sets them. Join the Movement. Become the Trendsetter. Warm regards, Dr. Saba Rizwi.",
     ],
 
     signatureImage: "",
@@ -204,7 +184,7 @@ export const commitment = {
   heading: "Our Commitment",
 
   description:
-    "We are committed to standing by every student's journey from their first day in the classroom to their first day on the job because your success is not a checkbox for us, it's our purpose. We continuously upgrade our curriculum, tools, and teaching methods to match evolving global industry standards, because settling for good enough is not in our DNA. We keep education affordable and accessible, ensuring that no student is left behind due to financial or social barriers, because merit and passion not background should define who gets a seat at the table. Alongside technical expertise, we instil integrity, discipline, and ethical responsibility in every student, because we're not just creating employees, we're shaping responsible citizens and future leaders. We remain an active contributor to India's digital transformation, training a workforce that is skilled, adaptable, and ready to compete on the global stage. And our relationship with students doesn't end at graduation we continue to offer mentorship, placement support, and lifelong learning opportunities long after the certificate is handed over.",
+    "We are committed to standing by every student's journey from their first day in the classroom to their first day on the job because your success is not a checkbox for us, it's our purpose. We continuously upgrade our curriculum, tools, and teaching methods to match evolving global industry standards, because settling for good enough is not in our DNA. We keep education affordable and accessible, ensuring that no student is left behind due to financial or social barriers, because merit and passion not background should define who gets a seat at the table. Alongside technical expertise, we instil integrity, discipline, and ethical responsibility in every student, because we're not just creating employees, we're shaping responsible citizens and future leaders. We remain an active contributor to India's digital transformation, training a workforce that is skilled, adaptable, and ready to complete on the global stage. And our relationship with students doesn't end at graduation we continue to offer mentorship, placement support, and lifelong learning opportunities long after the certificate is handed over.",
 };
 
 // ---------------------------------------------------------------------------
