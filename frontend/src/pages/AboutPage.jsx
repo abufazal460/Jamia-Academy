@@ -13,6 +13,7 @@ import {
   ValuesSection,
   StatsSection,
 } from "../features/about/components";
+import { founder, coFounder } from "../features/about/data/about.data";
 
 import { pageTransition } from "../features/about/motion/about.motion";
 
@@ -57,8 +58,9 @@ const About = () => {
         <HeroAbout />
         <AboutDescription />
         <FounderSection />
-        <FounderMessage />
+        <FounderMessage data={founder} />
         <CoFounderSection />
+        <FounderMessage data={coFounder} />
         <VisionMission />
         <ValuesSection />
         <StatsSection />
