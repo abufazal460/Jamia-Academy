@@ -7,10 +7,13 @@ import { usePageTransition } from "../../../app/providers/page-transition";
 import logo from "../../../assets/icons/jamia-academy-Logo.png";
 import logo2 from "../../../assets/icons/navbar-logo.png";
 import msme from "../../../assets/icons/msme.png";
-import mole from "../../../assets/icons/mole.png";
+import neilit from "../../../assets/icons/nielit.jpeg";
+import nitiAyog from "../../../assets/icons/niti-aayog.jpeg";
 import skillIndia from "../../../assets/icons/skill-india.png";
-import niti from "../../../assets/icons/niti-aayog.jpeg";
-import nielit from "../../../assets/icons/nielit.jpeg";
+import ip from "../../../assets/icons/ip.png";
+import iso from "../../../assets/icons/iso.jpeg";
+import iaf from "../../../assets/icons/iaf.png";
+import mole from "../../../assets/icons/mole.png";
 
 /* ============================================================
    DATA — Sab links/arrays ek jagah rakhe hain (constants).
@@ -75,17 +78,19 @@ const EMAIL_ADDRESSES = ["jamiaacademycs@gmail.com", "info@jamiaacademy.in"];
 const GOVERNMENT_LOGOS = [
   { id: "msme", name: "MSME", img: msme, url: "https://msme.gov.in" },
   { id: "mole", name: "MoLE", img: mole, url: "https://labour.gov.in" },
+  { id: "iso", name: "ISO", img: iso, url: "https://www.iso.org/home.html" },
+  { id: "iaf", name: "IAF", img: iaf, url: "https://iaf.nu/en/home/" },
   {
     id: "skillindia",
     name: "Skill India",
     img: skillIndia,
     url: "https://www.skillindia.gov.in",
   },
-  { id: "niti", name: "Niti Aayog", img: niti, url: "https://www.niti.gov.in" },
+  { id: "niti", name: "Niti Aayog", img: nitiAyog, url: "https://www.niti.gov.in" },
   {
     id: "nielit",
     name: "NIELIT",
-    img: nielit,
+    img: neilit,
     url: "https://www.nielit.gov.in",
   },
 ];
@@ -406,7 +411,7 @@ const Footer = () => {
           {/* Heading + underline accent */}
           <div>
             <h3 className="text-white font-bold text-2xl sm:text-3xl">
-              Powered By
+              Accreditations By
             </h3>
             <span className="block w-12 h-[3px] bg-cyan-400 rounded-full mt-2" />
           </div>
