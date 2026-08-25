@@ -1,5 +1,7 @@
 import { useState, useCallback, useRef, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import { formConfig } from "../data/contact.data";
+import { emailjsConfig } from "../config/emailjs.config";
 import { validateField } from "../../../shared/utils/validation";
 
 const buildInitialState = () => {
@@ -10,12 +12,13 @@ const buildInitialState = () => {
   return state;
 };
 
-// Status machine: idle -> submitting -> success (auto resets to idle)
+// Status machine: idle -> submitting -> success (auto resets to idle) | error (auto resets to idle)
 export const useContactForm = (onSuccess) => {
   const [values, setValues] = useState(buildInitialState);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
   const resetTimeoutRef = useRef(null);
+  const isSubmittingRef = useRef(false); // duplicate-submit guard, state se independent (no re-render lag)
 
   useEffect(() => {
     return () => {
@@ -52,23 +55,40 @@ export const useContactForm = (onSuccess) => {
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      if (isSubmittingRef.current) return; // double-click / double-submit guard
       if (!validateAll()) return;
 
+      isSubmittingRef.current = true;
       setStatus("submitting");
+
       try {
-        // Actual API integration baad mein yahan aayegi
-        await new Promise((resolve) => setTimeout(resolve, 1200));
+        await emailjs.send(
+          emailjsConfig.serviceId,
+          emailjsConfig.templateId,
+          {
+            from_name: values.fullName,
+            phone: values.phone,
+            email: values.email,
+            course: values.course,
+            message: values.message,
+          },
+          { publicKey: emailjsConfig.publicKey }
+        );
+
         setStatus("success");
         onSuccess?.();
         resetTimeoutRef.current = setTimeout(() => {
           setStatus("idle");
           setValues(buildInitialState());
+          isSubmittingRef.current = false;
         }, 2200);
       } catch {
-        setStatus("idle");
+        setStatus("error");
+        isSubmittingRef.current = false; // retry allowed, values kept as-is
+        resetTimeoutRef.current = setTimeout(() => setStatus("idle"), 2500);
       }
     },
-    [validateAll, onSuccess]
+    [validateAll, values, onSuccess]
   );
 
   return { values, errors, status, handleChange, handleSubmit };
