@@ -66,7 +66,7 @@ export const useContactForm = (onSuccess) => {
           emailjsConfig.serviceId,
           emailjsConfig.templateId,
           {
-            from_name: values.fullName,
+            name: values.fullName,
             phone: values.phone,
             email: values.email,
             course: values.course,
