@@ -20,7 +20,7 @@ const AccreditationSection = () => {
      
       <section
         aria-label="Our Accreditations"
-        className="relative w-full overflow-hidden bg-[linear-gradient(135deg,#0B1224_0%,#131B34_45%,#1B2745_100%)]"
+        className="relative w-full overflow-hidden bg-gradient-secondary"
       >
         
         <div

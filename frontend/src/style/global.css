@@ -198,7 +198,7 @@ html.lenis body {
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
   --font-sans: "Geist", sans-serif;
   --font-heading: "Plus Jakarta Sans", sans-serif;
   --font-display: "Poppins", sans-serif;
@@ -241,88 +241,15 @@ html.lenis body {
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* jamia academy color plette  */
-  /* =========================
-     BRAND
-  ========================= */
-  --color-primary: #C45A3C;
-  --color-primary-hover: #AE4B31;
-  --color-primary-active: #923E29;
-  --color-primary-soft: #F1D4C9;
 
-  --color-secondary: #292A27;
-  --color-secondary-hover: #1F201E;
-  --color-secondary-active: #121311;
-  --color-secondary-soft: #E2E2DC;
+  /* jamia academy theme  */
+  --color-bg-primary: #FFFDF7;
+  --color-bg-secondary: #F1E9D8;
+  --color-bg-dark-primary: #1F1A16;
+  --color-bg-dark-secondary: #010101;
+  --background-image-gradient-primary: linear-gradient(135deg,#F2C56A 0%,#D9853A 100%);
 
-  /* =========================
-     BACKGROUNDS
-  ========================= */
-  --background-primary: #F7F3E9;
-  --background-secondary: #ECE7DB;
-
-  --background-white: #FFFFFF;
-  --background-black: #000000;
-
-
-  /* =========================
-     TEXT
-  ========================= */
-  --text-primary: #292A27;
-  --text-secondary: #575851;
-  --text-muted: #77786F;
-  --text-disabled: #A3A39B;
-
-  --text-white: #FFFFFF;
-  --text-black: #000000;
-
-
-  /* =========================
-     BORDER
-  ========================= */
-  --border-default: #D8D2C5;
-  --border-primary: #C45A3C;
-  --border-secondary: #292A27;
-
-  --border-glass: rgba(255,255,255,0.45);
-  --border-dark-glass: rgba(255,255,255,0.12);
-
-
-  /* =========================
-     GRADIENT
-  ========================= */
-  --gradient-primary-secondary:
-    linear-gradient(
-      135deg,
-      #C45A3C 0%,
-      #292A27 100%
-    );
-
-
-  /* =========================
-     GLASS
-  ========================= */
-  --glass-white: rgba(255,255,255,0.58);
-  --glass-primary: rgba(196,90,60,0.08);
-  --glass-dark: rgba(41,42,39,0.82);
-
-
-  /* =========================
-     SHADOW
-  ========================= */
-  --shadow-xs:
-    0 2px 10px rgba(41,42,39,0.05);
-  --shadow-sm:
-    0 8px 24px rgba(41,42,39,0.07);
-  --shadow-md:
-    0 14px 35px rgba(41,42,39,0.10);
-  --shadow-primary:
-    0 14px 35px rgba(196,90,60,0.18);
-  --shadow-primary-strong:
-    0 18px 45px rgba(196,90,60,0.22);
-  --shadow-secondary:
-    0 18px 45px rgba(41,42,39,0.18);
-
+  --background-image-gradient-secondary: linear-gradient(135deg,#FD6E6A 10%,#FFC600 100%);
 }
 
 :root {
