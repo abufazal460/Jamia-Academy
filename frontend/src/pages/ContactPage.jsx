@@ -34,7 +34,7 @@ const Contact = () => {
         imageAlt="Contact Jamia Academy in Jamia Nagar, New Delhi"
         structuredData={contactSchema}
       />
-      <main className="relative min-h-screen overflow-x-hidden bg-[#F7F3E9]">
+      <main className="relative min-h-screen overflow-x-hidden bg-bg-secondary">
         <ContactBackground />
 
         <ContactHero />
