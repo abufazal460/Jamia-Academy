@@ -43,7 +43,7 @@ const FAQ = () => {
       id="faq"
       aria-label="Frequently Asked Questions"
       className="
-        bg-[#0a0f1f] relative
+        bg-bg-dark-secondary relative
         py-16 sm:py-20 md:py-24 lg:py-28 xl:py-32
         px-4 sm:px-6 md:px-8 lg:px-12
         overflow-hidden
