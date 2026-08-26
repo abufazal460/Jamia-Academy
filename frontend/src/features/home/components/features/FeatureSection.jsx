@@ -28,7 +28,7 @@ const FeatureSection = () => {
       */}
       <section
         aria-label="Why join us"
-        className="relative isolate w-full overflow-hidden bg-[linear-gradient(160deg,#070B18_0%,#0B1E3E_35%,#123B63_65%,#3B1670_100%)]
+        className="relative isolate w-full overflow-hidden bg-gradient-secondary
           before:absolute before:-top-20 before:right-[-6rem] before:h-80 before:w-80 before:rounded-full
           before:bg-cyan-400/20 before:blur-[100px] before:content-['']
           after:absolute after:bottom-[-8rem] after:left-[-6rem] after:h-96 after:w-96 after:rounded-full
