@@ -157,7 +157,7 @@ const StatsSection = () => {
       }}
       id="stats"
       aria-labelledby="stats-heading"
-      className="relative w-full overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-primary py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-2xl text-center">

@@ -112,13 +112,9 @@ const WhyChooseUs = () => {
       }}
       id="why-choose-us"
       aria-labelledby="why-choose-us-heading"
-      className="relative w-full overflow-hidden bg-[#2B2D42] py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-dark-secondary py-20 sm:py-24 lg:py-28"
     >
-      {/* Decorative soft glow — purely visual, aria-hidden */}
-      <div
-        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 h-72 w-[80%] rounded-full bg-[#E63946]/10 blur-[100px]"
-        aria-hidden="true"
-      />
+    
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
@@ -167,13 +163,13 @@ const WhyChooseUs = () => {
                 >
                   {/* Gradient highlight sweep on hover — decorative */}
                   <span
-                    className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#E63946]/0 via-[#F4A261]/0 to-[#2A9D8F]/0 opacity-0 group-hover:opacity-100 group-hover:from-[#E63946]/10 group-hover:via-[#F4A261]/5 group-hover:to-[#2A9D8F]/10 transition-opacity duration-300"
+                    className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 group-hover:from-[#E63946]/10 group-hover:via-[#F4A261]/5 group-hover:to-[#2A9D8F]/10 transition-opacity duration-300"
                     aria-hidden="true"
                   />
 
                   {/* Decorative accent element — soft glow circle */}
                   <span
-                    className="pointer-events-none absolute -bottom-8 -right-8 h-28 w-28 rounded-full bg-[#2A9D8F]/10 blur-2xl"
+                    className="pointer-events-none absolute -bottom-8 -right-8 h-28 w-28 rounded-full  blur-2xl"
                     aria-hidden="true"
                   />
 
@@ -200,7 +196,7 @@ const WhyChooseUs = () => {
 
                   {/* 4. Decorative accent — bottom divider line that grows on hover */}
                   <span
-                    className="relative z-10 mt-5 block h-[2px] w-10 rounded-full bg-gradient-to-r from-[#E63946] to-[#F4A261] transition-all duration-300 group-hover:w-16"
+                    className="relative z-10 mt-5 block h-[2px] w-10 rounded-full bg-gradient-to-r from-[#ed306c] to-[#fd9b4b] transition-all duration-300 group-hover:w-16"
                     aria-hidden="true"
                   />
                 </motion.div>

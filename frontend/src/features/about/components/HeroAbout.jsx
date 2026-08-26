@@ -202,7 +202,7 @@ const HeroAbout = () => {
       className={cn(
         "relative w-full min-h-[100svh] overflow-hidden",
         "flex items-center",
-        "bg-gradient-to-br from-[#0A0F30] via-[#301050] to-[#601580]"
+        "bg-gradient-primary"
       )}
     >
       {/* ================================================================
@@ -213,7 +213,7 @@ const HeroAbout = () => {
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         {/* Soft glow blob 1 */}
         <motion.div
-          className="absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full bg-[#EF233C]/20 blur-[110px] will-change-transform"
+          className="absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full  will-change-transform"
           animate={
             prefersReducedMotion
               ? {}

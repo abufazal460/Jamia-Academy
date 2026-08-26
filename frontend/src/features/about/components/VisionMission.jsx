@@ -112,17 +112,17 @@ const VisionMission = () => {
       }}
       id="vision-mission"
       aria-labelledby="vision-mission-heading"
-      className="relative w-full overflow-hidden bg-[#2B2D42] py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-dark-secondary py-20 sm:py-24 lg:py-28"
     >
       {/* Decorative floating background shapes — slow, minimal, Framer Motion only */}
       <motion.div
-        className="pointer-events-none absolute top-10 left-[10%] h-64 w-64 rounded-full bg-[#E63946]/10 blur-3xl"
+        className="pointer-events-none absolute top-10 left-[10%] h-64 w-64 rounded-full blur-3xl"
         animate={prefersReducedMotion ? {} : { y: [0, 25, 0] }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
       />
       <motion.div
-        className="pointer-events-none absolute bottom-0 right-[8%] h-72 w-72 rounded-full bg-[#2A9D8F]/10 blur-3xl"
+        className="pointer-events-none absolute bottom-0 right-[8%] h-72 w-72 rounded-full  blur-3xl"
         animate={prefersReducedMotion ? {} : { y: [0, -20, 0] }}
         transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
@@ -213,11 +213,6 @@ const VisionMission = () => {
             }
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            {/* Subtle decorative background gradient */}
-            <div
-              className="pointer-events-none absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-br from-[#E63946]/20 to-transparent blur-2xl"
-              aria-hidden="true"
-            />
             <span className="relative z-10 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E63946]/15 text-[#E63946]" aria-hidden="true">
               <HeartHandshake size={22} />
             </span>

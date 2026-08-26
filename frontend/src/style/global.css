@@ -244,11 +244,10 @@ html.lenis body {
 
   /* jamia academy theme  */
   --color-bg-primary: #FFFDF7;
-  --color-bg-secondary: #F1E9D8;
+  --color-bg-secondary: #F7F3E9;
   --color-bg-dark-primary: #000000;
   --color-bg-dark-secondary: #010101;
   --background-image-gradient-primary: linear-gradient(135deg,#F2C56A 0%,#D9853A 100%);
-
   --background-image-gradient-secondary: linear-gradient(135deg,#FD6E6A 10%,#FFC600 100%);
 }
 
