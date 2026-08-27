@@ -17,15 +17,7 @@ import {
 const FeatureSection = () => {
   return (
     <LazyMotion features={domAnimation} strict>
-      {/*
-        SECTION BACKGROUND
-        "Dark Navy -> Blue -> Cyan/Teal/Purple" combination, RED avoid kiya.
-        `before:` aur `after:` pseudo-elements yaha explicitly use kiye hai
-        (jaisa instruction mein maanga gaya tha) — do bade blurred glow-orbs
-        jo decorative depth dete hai, real black-block copy nahi kiya.
-        `isolate` + `overflow-hidden` taaki pseudo-elements section ke bahar
-        na nikle (no horizontal scrollbar).
-      */}
+     
       <section
         aria-label="Why join us"
         className="relative isolate w-full overflow-hidden bg-gradient-secondary"
@@ -72,7 +64,7 @@ const FeatureSection = () => {
                     {/* Icon badge */}
                     <m.div
                       whileHover={iconHoverRotate}
-                      className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 to-blue-800 text-white shadow-md"
+                      className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F] shadow-md"
                     >
                       <Icon aria-hidden="true" className="h-7 w-7" />
                     </m.div>
