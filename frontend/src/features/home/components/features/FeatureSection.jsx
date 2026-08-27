@@ -28,18 +28,9 @@ const FeatureSection = () => {
       */}
       <section
         aria-label="Why join us"
-        className="relative isolate w-full overflow-hidden bg-gradient-secondary
-          before:absolute before:-top-20 before:right-[-6rem] before:h-80 before:w-80 before:rounded-full
-          before:bg-cyan-400/20 before:blur-[100px] before:content-['']
-          after:absolute after:bottom-[-8rem] after:left-[-6rem] after:h-96 after:w-96 after:rounded-full
-          after:bg-purple-500/25 after:blur-[120px] after:content-['']"
+        className="relative isolate w-full overflow-hidden bg-gradient-secondary"
       >
-        {/* Ek teesra chhota teal glow — depth ke layers barhane ke liye */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-teal-400/10 blur-[90px]"
-        />
-
+       
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}
         >

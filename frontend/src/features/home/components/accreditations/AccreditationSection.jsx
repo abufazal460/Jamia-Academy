@@ -22,17 +22,7 @@ const AccreditationSection = () => {
         aria-label="Our Accreditations"
         className="relative w-full overflow-hidden bg-gradient-secondary"
       >
-        
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-24 -left-24 h-[20rem] w-[20rem] rounded-full bg-cyan-500/20 blur-[110px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute  -bottom-32 -right-16 h-[22rem] w-[22rem] rounded-full bg-violet-500/20 blur-[120px]"
-        />
-
-        {/* CONTAINER — same outer width jo FeatureSection bhi use karega */}
+      
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y} grid grid-cols-1 items-center gap-x-[clamp(2rem,5vw,5rem)] gap-y-12 lg:grid-cols-[1fr_1.15fr]`}
         >

@@ -27,9 +27,9 @@ const HomePage = () => {
 
         <FeatureSection />
 
-        <Testimonials />
-
         <WhyChooseUs />
+
+        <Testimonials />
 
         <FAQ />
 

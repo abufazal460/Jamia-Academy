@@ -247,8 +247,15 @@ html.lenis body {
   --color-bg-secondary: #F7F3E9;
   --color-bg-dark-primary: #000000;
   --color-bg-dark-secondary: #010101;
-  --background-image-gradient-primary: linear-gradient(135deg,#F2C56A 0%,#D9853A 100%);
-  --background-image-gradient-secondary: linear-gradient(135deg,#FD6E6A 10%,#FFC600 100%);
+  --background-image-gradient-primary: linear-gradient(
+    135deg,
+    #292A27 0%,
+    #5A3A30 50%,
+    #C45A3C 100%
+  );
+  --background-image-gradient-secondary:   linear-gradient(135deg, #5A302A 0%, #914636 50%, #C86F52 100%)
+
+
 }
 
 :root {
