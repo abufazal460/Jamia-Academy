@@ -49,7 +49,7 @@ const FeatureSection = () => {
                   <m.article
                     whileHover={cardHoverLift}
                     tabIndex={0}
-                    className="group relative overflow-hidden rounded-3xl bg-white p-[clamp(1.5rem,3vw,2.25rem)] shadow-[0_10px_35px_rgba(2,6,23,0.45)] transition-shadow duration-300 hover:shadow-[0_25px_55px_rgba(56,189,248,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                    className="group relative overflow-hidden rounded-3xl hover:shadow-card bg-card  p-[clamp(1.5rem,3vw,2.25rem)] shadow-[0_10px_35px_rgba(2,6,23,0.45)] transition-all duration-300"
                   >
                     {/*
                       "Background shine" hover effect — ek diagonal gradient

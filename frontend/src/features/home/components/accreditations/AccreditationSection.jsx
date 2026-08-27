@@ -74,7 +74,7 @@ const AccreditationSection = () => {
                   <m.div
                     whileHover={cardHoverLift}
                     tabIndex={0}
-                    className="group relative rounded-[1.75rem] p-[2.2px] transition-colors duration-300 -border bg-border-primary"
+                    className="group relative rounded-[1.75rem] p-[2.2px] transition-colors duration-300 -border bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F]"
                   >
                     <article
                       className="relative flex aspect-[3/2] w-full flex-col items-center justify-center rounded-[calc(1.75rem-1.5px)] p-[clamp(1rem,3vw,1.75rem)] shadow-[0_8px_30px_rgba(15,23,42,0.35)] transition-all duration-300 bg-card hover:shadow-card"
