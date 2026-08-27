@@ -247,15 +247,53 @@ html.lenis body {
   --color-bg-secondary: #F7F3E9;
   --color-bg-dark-primary: #000000;
   --color-bg-dark-secondary: #010101;
-  --background-image-gradient-primary: linear-gradient(
+  --background-image-gradient-primary: linear-gradient(135deg, #292A27 0%, #5A3A30 50%, #C45A3C 100%);
+  --background-image-gradient-secondary: linear-gradient(135deg, #5A302A 0%, #914636 50%, #C86F52 100%);
+
+  /* ---------- TEXT ---------- */
+  --color-text-primary: #292A27;
+  --color-text-secondary: #6E5A4E;
+  --color-text-accent: #C45A3C;
+  --color-text-accent-hover: #914636;
+  --color-text-on-dark: #FFFDF7;
+  --color-text-on-dark-muted: rgba(255, 253, 247, 0.65);
+
+
+ /* ---------- CARDS ---------- */
+  --color-card-bg: #FFFEFA;
+  --color-card-bg-hover: #FBF3E7;
+  --color-card-border: #E8DFC9;
+  --color-card-border-hover: #C45A3C;
+
+  /* ---------- GLASSMORPHISM ---------- */
+  --color-glass-fill-light: rgba(255, 253, 247, 0.55);
+  --color-glass-fill-dark: rgba(41, 42, 39, 0.45);
+  --color-glass-border: rgba(196, 90, 60, 0.20);
+  --color-glass-highlight: rgba(255, 255, 255, 0.5);
+
+  /* ---------- DARK MODE ---------- */
+  --color-dark-card-bg: #16130F;
+  --color-dark-card-border: rgba(196, 90, 60, 0.18);
+
+  /* ---------- SHADOWS ---------- */
+  --shadow-cards: 0 4px 14px rgba(41, 42, 39, 0.06);
+  --shadow-card-hover: 0 12px 28px rgba(196, 90, 60, 0.20);
+  --shadow-glass: 0 8px 32px rgba(41, 42, 39, 0.15);
+  --shadow-dark-section: 0 20px 50px rgba(0, 0, 0, 0.5);
+
+   --background-image-border-primary: linear-gradient(
     135deg,
-    #292A27 0%,
-    #5A3A30 50%,
-    #C45A3C 100%
+    #E63946 0%,
+    #F4A261 50%,
+    #2A9D8F 100%
   );
-  --background-image-gradient-secondary:   linear-gradient(135deg, #5A302A 0%, #914636 50%, #C86F52 100%)
 
-
+  --background-image-border-secondary: linear-gradient(
+    135deg,
+    #6A4C93 0%,
+    #E76F51 50%,
+    #90BE6D 100%
+  );
 }
 
 :root {

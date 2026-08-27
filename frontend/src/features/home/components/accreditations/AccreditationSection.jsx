@@ -22,7 +22,8 @@ const AccreditationSection = () => {
         aria-label="Our Accreditations"
         className="relative w-full overflow-hidden bg-gradient-secondary"
       >
-      
+       
+
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y} grid grid-cols-1 items-center gap-x-[clamp(2rem,5vw,5rem)] gap-y-12 lg:grid-cols-[1fr_1.15fr]`}
         >
@@ -43,7 +44,7 @@ const AccreditationSection = () => {
             </m.h2>
             <m.p
               variants={paragraphRiseVariant}
-              className="font-light mt-5 max-w-md text-[clamp(1rem,0.9rem+1vw,2rem)] leading-relaxed text-slate-300"
+              className="font-light mt-5 max-w-md text-[clamp(1rem,0.9rem+1vw,2rem)] leading-relaxed text-slate-200"
             >
               We are proud to be recognized by leading industry organizations
             </m.p>
@@ -68,15 +69,15 @@ const AccreditationSection = () => {
               const direction = getCardDirection(index);
 
               return (
-                <m.li key={item.id} variants={getCardVariant(direction)} className="list-none">
+                <m.li key={item.id} variants={getCardVariant(direction)} className="list-none ">
                  
                   <m.div
                     whileHover={cardHoverLift}
                     tabIndex={0}
-                    className="group relative rounded-[1.75rem] bg-gradient-to-br from-cyan-400/0 via-violet-400/0 to-fuchsia-400/0 p-[1.5px] transition-colors duration-300 hover:from-cyan-400/70 hover:via-violet-400/60 hover:to-fuchsia-400/70 focus-visible:outline-none focus-visible:from-cyan-400/70 focus-visible:via-violet-400/60 focus-visible:to-fuchsia-400/70"
+                    className="group relative rounded-[1.75rem] p-[2.2px] transition-colors duration-300 -border bg-border-primary"
                   >
                     <article
-                      className="relative flex aspect-[3/2] w-full flex-col items-center justify-center rounded-[calc(1.75rem-1.5px)] bg-white p-[clamp(1rem,3vw,1.75rem)] shadow-[0_8px_30px_rgba(15,23,42,0.35)] transition-shadow duration-300 group-hover:shadow-[0_20px_45px_rgba(56,189,248,0.25)] group-focus-visible:ring-2 group-focus-visible:ring-cyan-400"
+                      className="relative flex aspect-[3/2] w-full flex-col items-center justify-center rounded-[calc(1.75rem-1.5px)] p-[clamp(1rem,3vw,1.75rem)] shadow-[0_8px_30px_rgba(15,23,42,0.35)] transition-all duration-300 bg-card hover:shadow-card"
                     >
                       {/* Image — apni animation se opacity/scale mein aati hai */}
                       <m.img
@@ -84,7 +85,7 @@ const AccreditationSection = () => {
                         src={item.image}
                         alt={item.alt}
                         loading="lazy"
-                        className="max-h-full max-w-[95%] origin-center object-contain transition-transform duration-300 group-hover:scale-[1.06]"
+                        className="max-h-full max-w-[95%] rounded-2xl origin-center object-contain transition-transform duration-300 group-hover:scale-[1.06]"
                       />
                     </article>
                   </m.div>
