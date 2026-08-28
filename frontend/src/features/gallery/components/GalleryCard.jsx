@@ -2,15 +2,11 @@ import { memo, useRef, useEffect, useState } from "react";
 import { motion, useMotionValue, animate } from "motion/react";
 
 const BORDER_COLORS = [
-  "#ec4899",
-  "#a855f7",
-  "#6366f1",
-  "#22d3ee",
-  "#2dd4bf",
-  "#eab308",
-  "#f97316",
-  "#ec4899",
+  "#2A9D8F",
+  "#E63946",
+  "#F4A261",
 ];
+
 
 function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
   const cardRef = useRef(null);
@@ -43,7 +39,19 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
     setIsHovered(false);
   };
 
-  const gradient = `conic-gradient(from 0deg, ${BORDER_COLORS.join(", ")})`;
+  const SHINE_COLOR = "#FFFFFF";
+
+
+  const gradient = `conic-gradient(from 0deg, ${BORDER_COLORS.join(",")})`;
+
+  const shineGradient = `conic-gradient(
+  from 0deg,
+  transparent 0deg,
+  transparent 70deg,
+  ${SHINE_COLOR} 90deg,
+  transparent 110deg,
+  transparent 360deg
+)`;
 
   return (
     <motion.button
@@ -69,6 +77,14 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
           className="absolute -inset-[60%]"
           style={{
             background: gradient,
+            willChange: "transform",
+          }}
+        />
+        <motion.div
+          aria-hidden="true"
+          className="absolute -inset-[60%]"
+          style={{
+            background: shineGradient,
             rotate,
             willChange: "transform",
           }}
