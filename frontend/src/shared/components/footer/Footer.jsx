@@ -214,7 +214,7 @@ const Footer = () => {
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
       variants={footerContainerVariant}
-      className="relative bg-[#0a0f1f] text-slate-300 pt-16 pb-8 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden"
+      className="relative bg-footer-bg pt-16 pb-8 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden"
       aria-label="Site footer"
     >
       {/* ============================================================
@@ -235,7 +235,7 @@ const Footer = () => {
             />
           </div>
 
-          <p className="text-sm sm:text-[15px] leading-relaxed text-slate-400 max-w-xs">
+          <p className="text-sm sm:text-[15px] leading-relaxed text-footer-text hover:text-footer-link-hover max-w-xs">
             Empowering students with cutting-edge technology education. Building
             skills, innovation, and future-ready professionals.
           </p>
@@ -258,8 +258,8 @@ const Footer = () => {
                 whileTap={{ scale: 0.92 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
                 className="w-9 h-9 flex items-center justify-center rounded-full
-                           text-slate-300 hover:text-cyan-400
-                           hover:bg-white/5 transition-colors duration-300
+                           text-footer-text hover:text-footer-link-hover
+                           hover:bg-white/10 transition-colors duration-300
                            focus:outline-none"
               >
                 <Icon size={16} />
@@ -270,7 +270,7 @@ const Footer = () => {
 
         {/* ---------- SECTION 2: Quick Links ---------- */}
         <motion.div variants={sectionVariant}>
-          <h3 className="text-white font-semibold text-lg mb-5">Quick Links</h3>
+          <h3 className="text-footer-text hover:text-footer-link-hover font-semibold text-lg mb-5">Quick Links</h3>
           <motion.ul
             variants={listVariant}
             initial="hidden"
@@ -283,17 +283,12 @@ const Footer = () => {
                 <a
                   href={link.path}
                   onClick={(e) => handleInternalNav(e, link.path)}
-                  className="relative text-sm sm:text-[15px] text-slate-400
-                             hover:text-cyan-400 transition-colors duration-300
+                  className="relative text-sm sm:text-[15px] text-footer-text hover:text-footer-link-hover transition-colors duration-300
                              group inline-block w-fit
                              focus:outline-none rounded"
                 >
                   {link.title}
-                  {/* underline jo hover pe left se right grow hota hai */}
-                  <span
-                    className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-cyan-400
-                               transition-all duration-300 group-hover:w-full"
-                  />
+                  
                 </a>
               </motion.li>
             ))}
@@ -335,7 +330,7 @@ const Footer = () => {
 
         {/* ---------- SECTION 4: Contact Info ---------- */}
         <motion.div variants={sectionVariant}>
-          <h3 className="text-white font-semibold text-lg mb-5">
+          <h3 className="font-semibold text-lg mb-5 text-footer-text hover:text-footer-link-hover">
             Contact Info
           </h3>
 
@@ -348,12 +343,12 @@ const Footer = () => {
           >
             {/* Location — clickable, Google Maps khulta hai naye tab mein */}
             <motion.li variants={listItemVariant} className="flex gap-3">
-              <FiMapPin className="text-cyan-400 mt-0.5 shrink-0" size={18} />
+              <FiMapPin className="text-green-600 mt-0.5 shrink-0" size={18} />
               <a
                 href="https://maps.google.com/?q=A-29, 1st Floor, Above J&K Bank, Batla House Chowk, Jamia Nagar, Okhla, Delhi 110025"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-cyan-400 transition-colors duration-300 leading-relaxed
+                className="hover:text-footer-text transition-colors duration-300 leading-relaxed
                            focus:outline-none rounded"
               >
                 A-29, 1st Floor, Above J&K Bank, Batla House Chowk, Jamia Nagar,
@@ -363,13 +358,13 @@ const Footer = () => {
 
             {/* Phone numbers — tel: link, multiple numbers via array+map */}
             <motion.li variants={listItemVariant} className="flex gap-3">
-              <FiPhone className="text-cyan-400 mt-0.5 shrink-0" size={18} />
+              <FiPhone className="text-green-600 mt-0.5 shrink-0" size={18} />
               <div className="flex flex-col gap-1">
                 {PHONE_NUMBERS.map((num) => (
                   <a
                     key={num}
                     href={`tel:${num.replace(/\s/g, "")}`}
-                    className="hover:text-cyan-400 transition-colors duration-300
+                    className="hover:text-footer-text transition-colors duration-300
                                focus:outline-none  rounded w-fit"
                   >
                     {num}
@@ -380,13 +375,13 @@ const Footer = () => {
 
             {/* Emails — mailto: link, multiple emails via array+map */}
             <motion.li variants={listItemVariant} className="flex gap-3">
-              <FiMail className="text-cyan-400 mt-0.5 shrink-0" size={18} />
+              <FiMail className="text-green-600 mt-0.5 shrink-0" size={18} />
               <div className="flex flex-col gap-1 break-all">
                 {EMAIL_ADDRESSES.map((mail) => (
                   <a
                     key={mail}
                     href={`mailto:${mail}`}
-                    className="hover:text-cyan-400 transition-colors duration-300
+                    className="hover:text-footer-text transition-colors duration-300
                                focus:outline-none rounded w-fit"
                   >
                     {mail}
@@ -410,10 +405,10 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           {/* Heading + underline accent */}
           <div>
-            <h3 className="text-white font-bold text-2xl sm:text-3xl">
+            <h3 className="text-footer-text font-bold text-2xl sm:text-3xl">
               Accreditations By
             </h3>
-            <span className="block w-12 h-[3px] bg-cyan-400 rounded-full mt-2" />
+            <span className="block w-12 h-[3px] bg-green-600 rounded-full mt-2" />
           </div>
 
           {/* Government logos grid — wraps naturally on small screens
@@ -435,15 +430,10 @@ const Footer = () => {
                 // hover: card upar uthe + thoda scale + shadow smooth ho
                 whileHover={{ y: -6, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                className="flex flex-col items-center gap-2 group
-                           focus:outline-none rounded-xl"
+                className="flex flex-col items-center gap-2 group focus:outline-none rounded-xl"
               >
                 <div
-                  className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-2xl
-                             flex items-center justify-center p-2.5
-                             shadow-md shadow-black/30
-                             group-hover:shadow-xl group-hover:shadow-cyan-400/20
-                             transition-shadow duration-300"
+                  className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-2xl flex items-center justify-center p-2.5 transition-shadow duration-300"
                 >
                   <img
                     src={gov.img}

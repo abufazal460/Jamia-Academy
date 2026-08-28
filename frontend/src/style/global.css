@@ -295,7 +295,14 @@ html.lenis body {
     #E76F51 50%,
     #90BE6D 100%
   );
+
+/* ---------- FOOTER ---------- */
+  --color-footer-bg: #010101;
+  --color-footer-text: #F7F3E9;
+  --color-footer-link-hover: #abaaaa;
+
 }
+
 
 /* border utility  */
 /* Primary */
