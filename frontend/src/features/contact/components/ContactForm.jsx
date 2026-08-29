@@ -18,13 +18,6 @@ const ContactForm = () => {
       variants={scaleInVariant}
       className="relative overflow-hidden rounded-[2rem] border border-white/50 bg-white/40 p-6 shadow-2xl backdrop-blur-2xl sm:p-10"
     >
-      {/* Ambient gradient accent inside the glass panel */}
-      <div
-        className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full opacity-20 blur-3xl"
-        style={{ background: "linear-gradient(135deg, #E63946, #2A9D8F)" }}
-        aria-hidden="true"
-      />
-
       <div className="relative mb-8">
         <h2 id="contact-form-heading" className="text-[clamp(1.4rem,2.6vw,2rem)] font-extrabold text-[#2B2D42]">
           {formConfig.heading}

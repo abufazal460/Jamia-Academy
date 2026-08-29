@@ -48,15 +48,6 @@ const FormField = ({ field, value, error, onChange }) => {
         <input type={field.type} {...sharedProps} />
       )}
 
-      {/* Animated focus underline */}
-      <motion.span
-        initial={false}
-        animate={{ scaleX: focused ? 1 : 0 }}
-        transition={{ duration: 0.25, ease: "easeOut" }}
-        className="absolute bottom-0 left-4 right-4 h-[2px] origin-left rounded-full bg-gradient-to-r from-[#E63946] to-[#2A9D8F]"
-        aria-hidden="true"
-      />
-
       {error && (
         <p
           id={`${inputId}-error`}

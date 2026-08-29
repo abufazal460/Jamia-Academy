@@ -132,7 +132,7 @@ const ValuesSection = () => {
       }}
       id="values"
       aria-labelledby="values-heading"
-      className="relative w-full overflow-hidden bg-[#F7F3E9] py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}

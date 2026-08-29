@@ -24,12 +24,11 @@ function AnimatedButton({
       whileTap={!isDisabled ? { scale: 0.97 } : undefined}
       className={[
         "group relative isolate w-full overflow-hidden rounded-2xl",
-        "border border-sky-300/30 bg-gradient-to-r from-sky-500/90 to-cyan-400/90",
+        "bg-gradient-to-r from-yellow-500/90 to-sky-400/90",
         "px-6 py-3.5 text-sm font-semibold tracking-wide text-slate-950",
         "shadow-[0_8px_30px_-6px_rgba(56,189,248,0.55)]",
-        "transition-[box-shadow,border-color] duration-300",
-        "hover:shadow-[0_10px_40px_-4px_rgba(56,189,248,0.75)] hover:border-sky-200/60",
-        "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300",
+        "transition-all duration-300",
+        "hover:shadow-[0_10px_40px_-4px_rgba(56,189,248,0.75)] cursor-pointer",
         "disabled:cursor-not-allowed disabled:opacity-60",
       ].join(" ")}
       {...rest}

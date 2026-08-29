@@ -7,18 +7,6 @@ import {
   errorMessageVariants,
 } from "../../../../shared/motion/config";
 
-/**
- * FloatingInput
- * Rounded glass input with a floating label that smoothly moves to the
- * top-border-center on focus/value, aur ek chhota icon right side me
- * (email ke liye Mail icon). Reusable rakha hai taaki future me kisi
- * aur text field ke liye bhi kaam aa sake.
- *
- * Required props:
- * - id, name, label, placeholder, value, onChange, onBlur
- * - error: string (empty string = no error)
- * - touched: boolean — error sirf tab dikhta hai jab field touch ho chuki ho
- */
 function FloatingInput({
   id,
   name,
@@ -50,7 +38,7 @@ function FloatingInput({
           showError
             ? "border-red-400/70"
             : isFocused
-            ? "border-sky-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
+            ? "border-green-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
             : "border-white/15 hover:border-white/25",
         ].join(" ")}
       >
@@ -87,7 +75,7 @@ function FloatingInput({
         {/* Right-side icon */}
         <Mail
           aria-label={iconLabel}
-          className="ml-2 h-4 w-4 shrink-0 text-white/40 peer-focus:text-sky-300/80 transition-colors duration-300"
+          className="ml-2 h-4 w-4 shrink-0 text-white/40 peer-focus:text-green-300/80 transition-colors duration-300"
         />
       </div>
 

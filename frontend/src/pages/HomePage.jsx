@@ -23,13 +23,13 @@ const HomePage = () => {
       <main className="w-full min-h-screen">
         <Hero />
 
-        <AccreditationSection />
+        {/* <AccreditationSection /> */}
 
-        <FeatureSection />
-
-        <Testimonials />
+        {/* <FeatureSection /> */}
 
         <WhyChooseUs />
+
+        <Testimonials />
 
         <FAQ />
 

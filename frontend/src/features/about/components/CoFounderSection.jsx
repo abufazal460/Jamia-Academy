@@ -129,7 +129,7 @@ const CoFounderSection = () => {
       }}
       id="co-founder"
       aria-labelledby="cofounder-heading"
-      className="relative w-full overflow-hidden bg-white py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-primary py-20 sm:py-24 lg:py-28"
     >
       {/* Decorative floating accent shapes — Framer Motion only, purely visual */}
       <motion.div

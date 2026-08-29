@@ -56,7 +56,7 @@ export default function Gallery() {
         path="/gallery"
         imageAlt="Jamia Academy classroom, events and learning tours gallery"
       />
-      <main className="mx-auto w-full max-w-[1920px] px-4 py-10 sm:px-6 sm:py-14 lg:px-10 2xl:px-16">
+      <main className="mx-auto w-full max-w-[1920px] bg-bg-primary px-4 py-10 sm:px-6 sm:py-14 lg:px-10 2xl:px-16">
 
         {/* Page heading */}
         <header className="mx-auto mb-8 max-w-2xl text-center sm:mb-12">

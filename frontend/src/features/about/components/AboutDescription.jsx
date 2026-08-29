@@ -190,7 +190,7 @@ const AboutDescription = () => {
     <section
       id="about-description"
       aria-labelledby="about-description-heading"
-      className="relative w-full overflow-hidden bg-[#F7F3E9] py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-primary py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">

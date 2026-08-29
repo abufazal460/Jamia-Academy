@@ -22,7 +22,7 @@ export default function CourseGallerySection() {
   return (
     <section
       id="courses-gallery"
-      className="relative w-full overflow-hidden bg-neutral-950"
+      className="relative w-full overflow-hidden bg-bg-dark-secondary"
     >
       <div className="mx-auto flex w-full max-w-[1800px] flex-col px-4 py-12 sm:px-6 md:py-16 lg:px-10 lg:py-20 2xl:px-16">
 

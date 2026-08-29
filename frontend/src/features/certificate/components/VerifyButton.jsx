@@ -28,7 +28,7 @@ function VerifyButtonBase({ isSubmitting, disabled }) {
           }
       }
       whileTap={disabled || isSubmitting ? undefined : { scale: 0.97 }}
-      className="group relative mt-2 flex h-[52px] w-full items-center justify-center overflow-hidden rounded-full bg-white text-[15px] font-semibold text-[#0d1420] shadow-[0_4px_24px_rgba(255,255,255,0.25)] transition-shadow duration-300 disabled:cursor-not-allowed disabled:opacity-60"
+      className="group relative mt-2 flex h-[52px] cursor-pointer w-full items-center justify-center overflow-hidden rounded-full bg-white text-[15px] font-semibold text-[#0d1420] shadow-[0_4px_24px_rgba(255,255,255,0.25)] transition-shadow duration-300 disabled:cursor-not-allowed disabled:opacity-60"
     >
       {isSubmitting ? (
         <span className="flex items-center gap-2">

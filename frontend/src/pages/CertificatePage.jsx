@@ -29,7 +29,7 @@ export default function Certificate() {
       />
       <div className="relative min-h-screen w-full overflow-hidden">
         <SpaceBackground />
-        <main className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-4 py-16 sm:px-6">
+        <main className="relative z-10 flex min-h-screen w-full flex-col items-center justify-center px-4 py-18 sm:px-6">
           <PageHeading />
           <CertificateCard />
         </main>

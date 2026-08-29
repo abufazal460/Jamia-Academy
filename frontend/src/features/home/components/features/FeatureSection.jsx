@@ -17,29 +17,12 @@ import {
 const FeatureSection = () => {
   return (
     <LazyMotion features={domAnimation} strict>
-      {/*
-        SECTION BACKGROUND
-        "Dark Navy -> Blue -> Cyan/Teal/Purple" combination, RED avoid kiya.
-        `before:` aur `after:` pseudo-elements yaha explicitly use kiye hai
-        (jaisa instruction mein maanga gaya tha) — do bade blurred glow-orbs
-        jo decorative depth dete hai, real black-block copy nahi kiya.
-        `isolate` + `overflow-hidden` taaki pseudo-elements section ke bahar
-        na nikle (no horizontal scrollbar).
-      */}
+     
       <section
         aria-label="Why join us"
-        className="relative isolate w-full overflow-hidden bg-[linear-gradient(160deg,#070B18_0%,#0B1E3E_35%,#123B63_65%,#3B1670_100%)]
-          before:absolute before:-top-20 before:right-[-6rem] before:h-80 before:w-80 before:rounded-full
-          before:bg-cyan-400/20 before:blur-[100px] before:content-['']
-          after:absolute after:bottom-[-8rem] after:left-[-6rem] after:h-96 after:w-96 after:rounded-full
-          after:bg-purple-500/25 after:blur-[120px] after:content-['']"
+        className="relative isolate w-full overflow-hidden bg-gradient-secondary"
       >
-        {/* Ek teesra chhota teal glow — depth ke layers barhane ke liye */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-teal-400/10 blur-[90px]"
-        />
-
+       
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}
         >
@@ -66,7 +49,7 @@ const FeatureSection = () => {
                   <m.article
                     whileHover={cardHoverLift}
                     tabIndex={0}
-                    className="group relative overflow-hidden rounded-3xl bg-white p-[clamp(1.5rem,3vw,2.25rem)] shadow-[0_10px_35px_rgba(2,6,23,0.45)] transition-shadow duration-300 hover:shadow-[0_25px_55px_rgba(56,189,248,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                    className="group relative overflow-hidden rounded-3xl hover:shadow-card bg-card  p-[clamp(1.5rem,3vw,2.25rem)] shadow-[0_10px_35px_rgba(2,6,23,0.45)] transition-all duration-300"
                   >
                     {/*
                       "Background shine" hover effect — ek diagonal gradient
@@ -81,7 +64,7 @@ const FeatureSection = () => {
                     {/* Icon badge */}
                     <m.div
                       whileHover={iconHoverRotate}
-                      className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 to-blue-800 text-white shadow-md"
+                      className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F] shadow-md"
                     >
                       <Icon aria-hidden="true" className="h-7 w-7" />
                     </m.div>

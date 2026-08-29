@@ -54,9 +54,9 @@ const SocialLinks = () => {
                 initial="rest"
                 whileHover="hover"
                 whileTap="tap"
-                className="flex h-16 w-16 flex-col items-center justify-center gap-1 rounded-2xl border border-white/50 bg-white/40 shadow-md backdrop-blur-md transition-colors hover:border-[#E63946]/30 hover:shadow-[0_0_24px_rgba(230,57,70,0.25)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E63946]"
+                className={`flex h-16 w-16 flex-col items-center justify-center gap-1 rounded-2xl border border-white/50 bg-white/40 shadow-md backdrop-blur-md transition-colors hover:border-none ${link.color}`}
               >
-                {Icon && <Icon className="h-5 w-5 text-[#2B2D42]" strokeWidth={2} />}
+                {Icon && <Icon className={`h-5 w-5 ${link.color}`} strokeWidth={2} />}
                 <span className="sr-only">{link.platform}</span>
               </motion.a>
             </motion.li>
