@@ -1,16 +1,6 @@
-// testimonialsData.js
-// Yahan par saare testimonials ka data centralize kiya gaya hai (single source of truth)
-// Koi bhi text ya image path component ke andar hardcode nahi hai
-
-// Sabhi images sirf isi file ke andar import hongi
-// import user1 from "../assets/userPic/user1.jpg";
-// import user2 from "../assets/userPic/user2.jpg";
-// import user3 from "../assets/userPic/user3.jpg";
-// import user4 from "../assets/userPic/user4.jpg";
-// import user5 from "../assets/userPic/user5.jpg";
-// import user6 from "../assets/userPic/user6.jpg";
-// import user7 from "../assets/userPic/user7.jpg";
-// import user8 from "../assets/userPic/user8.jpg";
+import id5 from "../../../assets/images/home/student/samra.jpeg";
+import id7 from "../../../assets/images/home/student/MD Muztar AUTOCAD.jpeg";
+import id9 from "../../../assets/images/home/student/Musab ACC.png";
 
 // Top row (left direction) ke liye data
 export const testimonialsRowOne = [
@@ -57,7 +47,7 @@ export const testimonialsRowOne = [
     rating: 5,
     review:
       "I always liked design but didn't know the technical part. Teachers taught me Photoshop and Illustrator step by step. The environment is friendly, so I never felt scared to try new things.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ01GPnlPxgeBdk7cU_gfuD2mrxfaLtHgcy5WwfQg13g&s=10",
+    image: id5,
   },
   {
     id: 6,
@@ -75,7 +65,7 @@ export const testimonialsRowOne = [
     rating: 4.5,
     review:
       "I joined AutoCAD to learn technical drawing for my career in design. The teachers explained every tool step by step, and I got a lot of practice time on the computer. Now I can create drawings & Designing confidently on my own.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU8TFJ7iUwyhF0_LOmPpst5aFLBQUYvRcuREn63JTVvg&s=10",
+    image: id7,
   },
   {
     id: 8,
@@ -92,12 +82,12 @@ export const testimonialsRowOne = [
 export const testimonialsRowTwo = [
   {
     id: 9,
-    name: "Musad Khan",
+    name: "Musab Khan",
     course: "ACC (Advanced Computer Course)",
     rating: 4.7,
     review:
       "I learned computer basics properly here. Teachers are patient and explain things clearly, even for students who are complete beginners. Now I use these skills every day.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHzgIvj_tKuzbc5yaALqcWzplgTmsGHD2t4CW7WwYDVw&s=10",
+    image: id9,
   },
   {
     id: 10,
