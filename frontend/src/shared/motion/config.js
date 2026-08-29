@@ -153,8 +153,6 @@ export const floatingLabelVariants = {
   },
   floating: {
     top: "0%",
-    left: "50%",
-    x: "-50%",
     y: "-50%",
     scale: 0.78,
     transition: { type: "spring", stiffness: 300, damping: 26 },
