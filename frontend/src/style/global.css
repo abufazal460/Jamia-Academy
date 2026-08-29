@@ -281,20 +281,6 @@ html.lenis body {
   --shadow-glass: 0 8px 32px rgba(41, 42, 39, 0.15);
   --shadow-dark-section: 0 20px 50px rgba(0, 0, 0, 0.5);
 
- /* Gradient Border Colors */
-  --border-primary: linear-gradient(
-    135deg,
-    #E63946 0%,
-    #F4A261 50%,
-    #2A9D8F 100%
-  );
-
-  --border-secondary: linear-gradient(
-    135deg,
-    #6A4C93 0%,
-    #E76F51 50%,
-    #90BE6D 100%
-  );
 
 /* ---------- FOOTER ---------- */
   --color-footer-bg: #010101;
@@ -303,27 +289,6 @@ html.lenis body {
 
 }
 
-
-/* border utility  */
-/* Primary */
-@utility border-primary {
-  --gradient-border: var(--border-primary);
-
-  border: var(--border-width, 1px) solid transparent;
-  background:
-    linear-gradient(var(--border-surface), var(--border-surface)) padding-box,
-    var(--gradient-border) border-box;
-}
-
-/* Secondary */
-@utility border-secondary {
-  --gradient-border: var(--border-secondary);
-
-  border: var(--border-width, 1px) solid transparent;
-  background:
-    linear-gradient(var(--border-surface), var(--border-surface)) padding-box,
-    var(--gradient-border) border-box;
-}
 
 :root {
   --background: oklch(1 0 0);

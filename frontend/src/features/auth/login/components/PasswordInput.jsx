@@ -45,7 +45,7 @@ function PasswordInput({
           showError
             ? "border-red-400/70"
             : isFocused
-            ? "border-sky-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
+            ? "border-green-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
             : "border-white/15 hover:border-white/25",
         ].join(" ")}
       >
