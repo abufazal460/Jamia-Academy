@@ -1,5 +1,4 @@
-// Jamia Academy — Contact Page Content
-// Sab content yahin se aata hai, kahin bhi JSX mein hardcoded string nahi honi chahiye
+import { FaUserGraduate } from "react-icons/fa";
 
 // ---------------- HERO ----------------
 export const contactHero = {

@@ -46,9 +46,9 @@ const WhyContactSection = () => {
             >
               <motion.div
                 variants={iconHoverVariant}
-                className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#2A9D8F] to-[#264653] text-white shadow-md"
+                className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F] shadow-md"
               >
-                {Icon && <Icon className="h-6 w-6" strokeWidth={2} />}
+                {Icon && <Icon className="h-4 w-4" strokeWidth={2} />}
               </motion.div>
               <div>
                 <h3 className="text-base font-extrabold text-[#2B2D42]">{card.title}</h3>
