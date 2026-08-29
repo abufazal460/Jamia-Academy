@@ -1,6 +1,9 @@
-import id5 from "../../../assets/images/home/student/samra.jpeg";
+import id2 from "../../../assets/images/home/student/Aasif Python.png";
+import id6 from "../../../assets/images/home/student/Alfisha Digital Marketing.png";
 import id7 from "../../../assets/images/home/student/MD Muztar AUTOCAD.jpeg";
 import id9 from "../../../assets/images/home/student/Musab ACC.png";
+import id11 from "../../../assets/images/home/student/samra.jpeg";
+import id12 from "../../../assets/images/home/student/shifa.png";
 
 // Top row (left direction) ke liye data
 export const testimonialsRowOne = [
@@ -20,7 +23,7 @@ export const testimonialsRowOne = [
     rating: 4.5,
     review:
       "Python classes at Jamia Academy were fun and easy to follow. Teachers gave real examples instead of just theory. It felt more like learning with friends than sitting in a boring class.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ01GPnlPxgeBdk7cU_gfuD2mrxfaLtHgcy5WwfQg13g&s=10",
+    image: id2,
   },
   {
     id: 3,
@@ -42,12 +45,12 @@ export const testimonialsRowOne = [
   },
   {
     id: 5,
-    name: "Samra Ansari",
-    course: "Graphic Design",
-    rating: 5,
+    name: "Noor Ahmad",
+    course: "DFA (Tally)",
+    rating: 4.3,
     review:
-      "I always liked design but didn't know the technical part. Teachers taught me Photoshop and Illustrator step by step. The environment is friendly, so I never felt scared to try new things.",
-    image: id5,
+      "Accounting used to feel difficult, but the teachers explained it with easy examples. Now I understand the basics well. The overall environment at the academy is calm and helps you focus.",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqE3e9RIK09-ejpr7BwnvNb4TpTjmXHGgrTTNc00vdtA&s=10",
   },
   {
     id: 6,
@@ -56,7 +59,7 @@ export const testimonialsRowOne = [
     rating: 4.8,
     review:
       "This course taught me real things like SEO and running ads, not just theory. Teachers shared their own work experience, which helped a lot. I feel more confident about digital marketing now.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQi_D-HUxY_L9H6fQfsdKAfn8yriVgzPMx36HQXz9-Bng&s=10",
+    image: id6,
   },
   {
     id: 7,
@@ -100,12 +103,12 @@ export const testimonialsRowTwo = [
   },
   {
     id: 11,
-    name: "Noor Ahmad",
-    course: "DFA (Tally)",
-    rating: 4.3,
+    name: "Samra Ansari",
+    course: "Graphic Design",
+    rating: 5,
     review:
-      "Accounting used to feel difficult, but the teachers explained it with easy examples. Now I understand the basics well. The overall environment at the academy is calm and helps you focus.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqE3e9RIK09-ejpr7BwnvNb4TpTjmXHGgrTTNc00vdtA&s=10",
+      "I always liked design but didn't know the technical part. Teachers taught me Photoshop and Illustrator step by step. The environment is friendly, so I never felt scared to try new things.",
+    image: id11,
   },
   {
     id: 12,
@@ -114,7 +117,7 @@ export const testimonialsRowTwo = [
     rating: 4.9,
     review:
       "Learning Tally here was simple and practical. Teachers showed real business examples, not just software. Now I can handle basic accounts confidently.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6BkUjFsxfyWWDLXMSl9tD5p0nItjsRAVeww79SBYWNA&s=10",
+    image: id12,
   },
   {
     id: 13,
