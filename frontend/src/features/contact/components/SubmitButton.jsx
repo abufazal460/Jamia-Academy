@@ -26,7 +26,7 @@ const SubmitButton = ({ status }) => {
       whileHover={!isDisabled ? "hover" : "rest"}
       whileTap={!isDisabled ? "tap" : "rest"}
       aria-live="polite"
-      className="relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 text-sm font-semibold text-white shadow-lg transition-opacity disabled:cursor-not-allowed sm:w-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E63946]"
+      className="relative flex w-full cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 text-sm font-semibold text-white shadow-lg transition-opacity disabled:cursor-not-allowed sm:w-auto focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E63946]"
       style={{
         background: isSuccess
           ? "#2A9D8F"
