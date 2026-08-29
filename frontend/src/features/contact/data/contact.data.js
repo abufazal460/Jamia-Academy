@@ -28,12 +28,11 @@ export const socialConnect = {
   heading: "Stay Connected With Jamia Academy",
   description: "Follow us for updates on admissions, events and student success stories.",
   links: [
-    { id: "instagram", platform: "Instagram", icon: "Instagram", href: "https://instagram.com/jamiaacademy", ariaLabel: "Follow Jamia Academy on Instagram" },
-    { id: "facebook", platform: "Facebook", icon: "Facebook", href: "https://facebook.com/jamiaacademy", ariaLabel: "Follow Jamia Academy on Facebook" },
-    { id: "youtube", platform: "YouTube", icon: "Youtube", href: "https://youtube.com/@jamiaacademy", ariaLabel: "Subscribe to Jamia Academy on YouTube" },
-    { id: "linkedin", platform: "LinkedIn", icon: "Linkedin", href: "https://linkedin.com/company/jamiaacademy", ariaLabel: "Follow Jamia Academy on LinkedIn" },
-    { id: "twitter", platform: "Twitter / X", icon: "Twitter", href: "https://x.com/jamiaacademy", ariaLabel: "Follow Jamia Academy on X" },
-    { id: "whatsapp", platform: "WhatsApp", icon: "MessageCircle", href: "https://wa.me/919621555551", ariaLabel: "Message Jamia Academy on WhatsApp" },
+    { id: "instagram", platform: "Instagram", icon: "Instagram", color: "hover:text-pink-600 hover:bg-pink-100", href: "https://instagram.com/jamiaacademy", ariaLabel: "Follow Jamia Academy on Instagram" },
+    { id: "facebook", platform: "Facebook", icon: "Facebook", color: "hover:text-blue-600 hover:bg-blue-100", href: "https://facebook.com/jamiaacademy", ariaLabel: "Follow Jamia Academy on Facebook" },
+    { id: "youtube", platform: "YouTube", icon: "Youtube", color: "hover:text-red-600 hover:bg-red-100", href: "https://youtube.com/@jamiaacademy", ariaLabel: "Subscribe to Jamia Academy on YouTube" },
+    { id: "twitter", platform: "Twitter / X", icon: "Twitter", color: "hover:text-slate-900 hover:bg-slate-200", href: "https://x.com/jamiaacademy", ariaLabel: "Follow Jamia Academy on X" },
+    { id: "whatsapp", platform: "WhatsApp", icon: "MessageCircle", color: "hover:text-emerald-600 hover:bg-emerald-100", href: "https://wa.me/919621555551", ariaLabel: "Message Jamia Academy on WhatsApp" },
   ],
 };
 
