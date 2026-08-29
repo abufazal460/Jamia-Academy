@@ -41,7 +41,7 @@ const ContactHero = () => {
         variants={slideInLeft}
         className="flex flex-col items-start gap-6"
       >
-        <span className="inline-flex items-center gap-2 rounded-full border border-[#E63946]/20 bg-[#E63946]/10 px-4 py-1.5 text-sm font-semibold text-[#E63946]">
+        <span className="inline-flex items-center gap-2 rounded-full bg-[#2A9D8F]/10 text-[#2A9D8F] px-4 py-1.5 text-sm font-semibold">
           {BadgeIcon && <BadgeIcon className="h-4 w-4" aria-hidden="true" />}
           {contactHero.badge}
         </span>
@@ -93,7 +93,7 @@ const ContactHero = () => {
         aria-hidden="true"
       >
         {/* Central glass panel */}
-        <div className="relative h-56 w-56 overflow-hidden rounded-[2rem] border-4 border-sky-500/35 shadow-2xl backdrop-blur-xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
+        <div className="relative h-56 w-56 overflow-hidden rounded-[2rem] border-3 border-sky-500/35 shadow-2xl backdrop-blur-xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
           <img
             src={HeroImg}
             alt=""
