@@ -5,7 +5,8 @@ import { buttonHoverVariant } from "../../../shared/motion/hover.motion";
 import { floatingCard, noMotion } from "../../../shared/motion/floating.motion";
 import { usePrefersReducedMotion } from "../../../shared/hooks/usePrefersReducedMotion";
 import { resolveIcon } from "../../../shared/utils/icons";
-import TransitionLink from "../../../app/providers/page-transition/TransitionLink"
+import TransitionLink from "../../../app/providers/page-transition/TransitionLink";
+import HeroImg from "../../../assets/images/common/contact.png"
 
 // import contactImg from "../../assets/images/galleryclassroom/1.jpg"
 
@@ -92,23 +93,12 @@ const ContactHero = () => {
         aria-hidden="true"
       >
         {/* Central glass panel */}
-        <div className="relative h-56 w-56 rounded-[2rem] border border-white/40 bg-white/30 shadow-2xl backdrop-blur-xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
-          <div
-            className="absolute inset-0 rounded-[2rem] opacity-40"
-            style={{
-              
-              background: 
-                "linear-gradient(135deg, #E63946 0%, #F4A261 35%, #2A9D8F 70%, #264653 100%)",
-
-              backgroundSize: "200% 200%",
-              animation: reducedMotion ? "none" : "jamiaHeroGradientShift 6s ease infinite",
-            }}
+        <div className="relative h-56 w-56 overflow-hidden rounded-[2rem] border-4 border-sky-500/35 shadow-2xl backdrop-blur-xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
+          <img
+            src={HeroImg}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
           />
-          <div className="absolute inset-0 flex items-center justify-center">
-            {BadgeIcon && (
-              <BadgeIcon className="h-20 w-20 text-white drop-shadow-lg sm:h-24 sm:w-24" strokeWidth={1.5} />
-            )}
-          </div>
         </div>
 
         {/* Floating achievement cards */}
@@ -119,8 +109,9 @@ const ContactHero = () => {
               key={card.id}
               variants={reducedMotion ? noMotion : floatingCard(index * 0.6)}
               animate="animate"
-              className={`absolute ${VISUAL_CARD_POSITIONS[index]} flex max-w-[8.5rem] items-center gap-1.5 rounded-2xl border border-white/50 bg-white/70 px-3 py-2 shadow-lg backdrop-blur-md sm:max-w-none sm:gap-2 sm:px-4 sm:py-2.5`}
+              className={`absolute ${VISUAL_CARD_POSITIONS[index]} flex max-w-[8.5rem]  items-center gap-1.5 rounded-2xl  bg-white/70 px-3 py-2 shadow-lg backdrop-blur-md sm:max-w-none sm:gap-2 sm:px-4 sm:py-2.5`}
             >
+
               {Icon && (
                 <Icon
                   className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4"

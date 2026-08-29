@@ -22,45 +22,6 @@ export const contactHero = {
   ],
 };
 
-// ---------------- CONTACT INFO CARDS ----------------
-export const contactInfoCards = [
-  {
-    id: "admission-support",
-    icon: "GraduationCap",
-    title: "Admission Support",
-    description: "Get guidance on courses, eligibility and enrollment process.",
-    actions: [
-      { type: "call", label: "Call Admissions", value: "+919876543210", href: "tel:+919876543210" },
-      { type: "whatsapp", label: "WhatsApp Us", value: "+919876543210", href: "https://wa.me/919876543210" },
-    ],
-    ariaLabel: "Admission support contact card",
-  },
-  {
-    id: "call-us",
-    icon: "Phone",
-    title: "Call Us",
-    description: "Reach our team directly for quick assistance.",
-    numbers: [
-      { id: "primary-number", label: "Primary", value: "+91 98765 43210", raw: "+919876543210" },
-      { id: "secondary-number", label: "Alternate", value: "+91 91234 56789", raw: "+919123456789" },
-    ],
-    actions: [
-      { type: "call", label: "Call Now", href: "tel:+919876543210" },
-      { type: "copy", label: "Copy Number" },
-    ],
-    ariaLabel: "Call us contact card",
-  },
-  {
-    id: "visit-campus",
-    icon: "MapPin",
-    title: "Visit Campus",
-    description: "Jamia Academy Campus, Sector 21, Gurugram, Haryana, India",
-    actions: [
-      { type: "map", label: "Get Directions", href: "https://maps.google.com/?q=Jamia+Academy+Gurugram" },
-    ],
-    ariaLabel: "Visit campus contact card",
-  },
-];
 
 // ---------------- SOCIAL CONNECT ----------------
 export const socialConnect = {
