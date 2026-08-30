@@ -12,8 +12,8 @@ export const coursesData =  [
     "shortTitle": "Advanced Computer Co…",
     "description": "Learn Advanced Computer Concepts with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/advanced-computer-concepts/thumbnail.webp",
-      "hero": "/images/courses/advanced-computer-concepts/hero.webp"
+      "thumbnail": img1,
+      "hero": img1
     },
     "category": [
       "Computer Basics",
@@ -102,8 +102,8 @@ export const coursesData =  [
     "shortTitle": "Basic Computer Conce…",
     "description": "Learn Basic Computer Concepts with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/basic-computer-concepts/thumbnail.webp",
-      "hero": "/images/courses/basic-computer-concepts/hero.webp"
+      "thumbnail": img2,
+      "hero": img2
     },
     "category": [
       "Computer Basics",
@@ -192,8 +192,8 @@ export const coursesData =  [
     "shortTitle": "MS Office",
     "description": "Learn MS Office with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/ms-office/thumbnail.webp",
-      "hero": "/images/courses/ms-office/hero.webp"
+      "thumbnail": img3,
+      "hero": img3
     },
     "category": [
       "Computer Basics",
