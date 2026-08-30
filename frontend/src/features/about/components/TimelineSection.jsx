@@ -162,7 +162,7 @@ const TimelineSection = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#E63946]">
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#2A9D8F]">
             Our Journey
           </span>
           <h2
@@ -236,13 +236,13 @@ const TimelineSection = () => {
                           ? {}
                           : {
                             y: -6,
-                            boxShadow: "0 16px 40px rgba(43,45,66,0.14)",
-                            borderColor: "rgba(230,57,70,0.35)",
+                          boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
+                          borderColor: "rgba(180,180,70,0.4)",
                           }
                       }
                       transition={{ duration: 0.25, ease: "easeOut" }}
                     >
-                      <span className="inline-flex items-center rounded-full bg-[#E63946]/10 px-3 py-1 text-xs font-bold tracking-wide text-[#E63946]">
+                      <span className="inline-flex items-center rounded-full  px-3 py-1 text-xs font-bold tracking-wide bg-[#2A9D8F]/10 text-[#2A9D8F]">
                         {item?.year || "—"}
                       </span>
                       <h3

@@ -289,6 +289,9 @@ html.lenis body {
 
 }
 
+.bg {
+  color: #92ff2d;
+}
 
 :root {
   --background: oklch(1 0 0);

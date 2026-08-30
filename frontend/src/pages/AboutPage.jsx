@@ -17,7 +17,6 @@ import { founder, coFounder } from "../features/about/data/about.data";
 import { pageTransition } from "../features/about/motion/about.motion";
 
 const FacultyGrid = lazy(() => import("../features/about/components/FacultyGrid"));
-const WhyChooseUs = lazy(() => import("../features/about/components/WhyChooseUs"));
 const TimelineSection = lazy(() => import("../features/about/components/TimelineSection"));
 
 
@@ -45,12 +44,11 @@ const About = () => {
         <FounderMessage data={founder} />
         <CoFounderSection />
         <FounderMessage data={coFounder} />
-        <VisionMission />
         <ValuesSection />
         <StatsSection />
+        <VisionMission />
         <Suspense fallback={null}>
           <FacultyGrid />
-          <WhyChooseUs />
           <TimelineSection />
         </Suspense>
       </motion.main>

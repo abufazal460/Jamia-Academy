@@ -43,8 +43,7 @@ const StatCard = ({ stat, prefersReducedMotion }) => {
     <motion.div
       ref={ref}
       className={cn(
-        "relative overflow-hidden rounded-3xl p-6 sm:p-7 will-change-transform",
-        "bg-gradient-to-br from-[#2B2D42] to-[#1A1A2E]",
+        "relative overflow-hidden rounded-3xl p-6 sm:p-7 will-change-transform bg-card",
         "shadow-[0_14px_36px_rgba(0,0,0,0.25)]"
       )}
       whileHover={
@@ -55,17 +54,17 @@ const StatCard = ({ stat, prefersReducedMotion }) => {
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
       {/* Soft glow accent — decorative */}
-      <div
-        className="pointer-events-none absolute -top-6 -right-6 h-24 w-24 rounded-full bg-[#F4A261]/20 blur-2xl"
+      {/* <div
+        className="pointer-events-none absolute -top-6 -right-6 h-24 w-24 rounded-full bg-red-500 blur-2xl"
         aria-hidden="true"
-      />
+      /> */}
       <span
-        className="relative z-10 mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-[#F4A261]"
+        className="relative z-10 mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]"
         aria-hidden="true"
       >
         <Icon size={20} />
       </span>
-      <p className="relative z-10 text-3xl sm:text-4xl font-bold text-white">
+      <p className="relative z-10 text-3xl sm:text-4xl font-black tracking-wide text-black">
         {inView ? (
           <CountUp end={stat?.value || 0} duration={2} separator="," />
         ) : (
@@ -73,7 +72,7 @@ const StatCard = ({ stat, prefersReducedMotion }) => {
         )}
         {stat?.suffix || ""}
       </p>
-      <p className="relative z-10 mt-1.5 text-xs sm:text-sm text-white/60">{stat?.label}</p>
+      <p className="relative z-10 mt-1.5 text-xs sm:text-sm text-black/60">{stat?.label}</p>
     </motion.div>
   );
 };
@@ -157,7 +156,7 @@ const StatsSection = () => {
       }}
       id="stats"
       aria-labelledby="stats-heading"
-      className="relative w-full overflow-hidden bg-bg-primary py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-2xl text-center">

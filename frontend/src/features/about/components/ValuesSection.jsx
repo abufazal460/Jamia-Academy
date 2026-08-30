@@ -137,7 +137,7 @@ const ValuesSection = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#E63946]">
+          <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#2A9D8F]">
             <Sparkles size={14} aria-hidden="true" />
             What We Stand For
           </span>
@@ -174,15 +174,15 @@ const ValuesSection = () => {
                       : {
                           scale: 1.04,
                           y: -8,
-                          boxShadow: "0 18px 40px rgba(43,45,66,0.14)",
-                          borderColor: "rgba(230,57,70,0.35)",
+                          boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
+                          borderColor: "rgba(180,180,70,0.4)",
                         }
                   }
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
                   {/* Gradient accent overlay on hover */}
                   <span
-                    className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#E63946]/0 to-[#F4A261]/0 group-hover:from-[#E63946]/5 group-hover:to-[#F4A261]/5 transition-colors duration-300"
+                    className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#86e96b]/0 to-[#2A9D8F]/0 group-hover:from-[#86e96b]/5 group-hover:to-[#2A9D8F]/5 transition-colors duration-300"
                     aria-hidden="true"
                   />
                   <motion.span

@@ -157,10 +157,7 @@ export const coFounder = {
 
 export const vision = {
   heading: "Our Vision",
-
-  subtitle:
-    "Your Dreams Deserve World-Class Skills- Right Here, Right Now.",
-
+  
   description:
     "We're not just an institute we're a movement that connects raw talent with the power of technology, opening doors to unlimited possibilities for every student who walks through them. Our vision is to build a “Societal environment recognized across India and the world” one where affordable, future-ready, and skill-driven education reaches every student, regardless of their background. Contributing to India's race in technology is our ultimate mission. We dream of a New India where: Talent knows no boundaries-socio-economic background is never a barrier Education is more than a degree- it's a gateway to innovation and employment Every student becomes a driving force in India's digital and economic transformation “Enrol today”, “Lead tomorrow” Your Skill, Your Future, It All Starts Here",
 

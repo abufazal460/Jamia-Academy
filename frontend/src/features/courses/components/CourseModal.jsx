@@ -182,7 +182,7 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
             <button
               type="button"
               onClick={() => onEnroll?.(course)}
-              className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold cursor-pointer text-neutral-950 transition-shadow duration-300 hover:shadow-[0_0_22px_rgba(255,255,255,0.35)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950"
+              className="rounded-lg bg-white px-5 py-2.5 text-sm font-semibold cursor-pointer text-neutral-950 transition-shadow duration-300 hover:shadow-[0_0_22px_rgba(255,255,255,0.35)]"
             >
               Enroll Now
             </button>
