@@ -16,11 +16,6 @@ export const coursesData = [
       thumbnail: img1,
       hero: img1,
     },
-    batch: {
-      name: "Batch 2026",
-      status: "Admissions Open",
-      color: "green",
-    },
     category: ["Web Development", "Programming"],
     duration: {
       value: "6",
@@ -67,10 +62,8 @@ export const coursesData = [
           topics: ["Git & GitHub", "Hosting", "Chrome DevTools"],
         },
       ],
-      skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "Git"],
       tools: ["VS Code", "Chrome DevTools", "GitHub"],
       projects: ["Portfolio Website", "Landing Page Clone", "Interactive Form App"],
-      certificate: "Jamia Academy Certificate of Completion — Web Development",
       careerOptions: ["Junior Web Developer", "Frontend Trainee", "Freelance Web Designer"],
     },
     theme: {
@@ -83,7 +76,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "Web Development Course 2026 | Jamia Academy",
@@ -103,11 +96,6 @@ export const coursesData = [
     image: {
       thumbnail: img2,
       hero: img2,
-    },
-    batch: {
-      name: "Batch 2026",
-      status: "Admissions Open",
-      color: "green",
     },
     category: ["Web Development", "Programming", "Full Stack"],
     duration: {
@@ -136,10 +124,8 @@ export const coursesData = [
         { title: "React", topics: ["Hooks", "State Management", "React Router"] },
         { title: "Deployment", topics: ["CI/CD Basics", "Cloud Hosting", "Environment Config"] },
       ],
-      skills: ["MongoDB", "Express.js", "React", "Node.js", "REST APIs"],
       tools: ["VS Code", "Postman", "MongoDB Atlas", "GitHub"],
       projects: ["E-commerce App", "Job Portal", "Real-time Chat App"],
-      certificate: "Jamia Academy Certificate of Completion — MERN Stack Development",
       careerOptions: ["Full Stack Developer", "Backend Developer", "Frontend Developer"],
     },
     
@@ -153,7 +139,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "MERN Stack Development Course 2026 | Jamia Academy",
@@ -173,11 +159,6 @@ export const coursesData = [
     image: {
       thumbnail: img3,
       hero: img3,
-    },
-    batch: {
-      name: "Batch 2026",
-      status: "Admissions Open",
-      color: "green",
     },
     category: ["Programming"],
     duration: {
@@ -201,10 +182,8 @@ export const coursesData = [
         { title: "OOP in Python", topics: ["Classes", "Objects", "Inheritance"] },
         { title: "Mini Projects", topics: ["File Handling", "Automation Scripts"] },
       ],
-      skills: ["Python", "Problem Solving", "OOP", "Automation Basics"],
       tools: ["VS Code", "Jupyter Notebook", "GitHub"],
       projects: ["To-Do App", "Expense Tracker", "Web Scraper"],
-      certificate: "Jamia Academy Certificate of Completion — Python Programming",
       careerOptions: ["Junior Python Developer", "Automation Trainee"],
     },
     theme: {
@@ -217,7 +196,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "Python Programming Course 2026 | Jamia Academy",
@@ -237,11 +216,6 @@ export const coursesData = [
     image: {
       thumbnail: "/images/courses/ai-machine-learning/thumbnail.webp",
       hero: "/images/courses/ai-machine-learning/hero.webp",
-    },
-    batch: {
-      name: "Batch 2026",
-      status: "Filling Fast",
-      color: "orange",
     },
     category: ["Data", "Programming", "AI"],
     duration: {
@@ -265,10 +239,8 @@ export const coursesData = [
         { title: "Deep Learning", topics: ["Neural Networks", "CNNs", "RNNs"] },
         { title: "Deployment", topics: ["Model Serving", "APIs for ML Models"] },
       ],
-      skills: ["Python", "Machine Learning", "Deep Learning", "Data Analysis"],
       tools: ["Jupyter Notebook", "TensorFlow", "Scikit-learn", "Pandas"],
       projects: ["Spam Classifier", "Image Recognition Model", "Recommendation System"],
-      certificate: "Jamia Academy Certificate of Completion — AI & Machine Learning",
       careerOptions: ["ML Engineer Trainee", "Data Analyst", "AI Research Assistant"],
     },
        theme: {
@@ -281,7 +253,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "AI & Machine Learning Course 2026 | Jamia Academy",
@@ -301,11 +273,6 @@ export const coursesData = [
     image: {
       thumbnail: "/images/courses/data-science/thumbnail.webp",
       hero: "/images/courses/data-science/hero.webp",
-    },
-    batch: {
-      name: "Batch 2026",
-      status: "Admissions Open",
-      color: "green",
     },
     category: ["Data", "Programming"],
     duration: {
@@ -329,10 +296,8 @@ export const coursesData = [
         { title: "Data Visualization", topics: ["Matplotlib", "Seaborn", "Power BI Basics"] },
         { title: "Predictive Modeling", topics: ["Regression", "Classification"] },
       ],
-      skills: ["Python", "Statistics", "Data Visualization", "SQL"],
       tools: ["Jupyter Notebook", "Pandas", "Power BI", "SQL"],
       projects: ["Sales Data Dashboard", "Customer Churn Analysis", "Stock Price Trend Analysis"],
-      certificate: "Jamia Academy Certificate of Completion — Data Science",
       careerOptions: ["Data Analyst", "Junior Data Scientist", "BI Analyst"],
     },
     theme: {
@@ -345,7 +310,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "Data Science Course 2026 | Jamia Academy",
@@ -365,11 +330,6 @@ export const coursesData = [
     image: {
       thumbnail: "/images/courses/cyber-security/thumbnail.webp",
       hero: "/images/courses/cyber-security/hero.webp",
-    },
-    batch: {
-      name: "Batch 2026",
-      status: "Admissions Open",
-      color: "green",
     },
     category: ["Security", "Programming"],
     duration: {
@@ -393,10 +353,8 @@ export const coursesData = [
         { title: "Web Security", topics: ["OWASP Top 10", "SQL Injection", "XSS"] },
         { title: "Security Operations", topics: ["Incident Response", "Security Auditing"] },
       ],
-      skills: ["Network Security", "Ethical Hacking", "Risk Assessment"],
       tools: ["Kali Linux", "Wireshark", "Burp Suite", "Nmap"],
       projects: ["Network Vulnerability Report", "Web App Penetration Test", "Security Audit Report"],
-      certificate: "Jamia Academy Certificate of Completion — Cyber Security",
       careerOptions: ["Security Analyst Trainee", "SOC Analyst", "Junior Penetration Tester"],
     },
     theme: {
@@ -409,7 +367,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "Cyber Security Course 2026 | Jamia Academy",
@@ -429,11 +387,6 @@ export const coursesData = [
     image: {
       thumbnail: "/images/courses/ui-ux-design/thumbnail.webp",
       hero: "/images/courses/ui-ux-design/hero.webp",
-    },
-    batch: {
-      name: "Batch 2026",
-      status: "Admissions Open",
-      color: "green",
     },
     category: ["Design"],
     duration: {
@@ -457,10 +410,8 @@ export const coursesData = [
         { title: "Wireframing & Prototyping", topics: ["Low-fi Wireframes", "Figma Prototyping"] },
         { title: "Design Systems", topics: ["Components", "Design Tokens"] },
       ],
-      skills: ["UI Design", "UX Research", "Prototyping", "Figma"],
       tools: ["Figma", "Adobe XD"],
       projects: ["Mobile App Redesign", "E-commerce UX Case Study", "Design System"],
-      certificate: "Jamia Academy Certificate of Completion — UI/UX Design",
       careerOptions: ["Junior UI Designer", "UX Design Trainee", "Product Design Intern"],
     },
     theme: {
@@ -473,7 +424,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "UI/UX Design Course 2026 | Jamia Academy",
@@ -493,11 +444,6 @@ export const coursesData = [
     image: {
       thumbnail: "/images/courses/digital-marketing/thumbnail.webp",
       hero: "/images/courses/digital-marketing/hero.webp",
-    },
-    batch: {
-      name: "Batch 2026",
-      status: "Admissions Open",
-      color: "green",
     },
     category: ["Marketing"],
     duration: {
@@ -521,10 +467,8 @@ export const coursesData = [
         { title: "Google Ads", topics: ["Search Ads", "Display Ads", "Campaign Analytics"] },
         { title: "Analytics", topics: ["Google Analytics", "Performance Reporting"] },
       ],
-      skills: ["SEO", "Social Media Marketing", "Google Ads", "Analytics"],
       tools: ["Google Ads", "Google Analytics", "Meta Business Suite"],
       projects: ["SEO Audit Report", "Social Media Campaign", "Ad Campaign Case Study"],
-      certificate: "Jamia Academy Certificate of Completion — Digital Marketing",
       careerOptions: ["Digital Marketing Executive", "SEO Trainee", "Social Media Executive"],
     },
     theme: {
@@ -537,7 +481,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} ({batch}). Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
     },
     seo: {
       title: "Digital Marketing Course 2026 | Jamia Academy",

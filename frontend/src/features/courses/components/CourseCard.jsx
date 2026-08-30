@@ -51,7 +51,7 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
   const shouldReduceMotion = useReducedMotion();
   const LevelIcon = LEVEL_ICON_MAP[course.level.icon] ?? Sprout;
 
-  const batchClasses = BADGE_COLOR_MAP[course.batch.color] ?? BADGE_COLOR_MAP.green;
+  // const batchClasses = BADGE_COLOR_MAP[course.batch.color] ?? BADGE_COLOR_MAP.green;
   const levelClasses = BADGE_COLOR_MAP[course.level.color] ?? BADGE_COLOR_MAP.green;
 
   return (
@@ -87,14 +87,14 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
           </div>
           <div className="mt-3 flex justify-end">
-            <span
+            {/* <span
               className={twMerge(
                 "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium backdrop-blur-sm",
                 batchClasses
               )}
             >
               {course.batch?.name}
-            </span>
+            </span> */}
           </div>
 
           {/* Course Title */}
