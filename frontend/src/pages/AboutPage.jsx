@@ -44,9 +44,9 @@ const About = () => {
         <FounderMessage data={founder} />
         <CoFounderSection />
         <FounderMessage data={coFounder} />
-        <VisionMission />
         <ValuesSection />
         <StatsSection />
+        <VisionMission />
         <Suspense fallback={null}>
           <FacultyGrid />
           <TimelineSection />
