@@ -48,24 +48,11 @@ const FAQHeader = () => {
       variants={headerContainerVariant}
       initial="hidden"
       whileInView="visible"
-      viewport={{  amount: 0.3 }}
+      viewport={{ amount: 0.3 }}
       // text-center — sab kuch center mein, consistent across all screen sizes
       className="text-center mb-12 sm:mb-16 lg:mb-20"
     >
-      {/* -- Small badge above heading -- */}
-      <motion.div variants={badgeVariant} className="inline-block mb-4">
-        <span
-          className="
-            text-xs sm:text-sm font-bold uppercase tracking-[0.2em]
-            text-cyan-400
-            bg-cyan-400/10
-            border border-cyan-400/30
-            px-4 py-2 rounded-full
-          "
-        >
-          FAQs
-        </span>
-      </motion.div>
+      
 
       {/* -- Main heading -- */}
       <motion.h2
@@ -79,10 +66,13 @@ const FAQHeader = () => {
           px-4
         "
       >
-        Frequently Asked{" "}
-        {/* Cyan highlight — important words ko visually alag karta hai */}
-        <span className="text-cyan-400">Questions</span>{" "}
-        From Our Students
+        <span className="bg-gradient-to-r from-orange-400 via-yellow-300 to-red-500 bg-clip-text text-transparent">Frequently</span> 
+        {" "}
+        Asked 
+        Questions
+        From Our
+        {" "}
+        <span className="bg-gradient-to-r from-orange-400 via-yellow-300 to-red-500 bg-clip-text text-transparent">Students</span>
       </motion.h2>
     </motion.div>
   );
