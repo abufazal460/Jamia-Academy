@@ -2,9 +2,17 @@ import { memo, useRef, useEffect, useState } from "react";
 import { motion, useMotionValue, animate } from "motion/react";
 
 const BORDER_COLORS = [
-  "#2A9D8F",
   "#E63946",
   "#F4A261",
+  "#ec4899",
+  "#a855f7",
+  "#6366f1",
+  "#22d3ee",
+  "#2dd4bf",
+  "#eab308",
+  "#f97316",
+  "#ec4899",
+
 ];
 
 
