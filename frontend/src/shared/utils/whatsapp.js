@@ -22,15 +22,10 @@
 export function generateEnrollmentMessage(course) {
   if (!course) return "";
 
-  const { title, batch, duration, level, fees, eligibility } = course;
+  const { title,  duration, level, } = course;
 
   const durationText = duration ? `${duration.value} ${duration.unit}` : "N/A";
-  const feesText = fees?.amount ? `${fees.amount} ${fees.currency ?? ""}`.trim() : "N/A";
-  // eligibility array ho sakta hai (jaisa data file me hai) — comma-separated
-  // string me convert karte hain taaki message readable rahe.
-  const eligibilityText = Array.isArray(eligibility)
-    ? eligibility.join(", ")
-    : eligibility ?? "N/A";
+
 
   return [
     "Hello Jamia Academy,",
@@ -38,11 +33,8 @@ export function generateEnrollmentMessage(course) {
     "I want to know more about this course:",
     "",
     `Course Name: ${title ?? "N/A"}`,
-    `Batch: ${batch?.name ?? "N/A"}`,
     `Duration: ${durationText}`,
     `Level: ${level?.name ?? "N/A"}`,
-    `Fees: ${feesText}`,
-    `Eligibility: ${eligibilityText}`,
     "",
     "Please share more details.",
   ].join("\n");

@@ -76,7 +76,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}.",
     },
     seo: {
       title: "Web Development Course 2026 | Jamia Academy",
@@ -139,7 +139,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}.",
     },
     seo: {
       title: "MERN Stack Development Course 2026 | Jamia Academy",
@@ -253,7 +253,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}.",
     },
     seo: {
       title: "AI & Machine Learning Course 2026 | Jamia Academy",
@@ -310,7 +310,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}.",
     },
     seo: {
       title: "Data Science Course 2026 | Jamia Academy",
@@ -367,7 +367,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}.",
     },
     seo: {
       title: "Cyber Security Course 2026 | Jamia Academy",
@@ -424,7 +424,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}.",
     },
     seo: {
       title: "UI/UX Design Course 2026 | Jamia Academy",
@@ -481,7 +481,7 @@ export const coursesData = [
     whatsapp: {
       enabled: true,
       messageTemplate:
-        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}, Fees: {fees}. Eligibility: {eligibility}.",
+        "Hi Jamia Academy, I want to enroll in {title} Duration: {duration}, Level: {level}.",
     },
     seo: {
       title: "Digital Marketing Course 2026 | Jamia Academy",
