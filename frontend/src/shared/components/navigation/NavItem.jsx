@@ -80,7 +80,7 @@ const NavItem = memo(function NavItem({ item, index, isActive }) {
         {isActive && (
           <motion.span
             layoutId="active-nav-pill"
-            className="absolute inset-0 -z-10 rounded-full bg-white/10"
+            className="absolute inset-0 -z-10 rounded-full bg-white/15"
             // Spring transition: smooth aur natural movement
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
           />
