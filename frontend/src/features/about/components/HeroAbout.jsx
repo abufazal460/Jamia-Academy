@@ -280,7 +280,7 @@ const HeroAbout = () => {
             ))}
             {/* Blinking cursor — subtitle complete hote hi dikhta hai */}
             <motion.span
-              className="inline-block w-[2px] h-[1em] bg-[#EF233C] align-middle ml-1"
+              className="inline-block w-[2px] h-[1em] bg-[#ff953f] align-middle ml-1"
               animate={subtitleDone ? { opacity: [1, 0, 1] } : { opacity: 0 }}
               transition={{ duration: 0.9, repeat: Infinity, ease: "easeInOut" }}
               aria-hidden="true"
@@ -325,7 +325,7 @@ const HeroAbout = () => {
                     : {
                         y: -6,
                         boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
-                        borderColor: "rgba(239,35,60,0.5)",
+                        borderColor: "rgba(180,180,180,0.5)",
                       }
                 }
                 transition={{ duration: 0.25, ease: "easeOut" }}

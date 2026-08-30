@@ -237,7 +237,7 @@ const AboutDescription = () => {
 
             {/* Highlight Quote */}
             {aboutDescription?.quote && (
-              <blockquote className="border-l-4 border-[#E63946] rounded-2xl pl-4 sm:pl-5 py-1 text-base sm:text-lg italic text-[#2B2D42]/90">
+              <blockquote className="border-l-4 border-[#2A9D8F] rounded-2xl pl-4 sm:pl-5 py-1 text-base sm:text-lg italic text-[#2B2D42]/90">
                 “{aboutDescription.quote}”
               </blockquote>
             )}
@@ -262,14 +262,14 @@ const AboutDescription = () => {
                           scale: 1.05,
                           y: -10,
                           boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
-                          borderColor: "rgba(230,57,70,0.4)",
+                          borderColor: "rgba(180,180,70,0.4)",
                         }
                     }
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   >
                     {/* Gradient glow on hover — decorative */}
                     <span
-                      className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[#E63946]/0 to-[#F4A261]/0 group-hover:from-[#E63946]/5 group-hover:to-[#F4A261]/5 transition-colors duration-300"
+                      className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[#86e96b]/0 to-[#2A9D8F]/0 group-hover:from-[#86e96b]/5 group-hover:to-[#2A9D8F]/5 transition-colors duration-300"
                       aria-hidden="true"
                     />
                     <span
