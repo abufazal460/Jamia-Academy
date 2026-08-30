@@ -161,9 +161,6 @@ const VisionMission = () => {
             <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F4A261]/15 text-[#F4A261]" aria-hidden="true">
               <Eye size={22} />
             </span>
-            {vision?.subtitle && (
-              <span className="text-xs font-bold uppercase tracking-widest text-[#F4A261]">{vision.subtitle}</span>
-            )}
             <h3 className="mt-2 text-xl sm:text-2xl font-extrabold text-white">{vision?.heading || "Our Vision"}</h3>
             <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65 flex-1">
               {vision?.description}
