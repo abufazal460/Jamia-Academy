@@ -46,20 +46,8 @@ export const coursesData = [
         "A foundation-level program covering the core building blocks of the modern web, taking you from a blank page to fully responsive, deployed websites.",
       modules: [
         {
-          title: "HTML & Semantic Structure",
-          topics: ["Tags & Elements", "Forms", "Semantic HTML", "Accessibility Basics"],
-        },
-        {
-          title: "CSS & Responsive Design",
-          topics: ["Flexbox", "Grid", "Media Queries", "Animations"],
-        },
-        {
-          title: "JavaScript Fundamentals",
-          topics: ["DOM Manipulation", "Events", "ES6+", "APIs & Fetch"],
-        },
-        {
-          title: "Deployment & Tools",
-          topics: ["Git & GitHub", "Hosting", "Chrome DevTools"],
+          title: "What You Will Learn",
+          topics: ["Tags & Elements", "Forms", "Semantic HTML", "Accessibility Basics Events", "Grid", "Media Queries", "Animations", "ES6+", "APIs & Fetch"],
         },
       ],
       tools: ["VS Code", "Chrome DevTools", "GitHub"],

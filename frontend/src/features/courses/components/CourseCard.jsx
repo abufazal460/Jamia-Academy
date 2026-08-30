@@ -87,14 +87,6 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
           </div>
           <div className="mt-3 flex justify-end">
-            {/* <span
-              className={twMerge(
-                "inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-medium backdrop-blur-sm",
-                batchClasses
-              )}
-            >
-              {course.batch?.name}
-            </span> */}
           </div>
 
           {/* Course Title */}
@@ -124,7 +116,7 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
             </span>
           </div>
 
-          <div className="mt-5 flex items-center gap-3 pt-1">
+          <div className="mt-5 flex  items-center gap-3 pt-1">
             <CardButton
               label="View Details"
               variant="ghost"
