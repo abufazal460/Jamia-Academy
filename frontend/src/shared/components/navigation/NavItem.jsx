@@ -64,9 +64,9 @@ const NavItem = memo(function NavItem({ item, index, isActive }) {
               // NO ring, NO focus-visible:ring — intentionally removed as per requirement
               navIsActive || isActive
                 ? // Active: background color + text color change. Ring nahi, border nahi.
-                  "bg-white/10 text-cyan-300"
+                  "bg-gradient-to-r from-orange-400 via-yellow-300 to-red-500 bg-clip-text text-transparent"
                 : // Inactive: transparent bg, muted text, hover pe bg + text change
-                  "text-slate-300 hover:bg-white/20 hover:text-white",
+                  "text-slate-300 hover:bg-white hover:text-black",
             ].join(" ")
           }
         >
