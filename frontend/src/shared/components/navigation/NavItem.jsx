@@ -32,46 +32,38 @@ const itemVariants = {
 
 // React.memo: Agar parent re-render ho (mobile toggle etc) to ye component
 // tabhi re-render hoga jab iske apne props change ho. Performance optimization.
-const NavItem = memo(function NavItem({ item, index, isActive }) {
+const NavItem = memo(function NavItem({ item, index, isActive, onHover, itemRef }) {
   return (
     <motion.li
+      ref={itemRef}
       custom={index}
       variants={itemVariants}
       initial="hidden"
       animate="visible"
       className="relative list-none"
-      
+
     >
-      <motion.div
-        // whileHover: small scale + smooth easing, professional feel.
-        // whileTap: click feedback ke liye slight shrink.
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+      {/* isko motion div de simple div kiya hai aur iske andar ka content ko commnet kar diya hai */} <div
+      // whileHover={{ scale: 1.05 }}
+      // whileTap={{ scale: 0.95 }}
+      // transition={{ type: "spring", stiffness: 300, damping: 20 }}
       >
+
         <TransitionNavLink
           to={item.route}
-          // aria-current accessibility ke liye: screen reader ko active page batata hai.
           aria-current={isActive ? "page" : undefined}
+          onMouseEnter={() => onHover(index)}
           className={({ isActive: navIsActive }) =>
             [
-              // px-5 py-2: professional padding around each link
-              // rounded-full: pill shape for active state
-              // text-sm: clean, readable font size
               "relative block px-5 py-2 rounded-full text-sm font-semibold",
-              // transition-colors: hover text/bg smoothly change hoga (no jarring flash)
               "transition-colors duration-300 outline-none select-none",
-              // NO ring, NO focus-visible:ring — intentionally removed as per requirement
               navIsActive || isActive
-                ? // Active: background color + text color change. Ring nahi, border nahi.
-                  "bg-gradient-to-r from-orange-400 via-yellow-300 to-red-500 bg-clip-text text-transparent"
-                : // Inactive: transparent bg, muted text, hover pe bg + text change
-                  "text-slate-300 hover:bg-white hover:text-black",
+                ? "bg-gradient-to-r from-orange-400 via-yellow-300 to-red-500 bg-clip-text text-transparent"
+                : "text-slate-300 hover:bg-white hover:text-black",
             ].join(" ")
           }
         >
           {item.label}
-          {/* Courses dropdown arrow REMOVED — ab yahan kuch nahi render hoga */}
         </TransitionNavLink>
 
         {/* Active indicator: sirf subtle background pill.
@@ -85,7 +77,7 @@ const NavItem = memo(function NavItem({ item, index, isActive }) {
             transition={{ type: "spring", stiffness: 350, damping: 30 }}
           />
         )}
-      </motion.div>
+      </div>
     </motion.li>
   );
 });
