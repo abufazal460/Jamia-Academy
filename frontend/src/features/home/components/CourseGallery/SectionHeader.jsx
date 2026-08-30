@@ -12,6 +12,13 @@ export default function SectionHeader() {
       viewport={{ once: true }}
       className="mx-auto mb-16 flex max-w-5xl flex-col items-center text-center"
     >
+      {/* Badge */}
+
+      <div className="mb-6 inline-flex items-center rounded-full border border-orange-500/20 bg-orange-500/10 px-5 py-2 backdrop-blur-xl">
+        <span className="text-xs font-bold uppercase tracking-[0.25em] text-orange-400">
+          Explore Our Courses
+        </span>
+      </div>
 
       {/* Heading */}
 
