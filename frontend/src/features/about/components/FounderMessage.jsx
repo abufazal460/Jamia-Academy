@@ -259,7 +259,7 @@ const FounderMessage = ({ data }) => {
           <div className="order-2">
 
             {messageData.label && (
-              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#E63946]">
+              <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#2A9D8F]">
                 {messageData.label}
               </span>
             )}

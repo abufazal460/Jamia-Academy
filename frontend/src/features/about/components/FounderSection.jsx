@@ -193,7 +193,7 @@ const FounderSection = () => {
       }}
       id="founder"
       aria-labelledby="founder-heading"
-      className="relative w-full overflow-hidden bg-bg-dark-secondary py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-[#F7F3E9] py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,420px)_1fr] gap-12 lg:gap-16 items-center">
@@ -233,15 +233,15 @@ const FounderSection = () => {
               FOUNDER INFORMATION
           ============================================================== */}
           <div className="flex flex-col gap-5">
-            <span className="text-xs sm:text-sm font-medium tracking-widest uppercase text-[#F4A261]">
+            <span className="text-xs sm:text-sm  tracking-widest uppercase text-[#2A9D8F] font-bold">
               Meet Our Founder
             </span>
 
-            <h2 id="founder-heading" ref={nameRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white">
+            <h2 id="founder-heading" ref={nameRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-black">
               {founder?.name || "Founder Name"}
             </h2>
 
-            <p ref={titleRef} className="text-base sm:text-lg font-medium text-[#8D99AE]">
+            <p ref={titleRef} className="text-base sm:text-lg font-medium text-[#333333]">
               {founder?.title || founder?.designation || "Founder & Director"}
             </p>
 
@@ -257,13 +257,13 @@ const FounderSection = () => {
             </div>
 
             {founder?.position && (
-              <p ref={positionRef} className="text-sm sm:text-base text-white/70">
+              <p ref={positionRef} className="text-sm sm:text-base text-black/80">
                 {founder.position}
               </p>
             )}
 
             {founder?.bio && (
-              <p className="text-sm sm:text-base leading-relaxed text-white/60 max-w-xl">{founder.bio}</p>
+              <p className="text-sm sm:text-base leading-relaxed text-[#2B2D42]/85 max-w-xl">{founder.bio}</p>
             )}
 
             {/* ============================================================
@@ -275,7 +275,7 @@ const FounderSection = () => {
                   <motion.div
                     key={qual?.id || qual?.degree}
                     className={cn(
-                      "rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-md",
+                      "rounded-2xl  border border-[#2B2D42]/10 bg-card backdrop-blur-md",
                       "px-4 py-4 will-change-transform"
                     )}
                     whileHover={
@@ -284,18 +284,18 @@ const FounderSection = () => {
                         : {
                             y: -6,
                             scale: 1.02,
-                            boxShadow: "0 14px 32px rgba(0,0,0,0.35)",
-                            borderColor: "rgba(244,162,97,0.5)",
+                            boxShadow: "0 14px 32px rgba(43,45,66,0.14)",
+                            borderColor: "rgba(42,157,143,0.4)",
                           }
                     }
                     transition={{ duration: 0.25, ease: "easeOut" }}
                   >
-                    <span className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#F4A261]/15 text-[#F4A261]" aria-hidden="true">
+                    <span className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
                       <FaGraduationCap  size={16} />
                     </span>
-                    <p className="text-sm font-semibold text-white">{qual?.degree}</p>
-                    <p className="mt-0.5 text-xs text-white/60">{qual?.field}</p>
-                    <p className="mt-1 text-[11px] text-white/40">{qual?.university}</p>
+                    <p className="text-sm font-semibold text-black">{qual?.degree}</p>
+                    <p className="mt-0.5 text-xs text-black/60">{qual?.field}</p>
+                    <p className="mt-1 text-[11px] text-black/40">{qual?.university}</p>
                   </motion.div>
                 ))}
               </div>

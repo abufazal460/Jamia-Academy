@@ -129,7 +129,7 @@ const CoFounderSection = () => {
       }}
       id="co-founder"
       aria-labelledby="cofounder-heading"
-      className="relative w-full overflow-hidden bg-bg-primary py-20 sm:py-24 lg:py-28"
+      className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
     >
       {/* Decorative floating accent shapes — Framer Motion only, purely visual */}
       <motion.div
@@ -160,7 +160,7 @@ const CoFounderSection = () => {
             {coFounder?.experience && (
               <span
                 ref={experienceRef}
-                className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#E63946]/10 px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#E63946]"
+                className="inline-flex w-fit items-center gap-1.5 rounded-full bg-[#2A9D8F]/15 px-4 py-1.5 text-xs sm:text-sm font-semibold text-[#2A9D8F]"
               >
                 <Sparkles size={13} aria-hidden="true" />
                 {coFounder.experience}
@@ -178,7 +178,7 @@ const CoFounderSection = () => {
                   <motion.div
                     key={qual?.id || qual?.degree}
                     className={cn(
-                      "rounded-2xl border border-[#2B2D42]/10 bg-[#F7F3E9]/60 backdrop-blur-md",
+                      "rounded-2xl border border-[#2B2D42]/10 bg-bg-primary backdrop-blur-md",
                       "px-4 py-4 will-change-transform"
                     )}
                     whileHover={
@@ -206,7 +206,7 @@ const CoFounderSection = () => {
 
             {/* MESSAGE */}
             {messageData.notes && (
-              <div ref={messageRef} className="mt-3 rounded-2xl border-l-4 border-[#2A9D8F] bg-[#F7F3E9]/50 px-5 py-4">
+              <div ref={messageRef} className="mt-3 rounded-2xl border-l-4 border-[#2A9D8F] bg-bg-primary px-5 py-4">
                 {messageData.label && (
                   <p className="text-xs font-semibold uppercase tracking-wide text-[#2A9D8F]">{messageData.label}</p>
                 )}
