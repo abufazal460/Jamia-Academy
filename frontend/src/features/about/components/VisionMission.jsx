@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Eye, Target, HeartHandshake, CheckCircle2 } from "lucide-react";
+import { Eye, Target, HeartHandshake,  } from "lucide-react";
 
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
@@ -158,7 +158,7 @@ const VisionMission = () => {
             }
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#F4A261]/15 text-[#F4A261]" aria-hidden="true">
+            <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
               <Eye size={22} />
             </span>
             <h3 className="mt-2 text-xl sm:text-2xl font-extrabold text-white">{vision?.heading || "Our Vision"}</h3>
@@ -210,7 +210,7 @@ const VisionMission = () => {
             }
             transition={{ duration: 0.3, ease: "easeOut" }}
           >
-            <span className="relative z-10 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#E63946]/15 text-[#E63946]" aria-hidden="true">
+            <span className="relative z-10 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
               <HeartHandshake size={22} />
             </span>
             <h3 className="relative z-10 text-xl sm:text-2xl font-extrabold text-white">
