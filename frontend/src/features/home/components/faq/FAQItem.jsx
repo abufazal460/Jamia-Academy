@@ -105,7 +105,7 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
           className={`
             text-sm sm:text-base md:text-lg font-semibold leading-snug
             transition-colors duration-300
-            ${isOpen ? "text-cyan-300" : "text-slate-200 group-hover:text-white"}
+            ${isOpen ? "bg-gradient-to-r from-orange-500 via-yellow-400 to-red-400 bg-clip-text text-transparent" : "text-slate-200 group-hover:text-white"}
           `}
         >
           {faq.question}

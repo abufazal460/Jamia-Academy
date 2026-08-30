@@ -66,6 +66,12 @@ function Navbar() {
   const loginWrapRef = useRef(null); // Login button: right slide + fade on hide
   const whatsappWrapRef = useRef(null); // WhatsApp button: right slide + fade on hide
 
+  const navHoverRef = useRef(null);
+  const navItemRefs = useRef([]);
+  const hoverBgRef = useRef(null);
+  const hoverIndexRef = useRef(null);
+  const hoverTimelineRef = useRef(null);
+
   // ------------------------------------------------------------------
   // DERIVED
   // ------------------------------------------------------------------
@@ -92,12 +98,6 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   }, []);
 
-  // NavItem ke liye simple click handler — sirf mobile menu close karta hai.
-  // Dropdown toggle logic REMOVED (isCourseOpen, handleCourseClick, etc. — ye sab hata diye).
-  const handleNavClick = useCallback(() => {
-    // Mobile menu khula ho to nav click par band kar do.
-    setIsMobileMenuOpen(false);
-  }, []);
 
   // ------------------------------------------------------------------
   // KEYBOARD ACCESSIBILITY (Escape close)
@@ -208,6 +208,71 @@ function Navbar() {
     };
   }, [isDesktop]);
 
+  const handleNavHover = useCallback((targetIndex) => {
+    const items = navItemRefs.current;
+    const background = hoverBgRef.current;
+
+    if (!background || !items[targetIndex]) return;
+
+    const startIndex = hoverIndexRef.current ?? targetIndex;
+
+    if (hoverTimelineRef.current) {
+      hoverTimelineRef.current.kill();
+    }
+
+    const direction = targetIndex >= startIndex ? 1 : -1;
+
+    const timeline = gsap.timeline();
+
+    hoverTimelineRef.current = timeline;
+
+    gsap.set(background, {
+      opacity: 1,
+    });
+
+    for (
+      let index = startIndex;
+      direction === 1 ? index <= targetIndex : index >= targetIndex;
+      index += direction
+    ) {
+      const item = items[index];
+
+      if (!item) continue;
+
+      timeline.to(
+        background,
+        {
+          x: item.offsetLeft,
+          width: item.offsetWidth,
+          duration: index === startIndex ? 0.08 : 0.14,
+          ease: "power3.out",
+        },
+        index === startIndex ? 0 : ">"
+      );
+    }
+
+    hoverIndexRef.current = targetIndex;
+  }, []);
+
+  const handleNavLeave = useCallback(() => {
+    const background = hoverBgRef.current;
+
+    if (!background) return;
+
+    if (hoverTimelineRef.current) {
+      hoverTimelineRef.current.kill();
+    }
+
+    gsap.to(background, {
+      opacity: 0,
+      duration: 0.2,
+      ease: "power2.out",
+    });
+
+    hoverIndexRef.current = null;
+  }, []);
+
+
   return (
     // ================================================================
     // MAIN NAVBAR CONTAINER
@@ -270,15 +335,28 @@ function Navbar() {
               p-1: Thoda andar padding taaki active pill ke corners tight na lage.
               border border-white/8: Barely visible border for depth.
           ---------------------------------------------------------------- */}
-          <ul className="flex items-center gap-0.5 rounded-full border border-white/8 bg-white/10 p-1">
+          <ul
+            ref={navHoverRef}
+            onMouseLeave={handleNavLeave}
+
+            className="relative flex items-center gap-0.5 rounded-full border border-white/20 bg-white/10 p-1">
+            <div
+              ref={hoverBgRef}
+              className="pointer-events-none absolute left-0 top-1 bottom-1 z-0 rounded-full bg-white/15 opacity-0"
+              style={{ width: 0 }}
+            />
+
             {navLinks.map((item, index) => (
               <NavItem
                 key={item.id}
                 item={item}
                 index={index}
                 isActive={activeId === item.id}
-                // isDropdownOpen aur hasDropdown props REMOVED — ab zaroorat nahi.
-                onClick={handleNavClick}
+                onHover={handleNavHover}
+                onLeave={handleNavLeave}
+                itemRef={(el) => {
+                  navItemRefs.current[index] = el;
+                }}
               />
             ))}
           </ul>
