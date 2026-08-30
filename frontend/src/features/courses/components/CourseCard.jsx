@@ -25,11 +25,10 @@ function CardButton({ label, onClick, variant = "ghost" }) {
       type="button"
       onClick={onClick}
       className={twMerge(
-        "group/btn relative flex-1  cursor-pointer overflow-hidden rounded-lg border px-4 py-2.5 text-xs font-semibold tracking-wide transition-shadow duration-300 ease-out",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950",
+        "group/btn relative flex-1  cursor-pointer overflow-hidden rounded-lg border px-4 py-2.5 text-xs focus-visible:outline-none font-semibold tracking-wide transition-shadow duration-300 ease-out",
         isSolid
-          ? "border-transparent bg-white text-neutral-950 hover:shadow-[0_0_22px_rgba(255,255,255,0.35)] focus-visible:ring-white"
-          : "border-white/15 bg-white/5 text-white hover:shadow-[0_0_22px_rgba(168,85,247,0.4)] focus-visible:ring-purple-400"
+          ? "border-transparent bg-white text-neutral-950 hover:shadow-[0_0_22px_rgba(255,255,255,0.35)]"
+          : "border-white/15 bg-white/5 text-white hover:shadow-[0_0_22px_rgba(168,85,247,0.4)]"
       )}
     >
       <span className="relative block h-4 overflow-hidden">

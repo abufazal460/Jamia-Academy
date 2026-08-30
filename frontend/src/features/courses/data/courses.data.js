@@ -108,9 +108,6 @@ export const coursesData = [
         "A comprehensive full stack program where you build and deploy real-world applications using the MERN stack, from database design to production hosting.",
       modules: [
         { title: "MongoDB", topics: ["Schema Design", "Aggregation", "Indexing"] },
-        { title: "Express & Node.js", topics: ["REST APIs", "Middleware", "Authentication"] },
-        { title: "React", topics: ["Hooks", "State Management", "React Router"] },
-        { title: "Deployment", topics: ["CI/CD Basics", "Cloud Hosting", "Environment Config"] },
       ],
       tools: ["VS Code", "Postman", "MongoDB Atlas", "GitHub"],
       projects: ["E-commerce App", "Job Portal", "Real-time Chat App"],
@@ -166,9 +163,6 @@ export const coursesData = [
         "A beginner-friendly program that builds strong programming fundamentals using Python, one of the most in-demand languages today.",
       modules: [
         { title: "Python Basics", topics: ["Variables", "Data Types", "Loops", "Functions"] },
-        { title: "Data Structures", topics: ["Lists", "Dictionaries", "Tuples", "Sets"] },
-        { title: "OOP in Python", topics: ["Classes", "Objects", "Inheritance"] },
-        { title: "Mini Projects", topics: ["File Handling", "Automation Scripts"] },
       ],
       tools: ["VS Code", "Jupyter Notebook", "GitHub"],
       projects: ["To-Do App", "Expense Tracker", "Web Scraper"],
@@ -223,9 +217,6 @@ export const coursesData = [
         "An advanced program covering machine learning algorithms, neural networks, and real-world AI model deployment.",
       modules: [
         { title: "Python for ML", topics: ["NumPy", "Pandas", "Data Cleaning"] },
-        { title: "Machine Learning", topics: ["Regression", "Classification", "Clustering"] },
-        { title: "Deep Learning", topics: ["Neural Networks", "CNNs", "RNNs"] },
-        { title: "Deployment", topics: ["Model Serving", "APIs for ML Models"] },
       ],
       tools: ["Jupyter Notebook", "TensorFlow", "Scikit-learn", "Pandas"],
       projects: ["Spam Classifier", "Image Recognition Model", "Recommendation System"],
@@ -280,9 +271,6 @@ export const coursesData = [
         "A hands-on program in data science covering statistics, data wrangling, visualization, and predictive modeling.",
       modules: [
         { title: "Statistics Foundations", topics: ["Probability", "Distributions", "Hypothesis Testing"] },
-        { title: "Data Wrangling", topics: ["Pandas", "Data Cleaning", "Feature Engineering"] },
-        { title: "Data Visualization", topics: ["Matplotlib", "Seaborn", "Power BI Basics"] },
-        { title: "Predictive Modeling", topics: ["Regression", "Classification"] },
       ],
       tools: ["Jupyter Notebook", "Pandas", "Power BI", "SQL"],
       projects: ["Sales Data Dashboard", "Customer Churn Analysis", "Stock Price Trend Analysis"],
@@ -337,9 +325,6 @@ export const coursesData = [
         "An advanced, hands-on program covering network security, ethical hacking techniques, and defense strategies against real-world cyber threats.",
       modules: [
         { title: "Networking Fundamentals", topics: ["TCP/IP", "Firewalls", "VPNs"] },
-        { title: "Ethical Hacking", topics: ["Reconnaissance", "Vulnerability Scanning", "Exploitation Basics"] },
-        { title: "Web Security", topics: ["OWASP Top 10", "SQL Injection", "XSS"] },
-        { title: "Security Operations", topics: ["Incident Response", "Security Auditing"] },
       ],
       tools: ["Kali Linux", "Wireshark", "Burp Suite", "Nmap"],
       projects: ["Network Vulnerability Report", "Web App Penetration Test", "Security Audit Report"],
@@ -394,9 +379,6 @@ export const coursesData = [
         "A design-focused program covering the full UI/UX process — from user research to high-fidelity, interactive prototypes.",
       modules: [
         { title: "Design Fundamentals", topics: ["Color Theory", "Typography", "Layout"] },
-        { title: "User Research", topics: ["Personas", "User Journeys", "Usability Testing"] },
-        { title: "Wireframing & Prototyping", topics: ["Low-fi Wireframes", "Figma Prototyping"] },
-        { title: "Design Systems", topics: ["Components", "Design Tokens"] },
       ],
       tools: ["Figma", "Adobe XD"],
       projects: ["Mobile App Redesign", "E-commerce UX Case Study", "Design System"],
@@ -451,9 +433,6 @@ export const coursesData = [
         "A practical program covering SEO, social media marketing, and paid ad campaigns to help you market products and services online.",
       modules: [
         { title: "SEO Fundamentals", topics: ["On-page SEO", "Off-page SEO", "Keyword Research"] },
-        { title: "Social Media Marketing", topics: ["Content Strategy", "Instagram & Facebook Ads"] },
-        { title: "Google Ads", topics: ["Search Ads", "Display Ads", "Campaign Analytics"] },
-        { title: "Analytics", topics: ["Google Analytics", "Performance Reporting"] },
       ],
       tools: ["Google Ads", "Google Analytics", "Meta Business Suite"],
       projects: ["SEO Audit Report", "Social Media Campaign", "Ad Campaign Case Study"],

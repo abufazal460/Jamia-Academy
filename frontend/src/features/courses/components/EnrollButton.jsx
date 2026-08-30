@@ -17,7 +17,6 @@ export default function EnrollButton({ course, onClick, className = "" }) {
         "bg-gradient-to-r from-pink-500/90 via-purple-500/90  to-cyan-500/90 backdrop-blur-md",
         "shadow-none transition-[box-shadow,transform] duration-300  ease-out",
         "hover:scale-[1.03] hover:shadow-[0_0_24px_rgba(168,85,247,0.5)]",
-        "focus-visible:outline-none focus-visible:ring-2  focus-visible:ring-purple-300 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-950",
         className
       )}
     >
