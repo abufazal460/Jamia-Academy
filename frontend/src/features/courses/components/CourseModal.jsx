@@ -138,15 +138,16 @@ export default function CourseModal({ course, isOpen, onClose, onEnroll }) {
             "[&::-webkit-scrollbar-thumb]:bg-[linear-gradient(180deg,#ec4899,#a855f7,#22d3ee)]"
           )}
         >
-          <motion.div variants={itemVariants}>
+
+          <div className="mb-6 w-full overflow-hidden rounded-xl bg-neutral-900">
             <img
               src={course.image?.hero ?? course.image?.thumbnail}
               alt={`${course.title} course banner`}
               loading="lazy"
               decoding="async"
-              className="mb-6 h-40 w-full rounded-xl object-cover sm:h-56"
+              className="block h-auto max-h-[500px] w-full object-contain"
             />
-          </motion.div>
+          </div>
 
           <motion.div variants={itemVariants}>
             <CourseDetails course={course} />
