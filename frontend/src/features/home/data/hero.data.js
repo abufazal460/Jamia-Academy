@@ -1,7 +1,7 @@
 // Hero slider ka poora content yahan se control hota hai
 // Content team bina UI/JSX touch kiye yahan se sab kuch badal sakti hai
-import img1 from "../../../assets/images/home/boys.png"
-import img2 from "../../../assets/images/home/girls.png"
+import img1 from "../../../assets/images/home/hero/boys.png"
+import img2 from "../../../assets/images/home/hero/girls.png"
 // import img3 from "../../../assets/images/gallery/classroom/3.jpg"
 // import img4 from "../../../assets/images/gallery/classroom/4.jpg"
 export const heroSlides = [

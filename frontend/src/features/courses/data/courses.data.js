@@ -1,11 +1,53 @@
-
-import img1 from "../../../assets/images/courses/course-section/971.jpg"
-import img2 from "../../../assets/images/courses/course-section/developer_male.jpg"
-import img3 from "../../../assets/images/courses/course-section/person-playing-3d-video-games-device.jpg"
-import img4 from "../../../assets/images/common/ms office.png"
-import img5 from "../../../assets/images/common/web dev.png"
-import img6 from "../../../assets/images/common/tally ai.png"
-import img7 from "../../../assets/images/common/tally gst.png"
+import img001 from "../../../assets/images/courses/acc.png"
+import img002 from "../../../assets/images/courses/bcc.png"
+import img003 from "../../../assets/images/courses/ms office.png" //ms office ki images nhi hai generate karna hai 
+import img004 from "../../../assets/images/courses/ms office in ai.png"
+import img005 from "../../../assets/images/courses/advace excel with ai.png"
+import img006 from "../../../assets/images/courses/tally.png"
+import img007 from "../../../assets/images/courses/tally with ai.png"
+import img008 from "../../../assets/images/courses/accounting.png"
+import img009 from "../../../assets/images/courses/accounting diploma.png"
+import img010 from "../../../assets/images/courses/app dev.png"
+import img011 from "../../../assets/images/courses/data analytic.png"
+import img012 from "../../../assets/images/courses/data science.png"
+import img013 from "../../../assets/images/courses/full stack web dev.png"
+import img014 from "../../../assets/images/courses/python.png"
+import img015 from "../../../assets/images/courses/java.png"
+import img016 from "../../../assets/images/courses/java with dsa.png"
+import img017 from "../../../assets/images/courses/c and c++.png"
+import img018 from "../../../assets/images/courses/c and c++ dsa.png"
+import img019 from "../../../assets/images/courses/ai ml.png"
+import img020 from "../../../assets/images/courses/cyber security.png"
+import img021 from "../../../assets/images/courses/word press.png"
+import img022 from "../../../assets/images/courses/auto cad.png"
+import img023 from "../../../assets/images/courses/auto cad revit.png"
+import img024 from "../../../assets/images/courses/deploma in interior design.png"
+import img025 from "../../../assets/images/courses/diploma in graphic design.png"
+import img026 from "../../../assets/images/courses/video editing.png"
+import img027 from "../../../assets/images/courses/digital marketing.png"
+import img028 from "../../../assets/images/courses/deploma in interior design.png"
+import img029 from "../../../assets/images/courses/auto cad.png"
+import img030 from "../../../assets/images/courses/auto cad.png"
+import img031 from "../../../assets/images/courses/graphic design.png"
+import img032 from "../../../assets/images/courses/adobe.png"
+import img033 from "../../../assets/images/courses/adobe.png"
+import img034 from "../../../assets/images/courses/python.png"
+import img035 from "../../../assets/images/courses/cluad computing.png"
+import img036 from "../../../assets/images/courses/word press.png"
+import img037 from "../../../assets/images/courses/app dev.png"
+import img038 from "../../../assets/images/courses/mern stack.png"
+import img039 from "../../../assets/images/courses/Power BI.png"
+import img040 from "../../../assets/images/courses/SQL.png"
+import img041 from "../../../assets/images/courses/R language.png"
+import img042 from "../../../assets/images/courses/R language.png"
+import img043 from "../../../assets/images/courses/ms azure.png"
+import img044 from "../../../assets/images/courses/ms azure.png"
+import img045 from "../../../assets/images/courses/software testing.png"
+import img046 from "../../../assets/images/courses/prompt engineering.png"
+import img047 from "../../../assets/images/courses/spss.png"
+import img048 from "../../../assets/images/courses/nvivo.png"
+import img049 from "../../../assets/images/courses/pcs-sem.png"
+import img050 from "../../../assets/images/courses/reel shooting.png"
 
 
 export const coursesData =  [
@@ -16,8 +58,8 @@ export const coursesData =  [
     "shortTitle": "Advanced Computer Co…",
     "description": "Learn Advanced Computer Concepts with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img1,
-      "hero": img1
+      "thumbnail": img001,
+      "hero": img001,
     },
     "category": [
       "Computer Basics",
@@ -106,8 +148,8 @@ export const coursesData =  [
     "shortTitle": "Basic Computer Conce…",
     "description": "Learn Basic Computer Concepts with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img2,
-      "hero": img2
+      "thumbnail": img002,
+      "hero": img002
     },
     "category": [
       "Computer Basics",
@@ -196,8 +238,8 @@ export const coursesData =  [
     "shortTitle": "MS Office",
     "description": "Learn MS Office with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img3,
-      "hero": img3
+      "thumbnail": img003,
+      "hero": img003
     },
     "category": [
       "Computer Basics",
@@ -284,8 +326,8 @@ export const coursesData =  [
     "shortTitle": "MS Office with AI Au…",
     "description": "Learn MS Office with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img4,
-      "hero": img4
+      "thumbnail": img004,
+      "hero": img004
     },
     "category": [
       "Computer Basics",
@@ -374,8 +416,8 @@ export const coursesData =  [
     "shortTitle": "Advance Excel with AI",
     "description": "Learn Advance Excel with AI with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img5,
-      "hero": img5
+      "thumbnail": img005,
+      "hero": img005
     },
     "category": [
       "Computer Basics",
@@ -464,8 +506,8 @@ export const coursesData =  [
     "shortTitle": "Tally Prime with GST…",
     "description": "Learn Tally Prime with GST, TDS & E-WAY Bill with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img5,
-      "hero": img5
+      "thumbnail": img006,
+      "hero": img006
     },
     "category": [
       "Computer Basics",
@@ -557,8 +599,8 @@ export const coursesData =  [
     "shortTitle": "Tally Prime with AI…",
     "description": "Learn Tally Prime with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img4,
-      "hero": img4
+      "thumbnail": img007,
+      "hero": img007
     },
     "category": [
       "Computer Basics",
@@ -648,8 +690,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Financial…",
     "description": "Learn Diploma in Financial Accounting (DFA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img7,
-      "hero": img7
+      "thumbnail": img008,
+      "hero": img008
     },
     "category": [
       "Computer Basics",
@@ -739,8 +781,8 @@ export const coursesData =  [
     "shortTitle": "Advanced Diploma in…",
     "description": "Learn Advanced Diploma in Financial Accounting (ADFA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img6,
-      "hero": img6
+      "thumbnail": img009,
+      "hero": img009
     },
     "category": [
       "Computer Basics",
@@ -831,8 +873,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Computer…",
     "description": "Learn Diploma in Computer Applications with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": img7,
-      "hero": img7
+      "thumbnail": img010,
+      "hero": img010
     },
     "category": [
       "Programming"
@@ -920,8 +962,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Data Anal…",
     "description": "Learn Diploma in Data Analytics with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/diploma-in-data-analytics/thumbnail.webp",
-      "hero": "/images/courses/diploma-in-data-analytics/hero.webp"
+      "thumbnail": img011,
+      "hero": img011
     },
     "category": [
       "Data",
@@ -1010,8 +1052,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Data Scie…",
     "description": "Learn Diploma in Data Science with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/diploma-in-data-science/thumbnail.webp",
-      "hero": "/images/courses/diploma-in-data-science/hero.webp"
+      "thumbnail": img012,
+      "hero": img012
     },
     "category": [
       "Data",
@@ -1100,8 +1142,8 @@ export const coursesData =  [
     "shortTitle": "Full Stack Web Devel…",
     "description": "Learn Full Stack Web Development with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/full-stack-web-development/thumbnail.webp",
-      "hero": "/images/courses/full-stack-web-development/hero.webp"
+      "thumbnail": img013,
+      "hero": img013
     },
     "category": [
       "Web Development",
@@ -1191,8 +1233,8 @@ export const coursesData =  [
     "shortTitle": "Python (BASIC To ADV…",
     "description": "Learn Python (BASIC To ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/python-basic-to-advance/thumbnail.webp",
-      "hero": "/images/courses/python-basic-to-advance/hero.webp"
+      "thumbnail": img014,
+      "hero": img014
     },
     "category": [
       "Programming"
@@ -1280,8 +1322,8 @@ export const coursesData =  [
     "shortTitle": "Java (BASIC To ADVAN…",
     "description": "Learn Java (BASIC To ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/java-basic-to-advance/thumbnail.webp",
-      "hero": "/images/courses/java-basic-to-advance/hero.webp"
+      "thumbnail": img015,
+      "hero": img015
     },
     "category": [
       "Programming"
@@ -1369,8 +1411,8 @@ export const coursesData =  [
     "shortTitle": "Java with DSA",
     "description": "Learn Java with DSA with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/java-with-dsa/thumbnail.webp",
-      "hero": "/images/courses/java-with-dsa/hero.webp"
+      "thumbnail": img016,
+      "hero": img016
     },
     "category": [
       "Programming"
@@ -1458,8 +1500,8 @@ export const coursesData =  [
     "shortTitle": "C & C++",
     "description": "Learn C & C++ with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/c-and-cplusplus/thumbnail.webp",
-      "hero": "/images/courses/c-and-cplusplus/hero.webp"
+      "thumbnail": img017,
+      "hero": img017
     },
     "category": [
       "Programming"
@@ -1546,8 +1588,8 @@ export const coursesData =  [
     "shortTitle": "C & C++ with DSA",
     "description": "Learn C & C++ with DSA with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/c-and-cplusplus-with-dsa/thumbnail.webp",
-      "hero": "/images/courses/c-and-cplusplus-with-dsa/hero.webp"
+      "thumbnail": img018,
+      "hero": img018
     },
     "category": [
       "Programming"
@@ -1636,8 +1678,8 @@ export const coursesData =  [
     "shortTitle": "Artificial Intellige…",
     "description": "Learn Artificial Intelligence & Machine Learning (AI & ML) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/artificial-intelligence-and-machine-learning-ai-and-ml/thumbnail.webp",
-      "hero": "/images/courses/artificial-intelligence-and-machine-learning-ai-and-ml/hero.webp"
+      "thumbnail": img019,
+      "hero": img019
     },
     "category": [
       "AI",
@@ -1729,8 +1771,8 @@ export const coursesData =  [
     "shortTitle": "Cyber SECURITY, Ethi…",
     "description": "Learn Cyber SECURITY, Ethical HACKING, Network Security with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/cyber-security-ethical-hacking-network-security/thumbnail.webp",
-      "hero": "/images/courses/cyber-security-ethical-hacking-network-security/hero.webp"
+      "thumbnail": img020,
+      "hero": img020
     },
     "category": [
       "Security",
@@ -1822,8 +1864,8 @@ export const coursesData =  [
     "shortTitle": "Wordpress (BASIC To…",
     "description": "Learn Wordpress (BASIC To ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/wordpress-basic-to-advance/thumbnail.webp",
-      "hero": "/images/courses/wordpress-basic-to-advance/hero.webp"
+      "thumbnail": img021,
+      "hero": img021
     },
     "category": [
       "Web Development",
@@ -1912,8 +1954,8 @@ export const coursesData =  [
     "shortTitle": "Auto Cad 2d 3d - MEP…",
     "description": "Learn Auto Cad 2d 3d - MEP, INTERIOR, ARCHITECTURE, CIVIL, HVAC with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/auto-cad-2d-3d-mep-interior-architecture-civil-hvac/thumbnail.webp",
-      "hero": "/images/courses/auto-cad-2d-3d-mep-interior-architecture-civil-hvac/hero.webp"
+      "thumbnail": img022,
+      "hero": img022
     },
     "category": [
       "Design",
@@ -2005,8 +2047,8 @@ export const coursesData =  [
     "shortTitle": "Auto Cad + Revit (IN…",
     "description": "Learn Auto Cad + Revit (INTERIOR, CIVIL, MEP ARCHITECTURE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/auto-cad-plus-revit-interior-civil-mep-architecture/thumbnail.webp",
-      "hero": "/images/courses/auto-cad-plus-revit-interior-civil-mep-architecture/hero.webp"
+      "thumbnail": img023,
+      "hero": img023
     },
     "category": [
       "Design",
@@ -2098,8 +2140,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Interior…",
     "description": "Learn Diploma in Interior Design with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/diploma-in-interior-design/thumbnail.webp",
-      "hero": "/images/courses/diploma-in-interior-design/hero.webp"
+      "thumbnail": img024,
+      "hero": img024
     },
     "category": [
       "Design",
@@ -2188,8 +2230,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Graphic D…",
     "description": "Learn Diploma in Graphic Design with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/diploma-in-graphic-design-with-ai-automation/thumbnail.webp",
-      "hero": "/images/courses/diploma-in-graphic-design-with-ai-automation/hero.webp"
+      "thumbnail": img025,
+      "hero": img025
     },
     "category": [
       "Design"
@@ -2279,8 +2321,8 @@ export const coursesData =  [
     "shortTitle": "Video Editing with A…",
     "description": "Learn Video Editing with Adobe Photoshop with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/video-editing-with-adobe-photoshop/thumbnail.webp",
-      "hero": "/images/courses/video-editing-with-adobe-photoshop/hero.webp"
+      "thumbnail": img026,
+      "hero": img026
     },
     "category": [
       "Design"
@@ -2370,8 +2412,8 @@ export const coursesData =  [
     "shortTitle": "Digital Marketing (F…",
     "description": "Learn Digital Marketing (FOR BEGINNERS) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/digital-marketing-for-beginners/thumbnail.webp",
-      "hero": "/images/courses/digital-marketing-for-beginners/hero.webp"
+      "thumbnail": img027,
+      "hero": img027
     },
     "category": [
       "Marketing"
@@ -2460,8 +2502,8 @@ export const coursesData =  [
     "shortTitle": "Advanced Diploma in…",
     "description": "Learn Advanced Diploma in Interior Design with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/advanced-diploma-in-interior-design/thumbnail.webp",
-      "hero": "/images/courses/advanced-diploma-in-interior-design/hero.webp"
+      "thumbnail": img028,
+      "hero": img028
     },
     "category": [
       "Design",
@@ -2551,8 +2593,8 @@ export const coursesData =  [
     "shortTitle": "Auto Cad with Sketch…",
     "description": "Learn Auto Cad with Sketchup + Vray (INTERIOR, ARCHITECTURE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/auto-cad-with-sketchup-plus-vray-interior-architecture/thumbnail.webp",
-      "hero": "/images/courses/auto-cad-with-sketchup-plus-vray-interior-architecture/hero.webp"
+      "thumbnail": img029,
+      "hero": img029
     },
     "category": [
       "Design",
@@ -2644,8 +2686,8 @@ export const coursesData =  [
     "shortTitle": "Auto Cad with 3DS Ma…",
     "description": "Learn Auto Cad with 3DS Max + Vray (INTERIOR, ARCHITECTURE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/auto-cad-with-3ds-max-plus-vray-interior-architecture/thumbnail.webp",
-      "hero": "/images/courses/auto-cad-with-3ds-max-plus-vray-interior-architecture/hero.webp"
+      "thumbnail": img030,
+      "hero": img030
     },
     "category": [
       "Design",
@@ -2737,8 +2779,8 @@ export const coursesData =  [
     "shortTitle": "Certificate in Graph…",
     "description": "Learn Certificate in Graphic Design with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/certificate-in-graphic-design/thumbnail.webp",
-      "hero": "/images/courses/certificate-in-graphic-design/hero.webp"
+      "thumbnail": img031,
+      "hero": img031
     },
     "category": [
       "Design"
@@ -2826,8 +2868,8 @@ export const coursesData =  [
     "shortTitle": "Adobe Animate with A…",
     "description": "Learn Adobe Animate with Adobe Illustrator with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/adobe-animate-with-adobe-illustrator/thumbnail.webp",
-      "hero": "/images/courses/adobe-animate-with-adobe-illustrator/hero.webp"
+      "thumbnail": img032,
+      "hero": img032
     },
     "category": [
       "Design"
@@ -2917,8 +2959,8 @@ export const coursesData =  [
     "shortTitle": "Adobe Animation 2d",
     "description": "Learn Adobe Animation 2d with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/adobe-animation-2d/thumbnail.webp",
-      "hero": "/images/courses/adobe-animation-2d/hero.webp"
+      "thumbnail": img033,
+      "hero": img033
     },
     "category": [
       "Design"
@@ -3005,8 +3047,8 @@ export const coursesData =  [
     "shortTitle": "Python (BASIC)",
     "description": "Learn Python (BASIC) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/python-basic/thumbnail.webp",
-      "hero": "/images/courses/python-basic/hero.webp"
+      "thumbnail": img034,
+      "hero": img034
     },
     "category": [
       "Programming"
@@ -3093,8 +3135,8 @@ export const coursesData =  [
     "shortTitle": "Cloud Computing (FOR…",
     "description": "Learn Cloud Computing (FOR BEGINNERS) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/cloud-computing-for-beginners/thumbnail.webp",
-      "hero": "/images/courses/cloud-computing-for-beginners/hero.webp"
+      "thumbnail": img035,
+      "hero": img035
     },
     "category": [
       "Programming"
@@ -3183,8 +3225,8 @@ export const coursesData =  [
     "shortTitle": "Wordpress (BASIC for…",
     "description": "Learn Wordpress (BASIC for BEGINNERS) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/wordpress-basic-for-beginners/thumbnail.webp",
-      "hero": "/images/courses/wordpress-basic-for-beginners/hero.webp"
+      "thumbnail": img036,
+      "hero": img036
     },
     "category": [
       "Web Development",
@@ -3274,8 +3316,8 @@ export const coursesData =  [
     "shortTitle": "App Development (KOT…",
     "description": "Learn App Development (KOTLIN or JAVA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/app-development-kotlin-or-java/thumbnail.webp",
-      "hero": "/images/courses/app-development-kotlin-or-java/hero.webp"
+      "thumbnail": img037,
+      "hero": img037
     },
     "category": [
       "Programming"
@@ -3364,8 +3406,8 @@ export const coursesData =  [
     "shortTitle": "Mern Stack Web Devel…",
     "description": "Learn Mern Stack Web Development with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/mern-stack-web-development/thumbnail.webp",
-      "hero": "/images/courses/mern-stack-web-development/hero.webp"
+      "thumbnail": img038,
+      "hero": img038
     },
     "category": [
       "Web Development",
@@ -3455,8 +3497,8 @@ export const coursesData =  [
     "shortTitle": "Power Bi",
     "description": "Learn Power Bi with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/power-bi/thumbnail.webp",
-      "hero": "/images/courses/power-bi/hero.webp"
+      "thumbnail": img039,
+      "hero": img039
     },
     "category": [
       "Programming"
@@ -3542,8 +3584,8 @@ export const coursesData =  [
     "shortTitle": "Certificate in SQL (…",
     "description": "Learn Certificate in SQL (ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/certificate-in-sql-advance/thumbnail.webp",
-      "hero": "/images/courses/certificate-in-sql-advance/hero.webp"
+      "thumbnail": img040,
+      "hero": img040
     },
     "category": [
       "Programming"
@@ -3631,8 +3673,8 @@ export const coursesData =  [
     "shortTitle": "R Language",
     "description": "Learn R Language with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/r-language/thumbnail.webp",
-      "hero": "/images/courses/r-language/hero.webp"
+      "thumbnail": img041,
+      "hero": img041
     },
     "category": [
       "Programming"
@@ -3718,8 +3760,8 @@ export const coursesData =  [
     "shortTitle": "R Language Advance",
     "description": "Learn R Language Advance with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/r-language-advance/thumbnail.webp",
-      "hero": "/images/courses/r-language-advance/hero.webp"
+      "thumbnail": img042,
+      "hero": img042
     },
     "category": [
       "Programming"
@@ -3806,8 +3848,8 @@ export const coursesData =  [
     "shortTitle": "MS Azure",
     "description": "Learn MS Azure with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/ms-azure/thumbnail.webp",
-      "hero": "/images/courses/ms-azure/hero.webp"
+      "thumbnail": img043,
+      "hero": img043
     },
     "category": [
       "Programming"
@@ -3893,8 +3935,8 @@ export const coursesData =  [
     "shortTitle": "Advance Azure",
     "description": "Learn Advance Azure with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/advance-azure/thumbnail.webp",
-      "hero": "/images/courses/advance-azure/hero.webp"
+      "thumbnail": img044,
+      "hero": img044
     },
     "category": [
       "Programming"
@@ -3981,8 +4023,8 @@ export const coursesData =  [
     "shortTitle": "Software Testing",
     "description": "Learn Software Testing with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/software-testing/thumbnail.webp",
-      "hero": "/images/courses/software-testing/hero.webp"
+      "thumbnail": img045,
+      "hero": img045
     },
     "category": [
       "Programming"
@@ -4069,8 +4111,8 @@ export const coursesData =  [
     "shortTitle": "Gen AI & Prompt Engi…",
     "description": "Learn Gen AI & Prompt Engineering with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/gen-ai-and-prompt-engineering/thumbnail.webp",
-      "hero": "/images/courses/gen-ai-and-prompt-engineering/hero.webp"
+      "thumbnail": img046,
+      "hero": img046
     },
     "category": [
       "AI",
@@ -4160,8 +4202,8 @@ export const coursesData =  [
     "shortTitle": "Spss",
     "description": "Learn Spss with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/spss/thumbnail.webp",
-      "hero": "/images/courses/spss/hero.webp"
+      "thumbnail": img047,
+      "hero": img047
     },
     "category": [
       "Data",
@@ -4248,8 +4290,8 @@ export const coursesData =  [
     "shortTitle": "Nvivo",
     "description": "Learn Nvivo with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/nvivo/thumbnail.webp",
-      "hero": "/images/courses/nvivo/hero.webp"
+      "thumbnail": img048,
+      "hero": img048
     },
     "category": [
       "Data",
@@ -4336,8 +4378,8 @@ export const coursesData =  [
     "shortTitle": "PCS - SEM",
     "description": "Learn PCS - SEM with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/pcs-sem/thumbnail.webp",
-      "hero": "/images/courses/pcs-sem/hero.webp"
+      "thumbnail": img049,
+      "hero": img049
     },
     "category": [
       "Data",
@@ -4425,8 +4467,8 @@ export const coursesData =  [
     "shortTitle": "Reels Shooting",
     "description": "Learn Reels Shooting with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/reels-shooting/thumbnail.webp",
-      "hero": "/images/courses/reels-shooting/hero.webp"
+      "thumbnail": img050,
+      "hero": img050
     },
     "category": [
       "Marketing"
