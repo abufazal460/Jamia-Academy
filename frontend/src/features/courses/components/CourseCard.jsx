@@ -71,7 +71,7 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
       >
         <div className="relative flex h-full flex-col overflow-hidden rounded-[1.1rem] bg-gradient-to-b from-neutral-900/90 to-neutral-950/95 p-3 backdrop-blur-xl sm:p-4">
          
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl bg-neutral-900">
+          <div className="relative aspect-[800/430] w-full overflow-hidden rounded-xl bg-neutral-900">
             <motion.img
               src={course.image?.thumbnail}
               alt={`${course.title} course thumbnail`}
@@ -81,10 +81,11 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="h-full w-full object-conatin transition-transform duration-500 ease-out group-hover:scale-110"
+              className="block h-full w-full object-fit transition-transform duration-500 ease-out group-hover:scale-110"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
           </div>
+
           <div className="mt-3 flex justify-end">
           </div>
 
