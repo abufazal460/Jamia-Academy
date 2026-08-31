@@ -2,6 +2,10 @@
 import img1 from "../../../assets/images/courses/course-section/971.jpg"
 import img2 from "../../../assets/images/courses/course-section/developer_male.jpg"
 import img3 from "../../../assets/images/courses/course-section/person-playing-3d-video-games-device.jpg"
+import img4 from "../../../assets/images/common/ms office.png"
+import img5 from "../../../assets/images/common/web dev.png"
+import img6 from "../../../assets/images/common/tally ai.png"
+import img7 from "../../../assets/images/common/tally gst.png"
 
 
 export const coursesData =  [
@@ -280,8 +284,8 @@ export const coursesData =  [
     "shortTitle": "MS Office with AI Au…",
     "description": "Learn MS Office with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/ms-office-with-ai-automation/thumbnail.webp",
-      "hero": "/images/courses/ms-office-with-ai-automation/hero.webp"
+      "thumbnail": img4,
+      "hero": img4
     },
     "category": [
       "Computer Basics",
@@ -370,8 +374,8 @@ export const coursesData =  [
     "shortTitle": "Advance Excel with AI",
     "description": "Learn Advance Excel with AI with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/advance-excel-with-ai/thumbnail.webp",
-      "hero": "/images/courses/advance-excel-with-ai/hero.webp"
+      "thumbnail": img5,
+      "hero": img5
     },
     "category": [
       "Computer Basics",
@@ -460,8 +464,8 @@ export const coursesData =  [
     "shortTitle": "Tally Prime with GST…",
     "description": "Learn Tally Prime with GST, TDS & E-WAY Bill with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/tally-prime-with-gst-tds-and-e-way-bill/thumbnail.webp",
-      "hero": "/images/courses/tally-prime-with-gst-tds-and-e-way-bill/hero.webp"
+      "thumbnail": img5,
+      "hero": img5
     },
     "category": [
       "Computer Basics",
@@ -553,8 +557,8 @@ export const coursesData =  [
     "shortTitle": "Tally Prime with AI…",
     "description": "Learn Tally Prime with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/tally-prime-with-ai-automation/thumbnail.webp",
-      "hero": "/images/courses/tally-prime-with-ai-automation/hero.webp"
+      "thumbnail": img4,
+      "hero": img4
     },
     "category": [
       "Computer Basics",
@@ -644,8 +648,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Financial…",
     "description": "Learn Diploma in Financial Accounting (DFA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/diploma-in-financial-accounting-dfa/thumbnail.webp",
-      "hero": "/images/courses/diploma-in-financial-accounting-dfa/hero.webp"
+      "thumbnail": img7,
+      "hero": img7
     },
     "category": [
       "Computer Basics",
@@ -735,8 +739,8 @@ export const coursesData =  [
     "shortTitle": "Advanced Diploma in…",
     "description": "Learn Advanced Diploma in Financial Accounting (ADFA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/advanced-diploma-in-financial-accounting-adfa/thumbnail.webp",
-      "hero": "/images/courses/advanced-diploma-in-financial-accounting-adfa/hero.webp"
+      "thumbnail": img6,
+      "hero": img6
     },
     "category": [
       "Computer Basics",
@@ -827,8 +831,8 @@ export const coursesData =  [
     "shortTitle": "Diploma in Computer…",
     "description": "Learn Diploma in Computer Applications with a practical, hands-on curriculum designed to build real, job-ready skills.",
     "image": {
-      "thumbnail": "/images/courses/diploma-in-computer-applications/thumbnail.webp",
-      "hero": "/images/courses/diploma-in-computer-applications/hero.webp"
+      "thumbnail": img7,
+      "hero": img7
     },
     "category": [
       "Programming"

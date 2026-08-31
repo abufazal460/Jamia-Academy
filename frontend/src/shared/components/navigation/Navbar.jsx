@@ -244,11 +244,13 @@ function Navbar() {
         {
           x: item.offsetLeft,
           width: item.offsetWidth,
-          duration: index === startIndex ? 0.08 : 0.14,
+          duration: index === startIndex ? 0.22 : 0.32,
+          delay: index === startIndex ? 0.05 : 0,
           ease: "power3.out",
+          overwrite: true,
+
         },
-        index === startIndex ? 0 : ">"
-      );
+        index === startIndex ? 0 : ">+=0.04");
     }
 
     hoverIndexRef.current = targetIndex;
@@ -265,8 +267,10 @@ function Navbar() {
 
     gsap.to(background, {
       opacity: 0,
-      duration: 0.2,
+      duration: 0.18,
+      delay: 0.08,
       ease: "power2.out",
+      overwrite: true,
     });
 
     hoverIndexRef.current = null;
@@ -342,8 +346,7 @@ function Navbar() {
             className="relative flex items-center gap-0.5 rounded-full border border-white/20 bg-white/10 p-1">
             <div
               ref={hoverBgRef}
-              className="pointer-events-none absolute left-0 top-1 bottom-1 z-0 rounded-full bg-white/15 opacity-0"
-              style={{ width: 0 }}
+              className="pointer-events-none absolute left-0 top-1 bottom-1 z-0 rounded-full bg-white backdrop-blur-sm opacity-0" style={{ width: 0 }}
             />
 
             {navLinks.map((item, index) => (
