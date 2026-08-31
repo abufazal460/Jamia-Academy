@@ -81,7 +81,7 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+              className="h-full w-full object-conatin transition-transform duration-500 ease-out group-hover:scale-110"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-neutral-950/70 via-transparent to-transparent" />
           </div>
