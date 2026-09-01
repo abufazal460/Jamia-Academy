@@ -1,12 +1,9 @@
-// File: aboutData.js
-// Purpose: Jamia Academy About page ka SAARA editable content — ek hi jagah centralized
-// Responsibility: Har section (hero, founder, timeline, etc.) ka data yaha se milega
-// Future Usage: Har section component ye file import karke apna data render karega
-// Dependencies: Koi nahi (pure static data file)
-// IMPORTANT: Future developers ko content change karne ke liye kabhi bhi .jsx files edit
-// karne ki zaroorat nahi — sirf isi file me values update karni hain.
+import img2 from "../../../assets/images/about/faculty/saba mam.jpg"
+import img3 from "../../../assets/images/about/faculty/saad sir.jpeg"
+import img4 from "../../../assets/images/about/faculty/shahid sir.jpeg"
+import founderImg from "../../../assets/images/about/founder.jpeg"
+import coFounderImg from "../../../assets/images/about/co-founder.jpeg"
 
-// import all images 
 import video from "../../../assets/images/common/aboutDescription.mp4"
 // ---------------------------------------------------------------------------
 // HERO SECTION
@@ -89,7 +86,7 @@ export const founder = {
   bio: "Dr. Qasim Chaudhary founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
-  image: "/assets/about/founder-placeholder.webp",
+  image: founderImg,
   experience: "23+ Years in Education",
   position: "Former Advisor, State Education Board",
   qualifications: [
@@ -124,7 +121,7 @@ export const coFounder = {
   bio: "Dr. Saba Rizwi has been instrumental in shaping the academic curriculum and pastoral care systems that define the Jamia Academy experience.",
   // TODO:
   // Replace placeholder image with optimized WebP image.
-  image: "/assets/about/cofounder-placeholder.webp",
+  image: coFounderImg,
   experience: "12+ Years in Academic Leadership",
   qualifications: [
     { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Technology & Artificial Intelligence", university: "Jamia Millia Islamia" },
@@ -136,7 +133,7 @@ export const coFounder = {
     notes: "I believe every child carries a spark of potential waiting to be nurtured. My work here is about building the systems, the culture, and the everyday moments that let that spark grow into something lasting.",
   },
 
-   message: {
+  message: {
     id: "co-founder",
 
     label: "Co-Founder & CMD",
@@ -157,7 +154,7 @@ export const coFounder = {
 
 export const vision = {
   heading: "Our Vision",
-  
+
   description:
     "We're not just an institute we're a movement that connects raw talent with the power of technology, opening doors to unlimited possibilities for every student who walks through them. Our vision is to build a “Societal environment recognized across India and the world” one where affordable, future-ready, and skill-driven education reaches every student, regardless of their background. Contributing to India's race in technology is our ultimate mission. We dream of a New India where: Talent knows no boundaries-socio-economic background is never a barrier Education is more than a degree- it's a gateway to innovation and employment Every student becomes a driving force in India's digital and economic transformation “Enrol today”, “Lead tomorrow” Your Skill, Your Future, It All Starts Here",
 
@@ -221,7 +218,7 @@ export const faculty = [
     designation: "Founder & CEO",
     title: "Founder & CEO",
     bio: "Over 15 years of experience in science education and curriculum design.",
-    image: "/assets/about/team-placeholder.webp",
+    image: founderImg,
     qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
     experience: "23+ Years",
 
@@ -232,7 +229,7 @@ export const faculty = [
     designation: "Co-founder/Director",
     title: "Co-founder/Director",
     bio: "Passionate about making mathematics accessible and engaging for all students.",
-    image: "/assets/about/team-placeholder.webp",
+    image: img2,
     qualification: "Ph.D. in Educational Technology & Artificial Intelligence (JMI)",
     experience: "10+ Years",
 
@@ -243,7 +240,7 @@ export const faculty = [
     designation: "Head of  Computer Science & IT Industry",
     title: "Head of  Computer Science & IT Industry",
     bio: "Dedicated to building strong communication skills in every student.",
-    image: "/assets/about/team-placeholder.webp",
+    image: img3,
     qualification: "M.A. in English Literature",
     experience: "Masters in Computer Application (JMI) M.Sc (Mathematics) O Level (NIELIT)",
 
@@ -254,7 +251,7 @@ export const faculty = [
     designation: "Head of Graphics Designer",
     title: "Head of Graphic Design and Animation",
     bio: "Focused on preparing students for a technology-driven future.",
-    image: "/assets/about/team-placeholder.webp",
+    image: img4,
     qualification: "Diploma in Animation (MAAC Animation Academy) Professional 3D Designer & Graphics Expert",
     experience: "8+ Years Experience in the Graphic and Animation Industry",
 

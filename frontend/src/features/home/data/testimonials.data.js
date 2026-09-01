@@ -11,7 +11,7 @@ import id9 from "../../../assets/images/home/student/Musab ACC.png";
 import id10 from "../../../assets/images/home/student/Reshma Parveen.png";
 import id11 from "../../../assets/images/home/student/samra.jpeg";
 import id12 from "../../../assets/images/home/student/shifa.png";
-// 13 mera hai abu fazal pending  
+import id13 from "../../../assets/images/home/student/fazal.png";
 import id14 from "../../../assets/images/home/student/Kaif ADFA.png";
 import id15 from "../../../assets/images/home/student/Parvez Alam ACC.png";
 import id16 from "../../../assets/images/home/student/MD_Anas_Interior_Design.png";
@@ -138,7 +138,7 @@ export const testimonialsRowTwo = [
     rating: 5,
     review:
       "I knew a little coding before joining Jamia Academy, but I couldn’t build projects on my own. After completing the Full Stack Development course, I’ve grown from struggling with basic projects to confidently building complex, real-world applications.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqE3e9RIK09-ejpr7BwnvNb4TpTjmXHGgrTTNc00vdtA&s=10",
+    image: id13,
   },
   {
     id: 14,
@@ -153,7 +153,7 @@ export const testimonialsRowTwo = [
     id: 15,
     name: "Parvez Alam",
     course: "ACC (Advanced Computer Course)",
-    rating: 4.8,
+    rating: 5,
     review:
       "I learned computer basics properly at Jamia Academy. The teachers are patient and explain everything clearly, even if you are a complete beginner. Now I use what I learned every day.",
     image: id15,
