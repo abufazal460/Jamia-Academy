@@ -17,8 +17,7 @@ import LoginButton from "../navigation/LoginButton";
 // Ye exact imports hai jo user ne diye hai — inhe bilkul change nahi kiya gaya.
 import humburger from "../../../assets/icons/hamburger.webp";
 import cross from "../../../assets/icons/cross.svg";
-import logo from "../../../assets/icons/jamia-academy-Logo.png";
-import logo2 from "../../../assets/icons/navbar-logo.png";
+import logo from "../../../assets/icons/logo.png";
 
 import NavItem from "./NavItem";
 import MobileMenu from "./MobileMenu";
@@ -316,7 +315,7 @@ function Navbar() {
             className="flex shrink-0 items-center gap-2 outline-none"
           >
             <img
-              src={logo2}
+              src={logo}
               alt="Jamia Academy Logo"
               // Width/height fix kiya — image load hone se pehle CLS na ho.
               width="50"

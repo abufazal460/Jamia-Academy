@@ -228,7 +228,7 @@ const Footer = () => {
           {/* Logo image — white rounded card jaisa look reference mein hai */}
           <div className="bg-white rounded-xl w-fit">
             <img
-              src={logo2}
+              src={logo}
               alt="Jamia Academy Logo"
               className="h-12 sm:h-18 w-auto rounded-lg object-contain"
             />
