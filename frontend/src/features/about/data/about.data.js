@@ -218,7 +218,7 @@ export const faculty = [
     designation: "Founder & CEO",
     title: "Founder & CEO",
     bio: "Over 15 years of experience in science education and curriculum design.",
-    image: "/assets/about/team-placeholder.webp",
+    image: founderImg,
     qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
     experience: "23+ Years",
 
