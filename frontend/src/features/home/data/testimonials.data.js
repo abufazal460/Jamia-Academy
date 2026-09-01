@@ -153,7 +153,7 @@ export const testimonialsRowTwo = [
     id: 15,
     name: "Parvez Alam",
     course: "ACC (Advanced Computer Course)",
-    rating: 4.8,
+    rating: 5,
     review:
       "I learned computer basics properly at Jamia Academy. The teachers are patient and explain everything clearly, even if you are a complete beginner. Now I use what I learned every day.",
     image: id15,
