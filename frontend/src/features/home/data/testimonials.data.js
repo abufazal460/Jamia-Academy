@@ -32,7 +32,7 @@ export const testimonialsRowOne = [
     id: 2,
     name: "Asif Khan",
     course: "Python",
-    rating: 4.5,
+    rating: 4.8,
     review:
       "Python classes at Jamia Academy were fun and easy to follow. Teachers gave real examples instead of just theory. It felt more like learning with friends than sitting in a boring class.",
     image: id2,
@@ -41,7 +41,7 @@ export const testimonialsRowOne = [
     id: 3,
     name: "Hamza nafees",
     course: "BCC (Basic Computer Course)",
-    rating: 4.8,
+    rating: 5,
     review:
       "I had never used a computer before joining Jamia Academy. I enrolled in the BCC course, learned everything from the basics, and now I'm confident and skilled in using computers.",
     image: id3,
@@ -50,7 +50,7 @@ export const testimonialsRowOne = [
     id: 4,
     name: "Saif Hussain",
     course: "Interior Design",
-    rating: 4,
+    rating: 4.9,
     review:
       "I learned how to plan spaces and choose colours properly. The teacher has real work experience and shares many useful tips. The classroom setup is nice and gives you space to be creative",
     image: id4,
@@ -59,7 +59,7 @@ export const testimonialsRowOne = [
     id: 5,
     name: "Mohd Zaid",
     course: "DFA (Tally)",
-    rating: 4.3,
+    rating: 4.9,
     review:
       "Accounting used to feel difficult, but the teachers explained it with easy examples. Now I understand the basics well. The overall environment at the academy is calm and helps you focus.",
     image: id5,
@@ -68,7 +68,7 @@ export const testimonialsRowOne = [
     id: 6,
     name: "Alfisa",
     course: "Digital Marketing",
-    rating: 4.8,
+    rating: 5,
     review:
       "This course taught me real things like SEO and running ads, not just theory. Teachers shared their own work experience, which helped a lot. I feel more confident about digital marketing now.",
     image: id6,
@@ -77,7 +77,7 @@ export const testimonialsRowOne = [
     id: 7,
     name: "Muztar",
     course: "CAD",
-    rating: 4.5,
+    rating: 5,
     review:
       "I joined AutoCAD to learn technical drawing for my career in design. The teachers explained every tool step by step, and I got a lot of practice time on the computer. Now I can create drawings & Designing confidently on my own.",
     image: id7,
@@ -99,7 +99,7 @@ export const testimonialsRowTwo = [
     id: 9,
     name: "Musab Khan",
     course: "ACC (Advanced Computer Course)",
-    rating: 4.7,
+    rating: 4.8,
     review:
       "I learned computer basics properly here. Teachers are patient and explain things clearly, even for students who are complete beginners. Now I use these skills every day.",
     image: id9,
@@ -144,7 +144,7 @@ export const testimonialsRowTwo = [
     id: 14,
     name: "Kaif",
     course: "ADFA",
-    rating: 4.8,
+    rating: 4.9,
     review:
       "I joined the ADFA course at Jamia Academy with basic accounting knowledge. The practical training helped me understand accounting better, and now I can confidently manage real-world accounting tasks.",
     image: id14,
@@ -153,7 +153,7 @@ export const testimonialsRowTwo = [
     id: 15,
     name: "Parvez Alam",
     course: "ACC (Advanced Computer Course)",
-    rating: 4.5,
+    rating: 4.8,
     review:
       "I learned computer basics properly at Jamia Academy. The teachers are patient and explain everything clearly, even if you are a complete beginner. Now I use what I learned every day.",
     image: id15,
