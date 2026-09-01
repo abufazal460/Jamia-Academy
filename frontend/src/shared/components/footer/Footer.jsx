@@ -4,8 +4,7 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import { usePageTransition } from "../../../app/providers/page-transition";
 
-import logo from "../../../assets/icons/jamia-academy-Logo.png";
-import logo2 from "../../../assets/icons/navbar-logo.png";
+import logo from "../../../assets/icons/logo.png";
 import msme from "../../../assets/icons/msme.png";
 import neilit from "../../../assets/icons/nielit.jpeg";
 import nitiAyog from "../../../assets/icons/niti-aayog.jpeg";
