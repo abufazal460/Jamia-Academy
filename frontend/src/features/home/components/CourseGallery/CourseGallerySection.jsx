@@ -38,7 +38,7 @@ export default function CourseGallerySection() {
           tabletHeight="65vh"
           mobileHeight="55vh"
           perspective={1000}
-          scrub={1}
+          scrub={0.3}
           speed={1}
           animationEnabled
           onImageClick={handleImageClick}

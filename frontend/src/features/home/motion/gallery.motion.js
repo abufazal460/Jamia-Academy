@@ -35,7 +35,7 @@ export function initSmoothScroll() {
 
 
 export function destroySmoothScroll() {
-  
+
 }
 
 function Desktop3DPreset(el, { scrub }) {
@@ -48,6 +48,7 @@ function Desktop3DPreset(el, { scrub }) {
         scrub,
         // markers: true, // debug ke liye on karo
       },
+      defaults: { force3D: true }, // GPU compositor layer sirf animation ke dauraan
     })
     .fromTo(
       el,
