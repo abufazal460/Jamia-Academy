@@ -48,8 +48,6 @@ const GalleryItem = forwardRef(function GalleryItem(
         // hai. Card ke rounded corners/shadow ke saath yeh intentional
         // "matte" lagta hai.
         "bg-neutral-950",
-        "will-change-transform",
-        // GSAP transform-origin/3d ke liye Tailwind v4 arbitrary utilities
         "[transform-style:preserve-3d] [transform-origin:center_center]",
         height,
       ].join(" ")}

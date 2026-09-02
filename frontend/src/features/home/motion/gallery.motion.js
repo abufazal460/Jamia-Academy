@@ -30,20 +30,12 @@ export function getActiveLenis() {
 
 
 export function initSmoothScroll() {
-  const lenis = getLenisInstance();
-  if (!lenis) return null; // app-level Lenis not mounted yet
-  lenis.on("scroll", ScrollTrigger.update);
-  activeLenisInstance = lenis;
-  return lenis;
+  return getLenisInstance();
 }
 
-export function destroySmoothScroll(lenis) {
-  if (!lenis) return;
-  lenis.off("scroll", ScrollTrigger.update);
 
-  if (activeLenisInstance === lenis) {
-    activeLenisInstance = null;
-  }
+export function destroySmoothScroll() {
+
 }
 
 function Desktop3DPreset(el, { scrub }) {
@@ -56,6 +48,7 @@ function Desktop3DPreset(el, { scrub }) {
         scrub,
         // markers: true, // debug ke liye on karo
       },
+      defaults: { force3D: true }, // GPU compositor layer sirf animation ke dauraan
     })
     .fromTo(
       el,

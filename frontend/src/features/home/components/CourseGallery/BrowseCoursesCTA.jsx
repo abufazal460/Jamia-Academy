@@ -12,7 +12,8 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { getActiveLenis } from "../../motion/gallery.motion";
+import { getLenisInstance } from "../../../../app/providers/SmoothScroll";
+
 import { usePageTransition } from "../../../../app/providers/page-transition";
 gsap.registerPlugin(ScrollTrigger); // idempotent — already registered elsewhere bhi
 
@@ -78,7 +79,7 @@ export default function BrowseCoursesCTA({
       // Same-page section — existing Lenis instance se smooth scroll,
       // native window.scrollTo NAHI use karte kyunki Lenis pehle se
       // scroll control kar raha hai.
-      const lenis = getActiveLenis();
+      const lenis = getLenisInstance();
       if (lenis) {
         lenis.scrollTo(target, { offset: 0, duration: 1.2 });
       } else {

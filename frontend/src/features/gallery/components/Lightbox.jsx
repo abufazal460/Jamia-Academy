@@ -2,11 +2,16 @@ import { useCallback, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { IoClose, IoChevronBack, IoChevronForward } from "react-icons/io5";
 import { getLenisInstance } from "../../../app/providers/SmoothScroll";
+import { useLockBodyScroll } from "../../../shared/hooks/useLockBodyScroll";
 
 const SWIPE_THRESHOLD_PX = 50;
 
 
 export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLabel, index }) {
+
+  useLockBodyScroll(true, { lenis: getLenisInstance() });
+
+
   const touchStartXRef = useRef(null);
   const isFirst = currentIndex === 0;
   const isLast = currentIndex === images.length - 1;

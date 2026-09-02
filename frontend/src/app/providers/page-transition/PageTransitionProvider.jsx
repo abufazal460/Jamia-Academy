@@ -12,6 +12,7 @@ import {
   useLocation,
   useNavigate,
 } from "react-router-dom";
+import { getLenisInstance } from "../SmoothScroll";
 
 import TransitionContext from "./TransitionContext";
 import PageTransition from "./PageTransition";
@@ -85,9 +86,10 @@ export default function PageTransitionProvider({
     previousBodyOverflowRef.current = document.body.style.overflow;
     previousHtmlOverflowRef.current =
       document.documentElement.style.overflow;
-
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
+    getLenisInstance()?.stop(); // Lenis ka apna rAF loop bhi rokna zaroori hai
+
   }, []);
 
   const unlockScroll = useCallback(() => {
@@ -95,6 +97,8 @@ export default function PageTransitionProvider({
       previousBodyOverflowRef.current || "";
     document.documentElement.style.overflow =
       previousHtmlOverflowRef.current || "";
+    getLenisInstance()?.start();
+
   }, []);
 
   const waitForRouteReady = useCallback(
@@ -152,7 +156,7 @@ export default function PageTransitionProvider({
 
       if (cancelled || !mountedRef.current) return;
 
-      window.scrollTo(0, 0);
+      getLenisInstance()?.scrollTo(0, { immediate: true });
 
       await wait(TRANSITION_TIMING.holdDuration);
 

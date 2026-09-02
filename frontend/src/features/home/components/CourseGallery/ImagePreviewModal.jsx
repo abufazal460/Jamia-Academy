@@ -41,7 +41,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { IoClose } from "react-icons/io5";
 import { useLockBodyScroll } from "../../../../shared/hooks/useLockBodyScroll";
-import { getActiveLenis } from "../../motion/gallery.motion";
+import { getLenisInstance } from "../../../../app/providers/SmoothScroll";
 
 export default function ImagePreviewModal({ image, onClose }) {
   const closeBtnRef = useRef(null);
@@ -49,7 +49,7 @@ export default function ImagePreviewModal({ image, onClose }) {
 
   // Existing shared hook — already handles html+body lock, iOS position:fixed,
   // scrollbar compensation, scroll-position restore AND Lenis stop/start.
-  useLockBodyScroll(Boolean(image), { lenis: getActiveLenis() });
+  useLockBodyScroll(Boolean(image), { lenis: getLenisInstance() });
 
   // ---------- Escape to close ----------
   useEffect(() => {
