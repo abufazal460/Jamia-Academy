@@ -6,18 +6,19 @@ import WhyChooseCard from './WhyChooseCard';
 import WhyChooseCTA from './WhyChooseCTA';
 import { whyChooseData, ctaData, sectionData } from '../../data/why-choose-us.data';
 import { containerVariants, headingVariants, paragraphVariants } from '../../motion/why-choose-us.motion';
+import  prefersReducedMotion  from "../../../../shared/hooks/usePrefersReducedMotion"
 
 const WhyChooseUs = memo(() => {
   return (
     <section className="relative w-full py-20 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F3E9] via-white to-[#F7F3E9]/50 overflow-hidden">
       {/* Background decorative elements */}
-      <motion.div
+            <motion.div
         className="absolute -top-40  -left-40 w-96 h-96 bg-[#E63946]/5 rounded-full blur-3xl pointer-events-none"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.6, 0.3]
-        }}
-        viewport={{ once: false, amount: 0.1 }}
+        animate={
+          prefersReducedMotion
+            ? undefined
+            : { scale: [1, 1.2, 1], opacity: [0.3, 0.6, 0.3] }
+        }
         transition={{
           duration: 8,
           repeat: Infinity,
@@ -27,10 +28,11 @@ const WhyChooseUs = memo(() => {
 
       <motion.div
         className="absolute -bottom-40  -right-40 w-96 h-96 bg-[#2A9D8F]/5 rounded-full blur-3xl pointer-events-none"
-        animate={{
-          scale: [1, 1.1, 1],
-          opacity: [0.3, 0.7, 0.3]
-        }}
+        animate={
+          prefersReducedMotion
+            ? undefined
+            : { scale: [1, 1.1, 1], opacity: [0.3, 0.7, 0.3] }
+        }
         transition={{
           duration: 10,
           repeat: Infinity,
