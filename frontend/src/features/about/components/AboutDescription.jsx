@@ -153,7 +153,6 @@ const AboutDescription = () => {
       );
     }
 
-    // Idle floating loop for badges — sine.inOut, infinite, lightweight (y only)
     if (badgesRef.current?.children?.length) {
       gsap.to(badgesRef.current.children, {
         y: "-=15",
@@ -162,7 +161,13 @@ const AboutDescription = () => {
         yoyo: true,
         repeat: -1,
         stagger: 0.3,
-        delay: 1, // entrance complete hone ke baad start
+        delay: 1,
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top bottom",
+          end: "bottom top",
+          toggleActions: "play pause resume pause", // section ke bahar pause ho jaye
+        },
       });
     }
   }, [prefersReducedMotion]);
