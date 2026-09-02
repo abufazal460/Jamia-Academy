@@ -4,7 +4,7 @@ import React, { useRef, useState, useMemo } from "react";
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { GraduationCap, MonitorSmartphone, ShieldCheck, ImageOff } from "lucide-react";
+import { GraduationCap, MonitorSmartphone, ShieldCheck, } from "lucide-react";
 
 
 // Hooks
@@ -12,10 +12,9 @@ import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 import useMediaQuery from "../../../shared/hooks/useMediaQuery";
 
- // Utilities
+// Utilities
 import { splitIntoWords } from "../../../shared/utils/text";
 import { cn } from "../../../shared/utils/helpers";
-import { getImageProps } from "../../../shared/utils/image";
 
 // Constants / Data
 import { aboutDescription, features } from "../data/about.data";
@@ -46,8 +45,6 @@ const AboutDescription = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
   const isDesktop = useMediaQuery("lg"); // 1024px+ — sirf desktop pe mouse tilt chalega
 
-  // Image load fail hone par fallback dikhane ke liye local state
-  const [imageError, setImageError] = useState(false);
 
   // Mouse-tilt ke liye chhota transform state (sirf desktop, sirf reduced-motion off)
   const tiltTargetRef = useRef(null);
@@ -210,7 +207,7 @@ const AboutDescription = () => {
                   {aboutDescription.location}
                 </span>
               )}
-            </div> 
+            </div>
 
             {/* H2 — proper heading hierarchy (H1 is in HeroAbout) */}
             <h2
@@ -308,8 +305,16 @@ const AboutDescription = () => {
               <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">
                 {/* Glass frame inner */}
                 <div className="relative overflow-hidden rounded-[26px] bg-white/40 backdrop-blur-sm">
-                <video  autoPlay loop  muted src={aboutDescription?.image} className="aspect-[3/4] w-full h-full object-cover"></video>
-               
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    src={aboutDescription?.image}
+                    className="aspect-[3/4] w-full h-full object-cover"
+                  />
+
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/25 via-transparent to-transparent" />
                 </div>
               </div>
