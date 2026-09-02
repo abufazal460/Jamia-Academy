@@ -19,6 +19,7 @@ const BORDER_COLORS = [
 function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
   const cardRef = useRef(null);
   const imageRef = useRef(null);
+  const animationRef = useRef(null);
   const rotate = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
 
@@ -29,6 +30,7 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
     }
   }, []);
 
+
   const handleMouseEnter = () => {
     setIsHovered(true);
     const prefersReducedMotion = window.matchMedia(
@@ -36,7 +38,7 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
     ).matches;
     if (prefersReducedMotion) return;
 
-    animate(rotate, rotate.get() + 360, {
+    animationRef.current = animate(rotate, rotate.get() + 360, {
       duration: 3,
       repeat: Infinity,
       ease: "linear",
@@ -45,7 +47,10 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
 
   const handleMouseLeave = () => {
     setIsHovered(false);
+    animationRef.current?.stop();
   };
+
+  useEffect(() => () => animationRef.current?.stop(), []);
 
   const SHINE_COLOR = "#FFFFFF";
 
@@ -106,7 +111,7 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
         <img
           src={src}
           ref={imageRef}
-          loading="lazy"
+          loading={index < 4 ? "eager" : "lazy"}
           decoding="async"
           fetchPriority={index < 4 ? "high" : "auto"}
           alt={`Jamia Academy ${categoryLabel} photo ${index + 1}`}
