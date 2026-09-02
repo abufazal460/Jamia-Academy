@@ -270,33 +270,6 @@ export const timeline = [
   { id: "timeline-2025", year: "2025", title: "AI & Machine Learning", description: "Introduced AI and Machine Learning while expanding our faculty and programs." },
   { id: "timeline-2026", year: "2026", title: "2000+ Alumni Milestone", description: "Celebrated over five thousand successful Certifications." },
 ];
-
-// ---------------------------------------------------------------------------
-// WHY CHOOSE US SECTION
-// ---------------------------------------------------------------------------
-export const whyChooseUs = [
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
-  {
-    id: "why-1",
-    title: "Proven Credibility",
-    description: "ISO-certified, multi-branch institution trusted by thousands of families since 2022.",
-    icon: "BadgeCheck",
-  },
-  {
-    id: "why-2",
-    title: "Quality Teaching",
-    description: "Experienced faculty delivering a curriculum that blends academic rigor with real-world skills.",
-    icon: "GraduationCap",
-  },
-  {
-    id: "why-3",
-    title: "Career Support",
-    description: "Dedicated guidance and placement assistance to help every student plan their future with confidence.",
-    icon: "Briefcase",
-  },
-];
-
 // ---------------------------------------------------------------------------
 // SINGLE EXPORT — future components isse bhi import kar sakte hain agar poora
 // data object ek saath chahiye ho (e.g. SEO structured data generation ke liye)
@@ -314,7 +287,6 @@ const aboutData = {
   stats,
   faculty,
   timeline,
-  whyChooseUs,
 };
 
 export default aboutData;
