@@ -11,7 +11,7 @@ const faqData = [
     id: "faq-1",
     question: "How many courses are available at Jamia Academy?",
     answer:
-      "Jamia Academy offers 45+ courses across different skill and career-oriented categories. Students can choose from a wide range of courses based on their interests, educational background, and career goals",
+      "Jamia Academy offers 50+ courses across different skill and career-oriented categories. Students can choose from a wide range of courses based on their interests, educational background, and career goals",
   },
   {
     id: "faq-2",
@@ -59,13 +59,13 @@ const faqData = [
     id: "faq-9",
     question: "Can students choose a course according to their career goals?",
     answer:
-      "Yes. With 45+ courses available, students can explore different learning options based on their interests, existing skills, and career objectives. The academy can also help students understand the available course options before enrollment.",
+      "Yes. With 50+ courses available, students can explore different learning options based on their interests, existing skills, and career objectives. The academy can also help students understand the available course options before enrollment.",
   },
   {
     id: "faq-10",
     question: "Why should I choose Jamia Academy for skill development?",
     answer:
-      "Jamia Academy focuses on practical learning, skill development, experienced faculty, flexible fee options, and a wide range of career-oriented courses. With 45+ courses and 4+ faculty members, the academy aims to provide accessible and structured learning opportunities for students.",
+      "Jamia Academy focuses on practical learning, skill development, experienced faculty, flexible fee options, and a wide range of career-oriented courses. With 50+ courses and 4+ faculty members, the academy aims to provide accessible and structured learning opportunities for students.",
   },
 ];
 
