@@ -99,9 +99,10 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
 
         {expertiseList.length > 0 && (
           <motion.div
-            className="mt-2 grid"
+            className="mt-2 overflow-hidden"
             initial={false}
-            animate={{ gridTemplateRows: isActive || prefersReducedMotion ? "1fr" : "0fr" }}
+            animate={{ height: isActive || prefersReducedMotion ? "auto" : 0, opacity: isActive || prefersReducedMotion ? 1 : 0 }}
+            style={{ willChange: "height, opacity" }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
           >
             <div className="overflow-hidden">
@@ -110,7 +111,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
                 animate={{ opacity: isActive || prefersReducedMotion ? 1 : 0 }}
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
-               
+
               </motion.div>
             </div>
           </motion.div>
@@ -204,7 +205,7 @@ const FacultyGrid = () => {
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
-          
+
           <h2
             id="faculty-heading"
             ref={headingRef}

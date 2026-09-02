@@ -136,6 +136,7 @@ const CoFounderSection = () => {
         className="pointer-events-none absolute -top-16 right-[8%] h-56 w-56 rounded-full bg-[#2A9D8F]/10 blur-3xl"
         animate={prefersReducedMotion ? {} : { y: [0, 20, 0], x: [0, -10, 0] }}
         transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
+        viewport={{ once: false }}
         aria-hidden="true"
       />
 
@@ -185,11 +186,11 @@ const CoFounderSection = () => {
                       prefersReducedMotion
                         ? {}
                         : {
-                            y: -6,
-                            scale: 1.02,
-                            boxShadow: "0 14px 32px rgba(43,45,66,0.14)",
-                            borderColor: "rgba(42,157,143,0.4)",
-                          }
+                          y: -6,
+                          scale: 1.02,
+                          boxShadow: "0 14px 32px rgba(43,45,66,0.14)",
+                          borderColor: "rgba(42,157,143,0.4)",
+                        }
                     }
                     transition={{ duration: 0.25, ease: "easeOut" }}
                   >
@@ -250,6 +251,7 @@ const CoFounderSection = () => {
               <motion.div
                 className="absolute -bottom-4 -right-4 sm:-right-6 rounded-xl border border-[#2B2D42]/10 bg-white px-3.5 py-2 text-[11px] sm:text-xs font-semibold text-[#2B2D42] shadow-lg"
                 animate={prefersReducedMotion ? {} : { y: [0, -10, 0] }}
+                viewport={{ once: false }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
               >
                 Academic Director

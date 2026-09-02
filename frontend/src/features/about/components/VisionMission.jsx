@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Eye, Target, HeartHandshake,  } from "lucide-react";
+import { Eye, Target, HeartHandshake, } from "lucide-react";
 
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
@@ -118,12 +118,14 @@ const VisionMission = () => {
       <motion.div
         className="pointer-events-none absolute top-10 left-[10%] h-64 w-64 rounded-full blur-3xl"
         animate={prefersReducedMotion ? {} : { y: [0, 25, 0] }}
+        viewport={{ once: false }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
       />
       <motion.div
         className="pointer-events-none absolute bottom-0 right-[8%] h-72 w-72 rounded-full  blur-3xl"
         animate={prefersReducedMotion ? {} : { y: [0, -20, 0] }}
+        viewport={{ once: false }}
         transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
         aria-hidden="true"
       />
@@ -191,7 +193,7 @@ const VisionMission = () => {
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{mission.description}</p>
             )}
 
-           
+
           </motion.div>
 
           {/* ============================================================

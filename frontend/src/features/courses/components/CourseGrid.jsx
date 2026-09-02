@@ -2,7 +2,6 @@ import { memo, useMemo } from "react";
 import { motion, useReducedMotion, AnimatePresence } from "motion/react";
 import { SearchX, Gamepad2 } from "lucide-react";
 import CourseCard from "./CourseCard";
-import CourseCardSkeleton from "./CourseCardSkeleton";
 
 const containerVariants = {
   hidden: {},
@@ -27,8 +26,6 @@ const cardVariants = {
 
 const CourseGrid = ({
   courses = [],
-  isLoading = false,
-  skeletonCount = 6,
   onViewDetails, // (course) => void - CourseSection modal open karega
   onEnroll, // (course) => void - CourseSection WhatsApp kholega
 }) => {
@@ -44,28 +41,7 @@ const CourseGrid = ({
     };
   }, [prefersReducedMotion]);
 
-  // Loading state - skeleton grid same layout use karta hai taaki
-  // real content aane par grid "jump" na kare
-  if (isLoading) {
-    return (
-      <div
-        className="
-          grid gap-4 sm:gap-5 lg:gap-6
-          grid-cols-1
-          md:grid-cols-2
-          lg:grid-cols-3
-          xl:grid-cols-4
-          2xl:grid-cols-4
-          max-w-[1800px] mx-auto
-          px-4 sm:px-6
-        "
-      >
-        {Array.from({ length: skeletonCount }).map((_, i) => (
-          <CourseCardSkeleton key={`skeleton-${i}`} />
-        ))}
-      </div>
-    );
-  }
+  
 
   if (!courses.length) {
     return (

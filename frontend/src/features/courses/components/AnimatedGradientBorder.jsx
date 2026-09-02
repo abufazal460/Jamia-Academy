@@ -56,7 +56,7 @@ export default function AnimatedGradientBorder({
     
       <motion.div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-[35%] -z-10 blur-2xl"
+        className="pointer-events-none absolute -inset-[35%] -z-10 blur-2xl hidden sm:block"
         style={{
           background: gradient,
           borderRadius,
@@ -72,7 +72,7 @@ export default function AnimatedGradientBorder({
       >
         <motion.div
           aria-hidden="true"
-          className="pointer-events-none absolute -inset-[60%]"
+          className="pointer-events-none absolute -inset-[40%]"
           style={{
             background: gradient,
             rotate,

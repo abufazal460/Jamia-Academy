@@ -15,7 +15,7 @@ import { Play, ChevronDown } from "lucide-react";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
 // 5. Utilities
-import { splitIntoCharacters, splitIntoWords } from "../../../shared/utils/text";
+import { splitIntoWords } from "../../../shared/utils/text";
 import { cn } from "../../../shared/utils/helpers";
 
 // 6. Constants / Data
@@ -61,7 +61,7 @@ const HeroAbout = () => {
   const [subtitleDone, setSubtitleDone] = useState(false);
 
   // Heading ko characters me todna — GSAP character-reveal ke liye
-  const headingChars = splitIntoCharacters(hero.title);
+  // const headingChars = splitIntoCharacters(hero.title);
   // Subtitle ko words me todna — typewriter effect ke liye
   const subtitleWords = splitIntoWords(hero.subtitle);
   // Description paragraph ko words me todna — word-by-word reveal ke liye
@@ -70,7 +70,7 @@ const HeroAbout = () => {
   useLayoutEffect(() => {
     if (!rootRef.current) return undefined;
 
-   
+
     // gsap.context() — sab selectors isi component ke andar scope honge,
     // aur unmount hote hi automatically cleanup ho jayega (memory leak safe)
     const ctx = gsap.context(() => {
@@ -219,6 +219,8 @@ const HeroAbout = () => {
               ? {}
               : { x: [0, 30, 0], y: [0, 20, 0] }
           }
+          viewport={{ once: false }}
+
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
         {/* Soft glow blob 2 */}
@@ -229,6 +231,8 @@ const HeroAbout = () => {
               ? {}
               : { x: [0, -25, 0], y: [0, -15, 0] }
           }
+          viewport={{ once: false }}
+
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         />
 
@@ -264,8 +268,8 @@ const HeroAbout = () => {
             ref={headingRef}
             className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.05] text-white"
           >
-          
-              {hero.title}
+
+            {hero.title}
           </h1>
 
           {/* Subtitle — typewriter effect */}
@@ -281,8 +285,8 @@ const HeroAbout = () => {
             {/* Blinking cursor — subtitle complete hote hi dikhta hai */}
             <motion.span
               className="inline-block w-[2px] h-[1em] bg-[#ff953f] align-middle ml-1"
-              animate={subtitleDone ? { opacity: [1, 0, 1] } : { opacity: 0 }}
-              transition={{ duration: 0.9, repeat: Infinity, ease: "easeInOut" }}
+              animate={subtitleDone && !prefersReducedMotion ? { opacity: [1, 0, 1] } : { opacity: 0 }}
+              transition={{ duration: 0.9, repeat: subtitleDone ? 4 : 0, ease: "easeInOut" }}
               aria-hidden="true"
             />
           </p>
@@ -302,7 +306,7 @@ const HeroAbout = () => {
             ))}
           </p>
 
-        
+
 
           {/* --------------------------------------------------------------
               STATS — 3 floating cards, GSAP stagger entrance,
@@ -323,11 +327,12 @@ const HeroAbout = () => {
                   prefersReducedMotion
                     ? {}
                     : {
-                        y: -6,
-                        boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
-                        borderColor: "rgba(180,180,180,0.5)",
-                      }
+                      y: -6,
+                      boxShadow: "0 12px 30px rgba(0,0,0,0.35)",
+                      borderColor: "rgba(180,180,180,0.5)",
+                    }
                 }
+
                 transition={{ duration: 0.25, ease: "easeOut" }}
               >
                 <p className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</p>

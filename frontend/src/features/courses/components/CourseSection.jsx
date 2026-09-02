@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback, useMemo } from "react";
 import { gsap } from "gsap";
 import { motion } from "motion/react";
 
@@ -29,10 +29,10 @@ const CourseSection = () => {
   const { filters, setFilters, resetFilters, applyFilters } =
     useCourseFilter();
 
-  // Search result par filter apply — dono chain hote hain isliye
-  // "python" search + "beginner" filter jaisi combined query kaam karti hai.
-  const filteredCourses = applyFilters(searchedCourses);
-
+  const filteredCourses = useMemo(
+    () => applyFilters(searchedCourses),
+    [applyFilters, searchedCourses]
+  );
   // GSAP - ambient background glow loop. Ye Motion se nahi kiya kyunki
   // GSAP timeline-based infinite ambient loops ke liye zyada performant
   // aur predictable hai (single timeline, GPU-friendly transform only).
