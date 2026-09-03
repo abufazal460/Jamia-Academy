@@ -1,9 +1,3 @@
-// File: breakpoints.js
-// Purpose: Saare responsive breakpoints ek jagah define karna
-// Responsibility: JS-side media query checks (useMediaQuery) aur Tailwind config dono isi se sync rahenge
-// Future Usage: useMediaQuery hook, responsive animation strength calculation
-// Dependencies: Koi nahi
-
 export const breakpoints = {
   xs: 320,   // Chhoti mobile screens
   xs2: 360,
@@ -24,7 +18,6 @@ export const breakpoints = {
   uhd: 3840,   // 4K
 };
 
-// Media query string banane ka helper — components/hooks isi ko use karenge
 export const mediaQuery = (key) => `(min-width: ${breakpoints[key]}px)`;
 
 export default breakpoints;

@@ -1,4 +1,3 @@
-// src/shared/components/layout/Layout.jsx
 export default function Layout({
   children,
   as: Element = "main",

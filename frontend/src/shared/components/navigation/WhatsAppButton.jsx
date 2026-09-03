@@ -1,18 +1,11 @@
 import React, { memo } from "react";
 import { motion } from "motion/react";
 
-// ====================================================================
-// WhatsAppButton.jsx
-// Ye Navbar ke right side wala WhatsApp contact button hai (Search button replace kiya).
-// Button khud static rahega, sirf andar wala Icon float + rotate + scale karega.
-// ====================================================================
-
-// Icon ke liye infinite floating animation - bahut subtle, premium feel ke liye.
 const iconFloatVariants = {
   animate: {
-    y: [0, -3, 0], // Float up-down
-    rotate: [0, -6, 6, 0], // Halka sa rotate
-    scale: [1, 1.08, 1], // Halka sa scale pulse
+    y: [0, -3, 0],
+    rotate: [0, -6, 6, 0],
+    scale: [1, 1.08, 1],
     transition: {
       duration: 2.8,
       repeat: Infinity,
@@ -24,16 +17,13 @@ const iconFloatVariants = {
 const WhatsAppButton = memo(function WhatsAppButton() {
   return (
     <motion.a
-      // Initial page-load animation: right se slide-in
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ type: "spring", stiffness: 110, damping: 16, delay: 0.4 }}
-      href="https://wa.me/9621555551" // Yaha actual WhatsApp number daalna hoga production me
+      href="https://wa.me/9621555551"
       target="_blank"
-      rel="noopener noreferrer" // Security best practice - external link tab-nabbing se bachata hai
+      rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"
-      // whileHover/whileTap se button khud bhi halka sa scale karega click feedback ke liye,
-      // lekin "float" sirf icon karega (button static rahega jaisa instruction me bola gaya).
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.96 }}
       className={[
@@ -43,7 +33,6 @@ const WhatsAppButton = memo(function WhatsAppButton() {
         "focus-visible:ring-2 focus-visible:ring-emerald-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b1437]",
       ].join(" ")}
     >
-      {/* Sirf ye SVG icon animate hota hai, button background/shape static hai */}
       <motion.svg
         variants={iconFloatVariants}
         animate="animate"

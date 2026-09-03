@@ -1,5 +1,3 @@
-// Central icon resolver — data files only store icon names (string).
-// This utility maps icon names to react-icons components.
 
 import {
   FaGraduationCap,
@@ -23,7 +21,6 @@ import {
 } from "react-icons/fa6";
 
 import { FaMapMarkerAlt } from "react-icons/fa";
-
 
 const ICONS = {
   GraduationCap: FaGraduationCap,
