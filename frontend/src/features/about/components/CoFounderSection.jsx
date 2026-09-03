@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import { GraduationCap, ImageOff, Sparkles } from "lucide-react";
 
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
@@ -17,13 +18,6 @@ import { gsapEase } from "../../../shared/motion/config";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/**
- * CoFounderSection
- * Ye component kya karta hai: Co-Founder ka profile + qualifications + message render karta hai
- * Kyu banaya gaya: leadership team ki depth dikhane ke liye, Founder section ko complement karte hue
- * Kab call hoga: pages/About.jsx me FounderMessage ke baad
- * Kya return karega: <section> jisme info block (left, desktop) + image (right) hai
- */
 const CoFounderSection = () => {
   const sectionRef = useRef(null);
   const imageRef = useRef(null);
@@ -63,7 +57,7 @@ const CoFounderSection = () => {
         trigger: sectionRef.current,
         start: "top 80%",
         end: "bottom 30%",
-        toggleActions: "play reverse play reverse", // replay har baar section viewport me aaye
+        toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
@@ -71,10 +65,8 @@ const CoFounderSection = () => {
       },
     });
 
-    // STEP 1 — Section container
     tl.from(sectionRef.current, { opacity: 0, duration: 0.5, ease: "power2.out" });
 
-    // STEP 2 — Image reveal (mirrored direction — rotate opposite sign for visual variation)
     if (imageRef.current) {
       tl.from(
         imageRef.current,
@@ -83,7 +75,6 @@ const CoFounderSection = () => {
       );
     }
 
-    // STEP 3 — Name
     if (nameRef.current) {
       tl.from(
         nameRef.current,
@@ -92,12 +83,10 @@ const CoFounderSection = () => {
       );
     }
 
-    // STEP 4 — Title
     if (titleRef.current) {
       tl.from(titleRef.current, { opacity: 0, y: 20, duration: 0.5, ease: gsapEase.paragraph }, "-=0.35");
     }
 
-    // STEP 5 — Experience badge
     if (experienceRef.current) {
       tl.from(
         experienceRef.current,
@@ -106,7 +95,6 @@ const CoFounderSection = () => {
       );
     }
 
-    // STEP 6 — Qualification cards (stagger)
     if (qualsRef.current) {
       tl.from(
         qualsRef.current.children,
@@ -115,7 +103,6 @@ const CoFounderSection = () => {
       );
     }
 
-    // STEP 7 — Message: progressive paragraph reveal
     if (messageRef.current) {
       tl.from(messageRef.current, { opacity: 0, y: 18, duration: 0.55, ease: gsapEase.paragraph }, "-=0.15");
     }
@@ -131,7 +118,6 @@ const CoFounderSection = () => {
       aria-labelledby="cofounder-heading"
       className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
     >
-      {/* Decorative floating accent shapes — Framer Motion only, purely visual */}
       <motion.div
         className="pointer-events-none absolute -top-16 right-[8%] h-56 w-56 rounded-full bg-[#2A9D8F]/10 blur-3xl"
         animate={prefersReducedMotion ? {} : { y: [0, 20, 0], x: [0, -10, 0] }}
@@ -172,7 +158,6 @@ const CoFounderSection = () => {
               <p className="text-sm sm:text-base leading-relaxed text-[#2B2D42]/65 max-w-xl">{coFounder.bio}</p>
             )}
 
-            {/* QUALIFICATION CARDS */}
             {safeQualifications.length > 0 && (
               <div ref={qualsRef} className="mt-2 grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 gap-4">
                 {safeQualifications.map((qual) => (
@@ -205,7 +190,6 @@ const CoFounderSection = () => {
               </div>
             )}
 
-            {/* MESSAGE */}
             {messageData.notes && (
               <div ref={messageRef} className="mt-3 rounded-2xl border-l-4 border-[#2A9D8F] bg-bg-primary px-5 py-4">
                 {messageData.label && (
@@ -244,10 +228,6 @@ const CoFounderSection = () => {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent" />
                 </div>
               </div>
-              {/* TODO:
-                  Replace placeholder co-founder image with official portrait. */}
-
-              {/* Floating accent badge — distinct from Founder section's social icons */}
               <motion.div
                 className="absolute -bottom-4 -right-4 sm:-right-6 rounded-xl border border-[#2B2D42]/10 bg-white px-3.5 py-2 text-[11px] sm:text-xs font-semibold text-[#2B2D42] shadow-lg"
                 animate={prefersReducedMotion ? {} : { y: [0, -10, 0] }}

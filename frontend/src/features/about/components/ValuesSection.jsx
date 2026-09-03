@@ -1,34 +1,21 @@
 
-// 1. React
 import React, { useRef } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ShieldCheck, Award, Lightbulb, Users, HeartHandshake, Sparkles } from "lucide-react";
 
-// 3. Internal Components
-
-// 4. Hooks
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
-// 5. Utilities
 import { cn, safeArray } from "../../../shared/utils/helpers";
 
-// 6. Constants / Data
 import { values } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
 
-// 7. Styles
-
 gsap.registerPlugin(ScrollTrigger);
 
-// -----------------------------------------------------------------------------
-// ICON MAP — values array me icon sirf string name ke roop me store hai
-// (data file pure JSON-like rehni chahiye), ye map string ko component se jodta hai
-// -----------------------------------------------------------------------------
 const iconMap = {
   ShieldCheck,
   Award,
@@ -37,13 +24,6 @@ const iconMap = {
   HeartHandshake,
 };
 
-/**
- * ValuesSection
- * Ye component kya karta hai: institute ke core values ko card grid me render karta hai
- * Kyu banaya gaya: educational culture aur principles ko visually communicate karne ke liye
- * Kab call hoga: pages/About.jsx me VisionMission ke baad
- * Kya return karega: <section> jisme heading + responsive value-card grid hai
- */
 const ValuesSection = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -69,7 +49,7 @@ const ValuesSection = () => {
         trigger: sectionRef.current,
         start: "top 80%",
         end: "bottom 30%",
-        toggleActions: "play reverse play reverse", // replay har entry — once:true kabhi nahi
+        toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
@@ -77,18 +57,16 @@ const ValuesSection = () => {
       },
     });
 
-    // STEP 1 — Section heading
     if (headingRef.current) {
       tl.from(headingRef.current, {
         opacity: 0,
         y: 36,
         filter: "blur(6px)",
         duration: 0.7,
-        ease: gsapEase.heading, // expo.out
+        ease: gsapEase.heading,
       });
     }
 
-    // STEP 2 — Description
     if (descriptionRef.current) {
       tl.from(
         descriptionRef.current,
@@ -97,7 +75,6 @@ const ValuesSection = () => {
       );
     }
 
-    // STEP 3 — Value cards: stagger entrance + icon scale/rotate inside each card
     if (cardsRef.current) {
       tl.from(
         cardsRef.current.children,
@@ -112,7 +89,6 @@ const ValuesSection = () => {
         "-=0.2"
       );
 
-      // Icon entrance — subtle scale + rotate, separate from card container animation
       const icons = cardsRef.current.querySelectorAll("[data-value-icon]");
       if (icons.length) {
         tl.from(
@@ -135,7 +111,6 @@ const ValuesSection = () => {
       className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
-        {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold uppercase tracking-widest text-[#2A9D8F]">
             <Sparkles size={14} aria-hidden="true" />
@@ -153,7 +128,6 @@ const ValuesSection = () => {
           </p>
         </div>
 
-        {/* Value cards grid — mobile: 1 col, tablet: 2-3 col, desktop: 5 col */}
         <div
           ref={cardsRef}
           className="mt-14 grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5 lg:gap-6"
@@ -172,15 +146,14 @@ const ValuesSection = () => {
                     prefersReducedMotion
                       ? {}
                       : {
-                          scale: 1.04,
-                          y: -8,
-                          boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
-                          borderColor: "rgba(180,180,70,0.4)",
-                        }
+                        scale: 1.04,
+                        y: -8,
+                        boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
+                        borderColor: "rgba(180,180,70,0.4)",
+                      }
                   }
                   transition={{ duration: 0.3, ease: "easeOut" }}
                 >
-                  {/* Gradient accent overlay on hover */}
                   <span
                     className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#86e96b]/0 to-[#2A9D8F]/0 group-hover:from-[#86e96b]/5 group-hover:to-[#2A9D8F]/5 transition-colors duration-300"
                     aria-hidden="true"
@@ -204,10 +177,7 @@ const ValuesSection = () => {
               );
             })
           ) : (
-            // Defensive fallback — data missing hone par bhi layout crash na ho
             <p className="col-span-full text-center text-sm text-[#2B2D42]/50">
-              {/* TODO:
-                  Replace Dummy Data with Official Jamia Academy Content. */}
               Values content coming soon.
             </p>
           )}

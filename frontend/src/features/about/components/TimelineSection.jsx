@@ -14,23 +14,20 @@ import { cn, safeArray } from "../../../shared/utils/helpers";
 import { timeline } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
 
-
 gsap.registerPlugin(ScrollTrigger);
-
 
 const TimelineSection = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
   const descriptionRef = useRef(null);
-  const trackRef = useRef(null); // poore timeline track ka wrapper — line + items dono ke liye
-  const lineFillRef = useRef(null); // wo inner bar jo scroll ke saath fill hoti hai
-  const itemRefs = useRef([]); // har milestone item ka DOM node
+  const trackRef = useRef(null);
+  const lineFillRef = useRef(null);
+  const itemRefs = useRef([]);
   itemRefs.current = [];
 
   const prefersReducedMotion = usePrefersReducedMotion();
   const safeTimeline = safeArray(timeline);
 
-  // Har item ko ref array me register karne ka helper
   const registerItemRef = (node) => {
     if (node && !itemRefs.current.includes(node)) {
       itemRefs.current.push(node);
@@ -49,9 +46,6 @@ const TimelineSection = () => {
       return;
     }
 
-    // ------------------------------------------------------------------
-    // HEADING + DESCRIPTION — normal entrance reveal
-    // ------------------------------------------------------------------
     const introTl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
@@ -69,7 +63,7 @@ const TimelineSection = () => {
         y: 36,
         filter: "blur(6px)",
         duration: 0.7,
-        ease: gsapEase.heading, // expo.out
+        ease: gsapEase.heading,
       });
     }
     if (descriptionRef.current) {
@@ -110,7 +104,7 @@ const TimelineSection = () => {
           trigger: item,
           start: "top 82%",
           end: "bottom 40%",
-          toggleActions: "play reverse play reverse", // replay dono directions me
+          toggleActions: "play reverse play reverse",
           invalidateOnRefresh: true,
           fastScrollEnd: true,
           markers: false,
@@ -122,7 +116,7 @@ const TimelineSection = () => {
           opacity: 0,
           scale: 0.6,
           duration: 0.5,
-          ease: gsapEase.card, // back.out(1.4)
+          ease: gsapEase.card,
         });
       }
       if (card) {
@@ -160,7 +154,6 @@ const TimelineSection = () => {
       className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
-        {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#2A9D8F]">
             Our Journey
@@ -182,7 +175,6 @@ const TimelineSection = () => {
         ============================================================= */}
         {safeTimeline.length > 0 ? (
           <div ref={trackRef} className="relative mt-16">
-            {/* Central line — track (background) + fill (animated foreground) */}
             <div
               className="absolute left-5 sm:left-7 lg:left-1/2 top-0 bottom-0 w-[3px] -translate-x-1/2 lg:-translate-x-1/2 rounded-full bg-[#2B2D42]/10"
               aria-hidden="true"
@@ -197,7 +189,7 @@ const TimelineSection = () => {
 
             <ol className="relative flex flex-col gap-12 sm:gap-14 lg:gap-16">
               {safeTimeline.map((item, index) => {
-                const isRightAligned = index % 2 === 0; // desktop alternating side
+                const isRightAligned = index % 2 === 0;
 
                 return (
                   <li
@@ -208,7 +200,6 @@ const TimelineSection = () => {
                       "lg:grid lg:grid-cols-2 lg:items-center lg:gap-10"
                     )}
                   >
-                    {/* Decorative dot + year badge — positioned on the central line */}
                     <span
                       data-timeline-badge
                       className={cn(
@@ -221,7 +212,6 @@ const TimelineSection = () => {
                       <Flag size={16} />
                     </span>
 
-                    {/* Desktop: alternate left/right column placement */}
                     <div className={cn("hidden lg:block", isRightAligned ? "lg:order-1" : "lg:order-2")} aria-hidden="true" />
 
                     <motion.div
@@ -236,8 +226,8 @@ const TimelineSection = () => {
                           ? {}
                           : {
                             y: -6,
-                          boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
-                          borderColor: "rgba(180,180,70,0.4)",
+                            boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
+                            borderColor: "rgba(180,180,70,0.4)",
                           }
                       }
                       transition={{ duration: 0.25, ease: "easeOut" }}
@@ -264,10 +254,7 @@ const TimelineSection = () => {
             </ol>
           </div>
         ) : (
-          // Defensive fallback — data missing hone par bhi layout crash na ho
           <p className="mt-14 text-center text-sm text-[#2B2D42]/50">
-            {/* TODO:
-                Replace Dummy Data with Official Jamia Academy Content. */}
             Timeline content coming soon.
           </p>
         )}

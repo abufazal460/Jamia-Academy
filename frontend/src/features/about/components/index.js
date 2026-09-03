@@ -1,4 +1,3 @@
-
 export { default as HeroAbout } from "./HeroAbout";
 export { default as AboutDescription } from "./AboutDescription";
 export { default as FounderSection } from "./FounderSection";
