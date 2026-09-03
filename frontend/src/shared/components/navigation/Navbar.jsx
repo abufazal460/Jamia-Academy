@@ -403,6 +403,7 @@ function Navbar() {
             // hover:bg-white/10: Subtle hover background feedback.
             className="grid h-10 w-10 place-items-center rounded-full outline-none transition-colors hover:bg-white/10 lg:hidden"
           >
+            <div className="absolute right-3  px-6 py-4 rounded-2xl bg-white"></div>
             {/* Hamburger <-> Cross image crossfade with rotate */}
             <motion.img
               key={isMobileMenuOpen ? "cross" : "hamburger"}
@@ -414,7 +415,7 @@ function Navbar() {
               transition={{ duration: 0.22, ease: "easeInOut" }}
               width="22"
               height="22"
-              className="h-5 w-5 object-contain"
+              className="relative  h-5 w-5 object-contain"
             />
           </motion.button>
         </div>
