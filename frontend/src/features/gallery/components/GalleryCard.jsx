@@ -15,7 +15,6 @@ const BORDER_COLORS = [
 
 ];
 
-
 function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
   const cardRef = useRef(null);
   const imageRef = useRef(null);
@@ -29,7 +28,6 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
       cardRef.current?.setAttribute("data-loaded", "true");
     }
   }, []);
-
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -53,10 +51,7 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
   useEffect(() => () => animationRef.current?.stop(), []);
 
   const SHINE_COLOR = "#FFFFFF";
-
-
   const gradient = `conic-gradient(from 0deg, ${BORDER_COLORS.join(",")})`;
-
   const shineGradient = `conic-gradient(
   from 0deg,
   transparent 0deg,
@@ -77,7 +72,6 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
       className="group relative block aspect-[4/3] w-full  overflow-hidden rounded-4xl bg-slate-100 text-left shadow-md shadow-black/10 outline-none transition-[border-color,box-shadow,transform,scale] duration-200 ease-out  hover:shadow-lg hover:shadow-indigo-500/20 hover:scale-[1.05] focus:outline-none focus-visible:outline-none active:scale-[0.99]"
       aria-label={`Open image ${index + 1} in full screen`}
     >
-      {/* border animation — sirf edge, background par koi effect nahi */}
       <div
         className="pointer-events-none absolute inset-0 z-0 overflow-hidden rounded-4xl p-[2px]"
         style={{
@@ -102,11 +96,9 @@ function GalleryCardBase({ src, index, variants, onOpen, categoryLabel }) {
             willChange: "transform",
           }}
         />
-        {/* center ko dhak do — sirf padding jitni ring bachegi */}
         <div className="relative h-full w-full rounded-[inherit] bg-slate-100" />
       </div>
 
-      {/* inner card — bilkul same jaisa pehle tha */}
       <div className="gallery-inner relative z-10 rounded-[inherit] h-full w-full p-[3px] overflow-hidden">
         <img
           src={src}
