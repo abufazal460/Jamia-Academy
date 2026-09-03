@@ -7,12 +7,10 @@ import WhyContactSection from "../features/contact/components/WhyContactSection"
 import MapSection from "../features/contact/components/MapSection";
 import { contactHero, mapConfig } from "../features/contact/data/contact.data";
 
-
 const PAGE_TITLE = "Contact Us | Jamia Academy";
 const PAGE_DESCRIPTION = contactHero.description;
 
 const Contact = () => {
-
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
