@@ -10,11 +10,6 @@ import {
 } from "../../../../shared/motion/config";
 import { loginData } from "../data/login.data";
 
-/**
- * PasswordInput
- * FloatingInput jaisa hi behavior, plus ek Eye/EyeOff toggle button jo
- * password visibility switch karta hai with smooth rotation/fade.
- */
 function PasswordInput({
   id,
   name,
@@ -45,8 +40,8 @@ function PasswordInput({
           showError
             ? "border-red-400/70"
             : isFocused
-            ? "border-green-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
-            : "border-white/15 hover:border-white/25",
+              ? "border-green-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
+              : "border-white/15 hover:border-white/25",
         ].join(" ")}
       >
         <input
@@ -65,7 +60,6 @@ function PasswordInput({
           className="peer w-full min-w-0 bg-transparent text-sm text-white outline-none placeholder:text-white/30"
         />
 
-        {/* Floating label */}
         <motion.label
           htmlFor={id}
           variants={floatingLabelVariants}
@@ -79,7 +73,6 @@ function PasswordInput({
           {label}
         </motion.label>
 
-        {/* Visibility toggle */}
         <button
           type="button"
           onClick={toggleVisibility}
@@ -120,7 +113,6 @@ function PasswordInput({
         </button>
       </div>
 
-      {/* Error message */}
       <AnimatePresence initial={false}>
         {showError && (
           <motion.p

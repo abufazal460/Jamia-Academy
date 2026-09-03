@@ -47,7 +47,7 @@ const VisionMission = () => {
         trigger: sectionRef.current,
         start: "top 80%",
         end: "bottom 30%",
-        toggleActions: "play reverse play reverse", // replay har baar viewport me aane par — once:true nahi
+        toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
@@ -55,18 +55,16 @@ const VisionMission = () => {
       },
     });
 
-    // STEP 1 — Section heading: opacity + y + blur removal
     if (headingRef.current) {
       tl.from(headingRef.current, {
         opacity: 0,
         y: 40,
         filter: "blur(8px)",
         duration: 0.8,
-        ease: gsapEase.heading, // expo.out
+        ease: gsapEase.heading,
       });
     }
 
-    // STEP 2 — Section description
     if (descriptionRef.current) {
       tl.from(
         descriptionRef.current,
@@ -75,7 +73,6 @@ const VisionMission = () => {
       );
     }
 
-    // STEP 3 — Vision card
     if (visionCardRef.current) {
       tl.from(
         visionCardRef.current,
@@ -84,7 +81,6 @@ const VisionMission = () => {
       );
     }
 
-    // STEP 4 — Mission card
     if (missionCardRef.current) {
       tl.from(
         missionCardRef.current,
@@ -93,7 +89,6 @@ const VisionMission = () => {
       );
     }
 
-    // STEP 5 — Commitment card
     if (commitmentCardRef.current) {
       tl.from(
         commitmentCardRef.current,
@@ -114,7 +109,6 @@ const VisionMission = () => {
       aria-labelledby="vision-mission-heading"
       className="relative w-full overflow-hidden bg-bg-dark-secondary py-20 sm:py-24 lg:py-28"
     >
-      {/* Decorative floating background shapes — slow, minimal, Framer Motion only */}
       <motion.div
         className="pointer-events-none absolute top-10 left-[10%] h-64 w-64 rounded-full blur-3xl"
         animate={prefersReducedMotion ? {} : { y: [0, 25, 0] }}
@@ -131,7 +125,6 @@ const VisionMission = () => {
       />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
-        {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
           <h2 id="vision-mission-heading" ref={headingRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-white">
             Vision, Mission &amp; Commitment
@@ -141,7 +134,6 @@ const VisionMission = () => {
           </p>
         </div>
 
-        {/* Equal-height 3-card grid — mobile: 1 col, tablet: 2+1, desktop: 3 col */}
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
           {/* ============================================================
               VISION CARD
@@ -192,7 +184,6 @@ const VisionMission = () => {
             {mission?.description && (
               <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{mission.description}</p>
             )}
-
 
           </motion.div>
 

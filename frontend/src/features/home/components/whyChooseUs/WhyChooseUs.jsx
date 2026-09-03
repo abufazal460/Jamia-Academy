@@ -1,18 +1,15 @@
-// src/components/home/whyChooseUs/WhyChooseUs.jsx
-
 import React, { memo } from 'react';
 import { motion } from 'motion/react';
 import WhyChooseCard from './WhyChooseCard';
 import WhyChooseCTA from './WhyChooseCTA';
 import { whyChooseData, ctaData, sectionData } from '../../data/why-choose-us.data';
 import { containerVariants, headingVariants, paragraphVariants } from '../../motion/why-choose-us.motion';
-import  prefersReducedMotion  from "../../../../shared/hooks/usePrefersReducedMotion"
+import prefersReducedMotion from "../../../../shared/hooks/usePrefersReducedMotion"
 
 const WhyChooseUs = memo(() => {
   return (
     <section className="relative w-full py-20 md:py-28 lg:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#F7F3E9] via-white to-[#F7F3E9]/50 overflow-hidden">
-      {/* Background decorative elements */}
-            <motion.div
+      <motion.div
         className="absolute -top-40  -left-40 w-96 h-96 bg-[#E63946]/5 rounded-full blur-3xl pointer-events-none"
         animate={
           prefersReducedMotion
@@ -41,7 +38,6 @@ const WhyChooseUs = memo(() => {
       />
 
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -79,7 +75,6 @@ const WhyChooseUs = memo(() => {
           ))}
         </motion.div>
 
-        {/* CTA Section */}
         <WhyChooseCTA data={ctaData} />
       </div>
     </section>

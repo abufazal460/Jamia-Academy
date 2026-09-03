@@ -1,34 +1,23 @@
 
 import React, { useRef, useState } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { LuImageOff } from "react-icons/lu";
-import { FaGraduationCap , FaFacebook , FaLinkedin , FaInstagram } from "react-icons/fa";
+import { FaGraduationCap, FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 
-// 3. Internal Components
-// (Shared components abhi nahi bane — Phase 4+ me plug honge)
-
-// 4. Hooks
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
-// 5. Utilities
 import { cn } from "../../../shared/utils/helpers";
 import { getImageProps } from "../../../shared/utils/image";
 
-// 6. Constants / Data
 import { founder } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
 
-// 7. Styles
-// (Sirf Tailwind utility classes)
-
 gsap.registerPlugin(ScrollTrigger);
-
 
 const socialIconMap = {
   linkedin: FaLinkedin,
@@ -36,7 +25,6 @@ const socialIconMap = {
   facebook: FaFacebook,
   instagram: FaInstagram,
 };
-
 
 const FounderSection = () => {
   const sectionRef = useRef(null);
@@ -50,25 +38,16 @@ const FounderSection = () => {
 
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  // Image load fail hone par graceful fallback dikhane ke liye
   const [imageError, setImageError] = useState(false);
 
-  // Defensive fallback — data missing hone par bhi component crash na ho
   const safeQualifications = Array.isArray(founder?.qualifications) ? founder.qualifications : [];
   const socialEntries = founder?.social
     ? Object.entries(founder.social).filter(([, url]) => Boolean(url))
     : [];
 
-  // ---------------------------------------------------------------------------
-  // GSAP MASTER TIMELINE
-  // useGSAPAnimation context create/cleanup khud handle karta hai — memory leak safe.
-  // Sequence: Section → Image → Name → Title → Experience → Position → Quals (stagger) → Social
-  // toggleActions "play reverse play reverse" — replay har baar jab section viewport me aaye.
-  // ---------------------------------------------------------------------------
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
 
-    // Reduced motion: seedha final state set karo, koi timeline nahi chalao
     if (prefersReducedMotion) {
       gsap.set(
         [
@@ -92,7 +71,7 @@ const FounderSection = () => {
         start: "top 80%",
         end: "bottom 30%",
         scrub: false,
-        toggleActions: "play reverse play reverse", // replay dono directions me
+        toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
@@ -100,14 +79,12 @@ const FounderSection = () => {
       },
     });
 
-    // STEP 1 — Section container fade in
     tl.from(sectionRef.current, {
       opacity: 0,
       duration: 0.5,
       ease: "power2.out",
     });
 
-    // STEP 2 — Founder image: scale 0.9→1, rotate -5→0, blur out
     if (imageRef.current) {
       tl.from(
         imageRef.current,
@@ -123,7 +100,6 @@ const FounderSection = () => {
       );
     }
 
-    // STEP 3 — Name reveal
     if (nameRef.current) {
       tl.from(
         nameRef.current,
@@ -132,7 +108,6 @@ const FounderSection = () => {
       );
     }
 
-    // STEP 4 — Title reveal
     if (titleRef.current) {
       tl.from(
         titleRef.current,
@@ -141,7 +116,6 @@ const FounderSection = () => {
       );
     }
 
-    // STEP 5 — Experience badge
     if (experienceRef.current) {
       tl.from(
         experienceRef.current,
@@ -150,7 +124,6 @@ const FounderSection = () => {
       );
     }
 
-    // STEP 6 — Government position
     if (positionRef.current) {
       tl.from(
         positionRef.current,
@@ -159,7 +132,6 @@ const FounderSection = () => {
       );
     }
 
-    // STEP 7 — Qualification cards (stagger)
     if (qualsRef.current) {
       tl.from(
         qualsRef.current.children,
@@ -168,14 +140,13 @@ const FounderSection = () => {
           y: 28,
           scale: 0.94,
           duration: 0.6,
-          ease: gsapEase.card, // back.out(1.4)
+          ease: gsapEase.card,
           stagger: 0.15,
         },
         "-=0.2"
       );
     }
 
-    // STEP 8 — Social icons
     if (socialRef.current) {
       tl.from(
         socialRef.current.children,
@@ -211,7 +182,6 @@ const FounderSection = () => {
                       className="aspect-[4/5] w-full object-cover"
                     />
                   ) : (
-                    // Fallback — image kabhi bhi layout ko break nahi karega
                     <div
                       role="img"
                       aria-label="Founder image unavailable"
@@ -224,8 +194,7 @@ const FounderSection = () => {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/40 via-transparent to-transparent" />
                 </div>
               </div>
-              {/* TODO:
-                  Replace placeholder founder image with official portrait. */}
+
             </div>
           </div>
 
@@ -282,16 +251,16 @@ const FounderSection = () => {
                       prefersReducedMotion
                         ? {}
                         : {
-                            y: -6,
-                            scale: 1.02,
-                            boxShadow: "0 14px 32px rgba(43,45,66,0.14)",
-                            borderColor: "rgba(42,157,143,0.4)",
-                          }
+                          y: -6,
+                          scale: 1.02,
+                          boxShadow: "0 14px 32px rgba(43,45,66,0.14)",
+                          borderColor: "rgba(42,157,143,0.4)",
+                        }
                     }
                     transition={{ duration: 0.25, ease: "easeOut" }}
                   >
                     <span className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-lg bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
-                      <FaGraduationCap  size={16} />
+                      <FaGraduationCap size={16} />
                     </span>
                     <p className="text-sm font-semibold text-black">{qual?.degree}</p>
                     <p className="mt-0.5 text-xs text-black/60">{qual?.field}</p>

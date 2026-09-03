@@ -1,5 +1,3 @@
-// Infinite idle animations — hamesha usePrefersReducedMotion ke saath guard karke use karo
-
 export const floatingBlob = {
   animate: {
     y: [0, -20, 0],
@@ -16,7 +14,6 @@ export const floatingBlobSlow = {
   },
 };
 
-// Hero visual cards — har card ko alag delay dene ke liye function
 export const floatingCard = (delay = 0) => ({
   animate: {
     y: [0, -14, 0],
@@ -29,5 +26,4 @@ export const floatingCard = (delay = 0) => ({
   },
 });
 
-// Static fallback jab reduced-motion on ho
 export const noMotion = { animate: {} };

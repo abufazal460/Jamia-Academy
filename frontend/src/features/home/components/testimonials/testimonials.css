@@ -1,27 +1,17 @@
-/* testimonials.css */
-/* Sirf wahi cheezein jo Tailwind se possible nahi - keyframes aur mask-image gradient fade */
-
 .marquee-row {
   position: relative;
   overflow: hidden;
   width: 100%;
-
-  /* Left-right edges par fade-out effect (mask-image) taaki cards smoothly
-     screen ke bahar/andar aaye, jaise original design me gradient overlay tha */
-  -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 8%,
-    #000 92%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    #000 8%,
-    #000 92%,
-    transparent 100%
-  );
+  -webkit-mask-image: linear-gradient(90deg,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%);
+  mask-image: linear-gradient(90deg,
+      transparent 0%,
+      #000 8%,
+      #000 92%,
+      transparent 100%);
 }
 
 .marquee-track {
@@ -32,17 +22,14 @@
   will-change: transform;
 }
 
-/* Top row -> left direction */
 .marquee-track-left {
   animation: marquee-scroll-left 40s linear infinite;
 }
 
-/* Bottom row -> right direction */
 .marquee-track-right {
   animation: marquee-scroll-right 40s linear infinite;
 }
 
-/* Hover par sirf usi row ka marquee pause hoga jispe hover ho raha hai */
 .marquee-row:hover .marquee-track {
   animation-play-state: paused;
 }
@@ -51,6 +38,7 @@
   from {
     transform: translate3d(0, 0, 0);
   }
+
   to {
     transform: translate3d(-50%, 0, 0);
   }
@@ -60,14 +48,14 @@
   from {
     transform: translate3d(-50%, 0, 0);
   }
+
   to {
     transform: translate3d(0, 0, 0);
   }
 }
 
-/* Accessibility: jo log reduced motion prefer karte hai unke liye animation band karna,
-   lekin cards static form me visible rahenge (no layout shift) */
 @media (prefers-reduced-motion: reduce) {
+
   .marquee-track-left,
   .marquee-track-right {
     animation: none;

@@ -1,7 +1,6 @@
 import SEO from "../shared/seo/SEO";
 import { motion } from "motion/react";
 import { Suspense, lazy } from "react";
-
 import {
   HeroAbout,
   AboutDescription,
@@ -13,12 +12,10 @@ import {
   StatsSection,
 } from "../features/about/components";
 import { founder, coFounder } from "../features/about/data/about.data";
-
 import { pageTransition } from "../features/about/motion/about.motion";
 
 const FacultyGrid = lazy(() => import("../features/about/components/FacultyGrid"));
 const TimelineSection = lazy(() => import("../features/about/components/TimelineSection"));
-
 
 const About = () => {
   return (
@@ -29,8 +26,6 @@ const About = () => {
         path="/about"
         imageAlt="About Jamia Academy"
       />
-
-      {/* Page-level transition wrapper — sirf entrance/exit fade, koi section animation nahi */}
       <motion.main
         variants={pageTransition}
         initial="initial"

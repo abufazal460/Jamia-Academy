@@ -16,8 +16,6 @@ import id14 from "../../../assets/images/home/student/Kaif ADFA.png";
 import id15 from "../../../assets/images/home/student/Parvez Alam ACC.png";
 import id16 from "../../../assets/images/home/student/MD_Anas_Interior_Design.png";
 
-
-// Top row (left direction) ke liye data
 export const testimonialsRowOne = [
   {
     id: 1,
@@ -93,7 +91,6 @@ export const testimonialsRowOne = [
   },
 ];
 
-// Bottom row (right direction) ke liye data
 export const testimonialsRowTwo = [
   {
     id: 9,
@@ -167,5 +164,5 @@ export const testimonialsRowTwo = [
       "I joined the Interior Design course at Jamia Academy with no professional experience. The practical training helped me understand design better, and now I can confidently create and work on real-world interior projects.",
     image: id16,
   },
- 
+
 ];

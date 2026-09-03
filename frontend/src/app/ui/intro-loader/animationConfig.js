@@ -1,9 +1,6 @@
-// animationConfig.js
 export const LUXURY_EASE = [0.16, 1, 0.3, 1];
 export const LUXURY_EASE_IN = [0.7, 0, 0.84, 0];
 
-// Slower spring — tuned (not duration-based, since Motion springs ignore `duration`)
-// to visually resolve around ~1.6s including delay.
 export const ENTRANCE_SPRING = {
   type: 'spring',
   stiffness: 55,
@@ -11,7 +8,7 @@ export const ENTRANCE_SPRING = {
   mass: 1.4,
 };
 
-const R = 320; // increased from 140 — travel must be clearly visible
+const R = 320;
 
 export const WORD_ONE = [
   { char: 'J', from: { x: R * 1.6, y: -R * 0.2, rotate: 28, scale: 0.7 }, delay: 0, blurFrom: 10 },

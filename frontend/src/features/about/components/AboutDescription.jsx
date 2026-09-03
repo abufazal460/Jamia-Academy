@@ -6,7 +6,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GraduationCap, MonitorSmartphone, ShieldCheck, } from "lucide-react";
 
-
 // Hooks
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
@@ -20,9 +19,7 @@ import { cn } from "../../../shared/utils/helpers";
 import { aboutDescription, features } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
 
-// 7. Styles
-// (Sirf Tailwind utility classes)
-
+// animation 
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -32,8 +29,6 @@ const iconMap = {
   ShieldCheck,
 };
 
-
-
 const AboutDescription = () => {
   const sectionRef = useRef(null);
   const paragraphRef = useRef(null);
@@ -41,12 +36,9 @@ const AboutDescription = () => {
   const cardsRef = useRef(null);
   const badgesRef = useRef(null);
 
-  // Reduced motion aur mobile check — dono ke liye heavy mouse-tilt effect disable karna hai
   const prefersReducedMotion = usePrefersReducedMotion();
   const isDesktop = useMediaQuery("lg"); // 1024px+ — sirf desktop pe mouse tilt chalega
 
-
-  // Mouse-tilt ke liye chhota transform state (sirf desktop, sirf reduced-motion off)
   const tiltTargetRef = useRef(null);
 
   const paragraphWords = useMemo(
@@ -57,10 +49,8 @@ const AboutDescription = () => {
     []
   );
 
-  // Defensive fallback — agar data missing ho to bhi component crash na ho
   const safeFeatures = Array.isArray(features) ? features : [];
   const safeBadges = Array.isArray(aboutDescription?.badges) ? aboutDescription.badges : [];
-
 
   const scopeRef = useGSAPAnimation((scope) => {
     if (!sectionRef.current) return;
@@ -70,7 +60,7 @@ const AboutDescription = () => {
         trigger: sectionRef.current,
         start: "top 75%",
         end: "bottom 20%",
-        toggleActions: "play reverse play reverse", // scroll down = play, scroll up = reverse+replay
+        toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
@@ -78,7 +68,6 @@ const AboutDescription = () => {
       },
     });
 
-    // Reduced motion: seedha final state set karo, koi animation timeline nahi chalao
     if (prefersReducedMotion) {
       gsap.set(
         [
@@ -92,7 +81,6 @@ const AboutDescription = () => {
       return;
     }
 
-    // STEP 1 — Paragraph: word by word, color gray(#8D99AE) → white, blur out
     if (paragraphRef.current) {
       tl.from(paragraphRef.current.children, {
         opacity: 0,
@@ -105,7 +93,6 @@ const AboutDescription = () => {
       });
     }
 
-    // STEP 2 — Image: scale 0.8→1, rotate -5→0, blur 10px→0, opacity 0→1
     if (imageWrapRef.current) {
       tl.from(
         imageWrapRef.current,
@@ -121,7 +108,6 @@ const AboutDescription = () => {
       );
     }
 
-    // STEP 3 — Feature Cards: stagger 0.15, ease back.out(1.4)
     if (cardsRef.current) {
       tl.from(
         cardsRef.current.children,
@@ -130,14 +116,13 @@ const AboutDescription = () => {
           y: 36,
           scale: 0.92,
           duration: 0.7,
-          ease: gsapEase.card, // back.out(1.4)
+          ease: gsapEase.card,
           stagger: 0.15,
         },
         "-=0.3"
       );
     }
 
-    // STEP 4 — Badges: entrance reveal (idle floating loop is separate, added after)
     if (badgesRef.current) {
       tl.from(
         badgesRef.current.children,
@@ -166,19 +151,17 @@ const AboutDescription = () => {
           trigger: sectionRef.current,
           start: "top bottom",
           end: "bottom top",
-          toggleActions: "play pause resume pause", // section ke bahar pause ho jaye
+          toggleActions: "play pause resume pause",
         },
       });
     }
   }, [prefersReducedMotion]);
-
 
   const handleMouseMove = (e) => {
     if (!isDesktop || prefersReducedMotion || !tiltTargetRef.current) return;
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width - 0.5) * 10;
     const y = ((e.clientY - rect.top) / rect.height - 0.5) * -10;
-    // Seedha DOM pe likha — React re-render trigger nahi hota
     tiltTargetRef.current.style.transform = `perspective(800px) rotateX(${-y}deg) rotateY(${x}deg)`;
   };
 
@@ -200,7 +183,6 @@ const AboutDescription = () => {
               LEFT CONTENT
           ============================================================== */}
           <div className="flex flex-col gap-6">
-            {/* Established / Location badges (inline, not floating) */}
             <div className="flex flex-wrap items-center gap-3">
               {aboutDescription?.established && (
                 <span className="inline-flex items-center rounded-full bg-[#2B2D42]/5 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#2B2D42]">
@@ -214,7 +196,6 @@ const AboutDescription = () => {
               )}
             </div>
 
-            {/* H2 — proper heading hierarchy (H1 is in HeroAbout) */}
             <h2
               id="about-description-heading"
               className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight leading-tight text-[#2B2D42]"
@@ -222,7 +203,6 @@ const AboutDescription = () => {
               {aboutDescription?.heading || "About Jamia Academy"}
             </h2>
 
-            {/* Paragraph — word-by-word GSAP reveal target */}
             <p
               ref={paragraphRef}
               className="text-base sm:text-lg leading-relaxed text-[#2B2D42]/80 max-w-xl"
@@ -237,7 +217,6 @@ const AboutDescription = () => {
               ))}
             </p>
 
-            {/* Highlight Quote */}
             {aboutDescription?.quote && (
               <blockquote className="border-l-4 border-[#2A9D8F] rounded-2xl pl-4 sm:pl-5 py-1 text-base sm:text-lg italic text-[#2B2D42]/90">
                 “{aboutDescription.quote}”
@@ -269,7 +248,6 @@ const AboutDescription = () => {
                     }
                     transition={{ duration: 0.3, ease: "easeOut" }}
                   >
-                    {/* Gradient glow on hover — decorative */}
                     <span
                       className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[#86e96b]/0 to-[#2A9D8F]/0 group-hover:from-[#86e96b]/5 group-hover:to-[#2A9D8F]/5 transition-colors duration-300"
                       aria-hidden="true"
@@ -306,9 +284,7 @@ const AboutDescription = () => {
               className="relative w-full max-w-md will-change-transform"
               style={{ transition: "transform 0.2s ease-out" }}
             >
-              {/* Gradient border frame */}
               <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">
-                {/* Glass frame inner */}
                 <div className="relative overflow-hidden rounded-[26px] bg-white/40 backdrop-blur-sm">
                   <video
                     autoPlay
@@ -323,10 +299,6 @@ const AboutDescription = () => {
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/25 via-transparent to-transparent" />
                 </div>
               </div>
-              {/* TODO:
-                  Replace dummy image with official Jamia Academy image. */}
-
-              {/* Floating badges — absolute positioned, sine.inOut idle loop via GSAP */}
               <div ref={badgesRef} aria-hidden="false">
                 {safeBadges.map((badge, index) => (
                   <div

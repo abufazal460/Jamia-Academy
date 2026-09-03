@@ -38,8 +38,8 @@ function FloatingInput({
           showError
             ? "border-red-400/70"
             : isFocused
-            ? "border-green-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
-            : "border-white/15 hover:border-white/25",
+              ? "border-green-300/70 shadow-[0_0_0_4px_rgba(56,189,248,0.12)]"
+              : "border-white/15 hover:border-white/25",
         ].join(" ")}
       >
         <input
@@ -58,7 +58,6 @@ function FloatingInput({
           className="peer w-full min-w-0 bg-transparent text-sm text-white outline-none placeholder:text-white/30"
         />
 
-        {/* Floating label */}
         <motion.label
           htmlFor={id}
           variants={floatingLabelVariants}
@@ -72,14 +71,12 @@ function FloatingInput({
           {label}
         </motion.label>
 
-        {/* Right-side icon */}
         <Mail
           aria-label={iconLabel}
           className="ml-2 h-4 w-4 shrink-0 text-white/40 peer-focus:text-green-300/80 transition-colors duration-300"
         />
       </div>
 
-      {/* Error message */}
       <AnimatePresence initial={false}>
         {showError && (
           <motion.p

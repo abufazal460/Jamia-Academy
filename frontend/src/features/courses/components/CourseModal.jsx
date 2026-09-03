@@ -9,8 +9,6 @@ import CourseDetails from "./CourseDetails";
 import CourseModules from "./CourseModules";
 import { getLenisInstance } from "../../../app/providers/SmoothScroll";
 
-
-
 const contentVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },

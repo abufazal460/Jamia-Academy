@@ -17,12 +17,10 @@ import {
 const FeatureSection = () => {
   return (
     <LazyMotion features={domAnimation} strict>
-     
       <section
         aria-label="Why join us"
         className="relative isolate w-full overflow-hidden bg-gradient-secondary"
       >
-       
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y}`}
         >
@@ -38,7 +36,7 @@ const FeatureSection = () => {
           >
             {featuresData.map((feature, index) => {
               const direction = getCardDirection(index);
-              const Icon = feature.icon; // react-icons component reference
+              const Icon = feature.icon;
 
               return (
                 <m.li
@@ -51,17 +49,11 @@ const FeatureSection = () => {
                     tabIndex={0}
                     className="group relative overflow-hidden rounded-3xl hover:shadow-card bg-card  p-[clamp(1.5rem,3vw,2.25rem)] shadow-[0_10px_35px_rgba(2,6,23,0.45)] transition-all duration-300"
                   >
-                    {/*
-                      "Background shine" hover effect — ek diagonal gradient
-                      streak jo hover par left-to-right slide karta hai.
-                      translate-x se hidden rehta hai, group-hover par visible.
-                    */}
                     <span
                       aria-hidden="true"
                       className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-cyan-100/60 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
                     />
 
-                    {/* Icon badge */}
                     <m.div
                       whileHover={iconHoverRotate}
                       className="relative z-10 mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F] shadow-md"

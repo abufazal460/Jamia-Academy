@@ -25,12 +25,10 @@ const GlassPanel = forwardRef(function GlassPanel(
       ].join(" ")}
       {...rest}
     >
-      {/* Floating top-light reflection */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 left-1/2 h-48 w-[140%] -translate-x-1/2 rounded-full bg-white/10 blur-3xl"
       />
-      {/* Bottom ambient glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-20 left-1/2 h-40 w-3/4 -translate-x-1/2 rounded-full bg-sky-400/10 blur-3xl"

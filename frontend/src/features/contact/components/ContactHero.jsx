@@ -8,8 +8,6 @@ import { resolveIcon } from "../../../shared/utils/icons";
 import TransitionLink from "../../../app/providers/page-transition/TransitionLink";
 import HeroImg from "../../../assets/images/common/contact.png"
 
-// import contactImg from "../../assets/images/galleryclassroom/1.jpg"
-
 const ACCENT_MAP = {
   primary: "#E63946",
   orange: "#F4A261",
@@ -17,7 +15,6 @@ const ACCENT_MAP = {
   darkTeal: "#264653",
 };
 
-// Static — hoisted out of render so it isn't rebuilt on every map iteration
 const VISUAL_CARD_POSITIONS = [
   "top-2 left-0 sm:top-4 sm:left-2",
   "top-6 right-0 sm:top-10 sm:right-2",
@@ -34,7 +31,6 @@ const ContactHero = () => {
       className="relative mx-auto grid max-w-[1440px] grid-cols-1 items-center gap-12 px-6 pt-28 pb-16 sm:px-10 lg:grid-cols-2 lg:gap-8 lg:pt-36 lg:pb-24"
       aria-labelledby="contact-hero-heading"
     >
-      {/* Left column */}
       <motion.div
         initial="hidden"
         animate="visible"
@@ -84,7 +80,6 @@ const ContactHero = () => {
         </div>
       </motion.div>
 
-      {/* Right column — education themed floating visual */}
       <motion.div
         initial="hidden"
         animate="visible"
@@ -92,7 +87,6 @@ const ContactHero = () => {
         className="relative flex h-[22rem] items-center justify-center sm:h-[28rem] lg:h-[32rem]"
         aria-hidden="true"
       >
-        {/* Central glass panel */}
         <div className="relative h-56 w-56 overflow-hidden rounded-[2rem] border-3 border-sky-500/35 shadow-2xl backdrop-blur-xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
           <img
             src={HeroImg}
@@ -101,7 +95,6 @@ const ContactHero = () => {
           />
         </div>
 
-        {/* Floating achievement cards */}
         {contactHero.visualCards.map((card, index) => {
           const Icon = resolveIcon(card.icon);
           return (

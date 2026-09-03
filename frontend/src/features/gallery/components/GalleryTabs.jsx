@@ -8,14 +8,6 @@ const TABS = [
   { key: "tour", label: "Tour" },
 ];
 
-/**
- * GalleryTabs.jsx
- * -----------------------------------------------------------------------
- * Hinglish: Active tab ke peeche wala background pill Framer Motion ke
- * `layoutId` se automatically slide/scale animate hota hai jab active
- * tab badalta hai — is trick se hume khud koi position math nahi karni
- * padti, Framer Motion FLIP animation khud handle karta hai.
- */
 function GalleryTabsBase({ activeTab, onChange }) {
   return (
     <div
@@ -32,11 +24,10 @@ function GalleryTabsBase({ activeTab, onChange }) {
             role="tab"
             aria-selected={isActive}
             onClick={() => onChange(tab.key)}
-            className={`relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer sm:text-base ${
-              isActive
+            className={`relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer sm:text-base ${isActive
                 ? "text-white"
                 : "text-slate-600 hover:bg-white/70 hover:text-slate-900 cursor-pointer"
-            }`}
+              }`}
           >
             {isActive && (
               <motion.span

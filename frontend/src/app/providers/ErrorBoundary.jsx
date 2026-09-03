@@ -1,4 +1,3 @@
-// src/app/providers/ErrorBoundary.jsx
 import { Component } from "react";
 
 const initialState = {
@@ -26,7 +25,6 @@ export default class ErrorBoundary extends Component {
   componentDidCatch(error, errorInfo) {
     const { onError } = this.props;
 
-    // Production mein yahan Sentry / LogRocket / custom error API connect kar sakte ho.
     onError?.(error, errorInfo);
 
     if (import.meta.env.DEV) {
@@ -86,8 +84,7 @@ export default class ErrorBoundary extends Component {
             Please refresh the page to try again. If the problem continues, contact{" "}
             <strong className="text-gray-800">Jamia Academy</strong> support.
           </p>
-
-          {/* Report Bug Section */}
+          
           <div className="bg-gray-50 px-4 py-3 rounded-lg mb-6 text-sm text-gray-600 border-l-4 border-red-500 text-left">
             <span className="font-semibold text-red-500">📝 Report this bug:</span>{" "}
             If you encounter this error, please help us fix it by reporting the issue

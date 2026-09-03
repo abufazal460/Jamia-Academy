@@ -1,34 +1,25 @@
 
-// 1. React
 import React, { useRef, useState } from "react";
 
-// 2. Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ImageOff, GraduationCap, BadgeCheck } from "lucide-react";
 
-// 3. Internal Components
-
-// 4. Hooks
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
-// 5. Utilities
 import { cn, safeArray } from "../../../shared/utils/helpers";
 import { getImageProps } from "../../../shared/utils/image";
 
-// 6. Constants / Data
 import { faculty } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
-
-// 7. Styles
 
 gsap.registerPlugin(ScrollTrigger);
 
 const FacultyCard = ({ member, prefersReducedMotion }) => {
   const [imageError, setImageError] = useState(false);
-  const [isActive, setIsActive] = useState(false); // hover ya keyboard focus dono se true hota hai
+  const [isActive, setIsActive] = useState(false);
 
   const expertiseList = safeArray(member?.expertise);
 
@@ -121,7 +112,6 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
   );
 };
 
-
 const FacultyGrid = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -155,18 +145,16 @@ const FacultyGrid = () => {
       },
     });
 
-    // STEP 1 — Section heading
     if (headingRef.current) {
       tl.from(headingRef.current, {
         opacity: 0,
         y: 36,
         filter: "blur(6px)",
         duration: 0.7,
-        ease: gsapEase.heading, // expo.out
+        ease: gsapEase.heading,
       });
     }
 
-    // STEP 2 — Description
     if (descriptionRef.current) {
       tl.from(
         descriptionRef.current,
@@ -175,7 +163,6 @@ const FacultyGrid = () => {
       );
     }
 
-    // STEP 3 — Faculty cards: stagger entrance
     if (cardsRef.current) {
       tl.from(
         cardsRef.current.children,
@@ -203,7 +190,6 @@ const FacultyGrid = () => {
       className="relative w-full overflow-hidden bg-bg-dark-secondary py-20 sm:py-24 lg:py-28"
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
-        {/* Section heading + description */}
         <div className="mx-auto max-w-2xl text-center">
 
           <h2
@@ -218,17 +204,13 @@ const FacultyGrid = () => {
           </p>
         </div>
 
-        {/* Faculty grid — mobile: 1 col, tablet: 2 col, desktop: 4 col */}
         <div ref={cardsRef} className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {safeFaculty.length > 0 ? (
             safeFaculty.map((member) => (
               <FacultyCard key={member?.id || member?.name} member={member} prefersReducedMotion={prefersReducedMotion} />
             ))
           ) : (
-            // Defensive fallback — data missing hone par bhi layout crash na ho
             <p className="col-span-full text-center text-sm text-white/50">
-              {/* TODO:
-                  Replace Dummy Data with Official Jamia Academy Content. */}
               Faculty information coming soon.
             </p>
           )}

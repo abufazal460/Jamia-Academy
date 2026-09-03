@@ -1,7 +1,6 @@
 import { twMerge } from "tailwind-merge";
 
 function InfoChip({ label, value }) {
-
   if (!value) return null;
 
   return (

@@ -1,7 +1,3 @@
-// Testimonials.jsx
-// Ye main orchestrator component hai jo Testimonials section ko poora assemble karta hai
-// Heading + Subheading + Top row (left) + Bottom row (right)
-
 import { motion } from "motion/react";
 import TestimonialRow from "./TestimonialRow";
 import {
@@ -17,7 +13,6 @@ const Testimonials = () => {
       aria-labelledby="testimonials-heading"
       className="relative w-full overflow-hidden bg-black py-16 sm:py-20 lg:py-28"
     >
-      {/* Section header */}
       <header className="mx-auto mb-10 max-w-2xl px-4 text-center sm:mb-14">
         <motion.h2
           id="testimonials-heading"
@@ -41,7 +36,6 @@ const Testimonials = () => {
         </motion.p>
       </header>
 
-      {/* Marquee rows */}
       <div className="flex flex-col gap-6 sm:gap-8">
         <TestimonialRow testimonials={testimonialsRowOne} direction="left" />
         <TestimonialRow testimonials={testimonialsRowTwo} direction="right" />

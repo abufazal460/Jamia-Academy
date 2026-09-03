@@ -1,8 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-/**
- * Prev/Next buttons + dot indicators — sab keyboard accessible aur focus-visible.
- */
 const HeroControls = ({ slideCount, activeIndex, onNext, onPrev, onSelect }) => {
   return (
     <div className="absolute inset-x-0 bottom-6 z-20 flex items-center justify-center gap-5 px-4 sm:bottom-10">

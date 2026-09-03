@@ -1,31 +1,12 @@
-// src/components/CTA/BrowseCoursesCTA.jsx
-//
-// NAYA, ALAG component — gallery ke andar kuch nahi chhuya gaya. Yeh
-// sirf gallery ke BAAD render hota hai (normal page flow mein, koi
-// fixed/sticky positioning nahi), isliye scroll karte hue gallery
-// khatam hone ke baad naturally dikhta hai.
-//
-// GSAP fade-up animation self-contained hai — apna khud ka ScrollTrigger
-// banata aur cleanup karta hai, gallery ki animation timelines ko
-// bilkul touch nahi karta.
-
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getLenisInstance } from "../../../../app/providers/SmoothScroll";
 
 import { usePageTransition } from "../../../../app/providers/page-transition";
-gsap.registerPlugin(ScrollTrigger); // idempotent — already registered elsewhere bhi
+gsap.registerPlugin(ScrollTrigger);
 
-/**
- * @param {object} props
- * @param {string} props.heading       - default: "Browse More Courses"
- * @param {string} props.description   - supporting paragraph
- * @param {string} props.buttonLabel   - default: "Browse All Courses"
- * @param {string} props.targetId      - DOM id of the Courses section to scroll to (same page)
- * @param {string} props.href          - fallback route to navigate to if targetId isn't found on the page
- * @param {() => void} [props.onBrowseCourses] - optional override; if provided, this runs instead of the default scroll/navigate logic (use this to plug in React Router's navigate())
- */
+
 export default function BrowseCoursesCTA({
   heading = "Browse More Courses",
   description = "Continue exploring our complete collection of professional courses designed to help you learn new skills and grow your career.",
@@ -37,7 +18,6 @@ export default function BrowseCoursesCTA({
   const sectionRef = useRef(null);
   const { navigateWithTransition } = usePageTransition();
 
-  // ---------- Subtle fade-up entrance, isolated ScrollTrigger ----------
   useEffect(() => {
     const section = sectionRef.current;
     if (!section) return;
@@ -64,10 +44,8 @@ export default function BrowseCoursesCTA({
     };
   }, []);
 
-  // ---------- Navigation: prefer an existing routing solution ----------
   const handleClick = () => {
-    // Agar parent app apna khud ka routing handler de raha hai
-    // (e.g. React Router ka navigate()), usi ko priority do.
+
     if (typeof onBrowseCourses === "function") {
       onBrowseCourses();
       return;
@@ -76,9 +54,7 @@ export default function BrowseCoursesCTA({
     const target = targetId ? document.getElementById(targetId) : null;
 
     if (target) {
-      // Same-page section — existing Lenis instance se smooth scroll,
-      // native window.scrollTo NAHI use karte kyunki Lenis pehle se
-      // scroll control kar raha hai.
+
       const lenis = getLenisInstance();
       if (lenis) {
         lenis.scrollTo(target, { offset: 0, duration: 1.2 });
@@ -88,8 +64,6 @@ export default function BrowseCoursesCTA({
       return;
     }
 
-    // Courses section is page pe nahi mili — SPA route change karo,
-    // transition ke through (full page reload nahi hoga).
     if (href) navigateWithTransition(href);
   };
 

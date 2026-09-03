@@ -3,7 +3,6 @@ import SpaceBackground from "../shared/components/background/SpaceBackground";
 import { PageHeading, CertificateCard } from "../features/certificate/components";
 import { PAGE_CONTENT } from "../features/certificate/data/certificate.data";
 
-
 const PAGE_TITLE = `${PAGE_CONTENT.title} · Jamia Academy`;
 const PAGE_DESCRIPTION = PAGE_CONTENT.subtitle;
 

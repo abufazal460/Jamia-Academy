@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-const NORMAL_INTERVAL_MS = 5000; // normal autoplay speed
-const FAST_INTERVAL_MS = 5000;   // hover ke time ki speed
+const NORMAL_INTERVAL_MS = 5000;
+const FAST_INTERVAL_MS = 5000;
 
 const useHeroSlider = (slideCount, { autoplay = true } = {}) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -26,9 +26,7 @@ const useHeroSlider = (slideCount, { autoplay = true } = {}) => {
     [slideCount]
   );
 
-  // Hover shuru hote hi speed fast ho jaye
   const speedUp = useCallback(() => setIntervalDuration(FAST_INTERVAL_MS), []);
-  // Hover hatte hi wapas normal speed
   const speedDown = useCallback(() => setIntervalDuration(NORMAL_INTERVAL_MS), []);
 
   useEffect(() => {
@@ -38,7 +36,6 @@ const useHeroSlider = (slideCount, { autoplay = true } = {}) => {
       setActiveIndex((prev) => (prev + 1) % slideCount);
     }, intervalDuration);
 
-    // Duration change hote hi purana timer clear hoke naya turant sahi speed se start hota hai
     return () => clearInterval(intervalRef.current);
   }, [autoplay, slideCount, intervalDuration]);
 

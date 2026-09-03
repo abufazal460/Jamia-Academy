@@ -1,11 +1,3 @@
-// ============================================================
-// faqData.js
-// Yahan sirf FAQ ka data hai — koi JSX ya logic nahi.
-// Future developer ko sirf yahan aana hai question add/remove
-// karne ke liye. Baaki koi bhi file touch nahi karni padegi.
-// Array of objects: { id, question, answer }
-// ============================================================
-
 const faqData = [
   {
     id: "faq-1",

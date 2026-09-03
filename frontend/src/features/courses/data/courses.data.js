@@ -1,6 +1,6 @@
 import img001 from "../../../assets/images/courses/acc.webp"
 import img002 from "../../../assets/images/courses/bcc.webp"
-import img003 from "../../../assets/images/courses/ms office.webp"  
+import img003 from "../../../assets/images/courses/ms office.webp"
 import img004 from "../../../assets/images/courses/ms office in ai.webp"
 import img005 from "../../../assets/images/courses/advace excel with ai.webp"
 import img006 from "../../../assets/images/courses/tally.webp"
@@ -50,7 +50,7 @@ import img049 from "../../../assets/images/courses/pcs-sem.webp"
 import img050 from "../../../assets/images/courses/reel shooting.webp"
 
 
-export const coursesData =  [
+export const coursesData = [
   {
     "id": "course-001",
     "slug": "advanced-computer-concepts",

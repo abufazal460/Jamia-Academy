@@ -1,19 +1,15 @@
 import React, { useRef, useState } from "react";
 
-// Third-party Libraries
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Quote, ImageOff } from "lucide-react";
 
-// Hooks
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 
-// Utilities
 import { getImageProps } from "../../../shared/utils/image";
 
-// Constants / Data
 import { gsapEase } from "../../../shared/motion/config";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -34,18 +30,6 @@ const FounderMessage = ({ data }) => {
   const personData = data || {};
   const messageData = personData?.message || {};
 
-  /*
-   * Message can be supplied as:
-   *
-   * body: ["Paragraph 1", "Paragraph 2"]
-   *
-   * or legacy string:
-   *
-   * body: "Complete message..."
-   *
-   * Array is preferred because it preserves intentional paragraphs
-   * without breaking content on every "." character.
-   */
   const messageLines = Array.isArray(messageData.body)
     ? messageData.body.filter(Boolean)
     : messageData.body
@@ -94,14 +78,12 @@ const FounderMessage = ({ data }) => {
         },
       });
 
-      // STEP 1 — Section fade
       tl.from(sectionRef.current, {
         opacity: 0,
         duration: 0.5,
         ease: "power2.out",
       });
 
-      // STEP 2 — Image reveal
       if (imageRef.current) {
         tl.from(
           imageRef.current,
@@ -117,7 +99,6 @@ const FounderMessage = ({ data }) => {
         );
       }
 
-      // STEP 3 — Heading
       if (headingRef.current) {
         tl.from(
           headingRef.current,
@@ -132,7 +113,6 @@ const FounderMessage = ({ data }) => {
         );
       }
 
-      // STEP 4 — Quote icons
       if (quoteOpenRef.current) {
         tl.from(
           quoteOpenRef.current,
@@ -147,7 +127,6 @@ const FounderMessage = ({ data }) => {
         );
       }
 
-      // STEP 5 — Message reveal
       if (messageRef.current) {
         tl.from(
           messageRef.current.children,
@@ -176,7 +155,6 @@ const FounderMessage = ({ data }) => {
         );
       }
 
-      // STEP 6 — Signature
       if (signatureRef.current) {
         tl.from(
           signatureRef.current,
@@ -190,7 +168,6 @@ const FounderMessage = ({ data }) => {
         );
       }
 
-      // STEP 7 — Founder details
       if (detailsRef.current) {
         tl.from(
           detailsRef.current,
@@ -219,8 +196,6 @@ const FounderMessage = ({ data }) => {
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,380px)_1fr] gap-12 lg:gap-16 items-center">
-
-          {/* IMAGE */}
           <div className="order-1 flex justify-center lg:justify-start">
             <div
               ref={imageRef}
@@ -254,10 +229,7 @@ const FounderMessage = ({ data }) => {
               </div>
             </div>
           </div>
-
-          {/* MESSAGE CONTENT */}
           <div className="order-2">
-
             {messageData.label && (
               <span className="text-xs sm:text-sm font-bold tracking-widest uppercase text-[#2A9D8F]">
                 {messageData.label}
@@ -272,10 +244,8 @@ const FounderMessage = ({ data }) => {
               {messageData.heading || "A Message From Our Founder"}
             </h2>
 
-            {/* Glass card */}
             <div className="relative mt-6 rounded-3xl border border-white/50 bg-white/50 p-6 sm:p-8 shadow-[0_12px_40px_rgba(43,45,66,0.1)] backdrop-blur-xl">
 
-              {/* Gradient highlight */}
               <div className="pointer-events-none absolute inset-x-1 top-0 h-1 rounded-t-3xl bg-gradient-to-r from-[#E63946] via-[#F4A261] to-[#2A9D8F]" />
 
               <span
@@ -314,7 +284,6 @@ const FounderMessage = ({ data }) => {
                 <Quote size={28} />
               </span>
 
-              {/* Signature */}
               <div
                 ref={signatureRef}
                 className="mt-5 border-t border-[#2B2D42]/10 pt-5"

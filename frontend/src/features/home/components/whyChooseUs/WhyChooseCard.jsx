@@ -1,5 +1,3 @@
-// src/components/home/whyChooseUs/WhyChooseCard.jsx
-
 import React, { memo } from 'react';
 import { motion } from 'motion/react';
 import { cardVariants } from '../../motion/why-choose-us.motion';
@@ -27,20 +25,17 @@ const WhyChooseCard = memo(({ card, index }) => {
         transition: { duration: 0.3 }
       }}
     >
-      {/* Animated gradient background on hover */}
       <motion.div
         className={`absolute inset-0 bg-gradient-to-br ${card.bgGradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
         initial={false}
       />
 
-      {/* Glow effect */}
       <motion.div
         className={`absolute -inset-1 bg-gradient-to-r ${card.gradient} opacity-0 group-hover:opacity-20 blur-2xl transition-opacity duration-500`}
         initial={false}
       />
 
       <div className="relative z-10">
-        {/* Icon */}
         <motion.div
           className={`
             w-14 h-14 rounded-2xl 
@@ -56,7 +51,6 @@ const WhyChooseCard = memo(({ card, index }) => {
           <Icon className={`w-7 h-7 ${card.iconColor}`} />
         </motion.div>
 
-        {/* Title */}
         <motion.h3
           className="font-['Poppins']  font-bold text-xltext-[#2B2D42] mb-2"
           whileHover={{
@@ -67,13 +61,11 @@ const WhyChooseCard = memo(({ card, index }) => {
           {card.title}
         </motion.h3>
 
-        {/* Description */}
         <p className="text-slate-600 text-sm leading-relaxed">
           {card.description}
         </p>
       </div>
 
-      {/* Animated bottom line */}
       <motion.div
         className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${card.lineGradient} rounded-full`}
         initial={{ width: "0%" }}

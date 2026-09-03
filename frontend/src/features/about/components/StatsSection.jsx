@@ -17,9 +17,6 @@ import { gsapEase } from "../../../shared/motion/config";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// -----------------------------------------------------------------------------
-// ICON MAP — stats array me icon string name ke roop me store hai
-// -----------------------------------------------------------------------------
 const iconMap = {
   Sparkles,
   Users,
@@ -27,16 +24,8 @@ const iconMap = {
   Briefcase,
 };
 
-/**
- * StatCard
- * Ye component kya karta hai: ek single stat card render karta hai apne khud ke
- * inView detection ke saath (taaki har card independently apna counter trigger kare)
- * Kyu banaya gaya: taaki counter sirf tab chale jab wo specific card screen pe ho
- * Kab call hoga: StatsSection ke andar .map() se, har stat item ke liye
- */
 const StatCard = ({ stat, prefersReducedMotion }) => {
   const Icon = iconMap[stat?.icon] || Sparkles;
-  // useCountUp — har card ka apna independent viewport-visibility tracker
   const { ref, inView } = useCountUp({ triggerOnce: false, threshold: 0.5 });
 
   return (
@@ -53,11 +42,7 @@ const StatCard = ({ stat, prefersReducedMotion }) => {
       }
       transition={{ duration: 0.3, ease: "easeOut" }}
     >
-      {/* Soft glow accent — decorative */}
-      {/* <div
-        className="pointer-events-none absolute -top-6 -right-6 h-24 w-24 rounded-full bg-red-500 blur-2xl"
-        aria-hidden="true"
-      /> */}
+
       <span
         className="relative z-10 mb-3 inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]"
         aria-hidden="true"
@@ -77,13 +62,6 @@ const StatCard = ({ stat, prefersReducedMotion }) => {
   );
 };
 
-/**
- * StatsSection
- * Ye component kya karta hai: institute ki achievements ko animated counters me render karta hai
- * Kyu banaya gaya: credibility aur scale ko quick-glance numbers ke through communicate karna
- * Kab call hoga: pages/About.jsx me ValuesSection ke baad
- * Kya return karega: <section> jisme heading + responsive stat-card grid hai
- */
 const StatsSection = () => {
   const sectionRef = useRef(null);
   const headingRef = useRef(null);
@@ -110,7 +88,7 @@ const StatsSection = () => {
         trigger: sectionRef.current,
         start: "top 80%",
         end: "bottom 30%",
-        toggleActions: "play reverse play reverse", // replay har baar — once:true nahi
+        toggleActions: "play reverse play reverse",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
@@ -118,20 +96,16 @@ const StatsSection = () => {
       },
     });
 
-    // STEP 1 — Section heading
     if (headingRef.current) {
       tl.from(headingRef.current, {
         opacity: 0,
         y: 36,
         filter: "blur(6px)",
         duration: 0.7,
-        ease: gsapEase.heading, // expo.out
+        ease: gsapEase.heading,
       });
     }
 
-    // STEP 2 — Stat cards stagger entrance
-    // NOTE: Counter trigger khud StatCard ke andar useCountUp/react-intersection-observer
-    // se handle hota hai — GSAP sirf card ka visual entrance (opacity/scale/y) animate karta hai.
     if (cardsRef.current) {
       tl.from(
         cardsRef.current.children,
@@ -169,17 +143,13 @@ const StatsSection = () => {
           </h2>
         </div>
 
-        {/* Stat cards grid — mobile: 1 col, tablet: 2 col, desktop: 4 col */}
         <div ref={cardsRef} className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
           {safeStats.length > 0 ? (
             safeStats.map((stat) => (
               <StatCard key={stat?.id || stat?.label} stat={stat} prefersReducedMotion={prefersReducedMotion} />
             ))
           ) : (
-            // Defensive fallback — data missing hone par bhi layout crash na ho
             <p className="col-span-full text-center text-sm text-[#2B2D42]/50">
-              {/* TODO:
-                  Replace Dummy Data with Official Jamia Academy Content. */}
               Stats coming soon.
             </p>
           )}

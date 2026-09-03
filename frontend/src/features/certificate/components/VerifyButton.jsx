@@ -4,12 +4,6 @@ import { BUTTON_TEXT } from "../data/certificate.data";
 import { certButtonWidthVariants } from "../motion/certificate.motion";
 import { LoadingSpinner } from "./LoadingSpinner";
 
-/**
- * VerifyButton
- * Mount par width 0% -> 100% animate hota hai. Hover par idle text upar
- * slide karke exit hoti hai aur neeche se hover text enter karti hai —
- * dono spans ek hi overflow-hidden track ke andar stacked hain.
- */
 function VerifyButtonBase({ isSubmitting, disabled }) {
   return (
     <motion.button

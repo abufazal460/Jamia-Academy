@@ -7,7 +7,7 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.06, // har card 60ms delay se aayega - "wave" feel
+      staggerChildren: 0.06,
       delayChildren: 0.05,
     },
   },
@@ -26,10 +26,10 @@ const cardVariants = {
 
 const CourseGrid = ({
   courses = [],
-  onViewDetails, // (course) => void - CourseSection modal open karega
-  onEnroll, // (course) => void - CourseSection WhatsApp kholega
+  onViewDetails,
+  onEnroll,
 }) => {
-  
+
   const prefersReducedMotion = useReducedMotion();
 
   const effectiveCardVariants = useMemo(() => {
@@ -40,8 +40,6 @@ const CourseGrid = ({
       exit: { opacity: 0 },
     };
   }, [prefersReducedMotion]);
-
-  
 
   if (!courses.length) {
     return (

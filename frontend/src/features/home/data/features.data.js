@@ -1,5 +1,4 @@
-import { LuBrainCircuit, LuPalette, LuCircleDollarSign  } from "react-icons/lu";
-
+import { LuBrainCircuit, LuPalette, LuCircleDollarSign } from "react-icons/lu";
 
 export const featuresData = [
   {

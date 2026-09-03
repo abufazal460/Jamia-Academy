@@ -1,10 +1,5 @@
 import { motion } from 'motion/react';
-/**
- * Shine
- * A single brushed-metal light pass, masked to the text via
- * mix-blend-mode + background-clip, not a CSS "hack" filter trick.
- * Fires exactly once, left -> right, then stays put (no loop).
- */
+
 export default function Shine({ play, onComplete, reducedMotion }) {
   if (reducedMotion) return null;
 

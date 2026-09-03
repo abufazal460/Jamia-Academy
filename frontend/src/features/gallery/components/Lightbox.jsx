@@ -6,11 +6,9 @@ import { useLockBodyScroll } from "../../../shared/hooks/useLockBodyScroll";
 
 const SWIPE_THRESHOLD_PX = 50;
 
-
 export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLabel, index }) {
 
   useLockBodyScroll(true, { lenis: getLenisInstance() });
-
 
   const touchStartXRef = useRef(null);
   const isFirst = currentIndex === 0;
@@ -24,17 +22,14 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLa
     if (!isLast) onNavigate(currentIndex + 1);
   }, [isLast, currentIndex, onNavigate]);
 
-  // Keyboard support: ESC / ArrowLeft / ArrowRight
   useEffect(() => {
     function handleKeyDown(event) {
       if (event.key === "Escape") onClose();
       if (event.key === "ArrowLeft") goPrev();
       if (event.key === "ArrowRight") goNext();
     }
-    // ...inside useEffect...
+
     window.addEventListener("keydown", handleKeyDown);
-    // Lenis body.overflow ko ignore karta hai — isliye Lenis ko explicitly
-    // stop() karna zaroori hai (native overflow lock ke saath combine karke)
     const lenis = getLenisInstance();
     lenis?.stop();
     const previousOverflow = document.body.style.overflow;
@@ -56,7 +51,6 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLa
     const deltaX = event.changedTouches[0].clientX - touchStartXRef.current;
 
     if (Math.abs(deltaX) > SWIPE_THRESHOLD_PX) {
-      // Swipe right (finger left -> right movement) = pichli image
       if (deltaX > 0) goPrev();
       else goNext();
     }
@@ -77,7 +71,6 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLa
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Close button */}
       <button
         type="button"
         onClick={onClose}
@@ -86,8 +79,6 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLa
       >
         <IoClose size={26} />
       </button>
-
-      {/* Previous button — hidden on first image */}
       {!isFirst && (
         <button
           type="button"
@@ -102,7 +93,6 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLa
         </button>
       )}
 
-      {/* Next button — hidden on last image */}
       {!isLast && (
         <button
           type="button"
@@ -130,8 +120,6 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLa
           className="max-h-[85vh] max-w-[92vw] select-none rounded-lg object-contain shadow-2xl sm:max-h-[90vh] sm:max-w-[85vw]"
         />
       </AnimatePresence>
-
-      {/* Counter */}
       <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-sm text-white">
         {currentIndex + 1} / {images.length}
       </div>

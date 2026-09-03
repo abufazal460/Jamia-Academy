@@ -11,10 +11,8 @@ import { useLocation } from "react-router-dom";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 import { gsap } from "gsap";
-// LoginButton: navLinks array se alag, WhatsAppButton ki tarah independently rendered.
 import LoginButton from "../navigation/LoginButton";
 
-// Ye exact imports hai jo user ne diye hai — inhe bilkul change nahi kiya gaya.
 import humburger from "../../../assets/icons/hamburger.webp";
 import cross from "../../../assets/icons/cross.svg";
 import logo from "../../../assets/icons/logo.png";
@@ -34,9 +32,6 @@ const logoVariants = {
 };
 
 function Navbar() {
-  // ------------------------------------------------------------------
-  // STATE
-  // ------------------------------------------------------------------
   const location = useLocation();
   const { navigateWithTransition, isTransitioning } = usePageTransition();
   const isDesktop = useMediaQuery("lg");
@@ -50,20 +45,14 @@ function Navbar() {
     [navigateWithTransition, isTransitioning],
   );
 
-  // isMobileMenuOpen: Hamburger sidebar open/close control.
-  // isCourseOpen STATE REMOVED — dropdown ab exist hi nahi karta.
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // navRef: Iska use ab sirf Escape key close ke liye hai (mega menu outside click logic removed).
   const navRef = useRef(null);
 
-  // ---- GSAP Scroll Animation Refs ----
-  // WHY alag wrapper divs: Framer Motion ke motion elements par directly GSAP chalana
-  // conflicts create kar sakta hai. Wrapper divs pe GSAP chalao — clean separation.
-  const logoWrapRef = useRef(null); // Logo: left slide + fade on hide
-  const navLinksRef = useRef(null); // Nav pill: upward + fade on hide
-  const loginWrapRef = useRef(null); // Login button: right slide + fade on hide
-  const whatsappWrapRef = useRef(null); // WhatsApp button: right slide + fade on hide
+  const logoWrapRef = useRef(null);
+  const navLinksRef = useRef(null);
+  const loginWrapRef = useRef(null);
+  const whatsappWrapRef = useRef(null);
 
   const navHoverRef = useRef(null);
   const navItemRefs = useRef([]);
@@ -71,11 +60,6 @@ function Navbar() {
   const hoverIndexRef = useRef(null);
   const hoverTimelineRef = useRef(null);
 
-  // ------------------------------------------------------------------
-  // DERIVED
-  // ------------------------------------------------------------------
-  // useMemo: location.pathname tabhi recalculate ho jab route change ho,
-  // har render par nahi. Performance optimization.
   const activeId = useMemo(() => {
     if (location.pathname === "/") return "home";
     const match = navLinks.find(
@@ -84,11 +68,6 @@ function Navbar() {
     return match?.id ?? "";
   }, [location.pathname]);
 
-  // ------------------------------------------------------------------
-  // HANDLERS
-  // ------------------------------------------------------------------
-  // useCallback: MobileMenu React.memo use karta hai, isliye stable function reference
-  // zaroori hai warna memoization ka koi fayda nahi.
   const toggleMobileMenu = useCallback(() => {
     setIsMobileMenuOpen((prev) => !prev);
   }, []);
@@ -97,17 +76,12 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   }, []);
 
-
-  // ------------------------------------------------------------------
-  // KEYBOARD ACCESSIBILITY (Escape close)
-  // ------------------------------------------------------------------
   useEffect(() => {
     function handleEscape(e) {
       if (e.key === "Escape") setIsMobileMenuOpen(false);
     }
     document.addEventListener("keydown", handleEscape);
     return () => document.removeEventListener("keydown", handleEscape);
-    // Cleanup — memory leak rokne ke liye listener hata dete hai component unmount par.
   }, []);
 
   const lastScrollY = useRef(window.scrollY);
@@ -132,10 +106,8 @@ function Navbar() {
 
       navbarVisible.current = true;
 
-      // Previous animation stop
       gsap.killTweensOf(navRef.current);
 
-      // Sirf straight down
       gsap.to(navRef.current, {
         yPercent: 0,
         duration: 0.45,
@@ -149,10 +121,8 @@ function Navbar() {
 
       navbarVisible.current = false;
 
-      // Previous animation stop
       gsap.killTweensOf(navRef.current);
 
-      // Sirf straight up
       gsap.to(navRef.current, {
         yPercent: -100,
         duration: 0.55,
@@ -165,7 +135,6 @@ function Navbar() {
       const currentScrollY = window.scrollY;
       const previousScrollY = lastScrollY.current;
 
-      // Top par navbar hamesha visible
       if (currentScrollY <= 20) {
         showNavbar();
         lastScrollY.current = currentScrollY;
@@ -174,19 +143,16 @@ function Navbar() {
 
       const scrollDifference = currentScrollY - previousScrollY;
 
-      // Chhoti movement ignore
       if (Math.abs(scrollDifference) < SCROLL_THRESHOLD) {
         return;
       }
 
-      // Scroll DOWN
       if (scrollDifference > 0) {
         if (currentScrollY > HIDE_AFTER) {
           hideNavbar();
         }
       }
 
-      // Scroll UP
       else {
         showNavbar();
       }
@@ -277,27 +243,12 @@ function Navbar() {
 
 
   return (
-    // ================================================================
-    // MAIN NAVBAR CONTAINER
-    // bg-black: Pure black background — new design requirement.
-    //           Pehle bg-[#0b1437]/70 + backdrop-blur tha (glass effect),
-    //           ab solid black full-width bar hai.
-    // sticky top-0: Scroll karte waqt navbar hamesha upar fixed rahega.
-    // z-50: Baaki content ke upar render hoga (overlays, modals etc se bhi upar).
-    // border-b border-white/8: Subtle separator line neeche, baaki content se alag karta hai.
-    // w-full: Poori screen width cover kare — no floating center card anymore.
-    // ================================================================
     <header ref={navRef} className="fixed top-0 z-50 w-full">
       <motion.div
-        // Navbar ka pura row — initial me thoda upar se fade-in hoga.
         initial={{ opacity: 0, y: -16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45, ease: "easeOut" }}
         className={[
-          // max-w-screen-2xl: bahut bade screens par content bahut wide na ho.
-          // mx-auto: center-aligned content within full-width bar.
-          // px-4 sm:px-6 lg:px-10: responsive horizontal padding.
-          // h-16 md:h-[68px]: fixed height — CLS (layout shift) prevent karta hai.
           "mx-auto flex max-w-screen-2xl items-center justify-between",
           "h-16 px-4 sm:px-4 lg:px-8 md:h-[68px]",
         ].join(" ")}
@@ -311,13 +262,11 @@ function Navbar() {
             initial="hidden"
             animate="visible"
             aria-label="Jamia Academy — Home"
-            // outline-none: No browser default outline. NO ring added (as per requirement).
             className="flex shrink-0 items-center gap-2 outline-none"
           >
             <img
               src={logo}
               alt="Jamia Academy Logo"
-              // Width/height fix kiya — image load hone se pehle CLS na ho.
               width="50"
               height="50"
               className="h-12 w-auto sm:h-14"
@@ -325,19 +274,11 @@ function Navbar() {
           </motion.a>
         </div>
         {/* ======================== NAV LINKS (CENTER) — DESKTOP ONLY ======================== */}
-        {/* hidden lg:flex: Mobile/Tablet par chhupa do, Desktop (lg = 1024px+) par dikhao. */}
         <nav
           ref={navLinksRef}
           aria-label="Primary navigation"
           className="hidden lg:flex"
         >
-          {/* ----------------------------------------------------------------
-              Ye pill container Sheryians-inspired design hai.
-              bg-white/5: Very subtle dark glass — links ke liye ek group container feel deta hai.
-              rounded-full: Pill/capsule shape, modern look.
-              p-1: Thoda andar padding taaki active pill ke corners tight na lage.
-              border border-white/8: Barely visible border for depth.
-          ---------------------------------------------------------------- */}
           <ul
             ref={navHoverRef}
             onMouseLeave={handleNavLeave}
@@ -362,28 +303,17 @@ function Navbar() {
               />
             ))}
           </ul>
-          {/* MegaMenu REMOVED — import bhi hata diya, render bhi nahi hai ab. */}
         </nav>
-
         {/* ======================== RIGHT SIDE ======================== */}
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {/* LOGIN BUTTON — Desktop only.
-              loginWrapRef: GSAP scroll par right slide + fade.
-              WHY hidden lg:flex: Mobile me Login button sirf sidebar me ho sakta hai future me.
-              Abhi mobile par nahi dikhega, desktop par dikhega. */}
           <div ref={loginWrapRef} className="flex items-center">
             <LoginButton />
           </div>
-
-          {/* WHATSAPP BUTTON — Desktop only.
-              whatsappWrapRef: GSAP scroll par right slide + fade (Login ke saath synchronized).
-              hidden lg:flex: Mobile me WhatsApp sirf MobileMenu sidebar ke bottom me dikhega. */}
           <div ref={whatsappWrapRef} className="hidden lg:flex">
             <WhatsAppButton />
           </div>
 
           {/* ======================== HAMBURGER BUTTON (MOBILE/TABLET) ======================== */}
-          {/* lg:hidden: Desktop (1024px+) par hamburger hide ho jata hai. */}
           <motion.button
             type="button"
             onClick={toggleMobileMenu}
@@ -399,12 +329,9 @@ function Navbar() {
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-menu-panel"
-            // outline-none: NO ring anywhere — as per requirement.
-            // hover:bg-white/10: Subtle hover background feedback.
             className="grid h-10 w-10 place-items-center rounded-full outline-none transition-colors hover:bg-white/10 lg:hidden"
           >
             <div className="absolute right-3  px-6 py-4 rounded-2xl bg-white"></div>
-            {/* Hamburger <-> Cross image crossfade with rotate */}
             <motion.img
               key={isMobileMenuOpen ? "cross" : "hamburger"}
               src={isMobileMenuOpen ? cross : humburger}
@@ -426,7 +353,6 @@ function Navbar() {
         <MobileMenu
           isOpen={isMobileMenuOpen}
           onClose={closeMobileMenu}
-        // onCourseToggle aur isCourseOpen props REMOVED — dropdown gone.
         />
       </div>
     </header>

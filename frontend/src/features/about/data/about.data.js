@@ -9,8 +9,6 @@ import video from "../../../assets/images/common/aboutDescription.mp4"
 // HERO SECTION
 // ---------------------------------------------------------------------------
 export const hero = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   eyebrow: "Since 2022",
   title: "Preparing Gen Alpha With AI-Powered Skills for the Future of the Digital Era",
   subtitle: "Welcome to Jamia Academy",
@@ -18,8 +16,7 @@ export const hero = {
     "For over two decades, Jamia Academy has been committed to academic excellence, character building, and holistic student development.",
   primaryCta: { label: "Explore Our Journey", href: "#timeline" },
   secondaryCta: { label: "Meet Our Founder", href: "#founder" },
-  // TODO:
-  // Replace placeholder image with optimized WebP image.
+
   image: "/assets/about/hero-placeholder.webp",
 };
 
@@ -27,8 +24,7 @@ export const hero = {
 // ABOUT DESCRIPTION SECTION
 // ---------------------------------------------------------------------------
 export const aboutDescription = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
+
   heading: "Building Future Through Technology Driven Education",
   established: "Established 2022",
   location: "Near Jamia Millia Islamia University",
@@ -42,8 +38,7 @@ export const aboutDescription = {
     { id: "badge-location", label: "Near Jamia Millia Islamia" },
     { id: "badge-tech", label: "Technology Focused Education" },
   ],
-  // TODO:
-  // Replace placeholder image with optimized WebP image.
+
   image: video,
 };
 
@@ -51,8 +46,6 @@ export const aboutDescription = {
 // FEATURES SECTION (used by AboutDescription feature cards)
 // ---------------------------------------------------------------------------
 export const features = [
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   {
     id: "feature-quality-education",
     title: "Quality Education",
@@ -77,15 +70,13 @@ export const features = [
 // FOUNDER SECTION
 // ---------------------------------------------------------------------------
 export const founder = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
+
   name: "Dr. Qasim Chaudhary",
   designation: "Founder & Director",
   title: "Founder & CEO",
   quote: "Education is not just about degrees, it's about building character and vision for the future.",
   bio: "Dr. Qasim Chaudhary founded Jamia Academy in 2022 with a mission to provide accessible, high-quality education rooted in strong values. Under his leadership, the institution has grown from a single classroom into a full-fledged campus serving thousands of students.",
-  // TODO:
-  // Replace placeholder image with optimized WebP image.
+
   image: founderImg,
   experience: "23+ Years in Education",
   position: "Former Advisor, State Education Board",
@@ -103,8 +94,7 @@ export const founder = {
     body: [
       "Every big change starts with a small, stubborn belief. Mine was this: education should build futures, not just distribute degrees. Years ago, when I looked around, I saw a system that was rewarding privilege more than potential. Students with resources kept moving forward, while equally sometimes more talented students were left waiting for a chance that never came. That imbalance didn't sit right with me. It became the reason Jamia Academy exists today. We didn't want to build just another academy. We wanted to build a bridge between ambition and opportunity, between where a student starts and where their talent can actually take them. That's why everything at Jamia Academy, from the courses we design to the mentors we choose, is built around one non-negotiable principle: quality education should never be a privilege reserved for the few. I've always believed that India's real strength lies in its youth in the coder sitting in a small town dreaming of building the next big app, in the young girl who wants to design digital experiences but has never been told she can. Our job is to find these dreams and give them the tools, training, and confidence to become reality. As we expand across regions and reach more students every day, my vision remains rooted in the same idea we started with: build an India where skill speaks louder than background, and opportunity is earned through passion, not privilege. To every learner who chooses Jamia Academy know that you are not just a student to us. You are the reason this institution exists, and you are the future we are building for. Our Dream is to create a super powerful India that doesn't just consume technology but leads it. Warm regards, Dr.Qasim Chaudhary."
     ],
-    // TODO:
-    // Replace placeholder signature with an official scanned signature image if available.
+
     signatureImage: "",
   },
 };
@@ -113,14 +103,12 @@ export const founder = {
 // CO-FOUNDER SECTION
 // ---------------------------------------------------------------------------
 export const coFounder = {
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
+
   name: "Dr. Saba Rizwi",
   designation: "Co-Founder & Academic Director",
   title: "Co-Founder & CMD",
   bio: "Dr. Saba Rizwi has been instrumental in shaping the academic curriculum and pastoral care systems that define the Jamia Academy experience.",
-  // TODO:
-  // Replace placeholder image with optimized WebP image.
+
   image: coFounderImg,
   experience: "12+ Years in Academic Leadership",
   qualifications: [
@@ -135,11 +123,8 @@ export const coFounder = {
 
   message: {
     id: "co-founder",
-
     label: "Co-Founder & CMD",
-
     heading: "Co-Founder & CMD",
-
     body: [
       "Bridging the widening gap between what colleges teach and what industries actually need has been the very reason behind starting Jamia Academy a gap that academia rarely talks about. For years, I watched brilliant graduates step out with certificates in hand, yet struggle to find their footing in the job market because the job market had already moved several steps ahead. The world was shifting toward AI, automation, and digital-first everything, but our education system was still teaching yesterday's syllabus for today's jobs. This disconnect became the spark behind Jamia Academy. My vision has never been to complete with traditional education, but to complete it to build an institution that moves at the same speed as technology itself, one that constantly evolves and constantly asks whether what we teach today will still hold value tomorrow. Alongside producing skilled individuals, we want to build professionals who walk into interview rooms and boardrooms already speaking the language of the industry. What excites me most isn't where Jamia Academy stands today, but where we're headed next- new domains, emerging technologies like Artificial Intelligence (AI), smarter learning formats, and a growing community of learners who refuse to settle for outdated knowledge. This is just the beginning of a much bigger blueprint. Here's the one lesson I want every student to carry with them: the world doesn't need more people who simply adapt to change it needs people who create it. Don't just keep up. Learn to Lead It. Together, let's build an environment that doesn't chase industry trends it sets them. Join the Movement. Become the Trendsetter. Warm regards, Dr. Saba Rizwi.",
     ],
@@ -154,7 +139,6 @@ export const coFounder = {
 
 export const vision = {
   heading: "Our Vision",
-
   description:
     "We're not just an institute we're a movement that connects raw talent with the power of technology, opening doors to unlimited possibilities for every student who walks through them. Our vision is to build a “Societal environment recognized across India and the world” one where affordable, future-ready, and skill-driven education reaches every student, regardless of their background. Contributing to India's race in technology is our ultimate mission. We dream of a New India where: Talent knows no boundaries-socio-economic background is never a barrier Education is more than a degree- it's a gateway to innovation and employment Every student becomes a driving force in India's digital and economic transformation “Enrol today”, “Lead tomorrow” Your Skill, Your Future, It All Starts Here",
 
@@ -164,7 +148,6 @@ export const vision = {
 
 export const mission = {
   heading: "Our Mission",
-
   description:
     "We provide top-quality education in Computer Science, Information Technology, and Creative Digital Fields, matching global standards and real industry demands, so you're job-ready from day one. We break down financial barriers and deliver affordable, accessible education to students from economically weaker, marginalized, and underrepresented communities we believe talent should never be held back by circumstance. Every program we offer combines practical skills, strong ethical values, and cutting-edge technological competence because true professionals aren't just taught, they're built. We nurture a culture of curiosity, lifelong learning, and social responsibility.",
 
@@ -173,10 +156,8 @@ export const mission = {
 // ---------------------------------------------------------------------------
 // COMMITMENT SECTION
 // ---------------------------------------------------------------------------
-
 export const commitment = {
   heading: "Our Commitment",
-
   description:
     "We are committed to standing by every student's journey from their first day in the classroom to their first day on the job because your success is not a checkbox for us, it's our purpose. We continuously upgrade our curriculum, tools, and teaching methods to match evolving global industry standards, because settling for good enough is not in our DNA. We keep education affordable and accessible, ensuring that no student is left behind due to financial or social barriers, because merit and passion not background should define who gets a seat at the table. Alongside technical expertise, we instil integrity, discipline, and ethical responsibility in every student, because we're not just creating employees, we're shaping responsible citizens and future leaders. We remain an active contributor to India's digital transformation, training a workforce that is skilled, adaptable, and ready to complete on the global stage. And our relationship with students doesn't end at graduation we continue to offer mentorship, placement support, and lifelong learning opportunities long after the certificate is handed over.",
 };
@@ -198,8 +179,6 @@ export const values = [
 // STATS SECTION
 // ---------------------------------------------------------------------------
 export const stats = [
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   { id: "stat-years", label: "Years of Excellence", value: 4, suffix: "+", icon: "Sparkles" },
   { id: "stat-students", label: "Students Enrolled", value: 2000, suffix: "+", icon: "Users" },
   { id: "stat-faculty", label: "Programs Offered", value: 35, suffix: "+", icon: "BookOpen" },
@@ -210,8 +189,6 @@ export const stats = [
 // FACULTY SECTION
 // ---------------------------------------------------------------------------
 export const faculty = [
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   {
     id: "faculty-1",
     name: "Dr. Qasim Chaudhary",
@@ -262,18 +239,13 @@ export const faculty = [
 // TIMELINE SECTION
 // ---------------------------------------------------------------------------
 export const timeline = [
-  // TODO:
-  // Replace Dummy Data with Official Jamia Academy Content.
   { id: "timeline-2022", year: "2022", title: "Foundation", description: "Jamia Academy was established with a single classroom and big vision." },
   { id: "timeline-2023", year: "2023", title: "First Campus Expansion", description: "Opened our first dedicated academic campus." },
   { id: "timeline-2024", year: "2024", title: "Courses & Branch Expansion", description: "Added new courses and expanded our learning reach with a new branch." },
   { id: "timeline-2025", year: "2025", title: "AI & Machine Learning", description: "Introduced AI and Machine Learning while expanding our faculty and programs." },
   { id: "timeline-2026", year: "2026", title: "2000+ Alumni Milestone", description: "Celebrated over five thousand successful Certifications." },
 ];
-// ---------------------------------------------------------------------------
-// SINGLE EXPORT — future components isse bhi import kar sakte hain agar poora
-// data object ek saath chahiye ho (e.g. SEO structured data generation ke liye)
-// ---------------------------------------------------------------------------
+
 const aboutData = {
   hero,
   aboutDescription,

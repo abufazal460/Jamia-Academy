@@ -1,5 +1,3 @@
-// Reusable Framer Motion variants — sirf transform/opacity, GPU-friendly
-
 export const fadeUpVariant = {
   hidden: { opacity: 0, y: 32 },
   visible: {
@@ -8,7 +6,6 @@ export const fadeUpVariant = {
     transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
   },
 };
-
 
 export const scaleInVariant = {
   hidden: { opacity: 0, scale: 0.92 },
@@ -19,7 +16,6 @@ export const scaleInVariant = {
   },
 };
 
-// Parent wrapper — children apne aap staggered honge
 export const staggerContainer = (staggerChildren = 0.12, delayChildren = 0.1) => ({
   hidden: {},
   visible: {
@@ -27,7 +23,6 @@ export const staggerContainer = (staggerChildren = 0.12, delayChildren = 0.1) =>
   },
 });
 
-// Child item — staggerContainer ke andar use hota hai
 export const staggerItem = {
   hidden: { opacity: 0, y: 24 },
   visible: {
@@ -37,7 +32,6 @@ export const staggerItem = {
   },
 };
 
-// Left-to-right entrance (hero left column)
 export const slideInLeft = {
   hidden: { opacity: 0, x: -40 },
   visible: {
@@ -47,7 +41,6 @@ export const slideInLeft = {
   },
 };
 
-// Right-to-left entrance (hero visual column)
 export const slideInRight = {
   hidden: { opacity: 0, x: 40 },
   visible: {
@@ -57,5 +50,4 @@ export const slideInRight = {
   },
 };
 
-// Shared viewport config — once:true so re-render/re-animate na ho scroll back par
 export const viewportOnce = { once: true, amount: 0.2 };

@@ -1,9 +1,3 @@
-// certificateAnimationVariants.js
-// Saare Motion variants module scope pe hoist kiye hain — isse render ke
-// andar naye object banne se rok kar re-renders minimize hote hain.
-// Note: project convention ke mutabik `motion/react` use ho raha hai,
-// `framer-motion` nahi (duplicate runtime / build conflicts se bachne ke liye).
-
 export const CERT_EASE_PREMIUM = [0.16, 1, 0.3, 1];
 
 export const certHeadingVariants = {
@@ -42,8 +36,6 @@ export const certFieldItemVariants = {
   },
 };
 
-// Label entry direction ke hisaab se initial offset — FloatingLabel isse
-// consume karta hai jab component pehli baar mount hota hai.
 export const certLabelEntryOffsets = {
   top: { x: 0, y: -14 },
   bottom: { x: 0, y: 14 },

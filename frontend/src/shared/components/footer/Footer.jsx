@@ -14,14 +14,6 @@ import iso from "../../../assets/icons/iso.jpeg";
 import iaf from "../../../assets/icons/iaf.png";
 import mole from "../../../assets/icons/mole.png";
 
-/* ============================================================
-   DATA — Sab links/arrays ek jagah rakhe hain (constants).
-   Isse component clean rehta hai aur baad mein replace karna
-   easy ho jaata hai — bas yahan values change karo, JSX touch
-   karne ki zarurat nahi padti.
-============================================================ */
-
-// Social media icons + dummy links — replace later with real URLs
 const SOCIAL_LINKS = [
   {
     id: "facebook",
@@ -49,7 +41,6 @@ const SOCIAL_LINKS = [
   },
 ];
 
-// Quick Links section — title + path pair
 const QUICK_LINKS = [
   { title: "Home", path: "/" },
   { title: "Courses", path: "/course" },
@@ -58,22 +49,10 @@ const QUICK_LINKS = [
   { title: "About Us", path: "/about" },
 ];
 
-// Popular Courses section — title + dummy course url
-// const POPULAR_COURSES = [
-//   { title: "Diploma in Data Analytics", url: "/course" },
-//   { title: "Full Stack Web Development", url: "/course" },
-//   { title: "Artificial Intelligence & ML", url: "/course" },
-//   { title: "Graphic Design with AI", url: "/course" },
-//   { title: "Tally Prime with GST", url: "/course" },
-// ];
-
-// Phone numbers — multiple numbers supported via array
 const PHONE_NUMBERS = ["+91 9621555551", "+91 1147586007"];
 
-// Email addresses — multiple emails supported via array
 const EMAIL_ADDRESSES = ["jamiaacademycs@gmail.com", "info@jamiaacademy.in"];
 
-// Government / partner logos shown in "Powered By" strip
 const GOVERNMENT_LOGOS = [
   { id: "msme", name: "MSME", img: msme, url: "https://msme.gov.in" },
   { id: "mole", name: "MoLE", img: mole, url: "https://labour.gov.in" },
@@ -94,14 +73,6 @@ const GOVERNMENT_LOGOS = [
   },
 ];
 
-/* ============================================================
-   FRAMER MOTION VARIANTS — Reusable animation configs.
-   "Container" variants control staggerChildren (bachche ek ek
-   karke aate hain), "item" variants control har individual
-   element ka fade/slide/scale.
-============================================================ */
-
-// Pura footer — jab viewport mein aaye tab fade-up se reveal ho
 const footerContainerVariant = {
   hidden: { opacity: 0 },
   visible: {
@@ -109,12 +80,11 @@ const footerContainerVariant = {
     transition: {
       duration: 0.8,
       ease: "easeOut",
-      staggerChildren: 0.25, // har section thoda delay ke baad aayega
+      staggerChildren: 0.25,
     },
   },
 };
 
-// Har section (logo block, quick links, courses, contact) — fade + slide up
 const sectionVariant = {
   hidden: { opacity: 0, y: 28 },
   visible: {
@@ -124,7 +94,6 @@ const sectionVariant = {
   },
 };
 
-// List wrapper (ul) — apne andar ke <li> items ko stagger karega
 const listVariant = {
   hidden: {},
   visible: {
@@ -132,7 +101,6 @@ const listVariant = {
   },
 };
 
-// Har text/list item — left se slide karke opacity 0 -> 1
 const listItemVariant = {
   hidden: { opacity: 0, x: 200 },
   visible: {
@@ -142,7 +110,6 @@ const listItemVariant = {
   },
 };
 
-// Social icons row — scale + lift entrance, stagger ek ek icon
 const iconRowVariant = {
   hidden: {},
   visible: {
@@ -160,7 +127,6 @@ const iconItemVariant = {
   },
 };
 
-// Government logos — slide-from-top, ek ek karke
 const govLogoRowVariant = {
   hidden: {},
   visible: {
@@ -177,7 +143,6 @@ const govLogoItemVariant = {
   },
 };
 
-// Bottom copyright strip — simple fade up, sabse last mein aata hai
 const copyrightVariant = {
   hidden: { opacity: 0, y: 16 },
   visible: {
@@ -191,8 +156,6 @@ const copyrightVariant = {
    FOOTER COMPONENT
 ============================================================ */
 const Footer = () => {
-  // useRef sirf documentation/clarity ke liye — agar future me
-  // scroll-linked effects chahiye ho to yahan se hook kar sakte ho
   const footerRef = useRef(null);
 
   const { navigateWithTransition, isTransitioning } = usePageTransition();
@@ -203,12 +166,8 @@ const Footer = () => {
     navigateWithTransition(path);
   };
   return (
-    // <footer> semantic tag — accessibility ke liye zaroori hai,
-    // screen readers ise "footer landmark" ki tarah identify karte hain
     <motion.footer
       ref={footerRef}
-      // whileInView -> jab footer scroll karke screen pe aaye tab animate ho
-      // viewport.once true -> animation sirf ek baar chale, baar baar repeat na ho
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
@@ -216,16 +175,8 @@ const Footer = () => {
       className="relative bg-footer-bg pt-16 pb-8 px-5 sm:px-8 md:px-12 lg:px-16 overflow-hidden"
       aria-label="Site footer"
     >
-      {/* ============================================================
-          TOP GRID — 4 columns on large screens, stacks on mobile.
-          grid-cols-1 (mobile) -> sm:grid-cols-2 (tablet) ->
-          lg:grid-cols-4 (desktop) — isse content kabhi overflow
-          nahi hota aur har screen size pe naturally stack hota hai.
-      ============================================================ */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
-        {/* ---------- SECTION 1: Logo + Description + Socials ---------- */}
         <motion.div variants={sectionVariant} className="flex flex-col gap-5">
-          {/* Logo image — white rounded card jaisa look reference mein hai */}
           <div className="bg-white rounded-xl w-fit">
             <img
               src={logo}
@@ -239,7 +190,6 @@ const Footer = () => {
             skills, innovation, and future-ready professionals.
           </p>
 
-          {/* Social icons — stagger animation, hover lift+scale+color */}
           <motion.div
             variants={iconRowVariant}
             className="flex items-center gap-4 mt-1"
@@ -252,7 +202,6 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 aria-label={label}
                 variants={iconItemVariant}
-                // whileHover -> mouse aane par upar uthe + thoda scale ho + slight rotate
                 whileHover={{ y: -4, scale: 1.15, rotate: 4 }}
                 whileTap={{ scale: 0.92 }}
                 transition={{ type: "spring", stiffness: 300, damping: 15 }}
@@ -287,45 +236,12 @@ const Footer = () => {
                              focus:outline-none rounded"
                 >
                   {link.title}
-                  
+
                 </a>
               </motion.li>
             ))}
           </motion.ul>
         </motion.div>
-
-        {/* ---------- SECTION 3: Popular Courses ---------- */}
-        {/* <motion.div variants={sectionVariant}>
-          <h3 className="text-white font-semibold text-lg mb-5">
-            Popular Courses
-          </h3>
-          <motion.ul
-            variants={listVariant}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ amount: 0.3 }}
-            className="flex flex-col gap-3"
-          >
-            {POPULAR_COURSES.map((course) => (
-              <motion.li key={course.title} variants={listItemVariant}>
-                <a
-                  href={course.url}
-                  onClick={(e) => handleInternalNav(e, course.url)}
-                  className="relative text-sm sm:text-[15px] text-slate-400
-                             hover:text-cyan-400 transition-colors duration-300
-                             group inline-block w-fit
-                             focus:outline-none rounded"
-                >
-                  {course.title}
-                  <span
-                    className="absolute left-0 -bottom-0.5 h-[1px] w-0 bg-cyan-400
-                               transition-all duration-300 group-hover:w-full"
-                  />
-                </a>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </motion.div> */}
 
         {/* ---------- SECTION 4: Contact Info ---------- */}
         <motion.div variants={sectionVariant}>
@@ -340,7 +256,6 @@ const Footer = () => {
             viewport={{ amount: 0.3 }}
             className="flex flex-col gap-4 text-sm sm:text-[15px] text-slate-400"
           >
-            {/* Location — clickable, Google Maps khulta hai naye tab mein */}
             <motion.li variants={listItemVariant} className="flex gap-3">
               <FiMapPin className="text-green-600 mt-0.5 shrink-0" size={18} />
               <a
@@ -355,7 +270,6 @@ const Footer = () => {
               </a>
             </motion.li>
 
-            {/* Phone numbers — tel: link, multiple numbers via array+map */}
             <motion.li variants={listItemVariant} className="flex gap-3">
               <FiPhone className="text-green-600 mt-0.5 shrink-0" size={18} />
               <div className="flex flex-col gap-1">
@@ -363,8 +277,7 @@ const Footer = () => {
                   <a
                     key={num}
                     href={`tel:${num.replace(/\s/g, "")}`}
-                    className="hover:text-footer-text transition-colors duration-300
-                               focus:outline-none  rounded w-fit"
+                    className="hover:text-footer-text transition-colors duration-300 focus:outline-none  rounded w-fit"
                   >
                     {num}
                   </a>
@@ -372,7 +285,6 @@ const Footer = () => {
               </div>
             </motion.li>
 
-            {/* Emails — mailto: link, multiple emails via array+map */}
             <motion.li variants={listItemVariant} className="flex gap-3">
               <FiMail className="text-green-600 mt-0.5 shrink-0" size={18} />
               <div className="flex flex-col gap-1 break-all">
@@ -380,8 +292,7 @@ const Footer = () => {
                   <a
                     key={mail}
                     href={`mailto:${mail}`}
-                    className="hover:text-footer-text transition-colors duration-300
-                               focus:outline-none rounded w-fit"
+                    className="hover:text-footer-text transition-colors duration-300 focus:outline-none rounded w-fit"
                   >
                     {mail}
                   </a>
@@ -392,17 +303,12 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* ============================================================
-          DIVIDER — top grid aur "Powered By" section ko separate
-          karne wali thin line
-      ============================================================ */}
       <motion.div
         variants={sectionVariant}
         className="max-w-7xl mx-auto border-t border-white/10 mt-12 pt-10"
       >
         {/* ---------- POWERED BY SECTION ---------- */}
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          {/* Heading + underline accent */}
           <div>
             <h3 className="text-footer-text font-bold text-2xl sm:text-3xl">
               Accreditations By
@@ -410,8 +316,6 @@ const Footer = () => {
             <span className="block w-12 h-[3px] bg-green-600 rounded-full mt-2" />
           </div>
 
-          {/* Government logos grid — wraps naturally on small screens
-              so logos never overflow horizontally */}
           <motion.div
             variants={govLogoRowVariant}
             initial="hidden"
@@ -426,7 +330,6 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={govLogoItemVariant}
-                // hover: card upar uthe + thoda scale + shadow smooth ho
                 whileHover={{ y: -6, scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 260, damping: 18 }}
                 className="flex flex-col items-center gap-2 group focus:outline-none rounded-xl"
@@ -467,9 +370,9 @@ const Footer = () => {
               href="https://abufazal.netlify.app/"
               className="text-blue-500 hover:underline transition-all"
             >
-              Abu Fazal 
+              Abu Fazal
             </a>{" "}
-          
+
           </p>
         </motion.div>
       </motion.div>

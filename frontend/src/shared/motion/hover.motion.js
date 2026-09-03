@@ -1,4 +1,3 @@
-// Hover/tap interaction variants — used via whileHover / whileTap props
 import { staggerItem } from "../../features/contact/motion/contact.motion";
 
 export const cardHoverVariant = {
@@ -10,10 +9,6 @@ export const cardHoverVariant = {
   },
 };
 
-// Composed variant: reuses staggerItem's hidden/visible (entrance, driven by
-// parent's whileInView propagation) and adds a "hover" state — lets a single
-// element handle both scroll-entrance and hover on its own variants object
-// without one whileHover/initial override cancelling the other.
 export const interactiveCardVariant = {
   hidden: staggerItem.hidden,
   visible: staggerItem.visible,
@@ -35,7 +30,6 @@ export const iconHoverVariant = {
   },
 };
 
-// "Magnetic" feeling social icon — slight lift + glow via scale/shadow (no layout props)
 export const socialIconHoverVariant = {
   rest: { scale: 1, y: 0 },
   hover: {

@@ -1,5 +1,3 @@
-// src/components/home/whyChooseUs/WhyChooseCTA.jsx
-
 import React, { useState, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { ctaVariants, textButtonVariants } from "../../motion/why-choose-us.motion";
@@ -58,10 +56,8 @@ const WhyChooseCTA = memo(({ data }) => {
         },
       }}
     >
-      {/* Glass effect overlay */}
       <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]" />
 
-      {/* Floating glow effects */}
       <motion.div
         className="absolute -top-24 -left-24 w-96 h-96 bg-[#E63946]/30 rounded-full blur-3xl"
         animate={{
@@ -89,7 +85,6 @@ const WhyChooseCTA = memo(({ data }) => {
       />
 
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-        {/* Text Content */}
         <motion.div
           className="flex-1 max-w-2xl"
           variants={ctaVariants}
@@ -111,13 +106,11 @@ const WhyChooseCTA = memo(({ data }) => {
           </motion.p>
         </motion.div>
 
-        {/* Buttons */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 flex-shrink-0"
           variants={ctaVariants}
         >
           <TransitionLink to="/course" className="block">
-
             <motion.button
               onClick={handleClick}
               onHoverStart={() => setIsHovered(true)}

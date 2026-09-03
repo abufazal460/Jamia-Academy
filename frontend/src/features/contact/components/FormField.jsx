@@ -1,7 +1,6 @@
 import { memo, useState, useId } from "react";
 import { motion } from "motion/react";
 
-// Reusable floating-label field — text/email/tel/textarea sab handle karta hai
 const FormField = ({ field, value, error, onChange }) => {
   const [focused, setFocused] = useState(false);
   const reactId = useId();
@@ -32,11 +31,10 @@ const FormField = ({ field, value, error, onChange }) => {
     <div className="relative">
       <label
         htmlFor={inputId}
-        className={`pointer-events-none absolute left-4 transition-all duration-200 ${
-          isFloating
+        className={`pointer-events-none absolute left-4 transition-all duration-200 ${isFloating
             ? "top-1.5 text-[0.68rem] font-medium text-[#2A9D8F]"
             : "top-1/2 -translate-y-1/2 text-sm text-[#2B2D42]/45"
-        }`}
+          }`}
       >
         {field.label}
         {field.required && <span className="text-[#E63946]"> *</span>}

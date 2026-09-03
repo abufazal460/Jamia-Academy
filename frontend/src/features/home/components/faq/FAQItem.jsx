@@ -1,21 +1,5 @@
-// ============================================================
-// FAQItem.jsx
-// Ye ek single FAQ accordion card hai.
-// State yahan NAHI hai — parent (FAQ.jsx) se activeId aata hai.
-// Iska faida: sirf ek FAQ open rehti hai ek waqt mein (accordion).
-// Agar state yahan hoti toh multiple cards ek saath open ho jaate.
-//
-// Props:
-// - faq: { id, question, answer }
-// - isOpen: boolean — kya ye card abhi open hai?
-// - onToggle: function — parent ko batao ki is card pe click hua
-// - index: number — stagger animation ke liye delay calculate karne mein
-// ============================================================
-
 import { motion, AnimatePresence } from "motion/react";
 
-// -- Chevron rotation animation --
-// Spring type — natural bouncy feel, not robotic
 const chevronVariant = {
   closed: { rotate: 0 },
   open: {
@@ -24,9 +8,6 @@ const chevronVariant = {
   },
 };
 
-// -- Answer panel (open/close) --
-// AnimatePresence ke andar ye variants kaam karte hain
-// initial false rakhte hain taki mount pe animate na ho sirf exit/enter pe
 const answerVariant = {
   hidden: { height: 0, opacity: 0, y: 10 },
   visible: {
@@ -40,8 +21,6 @@ const answerVariant = {
   exit: { height: 0, opacity: 0, y: -6, transition: { height: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }, opacity: { duration: 0.25, ease: "easeIn" } } },
 };
 
-// -- Card scroll reveal variant (stagger ke liye parent se inherit) --
-// index prop se delay calculate hota hai
 export const cardVariant = {
   hidden: { opacity: 0, y: 40, scale: 0.98 },
   visible: (index) => ({
@@ -51,42 +30,32 @@ export const cardVariant = {
     transition: {
       duration: 0.55,
       ease: "easeOut",
-      // Har card pichle se 0.08s baad aayega — smooth stagger
       delay: index * 0.08,
     },
   }),
 };
 
 const FAQItem = ({ faq, isOpen, onToggle, index }) => {
-  // Unique IDs — accessibility ke liye zaroori
-  // aria-controls + id match karna chahiye
+
   const answerId = `answer-${faq.id}`;
   const questionId = `question-${faq.id}`;
 
   return (
-    // motion.div — scroll reveal ke liye, custom variant with index
     <motion.div
       variants={cardVariant}
-      custom={index} // 'custom' prop variant function mein argument ki tarah jaata hai
-      // overflow-hidden zaroori hai taki height: 0 pe answer hide rahe
-      // bina iske answer visible rahega collapse hone ke baad
+      custom={index}
       className={`
         overflow-hidden rounded-2xl
         border transition-all duration-300
-        ${
-          isOpen
-            ? "border-white/10 bg-white/[0.07] shadow-lg shadow-cyan-500/10"
-            : "border-white/10 bg-white/[0.04] hover:border-white/20 hover:bg-white/[0.06]"
+        ${isOpen
+          ? "border-white/10 bg-white/[0.07] shadow-lg shadow-cyan-500/10"
+          : "border-white/10 bg-white/[0.04] hover:border-white/20 hover:bg-white/[0.06]"
         }
       `}
     >
-      {/* -- Question Button -- */}
-      {/* button tag — keyboard accessible (Enter/Space se click hota hai) */}
       <button
         id={questionId}
-        // aria-expanded — screen readers ko pata chalta hai ki accordion open hai ya nahi
         aria-expanded={isOpen}
-        // aria-controls — ye button kis element ko control karta hai (answer div)
         aria-controls={answerId}
         onClick={onToggle}
         className="
@@ -97,10 +66,8 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
           focus:outline-none focus-visible:ring-2
           focus-visible:ring-cyan-400/60 focus-visible:ring-offset-1
           focus-visible:ring-offset-transparent
-          rounded-2xl
-        "
+          rounded-2xl"
       >
-        {/* Question text */}
         <span
           className={`
             text-sm sm:text-base md:text-lg font-semibold leading-snug
@@ -110,9 +77,6 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
         >
           {faq.question}
         </span>
-
-        {/* -- Chevron Icon (SVG — no library needed) -- */}
-        {/* flex-shrink-0 — icon kabhi squish nahi hoga lamba text hone pe */}
         <motion.span
           variants={chevronVariant}
           animate={isOpen ? "open" : "closed"}
@@ -124,10 +88,9 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className={`transition-colors duration-300 ${
-              isOpen ? "text-slate-500" : "text-slate-500 group-hover:text-slate-300"
-            }`}
-            aria-hidden="true" // decorative icon — screen readers skip karein
+            className={`transition-colors duration-300 ${isOpen ? "text-slate-500" : "text-slate-500 group-hover:text-slate-300"
+              }`}
+            aria-hidden="true"
           >
             <path
               d="M6 9L12 15L18 9"
@@ -140,28 +103,20 @@ const FAQItem = ({ faq, isOpen, onToggle, index }) => {
         </motion.span>
       </button>
 
-      {/* -- Answer Panel --
-          AnimatePresence zaroori hai exit animation ke liye.
-          Bina iske component unmount hote hi gayab ho jaata — koi animation nahi.
-          mode="sync" — exit aur enter same time pe ho sakte hain (no wait) */}
       <AnimatePresence mode="sync" initial={false}>
         {isOpen && (
           <motion.div
-            key={answerId} // key important hai AnimatePresence ke liye
+            key={answerId}
             id={answerId}
-            role="region" // semantic role — accessibility ke liye
+            role="region"
             aria-labelledby={questionId}
             variants={answerVariant}
             initial="hidden"
             animate="visible"
             exit="exit"
-            // overflow-hidden — height animation ke liye zaroori
-            // bina iske height 0 pe bhi content bahar dikhai dega
             className="overflow-hidden"
           >
-            {/* Inner padding wrapper — px/pb se answer ka spacing */}
             <div className="px-5 sm:px-6 pb-5 sm:pb-6">
-              {/* Thin divider line */}
               <div className="h-px bg-white/10 mb-4 sm:mb-5" />
               <p className="font-medium text-sm sm:text-base text-slate-400 leading-relaxed">
                 {faq.answer}

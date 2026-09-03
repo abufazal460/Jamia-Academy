@@ -21,7 +21,6 @@ const Hero = () => {
         if (!e.currentTarget.contains(e.relatedTarget)) resume();
     };
 
-    // Error-safe: agar data file khaali ho gayi to Hero crash nahi hoga, bas render nahi karega
     if (!heroSlides.length) return null;
 
     const activeSlide = heroSlides[activeIndex] ?? heroSlides[0];

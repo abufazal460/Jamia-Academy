@@ -6,15 +6,9 @@ import { WORD_ONE, WORD_TWO, buildExplosionVector, LUXURY_EASE } from './animati
 import './introLoader.css';
 
 const STORAGE_KEY = 'jamia:intro-played';
-const LOGO_SETTLE_DELAY = 1000; // letters finish arriving (~1.8-2s with new config)
+const LOGO_SETTLE_DELAY = 1000;
 const EXPLOSION_DURATION = 650;
 
-/**
- * IntroLoader
- * entering -> settled -> shining(loop, waits on appReady) -> exploding -> exiting -> done
- * Blast NEVER fires until appReady is true — enforced by gating exploding
- * transition strictly behind the ready-check effect below.
- */
 export default function IntroLoader({ appReady = true, children }) {
   const prefersReducedMotion = useReducedMotion();
   const [alreadyPlayed] = useState(() => {
@@ -55,7 +49,6 @@ export default function IntroLoader({ appReady = true, children }) {
     };
   }, []);
 
-  // entering -> settled -> shining
   useEffect(() => {
     if (alreadyPlayed) return undefined;
 
@@ -77,8 +70,6 @@ export default function IntroLoader({ appReady = true, children }) {
     return () => clearTimeout(t);
   }, [stage]);
 
-  // Gate: blast can ONLY start from 'shining' (or reduced-motion's check stage)
-  // AND only once appReady flips true. No fixed timer substitutes for this check.
   useEffect(() => {
     if (!appReady) return undefined;
     if (stage === 'shining') {
@@ -112,7 +103,7 @@ export default function IntroLoader({ appReady = true, children }) {
 
   const isExploding = stage === 'exploding' || stage === 'shutter-ready' || stage === 'exiting';
   const logoSettled = stage !== 'entering';
-  const isShining = stage === 'shining'; // shine loops only while genuinely waiting
+  const isShining = stage === 'shining';
 
   return (
     <>
@@ -135,10 +126,10 @@ export default function IntroLoader({ appReady = true, children }) {
                 prefersReducedMotion
                   ? undefined
                   : {
-                      opacity: logoSettled ? 1 : undefined,
-                      filter: logoSettled ? 'blur(0px)' : undefined,
-                      scale: logoSettled ? 1 : undefined,
-                    }
+                    opacity: logoSettled ? 1 : undefined,
+                    filter: logoSettled ? 'blur(0px)' : undefined,
+                    scale: logoSettled ? 1 : undefined,
+                  }
               }
               initial={prefersReducedMotion ? undefined : { opacity: 0.001, filter: 'blur(8px)', scale: 0.98 }}
               transition={{ duration: 0.7, ease: LUXURY_EASE }}

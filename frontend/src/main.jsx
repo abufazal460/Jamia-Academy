@@ -6,7 +6,6 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { initServiceWorker } from "./pwa/registerSW.js";
 
-
 const router = createBrowserRouter([
   {
     path: "*",

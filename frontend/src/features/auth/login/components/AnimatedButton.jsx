@@ -33,7 +33,6 @@ function AnimatedButton({
       ].join(" ")}
       {...rest}
     >
-      {/* Glass shine sweep on hover */}
       <span
         aria-hidden="true"
         className={[
@@ -43,7 +42,6 @@ function AnimatedButton({
         ].join(" ")}
       />
 
-      {/* Text-slide container */}
       <span className="relative block h-5 overflow-hidden">
         <motion.span
           className="absolute inset-0 flex items-center justify-center"

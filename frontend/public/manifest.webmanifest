@@ -8,11 +8,18 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui", "browser"],
+  "display_override": [
+    "standalone",
+    "minimal-ui",
+    "browser"
+  ],
   "orientation": "any",
   "theme_color": "#C45A3C",
   "background_color": "#FFFDF7",
-  "categories": ["education", "business"],
+  "categories": [
+    "education",
+    "business"
+  ],
   "icons": [
     {
       "src": "/icons/icon-192.png",
@@ -39,28 +46,48 @@
       "short_name": "Courses",
       "description": "Browse all courses",
       "url": "/course",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Gallery",
       "short_name": "Gallery",
       "description": "View campus gallery",
       "url": "/gallery",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Verify Certificate",
       "short_name": "Certificate",
       "description": "Verify a Jamia Academy certificate",
       "url": "/certificate",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     },
     {
       "name": "Contact",
       "short_name": "Contact",
       "description": "Get in touch",
       "url": "/contact",
-      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+      "icons": [
+        {
+          "src": "/icons/icon-192.png",
+          "sizes": "192x192"
+        }
+      ]
     }
   ]
 }
