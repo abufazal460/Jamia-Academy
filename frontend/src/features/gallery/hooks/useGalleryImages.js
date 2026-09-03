@@ -7,7 +7,7 @@ export function useGalleryImages() {
   const modules = useMemo(
     () =>
       import.meta.glob(
-        "/src/assets/images/gallery/**/*.{jpg,jpeg,png,JPG,JPEG,PNG,webp}",
+        "/src/assets/images/gallery/**/*.{webp,jpg,jpeg,png,JPG,JPEG,PNG}",
         { eager: true, import: "default" }
       ),
     []
