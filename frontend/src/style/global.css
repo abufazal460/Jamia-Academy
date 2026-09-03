@@ -1,22 +1,16 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-/* ===== Lenis Smooth Scroll Setup ===== */
 
+/* ===== Lenis Smooth Scroll Setup ===== */
 html {
-  /* scroll-behavior: smooth YAHAN NAHI — yeh Lenis ke RAF-driven 
-     interpolation se conflict karta hai aur scroll "double-smooth" 
-     ya janky ho jaata hai. Lenis khud hi easing handle karta hai. */
   scroll-behavior: auto;
 }
 
 body {
-  /* Smooth scroll ke saath transform-based animations kabhi-kabhi 
-     content ko viewport se bahar push kar dete hain — isse rokte hain */
   overflow-x: hidden;
 }
 
-/* Lenis apne aap html tag par yeh classes add karta hai */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -192,10 +186,6 @@ html.lenis body {
   font-display: swap;
 }
 
-/* ttf - truetype */
-/* otf - opentype */
-/* woff2 - woff2  */
-
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -282,7 +272,7 @@ html.lenis body {
   --shadow-dark-section: 0 20px 50px rgba(0, 0, 0, 0.5);
 
 
-/* ---------- FOOTER ---------- */
+  /* ---------- FOOTER ---------- */
   --color-footer-bg: #010101;
   --color-footer-text: #F7F3E9;
   --color-footer-link-hover: #abaaaa;
