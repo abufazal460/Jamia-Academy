@@ -1,11 +1,9 @@
-// src/components/home/whyChooseUs/whyChooseUsData.js
-
-import { 
-  Users, 
-  GraduationCap , 
-  Award, 
-  Briefcase, 
-  IndianRupee, 
+import {
+  Users,
+  GraduationCap,
+  Award,
+  Briefcase,
+  IndianRupee,
   Clock,
   ArrowRight,
   ChevronRight
@@ -28,7 +26,7 @@ export const whyChooseData = [
     id: 2,
     title: "Practical Learning",
     description: "Focus on building live projects, writing real code, and solving practical industry problems hands-on.",
-    icon: GraduationCap ,
+    icon: GraduationCap,
     gradient: "from-[#2A9D8F] to-[#264653]",
     bgGradient: "from-teal-50 to-teal-100/30",
     borderColor: "border-teal-200/50",
@@ -64,7 +62,7 @@ export const whyChooseData = [
     id: 5,
     title: "Affordable Fees",
     description: "Access top-notch, premium educational quality with flexible payment structures and accessible pricing.",
-    icon: IndianRupee ,
+    icon: IndianRupee,
     gradient: "from-[#2B2D42] to-[#1A1A2E]",
     bgGradient: "from-emerald-50 to-emerald-100/30",
     borderColor: "border-emerald-200/50",

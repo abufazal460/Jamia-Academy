@@ -7,10 +7,6 @@ import {
   heroReducedItemVariants,
 } from "../../motion/hero.motion";
 
-/**
- * Eyebrow, heading, description, aur CTA buttons — sab data-driven.
- * H1 sirf yahan hai, aur AnimatePresence ke wajah se DOM mein hamesha ek hi h1 rehta hai.
- */
 const HeroContent = ({ slide, prefersReducedMotion }) => {
   const containerVariants = prefersReducedMotion ? heroReducedContainerVariants : heroContainerVariants;
   const itemVariants = prefersReducedMotion ? heroReducedItemVariants : heroItemVariants;

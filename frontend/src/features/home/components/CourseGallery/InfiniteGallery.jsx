@@ -11,25 +11,9 @@ import {
   waitForImagesToLoad,
 } from "../../motion/gallery.motion";
 
-// SSR-safe layout effect (Vite/CSR app mein useLayoutEffect hi chalega,
-// lekin future-proofing ke liye yeh pattern common hai)
 const useIsomorphicLayoutEffect =
   typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
-/**
- * @param {object} props
- * @param {Array}  props.images            - [{id, image, title, alt}] — REQUIRED
- * @param {object} props.columns           - {desktop, tablet, mobile} column counts
- * @param {string} props.gap               - Tailwind-compatible gap value, e.g. "clamp(16px, 4vw, 48px)" or "24px"
- * @param {string} props.desktopHeight     - e.g. "88vh"
- * @param {string} props.tabletHeight      - e.g. "72vh"
- * @param {string} props.mobileHeight      - e.g. "60vh"
- * @param {string} props.className         - extra classes on the outer wrapper
- * @param {boolean} props.animationEnabled - turn GSAP animation on/off
- * @param {number} props.perspective       - 3D perspective depth in px
- * @param {number|boolean} props.scrub     - ScrollTrigger scrub value
- * @param {number} props.speed             - overall animation speed multiplier
- */
 export default function InfiniteGallery({
   images = [],
   columns = { desktop: 3, tablet: 2, mobile: 1 },
@@ -47,7 +31,7 @@ export default function InfiniteGallery({
   const { activeColumns, loopedItems } = useInfiniteGallery(images, columns);
 
   const wrapperRef = useRef(null);
-  const itemRefs = useRef(new Map()); // _loopKey -> DOM node
+  const itemRefs = useRef(new Map());
   const lenisRef = useRef(null);
   const timelinesRef = useRef([]);
 
@@ -65,18 +49,15 @@ useIsomorphicLayoutEffect(() => {
 
   let cancelled = false;
 
-  // 1. Start Lenis immediately
   const lenis = initSmoothScroll();
   lenisRef.current = lenis;
 
-  // 2. Collect items immediately
   const itemEls = loopedItems
     .map((item) => itemRefs.current.get(item._loopKey))
     .filter(Boolean);
 
   if (!itemEls.length) return;
 
-  // 3. Initialize GSAP immediately
   const timelines = createInfiniteScrollAnimation(itemEls, wrapper, {
     perspective,
     scrub,
@@ -86,20 +67,16 @@ useIsomorphicLayoutEffect(() => {
 
   timelinesRef.current = timelines;
 
-  // 4. Initial refresh immediately
   refreshScrollTrigger();
 
-  // 5. Images load/decode in background
   waitForImagesToLoad(wrapper).then(() => {
     if (cancelled) return;
 
-    // Images are ready → recalculate dimensions
     requestAnimationFrame(() => {
       refreshScrollTrigger();
     });
   });
 
-  // 6. Cleanup
   return () => {
     cancelled = true;
 
@@ -118,7 +95,6 @@ useIsomorphicLayoutEffect(() => {
   speed,
 ]);
 
-  // ---------- Resize par ScrollTrigger ko refresh karo (throttled) ----------
   useEffect(() => {
     let frame = null;
     const onResize = () => {

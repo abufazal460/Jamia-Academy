@@ -25,11 +25,8 @@ export default function CourseGallerySection() {
       className="relative w-full overflow-hidden bg-bg-dark-secondary"
     >
       <div className="mx-auto flex w-full max-w-[1800px] flex-col px-4 py-12 sm:px-6 md:py-16 lg:px-10 lg:py-20 2xl:px-16">
-
-        {/* Heading */}
         <SectionHeader />
 
-        {/* Infinite Gallery */}
         <InfiniteGallery
           images={galleryData}
           columns={GALLERY_COLUMNS}
@@ -44,11 +41,9 @@ export default function CourseGallerySection() {
           onImageClick={handleImageClick}
         />
 
-        {/* Bottom CTA */}
         <BrowseCoursesCTA />
       </div>
 
-      {/* Full-screen image preview modal — portaled to document.body */}
       <ImagePreviewModal image={selectedImage} onClose={handleCloseModal} />
     </section>
   );

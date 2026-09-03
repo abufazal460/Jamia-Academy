@@ -1,5 +1,3 @@
-
-
 import msme from "../../../assets/icons/msme.png";
 import neilit from "../../../assets/icons/nielit.jpeg";
 import nitiAyog from "../../../assets/icons/niti-aayog.jpeg";
@@ -9,15 +7,6 @@ import iso from "../../../assets/icons/iso.jpeg";
 import iaf from "../../../assets/icons/iaf.png";
 import mole from "../../../assets/icons/mole.png";
 
-/**
- * @typedef {Object} AccreditationItem
- * @property {number} id       - unique identifier (React key ke liye)
- * @property {string} title    - organization ka naam
- * @property {*}      image    - imported image asset
- * @property {string} alt      - accessibility ke liye descriptive alt text
- */
-
-/** @type {AccreditationItem[]} */
 export const accreditationsData = [
   {
     id: 1,
@@ -43,28 +32,28 @@ export const accreditationsData = [
     image: skillIndia,
     alt: "Skill India official logo",
   },
- {
-  id: 5,
-  title: "IP",
-  image: ip,
-  alt: "IP official logo",
-},
-{
-  id: 6,
-  title: "ISO",
-  image: iso,
-  alt: "ISO official logo",
-},
-{
-  id: 7,
-  title: "IAF",
-  image: iaf,
-  alt: "IAF official logo",
-},
-{
-  id: 8,
-  title: "Mole",
-  image: mole,
-  alt: "Mole official logo",
-},
+  {
+    id: 5,
+    title: "IP",
+    image: ip,
+    alt: "IP official logo",
+  },
+  {
+    id: 6,
+    title: "ISO",
+    image: iso,
+    alt: "ISO official logo",
+  },
+  {
+    id: 7,
+    title: "IAF",
+    image: iaf,
+    alt: "IAF official logo",
+  },
+  {
+    id: 8,
+    title: "Mole",
+    image: mole,
+    alt: "Mole official logo",
+  },
 ];

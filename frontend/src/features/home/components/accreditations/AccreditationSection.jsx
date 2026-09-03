@@ -17,12 +17,10 @@ import { SECTION_CONTAINER, SECTION_PADDING_Y } from "../../../../shared/constan
 const AccreditationSection = () => {
   return (
     <LazyMotion features={domAnimation} strict>
-     
       <section
         aria-label="Our Accreditations"
         className="relative w-full overflow-hidden bg-gradient-secondary"
       >
-       
 
         <div
           className={`relative z-10 ${SECTION_CONTAINER} ${SECTION_PADDING_Y} grid grid-cols-1 items-center gap-x-[clamp(2rem,5vw,5rem)] gap-y-12 lg:grid-cols-[1fr_1.15fr]`}
@@ -59,18 +57,15 @@ const AccreditationSection = () => {
             variants={cardStaggerContainer}
             initial="hidden"
             whileInView="visible"
-            // viewport={VIEWPORT_REPLAY}
-            viewport={{once: true}}
+            viewport={{ once: true }}
             className="grid grid-cols-2 gap-[clamp(0.9rem,2vw,1.5rem)]"
           >
             {accreditationsData.map((item, index) => {
-              // Har card ko deterministic-random direction milti hai
-              // (index-based pattern — no hydration mismatch, see variants.js)
               const direction = getCardDirection(index);
 
               return (
                 <m.li key={item.id} variants={getCardVariant(direction)} className="list-none ">
-                 
+
                   <m.div
                     whileHover={cardHoverLift}
                     tabIndex={0}
@@ -79,7 +74,6 @@ const AccreditationSection = () => {
                     <article
                       className="relative flex aspect-[3/2] w-full flex-col items-center justify-center rounded-[calc(1.75rem-1.5px)] p-[clamp(1rem,3vw,1.75rem)] shadow-[0_8px_30px_rgba(15,23,42,0.35)] transition-all duration-300 bg-card hover:shadow-card"
                     >
-                      {/* Image — apni animation se opacity/scale mein aati hai */}
                       <m.img
                         variants={logoImageVariant}
                         src={item.image}

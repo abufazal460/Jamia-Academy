@@ -1,5 +1,3 @@
-// src/components/home/whyChooseUs/animations.js
-
 export const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -12,7 +10,7 @@ export const containerVariants = {
 };
 
 export const headingVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
     y: 30
   },
@@ -27,7 +25,7 @@ export const headingVariants = {
 };
 
 export const paragraphVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
     y: 20
   },
@@ -43,7 +41,7 @@ export const paragraphVariants = {
 };
 
 export const cardVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
     y: 40,
     scale: 0.95
@@ -60,7 +58,7 @@ export const cardVariants = {
 };
 
 export const ctaVariants = {
-  hidden: { 
+  hidden: {
     opacity: 0,
     y: 60,
     scale: 0.95
@@ -77,20 +75,20 @@ export const ctaVariants = {
 };
 
 export const textButtonVariants = {
-  initial: { 
-    y: 20, 
-    opacity: 0 
+  initial: {
+    y: 20,
+    opacity: 0
   },
-  animate: { 
-    y: 0, 
+  animate: {
+    y: 0,
     opacity: 1,
     transition: {
       duration: 0.3,
       ease: [0.16, 1, 0.3, 1]
     }
   },
-  exit: { 
-    y: -20, 
+  exit: {
+    y: -20,
     opacity: 0,
     transition: {
       duration: 0.3,

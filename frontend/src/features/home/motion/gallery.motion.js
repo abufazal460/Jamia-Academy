@@ -1,16 +1,3 @@
-// src/components/InfiniteGallery/galleryAnimation.js
-//
-// YEH FILE saari GSAP/Lenis logic ko component se ALAG rakhti hai.
-// Isse InfiniteGallery.jsx sirf "render" karta hai, aur animation
-// ka poora control yahan centralize hota hai — testable, reusable,
-// aur agar kal ScrollSmoother ya kisi aur lib pe switch karna ho,
-// to sirf yeh file badalni padegi, component nahi.
-//
-// IMPORTANT: Hum "first 3 / middle 3 / last 3" jaisa special-case
-// animation KABHI nahi likhte. Har item pe SAME function chalta hai,
-// aur uska visual "position in view" GSAP khud scrub se decide karta
-// hai (scrollTrigger start/end + progress based transform).
-
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
@@ -24,15 +11,9 @@ export function getActiveLenis() {
   return activeLenisInstance;
 }
 
-/**
- * @returns {Lenis} lenis instance — cleanup ke liye return karo
- */
-
-
 export function initSmoothScroll() {
   return getLenisInstance();
 }
-
 
 export function destroySmoothScroll() {
 
@@ -46,9 +27,8 @@ function Desktop3DPreset(el, { scrub }) {
         start: "top bottom",
         end: "bottom top",
         scrub,
-        // markers: true, // debug ke liye on karo
       },
-      defaults: { force3D: true }, // GPU compositor layer sirf animation ke dauraan
+      defaults: { force3D: true },
     })
     .fromTo(
       el,
@@ -86,17 +66,6 @@ function MobilePreset(el, { scrub }) {
     );
 }
 
-/**
- *
- * @param {HTMLElement[]} itemEls
- * @param {HTMLElement} perspectiveEl - element jispe CSS perspective set hoga (parent wrapper)
- * @param {object} options
- * @param {number} options.perspective
- * @param {number} options.scrub
- * @param {number} options.speed - is animation instance ki apni speed (gsap.globalTimeline ko touch nahi karta)
- * @param {number} options.columns - current active column count (1 = mobile)
- * @returns {gsap.core.Timeline[]} created timelines (for cleanup — har ek ke paas apna .scrollTrigger hai)
- */
 export function createInfiniteScrollAnimation(itemEls, perspectiveEl, options = {}) {
   const { perspective = 1000, scrub = 1, speed = 1, columns = 3 } = options;
 
@@ -116,10 +85,6 @@ export function createInfiniteScrollAnimation(itemEls, perspectiveEl, options = 
   return timelines;
 }
 
-/**
- * @param {HTMLElement} containerEl
- * @returns {Promise<void>}
- */
 export function waitForImagesToLoad(containerEl) {
   if (!containerEl) return Promise.resolve();
 
@@ -137,9 +102,6 @@ export function waitForImagesToLoad(containerEl) {
   );
 }
 
-/**
- * @param {gsap.core.Timeline[]} timelines
- */
 export function killScrollTriggers(timelines) {
   if (!timelines) return;
   timelines.forEach((tl) => {
