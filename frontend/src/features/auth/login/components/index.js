@@ -1,6 +1,3 @@
-// index.js — barrel export
-// Login feature ke saare components ek jagah se import karne ke liye.
-
 export { default as LoginCard } from "./LoginCard";
 export { default as LoginForm } from "./LoginForm";
 export { default as FloatingInput } from "./FloatingInput";

@@ -10,7 +10,6 @@ import {
   reducedMotionVariants,
 } from "../../../../shared/motion/config";
 
-
 function LoginCard({ onSubmit }) {
   const prefersReducedMotion = usePrefersReducedMotion();
   const rootVariants = prefersReducedMotion ? reducedMotionVariants : cardVariants;

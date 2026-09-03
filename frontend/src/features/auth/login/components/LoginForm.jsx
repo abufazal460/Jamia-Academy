@@ -14,16 +14,6 @@ import {
 const INITIAL_VALUES = { email: "", password: "" };
 const INITIAL_TOUCHED = { email: false, password: false };
 
-/**
- * LoginForm
- * Controlled email + password fields with inline validation.
- * Note (current scope): onSubmit sirf client-side validation run karta
- * hai — koi API/auth call nahi hota (backend integration future phase hai).
- *
- * Props:
- * - onSubmit: (values: { email, password }) => void — optional callback
- *   jab form valid ho aur submit ho jaaye
- */
 function LoginForm({ onSubmit }) {
   const [values, setValues] = useState(INITIAL_VALUES);
   const [touched, setTouched] = useState(INITIAL_TOUCHED);
