@@ -32,10 +32,10 @@ function GalleryTabsBase({ activeTab, onChange }) {
             role="tab"
             aria-selected={isActive}
             onClick={() => onChange(tab.key)}
-            className={`relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 sm:text-base ${
+            className={`relative rounded-xl px-4 py-2 text-sm font-medium transition-colors duration-200 cursor-pointer sm:text-base ${
               isActive
                 ? "text-white"
-                : "text-slate-600 hover:bg-white/70 hover:text-slate-900"
+                : "text-slate-600 hover:bg-white/70 hover:text-slate-900 cursor-pointer"
             }`}
           >
             {isActive && (
