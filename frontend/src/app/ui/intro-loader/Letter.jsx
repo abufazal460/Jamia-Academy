@@ -49,13 +49,13 @@ export default function Letter({
 
   const explodeAnimate = explosionVector
     ? {
-        opacity: 0,
-        x: explosionVector.x,
-        y: explosionVector.y,
-        rotate: explosionVector.rotate,
-        scale: explosionVector.scale,
-        filter: `blur(${explosionVector.blur}px)`,
-      }
+      opacity: 0,
+      x: explosionVector.x,
+      y: explosionVector.y,
+      rotate: explosionVector.rotate,
+      scale: explosionVector.scale,
+      filter: `blur(${explosionVector.blur}px)`,
+    }
     : entranceAnimate;
 
   const target = phase === 'exploding' ? explodeAnimate : entranceAnimate;
