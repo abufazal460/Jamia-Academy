@@ -64,12 +64,6 @@ const PageTransition = forwardRef(function PageTransition(
         resolve();
       };
 
-      /*
-       * Safety net: if GSAP is ever killed externally, throttled by the
-       * browser tab, or otherwise never fires onComplete, the caller's
-       * await would hang forever (stuck curtain, scroll locked forever).
-       * Force-resolve shortly after the tween should have finished.
-       */
       const safetyTimer = setTimeout(settle, duration * 1000 + 500);
 
       tweenRef.current = gsap.to(progressRef.current, {
