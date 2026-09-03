@@ -11,11 +11,10 @@ const FormSelect = ({ field, value, error, onChange }) => {
     <div className="relative">
       <label
         htmlFor={selectId}
-        className={`pointer-events-none absolute left-4 z-10 transition-all duration-200 ${
-          isFloating
+        className={`pointer-events-none absolute left-4 z-10 transition-all duration-200 ${isFloating
             ? "top-1.5 text-[0.68rem] font-medium text-[#2A9D8F]"
             : "top-1/2 -translate-y-1/2 text-sm text-[#2B2D42]/45"
-        }`}
+          }`}
       >
         {field.label}
         {field.required && <span className="text-[#E63946]"> *</span>}
@@ -32,11 +31,10 @@ const FormSelect = ({ field, value, error, onChange }) => {
         onFocus={() => setFocused(true)}
         onBlur={() => setFocused(false)}
         onChange={(e) => onChange(field.name, e.target.value)}
-        className={`peer w-full appearance-none rounded-xl border bg-white/60 px-4 pt-5 pb-2 text-sm text-[#2B2D42] outline-none backdrop-blur-sm transition-colors ${
-          error
+        className={`peer w-full appearance-none rounded-xl border bg-white/60 px-4 pt-5 pb-2 text-sm text-[#2B2D42] outline-none backdrop-blur-sm transition-colors ${error
             ? "border-[#E63946] focus:border-[#E63946]"
             : "border-[#2B2D42]/15 focus:border-[#2A9D8F]"
-        }`}
+          }`}
       >
         <option value="" disabled hidden />
         {field.options.map((opt) => (

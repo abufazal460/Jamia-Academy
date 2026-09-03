@@ -12,13 +12,12 @@ const buildInitialState = () => {
   return state;
 };
 
-// Status machine: idle -> submitting -> success (auto resets to idle) | error (auto resets to idle)
 export const useContactForm = (onSuccess) => {
   const [values, setValues] = useState(buildInitialState);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
   const resetTimeoutRef = useRef(null);
-  const isSubmittingRef = useRef(false); // duplicate-submit guard, state se independent (no re-render lag)
+  const isSubmittingRef = useRef(false);
 
   useEffect(() => {
     return () => {
@@ -55,7 +54,7 @@ export const useContactForm = (onSuccess) => {
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
-      if (isSubmittingRef.current) return; // double-click / double-submit guard
+      if (isSubmittingRef.current) return;
       if (!validateAll()) return;
 
       isSubmittingRef.current = true;

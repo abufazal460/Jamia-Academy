@@ -21,7 +21,6 @@ const MapSection = () => {
           allowFullScreen
         />
 
-        {/* Overlay tint for premium consistency */}
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -31,7 +30,6 @@ const MapSection = () => {
           aria-hidden="true"
         />
 
-        {/* Floating glass info card */}
         <motion.div
           initial="hidden"
           whileInView="visible"
