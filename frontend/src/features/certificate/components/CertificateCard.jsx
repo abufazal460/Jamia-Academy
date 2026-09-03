@@ -10,12 +10,6 @@ import {
 import { validateCertificateField, validateCertificateForm, isCertificateFormValid, sanitizeCertificateFormData } from "../utils/validation";
 import { certCardVariants } from "../motion/certificate.motion";
 
-/**
- * CertificateCard
- * Form state, validation aur submit flow yahi centralize hai. UI ke andar
- * koi API/business logic embed nahi hai — sab utils/futureApi.js se aata
- * hai, taaki backend aane par sirf woh ek file replace karni pade.
- */
 export function CertificateCard() {
   const [formData, setFormData] = useState(INITIAL_FORM_STATE);
   const [errors, setErrors] = useState({});
@@ -97,9 +91,8 @@ export function CertificateCard() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -6 }}
                 transition={{ duration: 0.3 }}
-                className={`text-center text-sm font-medium ${
-                  status === "success" ? "text-[#2A9D8F]" : "text-[#E63946]"
-                }`}
+                className={`text-center text-sm font-medium ${status === "success" ? "text-[#2A9D8F]" : "text-[#E63946]"
+                  }`}
               >
                 {status === "success"
                   ? STATUS_MESSAGES.successBody

@@ -1,15 +1,10 @@
-// certificateData.js
-// Saara static content aur form field config yaha se aata hai — JSX ke andar
-// kabhi bhi hardcoded string nahi honi chahiye. Icons bhi yahi se reference
-// hote hain taaki FormFields sirf ek array map kare, koi business logic na ho.
 
 import {
   FiUser,
   FiUsers,
-  FiHeart,
   FiPhone,
 } from "react-icons/fi";
-import { FaGraduationCap, FaCertificate } from "react-icons/fa";
+import { FaGraduationCap } from "react-icons/fa";
 
 export const PAGE_CONTENT = {
   title: "Certificate Verification",
@@ -41,7 +36,7 @@ export const VALIDATION_MESSAGES = {
     required: "Father's name is required",
     invalid: "Enter a valid name",
   },
- 
+
   Phone: {
     required: "Phone no is required",
     invalid: "Enter a valid phone number",
@@ -53,8 +48,6 @@ export const VALIDATION_MESSAGES = {
 
 };
 
-// direction: label entry animation direction — FormFields isi key se
-// AnimatedInput ko batata hai ki label kis taraf se andar aayegi
 export const CERTIFICATE_FIELDS = [
   {
     id: "fullName",

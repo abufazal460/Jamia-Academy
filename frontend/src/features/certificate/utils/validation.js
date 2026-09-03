@@ -1,8 +1,3 @@
-// certificateValidation.js
-// Pure functions — koi side effect nahi. Har validator trimmed value leta hai
-// aur error string ya empty string return karta hai. Business logic yahi
-// centralize hai taaki components sirf UI handle karein.
-
 import { VALIDATION_MESSAGES } from "../data/certificate.data";
 
 const NAME_PATTERN = /^[A-Za-z][A-Za-z\s.'-]{1,59}$/;
