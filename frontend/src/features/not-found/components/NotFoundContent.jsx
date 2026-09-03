@@ -4,12 +4,8 @@ import { motion, useReducedMotion } from "motion/react";
 import { Home } from "lucide-react";
 
 export default function NotFoundContent() {
-  // Reduced motion respect karna zaroori hai — agar user ne OS level pe
-  // motion off kiya hai to hum floating/scale wale bade movements hata denge
   const shouldReduceMotion = useReducedMotion();
 
-  // Container ek hi jagah stagger control karta hai, taaki har child mein
-  // alag-alag delay hardcode na karna pade
   const containerVariants = {
     hidden: {},
     visible: {
@@ -54,14 +50,11 @@ export default function NotFoundContent() {
           name="description"
           content="The page you're looking for doesn't exist. Return to Jamia Academy's homepage to explore our courses, gallery and more."
         />
-        {/* 404 page ko search engines index na karein — normal content nahi hai */}
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <main className="relative isolate flex min-h-[calc(100svh-var(--nav-h,0px))] w-full items-center justify-center overflow-hidden bg-[#2B2D42] px-6 py-24 sm:px-8 md:py-32">
-        {/* ---------- Ambient decorative background ---------- */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-          {/* Bade soft glow blobs — brand colors ka hi use, blue/indigo bilkul nahi */}
           <motion.div
             className="absolute -left-[10%] -top-[15%] h-[45vmax] w-[45vmax] rounded-full bg-[#E63946]/20 blur-[100px]"
             animate={
@@ -103,7 +96,6 @@ export default function NotFoundContent() {
             }}
           />
 
-          {/* Chote geometric accents — subtle rotate, editorial feel ke liye */}
           <motion.svg
             viewBox="0 0 100 100"
             className="absolute left-[6%] top-[18%] h-16 w-16 text-[#F4A261]/40 sm:h-20 sm:w-20"
@@ -168,14 +160,12 @@ export default function NotFoundContent() {
           </motion.svg>
         </div>
 
-        {/* ---------- Glass card content ---------- */}
         <motion.section
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="relative z-10 flex w-full max-w-2xl flex-col items-center rounded-3xl border border-white/10 bg-white/[0.04] px-6 py-14 text-center shadow-2xl backdrop-blur-xl sm:px-12 sm:py-16"
         >
-          {/* Large 404 — clamp() se fluid rehta hai 320px se 4K tak */}
           <motion.h1
             variants={numberVariants}
             className="font-heading select-none bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] bg-clip-text leading-none text-transparent"
@@ -186,9 +176,6 @@ export default function NotFoundContent() {
           >
             404
           </motion.h1>
-
-          {/* Actual accessible heading — semantics ke liye visually-hidden nahi,
-              screen readers ko ye hi context milta hai ki page not found hai */}
           <motion.p
             variants={itemVariants}
             className="font-heading mt-2 text-2xl font-semibold tracking-tight text-[#F7F3E9] sm:text-3xl md:text-4xl"
