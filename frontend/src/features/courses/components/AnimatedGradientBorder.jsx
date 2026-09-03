@@ -53,7 +53,7 @@ export default function AnimatedGradientBorder({
       className={twMerge("relative", className)}
       style={{ borderRadius }}
     >
-    
+
       <motion.div
         aria-hidden="true"
         className="pointer-events-none absolute -inset-[35%] -z-10 blur-2xl hidden sm:block"
@@ -79,7 +79,7 @@ export default function AnimatedGradientBorder({
             willChange: "transform",
           }}
         />
-        
+
         <div
           className="relative h-full w-full bg-neutral-950"
           style={{ borderRadius: `calc(${borderRadius} - 1.5px)` }}

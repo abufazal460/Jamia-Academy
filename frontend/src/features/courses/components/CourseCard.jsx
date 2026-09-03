@@ -50,7 +50,6 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
   const shouldReduceMotion = useReducedMotion();
   const LevelIcon = LEVEL_ICON_MAP[course.level.icon] ?? Sprout;
 
-  // const batchClasses = BADGE_COLOR_MAP[course.batch.color] ?? BADGE_COLOR_MAP.green;
   const levelClasses = BADGE_COLOR_MAP[course.level.color] ?? BADGE_COLOR_MAP.green;
 
   return (
@@ -60,7 +59,7 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-  
+
       whileHover={shouldReduceMotion ? undefined : { y: -8, scale: 1.02 }}
     >
       <AnimatedGradientBorder
@@ -70,7 +69,7 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
         className="h-full"
       >
         <div className="relative flex h-full flex-col overflow-hidden rounded-[1.1rem] bg-gradient-to-b from-neutral-900/90 to-neutral-950/95 p-3 backdrop-blur-xl sm:p-4">
-         
+
           <div className="relative aspect-[800/430] w-full overflow-hidden rounded-xl bg-neutral-900">
             <motion.img
               src={course.image?.thumbnail}
@@ -89,17 +88,14 @@ function CourseCard({ course, onViewDetails, onEnroll }) {
           <div className="mt-3 flex justify-end">
           </div>
 
-          {/* Course Title */}
           <h3 className="mt-2 font-orbitron text-lg font-semibold tracking-tight text-white sm:text-xl">
             {course.title}
           </h3>
 
-          {/* Description — 2 lines se zyada clamp, card height consistent rakhne ke liye */}
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-neutral-400">
             {course.description}
           </p>
 
-          {/* Duration + Level Badges */}
           <div className="mt-4 flex flex-wrap items-center gap-2">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-xs text-neutral-300">
               <Clock size={13} aria-hidden="true" />

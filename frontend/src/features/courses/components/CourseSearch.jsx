@@ -40,7 +40,7 @@ export default function CourseSearch({ courses = [], onResultsChange, className 
           isExpanded ? "shadow-[0_0_25px_rgba(168,85,247,0.35)]" : "shadow-none"
         )}
       >
- 
+
         <motion.span
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 rounded-full  bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20"
