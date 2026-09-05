@@ -15,7 +15,7 @@ import { gsapEase } from "../../../shared/motion/config";
 
 const heroStats = [
   { id: "hero-stat-students", value: "2000+", label: "Students Enrolled" },
-  { id: "hero-stat-programs", value: "35+", label: "Programs Offered" },
+  { id: "hero-stat-programs", value: "50+", label: "Programs Offered" },
   { id: "hero-stat-years", value: "4+", label: "Years Excellence" },
 ];
 
