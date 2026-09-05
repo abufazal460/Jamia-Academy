@@ -84,10 +84,10 @@ const ContactHero = () => {
         initial="hidden"
         animate="visible"
         variants={slideInRight}
-        className="relative flex h-[22rem] items-center justify-center sm:h-[28rem] lg:h-[32rem]"
+        className="relative flex h-[22rem] items-center justify-center sm:h-[32rem] lg:h-[32rem]"
         aria-hidden="true"
       >
-        <div className="relative h-56 w-56 overflow-hidden rounded-[2rem] border-3 border-sky-500/35 shadow-2xl backdrop-blur-xl sm:h-72 sm:w-72 lg:h-80 lg:w-80">
+        <div className="relative h-60 w-80 overflow-hidden rounded-[2rem] shadow-2xl backdrop-blur-xl sm:h-80 sm:w-3/4 lg:h-85 lg:w-85">
           <img
             src={HeroImg}
             alt=""

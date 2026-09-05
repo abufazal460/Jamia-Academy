@@ -181,7 +181,7 @@ export const values = [
 export const stats = [
   { id: "stat-years", label: "Years of Excellence", value: 4, suffix: "+", icon: "Sparkles" },
   { id: "stat-students", label: "Students Enrolled", value: 2000, suffix: "+", icon: "Users" },
-  { id: "stat-faculty", label: "Programs Offered", value: 35, suffix: "+", icon: "BookOpen" },
+  { id: "stat-faculty", label: "Programs Offered", value: 50, suffix: "+", icon: "BookOpen" },
   { id: "stat-placements", label: "Placements assistance", value: 1000, suffix: "+", icon: "Briefcase" },
 ];
 
