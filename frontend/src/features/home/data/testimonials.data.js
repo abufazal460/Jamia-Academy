@@ -10,7 +10,7 @@ import id8 from "../../../assets/images/home/student/noorhan.png";
 import id9 from "../../../assets/images/home/student/Musab ACC.png";
 import id10 from "../../../assets/images/home/student/Reshma Parveen.png";
 import id11 from "../../../assets/images/home/student/samra.jpeg";
-import id12 from "../../../assets/images/home/student/shifa.png";
+import id12 from "../../../assets/images/home/student/sumbul.jpeg";
 import id13 from "../../../assets/images/home/student/fazal.png";
 import id14 from "../../../assets/images/home/student/Kaif ADFA.png";
 import id15 from "../../../assets/images/home/student/Parvez Alam ACC.png";
@@ -50,7 +50,7 @@ export const testimonialsRowOne = [
     course: "Interior Design",
     rating: 4.9,
     review:
-      "I learned how to plan spaces and choose colours properly. The teacher has real work experience and shares many useful tips. The classroom setup is nice and gives you space to be creative",
+      "I learned how to plan spaces, choose colours, and create beautiful interiors. The teacher’s real-world experience and practical tips made the Interior Design course easy and enjoyable.",
     image: id4,
   },
   {
@@ -121,11 +121,11 @@ export const testimonialsRowTwo = [
   },
   {
     id: 12,
-    name: "Shifa Rasool",
-    course: "Tally Prime",
+    name: "Sumbul Khan ",
+    course: "Interior Design",
     rating: 4.9,
     review:
-      "Learning Tally here was simple and practical. Teachers showed real business examples, not just software. Now I can handle basic accounts confidently.",
+      "I learned how to plan spaces and choose colours properly. The teacher has real work experience and shares many useful tips. The classroom setup is nice and gives you space to be creative.",
     image: id12,
   },
   {
