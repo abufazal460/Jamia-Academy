@@ -144,7 +144,7 @@ const WhyChooseCTA = memo(({ data }) => {
               }}
               className="px-8 py-4 rounded-2xl font-semibold text-white backdrop-blur-sm border border-white/30 bg-white/10 hover:bg-white/20 transition-all duration-300"
             >
-              Learn More
+              Contact Us
             </motion.button>
           </TransitionLink>
         </motion.div>
