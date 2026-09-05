@@ -1,47 +1,17 @@
-
 import {
-  FaGraduationCap,
-  FaAward,
-  FaBookOpen,
-  FaLaptop,
-  FaPhone,
-  FaWhatsapp,
-  FaInstagram,
-  FaFacebookF,
-  FaYoutube,
-  FaLinkedinIn,
-  FaXTwitter,
-  FaUsers,
-  FaCompass,
-  FaClock,
-  FaCopy,
-  FaCheck,
-  FaLocationArrow,
-  FaPaperPlane,
-} from "react-icons/fa6";
+  GraduationCap, Award, BookOpen, Laptop, Phone, MapPin,
+  MessageCircle, Users, Compass, Clock, Copy, Check,
+  Navigation, Send,
+} from "lucide-react";
 
-import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaInstagram, FaFacebookF, FaYoutube, FaLinkedinIn, FaXTwitter } from "react-icons/fa6";
 
 const ICONS = {
-  GraduationCap: FaGraduationCap,
-  Award: FaAward,
-  BookOpen: FaBookOpen,
-  Laptop: FaLaptop,
-  Phone: FaPhone,
-  MapPin: FaMapMarkerAlt,
-  MessageCircle: FaWhatsapp,
-  Instagram: FaInstagram,
-  Facebook: FaFacebookF,
-  Youtube: FaYoutube,
-  Linkedin: FaLinkedinIn,
-  Twitter: FaXTwitter,
-  Users: FaUsers,
-  Compass: FaCompass,
-  Clock: FaClock,
-  Copy: FaCopy,
-  Check: FaCheck,
-  Navigation: FaLocationArrow,
-  Send: FaPaperPlane,
+  GraduationCap, Award, BookOpen, Laptop, Phone, MapPin,
+  MessageCircle, Users, Compass, Clock, Copy, Check,
+  Navigation, Send,
+  Instagram: FaInstagram, Facebook: FaFacebookF, Youtube: FaYoutube,
+  Linkedin: FaLinkedinIn, Twitter: FaXTwitter,
 };
 
 export const resolveIcon = (name) => ICONS[name] || null;
