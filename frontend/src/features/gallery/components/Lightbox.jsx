@@ -30,15 +30,9 @@ export function Lightbox({ images, currentIndex, onClose, onNavigate, categoryLa
     }
 
     window.addEventListener("keydown", handleKeyDown);
-    const lenis = getLenisInstance();
-    lenis?.stop();
-    const previousOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = previousOverflow;
-      lenis?.start();
     };
   }, [onClose, goPrev, goNext]);
 
