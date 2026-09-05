@@ -1,5 +1,5 @@
-import React, { useState, memo } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import React, { useState, memo, useRef } from "react";
+import { motion, AnimatePresence, useInView  } from "motion/react";
 import { ctaVariants, textButtonVariants } from "../../motion/why-choose-us.motion";
 import TransitionLink from "../../../../app/providers/page-transition/TransitionLink";
 
@@ -7,6 +7,8 @@ const WhyChooseCTA = memo(({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [buttonKey, setButtonKey] = useState(0);
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { amount: 0.2 });
 
   const handleClick = () => {
     setIsClicked(true);
@@ -36,6 +38,7 @@ const WhyChooseCTA = memo(({ data }) => {
 
   return (
     <motion.div
+      ref={cardRef}
       variants={ctaVariants}
       initial="hidden"
       whileInView="visible"
@@ -46,15 +49,19 @@ const WhyChooseCTA = memo(({ data }) => {
           "linear-gradient(135deg, #1A1A2E 0%, #264653 25%, #2A9D8F 50%, #F4A261 75%, #E63946 100%)",
         backgroundSize: "400% 400%",
       }}
-      animate={{
-        backgroundPosition: ["0% 0%", "100% 100%"],
-        transition: {
-          duration: 10,
-          repeat: Infinity,
-          repeatType: "reverse",
-          ease: "linear",
-        },
-      }}
+      animate={
+        isInView
+          ? {
+            backgroundPosition: ["0% 0%", "100% 100%"],
+            transition: {
+              duration: 10,
+              repeat: Infinity,
+              repeatType: "reverse",
+              ease: "linear",
+            },
+          }
+          : undefined
+      }
     >
       <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px]" />
 
