@@ -87,6 +87,7 @@ const footerContainerVariant = {
 
 const sectionVariant = {
   hidden: { opacity: 0, y: 28 },
+
   visible: {
     opacity: 1,
     y: 0,
@@ -176,7 +177,7 @@ const Footer = () => {
       aria-label="Site footer"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
-        <motion.div variants={sectionVariant} className="flex flex-col gap-5">
+        <motion.div variants={sectionVariant} viewport={{ once: true}} className="flex flex-col gap-5">
           <div className="bg-white rounded-xl w-fit">
             <img
               src={logo}
@@ -192,6 +193,7 @@ const Footer = () => {
 
           <motion.div
             variants={iconRowVariant}
+            viewport={{ once: true }}
             className="flex items-center gap-4 mt-1"
           >
             {SOCIAL_LINKS.map(({ id, icon: Icon, url, label }) => (
@@ -223,7 +225,7 @@ const Footer = () => {
             variants={listVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.3 }}
+            viewport={{ once: true }}
             className="flex flex-col gap-3"
           >
             {QUICK_LINKS.map((link) => (
@@ -244,7 +246,7 @@ const Footer = () => {
         </motion.div>
 
         {/* ---------- SECTION 4: Contact Info ---------- */}
-        <motion.div variants={sectionVariant}>
+        <motion.div variants={sectionVariant} viewport={{ once: true }}>
           <h3 className="font-semibold text-lg mb-5 text-footer-text hover:text-footer-link-hover">
             Contact Info
           </h3>
@@ -253,7 +255,7 @@ const Footer = () => {
             variants={listVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.3 }}
+            viewport={{ once: true }}
             className="flex flex-col gap-4 text-sm sm:text-[15px] text-slate-400"
           >
             <motion.li variants={listItemVariant} className="flex gap-3">
@@ -270,7 +272,7 @@ const Footer = () => {
               </a>
             </motion.li>
 
-            <motion.li variants={listItemVariant} className="flex gap-3">
+            <motion.li variants={listItemVariant} viewport={{ once: true }} className="flex gap-3">
               <FiPhone className="text-green-600 mt-0.5 shrink-0" size={18} />
               <div className="flex flex-col gap-1">
                 {PHONE_NUMBERS.map((num) => (
@@ -285,7 +287,7 @@ const Footer = () => {
               </div>
             </motion.li>
 
-            <motion.li variants={listItemVariant} className="flex gap-3">
+            <motion.li variants={listItemVariant} viewport={{ once: true }} className="flex gap-3">
               <FiMail className="text-green-600 mt-0.5 shrink-0" size={18} />
               <div className="flex flex-col gap-1 break-all">
                 {EMAIL_ADDRESSES.map((mail) => (
@@ -320,7 +322,7 @@ const Footer = () => {
             variants={govLogoRowVariant}
             initial="hidden"
             whileInView="visible"
-            viewport={{ amount: 0.3 }}
+            viewport={{ once: true }}
             className="flex flex-wrap items-start justify-center lg:justify-end gap-6 sm:gap-8"
           >
             {GOVERNMENT_LOGOS.map((gov) => (
