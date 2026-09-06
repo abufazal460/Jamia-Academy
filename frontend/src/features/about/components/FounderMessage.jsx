@@ -264,7 +264,7 @@ const FounderMessage = ({ data }) => {
                   messageLines.map((paragraph, index) => (
                     <p
                       key={`message-paragraph-${index}`}
-                      className="text-base sm:text-md text-[#2B2D42]/85 text-justify"
+                      className="text-base sm:text-md text-[#2B2D42]/85  lg:text-justify"
                     >
                       {paragraph}
                     </p>
