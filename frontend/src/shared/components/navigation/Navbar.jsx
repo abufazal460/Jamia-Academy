@@ -15,8 +15,7 @@ import LoginButton from "../navigation/LoginButton";
 
 import humburger from "../../../assets/icons/hamburger.webp";
 import cross from "../../../assets/icons/cross.svg";
-import logo from "../../../assets/icons/logo.png";
-import logo2 from "../../../assets/icons/jmi logo .png";
+import logo from "../../../assets/icons/logo.webp";
 
 import NavItem from "./NavItem";
 import MobileMenu from "./MobileMenu";
@@ -266,7 +265,7 @@ function Navbar() {
             className="flex shrink-0 items-center gap-2 outline-none"
           >
             <img
-              src={logo2}
+              src={logo}
               alt="Jamia Academy Logo"
               width="50"
               height="50"
