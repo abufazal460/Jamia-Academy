@@ -6,7 +6,7 @@ import { floatingCard, noMotion } from "../../../shared/motion/floating.motion";
 import { usePrefersReducedMotion } from "../../../shared/hooks/usePrefersReducedMotion";
 import { resolveIcon } from "../../../shared/utils/icons";
 import TransitionLink from "../../../app/providers/page-transition/TransitionLink";
-import HeroImg from "../../../assets/images/common/contact.png"
+import HeroImg from "../../../assets/images/common/contact.webp"
 
 const ACCENT_MAP = {
   primary: "#E63946",
