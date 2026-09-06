@@ -4,15 +4,15 @@ import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import { usePageTransition } from "../../../app/providers/page-transition";
 
-import logo from "../../../assets/icons/logo.png";
-import msme from "../../../assets/icons/msme.png";
-import neilit from "../../../assets/icons/nielit.jpeg";
-import nitiAyog from "../../../assets/icons/niti-aayog.jpeg";
-import skillIndia from "../../../assets/icons/skill-india.png";
-import ip from "../../../assets/icons/ip.png";
-import iso from "../../../assets/icons/iso.jpeg";
-import iaf from "../../../assets/icons/iaf.png";
-import mole from "../../../assets/icons/mole.png";
+import logo from "../../../assets/icons/logo.webp";
+import msme from "../../../assets/icons/msme.webp";
+import neilit from "../../../assets/icons/nielit.webp";
+import nitiAyog from "../../../assets/icons/niti-aayog.webp";
+import skillIndia from "../../../assets/icons/skill-india.webp";
+import ip from "../../../assets/icons/ip.webp";
+import iso from "../../../assets/icons/iso.webp";
+import iaf from "../../../assets/icons/iaf.webp";
+import mole from "../../../assets/icons/mole.webp";
 
 const SOCIAL_LINKS = [
   {
@@ -58,6 +58,7 @@ const GOVERNMENT_LOGOS = [
   { id: "mole", name: "MoLE", img: mole, url: "https://labour.gov.in" },
   { id: "iso", name: "ISO", img: iso, url: "https://www.iso.org/home.html" },
   { id: "iaf", name: "IAF", img: iaf, url: "https://iaf.nu/en/home/" },
+  { id: "ip", name: "IP", img: ip, url: "https://ipindia.gov.in/" },
   {
     id: "skillindia",
     name: "Skill India",
