@@ -9,7 +9,10 @@ import msme from "../../../assets/icons/msme.webp";
 import neilit from "../../../assets/icons/nielit.webp";
 import nitiAyog from "../../../assets/icons/niti-aayog.webp";
 import skillIndia from "../../../assets/icons/skill-india.webp";
-import ip from "../../../assets/icons/ip.webp";
+// import ip from "../../../assets/icons/ip.webp";
+import ip from "../../../assets/icons/ip india.png";
+import unite from "../../../assets/icons/unitefornation.png";
+import nct from "../../../assets/icons/NCT DELHI.png";
 import iso from "../../../assets/icons/iso.webp";
 import iaf from "../../../assets/icons/iaf.webp";
 import mole from "../../../assets/icons/mole.webp";
@@ -58,7 +61,9 @@ const GOVERNMENT_LOGOS = [
   { id: "mole", name: "MoLE", img: mole, url: "https://labour.gov.in" },
   { id: "iso", name: "ISO", img: iso, url: "https://www.iso.org/home.html" },
   { id: "iaf", name: "IAF", img: iaf, url: "https://iaf.nu/en/home/" },
-  { id: "ip", name: "IP", img: ip, url: "https://ipindia.gov.in/" },
+  { id: "ip", name: "IP India", img: ip, url: "https://ipindia.gov.in/" },
+  { id: "unite", name: "Unite For Nation", img: unite, url: "https://unitefornation.com/" },
+  { id: "nct", name: "Govt. NCT of Delhi", img: nct, url: "https://labourcis.nic.in/" },
   {
     id: "skillindia",
     name: "Skill India",
