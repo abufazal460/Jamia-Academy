@@ -1,20 +1,20 @@
-import id1 from "../../../assets/images/home/student/Taiba_Khanam_ACC.png";
-import id2 from "../../../assets/images/home/student/Aasif Python.png";
-import id3 from "../../../assets/images/home/student/Hamza nafees BCC.jpeg";
-import id4 from "../../../assets/images/home/student/Saif Hussain Interior Design.png";
-import id5 from "../../../assets/images/home/student/Mohd Zaid Tally Prime.jpeg";
-import id6 from "../../../assets/images/home/student/Alfisha Digital Marketing.png";
-import id7 from "../../../assets/images/home/student/MD Muztar AUTOCAD.jpeg";
-import id8 from "../../../assets/images/home/student/noorhan.png";
+import id1 from "../../../assets/images/home/student/Taiba_Khanam_ACC.webp";
+import id2 from "../../../assets/images/home/student/Aasif Python.webp";
+import id3 from "../../../assets/images/home/student/Hamza nafees BCC.webp";
+import id4 from "../../../assets/images/home/student/Saif Hussain Interior Design.webp";
+import id5 from "../../../assets/images/home/student/Mohd Zaid Tally Prime.webp";
+import id6 from "../../../assets/images/home/student/Alfisha Digital Marketing.webp";
+import id7 from "../../../assets/images/home/student/MD Muztar AUTOCAD.webp";
+import id8 from "../../../assets/images/home/student/noorhan.webp";
 
-import id9 from "../../../assets/images/home/student/Musab ACC.png";
-import id10 from "../../../assets/images/home/student/Reshma Parveen.png";
-import id11 from "../../../assets/images/home/student/samra.jpeg";
-import id12 from "../../../assets/images/home/student/sumbul.jpeg";
-import id13 from "../../../assets/images/home/student/fazal.png";
-import id14 from "../../../assets/images/home/student/Kaif ADFA.png";
-import id15 from "../../../assets/images/home/student/Parvez Alam ACC.png";
-import id16 from "../../../assets/images/home/student/MD_Anas_Interior_Design.png";
+import id9 from "../../../assets/images/home/student/Musab ACC.webp";
+import id10 from "../../../assets/images/home/student/Reshma Parveen.webp";
+import id11 from "../../../assets/images/home/student/samra.webp";
+import id12 from "../../../assets/images/home/student/sumbul.webp";
+import id13 from "../../../assets/images/home/student/fazal.webp";
+import id14 from "../../../assets/images/home/student/Kaif ADFA.webp";
+import id15 from "../../../assets/images/home/student/Parvez Alam ACC.webp";
+import id16 from "../../../assets/images/home/student/MD_Anas_Interior_Design.webp";
 
 export const testimonialsRowOne = [
   {
