@@ -57,12 +57,12 @@ const PHONE_NUMBERS = ["+91 9621555551", "+91 1147586007"];
 const EMAIL_ADDRESSES = ["jamiaacademycs@gmail.com", "info@jamiaacademy.in"];
 
 const GOVERNMENT_LOGOS = [
+  { id: "unite", name: "Unite For Nation", img: unite, url: "https://unitefornation.com/" },
   { id: "msme", name: "MSME", img: msme, url: "https://msme.gov.in" },
   { id: "mole", name: "MoLE", img: mole, url: "https://labour.gov.in" },
   { id: "iso", name: "ISO", img: iso, url: "https://www.iso.org/home.html" },
   { id: "iaf", name: "IAF", img: iaf, url: "https://iaf.nu/en/home/" },
   { id: "ip", name: "IP India", img: ip, url: "https://ipindia.gov.in/" },
-  { id: "unite", name: "Unite For Nation", img: unite, url: "https://unitefornation.com/" },
   { id: "nct", name: "Govt. NCT of Delhi", img: nct, url: "https://labourcis.nic.in/" },
   {
     id: "skillindia",

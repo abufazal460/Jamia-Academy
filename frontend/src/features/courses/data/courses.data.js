@@ -7369,17 +7369,34 @@ export const coursesData = [
     ],
     "details": {
       "modules": [
-        {
-          "title": "What You Will Learn",
-          "topics": [
-            "Fundamentals",
-            "Core Concepts",
-            "Hands-on Practice",
-            "Tools Overview",
-            "Real-world Exercises"
-          ]
-        }
-      ],
+  {
+    "title": "What You Will Learn",
+    "topics": [
+      "Introduction to Reel Making",
+      "Storytelling & Content Ideas",
+      "Camera Shots & Angles",
+      "Framing & Composition",
+      "Lighting Techniques",
+      "Sound Recording Basics",
+      "Direction & Performance Tips",
+      "Video Shooting (Mobile/DSLR)",
+      "Video Editing Basics",
+      "Trending Reels & Social Media Strategy",
+      "Real-World Projects & Practice"
+    ]
+  },
+  {
+    "title": "Practical Training",
+    "topics": [
+      "Hands-On Shooting Practice",
+      "Create Your Own Reels",
+      "Audio & Voice Recording",
+      "Shot Division Exercises",
+      "Basic Editing (Mobile & PC)",
+      "Real-World Projects"
+    ]
+  }
+],
       "careerOptions": [
         "Content Creator",
         "Social Media Executive",
