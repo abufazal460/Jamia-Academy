@@ -10,7 +10,7 @@ import video from "../../../assets/images/common/aboutDescription.mp4"
 // ---------------------------------------------------------------------------
 export const hero = {
   eyebrow: "Since 2022",
-  title: "Preparing Gen Alpha With AI-Powered Skills for the Future of the Digital Era",
+  title: "Preparing New Generation With AI-Powered Skills for the Future of the Digital Era",
   subtitle: "Welcome to Jamia Academy",
   description:
     "For over two decades, Jamia Academy has been committed to academic excellence, character building, and holistic student development.",

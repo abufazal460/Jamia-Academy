@@ -178,7 +178,7 @@ const HeroAbout = () => {
           CONTENT LAYER
       ================================================================= */}
       <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16 py-24 sm:py-28">
-        <div className="flex flex-col items-start gap-6 sm:gap-8 max-w-3xl">
+        <div className="flex flex-col items-start gap-6 sm:gap-8 max-w-4xl">
           {hero.eyebrow && (
             <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs sm:text-sm font-semibold tracking-wide text-[#EDF2F4] backdrop-blur-md">
               {hero.eyebrow}
