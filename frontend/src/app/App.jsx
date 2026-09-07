@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "../shared/components/navigation/Navbar";
 import Footer from "../shared/components/footer/Footer";
-import { IntroLoader, useAppReady } from "./ui/intro-loader";
+// import { IntroLoader, useAppReady } from "./ui/intro-loader";
 import {
   PageTransitionProvider,
   RouteTransitionWatcher,
@@ -23,13 +23,13 @@ const CertificatePage = lazy(() => import("../pages/CertificatePage"));
 const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 export default function App() {
-  const appReady = useAppReady();
+  // const appReady = useAppReady();
   const location = useLocation();
 
   return (
     <>
       <OrganizationSchema />
-      <IntroLoader appReady={appReady}>
+      {/* <IntroLoader appReady={appReady}> */}
         <PageTransitionProvider>
           <SmoothScroll>
             <Suspense fallback={null}>
@@ -53,7 +53,7 @@ export default function App() {
             </Suspense>
           </SmoothScroll>
         </PageTransitionProvider>
-      </IntroLoader>
+      {/* </IntroLoader> */}
     </>
   );
 }
