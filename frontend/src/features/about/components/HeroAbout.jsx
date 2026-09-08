@@ -13,6 +13,8 @@ import { cn } from "../../../shared/utils/helpers";
 import { hero } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
 
+import bg from "../../../assets/images/common/ai.webp"
+
 const heroStats = [
   { id: "hero-stat-students", value: "2000+", label: "Students Enrolled" },
   { id: "hero-stat-programs", value: "50+", label: "Programs Offered" },
@@ -137,8 +139,7 @@ const HeroAbout = () => {
       )}
     >
 
-      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
-        {/* Soft glow blob 1 */}
+      <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
         <motion.div
           className="absolute -top-32 -left-24 h-[420px] w-[420px] rounded-full  will-change-transform"
           animate={
