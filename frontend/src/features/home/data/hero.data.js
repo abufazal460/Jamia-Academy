@@ -1,7 +1,7 @@
-import img1 from "../../../assets/images/home/hero/1.png"
-import img2 from "../../../assets/images/home/hero/2.png"
-import img3 from "../../../assets/images/home/hero/3.png"
-import img4 from "../../../assets/images/home/hero/4.jpeg"
+import img1 from "../../../assets/images/home/hero/1.webp"
+import img2 from "../../../assets/images/home/hero/2.webp"
+import img3 from "../../../assets/images/home/hero/3.webp"
+import img4 from "../../../assets/images/home/hero/4.webp"
 
 
 export const heroSlides = [
