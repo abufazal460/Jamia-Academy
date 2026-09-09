@@ -1,5 +1,8 @@
-import img1 from "../../../assets/images/home/hero/boys.png"
-import img2 from "../../../assets/images/home/hero/girls.png"
+import img1 from "../../../assets/images/home/hero/1.png"
+import img2 from "../../../assets/images/home/hero/2.png"
+import img3 from "../../../assets/images/home/hero/3.png"
+import img4 from "../../../assets/images/home/hero/4.jpeg"
+
 
 export const heroSlides = [
   {
@@ -22,6 +25,32 @@ export const heroSlides = [
   {
     id: "hero-slide-2",
     image: img2,
+    alt: "Jamia Academy graduates celebrating on convocation day",
+    eyebrow: "Trusted Since Day One",
+    title: "Certified Learning That Actually Gets You Hired",
+    description:
+      "Join thousands of students who turned classroom skills into real jobs with our industry-recognized certification.",
+    primaryAction: {
+      label: "View Certifications",
+      href: "/certificate",
+    },
+  },
+  {
+    id: "hero-slide-3",
+    image: img3,
+    alt: "Jamia Academy graduates celebrating on convocation day",
+    eyebrow: "Trusted Since Day One",
+    title: "Certified Learning That Actually Gets You Hired",
+    description:
+      "Join thousands of students who turned classroom skills into real jobs with our industry-recognized certification.",
+    primaryAction: {
+      label: "View Certifications",
+      href: "/certificate",
+    },
+  },
+  {
+    id: "hero-slide-4",
+    image: img4,
     alt: "Jamia Academy graduates celebrating on convocation day",
     eyebrow: "Trusted Since Day One",
     title: "Certified Learning That Actually Gets You Hired",
