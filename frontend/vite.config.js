@@ -25,7 +25,7 @@ export default defineConfig({
       ],
       manifest: {
         id: "/",
-        name: "Jamia Academy - Computer, Web Development & AI Courses",
+        name: "Jamia Academy",
         short_name: "Jamia Academy",
         description:
           "Offline, instructor-led computer courses in Jamia Nagar, Delhi — Web Development, Data Analytics, Graphic Design, AI/ML, Tally, AutoCAD and more.",

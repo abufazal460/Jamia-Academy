@@ -56,7 +56,7 @@ export const coursesData = [
     "slug": "advanced-computer-concepts",
     "title": "Advanced Computer Concepts",
     "shortTitle": "Advanced Computer Co…",
-    "description": "Learn Advanced Computer Concepts with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "This course is specially designed for beginners who want to go beyond basic computer knowledge and learn advanced office skills, AI-powered productivity tools and practical digital skills for today's workplace.",
     "image": {
       "thumbnail": img001,
       "hero": img001
@@ -71,10 +71,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "advanced",
@@ -206,7 +206,7 @@ export const coursesData = [
     "slug": "basic-computer-concepts",
     "title": "Basic Computer Concepts",
     "shortTitle": "Basic Computer Conce…",
-    "description": "Learn Basic Computer Concepts with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Whether you are a student, job seeker or a complete beginner, this course will help you build a strong foundation in computer skills and confidently use computers for study, work and everyday tasks.",
     "image": {
       "thumbnail": img002,
       "hero": img002
@@ -338,7 +338,7 @@ export const coursesData = [
     "slug": "ms-office",
     "title": "MS Office",
     "shortTitle": "MS Office",
-    "description": "Learn MS Office with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "MS Office is an essential skill for students, job seekers and working professionals. Learn the most widely used office applications with practical, job-oriented training and become confident in handling day-to-day professional tasks.",
     "image": {
       "thumbnail": img003,
       "hero": img003
@@ -463,7 +463,7 @@ export const coursesData = [
     "slug": "ms-office-with-ai-automation",
     "title": "MS Office with AI Automation",
     "shortTitle": "MS Office with AI Au…",
-    "description": "Learn MS Office with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "In today's digital workplace, knowing MS Office is not enough. Learn Advanced MS Office with AI Tools & Automation and develop practical skills that can boost your productivity, career and job opportunities.",
     "image": {
       "thumbnail": img004,
       "hero": img004
@@ -589,7 +589,7 @@ export const coursesData = [
     "slug": "advance-excel-with-ai",
     "title": "Advance Excel with AI",
     "shortTitle": "Advance Excel with AI",
-    "description": "Learn Advance Excel with AI with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Excel is one of the most powerful tools for data analysis, reporting and business productivity. Learn Advanced Excel with AI-powered tools and smart automation to work faster, smarter and more efficiently.",
     "image": {
       "thumbnail": img005,
       "hero": img005
@@ -714,7 +714,7 @@ export const coursesData = [
     "slug": "tally-prime-with-gst-tds-and-e-way-bill",
     "title": "Tally Prime with GST, TDS & E-WAY Bill",
     "shortTitle": "Tally Prime with GST…",
-    "description": "Learn Tally Prime with GST, TDS & E-WAY Bill with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn practical accounting and taxation skills with Tally Prime. This course is designed to help students and job seekers understand accounting concepts, manage business transactions, create GST entries and work confidently with Tally Prime.",
     "image": {
       "thumbnail": img006,
       "hero": img006
@@ -902,7 +902,7 @@ export const coursesData = [
     "slug": "tally-prime-with-ai-automation",
     "title": "Tally Prime with AI Automation",
     "shortTitle": "Tally Prime with AI…",
-    "description": "Learn Tally Prime with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Take your accounting skills to the next level with Advanced Tally Prime, GST, Payroll, Inventory, MIS Reporting and AI-powered automation. This course focuses on practical accounting, taxation and real-world business practices to prepare you for professional accounting roles.",
     "image": {
       "thumbnail": img007,
       "hero": img007
@@ -917,10 +917,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "tally",
@@ -1084,7 +1084,7 @@ export const coursesData = [
     "slug": "diploma-in-financial-accounting-dfa",
     "title": "Diploma in Financial Accounting (DFA)",
     "shortTitle": "Diploma in Financial…",
-    "description": "Learn Diploma in Financial Accounting (DFA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "The Diploma in Financial Accounting (DFA) is a comprehensive career-oriented course designed to develop strong skills in accounting, taxation, office applications and essential computer tools. Learn practical accounting and professional computer skills required for today's workplace.",
     "image": {
       "thumbnail": img008,
       "hero": img008
@@ -1098,10 +1098,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "diploma",
@@ -1232,7 +1232,7 @@ export const coursesData = [
     "slug": "advanced-diploma-in-financial-accounting-adfa",
     "title": "Advanced Diploma in Financial Accounting (ADFA)",
     "shortTitle": "Advanced Diploma in…",
-    "description": "Learn Advanced Diploma in Financial Accounting (ADFA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "The Advanced Diploma in Financial Accounting with AI Automation (ADFA) is a comprehensive career-oriented program designed to build strong skills in accounting, taxation, advanced Excel, office applications and AI-powered productivity tools.",
     "image": {
       "thumbnail": img009,
       "hero": img009
@@ -1247,10 +1247,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "advanced",
@@ -1370,7 +1370,7 @@ export const coursesData = [
     "slug": "diploma-in-computer-applications",
     "title": "Diploma in Computer Applications",
     "shortTitle": "Diploma in Computer…",
-    "description": "Learn Diploma in Computer Applications with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "The Diploma in Computer Applications (DCA) is a comprehensive course designed to develop practical computer skills for office work, education, business and career opportunities. Learn essential software applications along with accounting, graphic design, web basics and computer system management.",
     "image": {
       "thumbnail": img010,
       "hero": img010
@@ -1385,10 +1385,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "diploma",
@@ -1525,7 +1525,7 @@ export const coursesData = [
     "slug": "diploma-in-data-analytics",
     "title": "Diploma in Data Analytics",
     "shortTitle": "Diploma in Data Anal…",
-    "description": "Learn Diploma in Data Analytics with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn how to collect, process, analyze and visualize data using powerful industry-relevant tools and technologies. Develop practical skills to turn complex data into meaningful insights, business decisions and actionable reports.",
     "image": {
       "thumbnail": img011,
       "hero": img011
@@ -1539,10 +1539,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "diploma",
@@ -1688,7 +1688,7 @@ export const coursesData = [
     "slug": "diploma-in-data-science",
     "title": "Diploma in Data Science",
     "shortTitle": "Diploma in Data Scie…",
-    "description": "Learn Diploma in Data Science with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Master Data Science, Python, R, Statistics and Machine Learning through hands-on, project-based training. Learn to transform raw data into meaningful insights, predictive models and real-world solutions using industry-relevant tools and techniques.",
     "image": {
       "thumbnail": img012,
       "hero": img012
@@ -1847,7 +1847,7 @@ export const coursesData = [
     "slug": "full-stack-web-development",
     "title": "Full Stack Web Development",
     "shortTitle": "Full Stack Web Devel…",
-    "description": "Learn Full Stack Web Development with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn Full Stack Web Development from scratch with practical, project-based training. Build the skills required to create modern, responsive and fully functional websites and web applications covering frontend development, backend programming, databases, APIs, authentication and deployment.",
     "image": {
       "thumbnail": img013,
       "hero": img013
@@ -1861,10 +1861,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "full",
@@ -2030,7 +2030,7 @@ export const coursesData = [
     "slug": "python-basic-to-advance",
     "title": "Python (BASIC To ADVANCE)",
     "shortTitle": "Python (BASIC To ADV…",
-    "description": "Learn Python (BASIC To ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn Python programming from fundamentals to advanced concepts through practical, hands-on training. Build strong programming skills and explore Object-Oriented Programming, Web Development, Data Science, Machine Learning and modern Python development practices.",
     "image": {
       "thumbnail": img014,
       "hero": img014
@@ -2043,10 +2043,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "python",
@@ -2204,7 +2204,7 @@ export const coursesData = [
     "slug": "java-basic-to-advance",
     "title": "Java (BASIC To ADVANCE)",
     "shortTitle": "Java (BASIC To ADVAN…",
-    "description": "Learn Java (BASIC To ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Master Java from Beginner to Advanced Level with practical, project-based training. Learn Core Java, Advanced Java, OOP, Collections, Multithreading, GUI Programming, JDBC, MySQL, Java 8 features and application development.",
     "image": {
       "thumbnail": img015,
       "hero": img015
@@ -2217,10 +2217,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "java",
@@ -2322,7 +2322,7 @@ export const coursesData = [
     "slug": "java-with-dsa",
     "title": "Java with DSA",
     "shortTitle": "Java with DSA",
-    "description": "Learn Java with DSA with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Develop strong programming and problem-solving skills with Data Structures & Algorithms using C, C++ and Java. Learn advanced algorithms, complexity analysis, optimization techniques and industry-relevant problem-solving approaches through practical training.",
     "image": {
       "thumbnail": img016,
       "hero": img016
@@ -2335,10 +2335,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "java",
@@ -2455,7 +2455,7 @@ export const coursesData = [
     "slug": "c-and-cplusplus",
     "title": "C & C++",
     "shortTitle": "C & C++",
-    "description": "Learn C & C++ with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Build a strong foundation in programming with C and C++ through practical, structured training. Learn programming fundamentals, functions, arrays, pointers, memory management and advanced Object-Oriented Programming concepts in C++.",
     "image": {
       "thumbnail": img017,
       "hero": img017
@@ -2468,10 +2468,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "c++",
@@ -2568,7 +2568,7 @@ export const coursesData = [
     "slug": "c-and-cplusplus-with-dsa",
     "title": "C & C++ with DSA",
     "shortTitle": "C & C++ with DSA",
-    "description": "Learn C & C++ with DSA with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Develop strong programming and problem-solving skills with Data Structures & Algorithms using C, C++ and Java. Learn advanced algorithms, complexity analysis, optimization techniques and industry-relevant problem-solving approaches through practical training.",
     "image": {
       "thumbnail": img018,
       "hero": img018
@@ -2581,10 +2581,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "c++",
@@ -2701,7 +2701,7 @@ export const coursesData = [
     "slug": "artificial-intelligence-and-machine-learning-ai-and-ml",
     "title": "Artificial Intelligence & Machine Learning (AI & ML)",
     "shortTitle": "Artificial Intellige…",
-    "description": "Learn Artificial Intelligence & Machine Learning (AI & ML) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn the fundamentals of Artificial Intelligence and Machine Learning and understand how intelligent systems learn, reason, make decisions and solve real-world problems. Develop practical skills in AI concepts, data preprocessing, machine learning algorithms and model evaluation.",
     "image": {
       "thumbnail": img019,
       "hero": img019
@@ -2715,10 +2715,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "artificial",
@@ -2833,7 +2833,7 @@ export const coursesData = [
     "slug": "cyber-security-ethical-hacking-network-security",
     "title": "Cyber SECURITY, Ethical HACKING, Network Security",
     "shortTitle": "Cyber SECURITY, Ethi…",
-    "description": "Learn Cyber SECURITY, Ethical HACKING, Network Security with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Build a strong foundation in Cyber Security, Networking, Ethical Hacking, Cloud Security and Digital Forensics. Develop practical skills through hands-on labs, security operations, penetration testing, incident response and real-world security projects.",
     "image": {
       "thumbnail": img020,
       "hero": img020
@@ -2847,10 +2847,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "cyber",
@@ -2982,7 +2982,7 @@ export const coursesData = [
     "slug": "wordpress-basic-to-advance",
     "title": "Wordpress (BASIC To ADVANCE)",
     "shortTitle": "Wordpress (BASIC To…",
-    "description": "Learn Wordpress (BASIC To ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn WordPress from fundamentals to advanced website development with practical training in HTML, CSS, PHP, responsive design, theme & plugin customization, SEO, security, WooCommerce, integrations, database management and professional website deployment.",
     "image": {
       "thumbnail": img021,
       "hero": img021
@@ -2995,10 +2995,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "wordpress",
@@ -3130,7 +3130,7 @@ export const coursesData = [
     "slug": "auto-cad-2d-3d-mep-interior-architecture-civil-hvac",
     "title": "Auto Cad 2d 3d - MEP, INTERIOR, ARCHITECTURE, CIVIL, HVAC",
     "shortTitle": "Auto Cad 2d 3d - MEP…",
-    "description": "Learn Auto Cad 2d 3d - MEP, INTERIOR, ARCHITECTURE, CIVIL, HVAC with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Build a strong career in 2D & 3D Design and Drafting with practical, hands-on training. Learn AutoCAD through real-world projects and industry-oriented designs across multiple professional trades.",
     "image": {
       "thumbnail": img022,
       "hero": img022
@@ -3286,7 +3286,7 @@ export const coursesData = [
     "slug": "auto-cad-plus-revit-interior-civil-mep-architecture",
     "title": "Auto Cad + Revit (INTERIOR, CIVIL, MEP ARCHITECTURE)",
     "shortTitle": "Auto Cad + Revit (IN…",
-    "description": "Learn Auto Cad + Revit (INTERIOR, CIVIL, MEP ARCHITECTURE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn AutoCAD & Advanced Revit with practical, project-based training. Develop the skills to create accurate 2D drawings, professional 3D models, architectural designs, construction documentation and complete residential & commercial projects.",
     "image": {
       "thumbnail": img023,
       "hero": img023
@@ -3300,10 +3300,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "auto",
@@ -3418,7 +3418,7 @@ export const coursesData = [
     "slug": "diploma-in-interior-design",
     "title": "Diploma in Interior Design",
     "shortTitle": "Diploma in Interior…",
-    "description": "Learn Diploma in Interior Design with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Turn your creativity into a rewarding professional career with practical, project-based Interior Design training. Learn to design beautiful, functional and visually impressive spaces using industry-standard design and visualization software.",
     "image": {
       "thumbnail": img024,
       "hero": img024
@@ -3556,7 +3556,7 @@ export const coursesData = [
     "slug": "diploma-in-graphic-design-with-ai-automation",
     "title": "Diploma in Graphic Design with AI Automation",
     "shortTitle": "Diploma in Graphic D…",
-    "description": "Learn Diploma in Graphic Design with AI Automation with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn to create stunning visuals, professional branding, digital artwork and engaging creative content with the power of Artificial Intelligence and industry-standard design software. This isn't just a course --- it's an opportunity to unlock creativity, innovation and career growth. Learn to transform your ideas into smart, professional and AI-powered designs.",
     "image": {
       "thumbnail": img025,
       "hero": img025
@@ -3570,10 +3570,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "diploma",
@@ -3713,7 +3713,7 @@ export const coursesData = [
     "slug": "video-editing-with-adobe-photoshop",
     "title": "Video Editing with Adobe Photoshop",
     "shortTitle": "Video Editing with A…",
-    "description": "Learn Video Editing with Adobe Photoshop with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn industry-level Video Editing, Motion Graphics & Visual Effects with practical, project-based training. This course is designed for Content Creators, Freelancers, YouTubers, Social Media Managers and Job Seekers who want to build professional skills and create engaging digital content.",
     "image": {
       "thumbnail": img026,
       "hero": img026
@@ -3726,10 +3726,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "video",
@@ -3860,7 +3860,7 @@ export const coursesData = [
     "slug": "digital-marketing-for-beginners",
     "title": "Digital Marketing (FOR BEGINNERS)",
     "shortTitle": "Digital Marketing (F…",
-    "description": "Learn Digital Marketing (FOR BEGINNERS) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn complete Digital Marketing through practical, real-world training and develop the skills required to build a career in one of the fastest-growing industries. This course is designed for Students, Job Seekers, Business Owners, Freelancers and Working Professionals who want to learn how to promote businesses, build online presence, generate leads and grow digitally.",
     "image": {
       "thumbnail": img027,
       "hero": img027
@@ -3873,10 +3873,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "digital",
@@ -4044,7 +4044,7 @@ export const coursesData = [
     "slug": "advanced-diploma-in-interior-design",
     "title": "Advanced Diploma in Interior Design",
     "shortTitle": "Advanced Diploma in…",
-    "description": "Learn Advanced Diploma in Interior Design with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Transform your creativity into a professional career with advanced, practical and project-based Interior Design training. Learn to create beautiful, functional and visually stunning residential and commercial spaces using industry-standard design, modelling, rendering and visualization tools.",
     "image": {
       "thumbnail": img028,
       "hero": img028
@@ -4199,7 +4199,7 @@ export const coursesData = [
     "slug": "auto-cad-with-sketchup-plus-vray-interior-architecture",
     "title": "Auto Cad with Sketchup + Vray (INTERIOR, ARCHITECTURE)",
     "shortTitle": "Auto Cad with Sketch…",
-    "description": "Learn Auto Cad with Sketchup + Vray (INTERIOR, ARCHITECTURE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn AutoCAD, SketchUp & V-Ray with practical, project-based training. Develop professional skills in 2D drafting, 3D modelling, interior space planning, architectural visualization and realistic rendering to create impressive interior and exterior projects.",
     "image": {
       "thumbnail": img029,
       "hero": img029
@@ -4213,10 +4213,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "auto",
@@ -4338,7 +4338,7 @@ export const coursesData = [
     "slug": "auto-cad-with-3ds-max-plus-vray-interior-architecture",
     "title": "Auto Cad with 3DS Max + Vray (INTERIOR, ARCHITECTURE)",
     "shortTitle": "Auto Cad with 3DS Ma…",
-    "description": "Learn Auto Cad with 3DS Max + Vray (INTERIOR, ARCHITECTURE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn AutoCAD, 3ds Max & V-Ray with practical, project-based training. Develop professional skills in 2D/3D drafting, advanced 3D modelling, interior & exterior design, materials, lighting, realistic rendering and architectural visualization to create stunning real-world projects.",
     "image": {
       "thumbnail": img030,
       "hero": img030
@@ -4352,10 +4352,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "auto",
@@ -4487,7 +4487,7 @@ export const coursesData = [
     "slug": "certificate-in-graphic-design",
     "title": "Certificate in Graphic Design",
     "shortTitle": "Certificate in Graph…",
-    "description": "Learn Certificate in Graphic Design with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Kickstart your creative career with practical, project-based Graphic Design training. Learn to create professional graphics, logos, branding materials, digital artwork and creative designs using industry-standard graphic design software.",
     "image": {
       "thumbnail": img031,
       "hero": img031
@@ -4500,10 +4500,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "certificate",
@@ -4608,7 +4608,7 @@ export const coursesData = [
     "slug": "adobe-animate-with-adobe-illustrator",
     "title": "Adobe Animate with Adobe Illustrator",
     "shortTitle": "Adobe Animate with A…",
-    "description": "Learn Adobe Animate with Adobe Illustrator with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Build your creative career with practical, project-based Animation training. Learn to create engaging illustrations, animated graphics, motion content and creative visual designs using professional industry tools and modern AI technology.",
     "image": {
       "thumbnail": img032,
       "hero": img032
@@ -4621,10 +4621,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "adobe",
@@ -4729,7 +4729,7 @@ export const coursesData = [
     "slug": "adobe-animation-2d",
     "title": "Adobe Animation 2d",
     "shortTitle": "Adobe Animation 2d",
-    "description": "Learn Adobe Animation 2d with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn to create engaging 2D animations, characters, cartoons, motion graphics and animated stories with practical, project-based training. Build strong animation skills through drawing, frame-by-frame animation, character movement, facial animation, lip-sync and sound integration.",
     "image": {
       "thumbnail": img033,
       "hero": img033
@@ -4959,7 +4959,7 @@ export const coursesData = [
     "slug": "cloud-computing-for-beginners",
     "title": "Cloud Computing (FOR BEGINNERS)",
     "shortTitle": "Cloud Computing (FOR…",
-    "description": "Learn Cloud Computing (FOR BEGINNERS) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn the fundamentals of Cloud Computing, AWS, Microsoft Azure, Virtual Machines, Cloud Storage, Networking, Security and Cloud Deployment through practical and beginner-friendly training.",
     "image": {
       "thumbnail": img035,
       "hero": img035
@@ -4972,10 +4972,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "cloud",
@@ -5086,7 +5086,7 @@ export const coursesData = [
     "slug": "wordpress-basic-for-beginners",
     "title": "Wordpress (BASIC for BEGINNERS)",
     "shortTitle": "Wordpress (BASIC for…",
-    "description": "Learn Wordpress (BASIC for BEGINNERS) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn WordPress from the basics and develop the skills required to create, customize, secure and manage professional websites. Ideal for freelancers, aspiring developers, entrepreneurs, students and working professionals.",
     "image": {
       "thumbnail": img036,
       "hero": img036
@@ -5099,10 +5099,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "wordpress",
@@ -5230,7 +5230,7 @@ export const coursesData = [
     "slug": "app-development-kotlin-or-java",
     "title": "App Development (KOTLIN or JAVA)",
     "shortTitle": "App Development (KOT…",
-    "description": "Learn App Development (KOTLIN or JAVA) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Master Android & iOS App Development from fundamentals to advanced concepts. Learn UI/UX design, app navigation, backend integration, REST APIs, databases, authentication, advanced features, testing and deployment through practical, project-based training.",
     "image": {
       "thumbnail": img037,
       "hero": img037
@@ -5243,10 +5243,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "app",
@@ -5383,7 +5383,7 @@ export const coursesData = [
     "slug": "mern-stack-web-development",
     "title": "Mern Stack Web Development",
     "shortTitle": "Mern Stack Web Devel…",
-    "description": "Learn Mern Stack Web Development with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn MERN Stack Web Development from scratch with practical, project-based training. Master the technologies used to build modern, responsive and dynamic web applications, covering frontend, backend, databases, APIs, authentication and deployment.",
     "image": {
       "thumbnail": img038,
       "hero": img038
@@ -5397,10 +5397,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "mern",
@@ -5546,7 +5546,7 @@ export const coursesData = [
     "slug": "power-bi",
     "title": "Power Bi",
     "shortTitle": "Power Bi",
-    "description": "Learn Power Bi with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn how to transform raw data into meaningful insights, interactive dashboards and professional business reports using Microsoft Power BI. Develop practical skills in data preparation, modeling, DAX, visualization, Power BI Service and advanced reporting.",
     "image": {
       "thumbnail": img039,
       "hero": img039
@@ -5699,7 +5699,7 @@ export const coursesData = [
     "slug": "certificate-in-sql-advance",
     "title": "Certificate in SQL (ADVANCE)",
     "shortTitle": "Certificate in SQL (…",
-    "description": "Learn Certificate in SQL (ADVANCE) with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Develop strong database management and querying skills with Advanced SQL. Learn advanced queries, joins, subqueries, CTEs, stored procedures, triggers, transactions, database design, optimization and performance tuning through practical MySQL & SQL Server training.",
     "image": {
       "thumbnail": img040,
       "hero": img040
@@ -5713,10 +5713,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "certificate",
@@ -5850,7 +5850,7 @@ export const coursesData = [
     "slug": "r-language",
     "title": "R Language",
     "shortTitle": "R Language",
-    "description": "Learn R Language with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn the fundamentals of R Programming and develop essential skills for Statistics, Research and Data Analysis. This beginner-friendly course covers R syntax, data structures, functions, data manipulation, visualization and basic statistical analysis through practical learning.",
     "image": {
       "thumbnail": img041,
       "hero": img041
@@ -5995,7 +5995,7 @@ export const coursesData = [
     "slug": "r-language-advance",
     "title": "R Language Advance",
     "shortTitle": "R Language Advance",
-    "description": "Learn R Language Advance with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Build professional skills in R Programming, Data Wrangling, Statistics, Data Visualization, Predictive Modeling and Machine Learning. Learn to analyze real-world datasets, create meaningful visualizations and apply statistical & machine learning techniques using R.",
     "image": {
       "thumbnail": img042,
       "hero": img042
@@ -6009,10 +6009,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "language",
@@ -6150,7 +6150,7 @@ export const coursesData = [
     "slug": "ms-azure",
     "title": "MS Azure",
     "shortTitle": "MS Azure",
-    "description": "Learn MS Azure with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn the fundamentals of Microsoft Azure and Cloud Computing with practical knowledge of Azure services, networking, security, deployment and real-world cloud applications.",
     "image": {
       "thumbnail": img043,
       "hero": img043
@@ -6163,10 +6163,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "ms",
@@ -6300,7 +6300,7 @@ export const coursesData = [
     "slug": "advance-azure",
     "title": "Advance Azure",
     "shortTitle": "Advance Azure",
-    "description": "Learn Advance Azure with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Build industry-ready skills in Microsoft Azure, Cloud Infrastructure, DevOps, Security, Automation, Data & AI with practical, project-based training designed for real-world cloud careers.",
     "image": {
       "thumbnail": img044,
       "hero": img044
@@ -6313,10 +6313,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Intermediate",
-      "icon": "layers",
-      "color": "yellow",
-      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
+      "name": "Advanced",
+      "icon": "crown",
+      "color": "red",
+      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
     },
     "keywords": [
       "advance",
@@ -6506,7 +6506,7 @@ export const coursesData = [
     "slug": "software-testing",
     "title": "Software Testing",
     "shortTitle": "Software Testing",
-    "description": "Learn Software Testing with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn professional Manual & Automation Testing skills to identify defects, improve software quality and ensure reliable software delivery through industry-oriented testing practices and real-world projects.",
     "image": {
       "thumbnail": img045,
       "hero": img045
@@ -6519,10 +6519,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "software",
@@ -6660,7 +6660,7 @@ export const coursesData = [
     "slug": "gen-ai-and-prompt-engineering",
     "title": "Gen AI & Prompt Engineering",
     "shortTitle": "Gen AI & Prompt Engi…",
-    "description": "Learn Gen AI & Prompt Engineering with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn how modern Generative AI systems work, how to write effective prompts, use AI tools and APIs, and apply AI across text, image, audio and code generation through practical, industry-oriented training.",
     "image": {
       "thumbnail": img046,
       "hero": img046
@@ -6674,10 +6674,10 @@ export const coursesData = [
       "unit": "Months"
     },
     "level": {
-      "name": "Beginner",
-      "icon": "seedling",
-      "color": "green",
-      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
+      "name": "Intermediate",
+      "icon": "layers",
+      "color": "yellow",
+      "background": "linear-gradient(135deg, #713f12 0%, #eab308 100%)"
     },
     "keywords": [
       "gen",
@@ -6827,7 +6827,7 @@ export const coursesData = [
     "slug": "spss",
     "title": "Spss",
     "shortTitle": "Spss",
-    "description": "Learn Spss with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Learn quantitative data analysis using SPSS and develop the practical skills required to analyze research data, interpret statistical outputs and prepare thesis-ready tables, results and explanations.",
     "image": {
       "thumbnail": img047,
       "hero": img047
@@ -6840,10 +6840,10 @@ export const coursesData = [
       "unit": "Days"
     },
     "level": {
-      "name": "Advanced",
-      "icon": "crown",
-      "color": "red",
-      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
+      "name": "Beginner",
+      "icon": "seedling",
+      "color": "green",
+      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
     },
     "keywords": [
       "spss",
@@ -6985,7 +6985,7 @@ export const coursesData = [
     "slug": "nvivo",
     "title": "Nvivo",
     "shortTitle": "Nvivo",
-    "description": "Learn Nvivo with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Develop practical skills to analyze interviews, focus groups, open-ended questionnaires, PDFs and textual data using NVivo, with a strong focus on coding, theme development, interpretation and thesis-ready reporting.",
     "image": {
       "thumbnail": img048,
       "hero": img048
@@ -6998,10 +6998,10 @@ export const coursesData = [
       "unit": "Days"
     },
     "level": {
-      "name": "Advanced",
-      "icon": "crown",
-      "color": "red",
-      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
+      "name": "Beginner",
+      "icon": "seedling",
+      "color": "green",
+      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
     },
     "keywords": [
       "nvivo",
@@ -7143,7 +7143,7 @@ export const coursesData = [
     "slug": "pcs-sem",
     "title": "PCS - SEM",
     "shortTitle": "PCS - SEM",
-    "description": "Learn PCS - SEM with a practical, hands-on curriculum designed to build real, job-ready skills.",
+    "description": "Gain practical expertise in Partial Least Squares Structural Equation Modeling (PLS-SEM) using SmartPLS, with a strong focus on model development, measurement and structural model assessment, hypothesis testing, mediation, moderation and research publication.",
     "image": {
       "thumbnail": img049,
       "hero": img049
@@ -7156,10 +7156,10 @@ export const coursesData = [
       "unit": "Days"
     },
     "level": {
-      "name": "Advanced",
-      "icon": "crown",
-      "color": "red",
-      "background": "linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%)"
+      "name": "Beginner",
+      "icon": "seedling",
+      "color": "green",
+      "background": "linear-gradient(135deg, #14532d 0%, #16a34a 100%)"
     },
     "keywords": [
       "pcs",
@@ -7369,34 +7369,34 @@ export const coursesData = [
     ],
     "details": {
       "modules": [
-  {
-    "title": "What You Will Learn",
-    "topics": [
-      "Introduction to Reel Making",
-      "Storytelling & Content Ideas",
-      "Camera Shots & Angles",
-      "Framing & Composition",
-      "Lighting Techniques",
-      "Sound Recording Basics",
-      "Direction & Performance Tips",
-      "Video Shooting (Mobile/DSLR)",
-      "Video Editing Basics",
-      "Trending Reels & Social Media Strategy",
-      "Real-World Projects & Practice"
-    ]
-  },
-  {
-    "title": "Practical Training",
-    "topics": [
-      "Hands-On Shooting Practice",
-      "Create Your Own Reels",
-      "Audio & Voice Recording",
-      "Shot Division Exercises",
-      "Basic Editing (Mobile & PC)",
-      "Real-World Projects"
-    ]
-  }
-],
+        {
+          "title": "What You Will Learn",
+          "topics": [
+            "Introduction to Reel Making",
+            "Storytelling & Content Ideas",
+            "Camera Shots & Angles",
+            "Framing & Composition",
+            "Lighting Techniques",
+            "Sound Recording Basics",
+            "Direction & Performance Tips",
+            "Video Shooting (Mobile/DSLR)",
+            "Video Editing Basics",
+            "Trending Reels & Social Media Strategy",
+            "Real-World Projects & Practice"
+          ]
+        },
+        {
+          "title": "Practical Training",
+          "topics": [
+            "Hands-On Shooting Practice",
+            "Create Your Own Reels",
+            "Audio & Voice Recording",
+            "Shot Division Exercises",
+            "Basic Editing (Mobile & PC)",
+            "Real-World Projects"
+          ]
+        }
+      ],
       "careerOptions": [
         "Content Creator",
         "Social Media Executive",
