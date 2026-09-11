@@ -7,6 +7,8 @@ import {
   useState,
 } from "react";
 
+import { lockBodyScroll, unlockBodyScroll } from "../../../shared/hooks/useLockBodyScroll";
+
 import {
   useBlocker,
   useLocation,
@@ -38,33 +40,19 @@ export default function PageTransitionProvider({
   const mountedRef = useRef(false);
   const runningRef = useRef(false);
 
-  const previousBodyOverflowRef = useRef("");
-  const previousHtmlOverflowRef = useRef("");
-
   const routeReadyResolverRef = useRef(null);
 
   const [isTransitioning, setIsTransitioning] =
     useState(false);
 
-  const lockScroll = useCallback(() => {
-    previousBodyOverflowRef.current = document.body.style.overflow;
-    previousHtmlOverflowRef.current =
-      document.documentElement.style.overflow;
-    document.body.style.overflow = "hidden";
-    document.documentElement.style.overflow = "hidden";
-    getLenisInstance()?.stop();
 
+  const lockScroll = useCallback(() => {
+    lockBodyScroll(getLenisInstance());
   }, []);
 
   const unlockScroll = useCallback(() => {
-    document.body.style.overflow =
-      previousBodyOverflowRef.current || "";
-    document.documentElement.style.overflow =
-      previousHtmlOverflowRef.current || "";
-    getLenisInstance()?.start();
-
+    unlockBodyScroll(getLenisInstance());
   }, []);
-
   const waitForRouteReady = useCallback(
     (timeoutMs = ROUTE_READY_TIMEOUT) =>
       new Promise((resolve) => {
