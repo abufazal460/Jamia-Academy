@@ -4,8 +4,6 @@ import { motion } from "motion/react";
 const TABS = [
   { key: "all", label: "All" },
   { key: "classroom", label: "Classroom" },
-  { key: "event", label: "Event" },
-  { key: "tour", label: "Tour" },
 ];
 
 function GalleryTabsBase({ activeTab, onChange }) {
