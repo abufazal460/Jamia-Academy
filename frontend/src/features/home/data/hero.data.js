@@ -1,7 +1,7 @@
 import img1 from "../../../assets/images/home/hero/1.webp";
 import img2 from "../../../assets/images/home/hero/2.webp";
 import img3 from "../../../assets/images/home/hero/3.webp";
-import img4 from "../../../assets/images/home/hero/4.webp";
+import img4 from "../../../assets/images/home/hero/4.jpeg";
 
 export const heroSlides = [
   {
@@ -39,7 +39,7 @@ export const heroSlides = [
 
   {
     id: "hero-slide-2",
-    image: img4,
+    image: img2,
     alt: "Students receiving educational opportunities at Jamia Academy",
 
     layout: "center",
@@ -105,34 +105,34 @@ export const heroSlides = [
 
   {
     id: "hero-slide-4",
-    image: img2,
+    image: img4,
     alt: "Students developing professional and digital skills at Jamia Academy",
 
-    layout: "bottom",
-    theme: "dark",
-    contentWidth: "compact",
+    layout: "",
+    theme: "",
+    contentWidth: "",
 
-    eyebrow: "YOUR CAREER STARTS HERE",
+    eyebrow: "",
 
-    title: "Turn Your Potential Into a Career",
+    title: "",
 
     description:
-      "Explore in-demand skills from computer fundamentals to web development and AI, and take your next step with confidence.",
+      "",
 
     primaryAction: {
-      label: "Start Learning",
-      href: "/course",
+      label: "",
+      href: "",
     },
 
     secondaryAction: {
-      label: "Talk to Us",
-      href: "/contact",
+      label: "",
+      href: "",
     },
 
     colors: {
-      accent: "#F4A261",
-      button: "#F4A261",
-      buttonText: "#292A27",
+      accent: "",
+      button: "",
+      buttonText: "",
     },
   },
 ];
