@@ -90,14 +90,14 @@ export const heroSlides = [
     contentWidth: "compact",
 
     badge: "100% free for orphans",
-    // heading: "Learn Today. Get Certified. Move Forward.",
-    // paragraph:
-    //   "Build practical knowledge with structured courses that prepare you for real-world career opportunities.",
+    heading: "Learn Today. Get Certified. Move Forward.",
+    paragraph:
+      "Build practical knowledge with structured courses that prepare you for real-world career opportunities.",
 
-    // buttons: [
-    //   { label: "View Courses", href: "/course", variant: "primary" },
-    //   { label: "Verify Certificate", href: "/certificate", variant: "secondary" },
-    // ],
+    buttons: [
+      { label: "View Courses", href: "/course", variant: "primary" },
+      { label: "Verify Certificate", href: "/certificate", variant: "secondary" },
+    ],
 
     colors: {
       accent: "#F4A261",

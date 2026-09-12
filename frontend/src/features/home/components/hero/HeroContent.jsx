@@ -83,7 +83,6 @@ const HeroContent = ({ slide, prefersReducedMotion }) => {
       {isOrphan && (
         <motion.div
           aria-hidden="true"
-          className="pointer-events-none absolute -inset-6 rounded-[2rem] border border-[#FFD166]"
           animate={{ opacity: [0.25, 0.8, 0.25] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
         />
