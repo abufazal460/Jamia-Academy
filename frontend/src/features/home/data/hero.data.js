@@ -3,10 +3,10 @@ import img2 from "../../../assets/images/home/hero/2.webp";
 import img3 from "../../../assets/images/home/hero/3.webp";
 import img4 from "../../../assets/images/home/hero/4.webp";
 
-import mobile1 from "../../../assets/images/home/hero/mobileImg1.png"
-import mobile2 from "../../../assets/images/home/hero/mobileImg2.png"
-import mobile3 from "../../../assets/images/home/hero/mobileImg3.png"
-import mobile4 from "../../../assets/images/home/hero/mobileImge4.png"
+import mobile1 from "../../../assets/images/home/hero/mobileImg1.webp"
+import mobile2 from "../../../assets/images/home/hero/mobileImg2.webp"
+import mobile3 from "../../../assets/images/home/hero/mobileImg3.webp"
+import mobile4 from "../../../assets/images/home/hero/mobileImge4.webp"
 
 export const heroSlides = [
   {
