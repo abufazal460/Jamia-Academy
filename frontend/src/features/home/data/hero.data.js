@@ -3,12 +3,16 @@ import img2 from "../../../assets/images/home/hero/2.webp";
 import img3 from "../../../assets/images/home/hero/3.webp";
 import img4 from "../../../assets/images/home/hero/4.webp";
 
+import mobile1 from "../../../assets/images/home/hero/mobileImg1.png"
+import mobile2 from "../../../assets/images/home/hero/mobileImg2.png"
+import mobile3 from "../../../assets/images/home/hero/mobileImg3.png"
+import mobile4 from "../../../assets/images/home/hero/mobileImge4.png"
 
 export const heroSlides = [
   {
     id: "hero-slide-1",
     image: img1, 
-    imageMobile: img1, 
+    imageMobile: mobile1, 
     alt: "Students learning computer skills at Jamia Academy",
 
     layout: "left",
@@ -35,7 +39,7 @@ export const heroSlides = [
   {
     id: "hero-slide-2",
     image: img2,
-    imageMobile: img2,
+    imageMobile: mobile2,
     alt: "Students receiving educational opportunities at Jamia Academy",
 
     badge: "100% free for orphans",
@@ -45,7 +49,7 @@ export const heroSlides = [
   {
     id: "hero-slide-3",
     image: img3,
-    imageMobile: img3,
+    imageMobile: mobile3,
     alt: "Students completing professional courses at Jamia Academy",
 
     badge: "100% free for orphans",
@@ -76,7 +80,7 @@ export const heroSlides = [
     badge: "100% free for orphans",
 
     image: img4,
-    imageMobile: img4,
+    imageMobile: mobile4,
     alt: "Students developing professional and digital skills at Jamia Academy",
 
     layout: "center",
