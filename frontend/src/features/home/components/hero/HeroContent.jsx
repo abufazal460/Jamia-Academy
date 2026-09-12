@@ -8,15 +8,9 @@ import {
   heroReducedItemVariants,
 } from "../../motion/hero.motion";
 
-// layoutClasses aur widthClasses — dono hero.data.js ke "layout" aur
-// "contentWidth" fields se match hone chahiye.
-//
-// BUG FIX: pehle widthClasses mein sirf "medium"/"large" the, jabki
-// hero.data.js "compact" aur "orphan" values bhej raha tha — is wajah se
-// wo hamesha `|| widthClasses.large` fallback pe chale jaate the (compact
-// slides kabhi actually compact nahi dikhti thi). Ab dono real values map
-// ki hain — koi naya data-field invent nahi kiya, sirf missing mapping
-// poori ki hai.
+// layoutClasses/widthClasses — hero.data.js ke "layout"/"contentWidth"
+// fields se match karte hain (bug-fixed mapping, "compact"/"orphan" bhi
+// included, pehle sirf medium/large the)
 const layoutClasses = {
   left: "justify-center items-start text-left",
   center: "justify-center items-center text-center mx-auto",
@@ -31,14 +25,44 @@ const widthClasses = {
   orphan: "max-w-2xl",
 };
 
+/**
+ * HeroContent.jsx
+ * ---------------
+ * DATA-DRIVEN OPTIONAL CONTENT: har field (heading/paragraph/buttons)
+ * independently present ya absent ho sakta hai. Koi bhi field missing ho
+ * to us jagah koi khaali block ya extra spacing nahi banti — kyunki:
+ *
+ *  1. Har block sirf tab render hota hai jab uska data maujood ho
+ *     (`{slide.heading && (...)}` jaisa conditional pattern).
+ *  2. Container `gap-*` use karta hai (manual margin-top/margin-bottom har
+ *     nahi) — CSS gap sirf ACTUALLY-rendered siblings ke BEECH space
+ *     deta hai, kisi bhi missing field ke liye phantom space nahi banti.
+ *     (Pehle `mt-6`/`mt-8` jaise fixed margins the jo missing-field case
+ *     mein galat/extra spacing bana dete — ab wo bug bhi fix ho gaya.)
+ *
+ * NO CONTENT AT ALL (jaise slide 4) -> `hasAnyContent` false hone pe
+ * poora component `null` return karta hai — koi empty wrapper DOM mein
+ * nahi jaata (low DOM complexity requirement).
+ *
+ * BADGE: ab yahan nahi hai — badge Hero.jsx mein `<HeroBadge />` ke
+ * through independently render hota hai (fixed position, layout se
+ * decouple), isliye is component se poori tarah hata diya gaya hai.
+ */
 const HeroContent = ({ slide, prefersReducedMotion }) => {
+  const hasHeading = Boolean(slide.heading);
+  const hasParagraph = Boolean(slide.paragraph);
+  const hasButtons = Array.isArray(slide.buttons) && slide.buttons.length > 0;
+  const hasAnyContent = hasHeading || hasParagraph || hasButtons;
+
+  // Slide ke paas heading/paragraph/buttons mein se KUCH bhi nahi hai
+  // (jaise image-only slide) -> content block hi render mat karo.
+  if (!hasAnyContent) return null;
+
   const containerVariants = prefersReducedMotion
     ? heroReducedContainerVariants
     : heroContainerVariants;
 
-  const itemVariants = prefersReducedMotion
-    ? heroReducedItemVariants
-    : heroItemVariants;
+  const itemVariants = prefersReducedMotion ? heroReducedItemVariants : heroItemVariants;
 
   const layout = layoutClasses[slide.layout] || layoutClasses.left;
   const width = widthClasses[slide.contentWidth] || widthClasses.large;
@@ -52,12 +76,10 @@ const HeroContent = ({ slide, prefersReducedMotion }) => {
       initial="hidden"
       animate="visible"
       exit="hidden"
-      className={`relative flex min-h-full w-full flex-col ${layout} ${width}`}
+      className={`relative flex min-h-full w-full flex-col gap-5 sm:gap-6 ${layout} ${width}`}
     >
-      {/* ORPHAN SPECIAL BORDER — scale animation hata di gayi hai (pehle
-          `scale: [0.98, 1.015, 0.98]` tha, "no scale" rule todta tha).
-          Ab sirf opacity pulse hai — same premium glow feel, halka aur
-          GPU-cheap (sirf opacity, koi reflow/repaint heavy cheez nahi). */}
+      {/* ORPHAN SPECIAL BORDER — sirf orphan-themed slide ke around
+          (jaise pehle tha), scale-free opacity pulse */}
       {isOrphan && (
         <motion.div
           aria-hidden="true"
@@ -67,93 +89,70 @@ const HeroContent = ({ slide, prefersReducedMotion }) => {
         />
       )}
 
-      {/* EYEBROW */}
-      {slide.eyebrow && (
-        <motion.div
+      {/* HEADING — optional */}
+      {hasHeading && (
+        <motion.h1
           variants={itemVariants}
-          className={`relative mb-5 inline-flex items-center rounded-full border px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] sm:text-sm ${
-            isOrphan
-              ? "border-[#FFD166] bg-[#FFD166]/10 text-[#FFD166]"
-              : isLight
-                ? "border-[#C45A3C]/40 text-[#C45A3C]"
-                : "border-[#F4A261]/50 text-[#F4A261]"
-          }`}
+          className={`relative max-w-4xl text-[clamp(2.2rem,5.5vw,5.5rem)] font-bold leading-[0.94] tracking-[-0.045em] ${
+            isLight ? "text-[#292A27]" : "text-[#F7F3E9]"
+          } ${isOrphan ? "drop-shadow-[0_0_25px_rgba(255,209,102,0.18)]" : ""}`}
         >
-          {isOrphan && (
-            // Dot pulse — scale hata diya, sirf opacity animate hoti hai
-            <motion.span
-              aria-hidden="true"
-              className="mr-2 h-2 w-2 rounded-full bg-[#FFD166]"
-              animate={{ opacity: [1, 0.35, 1] }}
-              transition={{ duration: 1.4, repeat: Infinity, ease: "easeInOut" }}
-            />
-          )}
-          {slide.eyebrow}
-        </motion.div>
+          {slide.heading}
+        </motion.h1>
       )}
 
-      {/* HEADING */}
-      <motion.h1
-        variants={itemVariants}
-        className={`relative max-w-4xl text-[clamp(2.2rem,5.5vw,5.5rem)] font-bold leading-[0.94] tracking-[-0.045em] ${
-          isLight ? "text-[#292A27]" : "text-[#F7F3E9]"
-        } ${isOrphan ? "drop-shadow-[0_0_25px_rgba(255,209,102,0.18)]" : ""}`}
-      >
-        {slide.title}
-      </motion.h1>
-
-      {/* DESCRIPTION */}
-      {slide.description && (
+      {/* PARAGRAPH — optional */}
+      {hasParagraph && (
         <motion.p
           variants={itemVariants}
-          className={`relative mt-6 max-w-xl text-[clamp(0.95rem,1.4vw,1.15rem)] leading-relaxed ${
+          className={`relative max-w-xl text-[clamp(0.95rem,1.4vw,1.15rem)] leading-relaxed ${
             isLight ? "text-[#292A27]/75" : "text-[#F7F3E9]/80"
           }`}
         >
-          {slide.description}
+          {slide.paragraph}
         </motion.p>
       )}
 
-      {/* CTA */}
-      {(slide.primaryAction || slide.secondaryAction) && (
-        <motion.div
-          variants={itemVariants}
-          className="relative mt-8 flex flex-wrap items-center gap-3"
-        >
-          {/* PRIMARY CTA — hover ab sirf ek lightweight shadow-transition
-              hai. Pehle hover:-translate-y-1 + hover:scale-[1.02] +
-              shadow ek saath the ("excessive/combined transforms" — brief
-              explicitly mana karta hai). Arrow ka group-hover:translate-x-1
-              bhi hata diya — button ab clean, lightweight aur GPU-cheap hai. */}
-          {slide.primaryAction && (
-            <Link
-              to={slide.primaryAction.href}
-              style={{ backgroundColor: slide.colors.button, color: slide.colors.buttonText }}
-              className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-shadow duration-300 hover:shadow-[0_10px_28px_rgba(0,0,0,0.2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-7 sm:text-base ${
-                isOrphan ? "shadow-[0_0_25px_rgba(255,209,102,0.25)]" : ""
-              }`}
-            >
-              {slide.primaryAction.label}
-              <span aria-hidden="true" className="text-lg">
-                →
-              </span>
-            </Link>
-          )}
+      {/* BUTTONS — data-driven array, 0/1/2/N buttons, koi hardcoded
+          "primary"/"secondary" JSX duplication nahi, sirf .map() */}
+      {hasButtons && (
+        <motion.div variants={itemVariants} className="relative flex flex-wrap items-center gap-3">
+          {slide.buttons.map((button) => {
+            const isPrimary = button.variant === "primary";
+            const colors = slide.colors || {};
 
-          {/* SECONDARY CTA — hover ab sirf color transition (translate-y
-              transform hata diya, cheap aur consistent). */}
-          {slide.secondaryAction && (
-            <Link
-              to={slide.secondaryAction.href}
-              className={`inline-flex items-center justify-center rounded-full border px-6 py-3.5 text-sm font-semibold transition-colors duration-300 sm:px-7 sm:text-base ${
-                isLight
-                  ? "border-[#292A27]/30 text-[#292A27] hover:bg-[#292A27] hover:text-[#F7F3E9]"
-                  : "border-[#F7F3E9]/40 text-[#F7F3E9] hover:bg-[#F7F3E9] hover:text-[#292A27]"
-              }`}
-            >
-              {slide.secondaryAction.label}
-            </Link>
-          )}
+            if (isPrimary) {
+              return (
+                <Link
+                  key={button.label}
+                  to={button.href}
+                  style={{ backgroundColor: colors.button, color: colors.buttonText }}
+                  className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-bold transition-shadow duration-300 hover:shadow-[0_10px_28px_rgba(0,0,0,0.2)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 sm:px-7 sm:text-base ${
+                    isOrphan ? "shadow-[0_0_25px_rgba(255,209,102,0.25)]" : ""
+                  }`}
+                >
+                  {button.label}
+                  <span aria-hidden="true" className="text-lg">
+                    →
+                  </span>
+                </Link>
+              );
+            }
+
+            return (
+              <Link
+                key={button.label}
+                to={button.href}
+                className={`inline-flex items-center justify-center rounded-full border px-6 py-3.5 text-sm font-semibold transition-colors duration-300 sm:px-7 sm:text-base ${
+                  isLight
+                    ? "border-[#292A27]/30 text-[#292A27] hover:bg-[#292A27] hover:text-[#F7F3E9]"
+                    : "border-[#F7F3E9]/40 text-[#F7F3E9] hover:bg-[#F7F3E9] hover:text-[#292A27]"
+                }`}
+              >
+                {button.label}
+              </Link>
+            );
+          })}
         </motion.div>
       )}
     </motion.div>
