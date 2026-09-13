@@ -1,8 +1,10 @@
-import img2 from "../../../assets/images/about/faculty/saba mam.jpg"
-import img3 from "../../../assets/images/about/faculty/saad sir.jpeg"
-import img4 from "../../../assets/images/about/faculty/shahid sir.jpeg"
-import founderImg from "../../../assets/images/about/founder.jpeg"
-import coFounderImg from "../../../assets/images/about/co-founder.jpeg"
+import img1 from "../../../assets/images/about/faculty/qasim sir.webp"
+import img2 from "../../../assets/images/about/faculty/saba mam.webp"
+import img3 from "../../../assets/images/about/faculty/saad sir.webp"
+import img4 from "../../../assets/images/about/faculty/shahid sir.webp"
+import img5 from "../../../assets/images/about/faculty/mohd asif sir.webp"
+import founderImg from "../../../assets/images/about/founder.webp"
+import coFounderImg from "../../../assets/images/about/faculty/saba mam.webp"
 
 import video from "../../../assets/images/common/aboutDescription.mp4"
 // ---------------------------------------------------------------------------
@@ -195,8 +197,9 @@ export const faculty = [
     designation: "Founder & CEO",
     title: "Founder & CEO",
     bio: "Over 15 years of experience in science education and curriculum design.",
-    image: founderImg,
-    qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
+    image: img1,
+    qualification: "Ph.D HR Analytics & Technology (JMI)",
+    br : "MBA (AKTU Lucknow)",
     experience: "23+ Years",
 
   },
@@ -215,11 +218,12 @@ export const faculty = [
     id: "faculty-3",
     name: "Mr. Mohd Saad",
     designation: "Head of  Computer Science & IT Industry",
-    title: "Head of  Computer Science & IT Industry",
+    title: "Head of  Computer Science Industry",
     bio: "Dedicated to building strong communication skills in every student.",
     image: img3,
-    qualification: "M.A. in English Literature",
-    experience: "Masters in Computer Application (JMI) M.Sc (Mathematics) O Level (NIELIT)",
+    qualification: "Masters in Computer Application (JMI)",
+    br: "M.Sc (Mathematics) O Level (NIELIT)",
+    experience: "5+ Years",
 
   },
   {
@@ -229,8 +233,20 @@ export const faculty = [
     title: "Head of Graphic Design and Animation",
     bio: "Focused on preparing students for a technology-driven future.",
     image: img4,
-    qualification: "Diploma in Animation (MAAC Animation Academy) Professional 3D Designer & Graphics Expert",
+    qualification: "Diploma in Animation (MAAC Animation Academy)",
+    br: "Professional 3D Designer & Graphics Expert",
     experience: "8+ Years Experience in the Graphic and Animation Industry",
+
+  },
+  {
+    id: "faculty-5",
+    name: "Mr. Mohd Asif",
+    designation: "Head of Graphics Designer",
+    title: "Head of Structural Design",
+    bio: "Focused on preparing students for a technology-driven future.",
+    image: img5,
+    qualification: "M.Tech in Structural Engineering from (JMI)  BIM Professional & Trainer",
+    experience: "5+ Years Industrial",
 
   },
 ];

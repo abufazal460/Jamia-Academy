@@ -77,7 +77,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
         {member?.qualification && (
           <div className="mt-1.5 flex items-center gap-1.5 text-xs text-white/60">
             <GraduationCap size={13} className="shrink-0" aria-hidden="true" />
-            <span>{member.qualification}</span>
+            <span>{member.qualification} <br /> {member.br}</span>
           </div>
         )}
 
