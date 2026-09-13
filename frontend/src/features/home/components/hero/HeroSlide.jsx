@@ -21,7 +21,7 @@ import { imageVariants, imageReducedVariants } from "../../motion/hero.motion";
  * w-full hain, parent section ki height fixed (h-screen) hai — image load
  * hone se pehle/baad koi layout shift nahi hota.
  */
-const HeroSlide = ({ slide, isFirst, prefersReducedMotion }) => {
+const HeroSlide = ({ slide, isFirst, prefersReducedMotion, onVideoEnded }) => {
   const variants = prefersReducedMotion ? imageReducedVariants : imageVariants;
   const objectPosition = slide.imagePosition || "center";
 
@@ -38,24 +38,33 @@ const HeroSlide = ({ slide, isFirst, prefersReducedMotion }) => {
       exit="exit"
       className="absolute inset-0 z-0 overflow-hidden"
     >
-      <picture>
-        {/* Mobile/portrait — 767px aur neeche */}
-        <source media="(max-width: 767px)" srcSet={mobileImage} />
-        {/* Desktop/landscape — default/fallback source */}
-        <img
+      {slide.type === "video" ? (
+        <video
           src={slide.image}
-          alt={slide.alt}
-          loading={isFirst ? "eager" : "lazy"}
-          fetchPriority={isFirst ? "high" : "auto"}
-          decoding="async"
+          autoPlay
+          muted
+          playsInline
+          preload={isFirst ? "auto" : "metadata"}
+          onEnded={onVideoEnded}
+          aria-label={slide.alt}
           style={{ objectPosition }}
-          // object-cover — aspect ratio hamesha preserve hoti hai (kabhi
-          // stretch nahi hoti), object-position se crop-focus control.
-          // absolute + h-full/w-full se 320px se 4K tak overflow/distortion
-          // kabhi nahi hoti.
           className="absolute inset-0 block h-full w-full object-cover"
         />
-      </picture>
+      ) : (
+        <picture>
+          <source media="(max-width: 767px)" srcSet={mobileImage} />
+
+          <img
+            src={slide.image}
+            alt={slide.alt}
+            loading={isFirst ? "eager" : "lazy"}
+            fetchPriority={isFirst ? "high" : "auto"}
+            decoding="async"
+            style={{ objectPosition }}
+            className="absolute inset-0 block h-full w-full object-fit"
+          />
+        </picture>
+      )}
 
       {/* Gradient overlay — text readability ke liye */}
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#2B2D42]/80 via-[#2B2D42]/25 to-[#2B2D42]/45" />

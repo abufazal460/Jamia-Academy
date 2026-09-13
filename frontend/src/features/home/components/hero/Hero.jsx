@@ -8,10 +8,13 @@ import HeroBadge from "./HeroBadge";
 import HeroControls from "./HeroControls";
 
 const Hero = () => {
+
   const prefersReducedMotion = usePrefersReducedMotion();
   const { activeIndex, goToNext, goToPrev, goToSlide, speedUp, speedDown } = useHeroSlider(
-    heroSlides.length,
-    { autoplay: !prefersReducedMotion }
+    heroSlides,
+    {
+      autoplay: true,
+    }
   );
 
   const handleFocus = (e) => {
@@ -43,6 +46,8 @@ const Hero = () => {
           slide={activeSlide}
           isFirst={activeIndex === 0}
           prefersReducedMotion={prefersReducedMotion}
+          onVideoEnded={goToNext}
+
         />
       </AnimatePresence>
 

@@ -1,18 +1,28 @@
-import img1 from "../../../assets/images/home/hero/1.webp";
-import img2 from "../../../assets/images/home/hero/2.webp";
-import img3 from "../../../assets/images/home/hero/3.webp";
-import img4 from "../../../assets/images/home/hero/4.webp";
+import img2 from "../../../assets/images/home/hero/1.webp";
+import img4 from "../../../assets/images/home/hero/3.webp";
 
-import mobile1 from "../../../assets/images/home/hero/mobileImg1.webp"
-import mobile2 from "../../../assets/images/home/hero/mobileImg2.webp"
-import mobile3 from "../../../assets/images/home/hero/mobileImg3.webp"
-import mobile4 from "../../../assets/images/home/hero/mobileImge4.webp"
+import mobile2 from "../../../assets/images/home/hero/mobileImg1.webp";
+import mobile4 from "../../../assets/images/home/hero/mobileImg3.webp";
+
+import dummy1 from "../../../assets/images/home/hero/dummy1.mp4";
+import dummy2 from "../../../assets/images/home/hero/dummy2.png"
+import dummy3 from "../../../assets/images/home/hero/dummy3.png"
 
 export const heroSlides = [
   {
     id: "hero-slide-1",
-    image: img1, 
-    imageMobile: mobile1, 
+    type: "video",
+    image: dummy1,
+    imageMobile: dummy1,
+    alt: "Students receiving educational opportunities at Jamia Academy",
+
+    badge: "100% free for orphans",
+  },
+
+  {
+    id: "hero-slide-2",
+    image: img2,
+    imageMobile: mobile2,
     alt: "Students learning computer skills at Jamia Academy",
 
     layout: "left",
@@ -37,9 +47,9 @@ export const heroSlides = [
   },
 
   {
-    id: "hero-slide-2",
-    image: img2,
-    imageMobile: mobile2,
+    id: "hero-slide-3",
+    image: dummy2,
+    imageMobile: dummy2,
     alt: "Students receiving educational opportunities at Jamia Academy",
 
     badge: "100% free for orphans",
@@ -47,9 +57,9 @@ export const heroSlides = [
   },
 
   {
-    id: "hero-slide-3",
-    image: img3,
-    imageMobile: mobile3,
+    id: "hero-slide-4",
+    image: img4,
+    imageMobile: mobile4,
     alt: "Students completing professional courses at Jamia Academy",
 
     badge: "100% free for orphans",
@@ -76,31 +86,31 @@ export const heroSlides = [
   },
 
   {
-    id: "hero-slide-4",
+    id: "hero-slide-5",
     badge: "100% free for orphans",
 
-    image: img4,
-    imageMobile: mobile4,
+    image: dummy3,
+    imageMobile: dummy3,
     alt: "Students developing professional and digital skills at Jamia Academy",
 
-    layout: "center",
-    theme: "orphan",
-    contentWidth: "large",
+    // layout: "center",
+    // theme: "orphan",
+    // contentWidth: "large",
 
-    heading: "Build Your Future With Practical Tech Skills.",
-    paragraph:
-      "Explore career-focused computer courses designed by industry experts, taught with real hands-on projects.",
+    // heading: "Build Your Future With Practical Tech Skills.",
+    // paragraph:
+    //   "Explore career-focused computer courses designed by industry experts, taught with real hands-on projects.",
 
-    buttons: [
-      { label: "Explore Courses", href: "/course", variant: "primary" },
-      { label: "Verify Certificate", href: "/certificate", variant: "secondary" },
-    ],
+    // buttons: [
+    //   { label: "Explore Courses", href: "/course", variant: "primary" },
+    //   { label: "Verify Certificate", href: "/certificate", variant: "secondary" },
+    // ],
 
-    colors: {
-      accent: "#F4A261",
-      button: "#C45A3C",
-      buttonText: "#FFFFFF",
-    },
+    // colors: {
+    //   accent: "#F4A261",
+    //   button: "#C45A3C",
+    //   buttonText: "#FFFFFF",
+    // },
   },
 
 ];
