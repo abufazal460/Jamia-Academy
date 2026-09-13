@@ -1,10 +1,10 @@
-import img1 from "../../../assets/images/about/faculty/Qasim.png"
-import img2 from "../../../assets/images/about/faculty/saba.png"
-import img3 from "../../../assets/images/about/faculty/Saad.png"
-import img4 from "../../../assets/images/about/faculty/shahid sir.jpeg"
-import img5 from "../../../assets/images/about/faculty/mohd asif.jpeg"
-import founderImg from "../../../assets/images/about/founder.jpeg"
-import coFounderImg from "../../../assets/images/about/faculty/saba.png"
+import img1 from "../../../assets/images/about/faculty/Qasim.webp"
+import img2 from "../../../assets/images/about/faculty/saba.webp"
+import img3 from "../../../assets/images/about/faculty/Saad.webp"
+import img4 from "../../../assets/images/about/faculty/shahid sir.webp"
+import img5 from "../../../assets/images/about/faculty/mohd asif.webp"
+import founderImg from "../../../assets/images/about/founder.webp"
+import coFounderImg from "../../../assets/images/about/faculty/saba.webp"
 
 import video from "../../../assets/images/common/aboutDescription.mp4"
 // ---------------------------------------------------------------------------
