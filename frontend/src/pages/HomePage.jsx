@@ -5,7 +5,7 @@ import CourseGallerySection from "../features/home/components/CourseGallery/Cour
 import WhyChooseUs from "../features/home/components/whyChooseUs/WhyChooseUs";
 import Testimonials from "../features/home/components/testimonials/Testimonials";
 
-const PAGE_TITLE = "Jamia Academy | Computer, Web Development, AI & Skill Courses in Delhi";
+const PAGE_TITLE = "Jamia Academy | AI, Computer & Technology Institute in Delhi | ISO Certified & Government Approved";
 const PAGE_DESCRIPTION = "Jamia Academy, Jamia Nagar Delhi — offline, instructor-led computer, web development, data analytics, design, and AI courses with individual student attention.";
 
 const HomePage = () => {
