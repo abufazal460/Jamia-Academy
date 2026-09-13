@@ -445,6 +445,11 @@ html.lenis body {
   transition: opacity .35s ease;
 }
 
+.test {
+  color: #ffffff;
+  background-color: #0a0a0a;
+}
+
 
 [data-loaded="true"] .gallery-image {
   opacity: 1;
