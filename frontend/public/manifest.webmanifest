@@ -1,6 +1,6 @@
 {
   "id": "/",
-  "name": "Jamia Academy - Computer, Web Development & AI Courses",
+  "name": "Jamia Academy | Leading AI, Computer & Information Technology Institute in Delhi | ISO Certified & Government Approved",
   "short_name": "Jamia Academy",
   "description": "Offline, instructor-led computer courses in Jamia Nagar, Delhi — Web Development, Data Analytics, Graphic Design, AI/ML, Tally, AutoCAD and more.",
   "lang": "en-IN",
@@ -14,8 +14,8 @@
     "browser"
   ],
   "orientation": "any",
-  "theme_color": "#C45A3C",
-  "background_color": "#FFFDF7",
+  "theme_color": "#0a0a0a",
+  "background_color": "#ffffff",
   "categories": [
     "education",
     "business"
