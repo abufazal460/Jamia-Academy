@@ -1,4 +1,3 @@
-
 import React, { useRef, useState } from "react";
 
 import { motion } from "motion/react";
@@ -28,29 +27,47 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-3xl",
         "border border-white/10 bg-white/[0.06] backdrop-blur-xl",
-        "shadow-[0_10px_32px_rgba(0,0,0,0.18)] will-change-transform"
+        "shadow-[0_10px_32px_rgba(0,0,0,0.18)]"
       )}
       onHoverStart={() => setIsActive(true)}
       onHoverEnd={() => setIsActive(false)}
       whileHover={
         prefersReducedMotion
           ? {}
-          : { y: -8, scale: 1.03, boxShadow: "0 20px 46px rgba(0,0,0,0.3)" }
+          : {
+              y: -8,
+              scale: 1.03,
+              boxShadow: "0 20px 46px rgba(0,0,0,0.3)",
+            }
       }
-      transition={{ duration: 0.3, ease: "easeOut" }}
+      transition={{
+        duration: 0.3,
+        ease: "easeOut",
+      }}
     >
-      {/* ================================================================
-          PROFILE IMAGE — gradient border, zoom-on-hover, fallback safe
-      ================================================================= */}
+      {/* PROFILE IMAGE */}
       <div className="relative m-4 mb-0 overflow-hidden rounded-2xl bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[2.5px]">
         <div className="relative overflow-hidden rounded-[14px] bg-white/5">
           {!imageError ? (
             <motion.img
-              {...getImageProps(member?.image, `${member?.name || "Faculty member"} profile photo`, false)}
+              {...getImageProps(
+                member?.image,
+                `${member?.name || "Faculty member"} profile photo`,
+                false
+              )}
               onError={() => setImageError(true)}
               className="aspect-square w-full object-cover"
-              animate={prefersReducedMotion ? {} : { scale: isActive ? 1.08 : 1 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
+              animate={
+                prefersReducedMotion
+                  ? {}
+                  : {
+                      scale: isActive ? 1.08 : 1,
+                    }
+              }
+              transition={{
+                duration: 0.4,
+                ease: "easeOut",
+              }}
             />
           ) : (
             <div
@@ -59,31 +76,53 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
               className="flex aspect-square w-full flex-col items-center justify-center gap-2 bg-white/5 text-white/40"
             >
               <ImageOff size={26} aria-hidden="true" />
-              <span className="text-[11px] text-center px-2">Faculty Image Unavailable</span>
+
+              <span className="px-2 text-center text-[11px]">
+                Faculty Image Unavailable
+              </span>
             </div>
           )}
         </div>
       </div>
 
-      {/* ================================================================
-          INFORMATION
-      ================================================================= */}
+      {/* INFORMATION */}
       <div className="flex flex-1 flex-col gap-1.5 p-5 pt-4">
-        <h3 className="text-base sm:text-lg font-bold text-white">{member?.name || "Faculty Member"}</h3>
-        <p className="text-xs sm:text-sm font-medium text-[#F4A261]">
+        <h3 className="text-base font-bold text-white sm:text-lg">
+          {member?.name || "Faculty Member"}
+        </h3>
+
+        <p className="text-xs font-medium text-[#F4A261] sm:text-sm">
           {member?.title || member?.designation || "Faculty"}
         </p>
 
         {member?.qualification && (
           <div className="mt-1.5 flex items-center gap-1.5 text-xs text-white/60">
-            <GraduationCap size={13} className="shrink-0" aria-hidden="true" />
-            <span>{member.qualification} <br /> {member.br}</span>
+            <GraduationCap
+              size={13}
+              className="shrink-0"
+              aria-hidden="true"
+            />
+
+            <span>
+              {member.qualification}
+              {member?.br && (
+                <>
+                  <br />
+                  {member.br}
+                </>
+              )}
+            </span>
           </div>
         )}
 
         {member?.experience && (
           <div className="flex items-center gap-1.5 text-xs text-white/60">
-            <BadgeCheck size={13} className="shrink-0" aria-hidden="true" />
+            <BadgeCheck
+              size={13}
+              className="shrink-0"
+              aria-hidden="true"
+            />
+
             <span>{member.experience} Experience</span>
           </div>
         )}
@@ -92,18 +131,29 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
           <motion.div
             className="mt-2 overflow-hidden"
             initial={false}
-            animate={{ height: isActive || prefersReducedMotion ? "auto" : 0, opacity: isActive || prefersReducedMotion ? 1 : 0 }}
-            style={{ willChange: "height, opacity" }}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            animate={{
+              height:
+                isActive || prefersReducedMotion ? "auto" : 0,
+              opacity:
+                isActive || prefersReducedMotion ? 1 : 0,
+            }}
+            transition={{
+              duration: 0.35,
+              ease: "easeInOut",
+            }}
           >
             <div className="overflow-hidden">
               <motion.div
                 className="flex flex-wrap gap-1.5 pt-2"
-                animate={{ opacity: isActive || prefersReducedMotion ? 1 : 0 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
-              >
-
-              </motion.div>
+                animate={{
+                  opacity:
+                    isActive || prefersReducedMotion ? 1 : 0,
+                }}
+                transition={{
+                  duration: 0.25,
+                  ease: "easeOut",
+                }}
+              />
             </div>
           </motion.div>
         )}
@@ -121,14 +171,24 @@ const FacultyGrid = () => {
   const prefersReducedMotion = usePrefersReducedMotion();
   const safeFaculty = safeArray(faculty);
 
-  const scopeRef = useGSAPAnimation((scope) => {
+  const scopeRef = useGSAPAnimation(() => {
     if (!sectionRef.current) return;
+
+    const heading = headingRef.current;
+    const description = descriptionRef.current;
+    const cards = cardsRef.current
+      ? Array.from(cardsRef.current.children)
+      : [];
 
     if (prefersReducedMotion) {
       gsap.set(
-        [headingRef.current, descriptionRef.current, cardsRef.current?.children],
-        { opacity: 1, y: 0, scale: 1, clearProps: "all" }
+        [heading, description, ...cards].filter(Boolean),
+        {
+          opacity: 1,
+          clearProps: "all",
+        }
       );
+
       return;
     }
 
@@ -136,47 +196,74 @@ const FacultyGrid = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
-        end: "bottom 30%",
-        toggleActions: "play reverse play reverse", // replay har baar section viewport me aaye
+        toggleActions: "play none none none",
         invalidateOnRefresh: true,
-        anticipatePin: 1,
-        fastScrollEnd: true,
         markers: false,
       },
     });
 
-    if (headingRef.current) {
-      tl.from(headingRef.current, {
-        opacity: 0,
-        y: 36,
-        filter: "blur(6px)",
-        duration: 0.7,
-        ease: gsapEase.heading,
-      });
+    if (heading) {
+      tl.fromTo(
+        heading,
+        {
+          opacity: 0,
+          y: 36,
+          filter: "blur(6px)",
+        },
+        {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px)",
+          duration: 0.7,
+          ease: gsapEase.heading,
+        }
+      );
     }
 
-    if (descriptionRef.current) {
-      tl.from(
-        descriptionRef.current,
-        { opacity: 0, y: 18, duration: 0.5, ease: gsapEase.paragraph },
+    if (description) {
+      tl.fromTo(
+        description,
+        {
+          opacity: 0,
+          y: 18,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          ease: gsapEase.paragraph,
+        },
         "-=0.35"
       );
     }
 
-    if (cardsRef.current) {
-      tl.from(
-        cardsRef.current.children,
+    /*
+     * IMPORTANT:
+     * GSAP controls opacity only.
+     * Motion controls card transform/hover.
+     * This prevents GSAP and Motion from fighting
+     * over the same card transform.
+     */
+    if (cards.length > 0) {
+      tl.fromTo(
+        cards,
         {
           opacity: 0,
-          y: 34,
-          scale: 0.93,
-          duration: 0.8,
-          ease: "expo.out",
+        },
+        {
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out",
           stagger: 0.12,
         },
         "-=0.2"
       );
     }
+
+    return () => {
+      tl.scrollTrigger?.kill();
+      tl.kill();
+    };
   }, [prefersReducedMotion]);
 
   return (
@@ -191,23 +278,34 @@ const FacultyGrid = () => {
     >
       <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
         <div className="mx-auto max-w-2xl text-center">
-
           <h2
             id="faculty-heading"
             ref={headingRef}
-            className="mt-3 font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-white"
+            className="mt-3 font-heading text-3xl font-extrabold text-white sm:text-4xl lg:text-[2.75rem]"
           >
             Meet Our Faculty
           </h2>
-          <p ref={descriptionRef} className="mt-4 text-sm sm:text-base leading-relaxed text-white/60">
-            Experienced educators dedicated to academic excellence and student growth.
+
+          <p
+            ref={descriptionRef}
+            className="mt-4 text-sm leading-relaxed text-white/60 sm:text-base"
+          >
+            Experienced educators dedicated to academic excellence and
+            student growth.
           </p>
         </div>
 
-        <div ref={cardsRef} className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          ref={cardsRef}
+          className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4"
+        >
           {safeFaculty.length > 0 ? (
             safeFaculty.map((member) => (
-              <FacultyCard key={member?.id || member?.name} member={member} prefersReducedMotion={prefersReducedMotion} />
+              <FacultyCard
+                key={member?.id || member?.name}
+                member={member}
+                prefersReducedMotion={prefersReducedMotion}
+              />
             ))
           ) : (
             <p className="col-span-full text-center text-sm text-white/50">
