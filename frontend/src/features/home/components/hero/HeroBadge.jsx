@@ -39,7 +39,7 @@ const HeroBadge = ({ text, prefersReducedMotion }) => {
           // karke). Agar actual navbar height alag ho, to yahan
           // top-[clamp(...)] ya navbar se ek shared CSS variable use kar
           // ke isse aur precise kiya ja sakta hai.
-          className="absolute left-0 top-18 z-30 sm:top-20 w-full flex justify-center"
+          className="absolute left-0 top-18 z-30 sm:top-16 w-full flex justify-center"
         >
           <motion.span
             animate={
