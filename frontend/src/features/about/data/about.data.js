@@ -1,10 +1,10 @@
-import img1 from "../../../assets/images/about/faculty/Qasim.webp"
-import img2 from "../../../assets/images/about/faculty/saba.webp"
-import img3 from "../../../assets/images/about/faculty/Saad.webp"
+import img1 from "../../../assets/images/about/faculty/qasim sir.webp"
+import img2 from "../../../assets/images/about/faculty/saba mam.webp"
+import img3 from "../../../assets/images/about/faculty/saad sir.webp"
 import img4 from "../../../assets/images/about/faculty/shahid sir.webp"
-import img5 from "../../../assets/images/about/faculty/mohd asif.webp"
+import img5 from "../../../assets/images/about/faculty/mohd asif sir.webp"
 import founderImg from "../../../assets/images/about/founder.webp"
-import coFounderImg from "../../../assets/images/about/faculty/saba.webp"
+import coFounderImg from "../../../assets/images/about/faculty/saba mam.webp"
 
 import video from "../../../assets/images/common/aboutDescription.mp4"
 // ---------------------------------------------------------------------------
@@ -198,7 +198,8 @@ export const faculty = [
     title: "Founder & CEO",
     bio: "Over 15 years of experience in science education and curriculum design.",
     image: img1,
-    qualification: "Ph.D HR Analytics & Technology (JMI) MBA (AKTU Lucknow)",
+    qualification: "Ph.D HR Analytics & Technology (JMI)",
+    br : "MBA (AKTU Lucknow)",
     experience: "23+ Years",
 
   },
@@ -244,7 +245,7 @@ export const faculty = [
     title: "Head of Structural Design",
     bio: "Focused on preparing students for a technology-driven future.",
     image: img5,
-    qualification: "M.Tech in Structural Engineering from JMI  BIM Professional & Trainer",
+    qualification: "M.Tech in Structural Engineering from (JMI)  BIM Professional & Trainer",
     experience: "5+ Years Industrial",
 
   },
