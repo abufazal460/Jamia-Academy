@@ -52,7 +52,7 @@ const HeroSlide = ({ slide, isFirst, prefersReducedMotion, onVideoEnded }) => {
             onEnded={onVideoEnded}
             aria-label={slide.alt}
             style={{
-              objectFit: "contain",
+              objectFit: "fill",
               objectPosition: "center",
               width: "100%",
               height: "100%",
