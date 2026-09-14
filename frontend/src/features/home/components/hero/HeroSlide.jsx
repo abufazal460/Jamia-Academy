@@ -23,7 +23,6 @@ import { imageVariants, imageReducedVariants } from "../../motion/hero.motion";
  */
 const HeroSlide = ({ slide, isFirst, prefersReducedMotion, onVideoEnded }) => {
   const variants = prefersReducedMotion ? imageReducedVariants : imageVariants;
-  const objectPosition = slide.imagePosition || "center";
 
   // Agar imageMobile explicitly na diya ho, landscape image hi fallback
   // ban jaati hai — kabhi bhi <img src="undefined"> jaisi broken state
