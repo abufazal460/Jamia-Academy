@@ -36,20 +36,37 @@ const HeroSlide = ({ slide, isFirst, prefersReducedMotion, onVideoEnded }) => {
       initial="enter"
       animate="center"
       exit="exit"
-      className="absolute inset-0 z-0 overflow-hidden"
+      className="absolute inset-0 z-0 h-screen w-full overflow-hidden"
     >
       {slide.type === "video" ? (
-        <video
-          src={slide.image}
-          autoPlay
-          muted
-          playsInline
-          preload={isFirst ? "auto" : "metadata"}
-          onEnded={onVideoEnded}
-          aria-label={slide.alt}
-          style={{ objectPosition }}
-          className="absolute inset-0 block h-full w-full object-cover"
-        />
+        <picture className="absolute inset-0 block h-full w-full">
+          <source
+            media="(max-width: 767px)"
+            srcSet={slide.imageMobile || slide.image}
+          />
+          <video
+            autoPlay
+            muted
+            playsInline
+            preload={isFirst ? "auto" : "metadata"}
+            onEnded={onVideoEnded}
+            aria-label={slide.alt}
+            style={{
+              objectFit: "contain",
+              objectPosition: "center",
+              width: "100%",
+              height: "100%",
+            }}
+            className="absolute inset-0 block"
+          >
+            <source
+              src={slide.imageMobile || slide.image}
+              media="(max-width: 767px)"
+              type="video/webm"
+            />
+            <source src={slide.image} type="video/webm" />
+          </video>
+        </picture>
       ) : (
         <picture>
           <source media="(max-width: 767px)" srcSet={mobileImage} />
