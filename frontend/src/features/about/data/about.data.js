@@ -1,5 +1,5 @@
 import img1 from "../../../assets/images/about/faculty/qasim sir.webp"
-import img2 from "../../../assets/images/about/faculty/saba mam.webp"
+import img2 from "../../../assets/images/about/faculty/saba mam.jpg"
 import img3 from "../../../assets/images/about/faculty/saad sir.webp"
 import img4 from "../../../assets/images/about/faculty/shahid sir.webp"
 import img5 from "../../../assets/images/about/faculty/mohd asif sir.webp"
