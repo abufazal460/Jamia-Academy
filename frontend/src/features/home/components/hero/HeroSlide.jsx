@@ -76,9 +76,13 @@ const HeroSlide = ({ slide, isFirst, prefersReducedMotion, onVideoEnded }) => {
             alt={slide.alt}
             loading={isFirst ? "eager" : "lazy"}
             fetchPriority={isFirst ? "high" : "auto"}
-            decoding="async"
-            style={{ objectPosition }}
-            className="absolute inset-0 block h-full w-full object-fit"
+            decoding="async"            style={{
+              objectFit: "fill",
+              objectPosition: "center",
+              width: "100%",
+              height: "100%",
+            }}
+            className="absolute inset-0 block"
           />
         </picture>
       )}
