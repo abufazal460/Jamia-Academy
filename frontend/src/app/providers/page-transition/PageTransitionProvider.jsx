@@ -50,9 +50,10 @@ export default function PageTransitionProvider({
     lockBodyScroll(getLenisInstance());
   }, []);
 
-  const unlockScroll = useCallback(() => {
-    unlockBodyScroll(getLenisInstance());
-  }, []);
+const unlockScroll = useCallback((options) => {
+  unlockBodyScroll(getLenisInstance(), options);
+}, []);
+
   const waitForRouteReady = useCallback(
     (timeoutMs = ROUTE_READY_TIMEOUT) =>
       new Promise((resolve) => {
@@ -151,43 +152,56 @@ export default function PageTransitionProvider({
     lockScroll();
 
     const runNavigation = async () => {
-      try {
+  let scrollLockActive = true;
 
-        if (transitionRef.current) {
-          await transitionRef.current.playCover();
+  try {
+    if (transitionRef.current) {
+      await transitionRef.current.playCover();
+      await wait(TRANSITION_TIMING.holdDuration);
+    }
 
-          await wait(
-            TRANSITION_TIMING.holdDuration
-          );
-        }
-        const readyPromise = waitForRouteReady();
+    const readyPromise = waitForRouteReady();
 
+    blocker.proceed();
+    await readyPromise;
+
+    // Body fixed state hatao, lekin old route ki scroll position restore mat karo.
+    unlockScroll({ restoreScroll: false });
+    scrollLockActive = false;
+
+    await new Promise(requestAnimationFrame);
+
+    const lenis = getLenisInstance();
+
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+
+    if (transitionRef.current) {
+      await transitionRef.current.playReveal();
+    }
+  } catch (error) {
+    try {
+      if (blocker.state === "blocked") {
         blocker.proceed();
-
-        await readyPromise;
-        window.scrollTo(0, 0);
-        if (transitionRef.current) {
-          await transitionRef.current.playReveal();
-        }
-      } catch (error) {
-
-        try {
-          if (blocker.state === "blocked") {
-            blocker.proceed();
-          }
-        } catch {
-          // ignore
-        }
-      } finally {
-        runningRef.current = false;
-
-        unlockScroll();
-
-        if (mountedRef.current) {
-          setIsTransitioning(false);
-        }
       }
-    };
+    } catch {
+      // ignore
+    }
+  } finally {
+    runningRef.current = false;
+
+    if (scrollLockActive) {
+      unlockScroll();
+    }
+
+    if (mountedRef.current) {
+      setIsTransitioning(false);
+    }
+  }
+};
 
     runNavigation();
   }, [
