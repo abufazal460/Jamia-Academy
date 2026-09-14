@@ -33,8 +33,9 @@ function applyLock() {
   }
 }
 
-function releaseLock() {
+function releaseLock({ restoreScroll = true } = {}) {
   if (!savedStyles) return;
+
   const html = document.documentElement;
   const body = document.body;
   const styles = savedStyles;
@@ -46,24 +47,27 @@ function releaseLock() {
   body.style.width = styles.bodyWidth;
   body.style.paddingRight = styles.bodyPaddingRight;
 
-  window.scrollTo(0, savedScrollY);
+  if (restoreScroll) {
+    window.scrollTo(0, savedScrollY);
+  }
+
   savedStyles = null;
 }
 
+export function unlockBodyScroll(lenis, options) {
+  lockCount = Math.max(0, lockCount - 1);
+
+  if (lockCount === 0) {
+    releaseLock(options);
+    lenis?.start();
+  }
+}
 // Imperative helpers — non-hook consumers (e.g. PageTransitionProvider) inko
 // use karke isi shared counter/snapshot me participate karte hain.
 export function lockBodyScroll(lenis) {
   lockCount += 1;
   if (lockCount === 1) applyLock();
   lenis?.stop();
-}
-
-export function unlockBodyScroll(lenis) {
-  lockCount = Math.max(0, lockCount - 1);
-  if (lockCount === 0) {
-    releaseLock();
-    lenis?.start();
-  }
 }
 
 export function useLockBodyScroll(isLocked, options = {}) {
