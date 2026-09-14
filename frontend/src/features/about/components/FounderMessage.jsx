@@ -21,7 +21,6 @@ const FounderMessage = ({ data }) => {
   const quoteOpenRef = useRef(null);
   const quoteCloseRef = useRef(null);
   const messageRef = useRef(null);
-  const signatureRef = useRef(null);
   const detailsRef = useRef(null);
 
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -49,7 +48,6 @@ const FounderMessage = ({ data }) => {
             quoteOpenRef.current,
             quoteCloseRef.current,
             messageRef.current?.children,
-            signatureRef.current,
             detailsRef.current,
           ],
           {
@@ -155,19 +153,7 @@ const FounderMessage = ({ data }) => {
         );
       }
 
-      if (signatureRef.current) {
-        tl.from(
-          signatureRef.current,
-          {
-            opacity: 0,
-            y: 14,
-            duration: 0.5,
-            ease: "power2.out",
-          },
-          "-=0.15"
-        );
-      }
-
+    
       if (detailsRef.current) {
         tl.from(
           detailsRef.current,
@@ -285,27 +271,8 @@ const FounderMessage = ({ data }) => {
               </span>
 
               <div
-                ref={signatureRef}
                 className="mt-5 border-t border-[#2B2D42]/10 pt-5"
               >
-                {messageData.signatureImage ? (
-                  <img
-                    src={messageData.signatureImage}
-                    alt={`${personData?.name || "Founder"}'s signature`}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-12 w-auto object-contain"
-                  />
-                ) : (
-                  <p
-                    className="text-2xl italic text-[#2B2D42]/70"
-                    style={{
-                      fontFamily: "'Brush Script MT', cursive",
-                    }}
-                  >
-                    {personData?.name || "Founder Name"}
-                  </p>
-                )}
 
                 <div
                   ref={detailsRef}
