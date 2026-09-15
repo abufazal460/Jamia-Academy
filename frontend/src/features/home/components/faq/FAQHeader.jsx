@@ -51,9 +51,6 @@ const FAQHeader = () => {
         {" "}
         Asked
         Questions
-        From Our
-        {" "}
-        <span className="bg-gradient-to-r from-orange-400 via-yellow-300 to-red-500 bg-clip-text text-transparent">Students</span>
       </motion.h2>
     </motion.div>
   );
