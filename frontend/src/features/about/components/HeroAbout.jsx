@@ -13,7 +13,6 @@ import { cn } from "../../../shared/utils/helpers";
 import { hero } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
 
-import bg from "../../../assets/images/common/ai.webp"
 
 const heroStats = [
   { id: "hero-stat-students", value: "2000+", label: "Students Enrolled" },
