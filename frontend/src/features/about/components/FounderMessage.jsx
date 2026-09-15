@@ -68,18 +68,12 @@ const FounderMessage = ({ data }) => {
           trigger: sectionRef.current,
           start: "top 78%",
           end: "bottom 25%",
-          toggleActions: "play reverse play reverse",
+          toggleActions: "play none none none",
           invalidateOnRefresh: true,
           anticipatePin: 1,
           fastScrollEnd: true,
           markers: false,
         },
-      });
-
-      tl.from(sectionRef.current, {
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.out",
       });
 
       if (imageRef.current) {
@@ -153,7 +147,7 @@ const FounderMessage = ({ data }) => {
         );
       }
 
-    
+
       if (detailsRef.current) {
         tl.from(
           detailsRef.current,

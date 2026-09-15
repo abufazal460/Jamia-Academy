@@ -57,15 +57,13 @@ const CoFounderSection = () => {
         trigger: sectionRef.current,
         start: "top 80%",
         end: "bottom 30%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none none",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
         markers: false,
       },
     });
-
-    tl.from(sectionRef.current, { opacity: 0, duration: 0.5, ease: "power2.out" });
 
     if (imageRef.current) {
       tl.from(

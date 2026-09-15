@@ -71,18 +71,12 @@ const FounderSection = () => {
         start: "top 80%",
         end: "bottom 30%",
         scrub: false,
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none none",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
         markers: false,
       },
-    });
-
-    tl.from(sectionRef.current, {
-      opacity: 0,
-      duration: 0.5,
-      ease: "power2.out",
     });
 
     if (imageRef.current) {
