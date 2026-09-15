@@ -51,7 +51,7 @@ const TimelineSection = () => {
         trigger: sectionRef.current,
         start: "top 80%",
         end: "top 40%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none none",
         invalidateOnRefresh: true,
         markers: false,
       },

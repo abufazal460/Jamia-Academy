@@ -47,7 +47,7 @@ const VisionMission = () => {
         trigger: sectionRef.current,
         start: "top 80%",
         end: "bottom 30%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none none",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,

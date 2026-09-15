@@ -60,7 +60,7 @@ const AboutDescription = () => {
         trigger: sectionRef.current,
         start: "top 75%",
         end: "bottom 20%",
-        toggleActions: "play reverse play reverse",
+        toggleActions: "play none none none",
         invalidateOnRefresh: true,
         anticipatePin: 1,
         fastScrollEnd: true,
@@ -151,7 +151,7 @@ const AboutDescription = () => {
           trigger: sectionRef.current,
           start: "top bottom",
           end: "bottom top",
-          toggleActions: "play pause resume pause",
+          toggleActions: "play none none none",
         },
       });
     }
