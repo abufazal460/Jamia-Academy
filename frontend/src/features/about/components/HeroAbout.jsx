@@ -12,6 +12,7 @@ import { cn } from "../../../shared/utils/helpers";
 
 import { hero } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
+import SpaceBackground from "../../../shared/components/background/SpaceBackground";
 
 
 const heroStats = [
@@ -134,9 +135,10 @@ const HeroAbout = () => {
       className={cn(
         "relative w-full min-h-[100svh] overflow-hidden",
         "flex items-center",
-        "bg-gradient-primary"
+        
       )}
     >
+      <SpaceBackground />
 
       <div className="absolute inset-0 z-10 pointer-events-none" aria-hidden="true">
         <motion.div
