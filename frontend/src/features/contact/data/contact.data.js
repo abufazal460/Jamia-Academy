@@ -190,8 +190,7 @@ export const mapConfig = {
   ctaLabel: "Get Directions",
   ctaHref: "https://maps.google.com/?q=A-29+Batla+House+Jamia+Nagar+Okhla+New+Delhi",
   workingHours: [
-    { day: "Monday – Friday", time: "9:00 AM – 9:00 PM" },
-    { day: "Saturday", time: "Closed" },
+    { day: "Monday – Saturday", time: "8:00 AM – 10:00 PM" },
     { day: "Sunday", time: "Closed" },
   ],
 };

@@ -91,7 +91,7 @@ const ContactHero = () => {
           <img
             src={HeroImg}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-fit"
           />
         </div>
 
