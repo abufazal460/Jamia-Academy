@@ -5,7 +5,7 @@ import { buttonHoverVariant } from "../../../shared/motion/hover.motion";
 import { floatingCard, noMotion } from "../../../shared/motion/floating.motion";
 import { usePrefersReducedMotion } from "../../../shared/hooks/usePrefersReducedMotion";
 import { resolveIcon } from "../../../shared/utils/icons";
-import TransitionLink from "../../../app/providers/page-transition/TransitionLink";
+import { Link } from "react-router-dom";
 import HeroImg from "../../../assets/images/common/contact.webp"
 
 const ACCENT_MAP = {
@@ -57,7 +57,7 @@ const ContactHero = () => {
         </p>
 
         <div className="mt-2 flex flex-wrap gap-4">
-          <TransitionLink
+          <Link
             to={contactHero.buttons.primary.href}
             variants={buttonHoverVariant}
             initial="rest"
@@ -66,7 +66,7 @@ const ContactHero = () => {
             className="rounded-full bg-[#E63946] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#E63946]/25 transition-shadow focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#E63946]"
           >
             {contactHero.buttons.primary.label}
-          </TransitionLink>
+          </Link>
           <motion.a
             href={contactHero.buttons.secondary.href}
             variants={buttonHoverVariant}
