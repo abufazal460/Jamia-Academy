@@ -1,10 +1,9 @@
 import img1 from "../../../assets/images/about/faculty/qasim sir.jpg"
-import img2 from "../../../assets/images/about/faculty/saba mam.jpg"
+import img2 from "../../../assets/images/about/faculty/Dr saba.webp"
 import img3 from "../../../assets/images/about/faculty/saad sir.webp"
 import img4 from "../../../assets/images/about/faculty/shahid sir.webp"
 import img5 from "../../../assets/images/about/faculty/mohd asif sir.webp"
 import founderImg from "../../../assets/images/about/founder.webp"
-import coFounderImg from "../../../assets/images/about/faculty/saba mam.webp"
 
 import video from "../../../assets/images/common/aboutDescription.mp4"
 // ---------------------------------------------------------------------------
@@ -111,7 +110,7 @@ export const coFounder = {
   title: "Co-Founder",
   bio: "Dr. Saba Rizwi has been instrumental in shaping the academic curriculum and pastoral care systems that define the Jamia Academy experience.",
 
-  image: coFounderImg,
+  image: img2,
   experience: "12+ Years in Academic Leadership",
   qualifications: [
     { id: "cf-qual-1", degree: "Ph.D.", field: "Educational Technology & Artificial Intelligence", university: "Jamia Millia Islamia" },
