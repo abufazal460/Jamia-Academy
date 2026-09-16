@@ -1,4 +1,3 @@
-import { usePageTransition } from "../../../app/providers/page-transition";
 import React, {
   useState,
   useCallback,
@@ -7,7 +6,7 @@ import React, {
   useRef,
 } from "react";
 import { motion } from "motion/react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 import { gsap } from "gsap";
@@ -33,16 +32,15 @@ const logoVariants = {
 
 function Navbar() {
   const location = useLocation();
-  const { navigateWithTransition, isTransitioning } = usePageTransition();
+  const navigate = useNavigate();
   const isDesktop = useMediaQuery("lg");
 
   const handleLogoClick = useCallback(
     (e) => {
       e.preventDefault();
-      if (isTransitioning) return;
-      navigateWithTransition("/");
+      navigate("/");
     },
-    [navigateWithTransition, isTransitioning],
+    [navigate],
   );
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

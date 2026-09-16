@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { getLenisInstance } from "../../../../app/providers/SmoothScroll";
 
-import { usePageTransition } from "../../../../app/providers/page-transition";
+import { useNavigate } from "react-router-dom";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -16,7 +16,7 @@ export default function BrowseCoursesCTA({
   onBrowseCourses,
 }) {
   const sectionRef = useRef(null);
-  const { navigateWithTransition } = usePageTransition();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -64,7 +64,7 @@ export default function BrowseCoursesCTA({
       return;
     }
 
-    if (href) navigateWithTransition(href);
+    if (href) navigate(href);
   };
 
   return (

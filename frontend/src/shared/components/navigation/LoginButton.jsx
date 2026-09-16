@@ -1,10 +1,9 @@
 import React, { memo } from "react";
 import { motion } from "motion/react";
-import { usePageTransition } from "../../../app/providers/page-transition";
-
+import { useNavigate } from "react-router-dom";
 const LoginButton = memo(function LoginButton() {
 
-  const { navigateWithTransition } = usePageTransition();
+  const navigate = useNavigate();
 
   return (
 
@@ -15,8 +14,7 @@ const LoginButton = memo(function LoginButton() {
     >
       <motion.button
         type="button"
-        onClick={() => navigateWithTransition("/login")}
-        initial="rest"
+        onClick={() => navigate("/login")} initial="rest"
         whileHover="hover"
         whileTap={{ scale: 0.95 }}
         variants={{

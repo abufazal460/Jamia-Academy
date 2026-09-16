@@ -1,7 +1,7 @@
 import React, { useState, memo, useRef } from "react";
 import { motion, AnimatePresence, useInView  } from "motion/react";
 import { ctaVariants, textButtonVariants } from "../../motion/why-choose-us.motion";
-import TransitionLink from "../../../../app/providers/page-transition/TransitionLink";
+import { Link } from "react-router-dom";
 
 const WhyChooseCTA = memo(({ data }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -117,7 +117,7 @@ const WhyChooseCTA = memo(({ data }) => {
           className="flex flex-col sm:flex-row gap-4 flex-shrink-0"
           variants={ctaVariants}
         >
-          <TransitionLink to="/course" className="block">
+          <Link  to="/course" className="block">
             <motion.button
               onClick={handleClick}
               onHoverStart={() => setIsHovered(true)}
@@ -138,8 +138,8 @@ const WhyChooseCTA = memo(({ data }) => {
             >
               <ButtonContent />
             </motion.button>
-          </TransitionLink>
-          <TransitionLink to="/contact" className="block">
+          </Link>
+          <Link  to="/contact" className="block">
             <motion.button
               whileHover={{
                 y: -3,
@@ -153,7 +153,7 @@ const WhyChooseCTA = memo(({ data }) => {
             >
               Contact Us
             </motion.button>
-          </TransitionLink>
+          </Link>
         </motion.div>
       </div>
     </motion.div>
