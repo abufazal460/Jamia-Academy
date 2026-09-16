@@ -1,8 +1,7 @@
-import React, { Suspense, lazy } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, { Suspense, lazy, useEffect } from "react";import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "../shared/components/navigation/Navbar";
 import Footer from "../shared/components/footer/Footer";
-import SmoothScroll from "./providers/SmoothScroll";
+import SmoothScroll, { getLenisInstance } from "./providers/SmoothScroll";
 import OrganizationSchema from "../shared/seo/OrganizationSchema";
 import Layout from "../shared/components/layout/Layout";
 import ErrorBoundary from "./providers/ErrorBoundary";
@@ -19,6 +18,17 @@ const NotFoundPage = lazy(() => import("../pages/NotFoundPage"));
 
 export default function App() {
   const location = useLocation();
+  
+  useEffect(() => {
+  const lenis = getLenisInstance();
+
+  if (lenis) {
+    lenis.scrollTo(0, { immediate: true });
+    return;
+  }
+
+  window.scrollTo(0, 0);
+}, [location.pathname]);
 
   return (
     <>
