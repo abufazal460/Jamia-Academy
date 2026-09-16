@@ -1,7 +1,6 @@
 import React, { memo } from "react";
 import { motion } from "motion/react";
-import { TransitionNavLink } from "../../../app/providers/page-transition";
-
+import { NavLink } from "react-router-dom";
 const itemVariants = {
   hidden: { opacity: 0, y: -40 },
   visible: (index) => ({
@@ -27,7 +26,7 @@ const NavItem = memo(function NavItem({ item, index, isActive, onHover, itemRef 
       className="relative list-none"
 
     >
-      <TransitionNavLink
+      <NavLink
         to={item.route}
         aria-current={isActive ? "page" : undefined}
         onMouseEnter={() => onHover(index)}
@@ -42,7 +41,7 @@ const NavItem = memo(function NavItem({ item, index, isActive, onHover, itemRef 
         }
       >
         {item.label}
-      </TransitionNavLink>
+      </NavLink>
       {isActive && (
         <motion.span
           layoutId="active-nav-pill"

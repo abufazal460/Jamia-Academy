@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { TransitionNavLink } from "../../../app/providers/page-transition";
+import { NavLink } from "react-router-dom";
 import WhatsAppButton from "./WhatsAppButton";
 import { navLinks } from "../../data/navigation.data";
 
@@ -93,7 +93,7 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
               <ul className="flex flex-col gap-1">
                 {navLinks.map((item) => (
                   <motion.li key={item.id} variants={itemVariants} className="list-none">
-                    <TransitionNavLink
+                    <NavLink
                       to={item.route}
                       onClick={onClose}
                       className={({ isActive }) =>
@@ -107,7 +107,7 @@ const MobileMenu = memo(function MobileMenu({ isOpen, onClose }) {
                       }
                     >
                       {item.label}
-                    </TransitionNavLink>
+                    </NavLink>
                   </motion.li>
                 ))}
               </ul>
