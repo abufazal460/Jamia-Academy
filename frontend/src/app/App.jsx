@@ -26,7 +26,7 @@ export default function App() {
       <SmoothScroll>
         <Suspense fallback={null}>
           <Navbar />
-          <RouteTransitionWatcher />
+          {/* <RouteTransitionWatcher /> */}
           <Layout>
             <ErrorBoundary resetKeys={[location.pathname, location.search]}>
               <Routes>

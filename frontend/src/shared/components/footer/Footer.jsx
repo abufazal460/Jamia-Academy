@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion } from "motion/react";
 import { FaFacebookF, FaInstagram, FaYoutube, FaTwitter } from "react-icons/fa";
 import { FiMapPin, FiPhone, FiMail } from "react-icons/fi";
-import { usePageTransition } from "../../../app/providers/page-transition";
+import { useNavigate } from "react-router-dom";
 
 import logo from "../../../assets/icons/logo.webp";
 import msme from "../../../assets/icons/msme.webp";
@@ -165,12 +165,11 @@ const copyrightVariant = {
 const Footer = () => {
   const footerRef = useRef(null);
 
-  const { navigateWithTransition, isTransitioning } = usePageTransition();
+  const navigate = useNavigate();
 
   const handleInternalNav = (e, path) => {
     e.preventDefault();
-    if (isTransitioning) return;
-    navigateWithTransition(path);
+    navigate(path);
   };
   return (
     <motion.footer
@@ -183,7 +182,7 @@ const Footer = () => {
       aria-label="Site footer"
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-8">
-        <motion.div variants={sectionVariant} viewport={{ once: true}} className="flex flex-col gap-5">
+        <motion.div variants={sectionVariant} viewport={{ once: true }} className="flex flex-col gap-5">
           <div className="bg-white rounded-xl w-fit">
             <img
               src={logo}
