@@ -93,5 +93,5 @@ export const ctaData = {
 
 export const sectionData = {
   heading: "Why Students Choose Jamia Academy",
-  description: "We empower learners with hands-on practical education, seasoned faculty mentorship, globally valid certifications, dedicated career guidance, and an industry-aligned curriculum—at accessible fees."
+  description: "We empower learners with hands-on practical education, seasoned faculty mentorship, globally valid certifications, dedicated career guidance, and an industry-aligned curriculum-at accessible fees."
 };
