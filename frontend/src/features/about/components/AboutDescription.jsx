@@ -1,6 +1,7 @@
 
 import React, { useRef, useState, useMemo } from "react";
 
+
 import { motion } from "motion/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,6 +11,7 @@ import { GraduationCap, MonitorSmartphone, ShieldCheck, } from "lucide-react";
 import useGSAPAnimation from "../../../shared/hooks/useGSAPAnimation";
 import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMotion";
 import useMediaQuery from "../../../shared/hooks/useMediaQuery";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 // Utilities
 import { splitIntoWords } from "../../../shared/utils/text";
@@ -172,154 +174,158 @@ const AboutDescription = () => {
   };
 
   return (
-    <section
-      id="about-description"
-      aria-labelledby="about-description-heading"
-      className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
-    >
-      <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
-          {/* ==============================================================
+    <ProtectedContent>
+      <section
+        id="about-description"
+        aria-labelledby="about-description-heading"
+        className="relative w-full overflow-hidden bg-bg-secondary py-20 sm:py-24 lg:py-28"
+      >
+        <div className="mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 items-center">
+            {/* ==============================================================
               LEFT CONTENT
           ============================================================== */}
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-wrap items-center gap-3">
-              {aboutDescription?.established && (
-                <span className="inline-flex items-center rounded-full bg-[#2B2D42]/5 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#2B2D42]">
-                  {aboutDescription.established}
-                </span>
+            <div className="flex flex-col gap-6">
+              <div className="flex flex-wrap items-center gap-3">
+                {aboutDescription?.established && (
+                  <span className="inline-flex items-center rounded-full bg-[#2B2D42]/5 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#2B2D42]">
+                    {aboutDescription.established}
+                  </span>
+                )}
+                {aboutDescription?.location && (
+                  <span className="inline-flex items-center rounded-full bg-[#2A9D8F]/10 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#2A9D8F]">
+                    {aboutDescription.location}
+                  </span>
+                )}
+              </div>
+
+              <h2
+                id="about-description-heading"
+                className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight leading-tight text-[#2B2D42]"
+              >
+                {aboutDescription?.heading || "About Jamia Academy"}
+              </h2>
+
+              <p
+                ref={paragraphRef}
+                className="text-base sm:text-lg leading-relaxed text-[#2B2D42]/80 max-w-xl"
+              >
+                {paragraphWords.map((word, index) => (
+                  <span
+                    key={`about-word-${index}-${word}`}
+                    className="inline-block mr-[0.28em] will-change-transform"
+                  >
+                    {word}
+                  </span>
+                ))}
+              </p>
+
+              {aboutDescription?.quote && (
+                <blockquote className="border-l-4 border-[#2A9D8F] rounded-2xl pl-4 sm:pl-5 py-1 text-base sm:text-lg italic text-[#2B2D42]/90">
+                  “{aboutDescription.quote}”
+                </blockquote>
               )}
-              {aboutDescription?.location && (
-                <span className="inline-flex items-center rounded-full bg-[#2A9D8F]/10 px-3.5 py-1.5 text-xs font-semibold tracking-wide text-[#2A9D8F]">
-                  {aboutDescription.location}
-                </span>
-              )}
-            </div>
 
-            <h2
-              id="about-description-heading"
-              className="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight leading-tight text-[#2B2D42]"
-            >
-              {aboutDescription?.heading || "About Jamia Academy"}
-            </h2>
 
-            <p
-              ref={paragraphRef}
-              className="text-base sm:text-lg leading-relaxed text-[#2B2D42]/80 max-w-xl"
-            >
-              {paragraphWords.map((word, index) => (
-                <span
-                  key={`about-word-${index}-${word}`}
-                  className="inline-block mr-[0.28em] will-change-transform"
-                >
-                  {word}
-                </span>
-              ))}
-            </p>
-
-            {aboutDescription?.quote && (
-              <blockquote className="border-l-4 border-[#2A9D8F] rounded-2xl pl-4 sm:pl-5 py-1 text-base sm:text-lg italic text-[#2B2D42]/90">
-                “{aboutDescription.quote}”
-              </blockquote>
-            )}
-
-            {/* ============================================================
+              {/* ============================================================
                 FEATURE CARDS
             ============================================================= */}
-            <div ref={cardsRef} className="mt-4 grid grid-cols-1 xs:grid-cols-3 gap-4 sm:gap-5">
-              {safeFeatures.map((feature) => {
-                const Icon = iconMap[feature?.icon] || GraduationCap;
-                return (
-                  <motion.div
-                    key={feature?.id || feature?.title}
-                    className={cn(
-                      "group relative rounded-2xl border border-[#2B2D42]/10 bg-white",
-                      "px-5 py-6 shadow-[0_4px_20px_rgba(43,45,66,0.06)] will-change-transform"
-                    )}
-                    whileHover={
-                      prefersReducedMotion
-                        ? {}
-                        : {
-                          scale: 1.05,
-                          y: -10,
-                          boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
-                          borderColor: "rgba(180,180,70,0.4)",
-                        }
-                    }
-                    transition={{ duration: 0.3, ease: "easeOut" }}
-                  >
-                    <span
-                      className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[#86e96b]/0 to-[#2A9D8F]/0 group-hover:from-[#86e96b]/5 group-hover:to-[#2A9D8F]/5 transition-colors duration-300"
-                      aria-hidden="true"
-                    />
-                    <span
-                      className="relative z-10 mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#2A9D8F]/10 text-[#2A9D8F]"
-                      aria-hidden="true"
+              <div ref={cardsRef} className="mt-4 grid grid-cols-1 xs:grid-cols-3 gap-4 sm:gap-5">
+                {safeFeatures.map((feature) => {
+                  const Icon = iconMap[feature?.icon] || GraduationCap;
+                  return (
+                    <motion.div
+                      key={feature?.id || feature?.title}
+                      className={cn(
+                        "group relative rounded-2xl border border-[#2B2D42]/10 bg-white",
+                        "px-5 py-6 shadow-[0_4px_20px_rgba(43,45,66,0.06)] will-change-transform"
+                      )}
+                      whileHover={
+                        prefersReducedMotion
+                          ? {}
+                          : {
+                            scale: 1.05,
+                            y: -10,
+                            boxShadow: "0 16px 36px rgba(43,45,66,0.16)",
+                            borderColor: "rgba(180,180,70,0.4)",
+                          }
+                      }
+                      transition={{ duration: 0.3, ease: "easeOut" }}
                     >
-                      <Icon size={20} />
-                    </span>
-                    <h3 className="font-heading relative z-10 text-sm sm:text-base font-bold text-[#2B2D42]">
-                      {feature?.title || "Feature"}
-                    </h3>
-                    <p className="relative z-10 mt-1.5 text-xs sm:text-sm leading-relaxed text-[#2B2D42]/65">
-                      {feature?.description || ""}
-                    </p>
-                  </motion.div>
-                );
-              })}
+                      <span
+                        className="pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br from-[#86e96b]/0 to-[#2A9D8F]/0 group-hover:from-[#86e96b]/5 group-hover:to-[#2A9D8F]/5 transition-colors duration-300"
+                        aria-hidden="true"
+                      />
+                      <span
+                        className="relative z-10 mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[#2A9D8F]/10 text-[#2A9D8F]"
+                        aria-hidden="true"
+                      >
+                        <Icon size={20} />
+                      </span>
+                      <h3 className="font-heading relative z-10 text-sm sm:text-base font-bold text-[#2B2D42]">
+                        {feature?.title || "Feature"}
+                      </h3>
+                      <p className="relative z-10 mt-1.5 text-xs sm:text-sm leading-relaxed text-[#2B2D42]/65">
+                        {feature?.description || ""}
+                      </p>
+                    </motion.div>
+                  );
+                })}
+              </div>
             </div>
-          </div>
 
-          {/* ==============================================================
+            {/* ==============================================================
               RIGHT CONTENT — Image block + floating badges
           ============================================================== */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div
-              ref={(node) => {
-                imageWrapRef.current = node;
-                tiltTargetRef.current = node;
-              }}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              className="relative w-full max-w-md will-change-transform"
-              style={{ transition: "transform 0.2s ease-out" }}
-            >
-              <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">
-                <div className="relative overflow-hidden rounded-[26px] bg-white/40 backdrop-blur-sm">
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    src={aboutDescription?.image}
-                    className="aspect-[3/4] w-full h-full object-cover"
-                  />
+            <div className="relative flex justify-center lg:justify-end">
+              <div
+                ref={(node) => {
+                  imageWrapRef.current = node;
+                  tiltTargetRef.current = node;
+                }}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                className="relative w-full max-w-md will-change-transform"
+                style={{ transition: "transform 0.2s ease-out" }}
+              >
+                <div className="rounded-[28px] bg-gradient-to-br from-[#E63946] via-[#F4A261] to-[#2A9D8F] p-[3px] shadow-[0_20px_50px_rgba(43,45,66,0.18)]">
+                  <div className="relative overflow-hidden rounded-[26px] bg-white/40 backdrop-blur-sm">
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      src={aboutDescription?.image}
+                      className="aspect-[3/4] w-full h-full object-cover"
+                    />
 
-                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/25 via-transparent to-transparent" />
-                </div>
-              </div>
-              <div ref={badgesRef} aria-hidden="false">
-                {safeBadges.map((badge, index) => (
-                  <div
-                    key={badge?.id || badge?.label}
-                    className={cn(
-                      "absolute rounded-xl border border-white/40 bg-white/80 backdrop-blur-md",
-                      "px-3.5 py-2 text-[11px] sm:text-xs font-semibold text-[#2B2D42] shadow-lg will-change-transform",
-                      index === 0 && "-top-4 -left-4 sm:-left-8",
-                      index === 1 && "top-1/2 -right-4 sm:-right-8 -translate-y-1/2",
-                      index === 2 && "-bottom-4 left-6 sm:left-10"
-                    )}
-                  >
-                    {badge?.label}
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1A1A2E]/25 via-transparent to-transparent" />
                   </div>
-                ))}
+                </div>
+                <div ref={badgesRef} aria-hidden="false">
+                  {safeBadges.map((badge, index) => (
+                    <div
+                      key={badge?.id || badge?.label}
+                      className={cn(
+                        "absolute rounded-xl border border-white/40 bg-white/80 backdrop-blur-md",
+                        "px-3.5 py-2 text-[11px] sm:text-xs font-semibold text-[#2B2D42] shadow-lg will-change-transform",
+                        index === 0 && "-top-4 -left-4 sm:-left-8",
+                        index === 1 && "top-1/2 -right-4 sm:-right-8 -translate-y-1/2",
+                        index === 2 && "-bottom-4 left-6 sm:left-10"
+                      )}
+                    >
+                      {badge?.label}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ProtectedContent >
+
   );
 };
 
