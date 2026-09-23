@@ -26,7 +26,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
     <motion.div
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-3xl",
-        "border border-white/10 bg-white/[0.06] backdrop-blur-xl",
+        "border border-white/10 bg-white/[0.06]",
         "shadow-[0_10px_32px_rgba(0,0,0,0.18)]"
       )}
       onHoverStart={() => setIsActive(true)}

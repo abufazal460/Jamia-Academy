@@ -136,6 +136,7 @@ const FounderSection = () => {
           duration: 0.6,
           ease: gsapEase.card,
           stagger: 0.15,
+          clearProps: "transform",
         },
         "-=0.2"
       );

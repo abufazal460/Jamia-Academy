@@ -1,10 +1,10 @@
-import { useEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 
 const useGSAPAnimation = (animationCallback, deps = []) => {
   const scope = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!scope.current || typeof animationCallback !== "function") return undefined;
 
     const ctx = gsap.context(() => {
