@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 
-const NORMAL_INTERVAL_MS = 5000;
-const HOVER_INTERVAL_MS = 9000;
+const NORMAL_INTERVAL_MS = 10000;
+const HOVER_INTERVAL_MS = 20000;
 
 const useHeroSlider = (slides, { autoplay = true } = {}) => {
   const slideCount = slides.length;
