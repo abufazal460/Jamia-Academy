@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import  { useRef } from "react";
 
 import { motion } from "motion/react";
 import gsap from "gsap";
@@ -14,6 +14,7 @@ import { cn, safeArray } from "../../../shared/utils/helpers";
 
 import { stats } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -29,6 +30,7 @@ const StatCard = ({ stat, prefersReducedMotion }) => {
   const { ref, inView } = useCountUp({ triggerOnce: false, threshold: 0.5 });
 
   return (
+    <ProtectedContent>
     <motion.div
       ref={ref}
       className={cn(
@@ -59,6 +61,7 @@ const StatCard = ({ stat, prefersReducedMotion }) => {
       </p>
       <p className="relative z-10 mt-1.5 text-xs sm:text-sm text-black/60">{stat?.label}</p>
     </motion.div>
+    </ProtectedContent>
   );
 };
 
@@ -123,6 +126,7 @@ const StatsSection = () => {
   }, [prefersReducedMotion]);
 
   return (
+    <ProtectedContent>
     <section
       ref={(node) => {
         sectionRef.current = node;
@@ -156,6 +160,7 @@ const StatsSection = () => {
         </div>
       </div>
     </section>
+    </ProtectedContent>
   );
 };
 

@@ -1,5 +1,5 @@
 
-import React, { useRef } from "react";
+import  { useRef } from "react";
 
 import { motion } from "motion/react";
 import gsap from "gsap";
@@ -13,6 +13,7 @@ import { cn, safeArray } from "../../../shared/utils/helpers";
 
 import { timeline } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -144,6 +145,7 @@ const TimelineSection = () => {
   }, [prefersReducedMotion]);
 
   return (
+    <ProtectedContent>
     <section
       ref={(node) => {
         sectionRef.current = node;
@@ -260,6 +262,7 @@ const TimelineSection = () => {
         )}
       </div>
     </section>
+    </ProtectedContent>
   );
 };
 

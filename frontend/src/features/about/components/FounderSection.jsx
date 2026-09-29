@@ -1,5 +1,6 @@
 
-import React, { useRef, useState } from "react";
+import  { useRef, useState } from "react";
+
 
 import { motion } from "motion/react";
 import gsap from "gsap";
@@ -16,6 +17,7 @@ import { getImageProps } from "../../../shared/utils/image";
 
 import { founder } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -152,6 +154,7 @@ const FounderSection = () => {
   }, [prefersReducedMotion]);
 
   return (
+    <ProtectedContent>
     <section
       ref={(node) => {
         sectionRef.current = node;
@@ -268,6 +271,7 @@ const FounderSection = () => {
         </div>
       </div>
     </section>
+    </ProtectedContent>
   );
 };
 

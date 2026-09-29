@@ -13,6 +13,7 @@ import { getImageProps } from "../../../shared/utils/image";
 
 import { faculty } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,6 +24,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
   const expertiseList = safeArray(member?.expertise);
 
   return (
+    <ProtectedContent>
     <motion.div
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-3xl",
@@ -159,6 +161,7 @@ const FacultyCard = ({ member, prefersReducedMotion }) => {
         )}
       </div>
     </motion.div>
+    </ProtectedContent>
   );
 };
 
@@ -267,6 +270,7 @@ const FacultyGrid = () => {
   }, [prefersReducedMotion]);
 
   return (
+    <ProtectedContent>
     <section
       ref={(node) => {
         sectionRef.current = node;
@@ -315,6 +319,7 @@ const FacultyGrid = () => {
         </div>
       </div>
     </section>
+    </ProtectedContent>
   );
 };
 
