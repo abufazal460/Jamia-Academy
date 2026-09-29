@@ -121,7 +121,7 @@ export const testimonialsRowTwo = [
   },
   {
     id: 12,
-    name: "Sumbul Khan ",
+    name: "Sumbul Fatima",
     course: "Interior Design",
     rating: 4.9,
     review:
