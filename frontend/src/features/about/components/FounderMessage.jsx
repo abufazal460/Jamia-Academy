@@ -11,6 +11,7 @@ import usePrefersReducedMotion from "../../../shared/hooks/usePrefersReducedMoti
 import { getImageProps } from "../../../shared/utils/image";
 
 import { gsapEase } from "../../../shared/motion/config";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -165,6 +166,7 @@ const FounderMessage = ({ data }) => {
   );
 
   return (
+    <ProtectedContent>
     <section
       ref={(node) => {
         sectionRef.current = node;
@@ -289,6 +291,7 @@ const FounderMessage = ({ data }) => {
         </div>
       </div>
     </section>
+    </ProtectedContent>
   );
 };
 

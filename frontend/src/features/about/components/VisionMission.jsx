@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 
 import { motion } from "motion/react";
 import gsap from "gsap";
@@ -12,6 +12,7 @@ import { cn } from "../../../shared/utils/helpers";
 
 import { vision, mission, commitment } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -100,122 +101,124 @@ const VisionMission = () => {
   }, [prefersReducedMotion]);
 
   return (
-    <section
-      ref={(node) => {
-        sectionRef.current = node;
-        scopeRef.current = node;
-      }}
-      id="vision-mission"
-      aria-labelledby="vision-mission-heading"
-      className="relative w-full overflow-hidden bg-bg-dark-secondary py-20 sm:py-24 lg:py-28"
-    >
-      <motion.div
-        className="pointer-events-none absolute top-10 left-[10%] h-64 w-64 rounded-full blur-3xl"
-        animate={prefersReducedMotion ? {} : { y: [0, 25, 0] }}
-        viewport={{ once: false }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
-        aria-hidden="true"
-      />
-      <motion.div
-        className="pointer-events-none absolute bottom-0 right-[8%] h-72 w-72 rounded-full  blur-3xl"
-        animate={prefersReducedMotion ? {} : { y: [0, -20, 0] }}
-        viewport={{ once: false }}
-        transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
-        aria-hidden="true"
-      />
+    <ProtectedContent>
+      <section
+        ref={(node) => {
+          sectionRef.current = node;
+          scopeRef.current = node;
+        }}
+        id="vision-mission"
+        aria-labelledby="vision-mission-heading"
+        className="relative w-full overflow-hidden bg-bg-dark-secondary py-20 sm:py-24 lg:py-28"
+      >
+        <motion.div
+          className="pointer-events-none absolute top-10 left-[10%] h-64 w-64 rounded-full blur-3xl"
+          animate={prefersReducedMotion ? {} : { y: [0, 25, 0] }}
+          viewport={{ once: false }}
+          transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
+          aria-hidden="true"
+        />
+        <motion.div
+          className="pointer-events-none absolute bottom-0 right-[8%] h-72 w-72 rounded-full  blur-3xl"
+          animate={prefersReducedMotion ? {} : { y: [0, -20, 0] }}
+          viewport={{ once: false }}
+          transition={{ duration: 13, repeat: Infinity, ease: "easeInOut" }}
+          aria-hidden="true"
+        />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 id="vision-mission-heading" ref={headingRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-white">
-            Vision, Mission &amp; Commitment
-          </h2>
-          <p ref={descriptionRef} className="mt-4 text-sm sm:text-base leading-relaxed text-white/60">
-            The principles that guide every decision we make at Jamia Academy.
-          </p>
-        </div>
+        <div className="relative z-10 mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-16">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 id="vision-mission-heading" ref={headingRef} className="font-heading text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold tracking-tight text-white">
+              Vision, Mission &amp; Commitment
+            </h2>
+            <p ref={descriptionRef} className="mt-4 text-sm sm:text-base leading-relaxed text-white/60">
+              The principles that guide every decision we make at Jamia Academy.
+            </p>
+          </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
-          {/* ============================================================
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-7 items-stretch">
+            {/* ============================================================
               VISION CARD
           ============================================================= */}
-          <motion.div
-            ref={visionCardRef}
-            className={cn(
-              "flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.06]",
-              "backdrop-blur-xl p-7 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.25)] will-change-transform",
-              "md:col-span-2 lg:col-span-1"
-            )}
-            whileHover={
-              prefersReducedMotion
-                ? {}
-                : { y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }
-            }
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
-              <Eye size={22} />
-            </span>
-            <h3 className="mt-2 text-xl sm:text-2xl font-extrabold text-white">{vision?.heading || "Our Vision"}</h3>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65 flex-1">
-              {vision?.description}
-            </p>
-          </motion.div>
+            <motion.div
+              ref={visionCardRef}
+              className={cn(
+                "flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.06]",
+                "backdrop-blur-xl p-7 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.25)] will-change-transform",
+                "md:col-span-2 lg:col-span-1"
+              )}
+              whileHover={
+                prefersReducedMotion
+                  ? {}
+                  : { y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }
+              }
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
+                <Eye size={22} />
+              </span>
+              <h3 className="mt-2 text-xl sm:text-2xl font-extrabold text-white">{vision?.heading || "Our Vision"}</h3>
+              <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65 flex-1">
+                {vision?.description}
+              </p>
+            </motion.div>
 
-          {/* ============================================================
+            {/* ============================================================
               MISSION CARD 
           ============================================================= */}
-          <motion.div
-            ref={missionCardRef}
-            className={cn(
-              "flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.06]",
-              "backdrop-blur-xl p-7 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.25)] will-change-transform"
-            )}
-            whileHover={
-              prefersReducedMotion
-                ? {}
-                : { y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }
-            }
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/15 text-[#2A9D8F]" aria-hidden="true">
-              <Target size={22} />
-            </span>
-            <h3 className="text-xl sm:text-2xl font-extrabold text-white">{mission?.heading || "Our Mission"}</h3>
-            {mission?.description && (
-              <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{mission.description}</p>
-            )}
+            <motion.div
+              ref={missionCardRef}
+              className={cn(
+                "flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.06]",
+                "backdrop-blur-xl p-7 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.25)] will-change-transform"
+              )}
+              whileHover={
+                prefersReducedMotion
+                  ? {}
+                  : { y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }
+              }
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/15 text-[#2A9D8F]" aria-hidden="true">
+                <Target size={22} />
+              </span>
+              <h3 className="text-xl sm:text-2xl font-extrabold text-white">{mission?.heading || "Our Mission"}</h3>
+              {mission?.description && (
+                <p className="mt-3 text-sm sm:text-base leading-relaxed text-white/65">{mission.description}</p>
+              )}
 
-          </motion.div>
+            </motion.div>
 
-          {/* ============================================================
+            {/* ============================================================
               COMMITMENT CARD
           ============================================================= */}
-          <motion.div
-            ref={commitmentCardRef}
-            className={cn(
-              "relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10",
-              "bg-white/[0.06] backdrop-blur-xl p-7 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.25)] will-change-transform"
-            )}
-            whileHover={
-              prefersReducedMotion
-                ? {}
-                : { y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }
-            }
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          >
-            <span className="relative z-10 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
-              <HeartHandshake size={22} />
-            </span>
-            <h3 className="relative z-10 text-xl sm:text-2xl font-extrabold text-white">
-              {commitment?.heading || "Our Commitment"}
-            </h3>
-            <p className="relative z-10 mt-3 text-sm sm:text-base leading-relaxed text-white/65 flex-1">
-              {commitment?.description}
-            </p>
-          </motion.div>
+            <motion.div
+              ref={commitmentCardRef}
+              className={cn(
+                "relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10",
+                "bg-white/[0.06] backdrop-blur-xl p-7 sm:p-8 shadow-[0_12px_40px_rgba(0,0,0,0.25)] will-change-transform"
+              )}
+              whileHover={
+                prefersReducedMotion
+                  ? {}
+                  : { y: -8, scale: 1.02, boxShadow: "0 20px 50px rgba(0,0,0,0.35)" }
+              }
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
+              <span className="relative z-10 mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[#2A9D8F]/10 text-[#2A9D8F]" aria-hidden="true">
+                <HeartHandshake size={22} />
+              </span>
+              <h3 className="relative z-10 text-xl sm:text-2xl font-extrabold text-white">
+                {commitment?.heading || "Our Commitment"}
+              </h3>
+              <p className="relative z-10 mt-3 text-sm sm:text-base leading-relaxed text-white/65 flex-1">
+                {commitment?.description}
+              </p>
+            </motion.div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </ProtectedContent>
   );
 };
 

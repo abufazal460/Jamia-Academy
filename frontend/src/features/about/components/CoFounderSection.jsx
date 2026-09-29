@@ -14,6 +14,7 @@ import { getImageProps } from "../../../shared/utils/image";
 
 import { coFounder } from "../data/about.data";
 import { gsapEase } from "../../../shared/motion/config";
+import ProtectedContent from "../../../shared/components/protectedContent/ProtectedContent";
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -107,6 +108,7 @@ const CoFounderSection = () => {
   }, [prefersReducedMotion]);
 
   return (
+    <ProtectedContent>
     <section
       ref={(node) => {
         sectionRef.current = node;
@@ -239,6 +241,7 @@ const CoFounderSection = () => {
         </div>
       </div>
     </section>
+    </ProtectedContent>
   );
 };
 
